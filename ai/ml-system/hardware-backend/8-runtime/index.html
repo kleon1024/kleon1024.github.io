@@ -1,0 +1,110 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title>机器学习系统 1-8 - 后端硬件运行时 · KLEON</title><meta name="description" content="运行时（Runtime）抽象出计算模型，提供更通用的接口，进一步屏蔽硬件细节。
+
+在深度学习硬件加速系统中，如果仅依赖驱动接口，业务层/编译层代码中仍然要编入硬件相关代码，需要管理设备，记录内存，整理数据等，耦合较重，迁移困难。
+在驱动之上封装一层runtime有利于进一步提供代码复用程度，将硬件实"><meta name="og:description" content="运行时（Runtime）抽象出计算模型，提供更通用的接口，进一步屏蔽硬件细节。
+
+在深度学习硬件加速系统中，如果仅依赖驱动接口，业务层/编译层代码中仍然要编入硬件相关代码，需要管理设备，记录内存，整理数据等，耦合较重，迁移困难。
+在驱动之上封装一层runtime有利于进一步提供代码复用程度，将硬件实"><meta name="twitter:site" content="KLEON"><meta name="twitter:title" content="机器学习系统 1-8 - 后端硬件运行时"><meta name="twitter:card" content="summary"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 6.1.0"><link rel="stylesheet" href="/css/prism.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body><div id="stage" class="container"><div class="row"><div id="side-bar" class="col-sm-3 col-xs-12 side-container invisible"><div class="vertical-text site-title"><h3 tabindex="-1" class="site-title-small"><a href="/" class="a-title">keep moving</a></h3><h1 tabindex="-1" class="site-title-large"><a href="/" class="a-title">自说自话</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div id="site-nav" class="site-title-links"><ul><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li><li><a href="/categories">Categories</a></li><li><a href="/tags">Tags</a></li><li><a href="/googlebe23cb0bc55fc412.html"></a></li><li><a href="/about/index.html"></a></li><li class="soc"><a href="https://github.com/kleon1024" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa fa-github">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://kleon1024.github.io" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div id="main-container" class="col-sm-9 col-xs-12 main-container invisible"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>机器学习系统 1-8 - 后端硬件运行时</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-01-25</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/机器学习/" title="机器学习" class="a-tag">机器学习</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/机器学习/" title="机器学习" class="a-tag">机器学习</a><span>&nbsp;</span><a href="/tags/FPGA/" title="FPGA" class="a-tag">FPGA</a><span>&nbsp;</span></span></p><p class="post-abstract"><p>运行时（Runtime）抽象出计算模型，提供更通用的接口，进一步屏蔽硬件细节。</p>
+<span id="more"></span>
+<p>在深度学习硬件加速系统中，如果仅依赖驱动接口，业务层/编译层代码中仍然要编入硬件相关代码，需要管理设备，记录内存，整理数据等，耦合较重，迁移困难。</p>
+<p>在驱动之上封装一层runtime有利于进一步提供代码复用程度，将硬件实现和上层应用完全解耦。</p>
+<p>在后端硬件系统设计早期，很可能因为项目压力而倾向于把所有功能写在一起：</p>
+<ol>
+<li>程序读入模型并统一转换为内部定义的模型标记格式。</li>
+<li>接着程序根据标记构建计算图，优化使得计算图的pattern符合硬件需求。</li>
+<li>随后程序根据硬件结构执行算子融合，并生成对应的硬件指令。</li>
+</ol>
+<p>此时，应用层、编译层、运行时完全耦合，专为应用定制设计，模型结构也可能硬编码在代码里。</p>
+<p>这样的设计会带来不少问题：</p>
+<ol>
+<li>整个程序更重，基本上要保证能执行全部算子，否则需要将框架反向接入，使用框架的算子覆盖长尾逻辑。</li>
+<li>代码高度耦合，换个模型，换个应用就要重写大量代码，为了同时支持多个应用，需要把所有代码全部展开，不利于版本管理和代码复用。</li>
+<li>调试极不方便，模型，编译，运行时每一层都有可能有出错的可能，但因为缺少明确的接口，基本上只能端到端调试。</li>
+</ol>
+<p>因此，需要分层设计软件，解耦逻辑，复用代码。</p>
+<p>从运行时的角度看，用户可能以多种形式使用：</p>
+<ol>
+<li>直接使用，对硬件结构熟悉，通过运行时提供的接口简化操作。</li>
+<li>接入框架，需要在算子内生成运行时所需的数据。</li>
+<li>接入编译，接受编译层的通用中间表达（IR<a href="#refer-1"><sup>1</sup></a>），根据硬件结构转换成指令，屏蔽硬件细节。</li>
+<li>调试使用，提供Python接口，方便运行调试。</li>
+</ol>
+<p>通过合理的抽象，就可以满足使用需求，并保留足够的扩展性。</p>
+<h1>抽象</h1>
+<ul>
+<li><strong>内存抽象</strong></li>
+</ul>
+<p>对驱动来说，其并不关心DMA下发的数据具体是什么类型，也不会关心内存和哪个具体模型对应。</p>
+<p>对用户来说，其并不关心内存分配地址，也不关心硬件运行细节，最好作为函数接口调用。</p>
+<p>因此，可以将内存抽象为三种类型：</p>
+<ol>
+<li>Blob。动态数据块，仅记录形状信息，需要在运行时传输，每次调用计算均会被改变。</li>
+<li>Data。静态模型参数，编译时确定，声明周期和模型相等。</li>
+<li>Instructions。计算指令，其中内存地址需要动态映射。</li>
+</ol>
+<ul>
+<li><strong>设备</strong></li>
+</ul>
+<p>设备（Device）抽象负责硬件设备初始化，设备分配，拥有设备相关执行逻辑。</p>
+<p>设备抽象和硬件实现相关，通常和计算核对应，提供计算核申请与维护，内存申请与维护，指令解释（内存地址映射），数据重排，量化，精度转换等功能。</p>
+<ul>
+<li><strong>多模型</strong></li>
+</ul>
+<p>使用Executor机制，根据IR标识（比如哈希值或者校验和）区分不同模型。</p>
+<p>对一个新IR，创建对应Executor以及State，并在Executor首次调用时调用Device的初始化接口，IR信息（比如计算核handler以及内存地址映射表等）保存在State中。之后调用Device的运行接口，考虑到多线程支持，State信息可能会被同时访问，仅设置为只读。</p>
+<p>对单个模型的多线程调用，分配线程级数据结构保存当前调用的Blob分配信息，调用结束后销毁，避免加锁。</p>
+<p>多后续标识相同的IR，通过cache表查到对应的Executor调用。</p>
+<ul>
+<li><strong>接口</strong></li>
+</ul>
+<p>也就是IR定义，主要包括：</p>
+<ul>
+<li>IR标示符</li>
+<li>设备类型</li>
+<li>动态数据表</li>
+<li>静态数据表</li>
+<li>计算指令表</li>
+</ul>
+<p>其中还可以详细定义是否支持Dynamic Shape，是否需要完全内存映射等，量化精度，数据精度，数据对齐等。</p>
+<h1>优化</h1>
+<p>运行时作为调用的关键路径之一，性能优化也相当重要，常用的优化手段包括：</p>
+<ul>
+<li>资源池。</li>
+</ul>
+<p>考虑到多线程调用时，每次调用的动态内存申请开销。在专用场景下，每次调用动态内存尺寸不变，可以使用资源池提前分配，并在每次调用时申请。资源池一般需要加锁，资源池大小可根据IR信息配置，也可开放接口供用户配置。</p>
+<ul>
+<li>CPU Affinity</li>
+</ul>
+<p>考虑到线程中断开销通常集中于CPU0，多线程使用时希望规划计算使用，也就是设置线程级CPU亲核性。开放亲核性配置供用户配置。</p>
+<ul>
+<li>硬件Warm-UP</li>
+</ul>
+<p>硬件pipeline填充也需要时间，首次启动时需要从DDR加载数据，针对特定应用，数据加载完成后不会反复swap，可以提供warm up接口，使用atomic变量，在首次运行时填充特定寄存器。</p>
+<ul>
+<li>DMA合并</li>
+</ul>
+<p>DMA的读写开销并不低，如果是IO数据块（处于计算首尾的需要和主存swap的动态数据块）较多，则可能拉低系统整体性能。驱动对内存连续性无法判断，可以在runtime内存申请时提前合并IO数据块，将DMA读写次数合并为1次，提高系统整体性能。</p>
+<h1>调试</h1>
+<p>主要是C++编程的一些吐槽。</p>
+<ul>
+<li>多线程安全</li>
+</ul>
+<p>合理规划数据，优先选择不加锁。如果一定要加，根据场景加合适的锁，合理使用线程级数据/原子变量。</p>
+<ul>
+<li>指针安全</li>
+</ul>
+<p>野指针很危险。有时候系统通过原始指针对外需要暴露C API，但在进入C++部分后，需要合理使用unique_ptr，shared_ptr，std::move等限定和转移指针使用权。不然double free，空指针报错就很有可能出现，许多小项目在运行完之后抱一个指针错误，反正也查不出来是哪，就凑合着用了。</p>
+<ul>
+<li>内存访问</li>
+</ul>
+<p>数组下标越界引起的segment fault，在stack trace中并不能反应出来，很可能是程序欢快地运行很久之后突如其来，记得检查。查错时也可以上valgrind之类的内存统计工具，不过程序过大时，各种loss就可能让人眼花缭乱了。</p>
+<ul>
+<li>内存泄露</li>
+</ul>
+<p>内存泄露的排查也比较艰难，使用内存统计工具，排查各种指针使用情况之后，大概能解决绝大多数bug。但有些因为内存分配策略导致的内存使用量持续升高可能就和模型相关了（比如Tensorflow），需要具体分析。</p>
+<hr>
+<ul>
+<li>[1] <span id="refer-1"></span> <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Intermediate_representation">Intermediate representation</a></li>
+</ul>
+</p></div><div class="share"><span>Share</span>&nbsp;<span class="soc"><a href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank" class="fa fa-bookmark"></a></span><span class="soc"><a href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));" class="fa fa-weibo"></a></span><span class="soc"><a target="_blank" rel="noopener" href="http://twitter.com/home?status=https://kleon1024.github.io/ai/ml-system/hardware-backend/8-runtime/%20KLEON%20机器学习系统 1-8 - 后端硬件运行时" class="fa fa-twitter"></a></span></div><div class="pagination"><p class="clearfix"><span class="pre pagbuttons"><a role="navigation" href="/ai/ml-system/hardware-backend/9-compiler/" title="机器学习系统 1-9 - 后端硬件编译器"><i class="fa fa-angle-double-left"></i>&nbsp;Previous post: 机器学习系统 1-9 - 后端硬件编译器</a></span><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/ai/ml-system/hardware-backend/7-driver/" title="机器学习系统 1-7 - 后端硬件驱动">Next post: 机器学习系统 1-7 - 后端硬件驱动&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://kleon1024.github.io" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>

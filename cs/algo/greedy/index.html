@@ -1,0 +1,600 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title>算法基础 - 贪心法 · KLEON</title><meta name="description" content="贪心法用来解可由局部最优推出全局最优的问题。
+
+基础
+贪心法一般步骤：
+
+将问题分解为子问题
+找出适合的贪心策略
+求子问题的最优解
+局部最优堆叠为全局最优
+
+实践
+¶分发饼干
+ 分发饼干
+
+从最大的开始，依次试图满足孩子的胃口
+
+func findContentChildren(g []int, s"><meta name="og:description" content="贪心法用来解可由局部最优推出全局最优的问题。
+
+基础
+贪心法一般步骤：
+
+将问题分解为子问题
+找出适合的贪心策略
+求子问题的最优解
+局部最优堆叠为全局最优
+
+实践
+¶分发饼干
+ 分发饼干
+
+从最大的开始，依次试图满足孩子的胃口
+
+func findContentChildren(g []int, s"><meta name="twitter:site" content="KLEON"><meta name="twitter:title" content="算法基础 - 贪心法"><meta name="twitter:card" content="summary"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 6.1.0"><link rel="stylesheet" href="/css/prism.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body><div id="stage" class="container"><div class="row"><div id="side-bar" class="col-sm-3 col-xs-12 side-container invisible"><div class="vertical-text site-title"><h3 tabindex="-1" class="site-title-small"><a href="/" class="a-title">keep moving</a></h3><h1 tabindex="-1" class="site-title-large"><a href="/" class="a-title">自说自话</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div id="site-nav" class="site-title-links"><ul><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li><li><a href="/categories">Categories</a></li><li><a href="/tags">Tags</a></li><li><a href="/googlebe23cb0bc55fc412.html"></a></li><li><a href="/about/index.html"></a></li><li class="soc"><a href="https://github.com/kleon1024" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa fa-github">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://kleon1024.github.io" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div id="main-container" class="col-sm-9 col-xs-12 main-container invisible"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>算法基础 - 贪心法</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-04-26</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/算法/" title="算法" class="a-tag">算法</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/算法/" title="算法" class="a-tag">算法</a><span>&nbsp;</span><a href="/tags/数据结构/" title="数据结构" class="a-tag">数据结构</a><span>&nbsp;</span><a href="/tags/leetcode/" title="leetcode" class="a-tag">leetcode</a><span>&nbsp;</span></span></p><p class="post-abstract"><p>贪心法用来解可由局部最优推出全局最优的问题。</p>
+<span id="more"></span>
+<h1>基础</h1>
+<p>贪心法一般步骤：</p>
+<ul>
+<li>将问题分解为子问题</li>
+<li>找出适合的贪心策略</li>
+<li>求子问题的最优解</li>
+<li>局部最优堆叠为全局最优</li>
+</ul>
+<h1>实践</h1>
+<h2 id="分发饼干"><a class="header-anchor" href="#分发饼干">¶</a>分发饼干</h2>
+<p><img src="https://img.shields.io/badge/leetcode-455-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/assign-cookies/">分发饼干</a></p>
+<ul>
+<li>从最大的开始，依次试图满足孩子的胃口</li>
+</ul>
+<pre class="line-numbers language-highlight go"><span class="function"><span class="keyword">func</span> <span class="title">findContentChildren</span><span class="params">(g []<span class="type">int</span>, s []<span class="type">int</span>)</span></span> <span class="type"><code class="language-highlight go"><span class="function"><span class="keyword">func</span> <span class="title">findContentChildren</span><span class="params">(g []<span class="type">int</span>, s []<span class="type">int</span>)</span></span> <span class="type">int</span> &#123;
+    sort.Ints(g)
+    sort.Ints(s)
+    cookie := <span class="built_in">len</span>(s) - <span class="number">1</span>
+    count := <span class="number">0</span>
+    <span class="keyword">for</span> kid := <span class="built_in">len</span>(g) - <span class="number">1</span>; kid >= <span class="number">0</span>; kid-- &#123;
+        <span class="keyword">if</span> cookie >= <span class="number">0</span> && s[cookie] >= g[kid] &#123;
+            count++
+            cookie--
+        &#125;
+    &#125;
+    <span class="keyword">return</span> count
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="摆动序列"><a class="header-anchor" href="#摆动序列">¶</a>摆动序列</h2>
+<p><img src="https://img.shields.io/badge/leetcode-376-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/wiggle-subsequence/">摆动序列</a></p>
+<ul>
+<li>依次判断前后差值，当差值异号时计入统计，统一拓展至边界值，[2, 5]可以看做[2, 2, 5]是等价的，序列均为2。</li>
+</ul>
+<pre class="line-numbers language-highlight go"><span class="function"><span class="keyword">func</span> <span class="title">wiggleMaxLength</span><span class="params">(nums []<span class="type">int</span>)</span></span> <span class="type"><code class="language-highlight go"><span class="function"><span class="keyword">func</span> <span class="title">wiggleMaxLength</span><span class="params">(nums []<span class="type">int</span>)</span></span> <span class="type">int</span> &#123;
+    lastDiff := <span class="number">0</span>
+    curDiff := <span class="number">0</span>
+    count := <span class="number">1</span> <span class="comment">// 1 by default</span>
+    <span class="keyword">for</span> i := <span class="number">1</span>; i < <span class="built_in">len</span>(nums); i++ &#123;
+        curDiff = nums[i] - nums[i - <span class="number">1</span>]
+        <span class="keyword">if</span> curDiff > <span class="number">0</span> && lastDiff <= <span class="number">0</span> || lastDiff >= <span class="number">0</span> && curDiff < <span class="number">0</span> &#123;
+            count++
+            lastDiff = curDiff
+        &#125;
+    &#125;
+    <span class="keyword">return</span> count
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="最大子序和"><a class="header-anchor" href="#最大子序和">¶</a>最大子序和</h2>
+<p><img src="https://img.shields.io/badge/leetcode-53-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/maximum-subarray/">最大子序和</a></p>
+<ul>
+<li>暴力法</li>
+</ul>
+<pre class="line-numbers language-highlight go"><span class="function"><span class="keyword">func</span> <span class="title">maxSubArray</span><span class="params">(nums []<span class="type">int</span>)</span></span> <span class="type"><code class="language-highlight go"><span class="function"><span class="keyword">func</span> <span class="title">maxSubArray</span><span class="params">(nums []<span class="type">int</span>)</span></span> <span class="type">int</span> &#123;
+    max := math.MinInt64
+    <span class="keyword">for</span> i := <span class="number">0</span>; i < <span class="built_in">len</span>(nums); i++ &#123;
+        count := <span class="number">0</span>
+        <span class="keyword">for</span> j := i; j < <span class="built_in">len</span>(nums); j++ &#123;
+            count += nums[j]
+            <span class="keyword">if</span> count > max &#123;
+                max = count
+            &#125;
+        &#125;
+    &#125;
+    <span class="keyword">return</span> max
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>贪心，负数总会拉低总和，如果连续和已经为负数就应该立刻放弃。</li>
+</ul>
+<pre class="line-numbers language-highlight go"><span class="function"><span class="keyword">func</span> <span class="title">maxSubArray</span><span class="params">(nums []<span class="type">int</span>)</span></span> <span class="type"><code class="language-highlight go"><span class="function"><span class="keyword">func</span> <span class="title">maxSubArray</span><span class="params">(nums []<span class="type">int</span>)</span></span> <span class="type">int</span> &#123;
+    max := math.MinInt64
+    count := <span class="number">0</span>
+    <span class="keyword">for</span> i := <span class="number">0</span>; i < <span class="built_in">len</span>(nums); i++ &#123;
+        count += nums[i]
+        <span class="keyword">if</span> count > max &#123;
+            max = count
+        &#125;
+        <span class="keyword">if</span> count < <span class="number">0</span> &#123;
+            count = <span class="number">0</span>
+        &#125;
+    &#125;
+    <span class="keyword">return</span> max
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="买卖股票的最佳时机-II"><a class="header-anchor" href="#买卖股票的最佳时机-II">¶</a>买卖股票的最佳时机 II</h2>
+<p><img src="https://img.shields.io/badge/leetcode-122-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/">买卖股票的最佳时机 II</a></p>
+<ul>
+<li>累加所有差为正的区间</li>
+</ul>
+<pre class="line-numbers language-highlight go"><span class="function"><span class="keyword">func</span> <span class="title">maxProfit</span><span class="params">(prices []<span class="type">int</span>)</span></span> <span class="type"><code class="language-highlight go"><span class="function"><span class="keyword">func</span> <span class="title">maxProfit</span><span class="params">(prices []<span class="type">int</span>)</span></span> <span class="type">int</span> &#123;
+    curDiff := <span class="number">0</span>
+    max := <span class="number">0</span>
+    <span class="keyword">for</span> i := <span class="number">1</span>; i < <span class="built_in">len</span>(prices); i++ &#123;
+        curDiff = prices[i] - prices[i - <span class="number">1</span>]
+        <span class="keyword">if</span> curDiff > <span class="number">0</span> &#123;
+            max += curDiff
+        &#125;
+    &#125;
+    <span class="keyword">return</span> max
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="跳跃游戏"><a class="header-anchor" href="#跳跃游戏">¶</a>跳跃游戏</h2>
+<p><img src="https://img.shields.io/badge/leetcode-55-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/jump-game/">跳跃游戏</a></p>
+<ul>
+<li>计算下标+数值的最大值，如果下标大于最大值说明无法到达</li>
+</ul>
+<pre class="line-numbers language-highlight go"><span class="function"><span class="keyword">func</span> <span class="title">canJump</span><span class="params">(nums []<span class="type">int</span>)</span></span> <span class="type"><code class="language-highlight go"><span class="function"><span class="keyword">func</span> <span class="title">canJump</span><span class="params">(nums []<span class="type">int</span>)</span></span> <span class="type">bool</span> &#123;
+    max := <span class="number">0</span>
+    <span class="keyword">for</span> i := <span class="number">0</span>; i < <span class="built_in">len</span>(nums); i++ &#123;
+        <span class="keyword">if</span> i > max &#123;
+            <span class="keyword">return</span> <span class="literal">false</span>
+        &#125;
+        <span class="keyword">if</span> (nums[i] + i) > max &#123;
+            max = nums[i] + i
+        &#125;
+    &#125;
+    <span class="keyword">return</span> <span class="literal">true</span>
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>考虑覆盖，如果max已覆盖最后一个index，则直接返回</li>
+</ul>
+<pre class="line-numbers language-highlight go"><span class="function"><span class="keyword">func</span> <span class="title">canJump</span><span class="params">(nums []<span class="type">int</span>)</span></span> <span class="type"><code class="language-highlight go"><span class="function"><span class="keyword">func</span> <span class="title">canJump</span><span class="params">(nums []<span class="type">int</span>)</span></span> <span class="type">bool</span> &#123;
+    max := <span class="number">0</span>
+    <span class="keyword">if</span> <span class="built_in">len</span>(nums) == <span class="number">1</span> &#123;
+        <span class="keyword">return</span> <span class="literal">true</span>
+    &#125;
+    <span class="keyword">for</span> i := <span class="number">0</span>; i <= max; i++ &#123;
+        <span class="keyword">if</span> (nums[i] + i) > max &#123;
+            max = nums[i] + i
+        &#125;
+        <span class="keyword">if</span> max >= <span class="built_in">len</span>(nums) - <span class="number">1</span> &#123;
+            <span class="keyword">return</span> <span class="literal">true</span>
+        &#125;
+    &#125;
+    <span class="keyword">return</span> <span class="literal">false</span>
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="跳跃游戏II"><a class="header-anchor" href="#跳跃游戏II">¶</a>跳跃游戏II</h2>
+<p><img src="https://img.shields.io/badge/leetcode-45-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/jump-game-ii/">跳跃游戏II</a></p>
+<ul>
+<li>计算下标+数值的最大值，当当前下标不是最后一个下标时，最大步数总要+1，而两段部分重叠的区间，总可以2步走完。</li>
+</ul>
+<pre class="line-numbers language-highlight go"><span class="function"><span class="keyword">func</span> <span class="title">jump</span><span class="params">(nums []<span class="type">int</span>)</span></span> <span class="type"><code class="language-highlight go"><span class="function"><span class="keyword">func</span> <span class="title">jump</span><span class="params">(nums []<span class="type">int</span>)</span></span> <span class="type">int</span> &#123;
+    <span class="keyword">if</span> <span class="built_in">len</span>(nums) == <span class="number">1</span> &#123;
+        <span class="keyword">return</span> <span class="number">0</span>
+    &#125;
+    cur := <span class="number">0</span>
+    next := <span class="number">0</span>
+    ans := <span class="number">0</span>
+    <span class="keyword">for</span> i := <span class="number">0</span>; i < <span class="built_in">len</span>(nums); i++ &#123;
+        <span class="keyword">if</span> nums[i] + i > next &#123;
+            next = nums[i] + i
+        &#125;
+        <span class="keyword">if</span> i == cur &#123;
+            <span class="keyword">if</span> cur != <span class="built_in">len</span>(nums) - <span class="number">1</span> &#123;
+                ans++
+                cur = next
+                <span class="keyword">if</span> next >= <span class="built_in">len</span>(nums) - <span class="number">1</span> &#123;
+                    <span class="keyword">break</span>
+                &#125;
+            &#125; <span class="keyword">else</span> &#123;
+                <span class="keyword">break</span>
+            &#125;
+        &#125;
+    &#125;
+    <span class="keyword">return</span> ans
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="K-次取反后最大化的数组和"><a class="header-anchor" href="#K-次取反后最大化的数组和">¶</a>K 次取反后最大化的数组和</h2>
+<p><img src="https://img.shields.io/badge/leetcode-1005-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/maximize-sum-of-array-after-k-negations/">K 次取反后最大化的数组和</a></p>
+<ul>
+<li>首先按绝对值从大到小排序，把K的次数用在翻转负数上，如果全部翻转完K&gt;0，则全部用在绝对值最小的值上</li>
+</ul>
+<pre class="line-numbers language-highlight go"><span class="keyword">type</span> Arr []<span class="type"><code class="language-highlight go"><span class="keyword">type</span> Arr []<span class="type">int</span>
+<span class="function"><span class="keyword">func</span> <span class="params">(a Arr)</span></span> Len() <span class="type">int</span>           &#123; <span class="keyword">return</span> <span class="built_in">len</span>(a) &#125;
+<span class="function"><span class="keyword">func</span> <span class="params">(a Arr)</span></span> Swap(i, j <span class="type">int</span>)      &#123; a[i], a[j] = a[j], a[i] &#125;
+<span class="function"><span class="keyword">func</span> <span class="params">(a Arr)</span></span> Less(i, j <span class="type">int</span>) <span class="type">bool</span> &#123; <span class="keyword">return</span> abs(a[i]) > abs(a[j]) &#125;
+
+<span class="function"><span class="keyword">func</span> <span class="title">abs</span><span class="params">(a <span class="type">int</span>)</span></span> <span class="type">int</span> &#123;
+    <span class="keyword">if</span> a < <span class="number">0</span> &#123;
+        <span class="keyword">return</span> -a
+    &#125;
+    <span class="keyword">return</span> a
+&#125;
+
+<span class="function"><span class="keyword">func</span> <span class="title">largestSumAfterKNegations</span><span class="params">(A []<span class="type">int</span>, K <span class="type">int</span>)</span></span> <span class="type">int</span> &#123;
+    sort.Sort(Arr(A))
+    <span class="keyword">for</span> i := <span class="number">0</span>; i < <span class="built_in">len</span>(A); i++ &#123;
+        <span class="keyword">if</span> A[i] < <span class="number">0</span> &#123;
+            A[i] = -A[i]
+            K--
+        &#125;
+        <span class="keyword">if</span> K == <span class="number">0</span> &#123;
+            <span class="keyword">break</span>
+        &#125;
+    &#125;
+    <span class="keyword">if</span> K > <span class="number">0</span> &#123;
+        <span class="keyword">if</span> K % <span class="number">2</span> == <span class="number">1</span> &#123;
+            A[<span class="built_in">len</span>(A) - <span class="number">1</span>] = -A[<span class="built_in">len</span>(A) - <span class="number">1</span>]
+        &#125;
+    &#125;
+    sum := <span class="number">0</span>
+    <span class="keyword">for</span> _, a := <span class="keyword">range</span> A &#123;
+        sum += a
+    &#125;
+    <span class="keyword">return</span> sum
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="加油站"><a class="header-anchor" href="#加油站">¶</a>加油站</h2>
+<p><img src="https://img.shields.io/badge/leetcode-134-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/gas-station/">加油站</a></p>
+<ul>
+<li>贪心，如果gas总量小于cost则不能跑完，否则一定存在起始点，从0开始累加gas-cost差，如果累加和小于0，则之前站点不能作为起始站点，累加和清零，起始点一定出现在当前点或之后。</li>
+</ul>
+<pre class="line-numbers language-highlight go"><span class="function"><span class="keyword">func</span> <span class="title">canCompleteCircuit</span><span class="params">(gas []<span class="type">int</span>, cost []<span class="type">int</span>)</span></span> <span class="type"><code class="language-highlight go"><span class="function"><span class="keyword">func</span> <span class="title">canCompleteCircuit</span><span class="params">(gas []<span class="type">int</span>, cost []<span class="type">int</span>)</span></span> <span class="type">int</span> &#123;
+    sum := <span class="number">0</span>
+    cur := <span class="number">0</span>
+    start := <span class="number">0</span>
+    <span class="keyword">for</span> i, _ := <span class="keyword">range</span> gas &#123;
+        cur += gas[i] - cost[i]
+        sum += gas[i] - cost[i]
+        <span class="keyword">if</span> cur < <span class="number">0</span> &#123;
+            cur = <span class="number">0</span>
+            start = i + <span class="number">1</span>
+        &#125;
+    &#125;
+    <span class="keyword">if</span> sum < <span class="number">0</span> &#123;
+        <span class="keyword">return</span> <span class="number">-1</span>
+    &#125;
+    <span class="keyword">return</span> start    
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="分发糖果"><a class="header-anchor" href="#分发糖果">¶</a>分发糖果</h2>
+<p><img src="https://img.shields.io/badge/leetcode-135-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/candy/">分发糖果</a></p>
+<ul>
+<li>模拟暴力法，模拟发糖过程，如果当前评分低于前值，从当前位置向前补发糖果</li>
+</ul>
+<pre class="line-numbers language-highlight go"><span class="function"><span class="keyword">func</span> <span class="title">candy</span><span class="params">(ratings []<span class="type">int</span>)</span></span> <span class="type"><code class="language-highlight go"><span class="function"><span class="keyword">func</span> <span class="title">candy</span><span class="params">(ratings []<span class="type">int</span>)</span></span> <span class="type">int</span> &#123;
+    <span class="keyword">if</span> <span class="built_in">len</span>(ratings) == <span class="number">0</span> &#123;
+        <span class="keyword">return</span> <span class="number">0</span>
+    &#125;
+    candies := <span class="built_in">make</span>([]<span class="type">int</span>, <span class="built_in">len</span>(ratings))
+    candies[<span class="number">0</span>] = <span class="number">1</span>
+    <span class="keyword">for</span> i := <span class="number">1</span>; i < <span class="built_in">len</span>(ratings); i++ &#123;
+        <span class="keyword">if</span> ratings[i - <span class="number">1</span>] < ratings[i] &#123;
+            candies[i] = candies[i - <span class="number">1</span>] + <span class="number">1</span>
+        &#125; <span class="keyword">else</span> &#123;
+            candies[i] = <span class="number">1</span>
+            <span class="keyword">for</span> j := i; j > <span class="number">0</span>; j-- &#123;
+                <span class="keyword">if</span> ratings[j] < ratings[j - <span class="number">1</span>] &#123;
+                    <span class="keyword">if</span> candies[j - <span class="number">1</span>] <= candies[j] &#123;
+                        candies[j - <span class="number">1</span>] = candies[j] + <span class="number">1</span>
+                    &#125; <span class="keyword">else</span> &#123;
+                        <span class="keyword">break</span>
+                    &#125;
+                &#125; <span class="keyword">else</span> &#123;
+                    <span class="keyword">break</span>
+                &#125;
+            &#125;
+        &#125;
+    &#125;
+    sum := <span class="number">0</span>
+    <span class="keyword">for</span> _, c := <span class="keyword">range</span> candies &#123;
+        sum += c
+    &#125;
+    <span class="keyword">return</span> sum
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>贪心，先满足右边，再满足左边，满足左边时右边的条件也不能被破坏</li>
+</ul>
+<pre class="line-numbers language-highlight go"><span class="function"><span class="keyword">func</span> <span class="title">max</span><span class="params">(a, b <span class="type">int</span>)</span></span> <span class="type"><code class="language-highlight go"><span class="function"><span class="keyword">func</span> <span class="title">max</span><span class="params">(a, b <span class="type">int</span>)</span></span> <span class="type">int</span> &#123;
+    <span class="keyword">if</span> a > b &#123;
+        <span class="keyword">return</span> a
+    &#125;
+    <span class="keyword">return</span> b
+&#125;
+<span class="function"><span class="keyword">func</span> <span class="title">candy</span><span class="params">(ratings []<span class="type">int</span>)</span></span> <span class="type">int</span> &#123;
+    <span class="keyword">if</span> <span class="built_in">len</span>(ratings) == <span class="number">0</span> &#123;
+        <span class="keyword">return</span> <span class="number">0</span>
+    &#125;
+    candies := <span class="built_in">make</span>([]<span class="type">int</span>, <span class="built_in">len</span>(ratings))
+    <span class="keyword">for</span> i, _ := <span class="keyword">range</span> candies &#123;
+        candies[i] = <span class="number">1</span>
+    &#125;
+    <span class="keyword">for</span> i := <span class="number">1</span>; i < <span class="built_in">len</span>(ratings); i++ &#123;
+        <span class="keyword">if</span> ratings[i] > ratings[i - <span class="number">1</span>] &#123;
+            candies[i] = candies[i - <span class="number">1</span>] + <span class="number">1</span>
+        &#125;
+    &#125;
+    <span class="keyword">for</span> i := <span class="built_in">len</span>(ratings) - <span class="number">2</span>; i >= <span class="number">0</span>; i-- &#123;
+        <span class="keyword">if</span> ratings[i] > ratings[i + <span class="number">1</span>] &#123;
+            candies[i] = max(candies[i], candies[i + <span class="number">1</span>] + <span class="number">1</span>)
+        &#125;
+    &#125;
+    sum := <span class="number">0</span>
+    <span class="keyword">for</span> _, c := <span class="keyword">range</span> candies &#123;
+        sum += c
+    &#125;
+    <span class="keyword">return</span> sum
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="柠檬水找零"><a class="header-anchor" href="#柠檬水找零">¶</a>柠檬水找零</h2>
+<p><img src="https://img.shields.io/badge/leetcode-860-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/lemonade-change/">柠檬水找零</a></p>
+<ul>
+<li>模拟法，优先给10块</li>
+</ul>
+<pre class="line-numbers language-highlight go"><span class="function"><span class="keyword">func</span> <span class="title">lemonadeChange</span><span class="params">(bills []<span class="type">int</span>)</span></span> <span class="type"><code class="language-highlight go"><span class="function"><span class="keyword">func</span> <span class="title">lemonadeChange</span><span class="params">(bills []<span class="type">int</span>)</span></span> <span class="type">bool</span> &#123;
+    left5 := <span class="number">0</span>
+    left10 := <span class="number">0</span>
+    <span class="keyword">for</span> i := <span class="number">0</span>; i < <span class="built_in">len</span>(bills); i++ &#123;
+        <span class="keyword">if</span> bills[i] == <span class="number">5</span> &#123;
+            left5++
+        &#125; <span class="keyword">else</span> <span class="keyword">if</span> bills[i] == <span class="number">10</span> &#123;
+            <span class="keyword">if</span> left5 >= <span class="number">1</span> &#123;
+                left5--
+                left10++
+            &#125; <span class="keyword">else</span> &#123;
+                <span class="keyword">return</span> <span class="literal">false</span>
+            &#125;
+        &#125; <span class="keyword">else</span> <span class="keyword">if</span> bills[i] == <span class="number">20</span> &#123;
+            <span class="keyword">if</span> left5 >= <span class="number">1</span> && left10 >= <span class="number">1</span> &#123;
+                left5--
+                left10--
+            &#125; <span class="keyword">else</span> <span class="keyword">if</span> left5 >= <span class="number">3</span> &#123;
+                left5 -= <span class="number">3</span>
+            &#125; <span class="keyword">else</span> &#123;
+                <span class="keyword">return</span> <span class="literal">false</span>
+            &#125;
+        &#125;
+    &#125;
+    <span class="keyword">return</span> <span class="literal">true</span>
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="根据身高重建队列"><a class="header-anchor" href="#根据身高重建队列">¶</a>根据身高重建队列</h2>
+<p><img src="https://img.shields.io/badge/leetcode-406-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/queue-reconstruction-by-height/">根据身高重建队列</a></p>
+<ul>
+<li>先按身高从大到小排列，身高相同时，k按从小到大排列，再按k的序号顺序插入即可</li>
+</ul>
+<pre class="line-numbers language-highlight go"><span class="keyword">type</span> Arr [][]<span class="type"><code class="language-highlight go"><span class="keyword">type</span> Arr [][]<span class="type">int</span>
+<span class="function"><span class="keyword">func</span> <span class="params">(a Arr)</span></span> Len() <span class="type">int</span>           &#123; <span class="keyword">return</span> <span class="built_in">len</span>(a) &#125;
+<span class="function"><span class="keyword">func</span> <span class="params">(a Arr)</span></span> Swap(i, j <span class="type">int</span>)      &#123; a[i], a[j] = a[j], a[i] &#125;
+<span class="function"><span class="keyword">func</span> <span class="params">(a Arr)</span></span> Less(i, j <span class="type">int</span>) <span class="type">bool</span> &#123;
+    <span class="keyword">return</span> a[i][<span class="number">0</span>] > a[j][<span class="number">0</span>] || a[i][<span class="number">0</span>] == a[j][<span class="number">0</span>] && a[i][<span class="number">1</span>] < a[j][<span class="number">1</span>] 
+&#125;
+
+<span class="function"><span class="keyword">func</span> <span class="title">reconstructQueue</span><span class="params">(people [][]<span class="type">int</span>)</span></span> [][]<span class="type">int</span> &#123;
+    sort.Sort(Arr(people))
+    <span class="comment">// fmt.Printf("%v\n", people)</span>
+    queue := <span class="built_in">make</span>([][]<span class="type">int</span>, <span class="built_in">len</span>(people))
+    <span class="keyword">for</span> i := <span class="number">0</span>; i < <span class="built_in">len</span>(people); i++ &#123;
+        <span class="comment">// fmt.Printf("%v\n", queue)</span>
+        pos := people[i][<span class="number">1</span>]
+        <span class="keyword">for</span> j := i - <span class="number">1</span>; j >= pos; j-- &#123;
+            queue[j+<span class="number">1</span>] = queue[j]
+        &#125;
+        queue[pos] = people[i]
+    &#125;
+    <span class="keyword">return</span> queue
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>数组shift改成copy，好像并没有变快很多</li>
+</ul>
+<pre class="line-numbers language-highlight go"><span class="keyword">type</span> Arr [][]<span class="type"><code class="language-highlight go"><span class="keyword">type</span> Arr [][]<span class="type">int</span>
+<span class="function"><span class="keyword">func</span> <span class="params">(a Arr)</span></span> Len() <span class="type">int</span>           &#123; <span class="keyword">return</span> <span class="built_in">len</span>(a) &#125;
+<span class="function"><span class="keyword">func</span> <span class="params">(a Arr)</span></span> Swap(i, j <span class="type">int</span>)      &#123; a[i], a[j] = a[j], a[i] &#125;
+<span class="function"><span class="keyword">func</span> <span class="params">(a Arr)</span></span> Less(i, j <span class="type">int</span>) <span class="type">bool</span> &#123;
+    <span class="keyword">return</span> a[i][<span class="number">0</span>] > a[j][<span class="number">0</span>] || a[i][<span class="number">0</span>] == a[j][<span class="number">0</span>] && a[i][<span class="number">1</span>] < a[j][<span class="number">1</span>] 
+&#125;
+
+<span class="function"><span class="keyword">func</span> <span class="title">reconstructQueue</span><span class="params">(people [][]<span class="type">int</span>)</span></span> [][]<span class="type">int</span> &#123;
+    sort.Sort(Arr(people))
+    <span class="comment">// fmt.Printf("%v\n", people)</span>
+    queue := <span class="built_in">make</span>([][]<span class="type">int</span>, <span class="built_in">len</span>(people))
+    <span class="keyword">for</span> i := <span class="number">0</span>; i < <span class="built_in">len</span>(people); i++ &#123;
+        <span class="comment">// fmt.Printf("%v\n", queue)</span>
+        pos := people[i][<span class="number">1</span>]
+        <span class="built_in">copy</span>(queue[pos+<span class="number">1</span>:],queue[pos:])
+        queue[pos] = people[i]
+    &#125;
+    <span class="keyword">return</span> queue
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="用最少数量的箭引爆气球"><a class="header-anchor" href="#用最少数量的箭引爆气球">¶</a>用最少数量的箭引爆气球</h2>
+<p><img src="https://img.shields.io/badge/leetcode-452-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/minimum-number-of-arrows-to-burst-balloons/">用最少数量的箭引爆气球</a></p>
+<ul>
+<li>先按气球左边界从小到大排序，再逐一引爆气球，如果当前气球的右边界小于前一个气球的左边界，则是重叠的，可以引爆，此时合二为一，取两者交集（右边界中较小的），反之，需要一只箭。</li>
+</ul>
+<pre class="line-numbers language-highlight go"><span class="keyword">type</span> Arr [][]<span class="type"><code class="language-highlight go"><span class="keyword">type</span> Arr [][]<span class="type">int</span>
+<span class="function"><span class="keyword">func</span> <span class="params">(a Arr)</span></span> Len() <span class="type">int</span>           &#123; <span class="keyword">return</span> <span class="built_in">len</span>(a) &#125;
+<span class="function"><span class="keyword">func</span> <span class="params">(a Arr)</span></span> Swap(i, j <span class="type">int</span>)      &#123; a[i], a[j] = a[j], a[i] &#125;
+<span class="function"><span class="keyword">func</span> <span class="params">(a Arr)</span></span> Less(i, j <span class="type">int</span>) <span class="type">bool</span> &#123;
+    <span class="keyword">return</span> a[i][<span class="number">0</span>] < a[j][<span class="number">0</span>] || a[i][<span class="number">0</span>] == a[j][<span class="number">0</span>] && a[i][<span class="number">1</span>] < a[j][<span class="number">1</span>] 
+&#125;
+
+<span class="function"><span class="keyword">func</span> <span class="title">min</span><span class="params">(a, b <span class="type">int</span>)</span></span> <span class="type">int</span> &#123;
+    <span class="keyword">if</span> a > b &#123;
+        <span class="keyword">return</span> b
+    &#125;
+    <span class="keyword">return</span> a
+&#125;
+
+<span class="function"><span class="keyword">func</span> <span class="title">findMinArrowShots</span><span class="params">(points [][]<span class="type">int</span>)</span></span> <span class="type">int</span> &#123;
+    <span class="keyword">if</span> <span class="built_in">len</span>(points) == <span class="number">0</span> &#123; <span class="keyword">return</span> <span class="number">0</span> &#125;
+    sort.Sort(Arr(points))
+    arrow := <span class="number">1</span>
+    <span class="keyword">for</span> i := <span class="number">1</span>; i < <span class="built_in">len</span>(points); i++ &#123;
+        <span class="keyword">if</span> points[i][<span class="number">0</span>] > points[i<span class="number">-1</span>][<span class="number">1</span>] &#123;
+            arrow++
+        &#125; <span class="keyword">else</span> &#123;
+            points[i][<span class="number">1</span>] = min(points[i - <span class="number">1</span>][<span class="number">1</span>], points[i][<span class="number">1</span>])
+        &#125;
+    &#125;
+    <span class="keyword">return</span> arrow
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="无重叠区间"><a class="header-anchor" href="#无重叠区间">¶</a>无重叠区间</h2>
+<p><img src="https://img.shields.io/badge/leetcode-435-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/non-overlapping-intervals/">无重叠区间</a></p>
+<ul>
+<li>先按左边界从小到大排序，再逐一判断是否交叠，如果当前左边界小于右边界，说明发生交叠，必须移除一个，此时选择右边界更小的局部最优解，尽量避免和其他区间交叠。</li>
+</ul>
+<pre class="line-numbers language-highlight go"><span class="keyword">type</span> Arr [][]<span class="type"><code class="language-highlight go"><span class="keyword">type</span> Arr [][]<span class="type">int</span>
+<span class="function"><span class="keyword">func</span> <span class="params">(a Arr)</span></span> Len() <span class="type">int</span>           &#123; <span class="keyword">return</span> <span class="built_in">len</span>(a) &#125;
+<span class="function"><span class="keyword">func</span> <span class="params">(a Arr)</span></span> Swap(i, j <span class="type">int</span>)      &#123; a[i], a[j] = a[j], a[i] &#125;
+<span class="function"><span class="keyword">func</span> <span class="params">(a Arr)</span></span> Less(i, j <span class="type">int</span>) <span class="type">bool</span> &#123;
+    <span class="keyword">return</span> a[i][<span class="number">0</span>] < a[j][<span class="number">0</span>] || a[i][<span class="number">0</span>] == a[j][<span class="number">0</span>] && a[i][<span class="number">1</span>] < a[j][<span class="number">1</span>] 
+&#125;
+
+<span class="function"><span class="keyword">func</span> <span class="title">min</span><span class="params">(a, b <span class="type">int</span>)</span></span> <span class="type">int</span> &#123;
+    <span class="keyword">if</span> a > b &#123;
+        <span class="keyword">return</span> b
+    &#125;
+    <span class="keyword">return</span> a
+&#125;
+
+<span class="function"><span class="keyword">func</span> <span class="title">eraseOverlapIntervals</span><span class="params">(intervals [][]<span class="type">int</span>)</span></span> <span class="type">int</span> &#123;
+    <span class="keyword">if</span> <span class="built_in">len</span>(intervals) == <span class="number">0</span> &#123;
+        <span class="keyword">return</span> <span class="number">0</span>
+    &#125;
+    sort.Sort(Arr(intervals))
+    count := <span class="number">0</span>
+    <span class="keyword">for</span> i := <span class="number">1</span>; i < <span class="built_in">len</span>(intervals); i++ &#123;
+        <span class="keyword">if</span> intervals[i][<span class="number">0</span>] < intervals[i - <span class="number">1</span>][<span class="number">1</span>] &#123;
+            count++
+            intervals[i][<span class="number">1</span>] = min(intervals[i - <span class="number">1</span>][<span class="number">1</span>], intervals[i][<span class="number">1</span>])
+        &#125;
+    &#125;
+    <span class="keyword">return</span> count
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="划分字母区间"><a class="header-anchor" href="#划分字母区间">¶</a>划分字母区间</h2>
+<p><img src="https://img.shields.io/badge/leetcode-763-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/partition-labels/">划分字母区间</a></p>
+<ul>
+<li>先遍历找到每个字母的最远边界，再从头开始，如果当前字母的最远边界大于右边界，则将右边界更新为当前字母最远边界，如果遍历index等于右边界，说明右边界内所有值的最远程度均小于等于右边界，形成一个分割点。</li>
+</ul>
+<pre class="line-numbers language-highlight go"><span class="function"><span class="keyword">func</span> <span class="title">max</span><span class="params">(a, b <span class="type">int</span>)</span></span> <span class="type"><code class="language-highlight go"><span class="function"><span class="keyword">func</span> <span class="title">max</span><span class="params">(a, b <span class="type">int</span>)</span></span> <span class="type">int</span> &#123;
+    <span class="keyword">if</span> a > b &#123;
+        <span class="keyword">return</span> a
+    &#125;
+    <span class="keyword">return</span> b
+&#125;
+
+<span class="function"><span class="keyword">func</span> <span class="title">partitionLabels</span><span class="params">(S <span class="type">string</span>)</span></span> []<span class="type">int</span> &#123;
+    m := <span class="built_in">make</span>([]<span class="type">int</span>, <span class="number">26</span>)
+    <span class="keyword">for</span> i := <span class="number">0</span>; i < <span class="built_in">len</span>(S); i++ &#123;
+        m[<span class="type">int</span>(S[i]) - <span class="type">int</span>(<span class="string">&#x27;a&#x27;</span>)] = i
+    &#125;
+    left := <span class="number">0</span>
+    right := <span class="number">0</span>
+    res := []<span class="type">int</span>&#123;&#125;
+    <span class="keyword">for</span> i := <span class="number">0</span>; i < <span class="built_in">len</span>(S); i++ &#123;
+        right = max(right, m[<span class="type">int</span>(S[i]) - <span class="type">int</span>(<span class="string">&#x27;a&#x27;</span>)])
+        <span class="keyword">if</span> i == right &#123;
+            res = <span class="built_in">append</span>(res, right - left + <span class="number">1</span>)
+            left = right + <span class="number">1</span>
+        &#125;
+    &#125;
+    <span class="keyword">return</span> res
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="合并区间"><a class="header-anchor" href="#合并区间">¶</a>合并区间</h2>
+<p><img src="https://img.shields.io/badge/leetcode-56-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/merge-intervals/">合并区间</a></p>
+<ul>
+<li>同区间重叠</li>
+</ul>
+<pre class="line-numbers language-highlight go"><span class="function"><span class="keyword">func</span> <span class="title">max</span><span class="params">(a, b <span class="type">int</span>)</span></span> <span class="type"><code class="language-highlight go"><span class="function"><span class="keyword">func</span> <span class="title">max</span><span class="params">(a, b <span class="type">int</span>)</span></span> <span class="type">int</span> &#123;
+    <span class="keyword">if</span> a > b &#123;
+        <span class="keyword">return</span> a
+    &#125;
+    <span class="keyword">return</span> b
+&#125;
+
+<span class="function"><span class="keyword">func</span> <span class="title">merge</span><span class="params">(intervals [][]<span class="type">int</span>)</span></span> [][]<span class="type">int</span> &#123;
+    res := [][]<span class="type">int</span>&#123;&#125;
+    <span class="keyword">if</span> <span class="built_in">len</span>(intervals) == <span class="number">0</span> &#123;
+        <span class="keyword">return</span> res
+    &#125;
+	sort.Slice(intervals, <span class="function"><span class="keyword">func</span><span class="params">(i, j <span class="type">int</span>)</span></span> <span class="type">bool</span> &#123;
+		<span class="keyword">return</span> intervals[i][<span class="number">0</span>] < intervals[j][<span class="number">0</span>]
+	&#125;)
+    left := intervals[<span class="number">0</span>][<span class="number">0</span>]
+    right := intervals[<span class="number">0</span>][<span class="number">1</span>]
+    <span class="keyword">for</span> i := <span class="number">1</span>; i < <span class="built_in">len</span>(intervals); i++ &#123;
+        <span class="keyword">if</span> intervals[i][<span class="number">0</span>] <= right &#123;
+            right = max(intervals[i][<span class="number">1</span>], right)
+        &#125; <span class="keyword">else</span> &#123;
+            res = <span class="built_in">append</span>(res, []<span class="type">int</span>&#123;left, right&#125;)
+            left, right = intervals[i][<span class="number">0</span>], intervals[i][<span class="number">1</span>]
+        &#125;
+    &#125;
+    res = <span class="built_in">append</span>(res, []<span class="type">int</span>&#123;left, right&#125;)
+    <span class="keyword">return</span> res
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="单调递增的数字"><a class="header-anchor" href="#单调递增的数字">¶</a>单调递增的数字</h2>
+<p><img src="https://img.shields.io/badge/leetcode-738-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/monotone-increasing-digits/">单调递增的数字</a></p>
+<ul>
+<li>贪心策略，如果前一位较大，则将前一位减一，当前位置为9。</li>
+</ul>
+<pre class="line-numbers language-highlight go"><span class="function"><span class="keyword">func</span> <span class="title">monotoneIncreasingDigits</span><span class="params">(N <span class="type">int</span>)</span></span> <span class="type"><code class="language-highlight go"><span class="function"><span class="keyword">func</span> <span class="title">monotoneIncreasingDigits</span><span class="params">(N <span class="type">int</span>)</span></span> <span class="type">int</span> &#123;
+    num := []<span class="type">rune</span>(fmt.Sprintf(<span class="string">"%v"</span>, N))
+    start := <span class="built_in">len</span>(num)
+    <span class="keyword">for</span> i := <span class="built_in">len</span>(num) - <span class="number">1</span>; i > <span class="number">0</span>; i-- &#123;
+        <span class="keyword">if</span> num[i - <span class="number">1</span>] > num[i] &#123;
+            start = i
+            num[i - <span class="number">1</span>] = <span class="type">rune</span>(<span class="type">int</span>(num[i - <span class="number">1</span>]) - <span class="number">1</span>)
+        &#125;
+    &#125;
+    <span class="keyword">for</span> i := start; i < <span class="built_in">len</span>(num); i++ &#123;
+        num[i] = <span class="string">&#x27;9&#x27;</span>
+    &#125;
+    ret, _ := strconv.Atoi(<span class="type">string</span>(num))
+    <span class="keyword">return</span> ret
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="监控二叉树"><a class="header-anchor" href="#监控二叉树">¶</a>监控二叉树</h2>
+<p><img src="https://img.shields.io/badge/leetcode-968-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/binary-tree-cameras/">监控二叉树</a></p>
+<ul>
+<li>贪心策略，为了最小化摄像头数量，叶子节点不放，根节点最好也不放，其余节点隔两个放一个，从叶子节点开始后序遍历。节点状态分为0无覆盖，1有摄像头，2有覆盖三种，空节点默认为有覆盖。</li>
+</ul>
+<p>处理逻辑分为：</p>
+<ul>
+<li>左右节点都有覆盖则返回无覆盖</li>
+<li>左右至少有一个无覆盖则放置摄像头</li>
+<li>左右节点至少有一个摄像头则返回有覆盖</li>
+<li>根节点如果无覆盖则放置摄像头</li>
+</ul>
+<pre class="line-numbers language-highlight go"><span class="comment"><code class="language-highlight go"><span class="comment">/**</span>
+<span class="comment"> * Definition for a binary tree node.</span>
+<span class="comment"> * type TreeNode struct &#123;</span>
+<span class="comment"> *     Val int</span>
+<span class="comment"> *     Left *TreeNode</span>
+<span class="comment"> *     Right *TreeNode</span>
+<span class="comment"> * &#125;</span>
+<span class="comment"> */</span>
+<span class="function"><span class="keyword">func</span> <span class="title">minCameraCover</span><span class="params">(root *TreeNode)</span></span> <span class="type">int</span> &#123;
+    count := <span class="number">0</span>
+    <span class="keyword">var</span> traverse <span class="function"><span class="keyword">func</span> <span class="params">(node *TreeNode)</span></span> <span class="type">int</span>
+    traverse = <span class="function"><span class="keyword">func</span> <span class="params">(node *TreeNode)</span></span> <span class="type">int</span> &#123;
+        <span class="keyword">if</span> node == <span class="literal">nil</span> &#123;
+            <span class="keyword">return</span> <span class="number">2</span>
+        &#125;
+
+        left := traverse(node.Left)
+        right := traverse(node.Right)
+
+        <span class="keyword">if</span> left == <span class="number">2</span> && right == <span class="number">2</span> &#123; <span class="keyword">return</span> <span class="number">0</span> &#125;
+        <span class="keyword">if</span> left == <span class="number">0</span> || right == <span class="number">0</span> &#123; 
+            count++
+            <span class="keyword">return</span> <span class="number">1</span>
+        &#125;
+        <span class="keyword">if</span> left == <span class="number">1</span> || right == <span class="number">1</span> &#123;
+            <span class="keyword">return</span> <span class="number">2</span>
+        &#125;
+        <span class="keyword">return</span> <span class="number">-1</span>
+    &#125;
+
+    <span class="keyword">if</span> traverse(root) == <span class="number">0</span> &#123;
+        count++
+    &#125;
+    <span class="keyword">return</span> count
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<hr>
+</p></div><div class="share"><span>Share</span>&nbsp;<span class="soc"><a href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank" class="fa fa-bookmark"></a></span><span class="soc"><a href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));" class="fa fa-weibo"></a></span><span class="soc"><a target="_blank" rel="noopener" href="http://twitter.com/home?status=https://kleon1024.github.io/cs/algo/greedy/%20KLEON%20算法基础 - 贪心法" class="fa fa-twitter"></a></span></div><div class="pagination"><p class="clearfix"><span class="pre pagbuttons"><a role="navigation" href="/cs/algo/dynamic-programming/" title="算法基础 - 动态规划法"><i class="fa fa-angle-double-left"></i>&nbsp;Previous post: 算法基础 - 动态规划法</a></span><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/ai/ml-system/recommender/2-feature-engineer/" title="机器学习系统 4-2 - 特征工程">Next post: 机器学习系统 4-2 - 特征工程&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://kleon1024.github.io" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>

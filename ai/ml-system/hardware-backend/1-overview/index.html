@@ -1,0 +1,46 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title>机器学习系统 1-1 - 后端硬件初探 · KLEON</title><meta name="description" content="机器学习系统通常使用定制硬件后端执行计算密集型算子。训练模型中包含大量训练专用的反向梯度算子，相比之下推理模型结构更简单，算子集更小。因此定制硬件通常从推理模型入手。
+
+分类
+如果采用异构计算系统的定义，硬件后端可以大致分为：
+
+CPU
+
+对应最通用的计算设备，可以执行所有计算，灵活性最高，计算性能"><meta name="og:description" content="机器学习系统通常使用定制硬件后端执行计算密集型算子。训练模型中包含大量训练专用的反向梯度算子，相比之下推理模型结构更简单，算子集更小。因此定制硬件通常从推理模型入手。
+
+分类
+如果采用异构计算系统的定义，硬件后端可以大致分为：
+
+CPU
+
+对应最通用的计算设备，可以执行所有计算，灵活性最高，计算性能"><meta name="twitter:site" content="KLEON"><meta name="twitter:title" content="机器学习系统 1-1 - 后端硬件初探"><meta name="twitter:card" content="summary"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 6.1.0"><link rel="stylesheet" href="/css/prism.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body><div id="stage" class="container"><div class="row"><div id="side-bar" class="col-sm-3 col-xs-12 side-container invisible"><div class="vertical-text site-title"><h3 tabindex="-1" class="site-title-small"><a href="/" class="a-title">keep moving</a></h3><h1 tabindex="-1" class="site-title-large"><a href="/" class="a-title">自说自话</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div id="site-nav" class="site-title-links"><ul><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li><li><a href="/categories">Categories</a></li><li><a href="/tags">Tags</a></li><li><a href="/googlebe23cb0bc55fc412.html"></a></li><li><a href="/about/index.html"></a></li><li class="soc"><a href="https://github.com/kleon1024" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa fa-github">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://kleon1024.github.io" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div id="main-container" class="col-sm-9 col-xs-12 main-container invisible"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>机器学习系统 1-1 - 后端硬件初探</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-01-12</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/机器学习/" title="机器学习" class="a-tag">机器学习</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/机器学习/" title="机器学习" class="a-tag">机器学习</a><span>&nbsp;</span></span></p><p class="post-abstract"><p>机器学习系统通常使用定制硬件后端执行计算密集型算子。训练模型中包含大量训练专用的反向梯度算子，相比之下推理模型结构更简单，算子集更小。因此定制硬件通常从推理模型入手。</p>
+<span id="more"></span>
+<h1>分类</h1>
+<p>如果采用异构计算系统的定义，硬件后端可以大致分为：</p>
+<ul>
+<li><strong>CPU</strong></li>
+</ul>
+<p>对应最通用的计算设备，可以执行所有计算，灵活性最高，计算性能通常不够高。不过由于CPU的广泛通用性以及较低的成本，使用CPU做推理计算也很常见。</p>
+<p>因此针对不同指令集的CPU也发展出了不同的优化方案，比如Intel加入了AVX512指令支持超宽SIMD指令，但直接加入编译选项对性能提升不明显，需要使用集合了Intel汇编工程师的智慧的MKL-DNN库，针对不同算子精心设计精细到cache-line的操作；Intel随后几代CPU又加入了VNNI指令（INT8支持，实际使用时也有限制）和BF16指令（详细见推理优化）。</p>
+<ul>
+<li><strong>GPGPU<a href="#refer-1"><sup>1</sup></a></strong></li>
+</ul>
+<p>对应计算密集型通用计算设备，可以执行有限的通用计算，取决于设备指令集。市场现状是，NVIDIA几乎垄断服务器级GPGPU供给，成本较高。CUDA软件栈闭源，优化通常只能基于NVIDIA提供的接口。不过也有一些奇技淫巧，通过接口劫持绕过CUDA软件的部分限制，需要一定的逆向工程的能力。</p>
+<p>NVIDIA在模型量化（使用低位宽存储模型参数）上也很激进，INT8，INT4，FP16领先加入硬件。随之也出现过一阵超低精度paper热，使用2bit/1bit存储。如今，量化方案基本成熟，使用FP32训练，使用FP32直接推理，使用FP16/BF16推理精度略有，使用INT8则可能需要重新训练以恢复精度（详细见模型压缩）。</p>
+<ul>
+<li><strong>NPU</strong></li>
+</ul>
+<p>对应最专用的计算设备，通常支持的指令集最小，比如仅支持矩阵乘法，卷积，以及较常用的高频算子，执行效率最高。</p>
+<p>几年前（现在是2020年）FPGA<a href="#refer-2"><sup>2</sup></a>凭借其相比ASIC<a href="#refer-3"><sup>3</sup></a>（专用定制芯片）的灵活可编程能力，一度出圈，成为深度学习硬件加速器的宠儿。不过，如今泡沫退去，一大批ASIC创业公司纷纷倒闭，FPGA自然也退回其最基础的应用场景（原型验证，低频可编程硬件）。</p>
+<p>与此同时，NPU作为芯片的必备模块，已经与ARM整合进入手机CPU。一些大公司财大气粗，内部也在使用自研的特定场景芯片。</p>
+<p>专用硬件突出“专用”二字，这意味着可以将应用场景无限缩窄。可以针对一类模型，甚至一种模型，甚至几种算子，针对性地使用大量专用优化。这样固然可能取得不错的性能，但是硬件开发本身相比软件来说慢得多。芯片的开发周期通常以年计，FPGA开发可能以月计，软件开发通常以周计。相较之下，必须要权衡开发时间、性能、成本以及通用性。</p>
+<p>FPGA在芯片原型阶段的优势明显，如果大规模量产则成本与功耗都远高于ASIC。</p>
+<p>另一方面，随着GPGPU的不断发展，先进工艺节点夹持，性能大幅提高，FPGA早期的低成本性能比的优势不复存在。在泡沫时期可能存在诸多在多项指标中平衡的特定场景硬件，但最终还是互相合并，收敛到几种硬件设计方案。</p>
+<p>不过FPGA作为不错的早期原型平台还是有价值的，前端硬件的设计思路也和芯片设计相通，可以借鉴。</p>
+<hr>
+<ul>
+<li>[1] <span id="refer-1"></span> <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/zh-hans/%E5%9B%BE%E5%BD%A2%E5%A4%84%E7%90%86%E5%99%A8%E9%80%9A%E7%94%A8%E8%AE%A1%E7%AE%97">图形处理器通用计算</a></li>
+<li>[2] <span id="refer-2"></span> <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Field-programmable_gate_array">Field-programmable gate array</a></li>
+<li>[3] <span id="refer-3"></span> <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Application-specific_integrated_circuit">Application-specific integrated circuit</a></li>
+</ul>
+</p></div><div class="share"><span>Share</span>&nbsp;<span class="soc"><a href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank" class="fa fa-bookmark"></a></span><span class="soc"><a href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));" class="fa fa-weibo"></a></span><span class="soc"><a target="_blank" rel="noopener" href="http://twitter.com/home?status=https://kleon1024.github.io/ai/ml-system/hardware-backend/1-overview/%20KLEON%20机器学习系统 1-1 - 后端硬件初探" class="fa fa-twitter"></a></span></div><div class="pagination"><p class="clearfix"><span class="pre pagbuttons"><a role="navigation" href="/ai/ml-system/hardware-backend/2-instruction-set/" title="机器学习系统 1-2 - 后端硬件指令集"><i class="fa fa-angle-double-left"></i>&nbsp;Previous post: 机器学习系统 1-2 - 后端硬件指令集</a></span><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/ai/ml-system/0-overview/" title="机器学习系统 0-0 - 总览">Next post: 机器学习系统 0-0 - 总览&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://kleon1024.github.io" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>

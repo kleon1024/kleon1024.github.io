@@ -1,0 +1,196 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title>算法基础 - 优先队列 · KLEON</title><meta name="description" content="优先队列以比排序更小的代价维护顺序。二叉堆是实现优先队列的一种实现。二叉堆的最简单实现是数组。
+
+基础
+堆的基本操作：
+
+插入
+堆化，Sift Up，Sift Down
+取出最值
+
+使用数组表示的二叉堆的基本性质：
+
+
+每个结点的左孩子为下标i的2倍：left child(i) = i * 2；每个"><meta name="og:description" content="优先队列以比排序更小的代价维护顺序。二叉堆是实现优先队列的一种实现。二叉堆的最简单实现是数组。
+
+基础
+堆的基本操作：
+
+插入
+堆化，Sift Up，Sift Down
+取出最值
+
+使用数组表示的二叉堆的基本性质：
+
+
+每个结点的左孩子为下标i的2倍：left child(i) = i * 2；每个"><meta name="twitter:site" content="KLEON"><meta name="twitter:title" content="算法基础 - 优先队列"><meta name="twitter:card" content="summary"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 6.1.0"><link rel="stylesheet" href="/css/prism.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body><div id="stage" class="container"><div class="row"><div id="side-bar" class="col-sm-3 col-xs-12 side-container invisible"><div class="vertical-text site-title"><h3 tabindex="-1" class="site-title-small"><a href="/" class="a-title">keep moving</a></h3><h1 tabindex="-1" class="site-title-large"><a href="/" class="a-title">自说自话</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div id="site-nav" class="site-title-links"><ul><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li><li><a href="/categories">Categories</a></li><li><a href="/tags">Tags</a></li><li><a href="/googlebe23cb0bc55fc412.html"></a></li><li><a href="/about/index.html"></a></li><li class="soc"><a href="https://github.com/kleon1024" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa fa-github">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://kleon1024.github.io" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div id="main-container" class="col-sm-9 col-xs-12 main-container invisible"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>算法基础 - 优先队列</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-03-12</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/算法/" title="算法" class="a-tag">算法</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/算法/" title="算法" class="a-tag">算法</a><span>&nbsp;</span><a href="/tags/数据结构/" title="数据结构" class="a-tag">数据结构</a><span>&nbsp;</span><a href="/tags/leetcode/" title="leetcode" class="a-tag">leetcode</a><span>&nbsp;</span></span></p><p class="post-abstract"><p>优先队列以比排序更小的代价维护顺序。二叉堆是实现优先队列的一种实现。二叉堆的最简单实现是数组。</p>
+<span id="more"></span>
+<h1>基础</h1>
+<p>堆的基本操作：</p>
+<ul>
+<li>插入</li>
+<li>堆化，Sift Up，Sift Down</li>
+<li>取出最值</li>
+</ul>
+<p>使用数组表示的二叉堆的基本性质：</p>
+<p><img src="/images/priority_queue_heap.svg" alt="二叉堆的数组表示"></p>
+<ul>
+<li>每个结点的左孩子为下标i的2倍：left child(i) = i * 2；每个结点的右孩子为下标i的2倍加1：right child(i) = i * 2 + 1</li>
+<li>每个结点的父亲结点为下标的二分之一：parent(i) = i / 2，注意这里是整数除，2和3除以2都为1，大家可以验证一下</li>
+<li>注意：这里是把下标为0的地方空出来了的，主要是为了方便理解，如果0不空出来只需要在计算的时候把i值往右偏移一个位置就行了（也就是加1）</li>
+</ul>
+<h1>实现</h1>
+<p>Go标准库提供了&quot;container/heap&quot;<a href="#refer-2"><sup>2</sup></a>封装了堆的基本操作。默认最小堆。</p>
+<p>可以自定义struct，并重载method：</p>
+<pre class="line-numbers language-highlight go"><span class="function"><span class="keyword">func</span> <span class="title">Len</span><span class="params">()</span></span> <span class="type"><code class="language-highlight go"><span class="function"><span class="keyword">func</span> <span class="title">Len</span><span class="params">()</span></span> <span class="type">int</span>
+<span class="function"><span class="keyword">func</span> <span class="title">Less</span><span class="params">(i, j <span class="type">int</span>)</span></span> <span class="type">bool</span>
+<span class="function"><span class="keyword">func</span> <span class="title">Swap</span><span class="params">(i, j <span class="type">int</span>)</span></span> <span class="type">bool</span>
+<span class="function"><span class="keyword">func</span> <span class="title">Push</span><span class="params">(x <span class="keyword">interface</span>&#123;&#125;)</span></span>
+<span class="function"><span class="keyword">func</span> <span class="title">Pop</span><span class="params">()</span></span> <span class="keyword">interface</span>&#123;&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>重载Less为Greater逻辑即可获得最大堆。</p>
+<h2 id="Heapify"><a class="header-anchor" href="#Heapify">¶</a>Heapify</h2>
+<h1>实践</h1>
+<h2 id="合并K个升序链表"><a class="header-anchor" href="#合并K个升序链表">¶</a>合并K个升序链表</h2>
+<p><img src="https://img.shields.io/badge/leetcode-23-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/merge-k-sorted-lists/">合并K个升序链表</a></p>
+<p>优先队列合并，先顺序push所有链表最小值，在根据堆顶元素push下个值，时间复杂度O(kn * logk)，空间复杂度O(k)</p>
+<pre class="line-numbers language-highlight go"><span class="keyword"><code class="language-highlight go"><span class="keyword">import</span> (
+    <span class="string">"container/heap"</span>
+    <span class="string">"fmt"</span>
+)
+
+<span class="comment">/**</span>
+<span class="comment"> * Definition for singly-linked list.</span>
+<span class="comment"> * type ListNode struct &#123;</span>
+<span class="comment"> *     Val int</span>
+<span class="comment"> *     Next *ListNode</span>
+<span class="comment"> * &#125;</span>
+<span class="comment"> */</span>
+
+<span class="keyword">type</span> ListNodeHeap []*ListNode
+
+<span class="function"><span class="keyword">func</span> <span class="params">(h ListNodeHeap)</span></span> Len() <span class="type">int</span> &#123; <span class="keyword">return</span> <span class="built_in">len</span>(h) &#125;
+<span class="function"><span class="keyword">func</span> <span class="params">(h ListNodeHeap)</span></span> Less(i, j <span class="type">int</span>) <span class="type">bool</span> &#123;
+    <span class="keyword">return</span> h[i].Val < h[j].Val
+&#125;
+
+<span class="function"><span class="keyword">func</span> <span class="params">(h ListNodeHeap)</span></span> Swap(i, j <span class="type">int</span>) &#123;
+    h[i], h[j] = h[j], h[i]
+&#125;
+
+<span class="function"><span class="keyword">func</span> <span class="params">(h *ListNodeHeap)</span></span> Push(x <span class="keyword">interface</span>&#123;&#125;) &#123;
+    *h = <span class="built_in">append</span>(*h, x.(*ListNode))
+&#125;
+
+<span class="function"><span class="keyword">func</span> <span class="params">(h *ListNodeHeap)</span></span> Pop() <span class="keyword">interface</span>&#123;&#125; &#123;
+    old := *h
+    n := <span class="built_in">len</span>(old)
+    x := old[n - <span class="number">1</span>]
+    *h = old[<span class="number">0</span> : n<span class="number">-1</span>]
+    <span class="keyword">return</span> x
+&#125;
+
+<span class="function"><span class="keyword">func</span> <span class="title">mergeKLists</span><span class="params">(lists []*ListNode)</span></span> *ListNode &#123;
+    <span class="keyword">var</span> q ListNodeHeap
+    <span class="keyword">for</span> _, nodePtr := <span class="keyword">range</span> lists &#123;
+        <span class="keyword">if</span> (nodePtr != <span class="literal">nil</span>) &#123;
+            q = <span class="built_in">append</span>(q, nodePtr)
+        &#125;
+    &#125;
+    heap.Init(&q)
+
+    head := ListNode&#123;&#125;
+    tail := &head
+    <span class="keyword">for</span> <span class="built_in">len</span>(q) > <span class="number">0</span> &#123;
+        nodePtr := heap.Pop(&q).(*ListNode)
+        tail.Next = nodePtr
+        tail = tail.Next
+        <span class="keyword">if</span> nodePtr.Next != <span class="literal">nil</span> &#123;
+            heap.Push(&q, nodePtr.Next)
+        &#125;
+    &#125;
+    <span class="keyword">return</span> head.Next
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>其他方法：</p>
+<ul>
+<li>遍历插入，时间复杂度为O(k<sup>2</sup>n)，空间复杂度为O(1)</li>
+<li>分治合并，时间复杂度为O(kn * logk)，空间复杂度为O(logk)</li>
+</ul>
+<h2 id="数组中的第K个最大元素"><a class="header-anchor" href="#数组中的第K个最大元素">¶</a>数组中的第K个最大元素</h2>
+<p><img src="https://img.shields.io/badge/leetcode-215-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/kth-largest-element-in-an-array/">数组中的第K个最大元素</a></p>
+<p>构建优先队列，并删除k次</p>
+<p>其他方法：</p>
+<ul>
+<li>快排，取n-k个元素</li>
+</ul>
+<pre class="line-numbers language-highlight go"><span class="keyword"><code class="language-highlight go"><span class="keyword">import</span> (
+    <span class="string">"sort"</span>
+)
+
+<span class="keyword">type</span> Array []<span class="type">int</span>
+
+<span class="function"><span class="keyword">func</span> <span class="params">(a Array)</span></span> Len() <span class="type">int</span>           &#123; <span class="keyword">return</span> <span class="built_in">len</span>(a) &#125;
+<span class="function"><span class="keyword">func</span> <span class="params">(a Array)</span></span> Swap(i, j <span class="type">int</span>)      &#123; a[i], a[j] = a[j], a[i] &#125;
+<span class="function"><span class="keyword">func</span> <span class="params">(a Array)</span></span> Less(i, j <span class="type">int</span>) <span class="type">bool</span> &#123; <span class="keyword">return</span> a[i] < a[j] &#125;
+
+<span class="function"><span class="keyword">func</span> <span class="title">findKthLargest</span><span class="params">(nums []<span class="type">int</span>, k <span class="type">int</span>)</span></span> <span class="type">int</span> &#123;
+    array := Array(nums)
+    sort.Sort(array)
+    <span class="keyword">return</span> array[<span class="built_in">len</span>(nums) - k]
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="前K个高频元素"><a class="header-anchor" href="#前K个高频元素">¶</a>前K个高频元素</h2>
+<p><img src="https://img.shields.io/badge/leetcode-347-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/top-k-frequent-elements/">前K个高频元素</a></p>
+<p>map统计，优先队列取前K个值。</p>
+<pre class="line-numbers language-highlight go"><span class="keyword">type</span> Node <span class="keyword"><code class="language-highlight go"><span class="keyword">type</span> Node <span class="keyword">struct</span>&#123;
+    Num <span class="type">int</span>
+    Freq <span class="type">int</span>
+&#125;
+
+<span class="keyword">type</span> IntHeap []*Node
+
+<span class="function"><span class="keyword">func</span> <span class="params">(h IntHeap)</span></span> Len() <span class="type">int</span> &#123; <span class="keyword">return</span> <span class="built_in">len</span>(h) &#125;
+<span class="function"><span class="keyword">func</span> <span class="params">(h IntHeap)</span></span> Less(i, j <span class="type">int</span>) <span class="type">bool</span> &#123;
+    <span class="keyword">return</span> h[i].Freq > h[j].Freq
+&#125;
+
+<span class="function"><span class="keyword">func</span> <span class="params">(h IntHeap)</span></span> Swap(i, j <span class="type">int</span>) &#123;
+    h[i], h[j] = h[j], h[i]
+&#125;
+
+<span class="function"><span class="keyword">func</span> <span class="params">(h *IntHeap)</span></span> Push(x <span class="keyword">interface</span>&#123;&#125;) &#123;
+    *h = <span class="built_in">append</span>(*h, x.(*Node))
+&#125;
+
+<span class="function"><span class="keyword">func</span> <span class="params">(h *IntHeap)</span></span> Pop() <span class="keyword">interface</span>&#123;&#125; &#123;
+    old := *h
+    n := <span class="built_in">len</span>(old)
+    x := old[n - <span class="number">1</span>]
+    *h = old[<span class="number">0</span> : n<span class="number">-1</span>]
+    <span class="keyword">return</span> x
+&#125;
+
+<span class="function"><span class="keyword">func</span> <span class="title">topKFrequent</span><span class="params">(nums []<span class="type">int</span>, k <span class="type">int</span>)</span></span> []<span class="type">int</span> &#123;
+    freqs := <span class="keyword">map</span>[<span class="type">int</span>]<span class="type">int</span>&#123;&#125;
+    <span class="keyword">for</span> _, n := <span class="keyword">range</span> nums &#123;
+        freqs[n]++
+    &#125;
+    <span class="keyword">var</span> q IntHeap
+    heap.Init(&q)
+    <span class="keyword">for</span> num, freq := <span class="keyword">range</span> freqs &#123;
+        <span class="comment">// fmt.Printf("%v, %v\n", num, freq)</span>
+        heap.Push(&q, &Node&#123;
+            num, freq,
+        &#125;)
+    &#125;
+    ret := []<span class="type">int</span>&#123;&#125;
+    <span class="keyword">for</span> i := <span class="number">0</span>; i < k; i++ &#123;
+        ret = <span class="built_in">append</span>(ret, heap.Pop(&q).(*Node).Num)
+    &#125;
+    <span class="keyword">return</span> ret
+&#125;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<hr>
+<ul>
+<li>[1] <span id="refer-1"></span> <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/39615266">数据结构与算法(4)——优先队列和堆 - 知乎</a></li>
+<li>[2] <span id="refer-2"></span> <a target="_blank" rel="noopener" href="https://golang.org/pkg/container/heap/">Package heap</a></li>
+</ul>
+</p></div><div class="share"><span>Share</span>&nbsp;<span class="soc"><a href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank" class="fa fa-bookmark"></a></span><span class="soc"><a href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));" class="fa fa-weibo"></a></span><span class="soc"><a target="_blank" rel="noopener" href="http://twitter.com/home?status=https://kleon1024.github.io/cs/algo/priority-queue/%20KLEON%20算法基础 - 优先队列" class="fa fa-twitter"></a></span></div><div class="pagination"><p class="clearfix"><span class="pre pagbuttons"><a role="navigation" href="/cs/algo/list/" title="算法基础 - 链表"><i class="fa fa-angle-double-left"></i>&nbsp;Previous post: 算法基础 - 链表</a></span><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/ai/ml-system/inference-optimization/1-overview/" title="机器学习系统 2-1 - 推理优化总览">Next post: 机器学习系统 2-1 - 推理优化总览&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://kleon1024.github.io" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>

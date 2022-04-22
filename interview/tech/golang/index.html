@@ -1,0 +1,187 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title>Tech - Golang · KLEON</title><meta name="description" content="Interview questions of golang.
+
+Language basics
+Q: What is Golang?
+A: Go is a high level, general-purpose programming language that is very strongly a"><meta name="og:description" content="Interview questions of golang.
+
+Language basics
+Q: What is Golang?
+A: Go is a high level, general-purpose programming language that is very strongly a"><meta name="twitter:site" content="KLEON"><meta name="twitter:title" content="Tech - Golang"><meta name="twitter:card" content="summary"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 6.1.0"><link rel="stylesheet" href="/css/prism.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body><div id="stage" class="container"><div class="row"><div id="side-bar" class="col-sm-3 col-xs-12 side-container invisible"><div class="vertical-text site-title"><h3 tabindex="-1" class="site-title-small"><a href="/" class="a-title">keep moving</a></h3><h1 tabindex="-1" class="site-title-large"><a href="/" class="a-title">自说自话</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div id="site-nav" class="site-title-links"><ul><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li><li><a href="/categories">Categories</a></li><li><a href="/tags">Tags</a></li><li><a href="/googlebe23cb0bc55fc412.html"></a></li><li><a href="/about/index.html"></a></li><li class="soc"><a href="https://github.com/kleon1024" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa fa-github">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://kleon1024.github.io" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div id="main-container" class="col-sm-9 col-xs-12 main-container invisible"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>Tech - Golang</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2022-04-22</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/interview/" title="interview" class="a-tag">interview</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/interview/" title="interview" class="a-tag">interview</a><span>&nbsp;</span><a href="/tags/tech/" title="tech" class="a-tag">tech</a><span>&nbsp;</span><a href="/tags/golang/" title="golang" class="a-tag">golang</a><span>&nbsp;</span></span></p><p class="post-abstract"><p>Interview questions of golang.</p>
+<span id="more"></span>
+<h1>Language basics</h1>
+<p>Q: What is Golang?<br>
+A: Go is a high level, general-purpose programming language that is very strongly and <strong>statically typed</strong> by providing support for <strong>garbage collection</strong> and <strong>concurrent programming</strong>.<br>
+In Go, the programs are built by using packages that help in managing the dependencies efficiently. It also uses a <strong>compile-link model</strong> for generating executable binaries from the source code. Go is a simple language with elegant and easy to understand syntax structures. It has a built-in collection of powerful standard libraries that helps developers in solving problems without the need for third party packages. Go has <strong>first-class support for Concurrency</strong> having the ability to use multi-core processor architectures to the advantage of the developer and utilize memory efficiently. This helps the applications scale in a simpler way.</p>
+<p>Q: Why should one use Golang? What are the advantages of Golang over other languages?<br>
+A:</p>
+<ul>
+<li><strong>Simple and Understandable</strong>: Go is very simple to learn and understand. There are no unnecessary features included. Every single line of the Go code is very easily readable and thereby easily understandable irrespective of the size of the codebase. Go was developed by keeping simplicity, maintainability and readability in mind.</li>
+<li><strong>Standard Powerful Library</strong>: Go supports all standard libraries and packages that help in writing code easily and efficiently.</li>
+<li><strong>Support for concurrency</strong>: Go provides very good support for concurrency using Go Routines or channels. They take advantage of efficient memory management strategies and multi-core processor architecture for implementing concurrency.</li>
+<li><strong>Static Type Checking</strong>: Go is a very strong and statically typed programming language. Statically typed means every variable has types assigned to it. The data type cannot be changed once created and strongly typed means that there are rules and restrictions while performing type conversion. This ensures that the code is type-safe and all type conversions are handled efficiently. This is done for reducing the chances of errors at runtime.</li>
+<li><strong>Easy to install Binaries</strong>: Go provides support for generating binaries for the applications with all required dependencies. These binaries help to install tools or applications written in Go very easily without the need for a Go compiler or package managers or runtimes.</li>
+<li><strong>Good Testing Support</strong>: Go has good support for writing unit test cases along with our code. There are libraries that support checking code coverage and generating code documentation.</li>
+</ul>
+<p>Q: What are the cons/defects/disadvantages of Golang?<br>
+A:</p>
+<ul>
+<li>Lack of Function Overloading and Default Values for Arguments. A lots of code.</li>
+<li>Lack of Generics. A lots of duplicated code.</li>
+<li>Error Handling. Lack of exception.</li>
+<li>Absence of manual memory management. GC is not suit for some time-sensitive application.</li>
+<li>Runtime safety is not that good. Golang only provides compiled-time safety rather than runtime-safety.</li>
+</ul>
+<p>Q: What are Golang packages?<br>
+A: Go Packages (in short pkg) are nothing but directories in the Go workspace that contains Go source files or other Go packages themselves. Every single piece of code starting from variables to functions are written in the source files are in turn stored in a linked package. Every source file should belong to a package.<br>
+From the image below, we can see that a Go Package is represented as a box where we can store multiple Go source files of the .go extension. We can also store Go packages as well within a package.</p>
+<p>Q: What are Golang pointers?<br>
+A: Go Pointers are those variables that hold the address of any variables. Due to this, they are called special variables. Pointers support two operators:</p>
+<ul>
+<li><code>*</code> operator: This operator is called a dereferencing operator and is used for accessing the value in the address stored by the pointer.</li>
+<li><code>&amp;</code> operator: This operator is called the address operator and is used for returning the address of the variable stored in the pointer.<br>
+Pointers are used for the following purposes:</li>
+<li>Allowing function to directly mutate value passed to it. That is achieving pass by reference functionality.</li>
+<li>For increasing the performance in the edge cases in the presence of a large data structure. Using pointers help to copy large data efficiently.</li>
+<li>Helps in signifying the lack of values. For instance, while unmarshalling JSON data into a struct, it is useful to know if the key is present or absent then the key is present with 0 value.</li>
+</ul>
+<p>Q: What do you understand by Golang string literals?<br>
+A: String literals are those variables storing string constants that can be a single character or that can be obtained as a result of the concatenation of a sequence of characters. Go provides two types of string literals. They are:</p>
+<ul>
+<li>Raw string literals: Here, the values are uninterrupted character sequences between backquotes.</li>
+<li>Interpreted string literals: Here, the character sequences are enclosed in double quotes. The value may or may not have new lines. For example:</li>
+</ul>
+<p>Q: What do you understand by the scope of variables in Go?<br>
+A: The variable scope is defined as the part of the program where the variable can be accessed. Every variable is statically scoped (meaning a variable scope can be identified at compile time) in Go which means that the scope is declared at the time of compilation itself. There are two scopes in Go, they are:</p>
+<ul>
+<li>Local variables - These are declared inside a function or a block and is accessible only within these entities.</li>
+<li>Global variables - These are declared outside function or block and is accessible by the whole source file.</li>
+</ul>
+<p>Q: What do you understand by goroutine in Golang?<br>
+A goroutine is nothing but a function in Golang that usually runs concurrently or parallelly with other functions. They can be imagined as a lightweight thread that has independent execution and can run concurrently with other routines. Goroutines are entirely managed by Go Runtime. Goroutines help Golang achieve concurrency.</p>
+<ul>
+<li>In Golang, the main function of the main package is considered the main goroutine. It is the starting point of all other goroutines. These goroutines have the power to start their goroutines. Once the execution of the main goroutine is complete, it means that the program has been completed.</li>
+<li>We can start a goroutine by just specifying the go keyword before the method call. The method will now be called and run as a goroutine.</li>
+</ul>
+<p>Q: Is it possible to declare variables of different types in a single line of code in Golang?<br>
+A:</p>
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">var a,b,c= 9, 7.1, "interviewbit"<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>Q: What is “slice” in Go?<br>
+A: Slice in Go is a lightweight data structure of variable length sequence for storing homogeneous data. It is more convenient, powerful and flexible than an array in Go. Slice has 3 components:</p>
+<ul>
+<li>Pointer: This is used for pointing to the first element of the array accessible via slice. The element doesn’t need to be the first element of the array.</li>
+<li>Length: This is used for representing the total elements count present in the slice.</li>
+<li>Capacity: This represents the capacity up to which the slice can expand.</li>
+</ul>
+<p>Q: What are Go Interfaces?<br>
+A: Go interfaces are those that have a defined set of method signatures. It is a custom type who can take values that has these methods implementation.  The interfaces are abstract which is why we cannot create its instance. But we can create a variable of type interface and that variable can then be assigned to a concrete value that has methods required by the interface. Due to these reasons, an interface can act as two things:</p>
+<ul>
+<li>Collection of method signatures</li>
+<li>Custom types</li>
+</ul>
+<p>Q: Why is Golang fast compared to other languages?<br>
+A: Golang is faster than other programming languages because of its simple and efficient memory management and concurrency model. The compilation process to machine code is very fast and efficient. Additionally, the dependencies are linked to a single binary file thereby putting off dependencies on servers.</p>
+<p>Q: What are Go channels and how are channels used in Golang?<br>
+A: Go channel is a medium using which goroutines communicate data values with each other. It is a technique that allows data transfer to other goroutines. A channel can transfer data of the same type. The data transfer in the channel is bidirectional meaning the goroutines can use the same channel for sending or receiving the data.</p>
+<p>Q: What do you understand by Type Assertion in Go?<br>
+A: The type assertion takes the interface value and retrieves the value of the specified explicit data type. The syntax of Type Assertion is:</p>
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">t := i.(T)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>Here, the statement asserts that the interface value i has the concrete type T and assigns the value of type T to the variable t. In case i does not have concrete type T, then the statement will result in panic.<br>
+For testing, if an interface has the concrete type, we can do it by making use of two values returned by type assertion. One value is the underlying value and the other is a bool value that tells if the assertion is completed or not. The syntax would be:</p>
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">t, isSuccess := i.(T)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>Here, if the interface value i have T, then the underlying value will be assigned to t and the value of isSuccess becomes true. Else, the isSuccess statement would be false and the value of t would have the zero value corresponding to type T. This ensures there is no panic if the assertion fails.</p>
+<p>Q: How will you check the type of a variable at runtime in Go?<br>
+A: In Go, we can use a special type of switch for checking the variable type at runtime. This switch statement is called a “type switch”.</p>
+<p>Consider the following piece of code where we are checking for the type of variable v and performing some set of operations.</p>
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">switch v := param.(type) &#123; 
+default:
+    fmt.Printf("Unexpected type %T", v)
+case uint64:
+    fmt.Println("Integer type")
+case string:
+    fmt.Println("String type")
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>In the above code, we are checking for the type of variable v, if the type of variable is uint64, then the code prints “Integer type”. If the type of variable is a string, the code prints “String type”. If the type doesn’t match, the default block is executed and it runs the statements in the default block.</p>
+<h1>Code Reading</h1>
+<p>Q: What do you understand by each of the functions demo_func() as shown in the below code?</p>
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">//DemoStruct definition
+type DemoStruct struct &#123;
+    Val int
+&#125;
+//A.
+func demo_func() DemoStruct &#123;
+    return DemoStruct&#123;Val: 1&#125;
+&#125;
+//B.
+func demo_func() *DemoStruct &#123;
+    return &DemoStruct&#123;&#125;
+&#125;
+//C.
+func demo_func(s *DemoStruct) &#123;
+    s.Val = 1
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>A:<br>
+A. Since the function has a return type of the struct, the function returns a copy of the struct by setting the value as 1.<br>
+B. Since the function returns *DemoStruct, which is a pointer to the struct, it returns a pointer to the struct value created within the function.<br>
+C. Since the function expects the existing struct object as a parameter and in the function, we are setting the value of its attribute, at the end of execution the value of Val variable of the struct object is set to 1.</p>
+<h1>Dive into the deep</h1>
+<p>Q: Why is Golang so fast?<br>
+A:</p>
+<ul>
+<li>Because Go is statically typed and compiled to <strong>machine code</strong>, it will naturally outperform languages that are interpreted or have virtual runtimes.</li>
+<li>Efficient memory management<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup><sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>. The golang runtime manages memories in a hierarchical structure. It allocates a large piece of memory at a time to avoid the overhead and the fragmentation of memory allocation. The core idea of TCMalloc (thread cache malloc) is to divide the memory into multiple levels to reduce the granularity of the lock. Inside TCMalloc Memory management is divided into two parts: <strong>thread memory</strong> and <strong>page heap</strong>.
+<ul>
+<li><strong>thread memory</strong> Each memory page divided into — Free List of multiple fixed allocatable size-classes, which helps in reducing fragmentation. So each thread will have a cache for small objects without locks, which makes it very efficient to allocate small objects (&lt;=32k) under parallel programs.</li>
+<li><strong>page heap</strong> The heap managed by TCMalloc consists of a collection of pages, where a set of consecutive pages can be represented by span. When allocated Object is larger than 32K, Pages Heap is used for allocation.<br>
+When there is not enough memory to allocate small objects, go to page heap for memory. If there is not enough, page heap will ask more memory from the Operating System.<br>
+As such an allocation model maintains a user-spaced memory pool, it greatly improves the efficiency of memory allocation and release.</li>
+</ul>
+</li>
+<li>Efficient concurrency model<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup><sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>. The Golang runtime manages all goroutines, which avoids the context switch overhead than the thread or the process.
+<ul>
+<li><strong>Concurrency</strong>. Go implements a variant of the <strong>CSP model</strong>, in which channels are the preferred method for two Goroutines (a user space thread-like, with a few kilobytes in its stack) to share data. This approach is actually the opposite of that frequently used with other languages like Ruby or Python—a global shared data structure, with synchronization primitives for exclusive access (semaphores, locks, queues, etc.). Keeping these global data structures consistent across all units involves a lot of overhead.<br>
+By following the CSP model, Go makes it possible to have concurrent constructions as primitives of the language. By default, Go knows how to deal with multiple tasks at once, and knows how to pass data between them. This, of course, translates to low latency with intercommunicating Goroutines. In Go, in the context of multithreading, you don’t write data to common storage. You create Goroutines to share data via channels. And because there is no need for exclusive access to global data structures, you gain speed.<br>
+It is important to note that you can also use mutex (or lock) mechanisms in Go, but that isn’t the default approach for a concurrent program.</li>
+<li><strong>Threading model</strong>. Go operates under an <strong>M:N threading model</strong>. In an M:N model, there are units of work under the user space (the Goroutines or G in the scheduler lexicon) which are scheduled to be run by the language runtime on OS threads (or M in the scheduler lexicon) on machine processors (or P in the scheduler lexicon). A Goroutine is defined as a lightweight thread managed by the Go runtime. Different Goroutines (G) can be executed on different OS threads (M), but at any given time, only one OS thread can be run on a CPU §. In the user space, you achieve concurrency as the Goroutines work cooperatively. In the presence of a blocking operation (network, I/O or system call), another Goroutine can be assigned to the OS thread.<br>
+Once the blocking call ends, the runtime will try to reassign the previous Goroutine to an available OS thread. It’s possible to achieve parallelism here, because once the Goroutines are assigned to an OS thread, the OS can decide to distribute its threads’ execution through its multiple cores.<br>
+By having multiple Goroutines assigned to OS threads—thus being run cooperatively (or in parallel if two OS threads are run simultaneously on different cores)—you get an efficient use of your machine’s CPUs, because all cores will be available for running your program’s functions.</li>
+<li><strong>Goroutines</strong>. Goroutines live within the user thread space. In comparison to OS threads, their operations cost less: The overhead for assigning them, suspending them, and resuming them is lower than the overhead required by OS threads. Goroutines and channels are two of the most important primitives Go offers for concurrency. One important aspect of Goroutines is that expressing them in terms of code is fairly easy. You simply put the keyword go before the function you want to schedule to be run outside of the main thread.<br>
+But how do Goroutines help make Go more performant? The minimal stack required for a Goroutine to exist is 2 KB. Goroutines can increase their stack on runtime if they see the need for more space, but overall, they are memory-friendly. This means their management overhead is minimal. In other words, you can have more working units being processed with a decent quantity of memory, and that translates into efficiency and speed.</li>
+<li><strong>Task Scheduling</strong>. Go comes with its own runtime scheduler. The language does not rely on the native OS thread/process scheduler, but it cooperates with it. Because the scheduler is an independent component, it has the flexibility for implementing optimizations. All these optimizations aim for one thing: to avoid too much preemption of the OS Goroutines, which would result in suspending and resuming the functions’ execution, an expensive operation.<br>
+Next, we are going to highlight some specific optimizations done by the scheduler in order to avoid preemption.</li>
+<li><strong>Work Stealing</strong>. Generally, there are two ways to distribute workloads across CPUs. The first one is work sharing, in which busy processors send threads to other, less busy processors with the hope they will be taken and executed. The second method is work stealing, in which an idle processor is constantly looking to steal other processor threads. Go uses work stealing.<br>
+How does the work stealing approach help make Go faster? The migration of threads between processors is expensive, as it involves context switch operations. Under the stealing paradigm, this phenomenon occurs less frequently, resulting in less overhead.</li>
+<li><strong>Spinning Threads</strong>. The scheduler also implements a particular strategy called spinning threads, which tries to fairly distribute as many OS threads across processors as possible. Go runtime not only reduces the frequency of thread migrations between processors, it is also capable of moving an OS thread with no work assigned to another processor. This can balance CPU usage and power.<br>
+When you have all CPUs working with fairly distributed workloads, you are avoiding resource underutilization, which, again, translates to resource efficiency and speed.</li>
+<li><strong>System Calls</strong>. What strategy does the Go scheduler follow for handling system calls? It turns out that it also helps reduce overhead overall. Let’s see how.<br>
+For system calls expected to be slow, the scheduler applies a pessimistic approach. It makes the OS thread release the processor in which it’s been running, just before the system call. Then, after the system call ends, the scheduler tries to reacquire the processor if it’s available. Otherwise, it’s enqueued by the scheduler until it finds a new available processor. The inconvenience of this approach is the overhead required for dropping and reacquiring a processor.<br>
+However, the scheduler uses a second approach for system calls that are known to be fast—an optimistic approach. With this approach, the OS thread running the Goroutine with the system call does not release the processor, but it flags it.<br>
+Then, after a few microseconds (20 to be precise), another independent special Goroutine (the sysmon Goroutine) checks for all flagged processors. If they are still running the heavy Goroutine that involves the system call, the scheduler takes their processors away, so they’re suspended. If the stolen processor is still available once the system call ends, the Goroutine can continue executing. Otherwise, it will need to be scheduled for execution again (until a processor becomes available).</li>
+</ul>
+</li>
+</ul>
+<p>Q: Describe Golang’s CSP Model?<br>
+A:</p>
+<p>Q: Describe the process of the garbage collection of Golang.<br>
+A:</p>
+<p>Q: What’s the data structure of <code>map</code>?<br>
+A: A linked hash table.</p>
+<p>Q: How is <code>channel</code> implemented <sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup>?<br>
+A:</p>
+<hr>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://medium.com/@ankur_anand/a-visual-guide-to-golang-memory-allocator-from-ground-up-e132258453ed">A visual guide to Go Memory Allocator from scratch (Golang)</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/76802887">详解Go语言的内存模型及堆的分配管理</a> <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://granulate.io/deep-dive-into-golang-performance/">Deep Dive into Golang Performance</a> <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn4" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://huweicai.com/process-thread-goroutine/">进程线程协程的本质区别</a> <a href="#fnref4" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn5" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://i6448038.github.io/2019/04/11/go-channel/">图解Go的channel底层实现</a> <a href="#fnref5" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+</p></div><div class="share"><span>Share</span>&nbsp;<span class="soc"><a href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank" class="fa fa-bookmark"></a></span><span class="soc"><a href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));" class="fa fa-weibo"></a></span><span class="soc"><a target="_blank" rel="noopener" href="http://twitter.com/home?status=https://kleon1024.github.io/interview/tech/golang/%20KLEON%20Tech - Golang" class="fa fa-twitter"></a></span></div><div class="pagination"><p class="clearfix"><span class="pre pagbuttons"><a role="navigation" href="/interview/tech/outline/" title="Tech - Outline"><i class="fa fa-angle-double-left"></i>&nbsp;Previous post: Tech - Outline</a></span><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/interview/algo/outline/" title="Algorithm Outline">Next post: Algorithm Outline&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://kleon1024.github.io" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>

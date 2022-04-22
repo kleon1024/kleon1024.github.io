@@ -1,0 +1,81 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title>机器学习系统 4-2 - 特征工程 · KLEON</title><meta name="description" content="特征工程是利用数据的特定领域知识构建特征使算法达到最高性能的过程。
+
+过程
+特征工程通常包含特征提取、特征选择、特征构建等三个子过程。
+¶特征提取
+自动构建新特征，将原始特征转换为一组具有明显物理意义或统计意义的特征。比如PCA，ICA，LDA等，推荐系统中常用特征构建。
+¶特征构建
+特征构建是指从"><meta name="og:description" content="特征工程是利用数据的特定领域知识构建特征使算法达到最高性能的过程。
+
+过程
+特征工程通常包含特征提取、特征选择、特征构建等三个子过程。
+¶特征提取
+自动构建新特征，将原始特征转换为一组具有明显物理意义或统计意义的特征。比如PCA，ICA，LDA等，推荐系统中常用特征构建。
+¶特征构建
+特征构建是指从"><meta name="twitter:site" content="KLEON"><meta name="twitter:title" content="机器学习系统 4-2 - 特征工程"><meta name="twitter:card" content="summary"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 6.1.0"><link rel="stylesheet" href="/css/prism.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body><div id="stage" class="container"><div class="row"><div id="side-bar" class="col-sm-3 col-xs-12 side-container invisible"><div class="vertical-text site-title"><h3 tabindex="-1" class="site-title-small"><a href="/" class="a-title">keep moving</a></h3><h1 tabindex="-1" class="site-title-large"><a href="/" class="a-title">自说自话</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div id="site-nav" class="site-title-links"><ul><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li><li><a href="/categories">Categories</a></li><li><a href="/tags">Tags</a></li><li><a href="/googlebe23cb0bc55fc412.html"></a></li><li><a href="/about/index.html"></a></li><li class="soc"><a href="https://github.com/kleon1024" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa fa-github">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://kleon1024.github.io" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div id="main-container" class="col-sm-9 col-xs-12 main-container invisible"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>机器学习系统 4-2 - 特征工程</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-04-25</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/机器学习/" title="机器学习" class="a-tag">机器学习</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/机器学习/" title="机器学习" class="a-tag">机器学习</a><span>&nbsp;</span><a href="/tags/推荐系统/" title="推荐系统" class="a-tag">推荐系统</a><span>&nbsp;</span></span></p><p class="post-abstract"><p>特征工程是利用数据的特定领域知识构建特征使算法达到最高性能的过程。</p>
+<span id="more"></span>
+<h1>过程</h1>
+<p>特征工程通常包含特征提取、特征选择、特征构建等三个子过程。</p>
+<h2 id="特征提取"><a class="header-anchor" href="#特征提取">¶</a>特征提取</h2>
+<p>自动构建新特征，将原始特征转换为一组具有明显物理意义或统计意义的特征。比如PCA，ICA，LDA等，推荐系统中常用特征构建。</p>
+<h2 id="特征构建"><a class="header-anchor" href="#特征构建">¶</a>特征构建</h2>
+<p>特征构建是指从原始数据中人工地构造新的特征，需要对结合使用场景和数据样本分析构建。</p>
+<h2 id="特征选择"><a class="header-anchor" href="#特征选择">¶</a>特征选择</h2>
+<p>特征选择的目的是从特征集合中选一组最具统计意义的特征子集，从而达到降维的效果。常用的方法包括：filter、wrapper、embedded。</p>
+<ul>
+<li>Filter法使用一些评价指标计算单个特征和类别变量之间的关系，如Pearson相关系数，Gini-Index（基尼系数），IG（信息增益）等，选择某个子集作为特征子集（比如从高到低排名的前10%)，使用子集的特征训练，评估模型性能，或者绘制子集和精度的相关图，寻找性能最好的一组特征。优点是计算高效，对过拟合有较高的鲁棒性。缺点是倾向于选择冗余的特征，不考虑特征间的相关性。</li>
+<li>Wrapper本质上是分类器，使用选取的特征子集对样本集分类，分类精度作为特征子集优劣的衡量标准，常用的有逐步回归（Stepwise Regression）、向前选择（Forward Selection）和向后选择（Backward Selection）。优点是考虑了特征间的相关性，缺点是数据较少时容易过拟合，特征较多时计算时间长。</li>
+<li>Embedded是自主选择特征，如使用Regularization做特征选择，或者用决策树思想，比如Random Forest和Gradient Boosting。</li>
+</ul>
+<h1>构建</h1>
+<h2 id="类型"><a class="header-anchor" href="#类型">¶</a>类型</h2>
+<h3 id="数值特征（Numerial）"><a class="header-anchor" href="#数值特征（Numerial）">¶</a>数值特征（Numerial）</h3>
+<ul>
+<li>标准化与归一化。归一化将数据按比例缩放，使得不同单位/量级的特征间具有可比性。</li>
+</ul>
+<p>归一的常用方法：</p>
+<ol>
+<li>线性函数归一化，$$X_{max}$$、$$X_{min}$$分别为数据的最大值和最小值，映射到[0, 1]。</li>
+</ol>
+<p>$$X_{norm} = \frac{X-X_{min}}{X_{max}-X_{min}}$$</p>
+<ol start="2">
+<li>零均值归一化，假设原始数据均值为$$\mu$$，标准差为$$\sigma$$，映射到均值为0，标准差为1的分布上。</li>
+</ol>
+<p>$$z=\frac{x-\mu}{\sigma}$$</p>
+<ul>
+<li>分桶后onehot。</li>
+</ul>
+<p>等距分桶、等频分桶。</p>
+<ul>
+<li>缺失值处理。使用均值、中位数、众数代替，也可以直接忽略，将缺失当作一种信息编码。</li>
+<li>GBDT模型。LightBGM、XGBoost。</li>
+</ul>
+<h3 id="类别特征（Categorical）"><a class="header-anchor" href="#类别特征（Categorical）">¶</a>类别特征（Categorical）</h3>
+<ul>
+<li>One-Hot Encoding。通常用于处理类别间不具有大小关系的特征。当类别数量较多时，特征空间会非常大。</li>
+<li>Hash Encoding。将原始高维向量压缩成低维向量，且尽量不损失原始特征的表达能力。</li>
+<li>Ordinal Encoding。序号编码通常用于处理类别间具有大小关系的数据。</li>
+<li>Binary Encoding。用二进制编码，比One-Hot少很多，本质上属于Hash。</li>
+</ul>
+<h3 id="Embdedding特征"><a class="header-anchor" href="#Embdedding特征">¶</a>Embdedding特征</h3>
+<h3 id="Context特征"><a class="header-anchor" href="#Context特征">¶</a>Context特征</h3>
+<p>用户授权的前提下拿到的客户端带的信息，比如请求时间，手机品牌，型号，操作系统，网络状态，用户渠道等。</p>
+<h3 id="Session行为特征"><a class="header-anchor" href="#Session行为特征">¶</a>Session行为特征</h3>
+<p>基于用户行为流水，常见划分方法包括：</p>
+<ul>
+<li>固定行为数窗口，如最近100条行为中的行为统计。</li>
+<li>固定时间窗口，如1/3/7/15天内的有过正向行为的item id或同级量。</li>
+<li>连续行为窗口，如从打开到关闭App期间的互动行为。</li>
+</ul>
+<h2 id="组合"><a class="header-anchor" href="#组合">¶</a>组合</h2>
+<p>为了提高复杂关系的拟合能力，在特征工程中经常会把一阶离散特征两两组合，构成高阶组合特征。</p>
+<p>当两个特征的数量较多时，可以矩阵分解为k维的低维向量表示。</p>
+<p>$$Y=sigmoid(\sum_{i}\sum_{j}w_{ij}&lt;x_{i}, x_{j}&gt;)$$</p>
+<p>可以通过梯度提升决策树（GBDT）寻找有效的特征组合，该方法的思想是每次都在之前构建的决策树的残差上构建下一棵决策树。</p>
+<h1>典型</h1>
+<h2 id="商品推荐"><a class="header-anchor" href="#商品推荐">¶</a>商品推荐</h2>
+<h2 id="游戏推荐"><a class="header-anchor" href="#游戏推荐">¶</a>游戏推荐</h2>
+<h2 id="视频推荐"><a class="header-anchor" href="#视频推荐">¶</a>视频推荐</h2>
+<h2 id="新闻推荐"><a class="header-anchor" href="#新闻推荐">¶</a>新闻推荐</h2>
+</p></div><div class="share"><span>Share</span>&nbsp;<span class="soc"><a href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank" class="fa fa-bookmark"></a></span><span class="soc"><a href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));" class="fa fa-weibo"></a></span><span class="soc"><a target="_blank" rel="noopener" href="http://twitter.com/home?status=https://kleon1024.github.io/ai/ml-system/recommender/2-feature-engineer/%20KLEON%20机器学习系统 4-2 - 特征工程" class="fa fa-twitter"></a></span></div><div class="pagination"><p class="clearfix"><span class="pre pagbuttons"><a role="navigation" href="/cs/algo/greedy/" title="算法基础 - 贪心法"><i class="fa fa-angle-double-left"></i>&nbsp;Previous post: 算法基础 - 贪心法</a></span><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/ai/ml-system/recommender/3-feature-embedding/" title="机器学习系统 4-3 - 特征嵌入(Embedding)">Next post: 机器学习系统 4-3 - 特征嵌入(Embedding)&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://kleon1024.github.io" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>
