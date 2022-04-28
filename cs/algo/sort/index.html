@@ -11,81 +11,81 @@ if p &lt; r
 // QUICKSORT
 if p &lt; r
    then"><meta name="twitter:site" content="KLEON"><meta name="twitter:title" content="算法基础 - 排序"><meta name="twitter:card" content="summary"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 6.1.0"><link rel="stylesheet" href="/css/prism.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body><div id="stage" class="container"><div class="row"><div id="side-bar" class="col-sm-3 col-xs-12 side-container invisible"><div class="vertical-text site-title"><h3 tabindex="-1" class="site-title-small"><a href="/" class="a-title">keep moving</a></h3><h1 tabindex="-1" class="site-title-large"><a href="/" class="a-title">自说自话</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div id="site-nav" class="site-title-links"><ul><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li><li><a href="/categories">Categories</a></li><li><a href="/tags">Tags</a></li><li><a href="/googlebe23cb0bc55fc412.html"></a></li><li><a href="/about/index.html"></a></li><li class="soc"><a href="https://github.com/kleon1024" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa fa-github">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div id="main-container" class="col-sm-9 col-xs-12 main-container invisible"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>算法基础 - 排序</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-03-12</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/算法/" title="算法" class="a-tag">算法</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/算法/" title="算法" class="a-tag">算法</a><span>&nbsp;</span><a href="/tags/数据结构/" title="数据结构" class="a-tag">数据结构</a><span>&nbsp;</span><a href="/tags/leetcode/" title="leetcode" class="a-tag">leetcode</a><span>&nbsp;</span></span></p><p class="post-abstract"><p>排序是最常用的操作。</p>
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body><div id="stage" class="container"><div class="row"><div id="side-bar" class="col-sm-3 col-xs-12 side-container invisible"><div class="vertical-text site-title"><h3 tabindex="-1" class="site-title-small"><a href="/" class="a-title"></a></h3><h1 tabindex="-1" class="site-title-large"><a href="/" class="a-title">自说自话</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div id="site-nav" class="site-title-links"><ul><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li><li><a href="/categories">Categories</a></li><li><a href="/tags">Tags</a></li><li><a href="/googlebe23cb0bc55fc412.html"></a></li><li><a href="/about/index.html"></a></li><li class="soc"><a href="https://github.com/kleon1024" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa fa-github">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div id="main-container" class="col-sm-9 col-xs-12 main-container invisible"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>算法基础 - 排序</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-03-12</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/算法/" title="算法" class="a-tag">算法</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/算法/" title="算法" class="a-tag">算法</a><span>&nbsp;</span><a href="/tags/数据结构/" title="数据结构" class="a-tag">数据结构</a><span>&nbsp;</span><a href="/tags/leetcode/" title="leetcode" class="a-tag">leetcode</a><span>&nbsp;</span></span></p><p class="post-abstract"><p>排序是最常用的操作。</p>
 <span id="more"></span>
 <h1>快速排序</h1>
 <p>快排(QUICK-SORT)基于分治思想，核心是对子数组partition，partition挑选一个参考基准(主元，通常为第一个或最后一个元素)，以主元为分界将数据分为两份，子数组递归partition。</p>
-<pre class="line-numbers language-highlight go"><span class="comment"><code class="language-highlight go"><span class="comment">// QUICKSORT</span>
-<span class="keyword">if</span> p < r
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">// QUICKSORT
+if p < r
    then q ← PARTITION(A, p, r)
-        QUICKSORT(A, p, q - <span class="number">1</span>)
-        QUICKSORT(A, q + <span class="number">1</span>, r)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-highlight go"><span class="comment"><code class="language-highlight go"><span class="comment">// PARTITION</span>
+        QUICKSORT(A, p, q - 1)
+        QUICKSORT(A, q + 1, r)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">// PARTITION
 x ← A[r]
-i ← p - <span class="number">1</span>
-<span class="keyword">for</span> j ← p to r - <span class="number">1</span>
-     do <span class="keyword">if</span> A[j] ≤ x
-           then i ← i + <span class="number">1</span>
+i ← p - 1
+for j ← p to r - 1
+     do if A[j] ≤ x
+           then i ← i + 1
                 exchange A[i] <-> A[j]
-exchange A[i + <span class="number">1</span>] <-> A[r]
-<span class="keyword">return</span> i + <span class="number">1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-highlight go"><span class="comment"><code class="language-highlight go"><span class="comment">// GoLang</span>
-<span class="function"><span class="keyword">func</span> <span class="title">partition</span><span class="params">(a []<span class="type">int</span>, lo, hi <span class="type">int</span>)</span></span> <span class="type">int</span> &#123;
+exchange A[i + 1] <-> A[r]
+return i + 1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">// GoLang
+func partition(a []int, lo, hi int) int &#123;
 	pivot := a[hi]
-	i := lo - <span class="number">1</span>
-	<span class="keyword">for</span> j := lo; j < hi; j++ &#123;
-		<span class="keyword">if</span> a[j] < pivot &#123;
+	i := lo - 1
+	for j := lo; j < hi; j++ &#123;
+		if a[j] < pivot &#123;
 			i++
 			a[j], a[i] = a[i], a[j]
 		&#125;
 	&#125;
-	a[i+<span class="number">1</span>], a[hi] = a[hi], a[i+<span class="number">1</span>]
-	<span class="keyword">return</span> i + <span class="number">1</span>
+	a[i+1], a[hi] = a[hi], a[i+1]
+	return i + 1
 &#125;
 
-<span class="function"><span class="keyword">func</span> <span class="title">quickSort</span><span class="params">(a []<span class="type">int</span>, lo, hi <span class="type">int</span>)</span></span> &#123;
-	<span class="keyword">if</span> lo >= hi &#123;
-		<span class="keyword">return</span>
+func quickSort(a []int, lo, hi int) &#123;
+	if lo >= hi &#123;
+		return
 	&#125;
 	p := partition(a, lo, hi)
-	quickSort(a, lo, p<span class="number">-1</span>)
-	quickSort(a, p+<span class="number">1</span>, hi)
+	quickSort(a, lo, p-1)
+	quickSort(a, p+1, hi)
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-highlight c++"><span class="keyword">class</span> <span class="title class_"><code class="language-highlight c++"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;
-<span class="keyword">public</span>:
-    <span class="comment">/**</span>
-<span class="comment">     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可</span>
-<span class="comment">     * 将给定数组排序</span>
-<span class="comment">     * @param arr int整型vector 待排序的数组</span>
-<span class="comment">     * @return int整型vector</span>
-<span class="comment">     */</span>
-    <span class="function">vector<<span class="type">int</span>> <span class="title">MySort</span><span class="params">(vector<<span class="type">int</span>>& arr)</span> </span>&#123;
-        <span class="built_in">quickSort</span>(arr, <span class="number">0</span>, arr.<span class="built_in">size</span>() - <span class="number">1</span>);
-        <span class="keyword">return</span> arr;
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">class Solution &#123;
+public:
+    /**
+     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+     * 将给定数组排序
+     * @param arr int整型vector 待排序的数组
+     * @return int整型vector
+     */
+    vector<int> MySort(vector<int>& arr) &#123;
+        quickSort(arr, 0, arr.size() - 1);
+        return arr;
     &#125;
     
-    <span class="function"><span class="type">void</span> <span class="title">quickSort</span><span class="params">(vector<<span class="type">int</span>>& arr, <span class="type">int</span> lo, <span class="type">int</span> hi)</span> </span>&#123;
-        <span class="keyword">if</span> (lo >= hi) <span class="keyword">return</span>;
-        <span class="type">int</span> p = <span class="built_in">partition</span>(arr, lo, hi);
-        <span class="built_in">quickSort</span>(arr, lo, p - <span class="number">1</span>);
-        <span class="built_in">quickSort</span>(arr, p + <span class="number">1</span>, hi);
+    void quickSort(vector<int>& arr, int lo, int hi) &#123;
+        if (lo >= hi) return;
+        int p = partition(arr, lo, hi);
+        quickSort(arr, lo, p - 1);
+        quickSort(arr, p + 1, hi);
     &#125;
     
-    <span class="function"><span class="type">int</span> <span class="title">partition</span><span class="params">(vector<<span class="type">int</span>>& arr, <span class="type">int</span> lo, <span class="type">int</span> hi)</span> </span>&#123;
-        <span class="type">int</span> pivot = arr[hi];
-        <span class="type">int</span> i = lo - <span class="number">1</span>;
-        <span class="keyword">for</span> (<span class="type">int</span> j = lo; j < hi; j++) &#123;
-            <span class="keyword">if</span> (arr[j] < pivot) &#123;
+    int partition(vector<int>& arr, int lo, int hi) &#123;
+        int pivot = arr[hi];
+        int i = lo - 1;
+        for (int j = lo; j < hi; j++) &#123;
+            if (arr[j] < pivot) &#123;
                 i++;
-                <span class="built_in">swap</span>(arr, i, j);
+                swap(arr, i, j);
             &#125;
         &#125;
-        <span class="built_in">swap</span>(arr, i + <span class="number">1</span>, hi);
-        <span class="keyword">return</span> i + <span class="number">1</span>;
+        swap(arr, i + 1, hi);
+        return i + 1;
     &#125;
     
-    <span class="function"><span class="type">void</span> <span class="title">swap</span><span class="params">(vector<<span class="type">int</span>>& arr, <span class="type">int</span> i, <span class="type">int</span> j)</span> </span>&#123;
-        <span class="type">int</span> tmp = arr[j];
+    void swap(vector<int>& arr, int i, int j) &#123;
+        int tmp = arr[j];
         arr[j] = arr[i];
         arr[i] = tmp;
     &#125;

@@ -1,0 +1,860 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title>Tech - Kubernetes · KLEON</title><meta name="description" content="Q &amp;amp; A of Kubernetes.
+
+Docker
+Kubernetes [1][2]
+¶Q: What is Kubernetes?
+Kubernetes is an open-source container orchestration tool or system that is"><meta name="og:description" content="Q &amp;amp; A of Kubernetes.
+
+Docker
+Kubernetes [1][2]
+¶Q: What is Kubernetes?
+Kubernetes is an open-source container orchestration tool or system that is"><meta name="twitter:site" content="KLEON"><meta name="twitter:title" content="Tech - Kubernetes"><meta name="twitter:card" content="summary"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 6.1.0"><link rel="stylesheet" href="/css/prism.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body><div id="stage" class="container"><div class="row"><div id="side-bar" class="col-sm-3 col-xs-12 side-container invisible"><div class="vertical-text site-title"><h3 tabindex="-1" class="site-title-small"><a href="/" class="a-title"></a></h3><h1 tabindex="-1" class="site-title-large"><a href="/" class="a-title">自说自话</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div id="site-nav" class="site-title-links"><ul><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li><li><a href="/categories">Categories</a></li><li><a href="/tags">Tags</a></li><li><a href="/googlebe23cb0bc55fc412.html"></a></li><li><a href="/about/index.html"></a></li><li class="soc"><a href="https://github.com/kleon1024" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa fa-github">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div id="main-container" class="col-sm-9 col-xs-12 main-container invisible"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>Tech - Kubernetes</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2022-04-22</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/interview/" title="interview" class="a-tag">interview</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/interview/" title="interview" class="a-tag">interview</a><span>&nbsp;</span><a href="/tags/tech/" title="tech" class="a-tag">tech</a><span>&nbsp;</span></span></p><p class="post-abstract"><p>Q &amp; A of Kubernetes.</p>
+<span id="more"></span>
+<h1>Docker</h1>
+<h1>Kubernetes <sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup><sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></h1>
+<h3 id="Q-What-is-Kubernetes"><a class="header-anchor" href="#Q-What-is-Kubernetes">¶</a>Q: What is Kubernetes?</h3>
+<p>Kubernetes is an open-source container orchestration tool or system that is used to automate tasks such as the management, monitoring, scaling, and deployment of containerized applications. It is used to easily manage several containers (since it can handle grouping of containers), which provides for logical units that can be discovered and managed.</p>
+<h3 id="Q-How-Container-orchestration-is-beneficial"><a class="header-anchor" href="#Q-How-Container-orchestration-is-beneficial">¶</a>Q: How Container orchestration is beneficial?</h3>
+<p>Container orchestration is a process of managing the life cycles of containers more specifically in large &amp; dynamic environments. All the services in the individual container are in synchronization to fulfill the needs of the server. Container orchestration is used to regulate and automate tasks such as:</p>
+<ul>
+<li>Provisioning and deployment of containers</li>
+<li>Upscaling or removing containers to divide application load evenly all across host infrastructure</li>
+<li>Redundancy and availability of containers</li>
+<li>Moving of containers from one host to another in case there is a shortage of resources in a host (or when the host dies)</li>
+<li>Allocation resources across containers</li>
+<li>Health monitoring of containers and hosts</li>
+<li>Externally exposing services running in a container to the outside world</li>
+<li>Load balancing of service discovery across containers</li>
+<li>Configuring an application relative to the containers running it</li>
+</ul>
+<h3 id="Q-How-are-Kubernetes-and-Docker-related"><a class="header-anchor" href="#Q-How-are-Kubernetes-and-Docker-related">¶</a>Q: How are Kubernetes and Docker related?</h3>
+<p>Docker is an open-source platform used to handle software development. Its main benefit is that it packages the settings and dependencies that the software/application needs to run into a container, which allows for portability and several other advantages. Kubernetes allows for the manual linking and orchestration of several containers, running on multiple hosts that have been created using Docker.</p>
+<h3 id="Q-What-is-a-node-in-Kubernetes"><a class="header-anchor" href="#Q-What-is-a-node-in-Kubernetes">¶</a>Q: What is a node in Kubernetes?</h3>
+<p>A node is the smallest fundamental unit of computing hardware. It represents a single machine in a cluster, which could be a physical machine in a data center or a virtual machine from a cloud provider. Each machine can substitute any other machine in a Kubernetes cluster. The master in Kubernetes controls the nodes that have containers.</p>
+<h3 id="Q-What-are-pods-in-Kubernetes"><a class="header-anchor" href="#Q-What-are-pods-in-Kubernetes">¶</a>Q: What are pods in Kubernetes?</h3>
+<p>Pods are the smallest deployable units of computing that you can create and manage in Kubernetes.</p>
+<p>A Pod is a group of one or more containers, with shared storage and network resources, and a specification for how to run the containers. Containers in the same pod share a local network and the same resources, allowing them to easily communicate with other containers in the same pod as if they were on the same machine while at the same time maintaining a degree of isolation.</p>
+<h3 id="Q-What-is-a-Kubernetes-deployment"><a class="header-anchor" href="#Q-What-is-a-Kubernetes-deployment">¶</a>Q: What is a Kubernetes deployment?</h3>
+<p>A Kubernetes deployment is a resource object in Kubernetes that provides declarative updates to applications. A deployment allows you to describe an application’s life cycle, such as which images to use for the app, the number of pods there should be, and the way in which they should be updated.</p>
+<h3 id="Q-Explain-the-use-case-of-Kubernetes-deployment"><a class="header-anchor" href="#Q-Explain-the-use-case-of-Kubernetes-deployment">¶</a>Q: Explain the use case of Kubernetes deployment?</h3>
+<p>The following are typical use cases for Deployments:</p>
+<ul>
+<li>Create a Deployment to rollout a ReplicaSet. The ReplicaSet creates Pods in the background. Check the status of the rollout to see if it succeeds or not.</li>
+<li>Declare the new state of the Pods by updating the PodTemplateSpec of the Deployment. A new ReplicaSet is created and the Deployment manages moving the Pods from the old ReplicaSet to the new one at a controlled rate. Each new ReplicaSet updates the revision of the Deployment.</li>
+<li>Rollback to an earlier Deployment revision if the current state of the Deployment is not stable. Each rollback updates the revision of the Deployment.</li>
+<li>Scale up the Deployment to facilitate more load.</li>
+<li>Pause the Deployment to apply multiple fixes to its PodTemplateSpec and then resume it to start a new rollout.</li>
+<li>Use the status of the Deployment as an indicator that a rollout has stuck.</li>
+<li>Clean up older ReplicaSets that you don’t need anymore</li>
+</ul>
+<h3 id="Q-What-is-the-difference-between-a-pod-and-a-deployment"><a class="header-anchor" href="#Q-What-is-the-difference-between-a-pod-and-a-deployment">¶</a>Q: What is the difference between a pod and a deployment?</h3>
+<p>A pod is the core building block for running applications in a Kubernetes cluster; a deployment is a management tool used to control the way pods behave.</p>
+<p>Both Pod and Deployment are full-fledged objects in the Kubernetes API. Deployment manages creating Pods by means of ReplicaSets. What it boils down to is that Deployment will create Pods with spec taken from the template. It is rather unlikely that you will ever need to create Pods directly for a production use-case.</p>
+<h3 id="Q-What-are-Kubernetes-Services"><a class="header-anchor" href="#Q-What-are-Kubernetes-Services">¶</a>Q: What are Kubernetes Services?</h3>
+<p>A Kubernetes Service is an abstraction which defines a logical set of Pods running somewhere in your cluster, that all provide the same functionality. When created, each Service is assigned a unique IP address (also called clusterIP). This address is tied to the lifespan of the Service, and will not change while the Service is alive.</p>
+<p>Pods can be configured to talk to the Service, and know that communication to the Service will be automatically load-balanced out to some pod that is a member of the Service.</p>
+<h3 id="Q-What-is-replicaset-in-kubernetes"><a class="header-anchor" href="#Q-What-is-replicaset-in-kubernetes">¶</a>Q: What is replicaset in kubernetes?</h3>
+<p>A ReplicaSet’s purpose is to maintain a stable set of replica Pods running at any given time. As such, it is often used to guarantee the availability of a specified number of identical Pods.</p>
+<h3 id="Q-What-are-clusters-in-Kubernetes"><a class="header-anchor" href="#Q-What-are-clusters-in-Kubernetes">¶</a>Q: What are clusters in Kubernetes?</h3>
+<p>A Kubernetes cluster is a set of nodes used for running containerized applications, so when you are running Kubernetes, you are running a cluster. A cluster contains a control plane &amp; one or maybe more than one compute machines/nodes.</p>
+<ul>
+<li>The control plane is used to maintain the desired state of the cluster, such as which applications are running or which container images they use.</li>
+<li>Whereas, the nodes run the applications and the workloads.<br>
+Clusters are the heart of Kubernetes that gives the ability to schedule and run the containers across a group of machines - physical, virtual, on-premise, or in the cloud. Kubernetes containers aren’t tied to any particular machines, they are abstracted across the cluster.</li>
+</ul>
+<h3 id="Q-What-are-Daemon-sets"><a class="header-anchor" href="#Q-What-are-Daemon-sets">¶</a>Q: What are Daemon sets?</h3>
+<p>A Daemon set is a set of pods that runs only once on a host. They are used for host layer attributes like a network or for monitoring a network, which you may not need to run on a host more than once.</p>
+<h3 id="Q-What-is-Heapster-in-Kubernetes"><a class="header-anchor" href="#Q-What-is-Heapster-in-Kubernetes">¶</a>Q: What is Heapster in Kubernetes?</h3>
+<p>A Heapster is a performance monitoring and metrics collection system for data collected by the Kublet. This aggregator is natively supported and runs like any other pod within a Kubernetes cluster, which allows it to discover and query usage data from all nodes within the cluster.</p>
+<h3 id="Q-What-is-a-Namespace-in-Kubernetes"><a class="header-anchor" href="#Q-What-is-a-Namespace-in-Kubernetes">¶</a>Q: What is a Namespace in Kubernetes?</h3>
+<p>Namespaces are used for dividing cluster resources between multiple users. They are meant for environments where there are many users spread across projects or teams and provide a scope of resources.</p>
+<h3 id="Q-Why-use-namespaces"><a class="header-anchor" href="#Q-Why-use-namespaces">¶</a>Q: Why use namespaces?</h3>
+<p>While using the default namespace alone, it becomes hard over time to get an overview of all the applications you can manage in your cluster. Namespaces make it easier to organize the applications into groups that make sense, like a namespace of all the monitoring applications and a namespace for all the security applications, etc.</p>
+<p>Namespaces can also be useful for managing Blue/Green environments where each namespace can include a different version of an app and also share resources that are in other namespaces (namespaces like logging, monitoring, etc.).</p>
+<p>Another use case for namespaces is one cluster with multiple teams. When multiple teams use the same cluster, they might end up stepping on each other’s toes. For example, if they end up creating an app with the same name it means one of the teams overrides the app of the other team because there can’t be two apps in Kubernetes with the same name (in the same namespace).</p>
+<h3 id="Q-What-is-the-Kubernetes-controller-manager"><a class="header-anchor" href="#Q-What-is-the-Kubernetes-controller-manager">¶</a>Q: What is the Kubernetes controller manager?</h3>
+<p>In Kubernetes, different methods are operating on the master node, and they are accumulated together as the Kubernetes Controller Manager. It is a daemon which installs regulators, including the given below:</p>
+<ul>
+<li>Replication Controller: Maintains pods for each replication object</li>
+<li>Node Controller: Manages the status, mainly, making, refreshing and erasing nodes</li>
+<li>Endpoint controller: Maintain the endpoint objects (pods and administrations)</li>
+<li>Administration record and token regulator: Concerned with the default records and API access tokens for new namespaces</li>
+</ul>
+<h3 id="Q-What-are-the-types-of-controller-managers"><a class="header-anchor" href="#Q-What-are-the-types-of-controller-managers">¶</a>Q: What are the types of controller managers?</h3>
+<p>The primary controller managers that can run on the master node are the endpoints controller, service accounts controller, namespace controller, node controller, token controller, and replication controller.</p>
+<h3 id="Q-What’s-the-components-in-Kubernetes’s-control-plane"><a class="header-anchor" href="#Q-What’s-the-components-in-Kubernetes’s-control-plane">¶</a>Q: What’s the components in Kubernetes’s control plane?</h3>
+<p>The control plane includes <sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>:</p>
+<ul>
+<li>kube-apiserver. Provides an API that serves as the front end of a Kubernetes control plane. It is responsible for handling external and internal requests—determining whether a request is valid and then processing it. The API can be accessed via the kubectl command-line interface or other tools like kubeadm, and via REST calls.</li>
+<li>kube-scheduler. This component is responsible for scheduling pods on specific nodes according to automated workflows and user defined conditions, which can include resource requests, concerns like affinity and taints or tolerations, priority, persistent volumes (PV), and more</li>
+<li>kube-controller-manager. The Kubernetes controller manager is a control loop that monitors and regulates the state of a Kubernetes cluster. It receives information about the current state of the cluster and objects within it, and sends instructions to move the cluster towards the cluster operator’s desired state.<br>
+The controller manager is responsible for several controllers that handle various automated activities at the cluster or pod level, including replication controller, namespace controller, service accounts controller, deployment, statefulset, and daemonset.</li>
+<li>etcd. A key-value database that contains data about your cluster state and configuration. Etcd is fault tolerant and distributed.</li>
+<li>cloud-controller-manager. This component can embed cloud-specific control logic - for example, it can access the cloud provider’s load balancer service. It enables you to connect a Kubernetes cluster with the API of a cloud provider. Additionally, it helps decouple the Kubernetes cluster from components that interact with a cloud platform, so that elements inside the cluster do not need to be aware of the implementation specifics of each cloud provider.<br>
+This cloud-controller-manager runs only controllers specific to the cloud provider. It is not required for on-premises Kubernetes environments. It uses multiple, yet logically-independent, control loops that are combined into one binary, which can run as a single process. It can be used to add scale a cluster by adding more nodes on cloud VMs, and leverage cloud provider high availability and load balancing capabilities to improve resilience and performance.</li>
+</ul>
+<h3 id="Q-What’s-the-core-components-in-a-Kubernetes-Node"><a class="header-anchor" href="#Q-What’s-the-core-components-in-a-Kubernetes-Node">¶</a>Q: What’s the core components in a Kubernetes Node?</h3>
+<p>The core components includes <sup class="footnote-ref"><a href="#fn3" id="fnref3:1">[3:1]</a></sup>:</p>
+<ul>
+<li>Nodes. Nodes are physical or virtual machines that can run pods as part of a Kubernetes cluster. A cluster can scale up to 5000 nodes. To scale a cluster’s capacity, you can add more nodes.</li>
+<li>Pods. A pod serves as a single application instance, and is considered the smallest unit in the object model of Kubernetes. Each pod consists of one or more tightly coupled containers, and configurations that govern how containers should run. To run stateful applications, you can connect pods to persistent storage, using Kubernetes Persistent Volumes.</li>
+<li>Container Runtime Engine. Each node comes with a container runtime engine, which is responsible for running containers. Docker is a popular container runtime engine, but Kubernetes supports other runtimes that are compliant with Open Container Initiative, including CRI-O and rkt.</li>
+<li>kubelet. Each node contains a kubelet, which is a small application that can communicate with the Kubernetes control plane. The kubelet is responsible for ensuring that containers specified in pod configuration are running on a specific node, and manages their lifecycle… It executes the actions commanded by your control plane.</li>
+<li>kube-proxy. All compute nodes contain kube-proxy, a network proxy that facilitates Kubernetes networking services. It handles all network communications outside and inside the cluster, forwarding traffic or replying on the packet filtering layer of the operating system.</li>
+<li>Container Networking. Container networking enables containers to communicate with hosts or other containers. It is often achieved by using the container networking interface (CNI), which is a joint initiative by Kubernetes, Apache Mesos, Cloud Foundry, Red Hat OpenShift, and others.<br>
+CNI offers a standardized, minimal specification for network connectivity in containers. You can use the CNI plugin by passing the kubelet --network-plugin=cni command-line option. The kubelet can then read files from --cni-conf-dir and use the CNI configuration when setting up networking for each pod.</li>
+</ul>
+<h3 id="Q-What-is-ETCD-in-Kubernetes"><a class="header-anchor" href="#Q-What-is-ETCD-in-Kubernetes">¶</a>Q: What is ETCD in Kubernetes?</h3>
+<p>Kubernetes uses etcd as a distributed key-value store for all of its data, including metadata and configuration data, and allows nodes in Kubernetes clusters to read and write data. Although etcd was purposely built for CoreOS, it also works on a variety of operating systems (e.g., Linux, BSB, and OS X) because it is open-source. Etcd represents the state of a cluster at a specific moment in time and is a canonical hub for state management and cluster coordination of a Kubernetes cluster.</p>
+<p><img src="/images/etcd.png" alt="etcd"></p>
+<h3 id="Q-What-is-ClusterIP"><a class="header-anchor" href="#Q-What-is-ClusterIP">¶</a>Q: What is ClusterIP?</h3>
+<p>The ClusterIP is the default Kubernetes service that provides a service inside a cluster (with no external access) that other apps inside your cluster can access.</p>
+<h3 id="Q-What-is-NodePort"><a class="header-anchor" href="#Q-What-is-NodePort">¶</a>Q: What is NodePort?</h3>
+<p>The NodePort service is the most fundamental way to get external traffic directly to your service. It opens a specific port on all Nodes and forwards any traffic sent to this port to the service.</p>
+<h3 id="Q-What-is-a-headless-service"><a class="header-anchor" href="#Q-What-is-a-headless-service">¶</a>Q: What is a headless service<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>?</h3>
+<p>A headless service is used to interface with service discovery mechanisms without being tied to a ClusterIP, therefore allowing you to directly reach pods without having to access them through a proxy. It is useful when neither load balancing nor a single Service IP is required.</p>
+<h3 id="Q-What-is-Kubelet"><a class="header-anchor" href="#Q-What-is-Kubelet">¶</a>Q: What is Kubelet?</h3>
+<p>The kubelet is a service agent that controls and maintains a set of pods by watching for pod specs through the Kubernetes API server. It preserves the pod lifecycle by ensuring that a given set of containers are all running as they should. The kubelet runs on each node and enables the communication between the master and slave nodes.</p>
+<h3 id="Q-What-is-the-Load-Balancer-in-Kubernetes"><a class="header-anchor" href="#Q-What-is-the-Load-Balancer-in-Kubernetes">¶</a>Q: What is the Load Balancer in Kubernetes?</h3>
+<p>A load balancer gives a standard method to convey network traffic among various backend administrations, subsequently boosting adaptability. Contingent upon the workplace, there can be two kinds of load balancer, Internal or External. The Internal Load Balancer can naturally adjust the load and distribute the necessary configuration to the pods. Then again, the External Load Balancer directs the outside load traffic to the backend pods. In Kubernetes, the two load adjusting techniques work through the kube-proxy highlight.</p>
+<h3 id="Q-What-is-Kubectl"><a class="header-anchor" href="#Q-What-is-Kubectl">¶</a>Q: What is Kubectl?</h3>
+<p>Kubectl is a CLI (command-line interface) that is used to run commands against Kubernetes clusters. As such, it controls the Kubernetes cluster manager through different create and manage commands on the Kubernetes component.</p>
+<h3 id="Q-What-is-Kube-proxy"><a class="header-anchor" href="#Q-What-is-Kube-proxy">¶</a>Q: What is Kube-proxy?</h3>
+<p>Kube-proxy is an implementation of a load balancer and network proxy used to support service abstraction with other networking operations. Kube-proxy is responsible for directing traffic to the right container based on IP and the port number of incoming requests.</p>
+<h3 id="Q-Can-we-put-multiple-containers-inside-a-pod"><a class="header-anchor" href="#Q-Can-we-put-multiple-containers-inside-a-pod">¶</a>Q: Can we put multiple containers inside a pod?</h3>
+<p>Yes. A pod that contains one container refers to a single container pod and it is the most common kubernetes use case. A pod that contains Multiple co-related containers refers to a multi-container pod.</p>
+<h3 id="Q-Name-some-container-patterns-you-come-across-or-use"><a class="header-anchor" href="#Q-Name-some-container-patterns-you-come-across-or-use">¶</a>Q: Name some container patterns you come across or use?</h3>
+<ul>
+<li>Init Container Pattern</li>
+<li>Sidecar Container Pattern</li>
+<li>Adapter Container Pattern</li>
+<li>Ambassador Container Pattern</li>
+</ul>
+<h3 id="Q-What-is-Init-Container-Pattern"><a class="header-anchor" href="#Q-What-is-Init-Container-Pattern">¶</a>Q: What is Init Container Pattern?</h3>
+<p>Init Containers are the containers that should run and complete before the startup of the main container in the pod. It provides a separate lifecycle for the initialization so that it enables separation of concerns in the applications.</p>
+<p>All the init Containers will be executed sequentially and if there is an error in the Init container the pod will be restarted which means all the Init containers are executed again. So, it’s better to design your Init container as simple, quick, and Idompodent.</p>
+<p>Example:</p>
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">apiVersion: v1
+kind: Pod
+metadata:
+  name: init-container-demo
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    ports:
+    - containerPort: 80
+    volumeMounts:
+    - name: workdir
+      mountPath: /usr/share/nginx/html
+  # These containers are run during pod initialization
+  initContainers:
+  - name: busybox
+    image: busybox
+    command: ["/bin/sh"]
+    args: ["-c", "echo &#x27;Hi I am from Init container&#x27; >> /work-dir/index.html"]
+    volumeMounts:
+    - name: workdir
+      mountPath: "/work-dir"
+  dnsPolicy: Default
+  volumes:
+  - name: workdir
+    emptyDir: &#123;&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="Q-When-do-you-use-Init-Container-Pattern"><a class="header-anchor" href="#Q-When-do-you-use-Init-Container-Pattern">¶</a>Q: When do you use Init Container Pattern?</h3>
+<p>You can use this pattern where your application or main containers need some prerequisites such as installing some software, database setup, permissions on the file system before starting.<br>
+You can use this pattern where you want to delay the start of the main containers.</p>
+<h3 id="Q-How-do-you-configure-resource-limits-for-the-Init-Container-Pattern"><a class="header-anchor" href="#Q-How-do-you-configure-resource-limits-for-the-Init-Container-Pattern">¶</a>Q: How do you configure resource limits for the Init Container Pattern?</h3>
+<p>Configuring resource limits is very important when it comes to Init containers. The main point we need to understand here is Init containers run first before the start of the main container so when you configure resource limits for the pod you have to take that into consideration.</p>
+<ul>
+<li>The highest init container resource limits (since Init containers run sequentially)</li>
+<li>The sum of all the resource limits of the main containers (Since all the application containers run in parallel)</li>
+</ul>
+<h3 id="Q-What-is-Sidecar-Container-Design"><a class="header-anchor" href="#Q-What-is-Sidecar-Container-Design">¶</a>Q: What is Sidecar Container Design?</h3>
+<p>Sidecar containers are the containers that should run along with the main container in the pod. This sidecar pattern extends and enhances the functionality of current containers without changing it.</p>
+<p>Imagine that you have the pod with a single container working very well and you want to add some functionality to the current container without touching or changing, how can you add the additional functionality or extending the current functionality? This sidecar container pattern really helps exactly in that situation.</p>
+<p>All the Containers will be executed parallelly and the whole functionality works only if both types of containers are running successfully. Most of the time these sidecar containers are simple and small that consume fewer resources than the main container.</p>
+<p><strong>Example:</strong></p>
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">apiVersion: v1
+kind: Pod
+metadata:
+  name: sidecar-container-demo
+spec:
+  containers:
+  - image: busybox
+    command: ["/bin/sh"]
+    args: ["-c", "while true; do echo echo $(date -u) &#x27;Hi I am from Sidecar container&#x27; >> /var/log/index.html; sleep 5;done"]
+    name: sidecar-container
+    resources: &#123;&#125;
+    volumeMounts:
+    - name: var-logs
+      mountPath: /var/log
+  - image: nginx
+    name: main-container
+    resources: &#123;&#125;
+    ports:
+      - containerPort: 80
+    volumeMounts:
+    - name: var-logs
+      mountPath: /usr/share/nginx/html
+  dnsPolicy: Default
+  volumes:
+  - name: var-logs
+    emptyDir: &#123;&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="Q-When-do-you-use-Sidecar-Container-Pattern"><a class="header-anchor" href="#Q-When-do-you-use-Sidecar-Container-Pattern">¶</a>Q: When do you use Sidecar Container Pattern?</h3>
+<ul>
+<li>Whenever you want to extend the functionality of the existing single container pod without touching the existing one.</li>
+<li>Whenever you want to enhance the functionality of the existing single container pod without touching the existing one.</li>
+<li>You can use this pattern to synchronize the main container code with the git server pull.</li>
+<li>You can use this pattern for sending log events to the external server.</li>
+<li>You can use this pattern for network-related tasks.</li>
+</ul>
+<h3 id="Q-How-do-you-configure-resource-limits-for-the-Sidecar-Container-Pattern"><a class="header-anchor" href="#Q-How-do-you-configure-resource-limits-for-the-Sidecar-Container-Pattern">¶</a>Q: How do you configure resource limits for the Sidecar Container Pattern?</h3>
+<p>Configuring resource limits is very important when it comes to Sidecar containers. The main point we need to understand here is All the containers run in parallel so when you configure resource limits for the pod you have to take that into consideration.</p>
+<ul>
+<li>The sum of all the resource limits of the main containers as well as sidecar containers (Since all the containers run in parallel)</li>
+</ul>
+<h3 id="Q-What-is-Adapter-Container-Pattern"><a class="header-anchor" href="#Q-What-is-Adapter-Container-Pattern">¶</a>Q: What is Adapter Container Pattern?</h3>
+<p>There are so many applications that are heterogeneous in nature which means they don’t contain the same interface or not consistent with other systems. This pattern extends and enhances the functionality of current containers without changing it as the sidecar container pattern.</p>
+<p>Imagine that you have the pod with a single container working very well but, it doesn’t have the same interface with other systems to integrate or work with it. How can you make this container to have a unified interface with a standardized format so that other systems can to your container? This adapter container pattern really helps exactly in that situation.</p>
+<p>All the Containers will be executed parallelly and the whole functionality works only if both types of containers are running successfully. Most of the time these adapter containers are simple and small that consume fewer resources than the main container.</p>
+<p><strong>Example:</strong></p>
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">apiVersion: v1
+kind: Pod
+metadata:
+  name: adapter-container-demo
+spec:
+  containers:
+  - image: busybox
+    command: ["/bin/sh"]
+    args: ["-c", "while true; do echo $(date -u)&#x27;#This is log&#x27; >> /var/log/file.log; sleep 5;done"]
+    name: main-container
+    resources: &#123;&#125;
+    volumeMounts:
+    - name: var-logs
+      mountPath: /var/log
+  - image: bbachin1/adapter-node-server
+    name: adapter-container
+    imagePullPolicy: Always
+    resources: &#123;&#125;
+    ports:
+      - containerPort: 3080
+    volumeMounts:
+    - name: var-logs
+      mountPath: /var/log
+  dnsPolicy: Default
+  volumes:
+  - name: var-logs
+    emptyDir: &#123;&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="Q-When-do-you-use-Adapter-Container-Pattern"><a class="header-anchor" href="#Q-When-do-you-use-Adapter-Container-Pattern">¶</a>Q: When do you use Adapter Container Pattern?</h3>
+<ul>
+<li>Whenever you want to extend the functionality of the existing single container pod without touching the existing one.</li>
+<li>Whenever you want to enhance the functionality of the existing single container pod without touching the existing one.</li>
+<li>Whenever there is a need to convert or standardize the format for the rest of the systems.</li>
+</ul>
+<h3 id="Q-How-do-you-configure-resource-limits-for-the-Adapter-Container-Pattern"><a class="header-anchor" href="#Q-How-do-you-configure-resource-limits-for-the-Adapter-Container-Pattern">¶</a>Q: How do you configure resource limits for the Adapter Container Pattern?</h3>
+<p>Configuring resource limits is very important when it comes to Adapter containers. The main point we need to understand here is All the containers run in parallel so when you configure resource limits for the pod you have to take that into consideration.</p>
+<ul>
+<li>The sum of all the resource limits of the main containers as well as adapter containers (Since all the containers run in parallel)</li>
+</ul>
+<h3 id="Q-What-is-Ambassador-Container-Pattern"><a class="header-anchor" href="#Q-What-is-Ambassador-Container-Pattern">¶</a>Q: What is Ambassador Container Pattern?</h3>
+<p>The Ambassador container is a special type of sidecar container which simplifies accessing services outside the Pod. When you are running applications on kubernetes it’s a high chance that you should access the data from the external services. The Ambassador container hides the complexity and provides the uniform interface to access these external services.</p>
+<p>Imagine that you have the pod with one container running successfully but, you need to access external services. But, these external services are dynamic in nature or difficult to access. Sometimes there is a different format that external service returns. There are some other reasons as well and you don’t want to handle this complexity in the main container. So, we use the Ambassador containers to handle these kinds of scenarios.</p>
+<p>All the Containers will be executed parallelly and the whole functionality works only if both types of containers are running successfully. Most of the time these ambassador containers are simple and small that consume fewer resources than the main container.</p>
+<p><strong>Example:</strong></p>
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">apiVersion: v1
+kind: Pod
+metadata:
+  name: ambassador-container-demo
+spec:
+  containers:
+  - image: bbachin1/main-container
+    name: main-container
+    imagePullPolicy: Always
+    resources: &#123;&#125;
+    ports:
+      - containerPort: 9000
+  - image: bbachin1/nginx-server-proxy
+    name: ambassador-container
+    imagePullPolicy: Always
+    resources: &#123;&#125;
+    ports:
+      - containerPort: 3000
+  dnsPolicy: Default<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="Q-When-do-you-use-Ambassador-Container-Pattern"><a class="header-anchor" href="#Q-When-do-you-use-Ambassador-Container-Pattern">¶</a>Q: When do you use Ambassador Container Pattern?</h3>
+<ul>
+<li>Whenever you want to hide the complexity from the main container such as service discovery.</li>
+<li>Whenever your containerized services want to talk to external services you can use this pattern to handle the request and response for these services.</li>
+<li>Whenever there is a need to convert or standardize the format of external services responses.</li>
+</ul>
+<h3 id="Q-How-do-you-configure-resource-limits-for-the-Ambassador-Container-Pattern"><a class="header-anchor" href="#Q-How-do-you-configure-resource-limits-for-the-Ambassador-Container-Pattern">¶</a>Q: How do you configure resource limits for the Ambassador Container Pattern?</h3>
+<p>Configuring resource limits is very important when it comes to Ambassador containers. The main point we need to understand here is All the containers run in parallel so when you configure resource limits for the pod you have to take that into consideration.</p>
+<ul>
+<li>The sum of all the resource limits of the main containers as well as ambassador containers (Since all the containers run in parallel)</li>
+</ul>
+<h3 id="Q-Point-out-the-tools-which-are-utilized-for-container-monitoring"><a class="header-anchor" href="#Q-Point-out-the-tools-which-are-utilized-for-container-monitoring">¶</a>Q: Point out the tools which are utilized for container monitoring?</h3>
+<p>Tools which are utilized for container monitoring are:</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://grafana.com/">Grafana</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/google/cadvisor">cAdvisor</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/kubernetes-retired/heapster">Heapster</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.influxdata.com/">InfluxDB</a></li>
+<li><a target="_blank" rel="noopener" href="https://prometheus.io/docs/guides/cadvisor/">Prometheus</a></li>
+</ul>
+<h3 id="Q-Disadvantages-of-Kubernetes"><a class="header-anchor" href="#Q-Disadvantages-of-Kubernetes">¶</a>Q. Disadvantages of Kubernetes</h3>
+<ul>
+<li>Kubernetes dashboard isn’t as useful as it ought to be</li>
+<li>Security isn’t viable.</li>
+<li>It is intricate and can diminish profitability</li>
+<li>Kubernetes is more costlier than its other options.</li>
+</ul>
+<h3 id="Q-Why-use-Kubernetes"><a class="header-anchor" href="#Q-Why-use-Kubernetes">¶</a>Q. Why use Kubernetes?</h3>
+<p>Kubernetes is utilized on the grounds that:</p>
+<ul>
+<li>It causes you to evade vendor lock issues as it can utilize any vendor explicit APIs or administrations aside from where Kubernetes gives a reflection, e.g., load balancer and capacity.</li>
+<li>Kubernetes can run on-premises exposed metal, OpenStack, Azure, public clouds Google, AWS, and so on.</li>
+<li>It will empower applications which should be delivered and refreshed with no vacation.</li>
+<li>Kubernetes permits you to guarantee those containerized applications operate where and when you need and assist you with discovering assets and apparatuses which you need to work.</li>
+</ul>
+<h3 id="Q-What-is-the-function-of-clusters-in-Kubernetes"><a class="header-anchor" href="#Q-What-is-the-function-of-clusters-in-Kubernetes">¶</a>Q: What is the function of clusters in Kubernetes?</h3>
+<p>Kubernetes permits you to authorize the necessary state management by taking care of cluster services of a particular setup. At that point, these cluster administrations operate that configuration in the foundation. The accompanying steps are associated with the method: The deployment document includes all the setups to be taken care of into the cluster administrations. The deployment document is taken care of into the API. Presently, the cluster services plan the pods in the climate. Cluster benefits likewise guarantee that the correct number of pods are operating. Along these lines, the Kubernetes cluster is basically composed of the API, the worker nodes, and the Kubelet cycle of the nodes.</p>
+<h3 id="Q-Characteristics-of-Kubernetes"><a class="header-anchor" href="#Q-Characteristics-of-Kubernetes">¶</a>Q: Characteristics of Kubernetes?</h3>
+<p>The characteristics of Kubernetes are:</p>
+<ul>
+<li>Self-Healing Capabilities</li>
+<li>Automated Scheduling</li>
+<li>Application-centric management</li>
+<li>You could make predictable infrastructure</li>
+<li>Automated rollouts &amp; rollback</li>
+<li>Offers a higher density of resource utilization</li>
+<li>Horizontal Scaling &amp; Load Balancing</li>
+<li>Provides enterprise-ready features</li>
+<li>Auto-scalable infrastructure</li>
+<li>Provides environment consistency for testing, development, and production.</li>
+<li>Infrastructure is lightly coupled to each segment and can act as a separate unit.</li>
+</ul>
+<h3 id="Q-Define-Ingress-network"><a class="header-anchor" href="#Q-Define-Ingress-network">¶</a>Q: Define Ingress network</h3>
+<p>Ingress network is an assortment of rules which goes about as a section highlighting the Kubernetes cluster. This permits inbound associations that can be arranged to give benefits remotely through load balance traffic, reachable URLs, or by providing name-based virtual facilitating. In this way, Ingress is an API object which oversees outer admittance to the services in a cluster, generally by HTTP, and is the most remarkable method of uncovering administration.</p>
+<h3 id="Q-List-the-uses-of-GKE"><a class="header-anchor" href="#Q-List-the-uses-of-GKE">¶</a>Q: List the uses of GKE</h3>
+<p>GKE (Google Kubernetes Engine) uses are given below:<br>
+It very well may be utilized to make docker container clusters<br>
+Resize application regulators<br>
+Update and redesign the clusters of container<br>
+Investigate clusters of the container.<br>
+GKE can be utilized to make a replication regulator, occupations, load balancer, administrations, container pods</p>
+<h3 id="Q-Explain-the-main-components-of-Kubernetes-architecture"><a class="header-anchor" href="#Q-Explain-the-main-components-of-Kubernetes-architecture">¶</a>Q: Explain the main components of Kubernetes architecture?</h3>
+<p>The two primary components include the master node and the worker node. Each of its components has individual components in them. The two segments have numerous in-fabricated administrations inside them. For instance, the master part has the kube-scheduler, kube-controller-manager, etcd, and kube-apiserver. The worker node has administrations like kubelet, container runtime, and kube-proxy functioning on every node.</p>
+<h3 id="Q-How-do-we-control-the-resource-usage-of-POD"><a class="header-anchor" href="#Q-How-do-we-control-the-resource-usage-of-POD">¶</a>Q: How do we control the resource usage of POD?</h3>
+<p>With the use of limit and request resource usage of a POD can be controlled.</p>
+<p>Request: The number of resources being requested for a container. If a container exceeds its request for resources, it can be throttled back down to its request.</p>
+<p>Limit: An upper cap on the resources a single container can use. If it tries to exceed this predefined limit it can be terminated if K8’s decides that another container needs these resources. If you are sensitive towards pod restarts, it makes sense to have the sum of all container resource limits equal to or less than the total resource capacity for your cluster.</p>
+<h3 id="Q-What-are-the-various-K8s-services-running-on-nodes-and-describe-the-role-of-each-service"><a class="header-anchor" href="#Q-What-are-the-various-K8s-services-running-on-nodes-and-describe-the-role-of-each-service">¶</a>Q: What are the various K8s services running on nodes and describe the role of each service?</h3>
+<p>Mainly K8 cluster consists of two types of nodes, executor and master.</p>
+<p><strong>Executor node</strong>: (This runs on slave node)</p>
+<ul>
+<li>Kube-proxy: This service is responsible for the communication of pods within the cluster and to the outside network, which runs on every node. This service is responsible to maintain network protocols when your pod establishes a network communication.</li>
+<li>kubelet: Each node has a running kubelet service that updates the running node accordingly with the configuration(YAML or JSON) file. NOTE: kubelet service is only for containers created by Kubernetes.</li>
+</ul>
+<p><strong>Master services</strong>:</p>
+<ul>
+<li>Kube-apiserver: Master API service which acts as an entry point to K8 cluster.</li>
+<li>Kube-scheduler: Schedule PODs according to available resources on executor nodes.</li>
+<li>Kube-controller-manager: is a control loop that watches the shared state of the cluster through the apiserver and makes changes attempting to move the current state towards the desired stable state</li>
+</ul>
+<h3 id="Q-What-is-PDB-Pod-Disruption-Budget"><a class="header-anchor" href="#Q-What-is-PDB-Pod-Disruption-Budget">¶</a>Q: What is PDB (Pod Disruption Budget)?</h3>
+<p>A Kubernetes administrator can create a deployment of a kind: PodDisruptionBudget for high availability of the application, it makes sure that the minimum number is running pods are respected as mentioned by the attribute minAvailable spec file. This is useful while performing a drain where the drain will halt until the PDB is respected to ensure the High Availability(HA) of the application. The following spec file also shows minAvailable as 2 which implies the minimum number of an available pod (even after the election).</p>
+<h3 id="Q-What-are-the-various-things-that-can-be-done-to-increase-Kubernetes-security"><a class="header-anchor" href="#Q-What-are-the-various-things-that-can-be-done-to-increase-Kubernetes-security">¶</a>Q: What are the various things that can be done to increase Kubernetes security?</h3>
+<p>By default, POD can communicate with any other POD, we can set up network policies to limit this communication between the PODs.</p>
+<ul>
+<li>RBAC (Role-based access control) to narrow down the permissions.</li>
+<li>Use namespaces to establish security boundaries.</li>
+<li>Set the admission control policies to avoid running the privileged containers.</li>
+<li>Turn on audit logging.</li>
+</ul>
+<h3 id="Q-How-to-monitor-the-Kubernetes-cluster"><a class="header-anchor" href="#Q-How-to-monitor-the-Kubernetes-cluster">¶</a>Q: How to monitor the Kubernetes cluster?</h3>
+<p>Prometheus is used for Kubernetes cluster monitoring. The Prometheus ecosystem consists of multiple components.</p>
+<ul>
+<li>Mainly Prometheus server which scrapes and stores time-series data.</li>
+<li>Client libraries for instrumenting application code.</li>
+<li>Push gateway for supporting short-lived jobs.</li>
+<li>Special-purpose exporters for services like StatsD, HAProxy, Graphite, etc.</li>
+<li>An alert manager to handle alerts on various support tools.</li>
+</ul>
+<h3 id="Q-How-to-get-the-central-logs-from-POD"><a class="header-anchor" href="#Q-How-to-get-the-central-logs-from-POD">¶</a>Q: How to get the central logs from POD?</h3>
+<p>This architecture depends upon the application and many other factors. Following are the common logging patterns</p>
+<ul>
+<li>Node level logging agent.</li>
+<li>Streaming sidecar container.</li>
+<li>Sidecar container with the logging agent.</li>
+<li>Export logs directly from the application.</li>
+</ul>
+<h3 id="Q-How-to-turn-the-service-defined-below-in-the-spec-into-an-external-one"><a class="header-anchor" href="#Q-How-to-turn-the-service-defined-below-in-the-spec-into-an-external-one">¶</a>Q: How to turn the service defined below in the spec into an external one?</h3>
+<p>Adding type: LoadBalancer and nodePort as follows:</p>
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">spec:
+ selector:
+   app: some-app
+ type: LoadBalancer
+ ports:
+   - protocol: UDP
+     port: 8080
+     targetPort: 8080
+     nodePort: 32412<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="Q-How-to-configure-TLS-with-Ingress"><a class="header-anchor" href="#Q-How-to-configure-TLS-with-Ingress">¶</a>Q: How to configure TLS with Ingress?</h3>
+<p>Add tls and secretName entries.</p>
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">spec:
+ tls:
+ - hosts:
+   - some_app.com
+   secretName: someapp-secret-tls<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="Q-What-is-a-Kubernetes-Operator"><a class="header-anchor" href="#Q-What-is-a-Kubernetes-Operator">¶</a>Q: What is a Kubernetes Operator?</h3>
+<p>Operators are software extensions to K8s which make use of custom resources to manage applications and their components. Operators follow Kubernetes principles, notably the control loop.</p>
+<h3 id="Q-Why-do-we-need-Operators"><a class="header-anchor" href="#Q-Why-do-we-need-Operators">¶</a>Q: Why do we need Operators?</h3>
+<p>The process of managing applications in Kubernetes isn’t as straightforward as managing stateless applications, where reaching the desired status and upgrades are both handled the same way for every replica. In stateful applications, upgrading each replica might require different handling due to the stateful nature of the app, each replica might be in a different status. As a result, we often need a human operator to manage stateful applications. Kubernetes Operator is supposed to assist with this.</p>
+<p>This will also help with automating a standard process on multiple Kubernetes clusters.</p>
+<h3 id="Q-What-difference-do-you-find-between-Docker-Swarm-and-Kubernetes"><a class="header-anchor" href="#Q-What-difference-do-you-find-between-Docker-Swarm-and-Kubernetes">¶</a>Q: What difference do you find between Docker Swarm and Kubernetes?</h3>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Kubernetes</th>
+<th>Docker Swarm</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GUI</td>
+<td>Kubernetes Dashboard is the GUI</td>
+<td>Has no GUI</td>
+</tr>
+<tr>
+<td>Installation &amp; cluster configuration</td>
+<td>Setups are quite complicated but the cluster is robust.</td>
+<td>Setup is easy but the cluster is not robust.</td>
+</tr>
+<tr>
+<td>Auto-scaling</td>
+<td>Can do auto-scaling.</td>
+<td>Cannot do auto-scaling.</td>
+</tr>
+<tr>
+<td>Scalability</td>
+<td>Scales fast.</td>
+<td>Scales 5 times faster than Kubernetes.</td>
+</tr>
+<tr>
+<td>Load Balancing</td>
+<td>Manual support needed for load balancing traffic between containers &amp; pods.</td>
+<td>Does auto load balancing of traffic between containers in clusters.</td>
+</tr>
+<tr>
+<td>Data volumes</td>
+<td>Can only share storage volumes with containers in the same pod.</td>
+<td>Can share storage volumes with other containers.</td>
+</tr>
+<tr>
+<td>Rolling updates and rollbacks</td>
+<td>Does rolling updates and automatic rollbacks.</td>
+<td>Can do rolling updates but no automatic rollbacks.</td>
+</tr>
+<tr>
+<td>Logging and monitoring</td>
+<td>Has in-built tools to perform logging and monitoring.</td>
+<td>Requires 3rd party tools like ELK stack to do logging and monitoring.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Q-What-difference-do-you-find-between-deploying-applications-on-the-host-and-containers"><a class="header-anchor" href="#Q-What-difference-do-you-find-between-deploying-applications-on-the-host-and-containers">¶</a>Q: What difference do you find between deploying applications on the host and containers?</h3>
+<p>When you deploy the application on hosts:</p>
+<ul>
+<li>There will be an operating system and that operating system will have a kernel which again will have diverse libraries (installed on the operating system) that are required for the application.</li>
+<li>In this kind of framework, you can have several applications and you will see all the applications sharing the libraries present in the operating system.</li>
+</ul>
+<p>When you deploy an application on the container:</p>
+<ul>
+<li>In this architecture, you will have a kernel which will be the only common thing between all the applications.</li>
+<li>Here you will see every application has their necessary libraries and binaries isolated from the rest of the system, which cannot be approached by any other application.</li>
+<li>Like if one app needs access to Python, that particular app will get it, if the particular application needs access to Java, then only that particular app will have access to Java.</li>
+</ul>
+<h3 id="Q-What-is-Minikube"><a class="header-anchor" href="#Q-What-is-Minikube">¶</a>Q: What is Minikube?</h3>
+<p>Minikube is a tool used for easy running Kubernetes locally, it runs a single-code Kubernetes cluster within a virtual machine.</p>
+<h3 id="Q-How-Kubernetes-simplifies-the-containerized-Deployment"><a class="header-anchor" href="#Q-How-Kubernetes-simplifies-the-containerized-Deployment">¶</a>Q: How Kubernetes simplifies the containerized Deployment</h3>
+<p>A cluster of containers of applications running across multiple hosts requires communications. To make the communication happen, we require something that can scale, balance, and monitor the containers. As Kubernetes is an anti-agnostic tool that can run on any public to a private provider, it is the best choice that can simplify the containerized deployment.</p>
+<h3 id="Q-What-is-the-role-of-Kube-apiserver-and-Kube-scheduler"><a class="header-anchor" href="#Q-What-is-the-role-of-Kube-apiserver-and-Kube-scheduler">¶</a>Q: What is the role of Kube-apiserver and Kube-scheduler?</h3>
+<p>Kube-Apiserver:</p>
+<ul>
+<li>It follows the scale-out architecture &amp; is the front-end of the master node control panel.</li>
+<li>Exposes all the APIs of the Kubernetes Master node components and establishes communication between the Kubernetes Node and the Kubernetes master components.</li>
+</ul>
+<p>Kube-scheduler:</p>
+<ul>
+<li>It does distribution and management of workload on the worker nodes.</li>
+<li>It opts the most suitable node to run the unscheduled pod (based on resource requirements) &amp; keeps a track on the resource utilization.</li>
+<li>It makes sure that no workload is scheduled on already full nodes.</li>
+</ul>
+<h3 id="Q-How-do-master-nodes-in-Kubernetes-work"><a class="header-anchor" href="#Q-How-do-master-nodes-in-Kubernetes-work">¶</a>Q: How do master nodes in Kubernetes work?</h3>
+<ul>
+<li>Kubernetes master controls the nodes, and nodes have the containers in it.</li>
+<li>The individual containers are contained inside the pods and each pod can contain various numbers of containers based on the requirements &amp; configuration.</li>
+<li>So when pods have to be deployed, they have to be deployed either using the interface or CLI (command line interface).</li>
+<li>These pods are scheduled on the nodes and on the basis of resource requirements, the pods are allocated to these nodes.</li>
+<li>Kube-apiserver (which is master node services) ensures that there is a communication between the Kubernetes node and master components.</li>
+</ul>
+<h3 id="Q-What-are-the-different-types-of-services-in-Kubernetes"><a class="header-anchor" href="#Q-What-are-the-different-types-of-services-in-Kubernetes">¶</a>Q: What are the different types of services in Kubernetes?</h3>
+<p>There are four types of services in Kubernetes:</p>
+<ul>
+<li>Cluster IP - Kubernetes Service is an abstraction defining a logical set of Pods running somewhere in your cluster, all providing the same functionality. When created, each Service is given a unique IP address which is also called clusterIP.</li>
+<li>Node Port - A NodePort is an open port that is on every node of your cluster. Kubernetes routes incoming traffic transparently on the NodePort to your service, even if the application is running on a different node.</li>
+<li>Load Balancer - It exposes the service externally using the load balancer of the cloud provider. Services to which the load balancer will route are automatically created.</li>
+<li>External name - It exposes the Service by using an arbitrary name (specified by ExternalName in the spec) by returning a CNAME record with its value.</li>
+</ul>
+<h3 id="Q-What-do-you-understand-about-Cloud-controller-managers"><a class="header-anchor" href="#Q-What-do-you-understand-about-Cloud-controller-managers">¶</a>Q: What do you understand about Cloud controller managers?</h3>
+<p>Cloud Controller Manager has to ensure consistent storage, abstract the cloud-specific code from the Kubernetes specific code, network routing, and manage the communication with the cloud services.</p>
+<p>All these can be split into different containers (it depends on which cloud platform you are using) and this further allows the Kubernetes and cloud vendors code to get developed without creating any inter-dependency. So, the cloud vendor develops its code and connects with the cloud-controller-manager while running the Kubernetes.</p>
+<p>There are 4 types of cloud controller managers:</p>
+<ul>
+<li>Node controller - Ensures that the node is deleted as soon it is stopped.</li>
+<li>Volume controller - Manages the storage and interacts with the cloud provider to orchestrate volume.</li>
+<li>Route Controller - Manages traffic routes in the underlying cloud infrastructures.</li>
+<li>Service Controller - It ensures the management of cloud provider load balancers.</li>
+</ul>
+<h3 id="Q-What-is-the-difference-between-a-replica-set-and-a-replication-controller"><a class="header-anchor" href="#Q-What-is-the-difference-between-a-replica-set-and-a-replication-controller">¶</a>Q: What is the difference between a replica set and a replication controller?</h3>
+<p>Both replica set and replication controller ensure that the given number of pod replicas are running at a given time. But the only point of difference between them is, replica leverages set-based selectors, while the replication controller uses equity-based controllers.</p>
+<p>Selector-based Selectors:</p>
+<p>It filters the keys according to a set of values. The selector based selector locks for pods whose label is mentioned in the set.</p>
+<p>Equity-Based Selectors:</p>
+<p>It filters by both label keys and values. The equity-based selector looks for the pods that have the exact phrase as mentioned in the label.</p>
+<h3 id="Q-What-are-federated-clusters"><a class="header-anchor" href="#Q-What-are-federated-clusters">¶</a>Q: What are federated clusters?</h3>
+<p>The Multiple Kubernetes clusters can be controlled/managed as a single cluster with the help of federated clusters. You can generate multiple Kubernetes clusters within a data center/cloud and use federation clusters to control/manage all of them in one place.</p>
+<p>The federated clusters can achieve this by doing the following two things.</p>
+<ul>
+<li>Cross cluster discovery - Provides the ability to have DNS and Load Balancer with backends from all participating clusters.</li>
+<li>Sync Resources across clusters - Syncs resources across the clusters for deploying the same deployment set across multiple clusters.</li>
+</ul>
+<h3 id="Q-hat-are-the-best-security-measures-that-you-can-take-while-using-Kubernetes"><a class="header-anchor" href="#Q-hat-are-the-best-security-measures-that-you-can-take-while-using-Kubernetes">¶</a>Q: hat are the best security measures that you can take while using Kubernetes?</h3>
+<p>Here are a few ways to ensure security while using Kubernetes:</p>
+<ul>
+<li>By restricting access to ETCD</li>
+<li>By applying security updates to the environment regularly</li>
+<li>By implementing network segmentation</li>
+<li>By logging everything on the producing environment</li>
+<li>By having continuous security vulnerability scanning</li>
+<li>By having a strict policy or protocol for resources</li>
+<li>By enabling auditing</li>
+<li>By defining resource quota</li>
+<li>By limiting direct access to Kubernetes nodes</li>
+<li>By using images from the authorized repository only</li>
+</ul>
+<h3 id="Q-What-are-the-main-differences-between-the-Docker-Swarm-and-Kubernetes"><a class="header-anchor" href="#Q-What-are-the-main-differences-between-the-Docker-Swarm-and-Kubernetes">¶</a>Q: What are the main differences between the Docker Swarm and Kubernetes?</h3>
+<p>Docker Swarm is Docker’s native, open-source container orchestration platform that is used to cluster and schedule Docker containers. Swarm differs from Kubernetes in the following ways:</p>
+<ul>
+<li>Docker Swarm is more convenient to set up but doesn’t have a robust cluster, while Kubernetes is more complicated to set up but the benefit of having the assurance of a robust cluster</li>
+<li>Docker Swarm can’t do auto-scaling (as can Kubernetes); however, Docker scaling is five times faster than Kubernetes</li>
+<li>Docker Swarm doesn’t have a GUI; Kubernetes has a GUI in the form of a dashboard</li>
+<li>Docker Swarm does automatic load balancing of traffic between containers in a cluster, while Kubernetes requires manual intervention for load balancing such traffic</li>
+<li>Docker requires third-party tools like ELK stack for logging and monitoring, while Kubernetes has integrated tools for the same Docker Swarm can share storage volumes with any container easily, while Kubernetes can only share storage volumes with containers in the same pod</li>
+<li>Docker can deploy rolling updates but can’t deploy automatic rollbacks; Kubernetes can deploy rolling updates as well as automatic rollbacks</li>
+</ul>
+<h3 id="Q-What-are-the-types-of-secrets-available-in-Kubernetes"><a class="header-anchor" href="#Q-What-are-the-types-of-secrets-available-in-Kubernetes">¶</a>Q: What are the types of secrets available in Kubernetes?</h3>
+<p>Kubernetes provides several builtin types for some common usage scenarios. These types vary in terms of the validations performed and the constraints Kubernetes imposes on them.</p>
+<table>
+<thead>
+<tr>
+<th>Builtin Type</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Opaque</td>
+<td>arbitrary user-defined data</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="http://kubernetes.io/service-account-token">kubernetes.io/service-account-token</a></td>
+<td>service account token</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="http://kubernetes.io/dockercfg">kubernetes.io/dockercfg</a></td>
+<td>serialized ~/.dockercfg file</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="http://kubernetes.io/dockerconfigjson">kubernetes.io/dockerconfigjson</a></td>
+<td>serialized ~/.docker/config.json file</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="http://kubernetes.io/basic-auth">kubernetes.io/basic-auth</a></td>
+<td>credentials for basic authentication</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="http://kubernetes.io/ssh-auth">kubernetes.io/ssh-auth</a></td>
+<td>credentials for SSH authentication</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="http://kubernetes.io/tls">kubernetes.io/tls</a></td>
+<td>data for a TLS client or server</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="http://bootstrap.kubernetes.io/token">bootstrap.kubernetes.io/token</a></td>
+<td>bootstrap token data</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Q-How-to-use-secrets-in-Kubernetes"><a class="header-anchor" href="#Q-How-to-use-secrets-in-Kubernetes">¶</a>Q: How to use secrets in Kubernetes?</h3>
+<p>Secrets can be defined as Kubernetes objects used to store sensitive data such as user name and passwords with encryption.</p>
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">apiVersion: v1
+kind: Secret
+metadata:
+name: tomcat-pass
+type: Opaque
+data:
+   password: <User Password>
+   username: <User Name><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="Q-How-to-Create-and-Use-ConfigMap-with-Kubernetes"><a class="header-anchor" href="#Q-How-to-Create-and-Use-ConfigMap-with-Kubernetes">¶</a>Q: How to Create and Use ConfigMap with Kubernetes?</h3>
+<p>A Kubernetes ConfigMap is an API object that allows you to store data as key-value pairs. Kubernetes pods can use ConfigMaps as configuration files, environment variables or command-line arguments.</p>
+<p>ConfigMaps allow you to decouple environment-specific configurations from containers to make applications portable. However, they are not suitable for confidential data storage.</p>
+<h3 id="Q-What-is-a-Kubernetes-StatefulSet"><a class="header-anchor" href="#Q-What-is-a-Kubernetes-StatefulSet">¶</a>Q: What is a Kubernetes StatefulSet?</h3>
+<p>StatefulSet is the workload API object used to manage stateful applications. Manages the deployment and scaling of a set of Pods, and provides guarantees about the ordering and uniqueness of these Pods.</p>
+<p>Like a Deployment, a StatefulSet manages Pods that are based on an identical container spec. Unlike a Deployment, a StatefulSet maintains a sticky identity for each of their Pods. These pods are created from the same spec, but are not interchangeable: each has a persistent identifier that it maintains across any rescheduling.</p>
+<p><strong>Using StatefulSets:</strong></p>
+<p>StatefulSets are valuable for applications that require one or more of the following.</p>
+<ul>
+<li>Stable, unique network identifiers.</li>
+<li>Stable, persistent storage.</li>
+<li>Ordered, graceful deployment and scaling.</li>
+<li>Ordered, automated rolling updates.</li>
+</ul>
+<p><strong>Example:</strong> The example below demonstrates the components of a StatefulSet.</p>
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">apiVersion: v1
+kind: Service
+metadata:
+  name: nginx
+  labels:
+    app: nginx
+spec:
+  ports:
+  - port: 80
+    name: web
+  clusterIP: None
+  selector:
+    app: nginx
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: web
+spec:
+  selector:
+    matchLabels:
+      app: nginx # has to match .spec.template.metadata.labels
+  serviceName: "nginx"
+  replicas: 3 # by default is 1
+  template:
+    metadata:
+      labels:
+        app: nginx # has to match .spec.selector.matchLabels
+    spec:
+      terminationGracePeriodSeconds: 10
+      containers:
+      - name: nginx
+        image: k8s.gcr.io/nginx-slim:0.8
+        ports:
+        - containerPort: 80
+          name: web
+        volumeMounts:
+        - name: www
+          mountPath: /usr/share/nginx/html
+  volumeClaimTemplates:
+  - metadata:
+      name: www
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      storageClassName: "my-storage-class"
+      resources:
+        requests:
+          storage: 1Gi<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="Q-What-are-levels-of-abstraction-in-Kubernetes"><a class="header-anchor" href="#Q-What-are-levels-of-abstraction-in-Kubernetes">¶</a>Q: What are levels of abstraction in Kubernetes?</h3>
+<p>Deployments create and manage ReplicaSets, which create and manage Pods, which run on Nodes, which have a container runtime, which run the app code you put in your Docker image.</p>
+<p>Here are the six layers of abstractions when running a workload in Kubernetes starting with the highest-level abstraction.</p>
+<ol>
+<li>Deployment</li>
+<li>ReplicaSet</li>
+<li>Pod</li>
+<li>Node Cluster</li>
+<li>Node Processes</li>
+<li>Docker Container</li>
+</ol>
+<h3 id="Q-How-to-Configure-Kubernetes-for-Rolling-Update"><a class="header-anchor" href="#Q-How-to-Configure-Kubernetes-for-Rolling-Update">¶</a>Q: How to Configure Kubernetes for Rolling Update?</h3>
+<p>One of the primary benefits of using a Deployment to control your pods is the ability to perform rolling updates. Rolling updates allow you to update the configuration of your pods gradually, and Deployments offer many options to control this process.</p>
+<p>The deployment file properly configured for rolling updates should look like this:</p>
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  labels:
+    app: nginx
+spec:
+  replicas: 4
+  selector:
+
+    matchLabels:
+      app: nginx
+  minReadySeconds: 5
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.14.0
+
+        ports:
+        - containerPort: 80
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 5
+            successThreshold: 1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><strong>initialDelaySeconds</strong> specifies how long the probe has to wait to start after the container starts.</li>
+<li><strong>periodSeconds</strong> is the time between two probes. The default is <strong>10</strong> seconds, while the minimal value is <strong>1</strong> second.</li>
+<li><strong>successThreshold</strong> is the minimum number of consecutive successful probes after a failed one for the entire process to be considered successful. The default and minimal values are both <strong>1</strong>.</li>
+</ul>
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">kubectl apply -f nginx-text.yaml --record<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>There are three ways to perform rolling updates.</p>
+<p>For example, to change the app image:</p>
+<p>Option 1: You can use kubectl set to perform the action on the command line:</p>
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">kubectl set image deployment nginx-deployment nginx=nginx:1.14.2 --record<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>Option 2: Alternatively, modify the image version in the spec.templates.spec.containers section of the yaml file. Then, use kubectl replace to perform the update:</p>
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">kubectl replace -f nginx-test.yaml<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>Option 3: You can also use kubectl edit to edit the deployment directly:</p>
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">kubectl edit deployment nginx-deployment --record<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="Q-What-is-the-difference-between-Docker-Compose-and-Kubernetes"><a class="header-anchor" href="#Q-What-is-the-difference-between-Docker-Compose-and-Kubernetes">¶</a>Q: What is the difference between Docker Compose and Kubernetes?</h3>
+<p>Docker (or specifically, the docker command) is used to manage individual containers, docker-compose is used to manage multi-container applications and Kubernetes is a container orchestration tool.</p>
+<p><strong>Docker Compose:</strong></p>
+<ul>
+<li>Docker Compose is the declarative version of the docker cli</li>
+<li>It can start one or more containers</li>
+<li>It can create one or more networks and attach containers to them</li>
+<li>It can create one or more volumes and configure containers to mount them</li>
+<li>All of this is for use on a single host</li>
+</ul>
+<p><strong>Kubernetes:</strong></p>
+<ul>
+<li>Kubernetes is a platform for managing containerized workloads and services, that facilitates both declarative configuration and automation.</li>
+<li>are fault-tolerant,</li>
+<li>can scale, and do this on-demand</li>
+<li>use resources optimally</li>
+<li>can discover other applications automatically, and communicate with each other</li>
+<li>can update/rollback without any downtime.</li>
+</ul>
+<h3 id="Q-What-is-the-difference-between-kubernetes-load-balancer-and-ingress-controller"><a class="header-anchor" href="#Q-What-is-the-difference-between-kubernetes-load-balancer-and-ingress-controller">¶</a>Q: What is the difference between kubernetes load balancer and ingress controller?</h3>
+<p>Load balancer distributes the requests among multiple backend services (of same type) whereas ingress is more like an API gateway (reverse proxy) which routes the request to a specific backend service based on, for instance, the URL.</p>
+<ul>
+<li>A Kubernetes LoadBalancer is a type of Service.</li>
+<li>A Kubernetes Ingress is not a type of Service. It is a collection of rules. An Ingress Controller in your cluster watches for Ingress resources, and attempts to update the server side configuration according to the rules specified in the Ingress.</li>
+</ul>
+<h3 id="Q-When-would-you-use-a-Deployment-versus-a-StatefulSet-versus-a-DaemonSet"><a class="header-anchor" href="#Q-When-would-you-use-a-Deployment-versus-a-StatefulSet-versus-a-DaemonSet">¶</a>Q: When would you use a Deployment versus a StatefulSet versus a DaemonSet?</h3>
+<p>Deployments:</p>
+<p>Deployment is the easiest and most used resource for deploying your application. It is a Kubernetes controller that matches the current state of your cluster to the desired state mentioned in the Deployment manifest.</p>
+<p>StatefulSets:</p>
+<p>StatefulSet(stable-GA in k8s v1.9) is a Kubernetes resource used to manage stateful applications. It manages the deployment and scaling of a set of Pods, and provides guarantee about the ordering and uniqueness of these Pods.</p>
+<p>StatefulSet is also a Controller but unlike Deployments, it doesn’t create ReplicaSet rather itself creates the Pod with a unique naming convention.</p>
+<p>DaemonSet:</p>
+<p>A DaemonSet is a controller that ensures that the pod runs on all the nodes of the cluster. If a node is added/removed from a cluster, DaemonSet automatically adds/deletes the pod.</p>
+<p>Some typical use cases of a DaemonSet is to run cluster level applications like:</p>
+<ul>
+<li>Monitoring Exporters</li>
+<li>Logs Collection Daemon</li>
+</ul>
+<h3 id="Q-What-are-container-orchestrators-and-why-are-they-required"><a class="header-anchor" href="#Q-What-are-container-orchestrators-and-why-are-they-required">¶</a>Q: What are container orchestrators and why are they required?</h3>
+<p>Container orchestration is all about managing the lifecycles of containers, especially in large, dynamic environments. Software teams use container orchestration to control and automate many tasks:</p>
+<ul>
+<li>Provisioning and deployment of containers</li>
+<li>Redundancy and availability of containers</li>
+<li>Scaling up or removing containers to spread application load evenly across host infrastructure</li>
+<li>Movement of containers from one host to another if there is a shortage of resources in a host, or if a host dies</li>
+<li>Allocation of resources between containers</li>
+<li>External exposure of services running in a container with the outside world</li>
+<li>Load balancing of service discovery between containers</li>
+<li>Health monitoring of containers and hosts</li>
+<li>Configuration of an application in relation to the containers running it</li>
+</ul>
+<h3 id="Q-What-type-of-workloads-run-well-on-Kubernetes-and-what-types-do-not"><a class="header-anchor" href="#Q-What-type-of-workloads-run-well-on-Kubernetes-and-what-types-do-not">¶</a>Q: What type of workloads run well on Kubernetes, and what types do not?</h3>
+<p>A workload is an application running on Kubernetes. Whether your workload is a single component or several that work together, on Kubernetes you run it inside a set of pods. In Kubernetes, a Pod represents a set of running containers on your cluster.</p>
+<p>Kubernetes provides several built-in workload resources:</p>
+<ul>
+<li>Deployment and ReplicaSet (replacing the legacy resource ReplicationController). Deployment is a good fit for managing a stateless application workload on your cluster, where any Pod in the Deployment is interchangeable and can be replaced if needed.</li>
+<li>StatefulSet lets you run one or more related Pods that do track state somehow. For example, if your workload records data persistently, you can run a StatefulSet that matches each Pod with a PersistentVolume. Your code, running in the Pods for that StatefulSet, can replicate data to other Pods in the same StatefulSet to improve overall resilience.</li>
+<li>DaemonSet defines Pods that provide node-local facilities. These might be fundamental to the operation of your cluster, such as a networking helper tool, or be part of an add-on. Every time you add a node to your cluster that matches the specification in a DaemonSet, the control plane schedules a Pod for that DaemonSet onto the new node.</li>
+<li>Job and CronJob define tasks that run to completion and then stop. Jobs represent one-off tasks, whereas CronJobs recur according to a schedule.</li>
+</ul>
+<h3 id="Q-What-is-the-Operator-pattern-and-when-should-you-use-it"><a class="header-anchor" href="#Q-What-is-the-Operator-pattern-and-when-should-you-use-it">¶</a>Q: What is the Operator pattern and when should you use it?</h3>
+<p>Operators are software extensions to Kubernetes that make use of custom resources to manage applications and their components. Operators follow Kubernetes principles, notably the control loop.</p>
+<p>Kubernetes operator pattern concept lets you extend the cluster’s behaviour without modifying the code of Kubernetes itself by linking controllers to one or more custom resources. Operators are clients of the Kubernetes API that act as controllers for a Custom Resource.</p>
+<p>Some of the things that you can use an operator to automate include:</p>
+<ul>
+<li>deploying an application on demand</li>
+<li>taking and restoring backups of that application’s state</li>
+<li>handling upgrades of the application code alongside related changes such as database schemas or extra configuration settings</li>
+<li>publishing a Service to applications that don’t support Kubernetes APIs to discover them</li>
+<li>simulating failure in all or part of your cluster to test its resilience</li>
+<li>choosing a leader for a distributed application without an internal member election process</li>
+</ul>
+<h3 id="Q-How-can-RBAC-be-used-to-grant-permission-to-Kubernetes-resources"><a class="header-anchor" href="#Q-How-can-RBAC-be-used-to-grant-permission-to-Kubernetes-resources">¶</a>Q: How can RBAC be used to grant permission to Kubernetes resources?</h3>
+<p>Role-based access control (RBAC) is a method of regulating access to computer or network resources based on the roles of individual users within your organization.</p>
+<p>RBAC authorization uses the <a target="_blank" rel="noopener" href="http://rbac.authorization.k8s.io">rbac.authorization.k8s.io</a> API group to drive authorization decisions, allowing you to dynamically configure policies through the Kubernetes API.</p>
+<p>To enable RBAC, start the API server with the --authorization-mode flag set to a comma-separated list that includes RBAC; for example:</p>
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">kube-apiserver --authorization-mode=Example,RBAC --other-options --more-options<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>The RBAC API declares four kinds of Kubernetes object: Role, ClusterRole, RoleBinding and ClusterRoleBinding.</p>
+<h3 id="Q-What-is-Helm-Charts"><a class="header-anchor" href="#Q-What-is-Helm-Charts">¶</a>Q: What is Helm Charts?</h3>
+<p>Helm Charts are simply Kubernetes YAML manifests combined into a single package that can be advertised to your Kubernetes clusters. Once packaged, installing a Helm Chart into your cluster is as easy as running a single helm install, which really simplifies the deployment of containerized applications.</p>
+<p>Helm has two parts to it:</p>
+<ul>
+<li>The client (CLI), which lives on your local workstation.</li>
+<li>The server (Tiller), which lives on the Kubernetes cluster to execute what’s needed.</li>
+</ul>
+<h3 id="Q-How-to-persist-data-in-kubernetes-using-volumes"><a class="header-anchor" href="#Q-How-to-persist-data-in-kubernetes-using-volumes">¶</a>Q: How to persist data in kubernetes using volumes?</h3>
+<p>Kubernetes Persistent Volumes are a type of Volume that lives within the Kubernetes cluster, and can outlive other Kubernetes pods to retain data for long periods of time.</p>
+<p>Persistent volumes are independent of the lifecycle of the pod that uses it, meaning that even if the pod shuts down, the data in the volume is not erased. They are defined by an API object, which captures the implementation details of storage such as NFS file shares, or specific cloud storage systems.</p>
+<p>Kubernetes provides an API to separate storage from computation, i.e., a pod can perform computations while the files in use are stored on a separate resource. The API introduces 2 types of resources:</p>
+<ul>
+<li>PersistentVolumes are used to define a storage volume in the system, but their lifecycle is independant of the ones of the pods that use them. PersistentVolumes are Volume plugins and the API supports a large variety of implementation, including NFS, Glusterfs, CephFS, as well as cloud-providers such as GCEPersistentDisk, AWSElasticBlockStore, AzureFile and AzureDisk, amongst others.</li>
+<li>PersistentVolumeClaims are requests emitted by pods to obtain a volume. Once obtained, the volume is mounted on a specific path in the pod, while providing an abstraction to the underlying storage system. A claim may specify a storageClassName attribute to obtain a PersistentVolume that satisfies the specific needs of the pod.</li>
+</ul>
+<h3 id="Q-How-to-create-storage-class-in-kubernetes"><a class="header-anchor" href="#Q-How-to-create-storage-class-in-kubernetes">¶</a>Q: How to create storage class in kubernetes?</h3>
+<p>A StorageClass provides a way for administrators to describe the “classes” of storage they offer. Each StorageClass contains the fields provisioner, parameters, and reclaimPolicy, which are used when a PersistentVolume belonging to the class needs to be dynamically provisioned.</p>
+<p>Administrators set the name and other parameters of a class when first creating StorageClass objects, and the objects cannot be updated once they are created. Administrators can specify a default StorageClass only for PVCs that don’t request any particular class to bind to.</p>
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: standard
+provisioner: kubernetes.io/aws-ebs
+parameters:
+  type: gp2
+reclaimPolicy: Retain
+allowVolumeExpansion: true
+mountOptions:
+  - debug
+volumeBindingMode: Immediate<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<hr>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://github.com/learning-zone/devops-interview-questions/blob/master/kubernetes.md#q-what-is-kubernetes">Kubernetes Interview Questions</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://github.com/hclpandv/devops-training-material/blob/master/kubernetes/k8s-interview-questions.md">k8S interview questions</a> <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://spot.io/resources/kubernetes-architecture-11-core-components-explained">Kubernetes Architecture: 11 Core Components Explained</a> <a href="#fnref3" class="footnote-backref">↩︎</a> <a href="#fnref3:1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn4" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/54153164">K8S容器编排之Headless浅谈</a> <a href="#fnref4" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+</p></div><div class="share"><span>Share</span>&nbsp;<span class="soc"><a href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank" class="fa fa-bookmark"></a></span><span class="soc"><a href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));" class="fa fa-weibo"></a></span><span class="soc"><a target="_blank" rel="noopener" href="http://twitter.com/home?status=https://blog.kleon.space/interview/tech/kubernetes/%20KLEON%20Tech - Kubernetes" class="fa fa-twitter"></a></span></div><div class="pagination"><p class="clearfix"><span class="pre pagbuttons"><a role="navigation" href="/interview/tech/database/" title="Tech - Database"><i class="fa fa-angle-double-left"></i>&nbsp;Previous post: Tech - Database</a></span><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/interview/resume/" title="Resume">Next post: Resume&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>

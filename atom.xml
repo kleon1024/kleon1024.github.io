@@ -28,7 +28,8 @@
       
         
         
-    <summary type="html">&lt;p&gt;Q &amp;amp; A of distributed</summary>
+    <summary type="html">&lt;p&gt;Q &amp;amp; A of distributed system. &lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn1&quot; id=&quot;fnref1&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;hr</summary>
         
       
     
@@ -147,7 +148,7 @@
     <updated>2022-04-22T20:18:10.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;Interview questions of golang.&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;Interview questions of golang &lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn1&quot; id=&quot;fnref1&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;</summary>
     
     
     
@@ -188,10 +189,11 @@
     <link href="https://blog.kleon.space/interview/system/outline/"/>
     <id>https://blog.kleon.space/interview/system/outline/</id>
     <published>2022-04-22T19:55:46.000Z</published>
-    <updated>2022-04-22T19:55:42.000Z</updated>
+    <updated>2022-04-24T15:24:36.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;Q &amp;amp; A of system design.&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;Q &amp;amp; A of system design&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn1&quot; id=&quot;fnref1&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/system_design.png&quot; alt=&quot;system design&quot;&gt;&lt;/p&gt;</summary>
     
     
     
@@ -213,6 +215,27 @@
     
     
     <summary type="html">&lt;p&gt;Q &amp;amp; A of databases.&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="interview" scheme="https://blog.kleon.space/categories/interview/"/>
+    
+    
+    <category term="interview" scheme="https://blog.kleon.space/tags/interview/"/>
+    
+    <category term="tech" scheme="https://blog.kleon.space/tags/tech/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Tech - Kubernetes</title>
+    <link href="https://blog.kleon.space/interview/tech/kubernetes/"/>
+    <id>https://blog.kleon.space/interview/tech/kubernetes/</id>
+    <published>2022-04-22T19:55:46.000Z</published>
+    <updated>2022-04-24T15:24:45.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;Q &amp;amp; A of Kubernetes.&lt;/p&gt;</summary>
     
     
     
@@ -437,27 +460,6 @@
     
     
     <summary type="html">&lt;p&gt;Logistic Regression&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="机器学习" scheme="https://blog.kleon.space/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="机器学习" scheme="https://blog.kleon.space/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-    <category term="推荐系统" scheme="https://blog.kleon.space/tags/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>机器学习系统 4-12 - GBDR+LR</title>
-    <link href="https://blog.kleon.space/ai/ml-system/recommender/12-gbdt-lr/"/>
-    <id>https://blog.kleon.space/ai/ml-system/recommender/12-gbdt-lr/</id>
-    <published>2021-05-02T12:25:10.000Z</published>
-    <updated>2021-05-12T12:24:56.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;GBDT+LR&lt;/p&gt;</summary>
     
     
     

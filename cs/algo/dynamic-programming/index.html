@@ -31,7 +31,7 @@ dp数组如何初始化
 
 动规，dp数组代表第i个数，和题目直接对应
 "><meta name="twitter:site" content="KLEON"><meta name="twitter:title" content="算法基础 - 动态规划法"><meta name="twitter:card" content="summary"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 6.1.0"><link rel="stylesheet" href="/css/prism.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body><div id="stage" class="container"><div class="row"><div id="side-bar" class="col-sm-3 col-xs-12 side-container invisible"><div class="vertical-text site-title"><h3 tabindex="-1" class="site-title-small"><a href="/" class="a-title">keep moving</a></h3><h1 tabindex="-1" class="site-title-large"><a href="/" class="a-title">自说自话</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div id="site-nav" class="site-title-links"><ul><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li><li><a href="/categories">Categories</a></li><li><a href="/tags">Tags</a></li><li><a href="/googlebe23cb0bc55fc412.html"></a></li><li><a href="/about/index.html"></a></li><li class="soc"><a href="https://github.com/kleon1024" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa fa-github">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div id="main-container" class="col-sm-9 col-xs-12 main-container invisible"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>算法基础 - 动态规划法</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-04-28</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/算法/" title="算法" class="a-tag">算法</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/算法/" title="算法" class="a-tag">算法</a><span>&nbsp;</span><a href="/tags/数据结构/" title="数据结构" class="a-tag">数据结构</a><span>&nbsp;</span><a href="/tags/leetcode/" title="leetcode" class="a-tag">leetcode</a><span>&nbsp;</span></span></p><p class="post-abstract"><p>动态规划用于就解决包含重叠子问题的问题，其中每一个子问题的状态都是由上一个状态推导出来的。</p>
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body><div id="stage" class="container"><div class="row"><div id="side-bar" class="col-sm-3 col-xs-12 side-container invisible"><div class="vertical-text site-title"><h3 tabindex="-1" class="site-title-small"><a href="/" class="a-title"></a></h3><h1 tabindex="-1" class="site-title-large"><a href="/" class="a-title">自说自话</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div id="site-nav" class="site-title-links"><ul><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li><li><a href="/categories">Categories</a></li><li><a href="/tags">Tags</a></li><li><a href="/googlebe23cb0bc55fc412.html"></a></li><li><a href="/about/index.html"></a></li><li class="soc"><a href="https://github.com/kleon1024" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa fa-github">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div id="main-container" class="col-sm-9 col-xs-12 main-container invisible"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>算法基础 - 动态规划法</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-04-28</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/算法/" title="算法" class="a-tag">算法</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/算法/" title="算法" class="a-tag">算法</a><span>&nbsp;</span><a href="/tags/数据结构/" title="数据结构" class="a-tag">数据结构</a><span>&nbsp;</span><a href="/tags/leetcode/" title="leetcode" class="a-tag">leetcode</a><span>&nbsp;</span></span></p><p class="post-abstract"><p>动态规划用于就解决包含重叠子问题的问题，其中每一个子问题的状态都是由上一个状态推导出来的。</p>
 <span id="more"></span>
 <h1>基础</h1>
 <p>动态规划的一般步骤：</p>
@@ -48,258 +48,258 @@ dp数组如何初始化
 <ul>
 <li>动规，dp数组代表第i个数，和题目直接对应</li>
 </ul>
-<pre class="line-numbers language-highlight go"><span class="function"><span class="keyword">func</span> <span class="title">fib</span><span class="params">(n <span class="type">int</span>)</span></span> <span class="type"><code class="language-highlight go"><span class="function"><span class="keyword">func</span> <span class="title">fib</span><span class="params">(n <span class="type">int</span>)</span></span> <span class="type">int</span> &#123;
-    <span class="keyword">if</span> n <= <span class="number">1</span> &#123;
-        <span class="keyword">return</span> n
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">func fib(n int) int &#123;
+    if n <= 1 &#123;
+        return n
     &#125;
-    dp := <span class="built_in">make</span>([]<span class="type">int</span>, n+<span class="number">1</span>)
-    dp[<span class="number">0</span>] = <span class="number">0</span>
-    dp[<span class="number">1</span>] = <span class="number">1</span>
-    <span class="keyword">for</span> i := <span class="number">2</span>; i <= n; i++ &#123;
-        dp[i] = dp[i - <span class="number">1</span>] + dp[i - <span class="number">2</span>]
+    dp := make([]int, n+1)
+    dp[0] = 0
+    dp[1] = 1
+    for i := 2; i <= n; i++ &#123;
+        dp[i] = dp[i - 1] + dp[i - 2]
     &#125;
-    <span class="keyword">return</span> dp[n]
+    return dp[n]
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="爬楼梯"><a class="header-anchor" href="#爬楼梯">¶</a>爬楼梯</h2>
 <p><img src="https://img.shields.io/badge/leetcode-70-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/climbing-stairs/">爬楼梯</a></p>
 <ul>
 <li>动规，dp表示到第i级台阶可能的方法</li>
 </ul>
-<pre class="line-numbers language-highlight go"><span class="function"><span class="keyword">func</span> <span class="title">climbStairs</span><span class="params">(n <span class="type">int</span>)</span></span> <span class="type"><code class="language-highlight go"><span class="function"><span class="keyword">func</span> <span class="title">climbStairs</span><span class="params">(n <span class="type">int</span>)</span></span> <span class="type">int</span> &#123;
-    <span class="keyword">if</span> n <= <span class="number">2</span> &#123;
-        <span class="keyword">return</span> n
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">func climbStairs(n int) int &#123;
+    if n <= 2 &#123;
+        return n
     &#125;
-    dp := <span class="built_in">make</span>([]<span class="type">int</span>, n+<span class="number">1</span>)
-    dp[<span class="number">1</span>] = <span class="number">1</span>
-    dp[<span class="number">2</span>] = <span class="number">2</span>
-    <span class="keyword">for</span> i := <span class="number">3</span>; i <= n; i++ &#123;
-        dp[i] = dp[i - <span class="number">1</span>] + dp[i - <span class="number">2</span>]
+    dp := make([]int, n+1)
+    dp[1] = 1
+    dp[2] = 2
+    for i := 3; i <= n; i++ &#123;
+        dp[i] = dp[i - 1] + dp[i - 2]
     &#125;
-    <span class="keyword">return</span> dp[n]
+    return dp[n]
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="使用最小花费爬楼梯"><a class="header-anchor" href="#使用最小花费爬楼梯">¶</a>使用最小花费爬楼梯</h2>
 <p><img src="https://img.shields.io/badge/leetcode-746-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/min-cost-climbing-stairs/">使用最小花费爬楼梯</a></p>
 <ul>
 <li>动规，dp表示到第i级台阶可能的方法，最后一步没有花费，取最小值</li>
 </ul>
-<pre class="line-numbers language-highlight go"><span class="function"><span class="keyword">func</span> <span class="title">min</span><span class="params">(a, b <span class="type">int</span>)</span></span> <span class="type"><code class="language-highlight go"><span class="function"><span class="keyword">func</span> <span class="title">min</span><span class="params">(a, b <span class="type">int</span>)</span></span> <span class="type">int</span> &#123;
-    <span class="keyword">if</span> a < b &#123;
-        <span class="keyword">return</span> a
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">func min(a, b int) int &#123;
+    if a < b &#123;
+        return a
     &#125;
-    <span class="keyword">return</span> b
+    return b
 &#125;
 
-<span class="function"><span class="keyword">func</span> <span class="title">minCostClimbingStairs</span><span class="params">(cost []<span class="type">int</span>)</span></span> <span class="type">int</span> &#123;
-    <span class="keyword">if</span> <span class="built_in">len</span>(cost) <= <span class="number">1</span> &#123;
-        <span class="keyword">return</span> <span class="number">0</span>
+func minCostClimbingStairs(cost []int) int &#123;
+    if len(cost) <= 1 &#123;
+        return 0
     &#125;
-    dp := <span class="built_in">make</span>([]<span class="type">int</span>, <span class="built_in">len</span>(cost))
-    dp[<span class="number">0</span>] = cost[<span class="number">0</span>]
-    dp[<span class="number">1</span>] = cost[<span class="number">1</span>]
-    <span class="keyword">for</span> i := <span class="number">2</span>; i < <span class="built_in">len</span>(cost); i++ &#123;
-        dp[i] = min(dp[i - <span class="number">1</span>], dp[i - <span class="number">2</span>]) + cost[i]
+    dp := make([]int, len(cost))
+    dp[0] = cost[0]
+    dp[1] = cost[1]
+    for i := 2; i < len(cost); i++ &#123;
+        dp[i] = min(dp[i - 1], dp[i - 2]) + cost[i]
     &#125;
-    <span class="keyword">return</span> min(dp[<span class="built_in">len</span>(cost) - <span class="number">1</span>], dp[<span class="built_in">len</span>(cost) - <span class="number">2</span>])
+    return min(dp[len(cost) - 1], dp[len(cost) - 2])
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="不同路径"><a class="header-anchor" href="#不同路径">¶</a>不同路径</h2>
 <p><img src="https://img.shields.io/badge/leetcode-62-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/unique-paths/">不同路径</a></p>
 <ul>
 <li>动规，dp表示到第i,j可能的路径</li>
 </ul>
-<pre class="line-numbers language-highlight go"><span class="function"><span class="keyword">func</span> <span class="title">uniquePaths</span><span class="params">(m <span class="type">int</span>, n <span class="type">int</span>)</span></span> <span class="type"><code class="language-highlight go"><span class="function"><span class="keyword">func</span> <span class="title">uniquePaths</span><span class="params">(m <span class="type">int</span>, n <span class="type">int</span>)</span></span> <span class="type">int</span> &#123;
-    dp := <span class="built_in">make</span>([][]<span class="type">int</span>, m)
-    <span class="keyword">for</span> i := <span class="keyword">range</span> dp &#123;
-        dp[i] = <span class="built_in">make</span>([]<span class="type">int</span>, n)
-        dp[i][<span class="number">0</span>] = <span class="number">1</span>
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">func uniquePaths(m int, n int) int &#123;
+    dp := make([][]int, m)
+    for i := range dp &#123;
+        dp[i] = make([]int, n)
+        dp[i][0] = 1
     &#125;
-    <span class="keyword">for</span> j := <span class="keyword">range</span> dp[<span class="number">0</span>] &#123;
-        dp[<span class="number">0</span>][j] = <span class="number">1</span>
+    for j := range dp[0] &#123;
+        dp[0][j] = 1
     &#125;
 
-    <span class="keyword">for</span> i := <span class="number">1</span>; i < m; i++ &#123;
-        <span class="keyword">for</span> j := <span class="number">1</span>; j < n; j++ &#123;
-            dp[i][j] = dp[i - <span class="number">1</span>][j] + dp[i][j - <span class="number">1</span>]
+    for i := 1; i < m; i++ &#123;
+        for j := 1; j < n; j++ &#123;
+            dp[i][j] = dp[i - 1][j] + dp[i][j - 1]
         &#125;
     &#125;
 
-    <span class="keyword">return</span> dp[m - <span class="number">1</span>][n - <span class="number">1</span>]
+    return dp[m - 1][n - 1]
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="不同路径-II"><a class="header-anchor" href="#不同路径-II">¶</a>不同路径 II</h2>
 <p><img src="https://img.shields.io/badge/leetcode-63-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/unique-paths-ii/">不同路径 II</a></p>
 <ul>
 <li>动规，dp表示到第i,j可能的路径，加入障碍物后，所以障碍物位置的路径变为0</li>
 </ul>
-<pre class="line-numbers language-highlight go"><span class="function"><span class="keyword">func</span> <span class="title">uniquePathsWithObstacles</span><span class="params">(obstacleGrid [][]<span class="type">int</span>)</span></span> <span class="type"><code class="language-highlight go"><span class="function"><span class="keyword">func</span> <span class="title">uniquePathsWithObstacles</span><span class="params">(obstacleGrid [][]<span class="type">int</span>)</span></span> <span class="type">int</span> &#123;
-    m := <span class="built_in">len</span>(obstacleGrid)
-    n := <span class="built_in">len</span>(obstacleGrid[<span class="number">0</span>])
-    dp := <span class="built_in">make</span>([][]<span class="type">int</span>, m)
-    <span class="keyword">for</span> i := <span class="keyword">range</span> dp &#123;
-        dp[i] = <span class="built_in">make</span>([]<span class="type">int</span>, n)
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">func uniquePathsWithObstacles(obstacleGrid [][]int) int &#123;
+    m := len(obstacleGrid)
+    n := len(obstacleGrid[0])
+    dp := make([][]int, m)
+    for i := range dp &#123;
+        dp[i] = make([]int, n)
     &#125;
-    <span class="keyword">for</span> i := <span class="number">0</span>; i < m && obstacleGrid[i][<span class="number">0</span>] == <span class="number">0</span>; i++ &#123;
-        dp[i][<span class="number">0</span>] = <span class="number">1</span>
+    for i := 0; i < m && obstacleGrid[i][0] == 0; i++ &#123;
+        dp[i][0] = 1
     &#125;
-    <span class="keyword">for</span> j := <span class="number">0</span>; j < n && obstacleGrid[<span class="number">0</span>][j] == <span class="number">0</span>; j++ &#123;
-        dp[<span class="number">0</span>][j] = <span class="number">1</span>
+    for j := 0; j < n && obstacleGrid[0][j] == 0; j++ &#123;
+        dp[0][j] = 1
     &#125;
 
-    <span class="keyword">for</span> i := <span class="number">1</span>; i < m; i++ &#123;
-        <span class="keyword">for</span> j := <span class="number">1</span>; j < n; j++ &#123;
-            <span class="keyword">if</span> obstacleGrid[i][j] == <span class="number">1</span> &#123;
-                <span class="keyword">continue</span>
+    for i := 1; i < m; i++ &#123;
+        for j := 1; j < n; j++ &#123;
+            if obstacleGrid[i][j] == 1 &#123;
+                continue
             &#125;
-            dp[i][j] = dp[i - <span class="number">1</span>][j] + dp[i][j - <span class="number">1</span>]
+            dp[i][j] = dp[i - 1][j] + dp[i][j - 1]
         &#125;
     &#125;
-    <span class="keyword">return</span> dp[m - <span class="number">1</span>][n - <span class="number">1</span>]
+    return dp[m - 1][n - 1]
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="整数拆分"><a class="header-anchor" href="#整数拆分">¶</a>整数拆分</h2>
 <p><img src="https://img.shields.io/badge/leetcode-343-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/integer-break/">整数拆分</a></p>
 <ul>
 <li>动规，dp表示i的最大面积，对于每个拆分的数i，从1开始遍历j到i-1，最大面积是 (i - j) * j 和 i - j 的最大面积 * j</li>
 </ul>
-<pre class="line-numbers language-highlight go"><span class="function"><span class="keyword">func</span> <span class="title">max</span><span class="params">(a, b <span class="type">int</span>)</span></span> <span class="type"><code class="language-highlight go"><span class="function"><span class="keyword">func</span> <span class="title">max</span><span class="params">(a, b <span class="type">int</span>)</span></span> <span class="type">int</span> &#123;
-    <span class="keyword">if</span> a > b &#123;
-        <span class="keyword">return</span> a
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">func max(a, b int) int &#123;
+    if a > b &#123;
+        return a
     &#125;
-    <span class="keyword">return</span> b
+    return b
 &#125;
-<span class="function"><span class="keyword">func</span> <span class="title">integerBreak</span><span class="params">(n <span class="type">int</span>)</span></span> <span class="type">int</span> &#123;
-    dp := <span class="built_in">make</span>([]<span class="type">int</span>, n + <span class="number">1</span>)
-    dp[<span class="number">2</span>] = <span class="number">1</span>
-    <span class="keyword">for</span> i := <span class="number">3</span>; i <= n; i++ &#123;
-        <span class="keyword">for</span> j := <span class="number">1</span>; j < i - <span class="number">1</span>; j++ &#123;
+func integerBreak(n int) int &#123;
+    dp := make([]int, n + 1)
+    dp[2] = 1
+    for i := 3; i <= n; i++ &#123;
+        for j := 1; j < i - 1; j++ &#123;
             dp[i] = max(dp[i], max((i - j) * j, dp[i - j] * j))
 
         &#125;
     &#125;
-    <span class="keyword">return</span> dp[n]
+    return dp[n]
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="不同的二叉搜索树"><a class="header-anchor" href="#不同的二叉搜索树">¶</a>不同的二叉搜索树</h2>
 <p><img src="https://img.shields.io/badge/leetcode-96-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/unique-binary-search-trees/">不同的二叉搜索树</a></p>
 <ul>
 <li>dp为节点数为i的二叉树数量，等于所有j-1和i-j的数量组合累加（相加==i-1，去除了根节点），dp[0]为空节点，也可以算作一种</li>
 </ul>
-<pre class="line-numbers language-highlight go"><span class="function"><span class="keyword">func</span> <span class="title">numTrees</span><span class="params">(n <span class="type">int</span>)</span></span> <span class="type"><code class="language-highlight go"><span class="function"><span class="keyword">func</span> <span class="title">numTrees</span><span class="params">(n <span class="type">int</span>)</span></span> <span class="type">int</span> &#123;
-    dp := <span class="built_in">make</span>([]<span class="type">int</span>, n + <span class="number">1</span>)
-    dp[<span class="number">0</span>] = <span class="number">1</span>
-    <span class="keyword">for</span> i := <span class="number">1</span>; i <= n; i++ &#123;
-        <span class="keyword">for</span> j := <span class="number">1</span>; j <= i; j++ &#123;
-            dp[i] += dp[j - <span class="number">1</span>] * dp[i - j]
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">func numTrees(n int) int &#123;
+    dp := make([]int, n + 1)
+    dp[0] = 1
+    for i := 1; i <= n; i++ &#123;
+        for j := 1; j <= i; j++ &#123;
+            dp[i] += dp[j - 1] * dp[i - j]
         &#125;
     &#125;
-    <span class="keyword">return</span> dp[n]
+    return dp[n]
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="青蛙过河"><a class="header-anchor" href="#青蛙过河">¶</a>青蛙过河</h2>
 <p><img src="https://img.shields.io/badge/leetcode-403-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/frog-jump/">青蛙过河</a></p>
 <ul>
 <li>dp为能否到第i个石子上，并且上一步跳k个单位，限制条件是在i块石子上最多能跳i，如果石子间距离大于i则一定不能到达终点，并且上次跳跃距离一定满足k &lt;= i，如果不满足则可以停止跳跃，避免冗余计算。</li>
 </ul>
-<pre class="line-numbers language-highlight go">n := <span class="built_in"><code class="language-highlight go">n := <span class="built_in">len</span>(stones)
-dp := <span class="built_in">make</span>([][]<span class="type">bool</span>, n)
-<span class="keyword">for</span> i := <span class="keyword">range</span> dp &#123;
-    dp[i] = <span class="built_in">make</span>([]<span class="type">bool</span>, n)
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">n := len(stones)
+dp := make([][]bool, n)
+for i := range dp &#123;
+    dp[i] = make([]bool, n)
 &#125;
-dp[<span class="number">0</span>][<span class="number">0</span>] = <span class="literal">true</span>
-<span class="keyword">for</span> i := <span class="number">1</span>; i < n; i++ &#123;
-    <span class="keyword">if</span> stones[i]-stones[i<span class="number">-1</span>] > i &#123;
-        <span class="keyword">return</span> <span class="literal">false</span>
+dp[0][0] = true
+for i := 1; i < n; i++ &#123;
+    if stones[i]-stones[i-1] > i &#123;
+        return false
     &#125;
 &#125;
-<span class="keyword">for</span> i := <span class="number">1</span>; i < n; i++ &#123;
-    <span class="keyword">for</span> j := i - <span class="number">1</span>; j >= <span class="number">0</span>; j-- &#123;
+for i := 1; i < n; i++ &#123;
+    for j := i - 1; j >= 0; j-- &#123;
         k := stones[i] - stones[j]
-        <span class="keyword">if</span> k > j+<span class="number">1</span> &#123;
-            <span class="keyword">break</span>
+        if k > j+1 &#123;
+            break
         &#125;
-        dp[i][k] = dp[j][k<span class="number">-1</span>] || dp[j][k] || dp[j][k+<span class="number">1</span>]
-        <span class="keyword">if</span> i == n<span class="number">-1</span> && dp[i][k] &#123;
-            <span class="keyword">return</span> <span class="literal">true</span>
+        dp[i][k] = dp[j][k-1] || dp[j][k] || dp[j][k+1]
+        if i == n-1 && dp[i][k] &#123;
+            return true
         &#125;
     &#125;
 &#125;
-<span class="keyword">return</span> <span class="literal">false</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+return false<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="分割等和子集"><a class="header-anchor" href="#分割等和子集">¶</a>分割等和子集</h2>
 <p><img src="https://img.shields.io/badge/leetcode-416-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/partition-equal-subset-sum/">分割等和子集</a></p>
 <ul>
 <li>01背包问题，背包容量是sum/2，商品价值和重量均为元素的数值，背包如何正好装满，说明找到了总和为sum/2的子集，元素不可重复</li>
 </ul>
-<pre class="line-numbers language-highlight go"><span class="function"><span class="keyword">func</span> <span class="title">max</span><span class="params">(a, b <span class="type">int</span>)</span></span> <span class="type"><code class="language-highlight go"><span class="function"><span class="keyword">func</span> <span class="title">max</span><span class="params">(a, b <span class="type">int</span>)</span></span> <span class="type">int</span> &#123;
-    <span class="keyword">if</span> a > b &#123;
-        <span class="keyword">return</span> a
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">func max(a, b int) int &#123;
+    if a > b &#123;
+        return a
     &#125;
-    <span class="keyword">return</span> b
+    return b
 &#125;
 
-<span class="function"><span class="keyword">func</span> <span class="title">canPartition</span><span class="params">(nums []<span class="type">int</span>)</span></span> <span class="type">bool</span> &#123;
-    sum := <span class="number">0</span>
-    <span class="keyword">for</span> _, n := <span class="keyword">range</span> nums &#123;
+func canPartition(nums []int) bool &#123;
+    sum := 0
+    for _, n := range nums &#123;
         sum += n
     &#125;
-    <span class="keyword">if</span> sum % <span class="number">2</span> == <span class="number">1</span> &#123;
-        <span class="keyword">return</span> <span class="literal">false</span>
+    if sum % 2 == 1 &#123;
+        return false
     &#125;
-    target := sum / <span class="number">2</span>
-    dp := <span class="built_in">make</span>([]<span class="type">int</span>, <span class="number">10001</span>)
-    <span class="keyword">for</span> i := <span class="number">0</span>; i < <span class="built_in">len</span>(nums); i++ &#123;
-        <span class="keyword">for</span> j := target; j >= nums[i]; j-- &#123;
+    target := sum / 2
+    dp := make([]int, 10001)
+    for i := 0; i < len(nums); i++ &#123;
+        for j := target; j >= nums[i]; j-- &#123;
             dp[j] = max(dp[j], dp[j - nums[i]] + nums[i])
         &#125;
     &#125;
 
-    <span class="keyword">return</span> dp[target] == target
+    return dp[target] == target
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="最后一块石头的重量-II"><a class="header-anchor" href="#最后一块石头的重量-II">¶</a>最后一块石头的重量 II</h2>
 <p><img src="https://img.shields.io/badge/leetcode-1049-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/last-stone-weight-ii/">最后一块石头的重量 II</a></p>
 <ul>
 <li>01背包，背包容量是sum/2，商品价值和重量均为石头的重量，如何装最大化价值的石头dp[target]，另一部分没装的就是sum - dp[target]，sum/2向下取正，sum &gt; 2dp[target]</li>
 </ul>
-<pre class="line-numbers language-highlight go"><span class="function"><span class="keyword">func</span> <span class="title">max</span><span class="params">(a, b <span class="type">int</span>)</span></span> <span class="type"><code class="language-highlight go"><span class="function"><span class="keyword">func</span> <span class="title">max</span><span class="params">(a, b <span class="type">int</span>)</span></span> <span class="type">int</span> &#123;
-    <span class="keyword">if</span> a > b &#123;
-        <span class="keyword">return</span> a
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">func max(a, b int) int &#123;
+    if a > b &#123;
+        return a
     &#125;
-    <span class="keyword">return</span> b
+    return b
 &#125;
-<span class="function"><span class="keyword">func</span> <span class="title">lastStoneWeightII</span><span class="params">(stones []<span class="type">int</span>)</span></span> <span class="type">int</span> &#123;
-    dp := <span class="built_in">make</span>([]<span class="type">int</span>, <span class="number">15001</span>)
-    sum := <span class="number">0</span>
-    <span class="keyword">for</span> _, s := <span class="keyword">range</span> stones &#123;
+func lastStoneWeightII(stones []int) int &#123;
+    dp := make([]int, 15001)
+    sum := 0
+    for _, s := range stones &#123;
         sum += s
     &#125;
-    target := sum / <span class="number">2</span>
-    <span class="keyword">for</span> i := <span class="number">0</span>; i < <span class="built_in">len</span>(stones); i++ &#123;
-        <span class="keyword">for</span> j := target; j >= stones[i]; j-- &#123;
+    target := sum / 2
+    for i := 0; i < len(stones); i++ &#123;
+        for j := target; j >= stones[i]; j-- &#123;
             dp[j] = max(dp[j], dp[j - stones[i]] + stones[i])
         &#125;
     &#125;
-    <span class="keyword">return</span> sum - dp[target] - dp[target]
+    return sum - dp[target] - dp[target]
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="目标和"><a class="header-anchor" href="#目标和">¶</a>目标和</h2>
 <p><img src="https://img.shields.io/badge/leetcode-494-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/target-sum/">目标和</a></p>
 <ul>
 <li>01背包，加号的总和为x，要求x - (sum  - x) = S，dp[j]表示装满容量为j的背包有dp[i]种方法，那么dp[j] += dp[j - nums[i]]就是把所有可能的方法都加起来</li>
 </ul>
-<pre class="line-numbers language-highlight go"><span class="function"><span class="keyword">func</span> <span class="title">findTargetSumWays</span><span class="params">(nums []<span class="type">int</span>, target <span class="type">int</span>)</span></span> <span class="type"><code class="language-highlight go"><span class="function"><span class="keyword">func</span> <span class="title">findTargetSumWays</span><span class="params">(nums []<span class="type">int</span>, target <span class="type">int</span>)</span></span> <span class="type">int</span> &#123;
-    sum := <span class="number">0</span>
-    <span class="keyword">for</span> _, n := <span class="keyword">range</span> nums &#123;
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">func findTargetSumWays(nums []int, target int) int &#123;
+    sum := 0
+    for _, n := range nums &#123;
         sum += n
     &#125;
-    <span class="keyword">if</span> target > sum &#123;
-        <span class="keyword">return</span> <span class="number">0</span>
+    if target > sum &#123;
+        return 0
     &#125;
-    <span class="keyword">if</span> (target + sum) % <span class="number">2</span> == <span class="number">1</span> &#123;
-        <span class="keyword">return</span> <span class="number">0</span>
+    if (target + sum) % 2 == 1 &#123;
+        return 0
     &#125;
 
-    bagSize := (target + sum) / <span class="number">2</span>
-    dp := <span class="built_in">make</span>([]<span class="type">int</span> , bagSize + <span class="number">1</span>)
-    dp[<span class="number">0</span>] = <span class="number">1</span>
-    <span class="keyword">for</span> i := <span class="number">0</span>; i < <span class="built_in">len</span>(nums); i++ &#123;
-        <span class="keyword">for</span> j := bagSize; j >= nums[i]; j-- &#123;
+    bagSize := (target + sum) / 2
+    dp := make([]int , bagSize + 1)
+    dp[0] = 1
+    for i := 0; i < len(nums); i++ &#123;
+        for j := bagSize; j >= nums[i]; j-- &#123;
             dp[j] += dp[j - nums[i]]
         &#125;
     &#125;
-    <span class="keyword">return</span> dp[bagSize]
+    return dp[bagSize]
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <hr>
 </p></div><div class="share"><span>Share</span>&nbsp;<span class="soc"><a href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank" class="fa fa-bookmark"></a></span><span class="soc"><a href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));" class="fa fa-weibo"></a></span><span class="soc"><a target="_blank" rel="noopener" href="http://twitter.com/home?status=https://blog.kleon.space/cs/algo/dynamic-programming/%20KLEON%20算法基础 - 动态规划法" class="fa fa-twitter"></a></span></div><div class="pagination"><p class="clearfix"><span class="pre pagbuttons"><a role="navigation" href="/ai/ml-system/recommender/4-recall/" title="机器学习系统 4-4 - 召回"><i class="fa fa-angle-double-left"></i>&nbsp;Previous post: 机器学习系统 4-4 - 召回</a></span><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/cs/algo/greedy/" title="算法基础 - 贪心法">Next post: 算法基础 - 贪心法&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>

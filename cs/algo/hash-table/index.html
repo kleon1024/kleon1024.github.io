@@ -19,7 +19,7 @@ set，集合
 
 Go的map底层使用哈希表实现，set可通过将map的value置空实现。
 C++的std::map/std::multimap由红黑树实现，st"><meta name="twitter:site" content="KLEON"><meta name="twitter:title" content="算法基础 - 哈希表"><meta name="twitter:card" content="summary"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 6.1.0"><link rel="stylesheet" href="/css/prism.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body><div id="stage" class="container"><div class="row"><div id="side-bar" class="col-sm-3 col-xs-12 side-container invisible"><div class="vertical-text site-title"><h3 tabindex="-1" class="site-title-small"><a href="/" class="a-title">keep moving</a></h3><h1 tabindex="-1" class="site-title-large"><a href="/" class="a-title">自说自话</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div id="site-nav" class="site-title-links"><ul><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li><li><a href="/categories">Categories</a></li><li><a href="/tags">Tags</a></li><li><a href="/googlebe23cb0bc55fc412.html"></a></li><li><a href="/about/index.html"></a></li><li class="soc"><a href="https://github.com/kleon1024" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa fa-github">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div id="main-container" class="col-sm-9 col-xs-12 main-container invisible"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>算法基础 - 哈希表</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-03-21</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/算法/" title="算法" class="a-tag">算法</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/算法/" title="算法" class="a-tag">算法</a><span>&nbsp;</span><a href="/tags/数据结构/" title="数据结构" class="a-tag">数据结构</a><span>&nbsp;</span><a href="/tags/leetcode/" title="leetcode" class="a-tag">leetcode</a><span>&nbsp;</span></span></p><p class="post-abstract"><p>哈希函数用于缩小映射空间，可能会发生碰撞，可用链表法或多哈希函数。</p>
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body><div id="stage" class="container"><div class="row"><div id="side-bar" class="col-sm-3 col-xs-12 side-container invisible"><div class="vertical-text site-title"><h3 tabindex="-1" class="site-title-small"><a href="/" class="a-title"></a></h3><h1 tabindex="-1" class="site-title-large"><a href="/" class="a-title">自说自话</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div id="site-nav" class="site-title-links"><ul><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li><li><a href="/categories">Categories</a></li><li><a href="/tags">Tags</a></li><li><a href="/googlebe23cb0bc55fc412.html"></a></li><li><a href="/about/index.html"></a></li><li class="soc"><a href="https://github.com/kleon1024" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa fa-github">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div id="main-container" class="col-sm-9 col-xs-12 main-container invisible"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>算法基础 - 哈希表</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-03-21</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/算法/" title="算法" class="a-tag">算法</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/算法/" title="算法" class="a-tag">算法</a><span>&nbsp;</span><a href="/tags/数据结构/" title="数据结构" class="a-tag">数据结构</a><span>&nbsp;</span><a href="/tags/leetcode/" title="leetcode" class="a-tag">leetcode</a><span>&nbsp;</span></span></p><p class="post-abstract"><p>哈希函数用于缩小映射空间，可能会发生碰撞，可用链表法或多哈希函数。</p>
 <span id="more"></span>
 <h1>基础</h1>
 <p>常用数据结构：</p>
@@ -36,182 +36,182 @@ C++的std::map/std::multimap由红黑树实现，std::unorderd_map由哈希表�
 <ul>
 <li>数组直接存储</li>
 </ul>
-<pre class="line-numbers language-highlight go"><span class="function"><span class="keyword">func</span> <span class="title">isAnagram</span><span class="params">(s <span class="type">string</span>, t <span class="type">string</span>)</span></span> <span class="type"><code class="language-highlight go"><span class="function"><span class="keyword">func</span> <span class="title">isAnagram</span><span class="params">(s <span class="type">string</span>, t <span class="type">string</span>)</span></span> <span class="type">bool</span> &#123;
-    <span class="keyword">var</span> a,b [<span class="number">26</span>]<span class="type">int</span>
-    <span class="keyword">for</span> _, i:= <span class="keyword">range</span> s &#123;
-        a[i-<span class="string">&#x27;a&#x27;</span>]++
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">func isAnagram(s string, t string) bool &#123;
+    var a,b [26]int
+    for _, i:= range s &#123;
+        a[i-&#x27;a&#x27;]++
     &#125;
-    <span class="keyword">for</span> _, i:= <span class="keyword">range</span> t &#123;
-        b[i-<span class="string">&#x27;a&#x27;</span>]++
+    for _, i:= range t &#123;
+        b[i-&#x27;a&#x27;]++
     &#125;
-    <span class="keyword">return</span> a==b
+    return a==b
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="赎金信"><a class="header-anchor" href="#赎金信">¶</a>赎金信</h2>
 <p><img src="https://img.shields.io/badge/leetcode-242-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/valid-anagram/">有效的字母异位词</a></p>
 <ul>
 <li>数组直接存储</li>
 </ul>
-<pre class="line-numbers language-highlight go"><span class="function"><span class="keyword">func</span> <span class="title">canConstruct</span><span class="params">(ransomNote <span class="type">string</span>, magazine <span class="type">string</span>)</span></span> <span class="type"><code class="language-highlight go"><span class="function"><span class="keyword">func</span> <span class="title">canConstruct</span><span class="params">(ransomNote <span class="type">string</span>, magazine <span class="type">string</span>)</span></span> <span class="type">bool</span> &#123;
-    <span class="keyword">var</span> r [<span class="number">26</span>]<span class="type">int</span>
-    <span class="keyword">for</span> _, c := <span class="keyword">range</span> magazine &#123;
-        r[c - <span class="string">&#x27;a&#x27;</span>]++
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">func canConstruct(ransomNote string, magazine string) bool &#123;
+    var r [26]int
+    for _, c := range magazine &#123;
+        r[c - &#x27;a&#x27;]++
     &#125;
-    <span class="keyword">for</span> _, c := <span class="keyword">range</span> ransomNote &#123;
-        <span class="keyword">if</span> r[c - <span class="string">&#x27;a&#x27;</span>] == <span class="number">0</span> &#123;
-            <span class="keyword">return</span> <span class="literal">false</span>
+    for _, c := range ransomNote &#123;
+        if r[c - &#x27;a&#x27;] == 0 &#123;
+            return false
         &#125;
-        r[c - <span class="string">&#x27;a&#x27;</span>]--
+        r[c - &#x27;a&#x27;]--
     &#125;
-    <span class="keyword">return</span> <span class="literal">true</span>
+    return true
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="集合判断数组相交"><a class="header-anchor" href="#集合判断数组相交">¶</a>集合判断数组相交</h2>
 <p><img src="https://img.shields.io/badge/leetcode-349-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/intersection-of-two-arrays/">两个数组的交集</a></p>
 <ul>
 <li>集合存储</li>
 </ul>
-<pre class="line-numbers language-highlight go"><span class="keyword">type</span> Set <span class="keyword">map</span>[<span class="type">int</span>]<span class="keyword"><code class="language-highlight go"><span class="keyword">type</span> Set <span class="keyword">map</span>[<span class="type">int</span>]<span class="keyword">struct</span>&#123;&#125;
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">type Set map[int]struct&#123;&#125;
 
-<span class="function"><span class="keyword">func</span> <span class="params">(s Set)</span></span>Add(n <span class="type">int</span>) &#123;
-    s[n] = <span class="keyword">struct</span>&#123;&#125;&#123;&#125;
+func (s Set)Add(n int) &#123;
+    s[n] = struct&#123;&#125;&#123;&#125;
 &#125;
 
-<span class="function"><span class="keyword">func</span> <span class="params">(s Set)</span></span>And(t Set) []<span class="type">int</span> &#123;
-    ret := []<span class="type">int</span>&#123;&#125;
-    <span class="keyword">if</span> <span class="built_in">len</span>(s) > <span class="built_in">len</span>(t) &#123;
+func (s Set)And(t Set) []int &#123;
+    ret := []int&#123;&#125;
+    if len(s) > len(t) &#123;
         s, t = t, s
     &#125;
-    <span class="keyword">for</span> k := <span class="keyword">range</span> s &#123;
-        <span class="keyword">if</span> _, ok := t[k]; ok &#123;
-            ret = <span class="built_in">append</span>(ret, k)
+    for k := range s &#123;
+        if _, ok := t[k]; ok &#123;
+            ret = append(ret, k)
         &#125; 
     &#125;
-    <span class="keyword">return</span> ret
+    return ret
 &#125;
 
-<span class="function"><span class="keyword">func</span> <span class="title">intersection</span><span class="params">(nums1 []<span class="type">int</span>, nums2 []<span class="type">int</span>)</span></span> []<span class="type">int</span> &#123;
+func intersection(nums1 []int, nums2 []int) []int &#123;
     a, b := Set&#123;&#125;, Set&#123;&#125;
-    <span class="keyword">for</span> _, n := <span class="keyword">range</span> nums1 &#123;
+    for _, n := range nums1 &#123;
         a.Add(n)
     &#125;
-    <span class="keyword">for</span> _, n := <span class="keyword">range</span> nums2 &#123;
+    for _, n := range nums2 &#123;
         b.Add(n)
     &#125;
-    <span class="keyword">return</span> a.And(b)
+    return a.And(b)
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="集合判断快乐数"><a class="header-anchor" href="#集合判断快乐数">¶</a>集合判断快乐数</h2>
 <p><img src="https://img.shields.io/badge/leetcode-202-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/happy-number/">快乐数</a></p>
 <ul>
 <li>集合存储</li>
 </ul>
-<pre class="line-numbers language-highlight go"><span class="function"><span class="keyword">func</span> <span class="title">happy</span><span class="params">(n <span class="type">int</span>)</span></span> <span class="type"><code class="language-highlight go"><span class="function"><span class="keyword">func</span> <span class="title">happy</span><span class="params">(n <span class="type">int</span>)</span></span> <span class="type">int</span> &#123;
-    sum := <span class="number">0</span>
-    <span class="keyword">for</span> n > <span class="number">0</span> &#123;
-        s := n % <span class="number">10</span>
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">func happy(n int) int &#123;
+    sum := 0
+    for n > 0 &#123;
+        s := n % 10
         sum += s * s
-        n /= <span class="number">10</span>
+        n /= 10
     &#125;
-    <span class="keyword">return</span> sum
+    return sum
 &#125;
 
-<span class="function"><span class="keyword">func</span> <span class="title">isHappy</span><span class="params">(n <span class="type">int</span>)</span></span> <span class="type">bool</span> &#123;
-   set := <span class="keyword">map</span>[<span class="type">int</span>]<span class="keyword">struct</span>&#123;&#125;&#123;&#125;
-   <span class="keyword">for</span> &#123;
+func isHappy(n int) bool &#123;
+   set := map[int]struct&#123;&#125;&#123;&#125;
+   for &#123;
        sum := happy(n)
-       <span class="keyword">if</span> sum == <span class="number">1</span> &#123;
-           <span class="keyword">return</span> <span class="literal">true</span>
+       if sum == 1 &#123;
+           return true
        &#125;
-       <span class="keyword">if</span> _, ok := set[sum]; ok &#123;
-           <span class="keyword">return</span> <span class="literal">false</span>
-       &#125; <span class="keyword">else</span> &#123;
-           set[sum] = <span class="keyword">struct</span>&#123;&#125;&#123;&#125;
+       if _, ok := set[sum]; ok &#123;
+           return false
+       &#125; else &#123;
+           set[sum] = struct&#123;&#125;&#123;&#125;
        &#125;
        n = sum
    &#125;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="映射存储两数之和"><a class="header-anchor" href="#映射存储两数之和">¶</a>映射存储两数之和</h2>
 <p><img src="https://img.shields.io/badge/leetcode-1-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/two-sum/">两数之和</a></p>
-<pre class="line-numbers language-highlight go"><span class="function"><span class="keyword">func</span> <span class="title">twoSum</span><span class="params">(nums []<span class="type">int</span>, target <span class="type">int</span>)</span></span> []<span class="type"><code class="language-highlight go"><span class="function"><span class="keyword">func</span> <span class="title">twoSum</span><span class="params">(nums []<span class="type">int</span>, target <span class="type">int</span>)</span></span> []<span class="type">int</span> &#123;
-    m := <span class="keyword">map</span>[<span class="type">int</span>]<span class="type">int</span>&#123;&#125;
-    <span class="keyword">for</span> i, n := <span class="keyword">range</span> nums &#123;
-        <span class="keyword">if</span> v, ok := m[target - n]; ok &#123;
-            <span class="keyword">return</span> []<span class="type">int</span>&#123;v, i&#125;
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">func twoSum(nums []int, target int) []int &#123;
+    m := map[int]int&#123;&#125;
+    for i, n := range nums &#123;
+        if v, ok := m[target - n]; ok &#123;
+            return []int&#123;v, i&#125;
         &#125;
         m[n] = i
     &#125;
-    <span class="keyword">return</span> []<span class="type">int</span>&#123;&#125;
+    return []int&#123;&#125;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-highlight c++"><span class="keyword">class</span> <span class="title class_"><code class="language-highlight c++"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;
-<span class="keyword">public</span>:
-    <span class="comment">/**</span>
-<span class="comment">     * </span>
-<span class="comment">     * @param numbers int整型vector </span>
-<span class="comment">     * @param target int整型 </span>
-<span class="comment">     * @return int整型vector</span>
-<span class="comment">     */</span>
-    <span class="function">vector<<span class="type">int</span>> <span class="title">twoSum</span><span class="params">(vector<<span class="type">int</span>>& numbers, <span class="type">int</span> target)</span> </span>&#123;
-        std::map<<span class="type">int</span>, <span class="type">int</span>> h;
-        <span class="type">int</span> tmp = <span class="number">0</span>;
-        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i < numbers.<span class="built_in">size</span>(); i++) &#123;
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">class Solution &#123;
+public:
+    /**
+     * 
+     * @param numbers int整型vector 
+     * @param target int整型 
+     * @return int整型vector
+     */
+    vector<int> twoSum(vector<int>& numbers, int target) &#123;
+        std::map<int, int> h;
+        int tmp = 0;
+        for (int i = 0; i < numbers.size(); i++) &#123;
             tmp = numbers[i];
-            <span class="keyword">auto</span> it = h.<span class="built_in">find</span>(target - tmp);
-            <span class="keyword">if</span> (it != h.<span class="built_in">end</span>()) &#123;
-                <span class="keyword">return</span> vector<<span class="type">int</span>>&#123;h[target - tmp] + <span class="number">1</span>, i + <span class="number">1</span>&#125;;
+            auto it = h.find(target - tmp);
+            if (it != h.end()) &#123;
+                return vector<int>&#123;h[target - tmp] + 1, i + 1&#125;;
             &#125;
             h[tmp] = i;
         &#125;
-        <span class="keyword">return</span> vector<<span class="type">int</span>>&#123;&#125;;
+        return vector<int>&#123;&#125;;
     &#125;
 &#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="映射统计四数相加结果次数"><a class="header-anchor" href="#映射统计四数相加结果次数">¶</a>映射统计四数相加结果次数</h2>
 <p><img src="https://img.shields.io/badge/leetcode-454-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/4sum-ii/">四数相加 II</a></p>
-<pre class="line-numbers language-highlight go"><span class="function"><span class="keyword">func</span> <span class="title">fourSumCount</span><span class="params">(A []<span class="type">int</span>, B []<span class="type">int</span>, C []<span class="type">int</span>, D []<span class="type">int</span>)</span></span> <span class="type"><code class="language-highlight go"><span class="function"><span class="keyword">func</span> <span class="title">fourSumCount</span><span class="params">(A []<span class="type">int</span>, B []<span class="type">int</span>, C []<span class="type">int</span>, D []<span class="type">int</span>)</span></span> <span class="type">int</span> &#123;
-    m := <span class="keyword">map</span>[<span class="type">int</span>]<span class="type">int</span>&#123;&#125;
-    <span class="keyword">for</span> _, a := <span class="keyword">range</span> A &#123;
-        <span class="keyword">for</span> _, b := <span class="keyword">range</span> B &#123;
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">func fourSumCount(A []int, B []int, C []int, D []int) int &#123;
+    m := map[int]int&#123;&#125;
+    for _, a := range A &#123;
+        for _, b := range B &#123;
             m[a + b]++
         &#125;
     &#125;
-    count := <span class="number">0</span> 
-    <span class="keyword">for</span> _, c := <span class="keyword">range</span> C &#123;
-        <span class="keyword">for</span> _, d := <span class="keyword">range</span> D &#123;
-            <span class="keyword">if</span> v, ok := m[-c-d]; ok &#123;
+    count := 0 
+    for _, c := range C &#123;
+        for _, d := range D &#123;
+            if v, ok := m[-c-d]; ok &#123;
                 count += v
             &#125;
         &#125;
     &#125;
-    <span class="keyword">return</span> count
+    return count
 &#125;
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="员工的重要性"><a class="header-anchor" href="#员工的重要性">¶</a>员工的重要性</h2>
 <p><img src="https://img.shields.io/badge/leetcode-690-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/employee-importance/">员工的重要性</a></p>
-<pre class="line-numbers language-highlight go"><span class="comment"><code class="language-highlight go"><span class="comment">/**</span>
-<span class="comment"> * Definition for Employee.</span>
-<span class="comment"> * type Employee struct &#123;</span>
-<span class="comment"> *     Id int</span>
-<span class="comment"> *     Importance int</span>
-<span class="comment"> *     Subordinates []int</span>
-<span class="comment"> * &#125;</span>
-<span class="comment"> */</span>
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">/**
+ * Definition for Employee.
+ * type Employee struct &#123;
+ *     Id int
+ *     Importance int
+ *     Subordinates []int
+ * &#125;
+ */
 
-<span class="function"><span class="keyword">func</span> <span class="title">getImportance</span><span class="params">(employees []*Employee, id <span class="type">int</span>)</span></span> <span class="type">int</span> &#123;
-    m := <span class="built_in">make</span>(<span class="keyword">map</span>[<span class="type">int</span>]*Employee)
-    <span class="keyword">for</span> _, e := <span class="keyword">range</span> employees &#123;
+func getImportance(employees []*Employee, id int) int &#123;
+    m := make(map[int]*Employee)
+    for _, e := range employees &#123;
         m[e.Id] = e
     &#125;
-    count := <span class="number">0</span>
-    queue := []<span class="type">int</span>&#123;&#125;
-    queue = <span class="built_in">append</span>(queue, id)
-    <span class="keyword">for</span> <span class="built_in">len</span>(queue) > <span class="number">0</span> &#123;
-        id = queue[<span class="number">0</span>]
-        queue = queue[<span class="number">1</span>:]
-        <span class="keyword">if</span> e, ok := m[id]; ok &#123;
+    count := 0
+    queue := []int&#123;&#125;
+    queue = append(queue, id)
+    for len(queue) > 0 &#123;
+        id = queue[0]
+        queue = queue[1:]
+        if e, ok := m[id]; ok &#123;
             count += e.Importance
-            <span class="keyword">for</span> _, sub := <span class="keyword">range</span> e.Subordinates &#123;
-                queue = <span class="built_in">append</span>(queue, sub)
+            for _, sub := range e.Subordinates &#123;
+                queue = append(queue, sub)
             &#125;
         &#125;
     &#125;
-    <span class="keyword">return</span> count
+    return count
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <hr>
 </p></div><div class="share"><span>Share</span>&nbsp;<span class="soc"><a href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank" class="fa fa-bookmark"></a></span><span class="soc"><a href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));" class="fa fa-weibo"></a></span><span class="soc"><a target="_blank" rel="noopener" href="http://twitter.com/home?status=https://blog.kleon.space/cs/algo/hash-table/%20KLEON%20算法基础 - 哈希表" class="fa fa-twitter"></a></span></div><div class="pagination"><p class="clearfix"><span class="pre pagbuttons"><a role="navigation" href="/cs/algo/stack/" title="算法基础 - 栈"><i class="fa fa-angle-double-left"></i>&nbsp;Previous post: 算法基础 - 栈</a></span><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/cs/algo/array/" title="算法基础 - 数组">Next post: 算法基础 - 数组&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>

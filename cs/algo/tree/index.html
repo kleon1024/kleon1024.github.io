@@ -2,19 +2,21 @@
 
 基础
 树可由链式结构或数组实现，遍历方式为前、中、后、层序遍历。
-type TreeNode type TreeNode struct &amp;#123;
-  Val   int"><meta name="og:description" content="树是常用的数据结构，应用较多的有二叉搜索树，二叉平衡搜索树(AVL树)，红黑树，多路平衡搜索树(B-树，B+树，B*树)等。
+type TreeNode struct &amp;#123;
+  Val   int
+  Left  *Tree"><meta name="og:description" content="树是常用的数据结构，应用较多的有二叉搜索树，二叉平衡搜索树(AVL树)，红黑树，多路平衡搜索树(B-树，B+树，B*树)等。
 
 基础
 树可由链式结构或数组实现，遍历方式为前、中、后、层序遍历。
-type TreeNode type TreeNode struct &amp;#123;
-  Val   int"><meta name="twitter:site" content="KLEON"><meta name="twitter:title" content="算法基础 - 树"><meta name="twitter:card" content="summary"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 6.1.0"><link rel="stylesheet" href="/css/prism.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body><div id="stage" class="container"><div class="row"><div id="side-bar" class="col-sm-3 col-xs-12 side-container invisible"><div class="vertical-text site-title"><h3 tabindex="-1" class="site-title-small"><a href="/" class="a-title">keep moving</a></h3><h1 tabindex="-1" class="site-title-large"><a href="/" class="a-title">自说自话</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div id="site-nav" class="site-title-links"><ul><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li><li><a href="/categories">Categories</a></li><li><a href="/tags">Tags</a></li><li><a href="/googlebe23cb0bc55fc412.html"></a></li><li><a href="/about/index.html"></a></li><li class="soc"><a href="https://github.com/kleon1024" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa fa-github">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div id="main-container" class="col-sm-9 col-xs-12 main-container invisible"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>算法基础 - 树</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-03-14</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/算法/" title="算法" class="a-tag">算法</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/算法/" title="算法" class="a-tag">算法</a><span>&nbsp;</span><a href="/tags/数据结构/" title="数据结构" class="a-tag">数据结构</a><span>&nbsp;</span></span></p><p class="post-abstract"><p>树是常用的数据结构，应用较多的有二叉搜索树，二叉平衡搜索树(AVL树)，红黑树，多路平衡搜索树(B-树，B+树，B*树)等。</p>
+type TreeNode struct &amp;#123;
+  Val   int
+  Left  *Tree"><meta name="twitter:site" content="KLEON"><meta name="twitter:title" content="算法基础 - 树"><meta name="twitter:card" content="summary"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 6.1.0"><link rel="stylesheet" href="/css/prism.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body><div id="stage" class="container"><div class="row"><div id="side-bar" class="col-sm-3 col-xs-12 side-container invisible"><div class="vertical-text site-title"><h3 tabindex="-1" class="site-title-small"><a href="/" class="a-title"></a></h3><h1 tabindex="-1" class="site-title-large"><a href="/" class="a-title">自说自话</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div id="site-nav" class="site-title-links"><ul><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li><li><a href="/categories">Categories</a></li><li><a href="/tags">Tags</a></li><li><a href="/googlebe23cb0bc55fc412.html"></a></li><li><a href="/about/index.html"></a></li><li class="soc"><a href="https://github.com/kleon1024" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa fa-github">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div id="main-container" class="col-sm-9 col-xs-12 main-container invisible"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>算法基础 - 树</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-03-14</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/算法/" title="算法" class="a-tag">算法</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/算法/" title="算法" class="a-tag">算法</a><span>&nbsp;</span><a href="/tags/数据结构/" title="数据结构" class="a-tag">数据结构</a><span>&nbsp;</span></span></p><p class="post-abstract"><p>树是常用的数据结构，应用较多的有二叉搜索树，二叉平衡搜索树(AVL树)，红黑树，多路平衡搜索树(B-树，B+树，B*树)等。</p>
 <span id="more"></span>
 <h1>基础</h1>
 <p>树可由链式结构或数组实现，遍历方式为前、中、后、层序遍历。</p>
-<pre class="line-numbers language-highlight go"><span class="keyword">type</span> TreeNode <span class="keyword"><code class="language-highlight go"><span class="keyword">type</span> TreeNode <span class="keyword">struct</span> &#123;
-  Val   <span class="type">int</span>
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">type TreeNode struct &#123;
+  Val   int
   Left  *TreeNode
   Right *TreeNode
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
@@ -56,303 +58,303 @@ type TreeNode type TreeNode struct &amp;#123;
 <ul>
 <li>递归</li>
 </ul>
-<pre class="line-numbers language-highlight go"><span class="comment"><code class="language-highlight go"><span class="comment">/**</span>
-<span class="comment"> * Definition for a binary tree node.</span>
-<span class="comment"> * type TreeNode struct &#123;</span>
-<span class="comment"> *     Val int</span>
-<span class="comment"> *     Left *TreeNode</span>
-<span class="comment"> *     Right *TreeNode</span>
-<span class="comment"> * &#125;</span>
-<span class="comment"> */</span>
-<span class="function"><span class="keyword">func</span> <span class="title">traverse</span><span class="params">(n *TreeNode, result *[]<span class="type">int</span>)</span></span> &#123;
-    <span class="keyword">if</span> n == <span class="literal">nil</span> &#123; <span class="keyword">return</span> &#125;
-    *result = <span class="built_in">append</span>(*result, n.Val)
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">/**
+ * Definition for a binary tree node.
+ * type TreeNode struct &#123;
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * &#125;
+ */
+func traverse(n *TreeNode, result *[]int) &#123;
+    if n == nil &#123; return &#125;
+    *result = append(*result, n.Val)
     traverse(n.Left, result)
     traverse(n.Right, result)
 &#125;
 
-<span class="function"><span class="keyword">func</span> <span class="title">preorderTraversal</span><span class="params">(root *TreeNode)</span></span> []<span class="type">int</span> &#123;
-    result := []<span class="type">int</span>&#123;&#125;
+func preorderTraversal(root *TreeNode) []int &#123;
+    result := []int&#123;&#125;
     traverse(root, &result)
-    <span class="keyword">return</span> result
+    return result
 &#125;
 
-<span class="comment">//</span>
+//
 
-<span class="comment">/**</span>
-<span class="comment"> * Definition for a binary tree node.</span>
-<span class="comment"> * type TreeNode struct &#123;</span>
-<span class="comment"> *     Val int</span>
-<span class="comment"> *     Left *TreeNode</span>
-<span class="comment"> *     Right *TreeNode</span>
-<span class="comment"> * &#125;</span>
-<span class="comment"> */</span>
-<span class="function"><span class="keyword">func</span> <span class="title">preorderTraversal</span><span class="params">(root *TreeNode)</span></span> []<span class="type">int</span> &#123;
-    result := []<span class="type">int</span>&#123;&#125;
-    <span class="keyword">if</span> root == <span class="literal">nil</span> &#123; <span class="keyword">return</span> result &#125;
-    result = <span class="built_in">append</span>(result, root.Val)
-    result = <span class="built_in">append</span>(result, preorderTraversal(root.Left)...)
-    result = <span class="built_in">append</span>(result, preorderTraversal(root.Right)...)
-    <span class="keyword">return</span> result
+/**
+ * Definition for a binary tree node.
+ * type TreeNode struct &#123;
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * &#125;
+ */
+func preorderTraversal(root *TreeNode) []int &#123;
+    result := []int&#123;&#125;
+    if root == nil &#123; return result &#125;
+    result = append(result, root.Val)
+    result = append(result, preorderTraversal(root.Left)...)
+    result = append(result, preorderTraversal(root.Right)...)
+    return result
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>迭代</li>
 </ul>
-<pre class="line-numbers language-highlight go"><span class="comment"><code class="language-highlight go"><span class="comment">/**</span>
-<span class="comment"> * Definition for a binary tree node.</span>
-<span class="comment"> * type TreeNode struct &#123;</span>
-<span class="comment"> *     Val int</span>
-<span class="comment"> *     Left *TreeNode</span>
-<span class="comment"> *     Right *TreeNode</span>
-<span class="comment"> * &#125;</span>
-<span class="comment"> */</span>
-<span class="function"><span class="keyword">func</span> <span class="title">preorderTraversal</span><span class="params">(root *TreeNode)</span></span> []<span class="type">int</span> &#123;
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">/**
+ * Definition for a binary tree node.
+ * type TreeNode struct &#123;
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * &#125;
+ */
+func preorderTraversal(root *TreeNode) []int &#123;
     stack := []*TreeNode&#123;&#125;
-    result := []<span class="type">int</span>&#123;&#125;
-    <span class="keyword">if</span> root != <span class="literal">nil</span> &#123;
-        stack = <span class="built_in">append</span>(stack, root)
+    result := []int&#123;&#125;
+    if root != nil &#123;
+        stack = append(stack, root)
     &#125;
-    <span class="keyword">for</span> <span class="built_in">len</span>(stack) > <span class="number">0</span> &#123;
-        node := stack[<span class="built_in">len</span>(stack) - <span class="number">1</span>]
-        stack = stack[:<span class="built_in">len</span>(stack) - <span class="number">1</span>]
-        <span class="keyword">if</span> node != <span class="literal">nil</span> &#123;
-            <span class="keyword">if</span> node.Right != <span class="literal">nil</span> &#123;
-                stack = <span class="built_in">append</span>(stack, node.Right)
+    for len(stack) > 0 &#123;
+        node := stack[len(stack) - 1]
+        stack = stack[:len(stack) - 1]
+        if node != nil &#123;
+            if node.Right != nil &#123;
+                stack = append(stack, node.Right)
             &#125;
-            <span class="keyword">if</span> node.Left != <span class="literal">nil</span> &#123;
-                stack = <span class="built_in">append</span>(stack, node.Left)
+            if node.Left != nil &#123;
+                stack = append(stack, node.Left)
             &#125;
-            stack = <span class="built_in">append</span>(stack, node)
-            stack = <span class="built_in">append</span>(stack, <span class="literal">nil</span>)
-        &#125; <span class="keyword">else</span> &#123;
-            node = stack[<span class="built_in">len</span>(stack) - <span class="number">1</span>]
-            stack = stack[:<span class="built_in">len</span>(stack) - <span class="number">1</span>]
-            result = <span class="built_in">append</span>(result, node.Val)
+            stack = append(stack, node)
+            stack = append(stack, nil)
+        &#125; else &#123;
+            node = stack[len(stack) - 1]
+            stack = stack[:len(stack) - 1]
+            result = append(result, node.Val)
         &#125;
     &#125;
-    <span class="keyword">return</span> result
+    return result
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="二叉树的后序遍历"><a class="header-anchor" href="#二叉树的后序遍历">¶</a>二叉树的后序遍历</h2>
 <p><img src="https://img.shields.io/badge/leetcode-145-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/binary-tree-postorder-traversal/">二叉树的后序遍历</a></p>
 <ul>
 <li>递归</li>
 </ul>
-<pre class="line-numbers language-highlight go"><span class="comment"><code class="language-highlight go"><span class="comment">/**</span>
-<span class="comment"> * Definition for a binary tree node.</span>
-<span class="comment"> * type TreeNode struct &#123;</span>
-<span class="comment"> *     Val int</span>
-<span class="comment"> *     Left *TreeNode</span>
-<span class="comment"> *     Right *TreeNode</span>
-<span class="comment"> * &#125;</span>
-<span class="comment"> */</span>
-<span class="function"><span class="keyword">func</span> <span class="title">postorderTraversal</span><span class="params">(root *TreeNode)</span></span> []<span class="type">int</span> &#123;
-    result := []<span class="type">int</span>&#123;&#125;
-    <span class="keyword">if</span> root == <span class="literal">nil</span> &#123; <span class="keyword">return</span> result &#125;
-    result = <span class="built_in">append</span>(result, postorderTraversal(root.Left)...)
-    result = <span class="built_in">append</span>(result, postorderTraversal(root.Right)...)
-    result = <span class="built_in">append</span>(result, root.Val)
-    <span class="keyword">return</span> result
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">/**
+ * Definition for a binary tree node.
+ * type TreeNode struct &#123;
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * &#125;
+ */
+func postorderTraversal(root *TreeNode) []int &#123;
+    result := []int&#123;&#125;
+    if root == nil &#123; return result &#125;
+    result = append(result, postorderTraversal(root.Left)...)
+    result = append(result, postorderTraversal(root.Right)...)
+    result = append(result, root.Val)
+    return result
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>迭代</li>
 </ul>
-<pre class="line-numbers language-highlight go"><span class="comment"><code class="language-highlight go"><span class="comment">/**</span>
-<span class="comment"> * Definition for a binary tree node.</span>
-<span class="comment"> * type TreeNode struct &#123;</span>
-<span class="comment"> *     Val int</span>
-<span class="comment"> *     Left *TreeNode</span>
-<span class="comment"> *     Right *TreeNode</span>
-<span class="comment"> * &#125;</span>
-<span class="comment"> */</span>
-<span class="function"><span class="keyword">func</span> <span class="title">postorderTraversal</span><span class="params">(root *TreeNode)</span></span> []<span class="type">int</span> &#123;
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">/**
+ * Definition for a binary tree node.
+ * type TreeNode struct &#123;
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * &#125;
+ */
+func postorderTraversal(root *TreeNode) []int &#123;
     stack := []*TreeNode&#123;&#125;
-    result := []<span class="type">int</span>&#123;&#125;
-    <span class="keyword">if</span> root != <span class="literal">nil</span> &#123;
-        stack = <span class="built_in">append</span>(stack, root)
+    result := []int&#123;&#125;
+    if root != nil &#123;
+        stack = append(stack, root)
     &#125;
-    <span class="keyword">for</span> <span class="built_in">len</span>(stack) > <span class="number">0</span> &#123;
-        node := stack[<span class="built_in">len</span>(stack) - <span class="number">1</span>]
-        stack = stack[:<span class="built_in">len</span>(stack) - <span class="number">1</span>]
-        <span class="keyword">if</span> node != <span class="literal">nil</span> &#123;
-            stack = <span class="built_in">append</span>(stack, node)
-            stack = <span class="built_in">append</span>(stack, <span class="literal">nil</span>)
-            <span class="keyword">if</span> node.Right != <span class="literal">nil</span> &#123;
-                stack = <span class="built_in">append</span>(stack, node.Right)
+    for len(stack) > 0 &#123;
+        node := stack[len(stack) - 1]
+        stack = stack[:len(stack) - 1]
+        if node != nil &#123;
+            stack = append(stack, node)
+            stack = append(stack, nil)
+            if node.Right != nil &#123;
+                stack = append(stack, node.Right)
             &#125;
-            <span class="keyword">if</span> node.Left != <span class="literal">nil</span> &#123;
-                stack = <span class="built_in">append</span>(stack, node.Left)
+            if node.Left != nil &#123;
+                stack = append(stack, node.Left)
             &#125;
-        &#125; <span class="keyword">else</span> &#123;
-            node = stack[<span class="built_in">len</span>(stack) - <span class="number">1</span>]
-            stack = stack[:<span class="built_in">len</span>(stack) - <span class="number">1</span>]
-            result = <span class="built_in">append</span>(result, node.Val)
+        &#125; else &#123;
+            node = stack[len(stack) - 1]
+            stack = stack[:len(stack) - 1]
+            result = append(result, node.Val)
         &#125;
     &#125;
-    <span class="keyword">return</span> result
+    return result
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="二叉树的中序遍历"><a class="header-anchor" href="#二叉树的中序遍历">¶</a>二叉树的中序遍历</h2>
 <p><img src="https://img.shields.io/badge/leetcode-94-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/binary-tree-inorder-traversal/">二叉树的中序遍历</a></p>
 <ul>
 <li>递归</li>
 </ul>
-<pre class="line-numbers language-highlight go"><span class="comment"><code class="language-highlight go"><span class="comment">/**</span>
-<span class="comment"> * Definition for a binary tree node.</span>
-<span class="comment"> * type TreeNode struct &#123;</span>
-<span class="comment"> *     Val int</span>
-<span class="comment"> *     Left *TreeNode</span>
-<span class="comment"> *     Right *TreeNode</span>
-<span class="comment"> * &#125;</span>
-<span class="comment"> */</span>
-<span class="function"><span class="keyword">func</span> <span class="title">inorderTraversal</span><span class="params">(root *TreeNode)</span></span> []<span class="type">int</span> &#123;
-    result := []<span class="type">int</span>&#123;&#125;
-    <span class="keyword">if</span> root == <span class="literal">nil</span> &#123; <span class="keyword">return</span> result &#125;
-    result = <span class="built_in">append</span>(result, inorderTraversal(root.Left)...)
-    result = <span class="built_in">append</span>(result, root.Val)
-    result = <span class="built_in">append</span>(result, inorderTraversal(root.Right)...)
-    <span class="keyword">return</span> result
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">/**
+ * Definition for a binary tree node.
+ * type TreeNode struct &#123;
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * &#125;
+ */
+func inorderTraversal(root *TreeNode) []int &#123;
+    result := []int&#123;&#125;
+    if root == nil &#123; return result &#125;
+    result = append(result, inorderTraversal(root.Left)...)
+    result = append(result, root.Val)
+    result = append(result, inorderTraversal(root.Right)...)
+    return result
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>迭代</li>
 </ul>
-<pre class="line-numbers language-highlight go"><span class="comment"><code class="language-highlight go"><span class="comment">/**</span>
-<span class="comment"> * Definition for a binary tree node.</span>
-<span class="comment"> * type TreeNode struct &#123;</span>
-<span class="comment"> *     Val int</span>
-<span class="comment"> *     Left *TreeNode</span>
-<span class="comment"> *     Right *TreeNode</span>
-<span class="comment"> * &#125;</span>
-<span class="comment"> */</span>
-<span class="function"><span class="keyword">func</span> <span class="title">inorderTraversal</span><span class="params">(root *TreeNode)</span></span> []<span class="type">int</span> &#123;
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">/**
+ * Definition for a binary tree node.
+ * type TreeNode struct &#123;
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * &#125;
+ */
+func inorderTraversal(root *TreeNode) []int &#123;
     stack := []*TreeNode&#123;&#125;
-    result := []<span class="type">int</span>&#123;&#125;
-    <span class="keyword">if</span> root != <span class="literal">nil</span> &#123;
-        stack = <span class="built_in">append</span>(stack, root)
+    result := []int&#123;&#125;
+    if root != nil &#123;
+        stack = append(stack, root)
     &#125;
-    <span class="keyword">for</span> <span class="built_in">len</span>(stack) > <span class="number">0</span> &#123;
-        node := stack[<span class="built_in">len</span>(stack) - <span class="number">1</span>]
-        stack = stack[:<span class="built_in">len</span>(stack) - <span class="number">1</span>]
-        <span class="keyword">if</span> node != <span class="literal">nil</span> &#123;
-            <span class="keyword">if</span> node.Right != <span class="literal">nil</span> &#123;
-                stack = <span class="built_in">append</span>(stack, node.Right)
+    for len(stack) > 0 &#123;
+        node := stack[len(stack) - 1]
+        stack = stack[:len(stack) - 1]
+        if node != nil &#123;
+            if node.Right != nil &#123;
+                stack = append(stack, node.Right)
             &#125;
-            stack = <span class="built_in">append</span>(stack, node)
-            stack = <span class="built_in">append</span>(stack, <span class="literal">nil</span>)
-            <span class="keyword">if</span> node.Left != <span class="literal">nil</span> &#123;
-                stack = <span class="built_in">append</span>(stack, node.Left)
+            stack = append(stack, node)
+            stack = append(stack, nil)
+            if node.Left != nil &#123;
+                stack = append(stack, node.Left)
             &#125;
-        &#125; <span class="keyword">else</span> &#123;
-            node = stack[<span class="built_in">len</span>(stack) - <span class="number">1</span>]
-            stack = stack[:<span class="built_in">len</span>(stack) - <span class="number">1</span>]
-            result = <span class="built_in">append</span>(result, node.Val)
+        &#125; else &#123;
+            node = stack[len(stack) - 1]
+            stack = stack[:len(stack) - 1]
+            result = append(result, node.Val)
         &#125;
     &#125;
-    <span class="keyword">return</span> result
+    return result
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>C++ 版本</p>
-<pre class="line-numbers language-highlight c++"><span class="function"><span class="type">void</span> <span class="title">preorder</span><span class="params">(TreeNode* root, vector&lt;<span class="type"><code class="language-highlight c++"><span class="function"><span class="type">void</span> <span class="title">preorder</span><span class="params">(TreeNode* root, vector&lt;<span class="type">int</span>>& v)</span> </span>&#123;
-    <span class="keyword">if</span> (root == <span class="literal">nullptr</span>) <span class="keyword">return</span>;
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">void preorder(TreeNode* root, vector<int>& v) &#123;
+    if (root == nullptr) return;
     
-    v.<span class="built_in">push_back</span>(root->val);
-    <span class="built_in">preorder</span>(root->left, v);
-    <span class="built_in">preorder</span>(root->right, v);
+    v.push_back(root->val);
+    preorder(root->left, v);
+    preorder(root->right, v);
 &#125;
 
-<span class="function"><span class="type">void</span> <span class="title">postorder</span><span class="params">(TreeNode* root, vector<<span class="type">int</span>>& v)</span> </span>&#123;
-    <span class="keyword">if</span> (root == <span class="literal">nullptr</span>) <span class="keyword">return</span>;
+void postorder(TreeNode* root, vector<int>& v) &#123;
+    if (root == nullptr) return;
 
-    <span class="built_in">postorder</span>(root->left, v);
-    <span class="built_in">postorder</span>(root->right, v);
-    v.<span class="built_in">push_back</span>(root->val);
+    postorder(root->left, v);
+    postorder(root->right, v);
+    v.push_back(root->val);
 &#125;
 
-<span class="function"><span class="type">void</span> <span class="title">midorder</span><span class="params">(TreeNode* root, vector<<span class="type">int</span>>& v)</span> </span>&#123;
-    <span class="keyword">if</span> (root == <span class="literal">nullptr</span>) <span class="keyword">return</span>;
+void midorder(TreeNode* root, vector<int>& v) &#123;
+    if (root == nullptr) return;
 
-    <span class="built_in">midorder</span>(root->left, v);
-    v.<span class="built_in">push_back</span>(root->val);
-    <span class="built_in">midorder</span>(root->right, v);
+    midorder(root->left, v);
+    v.push_back(root->val);
+    midorder(root->right, v);
 &#125;
 
-<span class="function"><span class="type">void</span> <span class="title">preorderIter</span><span class="params">(TreeNode* root, vector<<span class="type">int</span>>& v)</span> </span>&#123;
+void preorderIter(TreeNode* root, vector<int>& v) &#123;
     std::stack<TreeNode*> s;
     
-    <span class="keyword">if</span> (root != <span class="literal">nullptr</span>) &#123;
-        s.<span class="built_in">push</span>(root);
+    if (root != nullptr) &#123;
+        s.push(root);
     &#125;
     
-    TreeNode* node = <span class="literal">nullptr</span>;
-    <span class="keyword">while</span>(s.<span class="built_in">size</span>() > <span class="number">0</span>) &#123;
-        node = s.<span class="built_in">top</span>();
-        s.<span class="built_in">pop</span>();
-        <span class="keyword">if</span> (node) &#123;
-            <span class="keyword">if</span> (node->right) &#123;
-                s.<span class="built_in">push</span>(node->right);
+    TreeNode* node = nullptr;
+    while(s.size() > 0) &#123;
+        node = s.top();
+        s.pop();
+        if (node) &#123;
+            if (node->right) &#123;
+                s.push(node->right);
             &#125;
-            <span class="keyword">if</span> (node->left) &#123;
-                s.<span class="built_in">push</span>(node->left);
+            if (node->left) &#123;
+                s.push(node->left);
             &#125;
-            s.<span class="built_in">push</span>(node);
-            s.<span class="built_in">push</span>(<span class="literal">nullptr</span>);
-        &#125; <span class="keyword">else</span> &#123;
-            node = s.<span class="built_in">top</span>();
-            s.<span class="built_in">pop</span>();
-            v.<span class="built_in">push_back</span>(node->val);
+            s.push(node);
+            s.push(nullptr);
+        &#125; else &#123;
+            node = s.top();
+            s.pop();
+            v.push_back(node->val);
         &#125;
     &#125;
 &#125;
 
-<span class="function"><span class="type">void</span> <span class="title">postorderIter</span><span class="params">(TreeNode* root, vector<<span class="type">int</span>>& v)</span> </span>&#123;
+void postorderIter(TreeNode* root, vector<int>& v) &#123;
     std::stack<TreeNode*> s;
     
-    <span class="keyword">if</span> (root != <span class="literal">nullptr</span>) &#123;
-        s.<span class="built_in">push</span>(root);
+    if (root != nullptr) &#123;
+        s.push(root);
     &#125;
     
-    TreeNode* node = <span class="literal">nullptr</span>;
-    <span class="keyword">while</span>(s.<span class="built_in">size</span>() > <span class="number">0</span>) &#123;
-        node = s.<span class="built_in">top</span>();
-        s.<span class="built_in">pop</span>();
-        <span class="keyword">if</span> (node) &#123;
-            s.<span class="built_in">push</span>(node);
-            s.<span class="built_in">push</span>(<span class="literal">nullptr</span>);
-            <span class="keyword">if</span> (node->right) &#123;
-                s.<span class="built_in">push</span>(node->right);
+    TreeNode* node = nullptr;
+    while(s.size() > 0) &#123;
+        node = s.top();
+        s.pop();
+        if (node) &#123;
+            s.push(node);
+            s.push(nullptr);
+            if (node->right) &#123;
+                s.push(node->right);
             &#125;
-            <span class="keyword">if</span> (node->left) &#123;
-                s.<span class="built_in">push</span>(node->left);
+            if (node->left) &#123;
+                s.push(node->left);
             &#125;
-        &#125; <span class="keyword">else</span> &#123;
-            node = s.<span class="built_in">top</span>();
-            s.<span class="built_in">pop</span>();
-            v.<span class="built_in">push_back</span>(node->val);
+        &#125; else &#123;
+            node = s.top();
+            s.pop();
+            v.push_back(node->val);
         &#125;
     &#125;
 &#125;
 
-<span class="function"><span class="type">void</span> <span class="title">midorderIter</span><span class="params">(TreeNode* root, vector<<span class="type">int</span>>& v)</span> </span>&#123;
+void midorderIter(TreeNode* root, vector<int>& v) &#123;
     std::stack<TreeNode*> s;
     
-    <span class="keyword">if</span> (root != <span class="literal">nullptr</span>) &#123;
-        s.<span class="built_in">push</span>(root);
+    if (root != nullptr) &#123;
+        s.push(root);
     &#125;
     
-    TreeNode* node = <span class="literal">nullptr</span>;
-    <span class="keyword">while</span>(s.<span class="built_in">size</span>() > <span class="number">0</span>) &#123;
-        node = s.<span class="built_in">top</span>();
-        s.<span class="built_in">pop</span>();
-        <span class="keyword">if</span> (node) &#123;
-            <span class="keyword">if</span> (node->right) &#123;
-                s.<span class="built_in">push</span>(node->right);
+    TreeNode* node = nullptr;
+    while(s.size() > 0) &#123;
+        node = s.top();
+        s.pop();
+        if (node) &#123;
+            if (node->right) &#123;
+                s.push(node->right);
             &#125;
-            s.<span class="built_in">push</span>(node);
-            s.<span class="built_in">push</span>(<span class="literal">nullptr</span>);
-            <span class="keyword">if</span> (node->left) &#123;
-                s.<span class="built_in">push</span>(node->left);
+            s.push(node);
+            s.push(nullptr);
+            if (node->left) &#123;
+                s.push(node->left);
             &#125;
-        &#125; <span class="keyword">else</span> &#123;
-            node = s.<span class="built_in">top</span>();
-            s.<span class="built_in">pop</span>();
-            v.<span class="built_in">push_back</span>(node->val);
+        &#125; else &#123;
+            node = s.top();
+            s.pop();
+            v.push_back(node->val);
         &#125;
     &#125;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
@@ -361,216 +363,216 @@ type TreeNode type TreeNode struct &amp;#123;
 <ul>
 <li>队列先进先出</li>
 </ul>
-<pre class="line-numbers language-highlight go"><span class="comment"><code class="language-highlight go"><span class="comment">/**</span>
-<span class="comment"> * Definition for a binary tree node.</span>
-<span class="comment"> * type TreeNode struct &#123;</span>
-<span class="comment"> *     Val int</span>
-<span class="comment"> *     Left *TreeNode</span>
-<span class="comment"> *     Right *TreeNode</span>
-<span class="comment"> * &#125;</span>
-<span class="comment"> */</span>
-<span class="function"><span class="keyword">func</span> <span class="title">levelOrder</span><span class="params">(root *TreeNode)</span></span> [][]<span class="type">int</span> &#123;
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">/**
+ * Definition for a binary tree node.
+ * type TreeNode struct &#123;
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * &#125;
+ */
+func levelOrder(root *TreeNode) [][]int &#123;
     queue := []*TreeNode&#123;&#125;
-    result := [][]<span class="type">int</span>&#123;&#125;
-    <span class="keyword">if</span> root != <span class="literal">nil</span> &#123;
-        queue = <span class="built_in">append</span>(queue, root)
+    result := [][]int&#123;&#125;
+    if root != nil &#123;
+        queue = append(queue, root)
     &#125;
-    <span class="keyword">for</span> <span class="built_in">len</span>(queue) > <span class="number">0</span> &#123;
-        size := <span class="built_in">len</span>(queue)
-        vec := []<span class="type">int</span>&#123;&#125;
-        <span class="keyword">for</span> i := <span class="number">0</span>; i < size; i++ &#123;
-            node := queue[<span class="number">0</span>]
-            queue = queue[<span class="number">1</span>:]
-            vec = <span class="built_in">append</span>(vec, node.Val)
-            <span class="keyword">if</span> node.Left != <span class="literal">nil</span> &#123;
-                queue = <span class="built_in">append</span>(queue, node.Left)
+    for len(queue) > 0 &#123;
+        size := len(queue)
+        vec := []int&#123;&#125;
+        for i := 0; i < size; i++ &#123;
+            node := queue[0]
+            queue = queue[1:]
+            vec = append(vec, node.Val)
+            if node.Left != nil &#123;
+                queue = append(queue, node.Left)
             &#125;
-            <span class="keyword">if</span> node.Right != <span class="literal">nil</span> &#123;
-                queue = <span class="built_in">append</span>(queue, node.Right)
+            if node.Right != nil &#123;
+                queue = append(queue, node.Right)
             &#125;
         &#125;
-        result = <span class="built_in">append</span>(result, vec)
+        result = append(result, vec)
     &#125;
-    <span class="keyword">return</span> result
+    return result
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="二叉树的层序遍历II"><a class="header-anchor" href="#二叉树的层序遍历II">¶</a>二叉树的层序遍历II</h2>
 <p><img src="https://img.shields.io/badge/leetcode-107-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/binary-tree-level-order-traversal-ii/">二叉树的层序遍历II</a></p>
 <ul>
 <li>同二叉树的层序遍历</li>
 </ul>
-<pre class="line-numbers language-highlight go"><span class="comment"><code class="language-highlight go"><span class="comment">/**</span>
-<span class="comment"> * Definition for a binary tree node.</span>
-<span class="comment"> * type TreeNode struct &#123;</span>
-<span class="comment"> *     Val int</span>
-<span class="comment"> *     Left *TreeNode</span>
-<span class="comment"> *     Right *TreeNode</span>
-<span class="comment"> * &#125;</span>
-<span class="comment"> */</span>
-<span class="function"><span class="keyword">func</span> <span class="title">levelOrderBottom</span><span class="params">(root *TreeNode)</span></span> [][]<span class="type">int</span> &#123;
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">/**
+ * Definition for a binary tree node.
+ * type TreeNode struct &#123;
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * &#125;
+ */
+func levelOrderBottom(root *TreeNode) [][]int &#123;
     queue := []*TreeNode&#123;&#125;
-    result := [][]<span class="type">int</span>&#123;&#125;
-    <span class="keyword">if</span> root != <span class="literal">nil</span> &#123;
-        queue = <span class="built_in">append</span>(queue, root)
+    result := [][]int&#123;&#125;
+    if root != nil &#123;
+        queue = append(queue, root)
     &#125;
-    <span class="keyword">for</span> <span class="built_in">len</span>(queue) > <span class="number">0</span> &#123;
-        size := <span class="built_in">len</span>(queue)
-        vec := []<span class="type">int</span>&#123;&#125;
-        <span class="keyword">for</span> i := <span class="number">0</span>; i < size; i++ &#123;
-            node := queue[<span class="number">0</span>]
-            queue = queue[<span class="number">1</span>:]
-            vec = <span class="built_in">append</span>(vec, node.Val)
-            <span class="keyword">if</span> node.Left != <span class="literal">nil</span> &#123;
-                queue = <span class="built_in">append</span>(queue, node.Left)
+    for len(queue) > 0 &#123;
+        size := len(queue)
+        vec := []int&#123;&#125;
+        for i := 0; i < size; i++ &#123;
+            node := queue[0]
+            queue = queue[1:]
+            vec = append(vec, node.Val)
+            if node.Left != nil &#123;
+                queue = append(queue, node.Left)
             &#125;
-            <span class="keyword">if</span> node.Right != <span class="literal">nil</span> &#123;
-                queue = <span class="built_in">append</span>(queue, node.Right)
+            if node.Right != nil &#123;
+                queue = append(queue, node.Right)
             &#125;
         &#125;
-        result = <span class="built_in">append</span>(result, vec)
+        result = append(result, vec)
     &#125;
-    <span class="keyword">for</span> i, j := <span class="number">0</span>, <span class="built_in">len</span>(result)<span class="number">-1</span>; i < j; i, j = i+<span class="number">1</span>, j<span class="number">-1</span> &#123;
+    for i, j := 0, len(result)-1; i < j; i, j = i+1, j-1 &#123;
         result[i], result[j] = result[j], result[i]
     &#125;
-    <span class="keyword">return</span> result
+    return result
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="层序遍历获取二叉树的右视图"><a class="header-anchor" href="#层序遍历获取二叉树的右视图">¶</a>层序遍历获取二叉树的右视图</h2>
 <p><img src="https://img.shields.io/badge/leetcode-199-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/binary-tree-right-side-view/">二叉树的右视图</a></p>
 <ul>
 <li>同二叉树的层序遍历</li>
 </ul>
-<pre class="line-numbers language-highlight go"><span class="comment"><code class="language-highlight go"><span class="comment">/**</span>
-<span class="comment"> * Definition for a binary tree node.</span>
-<span class="comment"> * type TreeNode struct &#123;</span>
-<span class="comment"> *     Val int</span>
-<span class="comment"> *     Left *TreeNode</span>
-<span class="comment"> *     Right *TreeNode</span>
-<span class="comment"> * &#125;</span>
-<span class="comment"> */</span>
-<span class="function"><span class="keyword">func</span> <span class="title">rightSideView</span><span class="params">(root *TreeNode)</span></span> []<span class="type">int</span> &#123;
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">/**
+ * Definition for a binary tree node.
+ * type TreeNode struct &#123;
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * &#125;
+ */
+func rightSideView(root *TreeNode) []int &#123;
     queue := []*TreeNode&#123;&#125;
-    result := []<span class="type">int</span>&#123;&#125;
-    <span class="keyword">if</span> root != <span class="literal">nil</span> &#123;
-        queue = <span class="built_in">append</span>(queue, root)
+    result := []int&#123;&#125;
+    if root != nil &#123;
+        queue = append(queue, root)
     &#125;
-    <span class="keyword">for</span> <span class="built_in">len</span>(queue) > <span class="number">0</span> &#123;
-        size := <span class="built_in">len</span>(queue)
-        <span class="keyword">for</span> i := <span class="number">0</span>; i < size; i++ &#123;
-            node := queue[<span class="number">0</span>]
-            queue = queue[<span class="number">1</span>:]
-            <span class="keyword">if</span> i == size - <span class="number">1</span> &#123;
-                result = <span class="built_in">append</span>(result, node.Val)
+    for len(queue) > 0 &#123;
+        size := len(queue)
+        for i := 0; i < size; i++ &#123;
+            node := queue[0]
+            queue = queue[1:]
+            if i == size - 1 &#123;
+                result = append(result, node.Val)
             &#125;
-            <span class="keyword">if</span> node.Left != <span class="literal">nil</span> &#123;
-                queue = <span class="built_in">append</span>(queue, node.Left)
+            if node.Left != nil &#123;
+                queue = append(queue, node.Left)
             &#125;
-            <span class="keyword">if</span> node.Right != <span class="literal">nil</span> &#123;
-                queue = <span class="built_in">append</span>(queue, node.Right)
+            if node.Right != nil &#123;
+                queue = append(queue, node.Right)
             &#125;
         &#125;
     &#125;
-    <span class="keyword">return</span> result
+    return result
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="层序遍历获取二叉树的层平均值"><a class="header-anchor" href="#层序遍历获取二叉树的层平均值">¶</a>层序遍历获取二叉树的层平均值</h2>
 <p><img src="https://img.shields.io/badge/leetcode-637-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/average-of-levels-in-binary-tree/">二叉树的层平均值</a></p>
 <ul>
 <li>同二叉树的层序遍历</li>
 </ul>
-<pre class="line-numbers language-highlight go"><span class="comment"><code class="language-highlight go"><span class="comment">/**</span>
-<span class="comment"> * Definition for a binary tree node.</span>
-<span class="comment"> * type TreeNode struct &#123;</span>
-<span class="comment"> *     Val int</span>
-<span class="comment"> *     Left *TreeNode</span>
-<span class="comment"> *     Right *TreeNode</span>
-<span class="comment"> * &#125;</span>
-<span class="comment"> */</span>
-<span class="function"><span class="keyword">func</span> <span class="title">averageOfLevels</span><span class="params">(root *TreeNode)</span></span> []<span class="type">float64</span> &#123;
-    result := []<span class="type">float64</span>&#123;&#125;
-    <span class="keyword">if</span> root == <span class="literal">nil</span> &#123;
-        <span class="keyword">return</span> result
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">/**
+ * Definition for a binary tree node.
+ * type TreeNode struct &#123;
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * &#125;
+ */
+func averageOfLevels(root *TreeNode) []float64 &#123;
+    result := []float64&#123;&#125;
+    if root == nil &#123;
+        return result
     &#125;
     queue := list.New()
     queue.PushBack(root)
-    <span class="keyword">for</span> queue.Len() > <span class="number">0</span> &#123;
+    for queue.Len() > 0 &#123;
         size := queue.Len()
-        sum := <span class="number">0</span>
-        <span class="keyword">for</span> i := <span class="number">0</span>; i < size; i++ &#123;
+        sum := 0
+        for i := 0; i < size; i++ &#123;
             node := queue.Front()
             queue.Remove(node)
             t := node.Value.(*TreeNode)
             sum += t.Val
-            <span class="keyword">if</span> t.Left != <span class="literal">nil</span> &#123;
+            if t.Left != nil &#123;
                 queue.PushBack(t.Left)
             &#125;
-            <span class="keyword">if</span> t.Right != <span class="literal">nil</span> &#123;
+            if t.Right != nil &#123;
                 queue.PushBack(t.Right)
             &#125;
         &#125;
-        result = <span class="built_in">append</span>(result, <span class="type">float64</span>(sum) / <span class="type">float64</span>(size))
+        result = append(result, float64(sum) / float64(size))
     &#125;
-    <span class="keyword">return</span> result
+    return result
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="层序遍历获取N叉树的层序遍历"><a class="header-anchor" href="#层序遍历获取N叉树的层序遍历">¶</a>层序遍历获取N叉树的层序遍历</h2>
 <p><img src="https://img.shields.io/badge/leetcode-429-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/n-ary-tree-level-order-traversal/">N叉树的层序遍历</a></p>
 <ul>
 <li>同二叉树的层序遍历</li>
 </ul>
-<pre class="line-numbers language-highlight go"><span class="comment"><code class="language-highlight go"><span class="comment">/**</span>
-<span class="comment"> * Definition for a Node.</span>
-<span class="comment"> * type Node struct &#123;</span>
-<span class="comment"> *     Val int</span>
-<span class="comment"> *     Children []*Node</span>
-<span class="comment"> * &#125;</span>
-<span class="comment"> */</span>
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">/**
+ * Definition for a Node.
+ * type Node struct &#123;
+ *     Val int
+ *     Children []*Node
+ * &#125;
+ */
 
-<span class="function"><span class="keyword">func</span> <span class="title">levelOrder</span><span class="params">(root *Node)</span></span> [][]<span class="type">int</span> &#123;
+func levelOrder(root *Node) [][]int &#123;
     queue := []*Node&#123;&#125;
-    result := [][]<span class="type">int</span>&#123;&#125;
-    <span class="keyword">if</span> root != <span class="literal">nil</span> &#123;
-        queue = <span class="built_in">append</span>(queue, root)
+    result := [][]int&#123;&#125;
+    if root != nil &#123;
+        queue = append(queue, root)
     &#125;
-    <span class="keyword">for</span> <span class="built_in">len</span>(queue) > <span class="number">0</span> &#123;
-        size := <span class="built_in">len</span>(queue)
-        vec := []<span class="type">int</span>&#123;&#125;
-        <span class="keyword">for</span> i := <span class="number">0</span>; i < size; i++ &#123;
-            node := queue[<span class="number">0</span>]
-            queue = queue[<span class="number">1</span>:]
-            vec = <span class="built_in">append</span>(vec, node.Val)
-            <span class="keyword">for</span> _, n := <span class="keyword">range</span> node.Children &#123;
-                queue = <span class="built_in">append</span>(queue, n)
+    for len(queue) > 0 &#123;
+        size := len(queue)
+        vec := []int&#123;&#125;
+        for i := 0; i < size; i++ &#123;
+            node := queue[0]
+            queue = queue[1:]
+            vec = append(vec, node.Val)
+            for _, n := range node.Children &#123;
+                queue = append(queue, n)
             &#125;
         &#125;
-        result = <span class="built_in">append</span>(result, vec)
+        result = append(result, vec)
     &#125;
-    <span class="keyword">return</span> result
+    return result
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="前序遍历二叉树展开为链表"><a class="header-anchor" href="#前序遍历二叉树展开为链表">¶</a>前序遍历二叉树展开为链表</h2>
 <p><img src="https://img.shields.io/badge/leetcode-114-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/flatten-binary-tree-to-linked-list/">二叉树展开为链表</a></p>
-<pre class="line-numbers language-highlight go"><span class="comment"><code class="language-highlight go"><span class="comment">/**</span>
-<span class="comment"> * Definition for a binary tree node.</span>
-<span class="comment"> * type TreeNode struct &#123;</span>
-<span class="comment"> *     Val int</span>
-<span class="comment"> *     Left *TreeNode</span>
-<span class="comment"> *     Right *TreeNode</span>
-<span class="comment"> * &#125;</span>
-<span class="comment"> */</span>
-<span class="function"><span class="keyword">func</span> <span class="title">flatten</span><span class="params">(root *TreeNode)</span></span>  &#123;
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">/**
+ * Definition for a binary tree node.
+ * type TreeNode struct &#123;
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * &#125;
+ */
+func flatten(root *TreeNode)  &#123;
     stack := []*TreeNode&#123;&#125;
     list := []*TreeNode&#123;&#125;
     node := root
-    <span class="keyword">for</span> node != <span class="literal">nil</span> || <span class="built_in">len</span>(stack) > <span class="number">0</span> &#123;
-        <span class="keyword">for</span> node != <span class="literal">nil</span> &#123;
-            list = <span class="built_in">append</span>(list, node)
-            stack = <span class="built_in">append</span>(stack, node)
+    for node != nil || len(stack) > 0 &#123;
+        for node != nil &#123;
+            list = append(list, node)
+            stack = append(stack, node)
             node = node.Left
         &#125;
-        node = stack[<span class="built_in">len</span>(stack) - <span class="number">1</span>]
+        node = stack[len(stack) - 1]
         node = node.Right
-        stack = stack[:<span class="built_in">len</span>(stack) - <span class="number">1</span>]
+        stack = stack[:len(stack) - 1]
     &#125;
 
-    <span class="keyword">for</span> i := <span class="number">1</span>; i < <span class="built_in">len</span>(list); i++ &#123;
-        prev, curr := list[i<span class="number">-1</span>], list[i]
-        prev.Left, prev.Right = <span class="literal">nil</span>, curr
+    for i := 1; i < len(list); i++ &#123;
+        prev, curr := list[i-1], list[i]
+        prev.Left, prev.Right = nil, curr
     &#125;
 &#125;
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
@@ -579,172 +581,172 @@ type TreeNode type TreeNode struct &amp;#123;
 <ul>
 <li>递归</li>
 </ul>
-<pre class="line-numbers language-highlight go"><span class="comment"><code class="language-highlight go"><span class="comment">/**</span>
-<span class="comment"> * Definition for a binary tree node.</span>
-<span class="comment"> * type TreeNode struct &#123;</span>
-<span class="comment"> *     Val int</span>
-<span class="comment"> *     Left *TreeNode</span>
-<span class="comment"> *     Right *TreeNode</span>
-<span class="comment"> * &#125;</span>
-<span class="comment"> */</span>
-<span class="function"><span class="keyword">func</span> <span class="title">invertTree</span><span class="params">(root *TreeNode)</span></span> *TreeNode &#123;
-    <span class="keyword">if</span> root == <span class="literal">nil</span> &#123;
-        <span class="keyword">return</span> root
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">/**
+ * Definition for a binary tree node.
+ * type TreeNode struct &#123;
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * &#125;
+ */
+func invertTree(root *TreeNode) *TreeNode &#123;
+    if root == nil &#123;
+        return root
     &#125;
     root.Left, root.Right = root.Right, root.Left
     invertTree(root.Left)
     invertTree(root.Right)
-    <span class="keyword">return</span> root
+    return root
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>迭代</li>
 </ul>
-<pre class="line-numbers language-highlight go"><span class="comment"><code class="language-highlight go"><span class="comment">/**</span>
-<span class="comment"> * Definition for a binary tree node.</span>
-<span class="comment"> * type TreeNode struct &#123;</span>
-<span class="comment"> *     Val int</span>
-<span class="comment"> *     Left *TreeNode</span>
-<span class="comment"> *     Right *TreeNode</span>
-<span class="comment"> * &#125;</span>
-<span class="comment"> */</span>
-<span class="function"><span class="keyword">func</span> <span class="title">invertTree</span><span class="params">(root *TreeNode)</span></span> *TreeNode &#123;
-    <span class="keyword">if</span> root == <span class="literal">nil</span> &#123;
-        <span class="keyword">return</span> root
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">/**
+ * Definition for a binary tree node.
+ * type TreeNode struct &#123;
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * &#125;
+ */
+func invertTree(root *TreeNode) *TreeNode &#123;
+    if root == nil &#123;
+        return root
     &#125;
     stack := []*TreeNode&#123;&#125;
-    stack = <span class="built_in">append</span>(stack, root)
-    <span class="keyword">for</span> <span class="built_in">len</span>(stack) > <span class="number">0</span> &#123;
-        node := stack[<span class="built_in">len</span>(stack) - <span class="number">1</span>]
-        stack = stack[:<span class="built_in">len</span>(stack) - <span class="number">1</span>]
+    stack = append(stack, root)
+    for len(stack) > 0 &#123;
+        node := stack[len(stack) - 1]
+        stack = stack[:len(stack) - 1]
         node.Left, node.Right = node.Right, node.Left
-        <span class="keyword">if</span> node.Right != <span class="literal">nil</span> &#123;
-            stack = <span class="built_in">append</span>(stack, node.Right)
+        if node.Right != nil &#123;
+            stack = append(stack, node.Right)
         &#125;
-        <span class="keyword">if</span> node.Left != <span class="literal">nil</span> &#123;
-            stack = <span class="built_in">append</span>(stack, node.Left)
+        if node.Left != nil &#123;
+            stack = append(stack, node.Left)
         &#125;
     &#125;
-    <span class="keyword">return</span> root
+    return root
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>层序</li>
 </ul>
-<pre class="line-numbers language-highlight go"><span class="comment"><code class="language-highlight go"><span class="comment">/**</span>
-<span class="comment"> * Definition for a binary tree node.</span>
-<span class="comment"> * type TreeNode struct &#123;</span>
-<span class="comment"> *     Val int</span>
-<span class="comment"> *     Left *TreeNode</span>
-<span class="comment"> *     Right *TreeNode</span>
-<span class="comment"> * &#125;</span>
-<span class="comment"> */</span>
-<span class="function"><span class="keyword">func</span> <span class="title">invertTree</span><span class="params">(root *TreeNode)</span></span> *TreeNode &#123;
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">/**
+ * Definition for a binary tree node.
+ * type TreeNode struct &#123;
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * &#125;
+ */
+func invertTree(root *TreeNode) *TreeNode &#123;
     queue := []*TreeNode&#123;&#125;
-    <span class="keyword">if</span> root == <span class="literal">nil</span> &#123;
-        <span class="keyword">return</span> root
+    if root == nil &#123;
+        return root
     &#125;
-    queue = <span class="built_in">append</span>(queue, root)
-    <span class="keyword">for</span> <span class="built_in">len</span>(queue) > <span class="number">0</span> &#123;
-        size := <span class="built_in">len</span>(queue)
-        <span class="keyword">for</span> i := <span class="number">0</span>; i < size; i++ &#123;
-            node := queue[<span class="number">0</span>]
-            queue = queue[<span class="number">1</span>:]
+    queue = append(queue, root)
+    for len(queue) > 0 &#123;
+        size := len(queue)
+        for i := 0; i < size; i++ &#123;
+            node := queue[0]
+            queue = queue[1:]
             node.Left, node.Right = node.Right, node.Left
-            <span class="keyword">if</span> node.Left != <span class="literal">nil</span> &#123;
-                queue = <span class="built_in">append</span>(queue, node.Left)
+            if node.Left != nil &#123;
+                queue = append(queue, node.Left)
             &#125;
-            <span class="keyword">if</span> node.Right != <span class="literal">nil</span> &#123;
-                queue = <span class="built_in">append</span>(queue, node.Right)
+            if node.Right != nil &#123;
+                queue = append(queue, node.Right)
             &#125;
         &#125;
     &#125;
-    <span class="keyword">return</span> root
+    return root
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="对称二叉树"><a class="header-anchor" href="#对称二叉树">¶</a>对称二叉树</h2>
 <p><img src="https://img.shields.io/badge/leetcode-101-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/symmetric-tree/">对称二叉树</a></p>
 <ul>
 <li>递归</li>
 </ul>
-<pre class="line-numbers language-highlight go"><span class="comment"><code class="language-highlight go"><span class="comment">/**</span>
-<span class="comment"> * Definition for a binary tree node.</span>
-<span class="comment"> * type TreeNode struct &#123;</span>
-<span class="comment"> *     Val int</span>
-<span class="comment"> *     Left *TreeNode</span>
-<span class="comment"> *     Right *TreeNode</span>
-<span class="comment"> * &#125;</span>
-<span class="comment"> */</span>
-<span class="function"><span class="keyword">func</span> <span class="title">compare</span><span class="params">(left *TreeNode, right *TreeNode)</span></span> <span class="type">bool</span> &#123;
-    <span class="keyword">if</span> right != <span class="literal">nil</span> && left == <span class="literal">nil</span> &#123; <span class="keyword">return</span> <span class="literal">false</span> &#125;
-    <span class="keyword">if</span> right == <span class="literal">nil</span> && left != <span class="literal">nil</span> &#123; <span class="keyword">return</span> <span class="literal">false</span> &#125;
-    <span class="keyword">if</span> right == <span class="literal">nil</span> && left == <span class="literal">nil</span> &#123; <span class="keyword">return</span> <span class="literal">true</span> &#125;
-    <span class="keyword">if</span> right.Val != left.Val &#123; <span class="keyword">return</span> <span class="literal">false</span> &#125;
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">/**
+ * Definition for a binary tree node.
+ * type TreeNode struct &#123;
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * &#125;
+ */
+func compare(left *TreeNode, right *TreeNode) bool &#123;
+    if right != nil && left == nil &#123; return false &#125;
+    if right == nil && left != nil &#123; return false &#125;
+    if right == nil && left == nil &#123; return true &#125;
+    if right.Val != left.Val &#123; return false &#125;
 
     outside := compare(left.Left, right.Right)
     inside := compare(left.Right, right.Left)
-    <span class="keyword">return</span> outside && inside
+    return outside && inside
 &#125;
 
-<span class="function"><span class="keyword">func</span> <span class="title">isSymmetric</span><span class="params">(root *TreeNode)</span></span> <span class="type">bool</span> &#123;
-    <span class="keyword">if</span> root == <span class="literal">nil</span> &#123; <span class="keyword">return</span> <span class="literal">true</span> &#125;
-    <span class="keyword">return</span> compare(root.Left, root.Right)
+func isSymmetric(root *TreeNode) bool &#123;
+    if root == nil &#123; return true &#125;
+    return compare(root.Left, root.Right)
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>迭代，队列和栈均可</li>
 </ul>
-<pre class="line-numbers language-highlight go"><span class="comment"><code class="language-highlight go"><span class="comment">/**</span>
-<span class="comment"> * Definition for a binary tree node.</span>
-<span class="comment"> * type TreeNode struct &#123;</span>
-<span class="comment"> *     Val int</span>
-<span class="comment"> *     Left *TreeNode</span>
-<span class="comment"> *     Right *TreeNode</span>
-<span class="comment"> * &#125;</span>
-<span class="comment"> */</span>
-<span class="function"><span class="keyword">func</span> <span class="title">isSymmetric</span><span class="params">(root *TreeNode)</span></span> <span class="type">bool</span> &#123;
-    <span class="keyword">if</span> root == <span class="literal">nil</span> &#123; <span class="keyword">return</span> <span class="literal">true</span> &#125;
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">/**
+ * Definition for a binary tree node.
+ * type TreeNode struct &#123;
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * &#125;
+ */
+func isSymmetric(root *TreeNode) bool &#123;
+    if root == nil &#123; return true &#125;
     queue := []*TreeNode&#123;&#125;
-    queue = <span class="built_in">append</span>(queue, root.Left)
-    queue = <span class="built_in">append</span>(queue, root.Right)
+    queue = append(queue, root.Left)
+    queue = append(queue, root.Right)
 
-    <span class="keyword">for</span> <span class="built_in">len</span>(queue) > <span class="number">0</span> &#123;
-        left := queue[<span class="number">0</span>]; queue = queue[<span class="number">1</span>:]
-        right := queue[<span class="number">0</span>]; queue = queue[<span class="number">1</span>:]
-        <span class="keyword">if</span> left == <span class="literal">nil</span> && right == <span class="literal">nil</span> &#123;
-            <span class="keyword">continue</span>
+    for len(queue) > 0 &#123;
+        left := queue[0]; queue = queue[1:]
+        right := queue[0]; queue = queue[1:]
+        if left == nil && right == nil &#123;
+            continue
         &#125;
-        <span class="keyword">if</span> left == <span class="literal">nil</span> || right == <span class="literal">nil</span> || left.Val != right.Val &#123;
-            <span class="keyword">return</span> <span class="literal">false</span>
+        if left == nil || right == nil || left.Val != right.Val &#123;
+            return false
         &#125;
-        queue = <span class="built_in">append</span>(queue, left.Left)
-        queue = <span class="built_in">append</span>(queue, right.Right)
-        queue = <span class="built_in">append</span>(queue, left.Right)
-        queue = <span class="built_in">append</span>(queue, right.Left)
+        queue = append(queue, left.Left)
+        queue = append(queue, right.Right)
+        queue = append(queue, left.Right)
+        queue = append(queue, right.Left)
     &#125;
-    <span class="keyword">return</span> <span class="literal">true</span>
+    return true
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="二叉树的最大深度"><a class="header-anchor" href="#二叉树的最大深度">¶</a>二叉树的最大深度</h2>
 <p><img src="https://img.shields.io/badge/leetcode-104-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/">二叉树的最大深度</a></p>
 <ul>
 <li>后序遍历</li>
 </ul>
-<pre class="line-numbers language-highlight go"><span class="comment"><code class="language-highlight go"><span class="comment">/**</span>
-<span class="comment"> * Definition for a binary tree node.</span>
-<span class="comment"> * type TreeNode struct &#123;</span>
-<span class="comment"> *     Val int</span>
-<span class="comment"> *     Left *TreeNode</span>
-<span class="comment"> *     Right *TreeNode</span>
-<span class="comment"> * &#125;</span>
-<span class="comment"> */</span>
-<span class="function"><span class="keyword">func</span> <span class="title">Max</span><span class="params">(x, y <span class="type">int</span>)</span></span> <span class="type">int</span> &#123;
-    <span class="keyword">if</span> x < y &#123; <span class="keyword">return</span> y &#125;
-    <span class="keyword">return</span> x
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">/**
+ * Definition for a binary tree node.
+ * type TreeNode struct &#123;
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * &#125;
+ */
+func Max(x, y int) int &#123;
+    if x < y &#123; return y &#125;
+    return x
 &#125;
 
-<span class="function"><span class="keyword">func</span> <span class="title">depth</span><span class="params">(node *TreeNode)</span></span> <span class="type">int</span> &#123;
-    <span class="keyword">if</span> node == <span class="literal">nil</span> &#123; <span class="keyword">return</span> <span class="number">0</span> &#125;
-    <span class="keyword">return</span> <span class="number">1</span> + Max(depth(node.Left), depth(node.Right))
+func depth(node *TreeNode) int &#123;
+    if node == nil &#123; return 0 &#125;
+    return 1 + Max(depth(node.Left), depth(node.Right))
 &#125;
 
-<span class="function"><span class="keyword">func</span> <span class="title">maxDepth</span><span class="params">(root *TreeNode)</span></span> <span class="type">int</span> &#123;
-    <span class="keyword">return</span> depth(root)
+func maxDepth(root *TreeNode) int &#123;
+    return depth(root)
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>层序遍历</li>
@@ -755,812 +757,812 @@ type TreeNode type TreeNode struct &amp;#123;
 <li>迭代，同二叉树</li>
 <li>层序遍历</li>
 </ul>
-<pre class="line-numbers language-highlight go"><span class="comment"><code class="language-highlight go"><span class="comment">/**</span>
-<span class="comment"> * Definition for a Node.</span>
-<span class="comment"> * type Node struct &#123;</span>
-<span class="comment"> *     Val int</span>
-<span class="comment"> *     Children []*Node</span>
-<span class="comment"> * &#125;</span>
-<span class="comment"> */</span>
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">/**
+ * Definition for a Node.
+ * type Node struct &#123;
+ *     Val int
+ *     Children []*Node
+ * &#125;
+ */
 
-<span class="function"><span class="keyword">func</span> <span class="title">maxDepth</span><span class="params">(root *Node)</span></span> <span class="type">int</span> &#123;
+func maxDepth(root *Node) int &#123;
     queue := []*Node&#123;&#125;
-    depth := <span class="number">0</span>
-    <span class="keyword">if</span> root == <span class="literal">nil</span> &#123; <span class="keyword">return</span> depth &#125;
-    queue = <span class="built_in">append</span>(queue, root)
-    <span class="keyword">for</span> <span class="built_in">len</span>(queue) > <span class="number">0</span> &#123;
-        size := <span class="built_in">len</span>(queue)
+    depth := 0
+    if root == nil &#123; return depth &#125;
+    queue = append(queue, root)
+    for len(queue) > 0 &#123;
+        size := len(queue)
         depth++
-        <span class="keyword">for</span> i := <span class="number">0</span>; i < size; i++ &#123;
-            node := queue[<span class="number">0</span>]
-            queue = queue[<span class="number">1</span>:]
-            <span class="keyword">for</span> _, n := <span class="keyword">range</span> node.Children &#123;
-                <span class="keyword">if</span> n != <span class="literal">nil</span> &#123;
-                    queue = <span class="built_in">append</span>(queue, n)
+        for i := 0; i < size; i++ &#123;
+            node := queue[0]
+            queue = queue[1:]
+            for _, n := range node.Children &#123;
+                if n != nil &#123;
+                    queue = append(queue, n)
                 &#125;
             &#125;
         &#125;
     &#125;
-    <span class="keyword">return</span> depth
+    return depth
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="二叉树的最小深度"><a class="header-anchor" href="#二叉树的最小深度">¶</a>二叉树的最小深度</h2>
 <p><img src="https://img.shields.io/badge/leetcode-111-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/minimum-depth-of-binary-tree/">二叉树的最小深度</a></p>
 <ul>
 <li>递归</li>
 </ul>
-<pre class="line-numbers language-highlight go"><span class="comment"><code class="language-highlight go"><span class="comment">/**</span>
-<span class="comment"> * Definition for a binary tree node.</span>
-<span class="comment"> * type TreeNode struct &#123;</span>
-<span class="comment"> *     Val int</span>
-<span class="comment"> *     Left *TreeNode</span>
-<span class="comment"> *     Right *TreeNode</span>
-<span class="comment"> * &#125;</span>
-<span class="comment"> */</span>
-<span class="function"><span class="keyword">func</span> <span class="title">Min</span><span class="params">(x, y <span class="type">int</span>)</span></span> <span class="type">int</span> &#123;
-    <span class="keyword">if</span> x > y &#123; <span class="keyword">return</span> y &#125;
-    <span class="keyword">return</span> x
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">/**
+ * Definition for a binary tree node.
+ * type TreeNode struct &#123;
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * &#125;
+ */
+func Min(x, y int) int &#123;
+    if x > y &#123; return y &#125;
+    return x
 &#125;
 
-<span class="function"><span class="keyword">func</span> <span class="title">depth</span><span class="params">(node *TreeNode)</span></span> <span class="type">int</span> &#123;
-    <span class="keyword">if</span> node == <span class="literal">nil</span> &#123; <span class="keyword">return</span> <span class="number">0</span> &#125;
+func depth(node *TreeNode) int &#123;
+    if node == nil &#123; return 0 &#125;
     leftDepth := depth(node.Left)
     rightDepth := depth(node.Right)
 
-    <span class="keyword">if</span> node.Left == <span class="literal">nil</span> && node.Right != <span class="literal">nil</span> &#123;
-        <span class="keyword">return</span> <span class="number">1</span> + rightDepth
+    if node.Left == nil && node.Right != nil &#123;
+        return 1 + rightDepth
     &#125;
 
-    <span class="keyword">if</span> node.Right == <span class="literal">nil</span> && node.Left != <span class="literal">nil</span> &#123;
-        <span class="keyword">return</span> <span class="number">1</span> + leftDepth
+    if node.Right == nil && node.Left != nil &#123;
+        return 1 + leftDepth
     &#125;
 
-    <span class="keyword">return</span> <span class="number">1</span> + Min(leftDepth, rightDepth)
+    return 1 + Min(leftDepth, rightDepth)
 &#125;
 
 
-<span class="function"><span class="keyword">func</span> <span class="title">minDepth</span><span class="params">(root *TreeNode)</span></span> <span class="type">int</span> &#123;
-    <span class="keyword">return</span> depth(root)
+func minDepth(root *TreeNode) int &#123;
+    return depth(root)
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>层序遍历</li>
 </ul>
-<pre class="line-numbers language-highlight go"><span class="comment"><code class="language-highlight go"><span class="comment">/**</span>
-<span class="comment"> * Definition for a binary tree node.</span>
-<span class="comment"> * type TreeNode struct &#123;</span>
-<span class="comment"> *     Val int</span>
-<span class="comment"> *     Left *TreeNode</span>
-<span class="comment"> *     Right *TreeNode</span>
-<span class="comment"> * &#125;</span>
-<span class="comment"> */</span>
-<span class="function"><span class="keyword">func</span> <span class="title">minDepth</span><span class="params">(root *TreeNode)</span></span> <span class="type">int</span> &#123;
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">/**
+ * Definition for a binary tree node.
+ * type TreeNode struct &#123;
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * &#125;
+ */
+func minDepth(root *TreeNode) int &#123;
     queue := []*TreeNode&#123;&#125;
-    depth := <span class="number">0</span>
-    <span class="keyword">if</span> root == <span class="literal">nil</span> &#123; <span class="keyword">return</span> depth &#125;
-    queue = <span class="built_in">append</span>(queue, root)
-    <span class="keyword">for</span> <span class="built_in">len</span>(queue) > <span class="number">0</span> &#123;
-        size := <span class="built_in">len</span>(queue)
+    depth := 0
+    if root == nil &#123; return depth &#125;
+    queue = append(queue, root)
+    for len(queue) > 0 &#123;
+        size := len(queue)
         depth++
-        <span class="keyword">for</span> i := <span class="number">0</span>; i < size; i++ &#123;
-            node := queue[<span class="number">0</span>]
-            queue = queue[<span class="number">1</span>:]
-            <span class="keyword">if</span> node.Left == <span class="literal">nil</span> && node.Right == <span class="literal">nil</span> &#123;
-                <span class="keyword">return</span> depth
+        for i := 0; i < size; i++ &#123;
+            node := queue[0]
+            queue = queue[1:]
+            if node.Left == nil && node.Right == nil &#123;
+                return depth
             &#125;
-            <span class="keyword">if</span> node.Left != <span class="literal">nil</span> &#123;
-                queue = <span class="built_in">append</span>(queue, node.Left)
+            if node.Left != nil &#123;
+                queue = append(queue, node.Left)
             &#125;
-            <span class="keyword">if</span> node.Right != <span class="literal">nil</span> &#123;
-                queue = <span class="built_in">append</span>(queue, node.Right)
+            if node.Right != nil &#123;
+                queue = append(queue, node.Right)
             &#125;
         &#125;
     &#125;
-    <span class="keyword">return</span> depth
+    return depth
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="完全二叉树的节点数"><a class="header-anchor" href="#完全二叉树的节点数">¶</a>完全二叉树的节点数</h2>
 <p><img src="https://img.shields.io/badge/leetcode-222-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/count-complete-tree-nodes/">完全二叉树的节点个数</a></p>
 <ul>
 <li>前序遍历递归</li>
 </ul>
-<pre class="line-numbers language-highlight go"><span class="comment"><code class="language-highlight go"><span class="comment">/**</span>
-<span class="comment"> * Definition for a binary tree node.</span>
-<span class="comment"> * type TreeNode struct &#123;</span>
-<span class="comment"> *     Val int</span>
-<span class="comment"> *     Left *TreeNode</span>
-<span class="comment"> *     Right *TreeNode</span>
-<span class="comment"> * &#125;</span>
-<span class="comment"> */</span>
-<span class="function"><span class="keyword">func</span> <span class="title">nodeNum</span><span class="params">(node *TreeNode)</span></span> <span class="type">int</span> &#123;
-    <span class="keyword">if</span> node == <span class="literal">nil</span> &#123; <span class="keyword">return</span> <span class="number">0</span> &#125;
-    <span class="keyword">return</span> <span class="number">1</span> + nodeNum(node.Left) + nodeNum(node.Right)
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">/**
+ * Definition for a binary tree node.
+ * type TreeNode struct &#123;
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * &#125;
+ */
+func nodeNum(node *TreeNode) int &#123;
+    if node == nil &#123; return 0 &#125;
+    return 1 + nodeNum(node.Left) + nodeNum(node.Right)
 &#125;
 
-<span class="function"><span class="keyword">func</span> <span class="title">countNodes</span><span class="params">(root *TreeNode)</span></span> <span class="type">int</span> &#123;
-    <span class="keyword">return</span> nodeNum(root)
+func countNodes(root *TreeNode) int &#123;
+    return nodeNum(root)
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>层序遍历迭代</li>
 </ul>
-<pre class="line-numbers language-highlight go"><span class="comment"><code class="language-highlight go"><span class="comment">/**</span>
-<span class="comment"> * Definition for a binary tree node.</span>
-<span class="comment"> * type TreeNode struct &#123;</span>
-<span class="comment"> *     Val int</span>
-<span class="comment"> *     Left *TreeNode</span>
-<span class="comment"> *     Right *TreeNode</span>
-<span class="comment"> * &#125;</span>
-<span class="comment"> */</span>
-<span class="function"><span class="keyword">func</span> <span class="title">countNodes</span><span class="params">(root *TreeNode)</span></span> <span class="type">int</span> &#123;
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">/**
+ * Definition for a binary tree node.
+ * type TreeNode struct &#123;
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * &#125;
+ */
+func countNodes(root *TreeNode) int &#123;
     queue := []*TreeNode&#123;&#125;
-    count := <span class="number">0</span>
-    <span class="keyword">if</span> root == <span class="literal">nil</span> &#123; <span class="keyword">return</span> count &#125;
-    queue = <span class="built_in">append</span>(queue, root)
-    <span class="keyword">for</span> <span class="built_in">len</span>(queue) > <span class="number">0</span> &#123;
-        size := <span class="built_in">len</span>(queue)
-        <span class="keyword">for</span> i := <span class="number">0</span>; i < size; i++ &#123;
-            node := queue[<span class="number">0</span>]
-            queue = queue[<span class="number">1</span>:]
+    count := 0
+    if root == nil &#123; return count &#125;
+    queue = append(queue, root)
+    for len(queue) > 0 &#123;
+        size := len(queue)
+        for i := 0; i < size; i++ &#123;
+            node := queue[0]
+            queue = queue[1:]
             count++
-            <span class="keyword">if</span> node.Left != <span class="literal">nil</span> &#123;
-                queue = <span class="built_in">append</span>(queue, node.Left)
+            if node.Left != nil &#123;
+                queue = append(queue, node.Left)
             &#125;
-            <span class="keyword">if</span> node.Right != <span class="literal">nil</span> &#123;
-                queue = <span class="built_in">append</span>(queue, node.Right)
+            if node.Right != nil &#123;
+                queue = append(queue, node.Right)
             &#125;
         &#125;
     &#125;
-    <span class="keyword">return</span> count
+    return count
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="平衡二叉树"><a class="header-anchor" href="#平衡二叉树">¶</a>平衡二叉树</h2>
 <p><img src="https://img.shields.io/badge/leetcode-110-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/balanced-binary-tree/">平衡二叉树</a></p>
 <ul>
 <li>递归</li>
 </ul>
-<pre class="line-numbers language-highlight go"><span class="comment"><code class="language-highlight go"><span class="comment">/**</span>
-<span class="comment"> * Definition for a binary tree node.</span>
-<span class="comment"> * type TreeNode struct &#123;</span>
-<span class="comment"> *     Val int</span>
-<span class="comment"> *     Left *TreeNode</span>
-<span class="comment"> *     Right *TreeNode</span>
-<span class="comment"> * &#125;</span>
-<span class="comment"> */</span>
-<span class="function"><span class="keyword">func</span> <span class="title">Max</span><span class="params">(x, y <span class="type">int</span>)</span></span> <span class="type">int</span> &#123;
-    <span class="keyword">if</span> x > y &#123; <span class="keyword">return</span> x &#125;
-    <span class="keyword">return</span> y
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">/**
+ * Definition for a binary tree node.
+ * type TreeNode struct &#123;
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * &#125;
+ */
+func Max(x, y int) int &#123;
+    if x > y &#123; return x &#125;
+    return y
 &#125;
 
-<span class="function"><span class="keyword">func</span> <span class="title">depth</span><span class="params">(node *TreeNode)</span></span> <span class="type">int</span> &#123;
-    <span class="keyword">if</span> node == <span class="literal">nil</span> &#123; <span class="keyword">return</span> <span class="number">0</span> &#125;
+func depth(node *TreeNode) int &#123;
+    if node == nil &#123; return 0 &#125;
     leftDepth := depth(node.Left)
-    <span class="keyword">if</span> leftDepth < <span class="number">0</span> &#123; <span class="keyword">return</span> <span class="number">-1</span> &#125;
+    if leftDepth < 0 &#123; return -1 &#125;
     rightDepth := depth(node.Right)
-    <span class="keyword">if</span> rightDepth < <span class="number">0</span> &#123; <span class="keyword">return</span> <span class="number">-1</span> &#125;
-    <span class="keyword">if</span> math.Abs(<span class="type">float64</span>(leftDepth) - <span class="type">float64</span>(rightDepth)) > <span class="number">1</span> &#123;
-        <span class="keyword">return</span> <span class="number">-1</span>
+    if rightDepth < 0 &#123; return -1 &#125;
+    if math.Abs(float64(leftDepth) - float64(rightDepth)) > 1 &#123;
+        return -1
     &#125;
-    <span class="keyword">return</span> <span class="number">1</span> + Max(leftDepth, rightDepth)
+    return 1 + Max(leftDepth, rightDepth)
 &#125;
 
-<span class="function"><span class="keyword">func</span> <span class="title">isBalanced</span><span class="params">(root *TreeNode)</span></span> <span class="type">bool</span> &#123;
-    <span class="keyword">return</span> depth(root) >= <span class="number">0</span>
+func isBalanced(root *TreeNode) bool &#123;
+    return depth(root) >= 0
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="二叉树的所有路径"><a class="header-anchor" href="#二叉树的所有路径">¶</a>二叉树的所有路径</h2>
 <p><img src="https://img.shields.io/badge/leetcode-257-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/binary-tree-paths/">二叉树的所有路径</a></p>
 <ul>
 <li>谦虚遍历递归</li>
 </ul>
-<pre class="line-numbers language-highlight go"><span class="comment"><code class="language-highlight go"><span class="comment">/**</span>
-<span class="comment"> * Definition for a binary tree node.</span>
-<span class="comment"> * type TreeNode struct &#123;</span>
-<span class="comment"> *     Val int</span>
-<span class="comment"> *     Left *TreeNode</span>
-<span class="comment"> *     Right *TreeNode</span>
-<span class="comment"> * &#125;</span>
-<span class="comment"> */</span>
-<span class="function"><span class="keyword">func</span> <span class="title">path</span><span class="params">(node *TreeNode, pathStr <span class="type">string</span>)</span></span> []<span class="type">string</span> &#123;
-    results := []<span class="type">string</span>&#123;&#125;
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">/**
+ * Definition for a binary tree node.
+ * type TreeNode struct &#123;
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * &#125;
+ */
+func path(node *TreeNode, pathStr string) []string &#123;
+    results := []string&#123;&#125;
     pathStr += strconv.Itoa(node.Val)
-    <span class="keyword">if</span> node.Left == <span class="literal">nil</span> && node.Right == <span class="literal">nil</span> &#123;
-        results = <span class="built_in">append</span>(results, pathStr)
+    if node.Left == nil && node.Right == nil &#123;
+        results = append(results, pathStr)
     &#125;
-    pathStr += <span class="string">"->"</span>
-    <span class="keyword">if</span> node.Left != <span class="literal">nil</span> &#123;
-        results = <span class="built_in">append</span>(results, path(node.Left, pathStr)...)
+    pathStr += "->"
+    if node.Left != nil &#123;
+        results = append(results, path(node.Left, pathStr)...)
     &#125;
-    <span class="keyword">if</span> node.Right != <span class="literal">nil</span> &#123;
-        results = <span class="built_in">append</span>(results, path(node.Right, pathStr)...)
+    if node.Right != nil &#123;
+        results = append(results, path(node.Right, pathStr)...)
     &#125;
-    <span class="keyword">return</span> results
+    return results
 &#125;
 
-<span class="function"><span class="keyword">func</span> <span class="title">binaryTreePaths</span><span class="params">(root *TreeNode)</span></span> []<span class="type">string</span> &#123;
-    <span class="keyword">if</span> root == <span class="literal">nil</span> &#123; <span class="keyword">return</span> []<span class="type">string</span>&#123;&#125; &#125;
-    <span class="keyword">return</span> path(root, <span class="string">""</span>)
+func binaryTreePaths(root *TreeNode) []string &#123;
+    if root == nil &#123; return []string&#123;&#125; &#125;
+    return path(root, "")
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="相同的树"><a class="header-anchor" href="#相同的树">¶</a>相同的树</h2>
 <p><img src="https://img.shields.io/badge/leetcode-100-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/same-tree/">相同的树</a></p>
 <ul>
 <li>递归，同对称树</li>
 </ul>
-<pre class="line-numbers language-highlight go"><span class="comment"><code class="language-highlight go"><span class="comment">/**</span>
-<span class="comment"> * Definition for a binary tree node.</span>
-<span class="comment"> * type TreeNode struct &#123;</span>
-<span class="comment"> *     Val int</span>
-<span class="comment"> *     Left *TreeNode</span>
-<span class="comment"> *     Right *TreeNode</span>
-<span class="comment"> * &#125;</span>
-<span class="comment"> */</span>
-<span class="function"><span class="keyword">func</span> <span class="title">isSameTree</span><span class="params">(p *TreeNode, q *TreeNode)</span></span> <span class="type">bool</span> &#123;
-    <span class="keyword">if</span> p != <span class="literal">nil</span> && q == <span class="literal">nil</span> &#123; <span class="keyword">return</span> <span class="literal">false</span> &#125;
-    <span class="keyword">if</span> p == <span class="literal">nil</span> && q != <span class="literal">nil</span> &#123; <span class="keyword">return</span> <span class="literal">false</span> &#125;
-    <span class="keyword">if</span> p == <span class="literal">nil</span> && q == <span class="literal">nil</span> &#123; <span class="keyword">return</span> <span class="literal">true</span> &#125;
-    <span class="keyword">if</span> p.Val != q.Val &#123; <span class="keyword">return</span> <span class="literal">false</span> &#125;
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">/**
+ * Definition for a binary tree node.
+ * type TreeNode struct &#123;
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * &#125;
+ */
+func isSameTree(p *TreeNode, q *TreeNode) bool &#123;
+    if p != nil && q == nil &#123; return false &#125;
+    if p == nil && q != nil &#123; return false &#125;
+    if p == nil && q == nil &#123; return true &#125;
+    if p.Val != q.Val &#123; return false &#125;
 
     left := isSameTree(p.Left, q.Left)
     right := isSameTree(p.Right, q.Right)
-    <span class="keyword">return</span> left && right
+    return left && right
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>迭代，队列和栈均可，同对称树</li>
 </ul>
-<pre class="line-numbers language-highlight go"><span class="comment"><code class="language-highlight go"><span class="comment">/**</span>
-<span class="comment"> * Definition for a binary tree node.</span>
-<span class="comment"> * type TreeNode struct &#123;</span>
-<span class="comment"> *     Val int</span>
-<span class="comment"> *     Left *TreeNode</span>
-<span class="comment"> *     Right *TreeNode</span>
-<span class="comment"> * &#125;</span>
-<span class="comment"> */</span>
-<span class="function"><span class="keyword">func</span> <span class="title">isSameTree</span><span class="params">(p *TreeNode, q *TreeNode)</span></span> <span class="type">bool</span> &#123;
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">/**
+ * Definition for a binary tree node.
+ * type TreeNode struct &#123;
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * &#125;
+ */
+func isSameTree(p *TreeNode, q *TreeNode) bool &#123;
     queue := []*TreeNode&#123;&#125;
-    queue = <span class="built_in">append</span>(queue, p)
-    queue = <span class="built_in">append</span>(queue, q)
-    <span class="keyword">for</span> <span class="built_in">len</span>(queue) > <span class="number">0</span> &#123;
-        left := queue[<span class="number">0</span>]; queue = queue[<span class="number">1</span>:]
-        right := queue[<span class="number">0</span>]; queue = queue[<span class="number">1</span>:]
-        <span class="keyword">if</span> left == <span class="literal">nil</span> && right == <span class="literal">nil</span> &#123;
-            <span class="keyword">continue</span>
+    queue = append(queue, p)
+    queue = append(queue, q)
+    for len(queue) > 0 &#123;
+        left := queue[0]; queue = queue[1:]
+        right := queue[0]; queue = queue[1:]
+        if left == nil && right == nil &#123;
+            continue
         &#125;
-        <span class="keyword">if</span> left == <span class="literal">nil</span> || right == <span class="literal">nil</span> || left.Val != right.Val &#123;
-            <span class="keyword">return</span> <span class="literal">false</span>
+        if left == nil || right == nil || left.Val != right.Val &#123;
+            return false
         &#125;
-        queue = <span class="built_in">append</span>(queue, left.Left)
-        queue = <span class="built_in">append</span>(queue, right.Left)
-        queue = <span class="built_in">append</span>(queue, left.Right)
-        queue = <span class="built_in">append</span>(queue, right.Right)
+        queue = append(queue, left.Left)
+        queue = append(queue, right.Left)
+        queue = append(queue, left.Right)
+        queue = append(queue, right.Right)
     &#125;
-    <span class="keyword">return</span> <span class="literal">true</span>
+    return true
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="左叶子之和"><a class="header-anchor" href="#左叶子之和">¶</a>左叶子之和</h2>
 <p><img src="https://img.shields.io/badge/leetcode-404-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/sum-of-left-leaves/">左叶子之和</a></p>
 <ul>
 <li>递归</li>
 </ul>
-<pre class="line-numbers language-highlight go"><span class="comment"><code class="language-highlight go"><span class="comment">/**</span>
-<span class="comment"> * Definition for a binary tree node.</span>
-<span class="comment"> * type TreeNode struct &#123;</span>
-<span class="comment"> *     Val int</span>
-<span class="comment"> *     Left *TreeNode</span>
-<span class="comment"> *     Right *TreeNode</span>
-<span class="comment"> * &#125;</span>
-<span class="comment"> */</span>
-<span class="function"><span class="keyword">func</span> <span class="title">sumOfLeftLeaves</span><span class="params">(root *TreeNode)</span></span> <span class="type">int</span> &#123;
-    <span class="keyword">if</span> root == <span class="literal">nil</span> &#123; <span class="keyword">return</span> <span class="number">0</span> &#125;
-    sum := <span class="number">0</span>
-    <span class="keyword">if</span> root.Left != <span class="literal">nil</span> && root.Left.Left == <span class="literal">nil</span> && root.Left.Right == <span class="literal">nil</span> &#123;
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">/**
+ * Definition for a binary tree node.
+ * type TreeNode struct &#123;
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * &#125;
+ */
+func sumOfLeftLeaves(root *TreeNode) int &#123;
+    if root == nil &#123; return 0 &#125;
+    sum := 0
+    if root.Left != nil && root.Left.Left == nil && root.Left.Right == nil &#123;
         sum = root.Left.Val
     &#125;
-    <span class="keyword">return</span> sum + sumOfLeftLeaves(root.Left) + sumOfLeftLeaves(root.Right)
+    return sum + sumOfLeftLeaves(root.Left) + sumOfLeftLeaves(root.Right)
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="找树左下角的值"><a class="header-anchor" href="#找树左下角的值">¶</a>找树左下角的值</h2>
 <p><img src="https://img.shields.io/badge/leetcode-513-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/find-bottom-left-tree-value/">找树左下角的值</a></p>
 <ul>
 <li>层序遍历</li>
 </ul>
-<pre class="line-numbers language-highlight go"><span class="comment"><code class="language-highlight go"><span class="comment">/**</span>
-<span class="comment"> * Definition for a binary tree node.</span>
-<span class="comment"> * type TreeNode struct &#123;</span>
-<span class="comment"> *     Val int</span>
-<span class="comment"> *     Left *TreeNode</span>
-<span class="comment"> *     Right *TreeNode</span>
-<span class="comment"> * &#125;</span>
-<span class="comment"> */</span>
-<span class="function"><span class="keyword">func</span> <span class="title">findBottomLeftValue</span><span class="params">(root *TreeNode)</span></span> <span class="type">int</span> &#123;
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">/**
+ * Definition for a binary tree node.
+ * type TreeNode struct &#123;
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * &#125;
+ */
+func findBottomLeftValue(root *TreeNode) int &#123;
     queue := []*TreeNode&#123;root&#125;
-    result := <span class="number">0</span>
-    <span class="keyword">for</span> <span class="built_in">len</span>(queue) > <span class="number">0</span> &#123;
-        size := <span class="built_in">len</span>(queue)
-        <span class="keyword">for</span> i := <span class="number">0</span>; i < size; i++ &#123;
-            node := queue[<span class="number">0</span>]
-            queue = queue[<span class="number">1</span>:]
-            <span class="keyword">if</span> i == <span class="number">0</span> &#123; result = node.Val &#125;
-            <span class="keyword">if</span> node.Left != <span class="literal">nil</span> &#123;
-                queue = <span class="built_in">append</span>(queue, node.Left)
+    result := 0
+    for len(queue) > 0 &#123;
+        size := len(queue)
+        for i := 0; i < size; i++ &#123;
+            node := queue[0]
+            queue = queue[1:]
+            if i == 0 &#123; result = node.Val &#125;
+            if node.Left != nil &#123;
+                queue = append(queue, node.Left)
             &#125;
-            <span class="keyword">if</span> node.Right != <span class="literal">nil</span> &#123;
-                queue = <span class="built_in">append</span>(queue, node.Right)
+            if node.Right != nil &#123;
+                queue = append(queue, node.Right)
             &#125;
         &#125;
     &#125;
-    <span class="keyword">return</span> result
+    return result
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="路径总和"><a class="header-anchor" href="#路径总和">¶</a>路径总和</h2>
 <p><img src="https://img.shields.io/badge/leetcode-112-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/path-sum/">路径总和</a></p>
 <ul>
 <li>递归</li>
 </ul>
-<pre class="line-numbers language-highlight go"><span class="comment"><code class="language-highlight go"><span class="comment">/**</span>
-<span class="comment"> * Definition for a binary tree node.</span>
-<span class="comment"> * type TreeNode struct &#123;</span>
-<span class="comment"> *     Val int</span>
-<span class="comment"> *     Left *TreeNode</span>
-<span class="comment"> *     Right *TreeNode</span>
-<span class="comment"> * &#125;</span>
-<span class="comment"> */</span>
-<span class="function"><span class="keyword">func</span> <span class="title">hasPathSum</span><span class="params">(root *TreeNode, targetSum <span class="type">int</span>)</span></span> <span class="type">bool</span> &#123;
-    <span class="keyword">if</span> root == <span class="literal">nil</span> &#123; <span class="keyword">return</span> <span class="literal">false</span> &#125;
-    <span class="keyword">if</span> root.Left == <span class="literal">nil</span> && root.Right == <span class="literal">nil</span> && root.Val == targetSum &#123;
-        <span class="keyword">return</span> <span class="literal">true</span>
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">/**
+ * Definition for a binary tree node.
+ * type TreeNode struct &#123;
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * &#125;
+ */
+func hasPathSum(root *TreeNode, targetSum int) bool &#123;
+    if root == nil &#123; return false &#125;
+    if root.Left == nil && root.Right == nil && root.Val == targetSum &#123;
+        return true
     &#125;
     nextSum := targetSum - root.Val
-    <span class="keyword">return</span> hasPathSum(root.Left, nextSum) || hasPathSum(root.Right, nextSum)
+    return hasPathSum(root.Left, nextSum) || hasPathSum(root.Right, nextSum)
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="路径总和II"><a class="header-anchor" href="#路径总和II">¶</a>路径总和II</h2>
 <p><img src="https://img.shields.io/badge/leetcode-113-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/path-sum-ii/">路径总和II</a></p>
 <ul>
 <li>递归，注意Go的引用</li>
 </ul>
-<pre class="line-numbers language-highlight go"><span class="comment"><code class="language-highlight go"><span class="comment">/**</span>
-<span class="comment"> * Definition for a binary tree node.</span>
-<span class="comment"> * type TreeNode struct &#123;</span>
-<span class="comment"> *     Val int</span>
-<span class="comment"> *     Left *TreeNode</span>
-<span class="comment"> *     Right *TreeNode</span>
-<span class="comment"> * &#125;</span>
-<span class="comment"> */</span>
-<span class="function"><span class="keyword">func</span> <span class="title">traverse</span><span class="params">(root *TreeNode, targetSum <span class="type">int</span>, res *[][]<span class="type">int</span>, path[]<span class="type">int</span>)</span></span> &#123;
-    path = <span class="built_in">append</span>(path, root.Val)
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">/**
+ * Definition for a binary tree node.
+ * type TreeNode struct &#123;
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * &#125;
+ */
+func traverse(root *TreeNode, targetSum int, res *[][]int, path[]int) &#123;
+    path = append(path, root.Val)
     nextSum := targetSum - root.Val
-    <span class="keyword">if</span> root.Left == <span class="literal">nil</span> && root.Right == <span class="literal">nil</span> &#123;
-        <span class="keyword">if</span> nextSum == <span class="number">0</span> &#123;
-            tmp := <span class="built_in">make</span>([]<span class="type">int</span>, <span class="built_in">len</span>(path))
-            <span class="built_in">copy</span>(tmp, path)
-            *res = <span class="built_in">append</span>(*res, tmp)
+    if root.Left == nil && root.Right == nil &#123;
+        if nextSum == 0 &#123;
+            tmp := make([]int, len(path))
+            copy(tmp, path)
+            *res = append(*res, tmp)
         &#125;
-        <span class="keyword">return</span>
+        return
     &#125;
 
-    <span class="keyword">if</span> root.Left != <span class="literal">nil</span> &#123;
+    if root.Left != nil &#123;
         traverse(root.Left, nextSum, res, path)
     &#125;
-    <span class="keyword">if</span> root.Right != <span class="literal">nil</span> &#123;
+    if root.Right != nil &#123;
         traverse(root.Right, nextSum, res, path)
     &#125;
 &#125;
 
-<span class="function"><span class="keyword">func</span> <span class="title">pathSum</span><span class="params">(root *TreeNode, targetSum <span class="type">int</span>)</span></span> [][]<span class="type">int</span> &#123;
-    result := [][]<span class="type">int</span>&#123;&#125;
-    path := []<span class="type">int</span>&#123;&#125;
-    <span class="keyword">if</span> root == <span class="literal">nil</span> &#123; <span class="keyword">return</span> result &#125;
+func pathSum(root *TreeNode, targetSum int) [][]int &#123;
+    result := [][]int&#123;&#125;
+    path := []int&#123;&#125;
+    if root == nil &#123; return result &#125;
     traverse(root, targetSum, &result, path)
-    <span class="keyword">return</span> result
+    return result
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="从中序与后序遍历序列构造二叉树"><a class="header-anchor" href="#从中序与后序遍历序列构造二叉树">¶</a>从中序与后序遍历序列构造二叉树</h2>
 <p><img src="https://img.shields.io/badge/leetcode-106-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/">从中序与后序遍历序列构造二叉树</a></p>
 <ul>
 <li>先取后序遍历最后一个值作为当前根节点，从中序遍历比对确定左右子树切割位置，后序遍历子树大小应和中序遍历数组子序列一致，将切分出的左右子序列递归。</li>
 </ul>
-<pre class="line-numbers language-highlight go"><span class="comment"><code class="language-highlight go"><span class="comment">/**</span>
-<span class="comment"> * Definition for a binary tree node.</span>
-<span class="comment"> * type TreeNode struct &#123;</span>
-<span class="comment"> *     Val int</span>
-<span class="comment"> *     Left *TreeNode</span>
-<span class="comment"> *     Right *TreeNode</span>
-<span class="comment"> * &#125;</span>
-<span class="comment"> */</span>
-<span class="keyword">type</span> TreeBuilder <span class="keyword">struct</span> &#123;
-    inorder []<span class="type">int</span>
-    postorder []<span class="type">int</span>
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">/**
+ * Definition for a binary tree node.
+ * type TreeNode struct &#123;
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * &#125;
+ */
+type TreeBuilder struct &#123;
+    inorder []int
+    postorder []int
 &#125;
 
-<span class="function"><span class="keyword">func</span> <span class="params">(t TreeBuilder)</span></span>traverse(inStart, inEnd, poStart, poEnd <span class="type">int</span>) *TreeNode &#123;
-    <span class="keyword">if</span> poStart == poEnd &#123; <span class="keyword">return</span> <span class="literal">nil</span> &#125;
-    rootVal := t.postorder[poEnd - <span class="number">1</span>]
+func (t TreeBuilder)traverse(inStart, inEnd, poStart, poEnd int) *TreeNode &#123;
+    if poStart == poEnd &#123; return nil &#125;
+    rootVal := t.postorder[poEnd - 1]
     root := &TreeNode&#123;Val: rootVal&#125;
-    <span class="keyword">if</span> poEnd - poStart == <span class="number">1</span> &#123; <span class="keyword">return</span> root &#125;
+    if poEnd - poStart == 1 &#123; return root &#125;
 
-    <span class="keyword">var</span> inMid <span class="type">int</span>
-    <span class="keyword">for</span> inMid = inStart; inMid < inEnd; inMid++ &#123;
-        <span class="keyword">if</span> t.inorder[inMid] == rootVal &#123; <span class="keyword">break</span> &#125;
+    var inMid int
+    for inMid = inStart; inMid < inEnd; inMid++ &#123;
+        if t.inorder[inMid] == rootVal &#123; break &#125;
     &#125;
 
     poMid := poStart + inMid - inStart
     root.Left = t.traverse(inStart, inMid, poStart, poMid)
-    root.Right = t.traverse(inMid + <span class="number">1</span>, inEnd, poMid, poEnd - <span class="number">1</span>)
-    <span class="keyword">return</span> root
+    root.Right = t.traverse(inMid + 1, inEnd, poMid, poEnd - 1)
+    return root
 &#125;
 
-<span class="function"><span class="keyword">func</span> <span class="title">buildTree</span><span class="params">(inorder []<span class="type">int</span>, postorder []<span class="type">int</span>)</span></span> *TreeNode &#123;
-    <span class="keyword">return</span> TreeBuilder&#123;inorder, postorder&#125;.traverse(<span class="number">0</span>, <span class="built_in">len</span>(inorder), <span class="number">0</span>, <span class="built_in">len</span>(postorder))
+func buildTree(inorder []int, postorder []int) *TreeNode &#123;
+    return TreeBuilder&#123;inorder, postorder&#125;.traverse(0, len(inorder), 0, len(postorder))
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="从中序与前序遍历序列构造二叉树"><a class="header-anchor" href="#从中序与前序遍历序列构造二叉树">¶</a>从中序与前序遍历序列构造二叉树</h2>
 <p><img src="https://img.shields.io/badge/leetcode-105-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/">从中序与前序遍历序列构造二叉树</a></p>
 <ul>
 <li>类似后序+中序</li>
 </ul>
-<pre class="line-numbers language-highlight go"><span class="comment"><code class="language-highlight go"><span class="comment">/**</span>
-<span class="comment"> * Definition for a binary tree node.</span>
-<span class="comment"> * type TreeNode struct &#123;</span>
-<span class="comment"> *     Val int</span>
-<span class="comment"> *     Left *TreeNode</span>
-<span class="comment"> *     Right *TreeNode</span>
-<span class="comment"> * &#125;</span>
-<span class="comment"> */</span>
-<span class="keyword">type</span> TreeBuilder <span class="keyword">struct</span> &#123;
-    inorder []<span class="type">int</span>
-    preorder []<span class="type">int</span>
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">/**
+ * Definition for a binary tree node.
+ * type TreeNode struct &#123;
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * &#125;
+ */
+type TreeBuilder struct &#123;
+    inorder []int
+    preorder []int
 &#125;
 
-<span class="function"><span class="keyword">func</span> <span class="params">(t TreeBuilder)</span></span>traverse(inStart, inEnd, prStart, prEnd <span class="type">int</span>) *TreeNode &#123;
-    <span class="comment">// fmt.Printf("%v %v | %v %v \n", inStart, inEnd, prStart, prEnd)</span>
+func (t TreeBuilder)traverse(inStart, inEnd, prStart, prEnd int) *TreeNode &#123;
+    // fmt.Printf("%v %v | %v %v \n", inStart, inEnd, prStart, prEnd)
 
-    <span class="keyword">if</span> prStart == prEnd &#123; <span class="keyword">return</span> <span class="literal">nil</span> &#125;
+    if prStart == prEnd &#123; return nil &#125;
     rootVal := t.preorder[prStart]
     root := &TreeNode&#123;Val: rootVal&#125;
-    <span class="keyword">if</span> prEnd - prStart == <span class="number">1</span> &#123; <span class="keyword">return</span> root &#125;
+    if prEnd - prStart == 1 &#123; return root &#125;
 
-    <span class="keyword">var</span> inMid <span class="type">int</span>
-    <span class="keyword">for</span> inMid = inStart; inMid < inEnd; inMid++ &#123;
-        <span class="keyword">if</span> t.inorder[inMid] == rootVal &#123; <span class="keyword">break</span> &#125;
+    var inMid int
+    for inMid = inStart; inMid < inEnd; inMid++ &#123;
+        if t.inorder[inMid] == rootVal &#123; break &#125;
     &#125;
 
-    prMid := prStart + <span class="number">1</span> + inMid - inStart
-    root.Left = t.traverse(inStart, inMid, prStart + <span class="number">1</span>, prMid)
-    root.Right = t.traverse(inMid + <span class="number">1</span>, inEnd, prMid, prEnd)
-    <span class="keyword">return</span> root
+    prMid := prStart + 1 + inMid - inStart
+    root.Left = t.traverse(inStart, inMid, prStart + 1, prMid)
+    root.Right = t.traverse(inMid + 1, inEnd, prMid, prEnd)
+    return root
 &#125;
 
-<span class="function"><span class="keyword">func</span> <span class="title">buildTree</span><span class="params">(preorder []<span class="type">int</span>, inorder []<span class="type">int</span>)</span></span> *TreeNode &#123;
-    <span class="keyword">return</span> TreeBuilder&#123;inorder, preorder&#125;.traverse(<span class="number">0</span>, <span class="built_in">len</span>(inorder), <span class="number">0</span>, <span class="built_in">len</span>(preorder))
+func buildTree(preorder []int, inorder []int) *TreeNode &#123;
+    return TreeBuilder&#123;inorder, preorder&#125;.traverse(0, len(inorder), 0, len(preorder))
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>改写成slice更简洁</li>
 </ul>
-<pre class="line-numbers language-highlight go"><span class="comment"><code class="language-highlight go"><span class="comment">/**</span>
-<span class="comment"> * Definition for a binary tree node.</span>
-<span class="comment"> * type TreeNode struct &#123;</span>
-<span class="comment"> *     Val int</span>
-<span class="comment"> *     Left *TreeNode</span>
-<span class="comment"> *     Right *TreeNode</span>
-<span class="comment"> * &#125;</span>
-<span class="comment"> */</span>
-<span class="function"><span class="keyword">func</span> <span class="title">buildTree</span><span class="params">(preorder []<span class="type">int</span>, inorder []<span class="type">int</span>)</span></span> *TreeNode &#123;
-    <span class="comment">// fmt.Printf("%v | %v \n", preorder, inorder)</span>
-    <span class="keyword">if</span> <span class="built_in">len</span>(preorder) == <span class="number">0</span> &#123; <span class="keyword">return</span> <span class="literal">nil</span> &#125;
-    rootVal := preorder[<span class="number">0</span>]
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">/**
+ * Definition for a binary tree node.
+ * type TreeNode struct &#123;
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * &#125;
+ */
+func buildTree(preorder []int, inorder []int) *TreeNode &#123;
+    // fmt.Printf("%v | %v \n", preorder, inorder)
+    if len(preorder) == 0 &#123; return nil &#125;
+    rootVal := preorder[0]
     root := &TreeNode&#123;Val: rootVal&#125;
-    <span class="keyword">if</span> <span class="built_in">len</span>(preorder) == <span class="number">1</span> &#123; <span class="keyword">return</span> root &#125;
+    if len(preorder) == 1 &#123; return root &#125;
 
-    <span class="keyword">var</span> inMid <span class="type">int</span>
-    <span class="keyword">for</span> inMid = <span class="number">0</span>; inMid < <span class="built_in">len</span>(inorder); inMid++ &#123;
-        <span class="keyword">if</span> inorder[inMid] == rootVal &#123; <span class="keyword">break</span> &#125;
+    var inMid int
+    for inMid = 0; inMid < len(inorder); inMid++ &#123;
+        if inorder[inMid] == rootVal &#123; break &#125;
     &#125;
 
-    root.Left = buildTree(preorder[<span class="number">1</span>:<span class="number">1</span>+inMid], inorder[:inMid])
-    root.Right = buildTree(preorder[<span class="number">1</span>+inMid:], inorder[inMid+<span class="number">1</span>:])
-    <span class="keyword">return</span> root
+    root.Left = buildTree(preorder[1:1+inMid], inorder[:inMid])
+    root.Right = buildTree(preorder[1+inMid:], inorder[inMid+1:])
+    return root
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="最大二叉树"><a class="header-anchor" href="#最大二叉树">¶</a>最大二叉树</h2>
 <p><img src="https://img.shields.io/badge/leetcode-654-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/maximum-binary-tree/">最大二叉树</a></p>
 <ul>
 <li>递归</li>
 </ul>
-<pre class="line-numbers language-highlight go"><span class="comment"><code class="language-highlight go"><span class="comment">/**</span>
-<span class="comment"> * Definition for a binary tree node.</span>
-<span class="comment"> * type TreeNode struct &#123;</span>
-<span class="comment"> *     Val int</span>
-<span class="comment"> *     Left *TreeNode</span>
-<span class="comment"> *     Right *TreeNode</span>
-<span class="comment"> * &#125;</span>
-<span class="comment"> */</span>
-<span class="function"><span class="keyword">func</span> <span class="title">constructMaximumBinaryTree</span><span class="params">(nums []<span class="type">int</span>)</span></span> *TreeNode &#123;
-    <span class="keyword">if</span> <span class="built_in">len</span>(nums) == <span class="number">0</span> &#123; <span class="keyword">return</span> <span class="literal">nil</span> &#125;
-    max := nums[<span class="number">0</span>]
-    index := <span class="number">0</span>
-    <span class="keyword">for</span> i, v := <span class="keyword">range</span> nums &#123;
-        <span class="keyword">if</span> v > max &#123; 
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">/**
+ * Definition for a binary tree node.
+ * type TreeNode struct &#123;
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * &#125;
+ */
+func constructMaximumBinaryTree(nums []int) *TreeNode &#123;
+    if len(nums) == 0 &#123; return nil &#125;
+    max := nums[0]
+    index := 0
+    for i, v := range nums &#123;
+        if v > max &#123; 
             max = v
             index = i
         &#125;
     &#125;
     root := &TreeNode&#123;Val: max&#125;
     root.Left = constructMaximumBinaryTree(nums[:index])
-    root.Right = constructMaximumBinaryTree(nums[index+<span class="number">1</span>:])
-    <span class="keyword">return</span> root
+    root.Right = constructMaximumBinaryTree(nums[index+1:])
+    return root
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="合并二叉树"><a class="header-anchor" href="#合并二叉树">¶</a>合并二叉树</h2>
 <p><img src="https://img.shields.io/badge/leetcode-617-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/merge-two-binary-trees/">合并二叉树</a></p>
 <ul>
 <li>递归</li>
 </ul>
-<pre class="line-numbers language-highlight go"><span class="comment"><code class="language-highlight go"><span class="comment">/**</span>
-<span class="comment"> * Definition for a binary tree node.</span>
-<span class="comment"> * type TreeNode struct &#123;</span>
-<span class="comment"> *     Val int</span>
-<span class="comment"> *     Left *TreeNode</span>
-<span class="comment"> *     Right *TreeNode</span>
-<span class="comment"> * &#125;</span>
-<span class="comment"> */</span>
-<span class="function"><span class="keyword">func</span> <span class="title">mergeTrees</span><span class="params">(root1 *TreeNode, root2 *TreeNode)</span></span> *TreeNode &#123;
-    <span class="keyword">if</span> root1 == <span class="literal">nil</span> &#123; <span class="keyword">return</span> root2 &#125;
-    <span class="keyword">if</span> root2 == <span class="literal">nil</span> &#123; <span class="keyword">return</span> root1 &#125;
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">/**
+ * Definition for a binary tree node.
+ * type TreeNode struct &#123;
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * &#125;
+ */
+func mergeTrees(root1 *TreeNode, root2 *TreeNode) *TreeNode &#123;
+    if root1 == nil &#123; return root2 &#125;
+    if root2 == nil &#123; return root1 &#125;
     root1.Val += root2.Val
     root1.Left = mergeTrees(root1.Left, root2.Left)
     root1.Right = mergeTrees(root1.Right, root2.Right)
-    <span class="keyword">return</span> root1
+    return root1
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="二叉搜索树中的搜索"><a class="header-anchor" href="#二叉搜索树中的搜索">¶</a>二叉搜索树中的搜索</h2>
 <p><img src="https://img.shields.io/badge/leetcode-700-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/search-in-a-binary-search-tree/">二叉搜索树中的搜索</a></p>
 <ul>
 <li>递归</li>
 </ul>
-<pre class="line-numbers language-highlight go"><span class="comment"><code class="language-highlight go"><span class="comment">/**</span>
-<span class="comment"> * Definition for a binary tree node.</span>
-<span class="comment"> * type TreeNode struct &#123;</span>
-<span class="comment"> *     Val int</span>
-<span class="comment"> *     Left *TreeNode</span>
-<span class="comment"> *     Right *TreeNode</span>
-<span class="comment"> * &#125;</span>
-<span class="comment"> */</span>
-<span class="function"><span class="keyword">func</span> <span class="title">searchBST</span><span class="params">(root *TreeNode, val <span class="type">int</span>)</span></span> *TreeNode &#123;
-    <span class="keyword">if</span> root == <span class="literal">nil</span> &#123; <span class="keyword">return</span> <span class="literal">nil</span> &#125;
-    <span class="keyword">if</span> root.Val > val &#123; <span class="keyword">return</span> searchBST(root.Left, val) &#125;
-    <span class="keyword">if</span> root.Val < val &#123; <span class="keyword">return</span> searchBST(root.Right, val) &#125;
-    <span class="keyword">return</span> root
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">/**
+ * Definition for a binary tree node.
+ * type TreeNode struct &#123;
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * &#125;
+ */
+func searchBST(root *TreeNode, val int) *TreeNode &#123;
+    if root == nil &#123; return nil &#125;
+    if root.Val > val &#123; return searchBST(root.Left, val) &#125;
+    if root.Val < val &#123; return searchBST(root.Right, val) &#125;
+    return root
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>迭代</li>
 </ul>
-<pre class="line-numbers language-highlight go"><span class="comment"><code class="language-highlight go"><span class="comment">/**</span>
-<span class="comment"> * Definition for a binary tree node.</span>
-<span class="comment"> * type TreeNode struct &#123;</span>
-<span class="comment"> *     Val int</span>
-<span class="comment"> *     Left *TreeNode</span>
-<span class="comment"> *     Right *TreeNode</span>
-<span class="comment"> * &#125;</span>
-<span class="comment"> */</span>
-<span class="function"><span class="keyword">func</span> <span class="title">searchBST</span><span class="params">(root *TreeNode, val <span class="type">int</span>)</span></span> *TreeNode &#123;
-    <span class="keyword">for</span> root != <span class="literal">nil</span> &#123;
-        <span class="keyword">if</span> root.Val > val &#123; 
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">/**
+ * Definition for a binary tree node.
+ * type TreeNode struct &#123;
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * &#125;
+ */
+func searchBST(root *TreeNode, val int) *TreeNode &#123;
+    for root != nil &#123;
+        if root.Val > val &#123; 
             root = root.Left
-        &#125; <span class="keyword">else</span> <span class="keyword">if</span> root.Val < val &#123;
+        &#125; else if root.Val < val &#123;
             root = root.Right
-        &#125; <span class="keyword">else</span> &#123;
-            <span class="keyword">return</span> root
+        &#125; else &#123;
+            return root
         &#125;
     &#125;
-    <span class="keyword">return</span> <span class="literal">nil</span>
+    return nil
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="验证二叉搜索树"><a class="header-anchor" href="#验证二叉搜索树">¶</a>验证二叉搜索树</h2>
 <p><img src="https://img.shields.io/badge/leetcode-98-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/validate-binary-search-tree/">验证二叉搜索树</a></p>
 <ul>
 <li>递归，注意子树区间必须，需要上下界来判断</li>
 </ul>
-<pre class="line-numbers language-highlight go"><span class="comment"><code class="language-highlight go"><span class="comment">/**</span>
-<span class="comment"> * Definition for a binary tree node.</span>
-<span class="comment"> * type TreeNode struct &#123;</span>
-<span class="comment"> *     Val int</span>
-<span class="comment"> *     Left *TreeNode</span>
-<span class="comment"> *     Right *TreeNode</span>
-<span class="comment"> * &#125;</span>
-<span class="comment"> */</span>
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">/**
+ * Definition for a binary tree node.
+ * type TreeNode struct &#123;
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * &#125;
+ */
 
-<span class="function"><span class="keyword">func</span> <span class="title">isValidBST</span><span class="params">(root *TreeNode)</span></span> <span class="type">bool</span> &#123;
-    <span class="keyword">return</span> helper(root, math.MinInt64, math.MaxInt64)
+func isValidBST(root *TreeNode) bool &#123;
+    return helper(root, math.MinInt64, math.MaxInt64)
 &#125;
 
-<span class="function"><span class="keyword">func</span> <span class="title">helper</span><span class="params">(root *TreeNode, lower, upper <span class="type">int</span>)</span></span> <span class="type">bool</span> &#123;
-    <span class="keyword">if</span> root == <span class="literal">nil</span> &#123;
-        <span class="keyword">return</span> <span class="literal">true</span>
+func helper(root *TreeNode, lower, upper int) bool &#123;
+    if root == nil &#123;
+        return true
     &#125;
-    <span class="keyword">if</span> root.Val <= lower || root.Val >= upper &#123;
-        <span class="keyword">return</span> <span class="literal">false</span>
+    if root.Val <= lower || root.Val >= upper &#123;
+        return false
     &#125;
-    <span class="keyword">return</span> helper(root.Left, lower, root.Val) && helper(root.Right, root.Val, upper)
+    return helper(root.Left, lower, root.Val) && helper(root.Right, root.Val, upper)
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>中序遍历，序列递增</li>
 </ul>
-<pre class="line-numbers language-highlight go"><span class="comment"><code class="language-highlight go"><span class="comment">/**</span>
-<span class="comment"> * Definition for a binary tree node.</span>
-<span class="comment"> * type TreeNode struct &#123;</span>
-<span class="comment"> *     Val int</span>
-<span class="comment"> *     Left *TreeNode</span>
-<span class="comment"> *     Right *TreeNode</span>
-<span class="comment"> * &#125;</span>
-<span class="comment"> */</span>
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">/**
+ * Definition for a binary tree node.
+ * type TreeNode struct &#123;
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * &#125;
+ */
 
-<span class="function"><span class="keyword">func</span> <span class="title">isValidBST</span><span class="params">(root *TreeNode)</span></span> <span class="type">bool</span> &#123;
+func isValidBST(root *TreeNode) bool &#123;
     valid, _ := traverse(root, math.MinInt64)
-    <span class="keyword">return</span> valid
+    return valid
 &#125;
 
-<span class="function"><span class="keyword">func</span> <span class="title">traverse</span><span class="params">(root *TreeNode, val <span class="type">int</span>)</span></span> (<span class="type">bool</span>, <span class="type">int</span>) &#123;
-    <span class="keyword">if</span> root == <span class="literal">nil</span> &#123;
-        <span class="keyword">return</span> <span class="literal">true</span>, val
+func traverse(root *TreeNode, val int) (bool, int) &#123;
+    if root == nil &#123;
+        return true, val
     &#125;
-    <span class="keyword">var</span> valid <span class="type">bool</span>
+    var valid bool
     valid, val = traverse(root.Left, val)
-    <span class="keyword">if</span> !valid &#123;
-        <span class="keyword">return</span> <span class="literal">false</span>, val
+    if !valid &#123;
+        return false, val
     &#125;
 
-    <span class="keyword">if</span> root.Val <= val &#123;
-        <span class="keyword">return</span> <span class="literal">false</span>, val
+    if root.Val <= val &#123;
+        return false, val
     &#125;
     val = root.Val
 
     valid, val = traverse(root.Right, val)
-    <span class="keyword">if</span> !valid &#123;
-        <span class="keyword">return</span> <span class="literal">false</span>, val
+    if !valid &#123;
+        return false, val
     &#125;
-    <span class="keyword">return</span> <span class="literal">true</span>, val
+    return true, val
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="二叉搜索树的最小绝对差"><a class="header-anchor" href="#二叉搜索树的最小绝对差">¶</a>二叉搜索树的最小绝对差</h2>
 <p><img src="https://img.shields.io/badge/leetcode-530-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/minimum-absolute-difference-in-bst/">二叉搜索树的最小绝对差</a></p>
 <ul>
 <li>中序遍历，Go的struct指针</li>
 </ul>
-<pre class="line-numbers language-highlight go"><span class="comment"><code class="language-highlight go"><span class="comment">/**</span>
-<span class="comment"> * Definition for a binary tree node.</span>
-<span class="comment"> * type TreeNode struct &#123;</span>
-<span class="comment"> *     Val int</span>
-<span class="comment"> *     Left *TreeNode</span>
-<span class="comment"> *     Right *TreeNode</span>
-<span class="comment"> * &#125;</span>
-<span class="comment"> */</span>
-<span class="keyword">type</span> Searcher <span class="keyword">struct</span> &#123;
-    min <span class="type">int</span>
-    last <span class="type">int</span>
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">/**
+ * Definition for a binary tree node.
+ * type TreeNode struct &#123;
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * &#125;
+ */
+type Searcher struct &#123;
+    min int
+    last int
 &#125;
 
-<span class="function"><span class="keyword">func</span> <span class="title">Abs</span><span class="params">(a <span class="type">int</span>)</span></span> <span class="type">int</span> &#123;
-    <span class="keyword">if</span> a < <span class="number">0</span> &#123;
-        <span class="keyword">return</span> -a
+func Abs(a int) int &#123;
+    if a < 0 &#123;
+        return -a
     &#125;
-    <span class="keyword">return</span> a
+    return a
 &#125;
 
-<span class="function"><span class="keyword">func</span> <span class="params">(s *Searcher)</span></span>traverse(root *TreeNode) &#123;
-    <span class="keyword">if</span> root == <span class="literal">nil</span> &#123; <span class="keyword">return</span> &#125;
+func (s *Searcher)traverse(root *TreeNode) &#123;
+    if root == nil &#123; return &#125;
     s.traverse(root.Left)
     val := Abs(root.Val - s.last)
-    <span class="keyword">if</span> val < s.min &#123;
+    if val < s.min &#123;
         s.min = val
     &#125;
     s.last = root.Val
     s.traverse(root.Right)
 &#125;
 
-<span class="function"><span class="keyword">func</span> <span class="title">getMinimumDifference</span><span class="params">(root *TreeNode)</span></span> <span class="type">int</span> &#123;
+func getMinimumDifference(root *TreeNode) int &#123;
     s := Searcher&#123;math.MaxInt64, math.MaxInt64&#125;
     s.traverse(root)
-    <span class="keyword">return</span> s.min
+    return s.min
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="二叉搜索树中的众数"><a class="header-anchor" href="#二叉搜索树中的众数">¶</a>二叉搜索树中的众数</h2>
 <p><img src="https://img.shields.io/badge/leetcode-501-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/find-mode-in-binary-search-tree/">二叉搜索树中的众数</a></p>
 <ul>
 <li>二叉搜索树中序遍历有序</li>
 </ul>
-<pre class="line-numbers language-highlight go"><span class="comment"><code class="language-highlight go"><span class="comment">/**</span>
-<span class="comment"> * Definition for a binary tree node.</span>
-<span class="comment"> * type TreeNode struct &#123;</span>
-<span class="comment"> *     Val int</span>
-<span class="comment"> *     Left *TreeNode</span>
-<span class="comment"> *     Right *TreeNode</span>
-<span class="comment"> * &#125;</span>
-<span class="comment"> */</span>
-<span class="keyword">type</span> Searcher <span class="keyword">struct</span> &#123;
-    Last <span class="type">int</span>
-    Count <span class="type">int</span>
-    MaxCount <span class="type">int</span>
-    Modes []<span class="type">int</span>
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">/**
+ * Definition for a binary tree node.
+ * type TreeNode struct &#123;
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * &#125;
+ */
+type Searcher struct &#123;
+    Last int
+    Count int
+    MaxCount int
+    Modes []int
 &#125;
 
-<span class="function"><span class="keyword">func</span> <span class="params">(s *Searcher)</span></span>traverse(root *TreeNode) &#123;
-    <span class="keyword">if</span> root == <span class="literal">nil</span> &#123; <span class="keyword">return</span> &#125;
+func (s *Searcher)traverse(root *TreeNode) &#123;
+    if root == nil &#123; return &#125;
     s.traverse(root.Left)
-    <span class="keyword">if</span> root.Val == s.Last &#123;
+    if root.Val == s.Last &#123;
         s.Count++
-    &#125; <span class="keyword">else</span> &#123;
+    &#125; else &#123;
         s.Last = root.Val
-        s.Count = <span class="number">1</span>
+        s.Count = 1
     &#125;
-    <span class="keyword">if</span> s.Count > s.MaxCount &#123;
-        s.Modes = <span class="literal">nil</span>
-        s.Modes = <span class="built_in">append</span>(s.Modes, root.Val)
+    if s.Count > s.MaxCount &#123;
+        s.Modes = nil
+        s.Modes = append(s.Modes, root.Val)
         s.MaxCount = s.Count
-    &#125; <span class="keyword">else</span> <span class="keyword">if</span> s.Count == s.MaxCount &#123;
-        s.Modes = <span class="built_in">append</span>(s.Modes, root.Val)
+    &#125; else if s.Count == s.MaxCount &#123;
+        s.Modes = append(s.Modes, root.Val)
     &#125;
     s.traverse(root.Right)
 &#125;
 
-<span class="function"><span class="keyword">func</span> <span class="title">findMode</span><span class="params">(root *TreeNode)</span></span> []<span class="type">int</span> &#123;
+func findMode(root *TreeNode) []int &#123;
     s := Searcher&#123;
-        Last: <span class="number">0</span>,
-        Count: <span class="number">0</span>,
-        MaxCount: <span class="number">0</span>,
+        Last: 0,
+        Count: 0,
+        MaxCount: 0,
     &#125;
     s.traverse(root)
-    <span class="keyword">return</span> s.Modes
+    return s.Modes
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="二叉树的最近公共祖先"><a class="header-anchor" href="#二叉树的最近公共祖先">¶</a>二叉树的最近公共祖先</h2>
 <p><img src="https://img.shields.io/badge/leetcode-236-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/">二叉树的最近公共祖先</a></p>
 <ul>
 <li>递归</li>
 </ul>
-<pre class="line-numbers language-highlight go"><span class="comment"><code class="language-highlight go"><span class="comment">/**</span>
-<span class="comment"> * Definition for a binary tree node.</span>
-<span class="comment"> * type TreeNode struct &#123;</span>
-<span class="comment"> *     Val int</span>
-<span class="comment"> *     Left *TreeNode</span>
-<span class="comment"> *     Right *TreeNode</span>
-<span class="comment"> * &#125;</span>
-<span class="comment"> */</span>
- <span class="function"><span class="keyword">func</span> <span class="title">lowestCommonAncestor</span><span class="params">(root, p, q *TreeNode)</span></span> *TreeNode &#123;
-     <span class="keyword">if</span> root == <span class="literal">nil</span> &#123; <span class="keyword">return</span> <span class="literal">nil</span> &#125;
-     <span class="keyword">if</span> root.Val == p.Val || root.Val == q.Val &#123;
-         <span class="keyword">return</span> root
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">/**
+ * Definition for a binary tree node.
+ * type TreeNode struct &#123;
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * &#125;
+ */
+ func lowestCommonAncestor(root, p, q *TreeNode) *TreeNode &#123;
+     if root == nil &#123; return nil &#125;
+     if root.Val == p.Val || root.Val == q.Val &#123;
+         return root
      &#125;
      left := lowestCommonAncestor(root.Left, p, q)
      right := lowestCommonAncestor(root.Right, p, q)
-     <span class="keyword">if</span> left != <span class="literal">nil</span> && right != <span class="literal">nil</span> &#123; <span class="keyword">return</span> root &#125;
-     <span class="keyword">if</span> left != <span class="literal">nil</span> && right == <span class="literal">nil</span> &#123; <span class="keyword">return</span> left &#125;
-     <span class="keyword">if</span> left == <span class="literal">nil</span> && right != <span class="literal">nil</span> &#123; <span class="keyword">return</span> right &#125;
-     <span class="keyword">return</span> <span class="literal">nil</span>
+     if left != nil && right != nil &#123; return root &#125;
+     if left != nil && right == nil &#123; return left &#125;
+     if left == nil && right != nil &#123; return right &#125;
+     return nil
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="二叉搜索树的最近公共祖先"><a class="header-anchor" href="#二叉搜索树的最近公共祖先">¶</a>二叉搜索树的最近公共祖先</h2>
 <p><img src="https://img.shields.io/badge/leetcode-235-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-search-tree/">二叉搜索树的最近公共祖先</a></p>
 <ul>
 <li>二叉搜索树有序，前序遍历，第一个落在[p, q]或[q, p]区间的就是公共祖先</li>
 </ul>
-<pre class="line-numbers language-highlight go"><span class="comment"><code class="language-highlight go"><span class="comment">/**</span>
-<span class="comment"> * Definition for a binary tree node.</span>
-<span class="comment"> * type TreeNode struct &#123;</span>
-<span class="comment"> *     Val   int</span>
-<span class="comment"> *     Left  *TreeNode</span>
-<span class="comment"> *     Right *TreeNode</span>
-<span class="comment"> * &#125;</span>
-<span class="comment"> */</span>
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">/**
+ * Definition for a binary tree node.
+ * type TreeNode struct &#123;
+ *     Val   int
+ *     Left  *TreeNode
+ *     Right *TreeNode
+ * &#125;
+ */
 
-<span class="function"><span class="keyword">func</span> <span class="title">lowestCommonAncestor</span><span class="params">(root, p, q *TreeNode)</span></span> *TreeNode &#123;
-	<span class="keyword">if</span> root.Val > p.Val && root.Val > q.Val &#123;
-        <span class="keyword">return</span> lowestCommonAncestor(root.Left, p, q)
+func lowestCommonAncestor(root, p, q *TreeNode) *TreeNode &#123;
+	if root.Val > p.Val && root.Val > q.Val &#123;
+        return lowestCommonAncestor(root.Left, p, q)
     &#125;
-    <span class="keyword">if</span> root.Val < p.Val && root.Val < q.Val &#123;
-        <span class="keyword">return</span> lowestCommonAncestor(root.Right, p, q)
+    if root.Val < p.Val && root.Val < q.Val &#123;
+        return lowestCommonAncestor(root.Right, p, q)
     &#125;
-    <span class="keyword">return</span> root
+    return root
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>迭代</li>
 </ul>
-<pre class="line-numbers language-highlight go"><span class="comment"><code class="language-highlight go"><span class="comment">/**</span>
-<span class="comment"> * Definition for a binary tree node.</span>
-<span class="comment"> * type TreeNode struct &#123;</span>
-<span class="comment"> *     Val   int</span>
-<span class="comment"> *     Left  *TreeNode</span>
-<span class="comment"> *     Right *TreeNode</span>
-<span class="comment"> * &#125;</span>
-<span class="comment"> */</span>
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">/**
+ * Definition for a binary tree node.
+ * type TreeNode struct &#123;
+ *     Val   int
+ *     Left  *TreeNode
+ *     Right *TreeNode
+ * &#125;
+ */
 
-<span class="function"><span class="keyword">func</span> <span class="title">lowestCommonAncestor</span><span class="params">(root, p, q *TreeNode)</span></span> *TreeNode &#123;
-    <span class="keyword">for</span> &#123;
-        <span class="keyword">if</span> root.Val > p.Val && root.Val > q.Val &#123;
+func lowestCommonAncestor(root, p, q *TreeNode) *TreeNode &#123;
+    for &#123;
+        if root.Val > p.Val && root.Val > q.Val &#123;
             root = root.Left
-        &#125; <span class="keyword">else</span> <span class="keyword">if</span> root.Val < p.Val && root.Val < q.Val &#123;
+        &#125; else if root.Val < p.Val && root.Val < q.Val &#123;
             root = root.Right
-        &#125; <span class="keyword">else</span> &#123;
-            <span class="keyword">return</span> root
+        &#125; else &#123;
+            return root
         &#125;
     &#125;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
@@ -1569,25 +1571,25 @@ type TreeNode type TreeNode struct &amp;#123;
 <ul>
 <li>利用二叉搜索树的性质插入</li>
 </ul>
-<pre class="line-numbers language-highlight go"><span class="comment"><code class="language-highlight go"><span class="comment">/**</span>
-<span class="comment"> * Definition for a binary tree node.</span>
-<span class="comment"> * type TreeNode struct &#123;</span>
-<span class="comment"> *     Val int</span>
-<span class="comment"> *     Left *TreeNode</span>
-<span class="comment"> *     Right *TreeNode</span>
-<span class="comment"> * &#125;</span>
-<span class="comment"> */</span>
-<span class="function"><span class="keyword">func</span> <span class="title">insertIntoBST</span><span class="params">(root *TreeNode, val <span class="type">int</span>)</span></span> *TreeNode &#123;
-    <span class="keyword">if</span> root == <span class="literal">nil</span> &#123;
-        <span class="keyword">return</span> &TreeNode&#123;Val: val&#125;
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">/**
+ * Definition for a binary tree node.
+ * type TreeNode struct &#123;
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * &#125;
+ */
+func insertIntoBST(root *TreeNode, val int) *TreeNode &#123;
+    if root == nil &#123;
+        return &TreeNode&#123;Val: val&#125;
     &#125;
-    <span class="keyword">if</span> val < root.Val &#123;
+    if val < root.Val &#123;
         root.Left = insertIntoBST(root.Left, val)
     &#125;
-    <span class="keyword">if</span> val > root.Val &#123;
+    if val > root.Val &#123;
         root.Right = insertIntoBST(root.Right, val)
     &#125;
-    <span class="keyword">return</span> root
+    return root
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="删除二叉搜索树中的节点"><a class="header-anchor" href="#删除二叉搜索树中的节点">¶</a>删除二叉搜索树中的节点</h2>
 <p><img src="https://img.shields.io/badge/leetcode-450-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/delete-node-in-a-bst/">删除二叉搜索树中的节点</a></p>
@@ -1606,101 +1608,101 @@ type TreeNode type TreeNode struct &amp;#123;
 </ul>
 </li>
 </ul>
-<pre class="line-numbers language-highlight go"><span class="comment"><code class="language-highlight go"><span class="comment">/**</span>
-<span class="comment"> * Definition for a binary tree node.</span>
-<span class="comment"> * type TreeNode struct &#123;</span>
-<span class="comment"> *     Val int</span>
-<span class="comment"> *     Left *TreeNode</span>
-<span class="comment"> *     Right *TreeNode</span>
-<span class="comment"> * &#125;</span>
-<span class="comment"> */</span>
-<span class="function"><span class="keyword">func</span> <span class="title">deleteNode</span><span class="params">(root *TreeNode, key <span class="type">int</span>)</span></span> *TreeNode &#123;
-    <span class="keyword">if</span> root == <span class="literal">nil</span> &#123; <span class="keyword">return</span> root &#125;
-    <span class="keyword">if</span> root.Val == key &#123;
-        <span class="keyword">if</span> root.Right == <span class="literal">nil</span> &#123;
-            <span class="keyword">return</span> root.Left
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">/**
+ * Definition for a binary tree node.
+ * type TreeNode struct &#123;
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * &#125;
+ */
+func deleteNode(root *TreeNode, key int) *TreeNode &#123;
+    if root == nil &#123; return root &#125;
+    if root.Val == key &#123;
+        if root.Right == nil &#123;
+            return root.Left
         &#125;
         cur := root.Right
-        <span class="keyword">for</span> cur.Left != <span class="literal">nil</span> &#123;
+        for cur.Left != nil &#123;
             cur = cur.Left
         &#125;
         root.Val, cur.Val = cur.Val, root.Val
     &#125;
     root.Left = deleteNode(root.Left, key)
     root.Right = deleteNode(root.Right, key)
-    <span class="keyword">return</span> root
+    return root
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="修剪二叉搜索树"><a class="header-anchor" href="#修剪二叉搜索树">¶</a>修剪二叉搜索树</h2>
 <p><img src="https://img.shields.io/badge/leetcode-669-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/trim-a-binary-search-tree/">修剪二叉搜索树</a></p>
 <ul>
 <li>前序遍历，如果节点值小于下界，左子树一定都小于下界，右子树不一定，可以先把右子树替换当前节点，递归判断。</li>
 </ul>
-<pre class="line-numbers language-highlight go"><span class="comment"><code class="language-highlight go"><span class="comment">/**</span>
-<span class="comment"> * Definition for a binary tree node.</span>
-<span class="comment"> * type TreeNode struct &#123;</span>
-<span class="comment"> *     Val int</span>
-<span class="comment"> *     Left *TreeNode</span>
-<span class="comment"> *     Right *TreeNode</span>
-<span class="comment"> * &#125;</span>
-<span class="comment"> */</span>
-<span class="function"><span class="keyword">func</span> <span class="title">trimBST</span><span class="params">(root *TreeNode, low <span class="type">int</span>, high <span class="type">int</span>)</span></span> *TreeNode &#123;
-    <span class="keyword">if</span> root == <span class="literal">nil</span> &#123; <span class="keyword">return</span> root &#125;
-    <span class="keyword">if</span> root.Val < low &#123;
-        <span class="keyword">return</span> trimBST(root.Right, low, high)
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">/**
+ * Definition for a binary tree node.
+ * type TreeNode struct &#123;
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * &#125;
+ */
+func trimBST(root *TreeNode, low int, high int) *TreeNode &#123;
+    if root == nil &#123; return root &#125;
+    if root.Val < low &#123;
+        return trimBST(root.Right, low, high)
     &#125;
-    <span class="keyword">if</span> root.Val > high &#123;
-        <span class="keyword">return</span> trimBST(root.Left, low, high)
+    if root.Val > high &#123;
+        return trimBST(root.Left, low, high)
     &#125;
     root.Left = trimBST(root.Left, low, high)
     root.Right = trimBST(root.Right, low, high)
-    <span class="keyword">return</span> root
+    return root
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="将有序数组转换为二叉搜索树"><a class="header-anchor" href="#将有序数组转换为二叉搜索树">¶</a>将有序数组转换为二叉搜索树</h2>
 <p><img src="https://img.shields.io/badge/leetcode-108-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/convert-sorted-array-to-binary-search-tree/">将有序数组转换为二叉搜索树</a></p>
 <ul>
 <li>利用二叉搜索树有序特性，二分数组</li>
 </ul>
-<pre class="line-numbers language-highlight go"><span class="comment"><code class="language-highlight go"><span class="comment">/**</span>
-<span class="comment"> * Definition for a binary tree node.</span>
-<span class="comment"> * type TreeNode struct &#123;</span>
-<span class="comment"> *     Val int</span>
-<span class="comment"> *     Left *TreeNode</span>
-<span class="comment"> *     Right *TreeNode</span>
-<span class="comment"> * &#125;</span>
-<span class="comment"> */</span>
-<span class="function"><span class="keyword">func</span> <span class="title">sortedArrayToBST</span><span class="params">(nums []<span class="type">int</span>)</span></span> *TreeNode &#123;
-    <span class="keyword">if</span> <span class="built_in">len</span>(nums) == <span class="number">0</span> &#123; <span class="keyword">return</span> <span class="literal">nil</span> &#125;
-    mid := <span class="built_in">len</span>(nums) / <span class="number">2</span>
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">/**
+ * Definition for a binary tree node.
+ * type TreeNode struct &#123;
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * &#125;
+ */
+func sortedArrayToBST(nums []int) *TreeNode &#123;
+    if len(nums) == 0 &#123; return nil &#125;
+    mid := len(nums) / 2
     root := &TreeNode&#123;Val: nums[mid]&#125;
     root.Left = sortedArrayToBST(nums[:mid])
-    root.Right = sortedArrayToBST(nums[mid+<span class="number">1</span>:])
-    <span class="keyword">return</span> root
+    root.Right = sortedArrayToBST(nums[mid+1:])
+    return root
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="把二叉搜索树转换为累加树"><a class="header-anchor" href="#把二叉搜索树转换为累加树">¶</a>把二叉搜索树转换为累加树</h2>
 <p><img src="https://img.shields.io/badge/leetcode-538-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/convert-bst-to-greater-tree/">把二叉搜索树转换为累加树</a></p>
 <ul>
 <li>反中序遍历累加即可</li>
 </ul>
-<pre class="line-numbers language-highlight go"><span class="comment"><code class="language-highlight go"><span class="comment">/**</span>
-<span class="comment"> * Definition for a binary tree node.</span>
-<span class="comment"> * type TreeNode struct &#123;</span>
-<span class="comment"> *     Val int</span>
-<span class="comment"> *     Left *TreeNode</span>
-<span class="comment"> *     Right *TreeNode</span>
-<span class="comment"> * &#125;</span>
-<span class="comment"> */</span>
-<span class="function"><span class="keyword">func</span> <span class="title">traverse</span><span class="params">(root *TreeNode, val <span class="type">int</span>)</span></span> <span class="type">int</span> &#123;
-    <span class="keyword">if</span> root == <span class="literal">nil</span> &#123; <span class="keyword">return</span> val &#125;
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">/**
+ * Definition for a binary tree node.
+ * type TreeNode struct &#123;
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * &#125;
+ */
+func traverse(root *TreeNode, val int) int &#123;
+    if root == nil &#123; return val &#125;
     val = traverse(root.Right, val)
     root.Val += val
     val = root.Val
     val = traverse(root.Left, val)
-    <span class="keyword">return</span> val
+    return val
 &#125;
 
-<span class="function"><span class="keyword">func</span> <span class="title">convertBST</span><span class="params">(root *TreeNode)</span></span> *TreeNode &#123;
-    traverse(root, <span class="number">0</span>)
-    <span class="keyword">return</span> root
+func convertBST(root *TreeNode) *TreeNode &#123;
+    traverse(root, 0)
+    return root
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <hr>
 </p></div><div class="share"><span>Share</span>&nbsp;<span class="soc"><a href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank" class="fa fa-bookmark"></a></span><span class="soc"><a href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));" class="fa fa-weibo"></a></span><span class="soc"><a target="_blank" rel="noopener" href="http://twitter.com/home?status=https://blog.kleon.space/cs/algo/tree/%20KLEON%20算法基础 - 树" class="fa fa-twitter"></a></span></div><div class="pagination"><p class="clearfix"><span class="pre pagbuttons"><a role="navigation" href="/cs/algo/array/" title="算法基础 - 数组"><i class="fa fa-angle-double-left"></i>&nbsp;Previous post: 算法基础 - 数组</a></span><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/cs/algo/sort/" title="算法基础 - 排序">Next post: 算法基础 - 排序&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>
