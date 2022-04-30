@@ -1,0 +1,471 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title>烤面筋 - 推理优化 · KLEON</title><meta name="description" content="预设问题
+
+
+推理优化主要做了什么工作？
+
+主要会从两个视角来叙述，一个是不同优化层次中的通用优化工作，另一个是针对不同业务模型特点的优化工作。
+先从通用的优化层次上说，主要是基于Tensorflow模型的优化，大致可以分为三个不同层次：模型，框架和系统。
+模型级优化主要分为图层面优化、编译优化和模"><meta name="og:description" content="预设问题
+
+
+推理优化主要做了什么工作？
+
+主要会从两个视角来叙述，一个是不同优化层次中的通用优化工作，另一个是针对不同业务模型特点的优化工作。
+先从通用的优化层次上说，主要是基于Tensorflow模型的优化，大致可以分为三个不同层次：模型，框架和系统。
+模型级优化主要分为图层面优化、编译优化和模"><meta name="twitter:site" content="KLEON"><meta name="twitter:title" content="烤面筋 - 推理优化"><meta name="twitter:card" content="summary"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 6.1.0"><link rel="stylesheet" href="/css/prism.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body><div id="stage" class="container"><div class="row"><div id="side-bar" class="col-sm-3 col-xs-12 side-container invisible"><div class="vertical-text site-title"><h3 tabindex="-1" class="site-title-small"><a href="/" class="a-title"></a></h3><h1 tabindex="-1" class="site-title-large"><a href="/" class="a-title">自说自话</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div id="site-nav" class="site-title-links"><ul><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li><li><a href="/categories">Categories</a></li><li><a href="/tags">Tags</a></li><li><a href="/googlebe23cb0bc55fc412.html"></a></li><li><a href="/about/index.html"></a></li><li class="soc"><a href="https://github.com/kleon1024" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa fa-github">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div id="main-container" class="col-sm-9 col-xs-12 main-container invisible"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>烤面筋 - 推理优化</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-06-01</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/面筋/" title="面筋" class="a-tag">面筋</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/面筋/" title="面筋" class="a-tag">面筋</a><span>&nbsp;</span></span></p><p class="post-abstract"><p>预设问题</p>
+<span id="more"></span>
+<ul>
+<li>推理优化主要做了什么工作？</li>
+</ul>
+<p>主要会从两个视角来叙述，一个是不同优化层次中的通用优化工作，另一个是针对不同业务模型特点的优化工作。</p>
+<p>先从通用的<strong>优化层次</strong>上说，主要是基于Tensorflow模型的优化，大致可以分为三个不同层次：模型，框架和系统。</p>
+<p>模型级优化主要分为图层面优化、编译优化和模型压缩。</p>
+<p><strong>图层面</strong>的优化主要是为了后续推理优化步骤做准备，目的是尽量去除训练算子，使实际执行推理功能的子图尽可能小，并且尽量连通，便于识别子图pattern，或者通过编译优化方法融合子图。</p>
+<p>图层面优化的工作包括：</p>
+<ul>
+<li>图结构清理</li>
+</ul>
+<p>去除可能包含自定义Op的训练图，比如PAI-TF定义了读ODPS表的算子<br>
+因用户构图API使用不当引入的TF不能识别的训练图，比如DropOut、Switch Merge<br>
+同时保护关联Node，清理前后校验数据正确性</p>
+<ul>
+<li>子图优化</li>
+</ul>
+<p>除了常用的contant folding，CSE之外，还做了Range Propagation优化为敞亮<br>
+子图结构变换，适配硬件指令结构，比如拆分卷积</p>
+<ul>
+<li>pattern匹配融合</li>
+</ul>
+<p>对常见的子图pattern做fusion，比如BatchNorm。</p>
+<p>对于常见业务模型pattern定制优化：比如LSTM，Tensorflow Feature Column的优化，Embedding LookUp，Self-Attention。</p>
+<p><strong>编译优化</strong>这边我们做了很多方向上的探索，比如XLA、TVM、MLIR、PolyHedron等等。我主要参与的是XLA和TVM这两个方面。</p>
+<ul>
+<li>XLA</li>
+</ul>
+<p>利用XLA接硬件后端和TVM，XLA的IR定义、优化pass结构、后端IR emit和codegen流程比较完整，适配FPGA硬件和TVM，实际上利用XLA接入会遇到dynamic shape的问题，在业务模型shape动态范围比较大的时候，可能compilation cache爆炸。</p>
+<p>利用了基础设施</p>
+<p>FPGA后端</p>
+<p>TVM的通用化JIT fallback</p>
+<ul>
+<li>TVM</li>
+</ul>
+<p>TVM上主要是跟进社区工作，使用TVM的schedule和组里同学做的ansor的工作，做kernel tuning作为数据库供线上查找，在不同的shape，TVM的schedule会用默认schedule，ansor的全空间探索耗时比较长。我们试验下来，TVM在CPU上效果明显，差不多可以达到MKL-DNN优化的效果。</p>
+<p>8 cpu 32 G</p>
+<p>ResNet50 模型 3x 23 -&gt; 7 ms<br>
+线上服务<br>
+bs=1 2x 88 -&gt; 43 ms，QPS 30 -&gt; 50<br>
+bs=8 3x 450 -&gt; 190 ms，QPS 3 -&gt; 10 * bs</p>
+<p>Q：具体怎么用TVM的？</p>
+<ul>
+<li>存储层次相关schedule</li>
+<li>循环优化
+<ul>
+<li>fuse 合并两层</li>
+<li>split 分割一层</li>
+<li>reorder 重排循环顺序</li>
+<li>tile 分块</li>
+<li>unroll 展开</li>
+</ul>
+</li>
+<li>多线程
+<ul>
+<li>vecotrize simd指令</li>
+<li>bind将iter绑定到block或thread的index上，从而把循环的任务分配到线程，实现并行化计算，这是针对CUDA后端最核心的部分。</li>
+<li>parallel将指定iter的for循环替换为parallel操作，从而在GPU以外的CPU等设备上实现并行。</li>
+</ul>
+</li>
+<li>其他
+<ul>
+<li>prefetch 空间局部性</li>
+</ul>
+</li>
+</ul>
+<p><strong>模型压缩</strong>主要的工作是利用NVidia和Intel的量化工作。</p>
+<p>GPU: FP16 不重训，INT8 calibration</p>
+<p>Q: INT8的重训和calibration有啥区别？</p>
+<p><strong>框架runtime级</strong>主要包括框架。</p>
+<p>厂商库，主要是用TensorRT和MKL-DNN。</p>
+<p>针对不同代的CPU有指令结构的优化。</p>
+<p>skylake AVX-512<br>
+cascadelake VNNI INT8*UINT8<br>
+cooperlake BF16<br>
+tigerlake 调研</p>
+<p>Q：Tensorflow框架级别有优化吗？</p>
+<p>有调整inter/intra op 线程池的大小。</p>
+<p><strong>系统级</strong>主要包括服务的各项指标优化。</p>
+<p>指标包括：</p>
+<ul>
+<li>RT，对RT要求高的实时业务。</li>
+<li>QPS，对RT要求低的异步业务。</li>
+<li>资源利用率，公有云成本，超卖和隔离。</li>
+</ul>
+<p>单一优化点：</p>
+<ul>
+<li>网络IO
+<ul>
+<li>序列化</li>
+<li>多级缓存</li>
+<li>负载均衡优化</li>
+<li>网络直连</li>
+</ul>
+</li>
+<li>计算并行度
+<ul>
+<li>多线程</li>
+<li>多进程</li>
+</ul>
+</li>
+<li>资源利用率
+<ul>
+<li>资源隔离，CPU/Memory/Network/Disk</li>
+<li>资源复用，超卖</li>
+<li>亲核性，NUMA，绑核</li>
+</ul>
+</li>
+</ul>
+<p>Q：serving调优怎么做？线上tracing？</p>
+<p>一般离线profile，查看timelime。</p>
+<p>线上tracing。</p>
+<p>查看网络、队列、处理等多个步骤的耗时，针对性的优化。</p>
+<ul>
+<li>Disk IO</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://blog.kelu.org/tech/2019/10/11/kubernetes-Limit-iops-per-container.html">https://blog.kelu.org/tech/2019/10/11/kubernetes-Limit-iops-per-container.html</a></p>
+<p>Docker中有修改dockershim，和kuberuntime的labels</p>
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">annotations: 
+  BlkioDeviceWriteBps: &#x27;/dev/sda:31457280&#x27;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ul>
+<li>Network IO</li>
+</ul>
+<p>kubectl apply -f <a target="_blank" rel="noopener" href="http://acs-public.oss-cn-hangzhou.aliyuncs.com/kubernetes/network/kube-tc.yml">http://acs-public.oss-cn-hangzhou.aliyuncs.com/kubernetes/network/kube-tc.yml</a></p>
+<p><a target="_blank" rel="noopener" href="https://developer.aliyun.com/article/388097">https://developer.aliyun.com/article/388097</a></p>
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">annotations:
+  kubernetes.io/ingress-bandwidth: 5M  #进入到容器的最大带宽
+  kubernetes.io/egress-bandwidth: 10M   #容器向外访问的最大带宽
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>Q：你们的多级缓存具体怎么做的？有哪些注意事项和坑？</p>
+<p>主要是数据源缓存、后端缓存、客户端缓存，我们这边提供的是后端。</p>
+<p>数据源缓存是redis</p>
+<p>（1）redis keys命令不能用在生产环境中，如果数量过大效率十分低，导致redis长时间堵塞在keys上。生产环境我们一般选择提前载入一些warm up物品id的方式载入物品embedding<br>
+（2）Redis value 可以用protobuf格式存储, 存储上节省空间. 解析起来相比string, cpu的效率也应该会更高<br>
+（3）把item embedding提前加载到内存里<br>
+（4）关于user embedding，指定一个内存区域的大小，用FIFO的方案来缓存，这样内存用完了，就自动把早进来的用户pop出去<br>
+（5）如果有条件可以判断活跃用户，可以尽量选择活跃用户进行缓存</p>
+<p>后端缓存，使用local-cache，对user-id, item-id区分，使用LRU/LFU策略。</p>
+<p>Q: LRU会写吗？</p>
+<p>list + map，存取过则放到</p>
+<p>Q: LFU会写吗？</p>
+<p>list和map</p>
+<p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/lfu-cache/solution/lfuhuan-cun-by-leetcode-solution/">https://leetcode-cn.com/problems/lfu-cache/solution/lfuhuan-cun-by-leetcode-solution/</a></p>
+<p>Q：本地缓存并行竞争严重吗？</p>
+<p>加读写锁</p>
+<p>Q：你是怎么使用<strong>TensorRT</strong>优化的？</p>
+<p>TensorRT提供了高层API，输入graphdef，输出替换子图成Trt的算子。</p>
+<p>内部会做分图，Layer &amp; Tensor Fusion，量化，和Nvidia对CUDA使用的优化经验 Kernel Auto-Tuning。</p>
+<p>量化，对于FP16和FP32的完全不用考虑。</p>
+<p>缺点是只能针对static shape，dynamic shape会有大量warm up开销。</p>
+<p>Kernel Auto-Tuning 可能是用的编译优化方法和手工优化函数（buket）结合的方式，</p>
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">if major_minor >= 1.14:
+    from tensorflow.python.compiler.tensorrt import trt_convert as trt
+else:
+    from tensorflow.contrib import tensorrt as trt  # noqa: F401
+
+# only when static shape we resort to trt
+# otherwise there will be large online warm-up overhead
+converter = trt.TrtGraphConverter<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>从<strong>业务模型</strong>类别上大致可以分为CV、NLP，推荐</p>
+<ul>
+<li>CV</li>
+</ul>
+<p>GPU<br>
+ResNet 3.3x<br>
+OCR-CRNN 3.5x<br>
+OCR-Attention<br>
+Yolo 2.5x<br>
+MobileNet 2.5x</p>
+<p>CPU<br>
+ResNet50 3.8x<br>
+YOLO 2.5x<br>
+MaskRCNN 1.7x</p>
+<p>密集计算，GPU优化，TensorRT和量化</p>
+<ul>
+<li>文本</li>
+</ul>
+<p>GPU<br>
+Bert-large &gt;3x<br>
+TextCNN 1.5x</p>
+<p>CPU<br>
+Bert-large的Self-Attention结构 2x</p>
+<ul>
+<li>语音</li>
+</ul>
+<p>GPU</p>
+<p>ASR Transformer模型 2.46x，定制算子，GPU</p>
+<p>CPU</p>
+<p>Transformer 2.3x</p>
+<ul>
+<li>推荐</li>
+</ul>
+<p>Embedding优化，EasyRec，密集计算部分较简单，主要是Embedding的定制优化</p>
+<p>典型场景端到端中等并发下RT降低为1/2以下，QPS提升1.8x左右</p>
+<p>DSSM，Wide&amp;Deep，DeepFM</p>
+<p>8 vcpu</p>
+<p>hb 3x 110 -&gt; 30 ms, QPS 55 -&gt; 175<br>
+zl 3x 160 -&gt; 54 ms, QPS 40 -&gt; 110<br>
+dy 1.5x 60 -&gt; 40 ms, QPS 80 -&gt; 100</p>
+<p>对于推荐的工程支持方法还包括：</p>
+<ul>
+<li>超大Embedding支持
+<ul>
+<li>为了提升推荐场景的效果，推荐模型通常采用无Hash的方式或者超大的Hash桶的方式。在这种情况下, embedding size会很大，超过1T，给单机部署tensorflow模型带来了挑战。
+<ul>
+<li>大规模Embedding导出的任务需要设置PS(parameter server)</li>
+<li>单机无法restore带巨大embedding的模型</li>
+<li>embedding通常是分片的，分布在多个PS上</li>
+</ul>
+</li>
+<li>embedding映射表</li>
+<li>模型feature分为dense和sparse，sparse部分需要支持embedding，redis/OTS存储</li>
+<li>模型热更新，ping-pong session</li>
+</ul>
+</li>
+</ul>
+<p>特征哈希就是一种简单的降维方法，在微视使用也较多，特征哈希法的目标就是是把原始的高维特征向量压缩成较低维特征向量，且尽量不损失原始特征的表达能力，其优势在于实现简单，所需额外计算量小；降低特征维度，从而加速算法训练与预测的时间，以及降低内存消耗；但代价是通过哈希转换后学习到的模型变得很难检验，我们很难对训练出的模型参数做出合理解释。特征哈希法的另一个问题是它会把多个原始特征哈希到相同的位置上，出现哈希 collision 现象，但实际实验表明这种 collision 对算法的精度影响很小。<br>
+<a target="_blank" rel="noopener" href="https://www.infoq.cn/article/fsfrcvm83tt88ulovfu2">https://www.infoq.cn/article/fsfrcvm83tt88ulovfu2</a></p>
+<p>优点（相对于One-hot Serialization）：训练和预测的时间复杂度大幅降低；数据的一致性强，不存在同一个特征今天编码成这个、明天编码成那个的情况，便于跟踪单特征效果；对new feature可以直接编码并加入训练，无需等待编码表统计并反馈；降低feature space大小，（精心设计可以）降低over-fitting的几率。缺点：在不清楚hashing function细节的情况下，容易导致特征碰撞失效，且难以排查；难以通过hashing出的特征反推源特征；</p>
+<p>作者：Ainika Peng<br>
+链接：<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/264165760/answer/279676705">https://www.zhihu.com/question/264165760/answer/279676705</a><br>
+来源：知乎<br>
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+<p>cache: list(bool)表示的是否需要在op初始化的时候将相应的embedding加载到内存，减少对redis的访问，提高qps和rt。经讨论:</p>
+<ul>
+<li>item feature比较适合cache</li>
+<li>一些比较小的user feature也适合cache，如性别、年龄等</li>
+<li>user_id等取值范围比较大的，访问频率不高的，暂时不考虑cache</li>
+<li>模型导出时，业务同学指定哪些embedding需要cache。</li>
+<li>cache考虑LRU策略</li>
+</ul>
+<p>Q：Tensorflow Feature Column优化？</p>
+<ul>
+<li>sparse embedding lookup优化</li>
+</ul>
+<p>Reshape<br>
+Select<br>
+ZerosLike<br>
+SparseSegmentMean，SparseSegmentSum<br>
+GatherV2<br>
+Unique<br>
+GatherV2，SparseReshape</p>
+<p><a target="_blank" rel="noopener" href="https://www.infoq.cn/article/fb4f7djbqihbc86dl7bb">https://www.infoq.cn/article/fb4f7djbqihbc86dl7bb</a></p>
+<ul>
+<li>整型特征哈希优化</li>
+</ul>
+<p>categorical_column_with_hash_bucket</p>
+<p>Int AsString再Hash，里面具体用了什么Hash函数</p>
+<p>Tensorflow内置，循环移位和异或</p>
+<p>AsString的代价太大<br>
+如果是均匀的uint64，可以直接作为hash值，或cast成char*</p>
+<ul>
+<li>定长特征转换优化</li>
+</ul>
+<p>定长特征是指使用接口<code>tf.io.FixedLenFeature</code>来解析的特征，比如用户的性别，年龄等，这类特征的长度通常都是定长的，并且固定为 1 维或多维。这类特征经过接口<code>tf.io.parse_example</code> 解析成 Dense Tensor，然后经过 Feature Column 处理，再进入到模型的输入层。</p>
+<p>如果能直接将原始的 Input Tensor 转换成 One Hot Tensor，就可以省去两个转换过程，而且 Sparse Tensor 和 Dense Tensor 之间的转换其实是非常耗时的操作。</p>
+<p>除了上面的 Vocabulary Categorical Column，还有别的类似 Feature Column 也有同样的问题，因此针对这类特征，平台专门开发了一套优化的 Feature Column 接口提供给业务使用，优化性能效果还不错。</p>
+<ul>
+<li>用户特征去重优化</li>
+</ul>
+<p>Q：你们的取embedding的平均latency有多少呢？</p>
+<p>1ms左右。</p>
+<p>Q：embedding怎么训练的？</p>
+<p>用partitioned variable，放到多个PS上</p>
+<p>Q：embedding怎么导出的？</p>
+<p>定制Op，导出到redis上。</p>
+<p>Q：例行任务时间单位，天</p>
+<p>导出到redis+版本号</p>
+<p>Q：Op的导出配置是什么？限流吗？</p>
+<p>定时限速，间隔。</p>
+<p>Q：Op是并行导出的吗？</p>
+<p>每个feature会有自己的Op。</p>
+<p>Q：Embedding会落盘吗？</p>
+<p>不会。</p>
+<p>Q：你们的取feature服务latency有多少？</p>
+<p>整个推荐服务，客户通常要求控制在50-200ms，rank部分差不多要控制在30-50ms以内。</p>
+<p>TP95 TP99 5ms以内，rank模型30-50ms。</p>
+<p>Q：你们的机器用的多大？</p>
+<p>推理平台统一</p>
+<p>32 cpu 128G 的VM</p>
+<p>Q：性能优化的一般思路？</p>
+<p>profile分析关键路径，针对关键点着重优化</p>
+<p>考虑绕过的情况，是否有其他解决方案</p>
+<p>Q：redis存什么？</p>
+<ul>
+<li>实时行为x</li>
+<li>特征工程feature</li>
+<li>embedding</li>
+<li>i2i/u2i</li>
+<li>缓存/hologres/mysql</li>
+</ul>
+<p>Q: redis的内存淘汰策略知道吗？</p>
+<p>在 64 位操作系统中 Redis 的内存大小是没有限制的，也就是配置项 maxmemory 是被注释掉的，这样就会导致在物理内存不足时，使用 swap 空间既交换空间，而当操心系统将 Redis 所用的内存分页移至 swap 空间时，将会阻塞 Redis 进程，导致 Redis 出现延迟，从而影响 Redis 的整体性能。因此我们需要限制 Redis 的内存大小为一个固定的值，当 Redis 的运行到达此值时会触发内存淘汰策略，内存淘汰策略在 Redis 4.0 之后有 8 种：</p>
+<ul>
+<li>
+<p>noeviction：不淘汰任何数据，当内存不足时，新增操作会报错，Redis 默认内存淘汰策略；</p>
+</li>
+<li>
+<p>allkeys-lru：淘汰整个键值中最久未使用的键值；</p>
+</li>
+<li>
+<p>allkeys-random：随机淘汰任意键值;</p>
+</li>
+<li>
+<p>volatile-lru：淘汰所有设置了过期时间的键值中最久未使用的键值；</p>
+</li>
+<li>
+<p>volatile-random：随机淘汰设置了过期时间的任意键值；</p>
+</li>
+<li>
+<p>volatile-ttl：优先淘汰更早过期的键值。<br>
+在 Redis 4.0 版本中又新增了 2 种淘汰策略：</p>
+</li>
+<li>
+<p>volatile-lfu：淘汰所有设置了过期时间的键值中，最少使用的键值；</p>
+</li>
+<li>
+<p>allkeys-lfu：淘汰整个键值中最少使用的键值。<br>
+其中 allkeys-xxx 表示从所有的键值中淘汰数据，而 volatile-xxx 表示从设置了过期键的键值中淘汰数据。</p>
+</li>
+</ul>
+<p>Q：超大规模数据遇到过性能问题吗？怎么解决的？</p>
+<p><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000022172968">https://segmentfault.com/a/1190000022172968</a></p>
+<ol>
+<li>缩短键值对的存储长度；</li>
+<li>使用 lazy free（延迟删除）特性；</li>
+<li>设置键值的过期时间；</li>
+<li>禁用长耗时的查询命令；使用SCAN</li>
+<li>使用 slowlog 优化耗时命令；</li>
+<li>使用 Pipeline 批量操作数据；</li>
+<li>避免大量数据同时失效；</li>
+<li>客户端使用优化；<br>
+在客户端的使用上我们除了要尽量使用 Pipeline 的技术外，还需要注意要尽量使用 Redis 连接池，而不是频繁创建销毁 Redis 连接，这样就可以减少网络传输次数和减少了非必要调用指令。</li>
+<li>限制 Redis 内存大小；</li>
+<li>使用物理机而非虚拟机安装 Redis 服务；<br>
+在虚拟机中运行 Redis 服务器，因为和物理机共享一个物理网口，并且一台物理机可能有多个虚拟机在运行，因此在内存占用上和网络延迟方面都会有很糟糕的表现，我们可以通过 ./redis-cli --intrinsic-latency 100 命令查看延迟时间，如果对 Redis 的性能有较高要求的话，应尽可能在物理机上直接部署 Redis 服务器。</li>
+<li>检查数据持久化策略；</li>
+<li>禁用 THP 特性；</li>
+<li>使用分布式架构来增加读写速度。</li>
+</ol>
+<p>推理平台</p>
+<ul>
+<li>多模型合并</li>
+<li>N合1，放到一个session里</li>
+<li>多框架支持</li>
+<li>C++ dlopen</li>
+<li>Java JVM JNI</li>
+<li>Python 固定入口</li>
+<li>ECI弹性扩容</li>
+<li>双网卡网络直连</li>
+<li>自定义镜像</li>
+<li>镜像sidecar</li>
+</ul>
+<p>EAS逐步暴露k8s的接口</p>
+<p><strong>ENABLE</strong><br>
+<strong>场景优化</strong></p>
+<p>EAS设计</p>
+<ul>
+<li>failover
+<ul>
+<li>依赖k8s的probe</li>
+</ul>
+</li>
+<li>负载均衡</li>
+<li>请求转发</li>
+</ul>
+<p>公有云 SLA</p>
+<p>Q: 训练的PS架构知道吗？</p>
+<p>Parameter Server放参数，Worker执行训练。<br>
+Chief负责额外执行模型加载保存，初始化等功能。<br>
+evaluator需要放在Chief上。</p>
+<p>TFJob负责机器调度，恢复。</p>
+<ul>
+<li>线上服务</li>
+</ul>
+<p>Q: 线上服务的failover如何处理？</p>
+<p>k8s支持，Pod的probe监控</p>
+<p>Q：服务并发</p>
+<p>并发度　= 吞吐量 * 延迟 * batch</p>
+<ul>
+<li>你觉得你自己</li>
+</ul>
+<p>Q：做过的最突出/挑战性的工作是什么？</p>
+<p>在工程上的事比较多，我觉得每个阶段都有比较值得我的工作。</p>
+<p>FCNN加速后端，从编译器到RT驱动到硬件，全栈工程。团队协作分工，硬件背景驱动软件设计优化。<br>
+加速学习，理解业务和系统。</p>
+<p>模型推理优化，接触各类模型，找出共性，Research，调研，技术选型，寻找合适的落地场景。</p>
+<p>推理平台建设和垂直场景优化，通用平台功能，大客户定点支持，抽象复用，全栈工程x2。</p>
+<p>Q：你遇到过的最大的挑战？</p>
+<p>硬件转软件，runtime设计</p>
+<p>Q：遇到过哪些大坑，是怎么躲开的？</p>
+<ul>
+<li>过早优化和通用化，方案在迭代中改进，很多只是POC</li>
+<li>闭源，内部技术迭代离社区渐行渐远，维护难度指数增加，难以PR merge</li>
+<li>跨团队很重要，重复造轮子，技术选型和复用</li>
+</ul>
+<p>Q：你最大的收获是什么？</p>
+<ul>
+<li>考虑为什么多于怎么实现</li>
+<li>考虑通用、抽象复用多于定制</li>
+<li>工程能力</li>
+<li>跨团队协作</li>
+</ul>
+<p>大规模分布式工程能力</p>
+<p>MT</p>
+<p>Q: 特征工程如何保证离线在线一致性</p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/65374268">https://zhuanlan.zhihu.com/p/65374268</a></p>
+<p>说到是工程，其实就要处理一个很繁杂的问题——线上线下特征一致性。模型的试验一般在线下，通过离线方式进行，数据集自己从数据库之类的渠道采集，自己构建数据集，然后开始跑，但是还要面临一个上线的问题，对于同一个服务，线上的数据是按照数据库的格式过来的，要做的处理在线上还要再做一遍，然后才能得到符合你的模型格式的数据格式，这个一致性就是一个非常难的问题，因此线上线下就需要统一一个严格的格式，说白了就是为了保证一种&quot;重现性&quot;。</p>
+<p>特征分为两部分：</p>
+<ul>
+<li>离线特征，这部分是例行训练生成的，可以保证一致性，对新用户或新物品采取一致的默认值，0或历史平均。</li>
+<li>实时特征，需要经过预处理，保证特征工程和后端服务的数据预处理逻辑一致。</li>
+</ul>
+<p>Q: 训练需要考虑的通信开销优化方法</p>
+<p>数据传输<br>
+数据分片<br>
+device placement</p>
+<p>避免关键节点拥塞<br>
+增加带宽，专用协议</p>
+<p>Q: 你们的后端服务的重排策略是硬编码吗？</p>
+<p>后端服务模块化，可复用，召回、粗排、精排、重排，通过配置文件配置排序规则，尽量重用。</p>
+<p>Q: 你们的AB服务是怎么做的？</p>
+<p>自己开发的SDK，场景、层、桶三个层次。</p>
+<p>场景是什么？场景是不同的推荐API。</p>
+<p>层是召回、排序。</p>
+<p>桶是不同的召回策略，向量召回、i2i，或排序策略。</p>
+<p>Q: 你们的模型主要放在CPU上吗？如果放在GPU上呢？</p>
+<p>主要是CPU，因为embedding的数量比较多。</p>
+<p>Q: 超大规模Embedding是怎么做的？</p>
+<p>redis，redis的开销比较高，但你们又做了一层缓存</p>
+<p>Q: 分布式训练调优？</p>
+<p>提高CPU分布式训练的训练速度，主要要从四个方面来考虑：<br>
+1）提高训练速度，主要是提高CPU的使用率；<br>
+2）提高通信速度，主要是减少通信传输的数据量；<br>
+3）提高数据IO速度；<br>
+4）更换分布式训练策略，提高分布式训练速度。</p>
+<p>Q：分布式异步训练问题？</p>
+<p>异步训练总体会训练速度会快很多，但是异步训练的一个很严重的问题是梯度失效问题（stale gradients），刚开始所有设备采用相同的参数来训练，但是异步情况下，某个设备完成一步训练后，可能发现模型参数已经被其它设备更新过了，此时这个设备计算出的梯度就过期了。由于梯度失效问题，异步训练可能陷入次优解（sub-optimal training performance）。图4中给出了一个具体的样例来说明异步模式的问题。其中黑色曲线展示了模型的损失函数，黑色小球表示了在t0时刻参数所对应的损失函数的大小。假设两个设备d0和d1在时间t0同时读取了参数的取值，那么设备d0和d1计算出来的梯度都会将小黑球向左移动。假设在时间t1设备d0已经完成了反向传播的计算并更新了参数，修改后的参数处于图4中小灰球的位置。然而这时的设备d1并不知道参数已经被更新了，所以在时间t2时，设备d1会继续将小球向左移动，使得小球的位置达到图4中小白球的地方。从图4中可以看到，当参数被调整到小白球的位置时，将无法达到最优点。</p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/56991108">https://zhuanlan.zhihu.com/p/56991108</a></p>
+<p>当然，任何的技术方案都是取舍，异步梯度更新的方式虽然大幅加快了训练速度，但带来的是模型一致性的丧失，也就是说并行训练的结果与原来的单点串行训练的结果是不一致的，这样的不一致会对模型收敛的速度造成一定影响。所以最终选取同步更新还是异步更新取决于不同模型对于一致性的敏感程度。这类似于一个模型超参数选取的问题，需要针对具体问题进行具体的验证。</p>
+<p>除此之外，在同步和异步之间，还可以通过一些“最大延迟”等参数来限制异步的程度。比如可以限定在三轮迭代之内，模型参数必须更新一次，那么如果某worker节点计算了三轮梯度，该节点还未完成一次从server节点pull最新模型参数的过程，那么该worker节点就必须停下等待pull操作的完成。这是同步和异步之间的折衷方法。</p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/82116922">https://zhuanlan.zhihu.com/p/82116922</a></p>
+<p>Q: 无锁队列？</p>
+<p>Q：大数归并排序？</p>
+<p>外排序的一个例子是外归并排序（External merge sort），它读入一些能放在内存内的数据量，在内存中排序后输出为一个顺串（即是内部数据有序的临时文件），处理完所有的数据后再进行归并。[1][2]比如，要对900MB的数据进行排序，但机器上只有100 MB的可用内存时，外归并排序按如下方法操作：</p>
+<p>读入100 MB的数据至内存中，用某种常规方式（如快速排序、堆排序、归并排序等方法）在内存中完成排序。<br>
+将排序完成的数据写入磁盘。<br>
+重复步骤1和2直到所有的数据都存入了不同的100 MB的块（临时文件）中。在这个例子中，有900 MB数据，单个临时文件大小为100 MB，所以会产生9个临时文件。<br>
+读入每个临时文件（顺串）的前10 MB（ = 100 MB / (9块 + 1)）的数据放入内存中的输入缓冲区，最后的10 MB作为输出缓冲区。（实践中，将输入缓冲适当调小，而适当增大输出缓冲区能获得更好的效果。）<br>
+执行九路归并算法，将结果输出到输出缓冲区。一旦输出缓冲区满，将缓冲区中的数据写出至目标文件，清空缓冲区。一旦9个输入缓冲区中的一个变空，就从这个缓冲区关联的文件，读入下一个10M数据，除非这个文件已读完。这是“外归并排序”能在主存外完成排序的关键步骤 – 因为“归并算法”(merge algorithm)对每一个大块只是顺序地做一轮访问(进行归并)，每个大块不用完全载入主存。</p>
+<p>Q：推荐分布式训练？</p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/75946827">https://zhuanlan.zhihu.com/p/75946827</a></p>
+<p>Q: 哈希膨胀</p>
+</p></div><div class="share"><span>Share</span>&nbsp;<span class="soc"><a href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank" class="fa fa-bookmark"></a></span><span class="soc"><a href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));" class="fa fa-weibo"></a></span><span class="soc"><a target="_blank" rel="noopener" href="http://twitter.com/home?status=https://blog.kleon.space/work/interview/infer-opt/%20KLEON%20烤面筋 - 推理优化" class="fa fa-twitter"></a></span></div><div class="pagination"><p class="clearfix"><span class="pre pagbuttons"><a role="navigation" href="/product/research/general-automation/" title="普惠自动化 - 零代码/低代码/RPA/学Python"><i class="fa fa-angle-double-left"></i>&nbsp;Previous post: 普惠自动化 - 零代码/低代码/RPA/学Python</a></span><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/work/interview/big-data/" title="烤面筋 - 大数据">Next post: 烤面筋 - 大数据&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>

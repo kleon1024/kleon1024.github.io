@@ -1,0 +1,424 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title>烤面筋 - 算法 · KLEON</title><meta name="description" content="计算机算法
+
+https://github.com/sunnyandgood/StoreRoom
+#快速排序
+#找第K大数
+#捡石头
+#100盏灯
+#红黑树
+#AVL树
+#N个数取M个
+#两数之和
+哈希法
+双指针法：
+https://segmentfault.com/a/11900000235524"><meta name="og:description" content="计算机算法
+
+https://github.com/sunnyandgood/StoreRoom
+#快速排序
+#找第K大数
+#捡石头
+#100盏灯
+#红黑树
+#AVL树
+#N个数取M个
+#两数之和
+哈希法
+双指针法：
+https://segmentfault.com/a/11900000235524"><meta name="twitter:site" content="KLEON"><meta name="twitter:title" content="烤面筋 - 算法"><meta name="twitter:card" content="summary"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 6.1.0"><link rel="stylesheet" href="/css/prism.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body><div id="stage" class="container"><div class="row"><div id="side-bar" class="col-sm-3 col-xs-12 side-container invisible"><div class="vertical-text site-title"><h3 tabindex="-1" class="site-title-small"><a href="/" class="a-title"></a></h3><h1 tabindex="-1" class="site-title-large"><a href="/" class="a-title">自说自话</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div id="site-nav" class="site-title-links"><ul><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li><li><a href="/categories">Categories</a></li><li><a href="/tags">Tags</a></li><li><a href="/googlebe23cb0bc55fc412.html"></a></li><li><a href="/about/index.html"></a></li><li class="soc"><a href="https://github.com/kleon1024" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa fa-github">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div id="main-container" class="col-sm-9 col-xs-12 main-container invisible"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>烤面筋 - 算法</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-04-26</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/面筋/" title="面筋" class="a-tag">面筋</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/面筋/" title="面筋" class="a-tag">面筋</a><span>&nbsp;</span></span></p><p class="post-abstract"><p>计算机算法</p>
+<span id="more"></span>
+<p><a target="_blank" rel="noopener" href="https://github.com/sunnyandgood/StoreRoom">https://github.com/sunnyandgood/StoreRoom</a></p>
+<h1><a href="#kuai-su-pai-xu" class="header-anchor">#</a><span id="kuai-su-pai-xu">快速排序</span></h1>
+<h1><a href="#zhao-di-k-da-shu" class="header-anchor">#</a><span id="zhao-di-k-da-shu">找第K大数</span></h1>
+<h1><a href="#jian-shi-tou" class="header-anchor">#</a><span id="jian-shi-tou">捡石头</span></h1>
+<h1><a href="#100-zhan-deng" class="header-anchor">#</a><span id="100-zhan-deng">100盏灯</span></h1>
+<h1><a href="#hong-hei-shu" class="header-anchor">#</a><span id="hong-hei-shu">红黑树</span></h1>
+<h1><a href="#avl-shu" class="header-anchor">#</a><span id="avl-shu">AVL树</span></h1>
+<h1><a href="#n-ge-shu-qu-m-ge" class="header-anchor">#</a><span id="n-ge-shu-qu-m-ge">N个数取M个</span></h1>
+<h1><a href="#liang-shu-zhi-he" class="header-anchor">#</a><span id="liang-shu-zhi-he">两数之和</span></h1>
+<p>哈希法</p>
+<p>双指针法：<br>
+<a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000023552474">https://segmentfault.com/a/1190000023552474</a></p>
+<ul>
+<li>不增加额外空间旋转方阵</li>
+<li>递归大树乘法</li>
+<li>拿苹果图论，顺序限制</li>
+<li>二分排序</li>
+<li>str归属集合</li>
+<li>数字大序数减去小序数的最大值</li>
+<li>N个人围圈报数，求顺序</li>
+<li>abcd*4=dcba</li>
+<li>33.搜索旋转排序数组</li>
+<li>dp，n个物品，每个基础价值ai，第k个拿会减去（k-1）*bi的价值，要拿m个使总价值最大（卡了，面试官给了提示过了</li>
+</ul>
+<p>背包容量为n，价值a[i]，第k个拿价值减(k - i) * b[i]，物品重量为1<br>
+dp为第k个拿物品时的最大价值</p>
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">dp := make([]int, m + 1)
+for i := 0; i < len(items); i++ &#123;
+  for j := m; j >= i; i-- &#123;
+    dp[j] = max(dp[j], dp[j - 1] + a[i] - i * b[i])
+  &#125;
+&#125;
+return dp[m]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>贪心，n个怪物，每个怪物有攻击ai，勇者防御初始为d，每打一只防御+1，防御 &lt; ai的话直接受到bi的伤害。问最优打怪顺序。（没做出来，给了个n=1000的网络流做法，面试官表示n是10w也能贪心做</li>
+</ul>
+<p>策略：<br>
+如果有能不吃伤害打的，直接打<br>
+如果没有能不吃伤害打的，直接打破防最强的</p>
+<ul>
+<li>二叉树序列化和反序列化+校验</li>
+</ul>
+<p>BFS，层序遍历重建二叉树</p>
+<ul>
+<li>行列都是有序的二维数组，查找k是否存在,时间复杂度</li>
+</ul>
+<p>二分查找：O(log2（max(m,n)))</p>
+<ul>
+<li>有序数组，有2N+1个数，其中N个数成对出现，仅1个数单独出现，找出那个单独出现的数.,时间复杂度</li>
+</ul>
+<p>O(log2（2N))二分查找，查找中间位置的数相等值是在左边还是右边？左边则再左子数组继续查找，右边则在右子数组继续查找。</p>
+<ul>
+<li>100亿个数求top100,时间复杂度</li>
+</ul>
+<p>分组查找或bitmap</p>
+<ul>
+<li>100亿个数和100亿个数求交集，时间复杂度</li>
+</ul>
+<p>全排列问题，自己找去</p>
+<ul>
+<li>hash算法实现(类似crc32或者murmur)，保证随机性和均匀性，减少哈希冲突</li>
+</ul>
+<p>考的是hash算法的了解，需要知道一些经典哈希算法实现。</p>
+<ul>
+<li>动规 100个球，一次只能拿2-5个，你先拿，我后拿，怎么保证你能拿到最后一个球</li>
+</ul>
+<p>一次2-5，去掉先手，最后回合剩余7个即可保证拿到最后一个球。因此，先手拿2个，每一回合保证拿掉球的总数为7，即可。（100-2）/7=14回合。</p>
+<ul>
+<li>正整数数组，求和为sum的组合 换零钱，1,5,10元都很充足，给你N元去换零钱，多少种换法</li>
+</ul>
+<p>算法题给定一个有n个正整数的数组A和一个整数sum,求选择数组A中部分数字和为sum的方案数，动态规划法。</p>
+<h1><a href="#tu-de-zui-duan-lu-jing" class="header-anchor">#</a><span id="tu-de-zui-duan-lu-jing">图的最短路径</span></h1>
+<p>迪杰斯特拉（Dijkstra）算法</p>
+<p><a target="_blank" rel="noopener" href="https://www.cxyxiaowu.com/1172.html">https://www.cxyxiaowu.com/1172.html</a></p>
+<h1><a href="#lian-biao-you-huan" class="header-anchor">#</a><span id="lian-biao-you-huan">链表有环</span></h1>
+<p>给定一个链表如何判断一个有环</p>
+<p>快慢指针相遇</p>
+<h1><a href="#topk" class="header-anchor">#</a><span id="topk">TOPK</span></h1>
+<p>给定一个长度为n的数组，让求第K大的数，我说用维护最小堆，以及最小堆如何维护的</p>
+<h1><a href="#hui-wen-shu" class="header-anchor">#</a><span id="hui-wen-shu">回文数</span></h1>
+<p>给定一个数字，求是否是回文数？</p>
+<h1><a href="#jie-yu-shui" class="header-anchor">#</a><span id="jie-yu-shui">接雨水</span></h1>
+<h1><a href="#topk-100-wan-zhao-qian-100" class="header-anchor">#</a><span id="topk-100-wan-zhao-qian-100">topK，100万，找钱100</span></h1>
+<h1><a href="#qiu-di-k-da-de-shu" class="header-anchor">#</a><span id="qiu-di-k-da-de-shu">求第K大的数</span></h1>
+<h1><a href="#gei-ding-liang-ge-wu-xu-ji-he-qiu-qi-zhong-yi-ge-ji-he-zhong-suo-you-yuan-su-yu-ling-yi-ge-ji-he-zhong-suo-you-yuan-su-chai-ju-de-jue-dui-zhi-de-zui-xiao-zhi-sort-er-fen" class="header-anchor">#</a><span id="gei-ding-liang-ge-wu-xu-ji-he-qiu-qi-zhong-yi-ge-ji-he-zhong-suo-you-yuan-su-yu-ling-yi-ge-ji-he-zhong-suo-you-yuan-su-chai-ju-de-jue-dui-zhi-de-zui-xiao-zhi-sort-er-fen">给定两个无序集合，求其中一个集合中所有元素与另一个集合中所有元素差距的绝对值的最小值（sort+二分）</span></h1>
+<h1><a href="#fan-zhuan-lian-biao" class="header-anchor">#</a><span id="fan-zhuan-lian-biao">反转链表</span></h1>
+<h1><a href="#san-shu-zhi-he" class="header-anchor">#</a><span id="san-shu-zhi-he">三数之和</span></h1>
+<h1><a href="#lian-biao-qiu-he" class="header-anchor">#</a><span id="lian-biao-qiu-he">链表求和</span></h1>
+<h1><a href="#zui-xiao-fu-gai-zi-chuan" class="header-anchor">#</a><span id="zui-xiao-fu-gai-zi-chuan">最小覆盖子串</span></h1>
+<h1><a href="#zui-da-jiao-huan" class="header-anchor">#</a><span id="zui-da-jiao-huan">最大交换</span></h1>
+<h1><a href="#ba-yi-ge-fang-cheng-shi-she-ji-cheng-shu" class="header-anchor">#</a><span id="ba-yi-ge-fang-cheng-shi-she-ji-cheng-shu">把一个方程式设计成树</span></h1>
+<h1><a href="#lru-huan-cun" class="header-anchor">#</a><span id="lru-huan-cun">LRU缓存</span></h1>
+<h1><a href="#cong-wu-xian-de-zi-fu-liu-zhong-sui-ji-xuan-chu-10-ge-zi-fu" class="header-anchor">#</a><span id="cong-wu-xian-de-zi-fu-liu-zhong-sui-ji-xuan-chu-10-ge-zi-fu">从无限的字符流中, 随机选出 10 个字符</span></h1>
+<p>终于要讲到蓄水池采样算法（Reservoir Sampling）了。先说一下算法的过程：</p>
+<p>假设数据序列的规模为 𝑛，需要采样的数量的为 𝑘。</p>
+<p>首先构建一个可容纳 𝑘 个元素的数组，将序列的前 𝑘 个元素放入数组中。</p>
+<p>然后从第 𝑘+1 个元素开始，以 $$\frac{k}{n} $$ 的概率来决定该元素是否被替换到数组中（数组中的元素被替换的概率是相同的）。 当遍历完所有元素之后，数组中剩下的元素即为所需采取的样本。</p>
+<h1><a href="#zui-duan-lu-jing" class="header-anchor">#</a><span id="zui-duan-lu-jing">最短路径</span></h1>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/biyeymyhjob/archive/2012/07/31/2615833.html">https://www.cnblogs.com/biyeymyhjob/archive/2012/07/31/2615833.html</a></p>
+<p>Dijkstra</p>
+<p>S, U</p>
+<h1><a href="#shu-zi-zhuan-zhong-wen" class="header-anchor">#</a><span id="shu-zi-zhuan-zhong-wen">数字转中文</span></h1>
+<p><a target="_blank" rel="noopener" href="https://github.com/Tnze/go.num/blob/master/zh/num.go">https://github.com/Tnze/go.num/blob/master/zh/num.go</a></p>
+<p><a target="_blank" rel="noopener" href="http://data.biancheng.net/view/146.html">http://data.biancheng.net/view/146.html</a></p>
+<h1><a href="#duo-xian-cheng" class="header-anchor">#</a><span id="duo-xian-cheng">多线程</span></h1>
+<h2><a href="#duo-xian-cheng-da-yin-abc" class="header-anchor">#</a><span id="duo-xian-cheng-da-yin-abc">多线程打印ABC</span></h2>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/xiaoxi/p/8035725.html">https://www.cnblogs.com/xiaoxi/p/8035725.html</a></p>
+<ul>
+<li>JAVA通过一个ReentrantLock和三个conditon实现</li>
+<li>JAVA通过一个锁和一个状态变量来实现</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/838465fe2933">https://www.jianshu.com/p/838465fe2933</a></p>
+<ul>
+<li>GO通过channel管线，A-&gt;B-&gt;C</li>
+</ul>
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">package main
+
+import (
+	"fmt"
+)
+
+func main() &#123;
+	N := 100
+	chs := make([]chan bool, 0, N)
+	for i := 0; i <= n; i++ &#123; chs="append(chs," make(chan bool)) &#125; for i :="1;" <="N;" go print(i, chs[i-1], chs[i]) chs[0] <- true select case <-chs[n]: func print(n int, i, o chan bool) <-i: fmt.println(n) &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></=></code></pre>
+<ul>
+<li>GO通过atmoic</li>
+</ul>
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">package main
+
+import (
+	"fmt"
+	"sync"
+	"sync/atomic"
+)
+
+func main() &#123;
+	N := int64(100)
+	a := int64(1)
+	wg := &sync.WaitGroup&#123;&#125;
+
+	for i := int64(1); i <= n; i++ &#123; wg.add(1) go func(i int64) for a !="i" time.sleep(time.microsecond) 减少竞争 &#125; fmt.println(i) atomic.addint64(&a, 1) wg.done() &#125;(i) wg.wait() &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></=></code></pre>
+<ul>
+<li>Go不一定打印顺序要和线程一致，先拿先得</li>
+</ul>
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">package main
+
+import (
+	"fmt"
+	"sync"
+)
+
+func main() &#123;
+	N := 100
+	a := 0
+	l := sync.Mutex&#123;&#125;
+	wg := &sync.WaitGroup&#123;&#125;
+
+	for i := 1; i <= n; i++ &#123; wg.add(1) go func(i int) l.lock() defer l.unlock() a +="1" fmt.println(a) wg.done() &#125;(i) &#125; wg.wait() &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></=></code></pre>
+<ul>
+<li>C++顺序打印</li>
+</ul>
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">#include<iostream>
+#include<thread>
+#include<mutex>
+
+template<typename t, typename... ts>
+std::unique_ptr<t> make_unique(Ts&&... params)
+&#123;
+    return std::unique_ptr<t>(new T(std::forward<ts>(params)...));
+&#125;
+
+class Solution &#123;
+public:
+    Solution(int count = 0) : count(count) &#123;&#125;
+
+    void print(int i) &#123;
+        std::unique_lock<std::mutex> l(m);
+        count++;
+        std::cout << count << std::endl;
+    &#125;
+private:
+  std::mutex m;
+  int count;
+&#125;;
+
+int main(int argc, char** argv) &#123;
+    auto s(std::make_unique<solution>());
+    int N = 3;
+    for (int i = 0; i < N; ++i) &#123;
+        std::thread t(&Solution::print, s.get(), i);
+        t.join();
+    &#125;
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></solution></std::mutex></ts></t></t></typename></mutex></thread></iostream></code></pre>
+<h2><a href="#lun-liu-da-yin" class="header-anchor">#</a><span id="lun-liu-da-yin">轮流打印</span></h2>
+<ul>
+<li>C++</li>
+</ul>
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">#include<iostream>
+#include<thread>
+#include<mutex>
+#include<vector>
+
+const int N = 3;
+
+class Solution &#123;
+public:
+    Solution(int count = 0) : count(count) &#123;&#125;
+
+    void print(int num) &#123;
+
+        for (int i = 0; i < repeat; i++) &#123;
+            std::unique_lock<std::mutex> l(m);
+            cvar.wait(l, [num, this] &#123; return num == count; &#125;);
+            std::cout << num << std::endl;
+            count += 1;
+            count %= 3;
+            l.unlock();
+            cvar.notify_all();
+        &#125;
+    &#125;
+private:
+    std::mutex m;
+    int count;
+    std::condition_variable cvar;
+    const int repeat = 3;
+&#125;;
+
+int main(int argc, char** argv) &#123;
+    auto s(std::make_unique<solution>());
+    std::vector<std::thread> threads;
+    for (int i = 0; i < N; ++i) &#123;
+        threads.emplace_back(&Solution::print, s.get(), i);
+    &#125;
+
+    std::for_each(threads.begin(), threads.end(), std::mem_fn(&std::thread::join));
+
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></std::thread></solution></std::mutex></vector></mutex></thread></iostream></code></pre>
+<h2><a href="#tong-ji-ci-pin" class="header-anchor">#</a><span id="tong-ji-ci-pin">统计词频</span></h2>
+<p>排序数组，统计词频</p>
+<p>非排序数组统计词频</p>
+<p>无限长数组统计词频</p>
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">package main
+
+import (
+	"fmt"
+	"runtime"
+	"sync"
+)
+
+func main() &#123;
+	a := []int&#123;1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13&#125;
+	size := 3
+	N := 3
+	inter := make(chan map[int]int, 10)
+
+	wg := &sync.WaitGroup&#123;&#125;
+	for i := 0; i < len(a); i += size &#123;
+		wg.Add(1)
+		l := i
+		r := i + size
+		if r > len(a) &#123;
+			r = len(a)
+		&#125;
+		go count(a, l, r, inter, wg)
+	&#125;
+
+	wg.Wait()
+
+	for i := 0; i < N; i++ &#123;
+		wg.Add(1)
+		go reduce(inter, wg)
+	&#125;
+
+	wg.Wait()
+
+	out := <-inter if len(inter)> 0 &#123;
+		for m := range inter &#123;
+			fmt.Println(m)
+			fmt.Println("go:", runtime.NumGoroutine())
+			for k, v := range m &#123;
+				fmt.Println(k)
+				out[k] = v
+			&#125;
+			if len(inter) == 0 &#123;
+				close(inter)
+			&#125;
+		&#125;
+	&#125;
+
+	fmt.Println(out)
+&#125;
+
+func count(a []int, l, r int, o chan map[int]int, wg *sync.WaitGroup) &#123;
+	m := make(map[int]int)
+	for i := l; i < r; i++ &#123;
+		m[a[i]]++
+	&#125;
+	o <- 0 m wg.done() &#125; func reduce(i chan map[int]int, wg *sync.waitgroup) &#123; for if len(i) <="1" return select case map1 :="<-i:" len(map1)="=" continue map2 len(map2)="=" i <- k, v map1[k]="v" &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></-></-inter></code></pre>
+<h2><a href="#sheng-chan-zhe-xiao-fei-zhe" class="header-anchor">#</a><span id="sheng-chan-zhe-xiao-fei-zhe">生产者消费者</span></h2>
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">#include <iostream>
+#include <thread>
+#include <mutex>
+#include <queue>
+#include <memory>
+
+const int N = 100;
+
+class Channel
+&#123;
+public:
+    Channel(int count = 0) : count(count) &#123;&#125;
+
+    void produce(int i)
+    &#123;
+        std::unique_lock<std::mutex> l(m);
+        pvar.wait(l, [this]
+                  &#123; return q.size() < count; &#125;);
+        std::cout << " <- " << i std::endl; q.push(i); cvar.notify_all(); &#125; void consume() &#123; std::unique_lock<std::mutex> l(m);
+        cvar.wait(l, [this]
+                  &#123; return q.size() != 0; &#125;);
+        std::cout << q.front() << " <- " << std::endl; q.pop(); pvar.notify_all(); &#125; int size() &#123; return q.size(); private: std::mutex m; count; std::condition_variable pvar, cvar; std::queue<int> q;
+&#125;;
+
+int main(int argc, char **argv)
+&#123;
+    auto s(std::make_unique<channel>(10));
+    std::vector<std::thread> threads;
+    for (int i = 0; i < N; ++i)
+    &#123;
+        threads.emplace_back(&Channel::produce, s.get(), i);
+        threads.emplace_back(&Channel::consume, s.get());
+    &#125;
+
+    std::for_each(threads.begin(), threads.end(), std::mem_fn(&std::thread::join));
+
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></std::thread></channel></-></-></std::mutex></memory></queue></mutex></thread></iostream></code></pre>
+<h2><a href="#du-zhe-xie-zhe" class="header-anchor">#</a><span id="du-zhe-xie-zhe">读者写者</span></h2>
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">
+#include <iostream>
+//std::unique_lock
+#include <mutex> 
+#include <shared_mutex>
+#include <thread>
+ 
+class ThreadSafeCounter &#123;
+public:
+	ThreadSafeCounter() = default;
+ 
+	// 多个线程/读者能同时读计数器的值。
+	unsigned int get() const &#123;
+		std::shared_lock<std::shared_mutex> lock(mutex_);
+		return value_;
+	&#125;
+ 
+	// 只有一个线程/写者能增加/写线程的值。
+	void increment() &#123;
+		std::unique_lock<std::shared_mutex> lock(mutex_);
+		value_++;
+	&#125;
+ 
+	// 只有一个线程/写者能重置/写线程的值。
+	void reset() &#123;
+		std::unique_lock<std::shared_mutex> lock(mutex_);
+		value_ = 0;
+	&#125;
+ 
+private:
+	mutable std::shared_mutex mutex_;
+	unsigned int value_ = 0;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></std::shared_mutex></std::shared_mutex></std::shared_mutex></thread></shared_mutex></mutex></iostream></code></pre>
+<h2><a href="#ji-suan-jie-cheng" class="header-anchor">#</a><span id="ji-suan-jie-cheng">计算阶乘</span></h2>
+<h2><a href="#ji-suan-n-ci-fang" class="header-anchor">#</a><span id="ji-suan-n-ci-fang">计算N次方</span></h2>
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">func pow(x, n int) int &#123;
+    ret := 1 // 结果初始为0次方的值，整数0次方为1。如果是矩阵，则为单元矩阵。
+    for n != 0 &#123;
+        if n%2 != 0 &#123;
+            ret = ret * x
+        &#125;
+        n /= 2
+        x = x * x
+    &#125;
+    return ret
+&#125;
+
+func main() &#123;
+    x := pow(2, 10) // 2^10
+    println(x)      // 1024
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1><a href="#pai-xu-shu-zu-qu-chong-huan-shi-ha-xi-biao-qu-chong" class="header-anchor">#</a><span id="pai-xu-shu-zu-qu-chong-huan-shi-ha-xi-biao-qu-chong">排序数组去重，还是哈希表去重</span></h1>
+<p>多线程情况下，排序数组可以分段并行，哈希表会冲突</p>
+<p>单线程情况下，数组cache空间局部性更好</p>
+</p></div><div class="share"><span>Share</span>&nbsp;<span class="soc"><a href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank" class="fa fa-bookmark"></a></span><span class="soc"><a href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));" class="fa fa-weibo"></a></span><span class="soc"><a target="_blank" rel="noopener" href="http://twitter.com/home?status=https://blog.kleon.space/work/interview/algo/%20KLEON%20烤面筋 - 算法" class="fa fa-twitter"></a></span></div><div class="pagination"><p class="clearfix"><span class="pre pagbuttons"><a role="navigation" href="/cs/algo/greedy/" title="算法基础 - 贪心法"><i class="fa fa-angle-double-left"></i>&nbsp;Previous post: 算法基础 - 贪心法</a></span><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/work/interview/general/" title="烤面筋 - 通用">Next post: 烤面筋 - 通用&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>

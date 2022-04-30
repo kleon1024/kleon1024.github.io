@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title>算法基础 - 哈希表 · KLEON</title><meta name="description" content="哈希函数用于缩小映射空间，可能会发生碰撞，可用链表法或多哈希函数。
 
-基础
+#基础
 常用数据结构：
 
 数组，有限确定项，比如字母串
@@ -8,9 +8,9 @@ map，映射
 set，集合
 
 Go的map底层使用哈希表实现，set可通过将map的value置空实现。
-C++的std::map/std::multimap由红黑树实现，st"><meta name="og:description" content="哈希函数用于缩小映射空间，可能会发生碰撞，可用链表法或多哈希函数。
+C++的std::map/std::multimap由红黑树实现，s"><meta name="og:description" content="哈希函数用于缩小映射空间，可能会发生碰撞，可用链表法或多哈希函数。
 
-基础
+#基础
 常用数据结构：
 
 数组，有限确定项，比如字母串
@@ -18,10 +18,10 @@ map，映射
 set，集合
 
 Go的map底层使用哈希表实现，set可通过将map的value置空实现。
-C++的std::map/std::multimap由红黑树实现，st"><meta name="twitter:site" content="KLEON"><meta name="twitter:title" content="算法基础 - 哈希表"><meta name="twitter:card" content="summary"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 6.1.0"><link rel="stylesheet" href="/css/prism.css" type="text/css">
+C++的std::map/std::multimap由红黑树实现，s"><meta name="twitter:site" content="KLEON"><meta name="twitter:title" content="算法基础 - 哈希表"><meta name="twitter:card" content="summary"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 6.1.0"><link rel="stylesheet" href="/css/prism.css" type="text/css">
 <link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body><div id="stage" class="container"><div class="row"><div id="side-bar" class="col-sm-3 col-xs-12 side-container invisible"><div class="vertical-text site-title"><h3 tabindex="-1" class="site-title-small"><a href="/" class="a-title"></a></h3><h1 tabindex="-1" class="site-title-large"><a href="/" class="a-title">自说自话</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div id="site-nav" class="site-title-links"><ul><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li><li><a href="/categories">Categories</a></li><li><a href="/tags">Tags</a></li><li><a href="/googlebe23cb0bc55fc412.html"></a></li><li><a href="/about/index.html"></a></li><li class="soc"><a href="https://github.com/kleon1024" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa fa-github">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div id="main-container" class="col-sm-9 col-xs-12 main-container invisible"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>算法基础 - 哈希表</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-03-21</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/算法/" title="算法" class="a-tag">算法</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/算法/" title="算法" class="a-tag">算法</a><span>&nbsp;</span><a href="/tags/数据结构/" title="数据结构" class="a-tag">数据结构</a><span>&nbsp;</span><a href="/tags/leetcode/" title="leetcode" class="a-tag">leetcode</a><span>&nbsp;</span></span></p><p class="post-abstract"><p>哈希函数用于缩小映射空间，可能会发生碰撞，可用链表法或多哈希函数。</p>
 <span id="more"></span>
-<h1>基础</h1>
+<h1><a href="#ji-chu" class="header-anchor">#</a><span id="ji-chu">基础</span></h1>
 <p>常用数据结构：</p>
 <ul>
 <li>数组，有限确定项，比如字母串</li>
@@ -30,9 +30,9 @@ C++的std::map/std::multimap由红黑树实现，st"><meta name="twitter:site" c
 </ul>
 <p>Go的map底层使用哈希表实现，set可通过将map的value置空实现。<br>
 C++的std::map/std::multimap由红黑树实现，std::unorderd_map由哈希表实现。</p>
-<h1>实践</h1>
-<h2 id="数组判断有效字母异位词"><a class="header-anchor" href="#数组判断有效字母异位词">¶</a>数组判断有效字母异位词</h2>
-<p><img src="https://img.shields.io/badge/leetcode-242-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/valid-anagram/">有效的字母异位词</a></p>
+<h1><a href="#shi-jian" class="header-anchor">#</a><span id="shi-jian">实践</span></h1>
+<h2><a href="#shu-zu-pan-duan-you-xiao-zi-mu-yi-wei-ci" class="header-anchor">#</a><span id="shu-zu-pan-duan-you-xiao-zi-mu-yi-wei-ci">数组判断有效字母异位词</span></h2>
+<p><img src="https://img.shields.io/badge/leetcode-242-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/valid-anagram/">有效的字母异位词</a></p>
 <ul>
 <li>数组直接存储</li>
 </ul>
@@ -46,8 +46,8 @@ C++的std::map/std::multimap由红黑树实现，std::unorderd_map由哈希表�
     &#125;
     return a==b
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="赎金信"><a class="header-anchor" href="#赎金信">¶</a>赎金信</h2>
-<p><img src="https://img.shields.io/badge/leetcode-242-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/valid-anagram/">有效的字母异位词</a></p>
+<h2><a href="#shu-jin-xin" class="header-anchor">#</a><span id="shu-jin-xin">赎金信</span></h2>
+<p><img src="https://img.shields.io/badge/leetcode-242-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/valid-anagram/">有效的字母异位词</a></p>
 <ul>
 <li>数组直接存储</li>
 </ul>
@@ -64,8 +64,8 @@ C++的std::map/std::multimap由红黑树实现，std::unorderd_map由哈希表�
     &#125;
     return true
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="集合判断数组相交"><a class="header-anchor" href="#集合判断数组相交">¶</a>集合判断数组相交</h2>
-<p><img src="https://img.shields.io/badge/leetcode-349-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/intersection-of-two-arrays/">两个数组的交集</a></p>
+<h2><a href="#ji-he-pan-duan-shu-zu-xiang-jiao" class="header-anchor">#</a><span id="ji-he-pan-duan-shu-zu-xiang-jiao">集合判断数组相交</span></h2>
+<p><img src="https://img.shields.io/badge/leetcode-349-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/intersection-of-two-arrays/">两个数组的交集</a></p>
 <ul>
 <li>集合存储</li>
 </ul>
@@ -98,8 +98,8 @@ func intersection(nums1 []int, nums2 []int) []int &#123;
     &#125;
     return a.And(b)
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="集合判断快乐数"><a class="header-anchor" href="#集合判断快乐数">¶</a>集合判断快乐数</h2>
-<p><img src="https://img.shields.io/badge/leetcode-202-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/happy-number/">快乐数</a></p>
+<h2><a href="#ji-he-pan-duan-kuai-le-shu" class="header-anchor">#</a><span id="ji-he-pan-duan-kuai-le-shu">集合判断快乐数</span></h2>
+<p><img src="https://img.shields.io/badge/leetcode-202-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/happy-number/">快乐数</a></p>
 <ul>
 <li>集合存储</li>
 </ul>
@@ -128,8 +128,8 @@ func isHappy(n int) bool &#123;
        n = sum
    &#125;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="映射存储两数之和"><a class="header-anchor" href="#映射存储两数之和">¶</a>映射存储两数之和</h2>
-<p><img src="https://img.shields.io/badge/leetcode-1-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/two-sum/">两数之和</a></p>
+<h2><a href="#ying-she-cun-chu-liang-shu-zhi-he" class="header-anchor">#</a><span id="ying-she-cun-chu-liang-shu-zhi-he">映射存储两数之和</span></h2>
+<p><img src="https://img.shields.io/badge/leetcode-1-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/two-sum/">两数之和</a></p>
 <pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">func twoSum(nums []int, target int) []int &#123;
     m := map[int]int&#123;&#125;
     for i, n := range nums &#123;
@@ -161,9 +161,9 @@ public:
         &#125;
         return vector<int>&#123;&#125;;
     &#125;
-&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="映射统计四数相加结果次数"><a class="header-anchor" href="#映射统计四数相加结果次数">¶</a>映射统计四数相加结果次数</h2>
-<p><img src="https://img.shields.io/badge/leetcode-454-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/4sum-ii/">四数相加 II</a></p>
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></int></int></int,></int></int></code></pre>
+<h2><a href="#ying-she-tong-ji-si-shu-xiang-jia-jie-guo-ci-shu" class="header-anchor">#</a><span id="ying-she-tong-ji-si-shu-xiang-jia-jie-guo-ci-shu">映射统计四数相加结果次数</span></h2>
+<p><img src="https://img.shields.io/badge/leetcode-454-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/4sum-ii/">四数相加 II</a></p>
 <pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">func fourSumCount(A []int, B []int, C []int, D []int) int &#123;
     m := map[int]int&#123;&#125;
     for _, a := range A &#123;
@@ -182,8 +182,8 @@ public:
     return count
 &#125;
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="员工的重要性"><a class="header-anchor" href="#员工的重要性">¶</a>员工的重要性</h2>
-<p><img src="https://img.shields.io/badge/leetcode-690-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/employee-importance/">员工的重要性</a></p>
+<h2><a href="#yuan-gong-de-chong-yao-xing" class="header-anchor">#</a><span id="yuan-gong-de-chong-yao-xing">员工的重要性</span></h2>
+<p><img src="https://img.shields.io/badge/leetcode-690-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/employee-importance/">员工的重要性</a></p>
 <pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">/**
  * Definition for Employee.
  * type Employee struct &#123;

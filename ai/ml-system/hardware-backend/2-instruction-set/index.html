@@ -1,15 +1,15 @@
 <!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title>机器学习系统 1-2 - 后端硬件指令集 · KLEON</title><meta name="description" content="定制计算硬件的一个重要任务是确定指令集1。对于深度学习模型，则要首先确定模型集，继而确定算子集，最后统计出指令集。
 
-划分
+#划分
 总体上看，指令按计算密度分为计算密集型算子指令与长尾算子指令。
-计算密集型算子指令通常就是指矩阵乘加计算，其他密集型算子（比如深度学习定义的卷积运算）可以通过变换转化为矩阵乘加"><meta name="og:description" content="定制计算硬件的一个重要任务是确定指令集1。对于深度学习模型，则要首先确定模型集，继而确定算子集，最后统计出指令集。
+计算密集型算子指令通常就是指矩阵乘加计算，其他密集型算子（比如深度学习定义的卷积运算）可以通过变换转化为矩阵乘"><meta name="og:description" content="定制计算硬件的一个重要任务是确定指令集1。对于深度学习模型，则要首先确定模型集，继而确定算子集，最后统计出指令集。
 
-划分
+#划分
 总体上看，指令按计算密度分为计算密集型算子指令与长尾算子指令。
-计算密集型算子指令通常就是指矩阵乘加计算，其他密集型算子（比如深度学习定义的卷积运算）可以通过变换转化为矩阵乘加"><meta name="twitter:site" content="KLEON"><meta name="twitter:title" content="机器学习系统 1-2 - 后端硬件指令集"><meta name="twitter:card" content="summary"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 6.1.0"><link rel="stylesheet" href="/css/prism.css" type="text/css">
+计算密集型算子指令通常就是指矩阵乘加计算，其他密集型算子（比如深度学习定义的卷积运算）可以通过变换转化为矩阵乘"><meta name="twitter:site" content="KLEON"><meta name="twitter:title" content="机器学习系统 1-2 - 后端硬件指令集"><meta name="twitter:card" content="summary"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 6.1.0"><link rel="stylesheet" href="/css/prism.css" type="text/css">
 <link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body><div id="stage" class="container"><div class="row"><div id="side-bar" class="col-sm-3 col-xs-12 side-container invisible"><div class="vertical-text site-title"><h3 tabindex="-1" class="site-title-small"><a href="/" class="a-title"></a></h3><h1 tabindex="-1" class="site-title-large"><a href="/" class="a-title">自说自话</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div id="site-nav" class="site-title-links"><ul><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li><li><a href="/categories">Categories</a></li><li><a href="/tags">Tags</a></li><li><a href="/googlebe23cb0bc55fc412.html"></a></li><li><a href="/about/index.html"></a></li><li class="soc"><a href="https://github.com/kleon1024" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa fa-github">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div id="main-container" class="col-sm-9 col-xs-12 main-container invisible"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>机器学习系统 1-2 - 后端硬件指令集</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-01-13</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/机器学习/" title="机器学习" class="a-tag">机器学习</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/机器学习/" title="机器学习" class="a-tag">机器学习</a><span>&nbsp;</span><a href="/tags/FPGA/" title="FPGA" class="a-tag">FPGA</a><span>&nbsp;</span></span></p><p class="post-abstract"><p>定制计算硬件的一个重要任务是确定指令集<a href="#refer-1"><sup>1</sup></a>。对于深度学习模型，则要首先确定模型集，继而确定算子集，最后统计出指令集。</p>
 <span id="more"></span>
-<h1>划分</h1>
+<h1><a href="#hua-fen" class="header-anchor">#</a><span id="hua-fen">划分</span></h1>
 <p>总体上看，指令按计算密度分为计算密集型算子指令与长尾算子指令。</p>
 <p>计算密集型算子指令通常就是指矩阵乘加计算，其他密集型算子（比如深度学习定义的卷积运算）可以通过变换转化为矩阵乘加。</p>
 <p>因此矩阵乘加是定制硬件的核心，也是模型优化的核心。</p>
@@ -21,7 +21,7 @@
 <li>归纳必须支持的算子，抽象出更通用的计算逻辑，尽量最小化占用的芯片面积。适配计算密集型指令算力和长尾指令算力，在多种目标场景中统计，长尾指令尽量不成为性能瓶颈。</li>
 <li>评估大型模型（不能完全放在芯片内存中，需要和CPU主存交换）在目标承载系统中的算力适配程度，如CPU算力是否能支持内存拷贝开销，中断开销，硬件不支持的长尾算子的计算开销，系统其他服务开销。</li>
 </ol>
-<h1>粒度</h1>
+<h1><a href="#li-du" class="header-anchor">#</a><span id="li-du">粒度</span></h1>
 <p>指令是硬件向软件开放的“操作接口”，指令的粒度则决定了软件对硬件控制深度。</p>
 <p>定制硬件的早期，尤其是针对某个特定模型的特定设计，软件和硬件都是及其专用的。硬件基本包揽了模型端到端的所有计算，甚至连模型结构也以一种“硬编码”的方式写在了驱动中。</p>
 <p>硬件的整体架构只有两部分：一部分是寄存器，给软件配置来启动计算步骤，另一部分是一条巨大的流水线，归纳了整个模型最基本的计算结构，比如对于ResNet50，就是卷积-元素积-仿射变换-激活ReLU-池化。</p>

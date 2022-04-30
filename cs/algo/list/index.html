@@ -1,25 +1,25 @@
 <!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title>算法基础 - 链表 · KLEON</title><meta name="description" content="表是最基础的数据结构之一，存储线性数据，内存结构不连续。
 
-基础
+#基础
 链表可通过自定义数据结构，使用指针或引用指向前后节点。
 Go提供了&amp;quot;container/list&amp;quot;1标准库实现双向链表。
 package main
 
 import (
 	&quot;container/list&quot;
-	&quot;fmt"><meta name="og:description" content="表是最基础的数据结构之一，存储线性数据，内存结构不连续。
+	&quot;fm"><meta name="og:description" content="表是最基础的数据结构之一，存储线性数据，内存结构不连续。
 
-基础
+#基础
 链表可通过自定义数据结构，使用指针或引用指向前后节点。
 Go提供了&amp;quot;container/list&amp;quot;1标准库实现双向链表。
 package main
 
 import (
 	&quot;container/list&quot;
-	&quot;fmt"><meta name="twitter:site" content="KLEON"><meta name="twitter:title" content="算法基础 - 链表"><meta name="twitter:card" content="summary"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 6.1.0"><link rel="stylesheet" href="/css/prism.css" type="text/css">
+	&quot;fm"><meta name="twitter:site" content="KLEON"><meta name="twitter:title" content="算法基础 - 链表"><meta name="twitter:card" content="summary"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 6.1.0"><link rel="stylesheet" href="/css/prism.css" type="text/css">
 <link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body><div id="stage" class="container"><div class="row"><div id="side-bar" class="col-sm-3 col-xs-12 side-container invisible"><div class="vertical-text site-title"><h3 tabindex="-1" class="site-title-small"><a href="/" class="a-title"></a></h3><h1 tabindex="-1" class="site-title-large"><a href="/" class="a-title">自说自话</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div id="site-nav" class="site-title-links"><ul><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li><li><a href="/categories">Categories</a></li><li><a href="/tags">Tags</a></li><li><a href="/googlebe23cb0bc55fc412.html"></a></li><li><a href="/about/index.html"></a></li><li class="soc"><a href="https://github.com/kleon1024" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa fa-github">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div id="main-container" class="col-sm-9 col-xs-12 main-container invisible"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>算法基础 - 链表</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-03-12</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/算法/" title="算法" class="a-tag">算法</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/算法/" title="算法" class="a-tag">算法</a><span>&nbsp;</span><a href="/tags/数据结构/" title="数据结构" class="a-tag">数据结构</a><span>&nbsp;</span><a href="/tags/leetcode/" title="leetcode" class="a-tag">leetcode</a><span>&nbsp;</span></span></p><p class="post-abstract"><p>表是最基础的数据结构之一，存储线性数据，内存结构不连续。</p>
 <span id="more"></span>
-<h1>基础</h1>
+<h1><a href="#ji-chu" class="header-anchor">#</a><span id="ji-chu">基础</span></h1>
 <p>链表可通过自定义数据结构，使用指针或引用指向前后节点。</p>
 <p>Go提供了&quot;container/list&quot;<a href="#refer-1"><sup>1</sup></a>标准库实现双向链表。</p>
 <pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">package main
@@ -43,9 +43,9 @@ func main() &#123;
 	&#125;
 
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1>实战</h1>
-<h2 id="虚拟头结点移除链表中指定元素"><a class="header-anchor" href="#虚拟头结点移除链表中指定元素">¶</a>虚拟头结点移除链表中指定元素</h2>
-<p><img src="https://img.shields.io/badge/leetcode-203-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/remove-linked-list-elements/">移除链表元素</a></p>
+<h1><a href="#shi-zhan" class="header-anchor">#</a><span id="shi-zhan">实战</span></h1>
+<h2><a href="#xu-ni-tou-jie-dian-yi-chu-lian-biao-zhong-zhi-ding-yuan-su" class="header-anchor">#</a><span id="xu-ni-tou-jie-dian-yi-chu-lian-biao-zhong-zhi-ding-yuan-su">虚拟头结点移除链表中指定元素</span></h2>
+<p><img src="https://img.shields.io/badge/leetcode-203-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/remove-linked-list-elements/">移除链表元素</a></p>
 <ul>
 <li>基本链表操作</li>
 </ul>
@@ -70,8 +70,8 @@ func removeElements(head *ListNode, val int) *ListNode &#123;
 
     return vhead.Next
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="实现链表基本操作"><a class="header-anchor" href="#实现链表基本操作">¶</a>实现链表基本操作</h2>
-<p><img src="https://img.shields.io/badge/leetcode-707-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/design-linked-list/">设计链表</a></p>
+<h2><a href="#shi-xian-lian-biao-ji-ben-cao-zuo" class="header-anchor">#</a><span id="shi-xian-lian-biao-ji-ben-cao-zuo">实现链表基本操作</span></h2>
+<p><img src="https://img.shields.io/badge/leetcode-707-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/design-linked-list/">设计链表</a></p>
 <ul>
 <li>单向链表</li>
 </ul>
@@ -189,96 +189,11 @@ func (this *MyLinkedList) Print(str string) &#123;
     fmt.Printf("---%v---\n", str)
     pt := this.Head
     fmt.Printf("head %v\n", pt)
-    for i := 0; i <= this.Length; i++&#123;
-        pt = pt.Next
-        fmt.Printf("%v %v\n", i, pt)
-    &#125;
-    pt = pt.Next
-    fmt.Printf("tail %v\n", pt)
-&#125;
-
-
-/** Get the value of the index-th node in the linked list. If the index is invalid, return -1. */
-func (this *MyLinkedList) Get(index int) int &#123;
-    if index >= this.Length &#123;
+    for i := 0; i <= this.length; i++&#123; pt="pt.Next" fmt.printf("%v %v\n", i, pt) &#125; fmt.printf("tail ** get the value of index-th node in linked list. if index is invalid, return -1. * func (this *mylinkedlist) get(index int) int &#123;>= this.Length &#123;
         return -1
     &#125;
     ret := this.Head
-    for i := 0; i <= index; i++ &#123;
-        ret = ret.Next
-    &#125;
-    return ret.Val
-&#125;
-
-
-/** Add a node of value val before the first element of the linked list. After the insertion, the new node will be the first node of the linked list. */
-func (this *MyLinkedList) AddAtHead(val int)  &#123;
-    node := &Node&#123;
-        Val: val,
-        Next: this.Head.Next,
-        Prev: this.Head,
-    &#125;
-    this.Head.Next.Prev = node
-    this.Head.Next = node
-
-    if this.Tail.Prev.Prev == nil &#123;
-        this.Tail.Prev = this.Head.Next
-    &#125;
-    this.Length++
-    // this.Print("AddAtHead")
-&#125;
-
-
-/** Append a node of value val to the last element of the linked list. */
-func (this *MyLinkedList) AddAtTail(val int)  &#123;
-    node := &Node&#123;
-        Val: val,
-        Next: this.Tail,
-        Prev: this.Tail.Prev,
-    &#125;
-    this.Tail.Prev.Next = node
-    this.Tail.Prev = node
-    if this.Head.Next.Next == nil &#123;
-        this.Head.Next = this.Tail.Prev
-    &#125;
-    this.Length++
-    // this.Print("AddAtTail")
-&#125;
-
-
-/** Add a node of value val before the index-th node in the linked list. If index equals to the length of linked list, the node will be appended to the end of linked list. If index is greater than the length, the node will not be inserted. */
-func (this *MyLinkedList) AddAtIndex(index int, val int)  &#123;
-    if index == this.Length &#123;
-        this.AddAtTail(val)
-        return
-    &#125;
-
-    if index < 0 &#123;
-        this.AddAtHead(val)
-        return
-    &#125;
-
-    var pt *Node
-    pt = this.Head
-    for i := 0; i <= index; i++ &#123;
-        pt = pt.Next
-    &#125;
-
-    node := &Node&#123;
-        Val: val,
-        Next: pt,
-        Prev: pt.Prev,
-    &#125;
-    pt.Prev.Next = node
-    pt.Prev = node
-    this.Length++
-    // this.Print("AddAtIndex")
-&#125;
-
-
-/** Delete the index-th node in the linked list, if the index is valid. */
-func (this *MyLinkedList) DeleteAtIndex(index int)  &#123;
-    if index >= this.Length &#123;
+    for i := 0; i <= 0 index; i++ &#123; ret="ret.Next" &#125; return ret.val ** add a node of value val before the first element linked list. after insertion, new will be * func (this *mylinkedlist) addathead(val int) :="&Node&#123;" val: val, next: this.head.next, prev: this.head, this.head.next.prev="node" this.head.next="node" if this.tail.prev.prev="=" nil this.tail.prev="this.Head.Next" this.length++ this.print("addathead") append to last addattail(val this.tail, this.tail.prev, this.tail.prev.next="node" this.head.next.next="=" this.print("addattail") index-th in index equals length list, appended end is greater than length, not inserted. addatindex(index int, this.length this.addattail(val) < this.addathead(val) var pt *node for i pt, pt.prev, pt.prev.next="node" pt.prev="node" this.print("addatindex") delete valid. deleteatindex(index>= this.Length &#123;
         return
     &#125;
 
@@ -288,27 +203,9 @@ func (this *MyLinkedList) DeleteAtIndex(index int)  &#123;
 
     var pt *Node
     pt = this.Head
-    for i := 0; i <= index; i++ &#123;
-        pt = pt.Next
-    &#125;
-    pt.Prev.Next = pt.Next
-    pt.Next.Prev = pt.Prev
-    this.Length--
-    // this.Print("DeleteAtIndex")
-&#125;
-
-
-/**
- * Your MyLinkedList object will be instantiated and called as such:
- * obj := Constructor();
- * param_1 := obj.Get(index);
- * obj.AddAtHead(val);
- * obj.AddAtTail(val);
- * obj.AddAtIndex(index,val);
- * obj.DeleteAtIndex(index);
- */<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="反转链表"><a class="header-anchor" href="#反转链表">¶</a>反转链表</h2>
-<p><img src="https://img.shields.io/badge/leetcode-206-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/reverse-linked-list/">反转链表</a></p>
+    for i := 0; i <= index; i++ &#123; pt="pt.Next" &#125; pt.prev.next="pt.Next" pt.next.prev="pt.Prev" this.length-- this.print("deleteatindex") ** * your mylinkedlist object will be instantiated and called as such: obj :="Constructor();" param_1 obj.addathead(val); obj.addattail(val); obj.addatindex(index,val); obj.deleteatindex(index); <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></=></=></=></code></pre>
+<h2><a href="#fan-zhuan-lian-biao" class="header-anchor">#</a><span id="fan-zhuan-lian-biao">反转链表</span></h2>
+<p><img src="https://img.shields.io/badge/leetcode-206-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/reverse-linked-list/">反转链表</a></p>
 <ul>
 <li>构建新链表</li>
 </ul>
@@ -352,9 +249,9 @@ func reverseList(head *ListNode) *ListNode &#123;
     &#125;
     return pre
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="环形链表的入环节点"><a class="header-anchor" href="#环形链表的入环节点">¶</a>环形链表的入环节点</h2>
-<p><img src="https://img.shields.io/badge/leetcode-141-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/linked-list-cycle/">环形链表</a><br>
-<img src="https://img.shields.io/badge/leetcode-142-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/linked-list-cycle-ii/">环形链表II</a></p>
+<h2><a href="#huan-xing-lian-biao-de-ru-huan-jie-dian" class="header-anchor">#</a><span id="huan-xing-lian-biao-de-ru-huan-jie-dian">环形链表的入环节点</span></h2>
+<p><img src="https://img.shields.io/badge/leetcode-141-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/linked-list-cycle/">环形链表</a><br>
+<img src="https://img.shields.io/badge/leetcode-142-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/linked-list-cycle-ii/">环形链表II</a></p>
 <p>$$<br>
 fast = x + y + n(y + z)<br>
 $$</p>
@@ -399,8 +296,8 @@ func detectCycle(head *ListNode) *ListNode &#123;
     &#125;
     return nil
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="删除排序链表中的重复元素-II"><a class="header-anchor" href="#删除排序链表中的重复元素-II">¶</a>删除排序链表中的重复元素 II</h2>
-<p><img src="https://img.shields.io/badge/leetcode-82-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list-ii/">删除排序链表中的重复元素 II</a></p>
+<h2><a href="#shan-chu-pai-xu-lian-biao-zhong-de-chong-fu-yuan-su-ii" class="header-anchor">#</a><span id="shan-chu-pai-xu-lian-biao-zhong-de-chong-fu-yuan-su-ii">删除排序链表中的重复元素 II</span></h2>
+<p><img src="https://img.shields.io/badge/leetcode-82-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list-ii/">删除排序链表中的重复元素 II</a></p>
 <ul>
 <li>操作指针，开始指针，结束指针。注意绝对不重复的条件是开始指针和结束指针相邻且不相等。</li>
 </ul>

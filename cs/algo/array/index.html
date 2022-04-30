@@ -32,9 +32,9 @@ type struct Node &#123;
     Value int
     Next  *Node
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1>实践</h1>
-<h2 id="多个有序数组的第k小数"><a class="header-anchor" href="#多个有序数组的第k小数">¶</a>多个有序数组的第k小数</h2>
-<p><img src="https://img.shields.io/badge/leetcode-4-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/median-of-two-sorted-arrays/">寻找两个正序数组的中位数</a></p>
+<h1><a href="#shi-jian" class="header-anchor">#</a><span id="shi-jian">实践</span></h1>
+<h2><a href="#duo-ge-you-xu-shu-zu-de-di-k-xiao-shu" class="header-anchor">#</a><span id="duo-ge-you-xu-shu-zu-de-di-k-xiao-shu">多个有序数组的第k小数</span></h2>
+<p><img src="https://img.shields.io/badge/leetcode-4-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/median-of-two-sorted-arrays/">寻找两个正序数组的中位数</a></p>
 <ul>
 <li>暴力法: 归并排序后取中位数</li>
 <li>指针法：只计中位数</li>
@@ -45,8 +45,8 @@ type struct Node &#123;
 </ul>
 </li>
 </ul>
-<h2 id="二分法-升序数组搜索插入位置"><a class="header-anchor" href="#二分法-升序数组搜索插入位置">¶</a>二分法-升序数组搜索插入位置</h2>
-<p><img src="https://img.shields.io/badge/leetcode-35-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/search-insert-position/">搜索插入位置</a></p>
+<h2><a href="#er-fen-fa-sheng-xu-shu-zu-sou-suo-cha-ru-wei-zhi" class="header-anchor">#</a><span id="er-fen-fa-sheng-xu-shu-zu-sou-suo-cha-ru-wei-zhi">二分法-升序数组搜索插入位置</span></h2>
+<p><img src="https://img.shields.io/badge/leetcode-35-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/search-insert-position/">搜索插入位置</a></p>
 <ul>
 <li>暴力法，直接搜索，时间复杂度O(n)</li>
 </ul>
@@ -64,9 +64,7 @@ type struct Node &#123;
 <pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">func searchInsert(nums []int, target int) int &#123;
     left := 0
     right := len(nums) - 1
-    for left <= right &#123;
-        middle := (right + left) / 2
-        if nums[middle] > target &#123;
+    for left <= 2 right &#123; middle :="(right" + left) if nums[middle]> target &#123;
             right = middle - 1
         &#125; else if nums[middle] < target &#123;
             left = middle + 1
@@ -75,9 +73,9 @@ type struct Node &#123;
         &#125;
     &#125;
     return right + 1
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="双指针法-数组原地移除元素"><a class="header-anchor" href="#双指针法-数组原地移除元素">¶</a>双指针法-数组原地移除元素</h2>
-<p><img src="https://img.shields.io/badge/leetcode-27-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/remove-element/">移除元素</a></p>
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></=></code></pre>
+<h2><a href="#shuang-zhi-zhen-fa-shu-zu-yuan-di-yi-chu-yuan-su" class="header-anchor">#</a><span id="shuang-zhi-zhen-fa-shu-zu-yuan-di-yi-chu-yuan-su">双指针法-数组原地移除元素</span></h2>
+<p><img src="https://img.shields.io/badge/leetcode-27-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/remove-element/">移除元素</a></p>
 <ul>
 <li>暴力法，查到一个挪一个，时间复杂度O(n<sup>2</sup>)，空间复杂度O(1)</li>
 <li>快慢指针法，时间复杂度O(n)，空间复杂度O(1)</li>
@@ -92,8 +90,8 @@ type struct Node &#123;
     &#125;
     return slow
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="滑动窗口-长度最小的连续子数组"><a class="header-anchor" href="#滑动窗口-长度最小的连续子数组">¶</a>滑动窗口-长度最小的连续子数组</h2>
-<p><img src="https://img.shields.io/badge/leetcode-209-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/minimum-size-subarray-sum/">长度最小的子数组</a></p>
+<h2><a href="#hua-dong-chuang-kou-chang-du-zui-xiao-de-lian-xu-zi-shu-zu" class="header-anchor">#</a><span id="hua-dong-chuang-kou-chang-du-zui-xiao-de-lian-xu-zi-shu-zu">滑动窗口-长度最小的连续子数组</span></h2>
+<p><img src="https://img.shields.io/badge/leetcode-209-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/minimum-size-subarray-sum/">长度最小的子数组</a></p>
 <ul>
 <li>暴力法，两层循环，记下最小长度，时间复杂度O(n<sup>2</sup>)</li>
 </ul>
@@ -135,8 +133,8 @@ type struct Node &#123;
     &#125;
     return min
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="过程模拟-螺旋矩阵"><a class="header-anchor" href="#过程模拟-螺旋矩阵">¶</a>过程模拟-螺旋矩阵</h2>
-<p><img src="https://img.shields.io/badge/leetcode-59-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/spiral-matrix-ii/">螺旋矩阵II</a></p>
+<h2><a href="#guo-cheng-mo-ni-luo-xuan-ju-zhen" class="header-anchor">#</a><span id="guo-cheng-mo-ni-luo-xuan-ju-zhen">过程模拟-螺旋矩阵</span></h2>
+<p><img src="https://img.shields.io/badge/leetcode-59-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/spiral-matrix-ii/">螺旋矩阵II</a></p>
 <ul>
 <li>直接过程模拟，可用递归或迭代方式模拟每圈</li>
 </ul>
@@ -182,23 +180,19 @@ func generateMatrix(n int) [][]int &#123;
     drawCircle(n, 0, 0, n - 1, 0, m)
     return m
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="双指针法-平方数之和"><a class="header-anchor" href="#双指针法-平方数之和">¶</a>双指针法-平方数之和</h2>
-<p><img src="https://img.shields.io/badge/leetcode-633-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/sum-of-square-numbers/">平方数之和</a></p>
+<h2><a href="#shuang-zhi-zhen-fa-ping-fang-shu-zhi-he" class="header-anchor">#</a><span id="shuang-zhi-zhen-fa-ping-fang-shu-zhi-he">双指针法-平方数之和</span></h2>
+<p><img src="https://img.shields.io/badge/leetcode-633-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/sum-of-square-numbers/">平方数之和</a></p>
 <pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">func judgeSquareSum(c int) bool &#123;
     left, right := 0, int(math.Sqrt(float64(c)))
-    for left <= right &#123;
-        sum := left*left + right*right
-        if sum == c &#123;
-            return true
-        &#125; else if sum > c &#123;
+    for left <= right &#123; sum :="left*left" + right*right if c return true &#125; else> c &#123;
             right--
         &#125; else &#123;
             left++
         &#125;
     &#125;
     return false
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="二分法-搜索旋转排序数组"><a class="header-anchor" href="#二分法-搜索旋转排序数组">¶</a>二分法-搜索旋转排序数组</h2>
-<p><img src="https://img.shields.io/badge/leetcode-33-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/search-in-rotated-sorted-array/">搜索旋转排序数组</a></p>
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></=></code></pre>
+<h2><a href="#er-fen-fa-sou-suo-xuan-zhuan-pai-xu-shu-zu" class="header-anchor">#</a><span id="er-fen-fa-sou-suo-xuan-zhuan-pai-xu-shu-zu">二分法-搜索旋转排序数组</span></h2>
+<p><img src="https://img.shields.io/badge/leetcode-33-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/search-in-rotated-sorted-array/">搜索旋转排序数组</a></p>
 <hr>
 </p></div><div class="share"><span>Share</span>&nbsp;<span class="soc"><a href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank" class="fa fa-bookmark"></a></span><span class="soc"><a href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));" class="fa fa-weibo"></a></span><span class="soc"><a target="_blank" rel="noopener" href="http://twitter.com/home?status=https://blog.kleon.space/cs/algo/array/%20KLEON%20算法基础 - 数组" class="fa fa-twitter"></a></span></div><div class="pagination"><p class="clearfix"><span class="pre pagbuttons"><a role="navigation" href="/cs/algo/hash-table/" title="算法基础 - 哈希表"><i class="fa fa-angle-double-left"></i>&nbsp;Previous post: 算法基础 - 哈希表</a></span><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/cs/algo/tree/" title="算法基础 - 树">Next post: 算法基础 - 树&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>

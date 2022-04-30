@@ -31,7 +31,7 @@
 <li>调试使用，提供Python接口，方便运行调试。</li>
 </ol>
 <p>通过合理的抽象，就可以满足使用需求，并保留足够的扩展性。</p>
-<h1>抽象</h1>
+<h1><a href="#chou-xiang" class="header-anchor">#</a><span id="chou-xiang">抽象</span></h1>
 <ul>
 <li><strong>内存抽象</strong></li>
 </ul>
@@ -67,7 +67,7 @@
 <li>计算指令表</li>
 </ul>
 <p>其中还可以详细定义是否支持Dynamic Shape，是否需要完全内存映射等，量化精度，数据精度，数据对齐等。</p>
-<h1>优化</h1>
+<h1><a href="#you-hua" class="header-anchor">#</a><span id="you-hua">优化</span></h1>
 <p>运行时作为调用的关键路径之一，性能优化也相当重要，常用的优化手段包括：</p>
 <ul>
 <li>资源池。</li>
@@ -85,7 +85,7 @@
 <li>DMA合并</li>
 </ul>
 <p>DMA的读写开销并不低，如果是IO数据块（处于计算首尾的需要和主存swap的动态数据块）较多，则可能拉低系统整体性能。驱动对内存连续性无法判断，可以在runtime内存申请时提前合并IO数据块，将DMA读写次数合并为1次，提高系统整体性能。</p>
-<h1>调试</h1>
+<h1><a href="#diao-shi" class="header-anchor">#</a><span id="diao-shi">调试</span></h1>
 <p>主要是C++编程的一些吐槽。</p>
 <ul>
 <li>多线程安全</li>

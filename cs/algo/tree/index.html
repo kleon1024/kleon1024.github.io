@@ -1,60 +1,60 @@
 <!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title>算法基础 - 树 · KLEON</title><meta name="description" content="树是常用的数据结构，应用较多的有二叉搜索树，二叉平衡搜索树(AVL树)，红黑树，多路平衡搜索树(B-树，B+树，B*树)等。
 
-基础
+#基础
 树可由链式结构或数组实现，遍历方式为前、中、后、层序遍历。
 type TreeNode struct &amp;#123;
   Val   int
-  Left  *Tree"><meta name="og:description" content="树是常用的数据结构，应用较多的有二叉搜索树，二叉平衡搜索树(AVL树)，红黑树，多路平衡搜索树(B-树，B+树，B*树)等。
+  Left  *Tre"><meta name="og:description" content="树是常用的数据结构，应用较多的有二叉搜索树，二叉平衡搜索树(AVL树)，红黑树，多路平衡搜索树(B-树，B+树，B*树)等。
 
-基础
+#基础
 树可由链式结构或数组实现，遍历方式为前、中、后、层序遍历。
 type TreeNode struct &amp;#123;
   Val   int
-  Left  *Tree"><meta name="twitter:site" content="KLEON"><meta name="twitter:title" content="算法基础 - 树"><meta name="twitter:card" content="summary"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 6.1.0"><link rel="stylesheet" href="/css/prism.css" type="text/css">
+  Left  *Tre"><meta name="twitter:site" content="KLEON"><meta name="twitter:title" content="算法基础 - 树"><meta name="twitter:card" content="summary"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 6.1.0"><link rel="stylesheet" href="/css/prism.css" type="text/css">
 <link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body><div id="stage" class="container"><div class="row"><div id="side-bar" class="col-sm-3 col-xs-12 side-container invisible"><div class="vertical-text site-title"><h3 tabindex="-1" class="site-title-small"><a href="/" class="a-title"></a></h3><h1 tabindex="-1" class="site-title-large"><a href="/" class="a-title">自说自话</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div id="site-nav" class="site-title-links"><ul><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li><li><a href="/categories">Categories</a></li><li><a href="/tags">Tags</a></li><li><a href="/googlebe23cb0bc55fc412.html"></a></li><li><a href="/about/index.html"></a></li><li class="soc"><a href="https://github.com/kleon1024" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa fa-github">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div id="main-container" class="col-sm-9 col-xs-12 main-container invisible"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>算法基础 - 树</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-03-14</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/算法/" title="算法" class="a-tag">算法</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/算法/" title="算法" class="a-tag">算法</a><span>&nbsp;</span><a href="/tags/数据结构/" title="数据结构" class="a-tag">数据结构</a><span>&nbsp;</span></span></p><p class="post-abstract"><p>树是常用的数据结构，应用较多的有二叉搜索树，二叉平衡搜索树(AVL树)，红黑树，多路平衡搜索树(B-树，B+树，B*树)等。</p>
 <span id="more"></span>
-<h1>基础</h1>
+<h1><a href="#ji-chu" class="header-anchor">#</a><span id="ji-chu">基础</span></h1>
 <p>树可由链式结构或数组实现，遍历方式为前、中、后、层序遍历。</p>
 <pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">type TreeNode struct &#123;
   Val   int
   Left  *TreeNode
   Right *TreeNode
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="树"><a class="header-anchor" href="#树">¶</a>树</h2>
+<h2><a href="#shu" class="header-anchor">#</a><span id="shu">树</span></h2>
 <p>有向无环非线性数据结构，每个节点可以指向多个节点，但至多有一个节点指向自身。</p>
-<h2 id="二叉树"><a class="header-anchor" href="#二叉树">¶</a>二叉树</h2>
+<h2><a href="#er-cha-shu" class="header-anchor">#</a><span id="er-cha-shu">二叉树</span></h2>
 <p>每个节点至多只能指向两个节点。</p>
-<h2 id="满二叉树"><a class="header-anchor" href="#满二叉树">¶</a>满二叉树</h2>
+<h2><a href="#man-er-cha-shu" class="header-anchor">#</a><span id="man-er-cha-shu">满二叉树</span></h2>
 <p>只有度为0和2的节点，并且度为0的节点在同一层上。</p>
-<h2 id="完全二叉树"><a class="header-anchor" href="#完全二叉树">¶</a>完全二叉树</h2>
+<h2><a href="#wan-quan-er-cha-shu" class="header-anchor">#</a><span id="wan-quan-er-cha-shu">完全二叉树</span></h2>
 <p>除了最底层节点可能没填满外，其余层节点数均达到最大值，并且最下面一层的节点应集中在最左侧。</p>
-<h2 id="二叉搜索树"><a class="header-anchor" href="#二叉搜索树">¶</a>二叉搜索树</h2>
+<h2><a href="#er-cha-sou-suo-shu" class="header-anchor">#</a><span id="er-cha-sou-suo-shu">二叉搜索树</span></h2>
 <p>一种朴素的有序树结构，左子节点均小于父节点，右子节点均大于父节点。当插入新值时由根节点开始按以上规则逐层比较，直到找到合适的叶节点位置。</p>
 <ul>
 <li>优点：不需要在插入数据时调整结构</li>
 <li>缺点：性能易受数据插入顺序影响，最差情况为顺序插入，退化为链表。</li>
 </ul>
-<h2 id="平衡二叉搜索树-AVL树"><a class="header-anchor" href="#平衡二叉搜索树-AVL树">¶</a>平衡二叉搜索树(AVL树)</h2>
+<h2><a href="#ping-heng-er-cha-sou-suo-shu-avl-shu" class="header-anchor">#</a><span id="ping-heng-er-cha-sou-suo-shu-avl-shu">平衡二叉搜索树(AVL树)</span></h2>
 <p>二叉搜索树的改进，又称AVL(Adelson-Velsky and Landis)树，引入平衡因子，通过旋转操作保证所有子树高度差不超过1。</p>
 <ul>
 <li>优点：相比二叉树更平衡，极端情况下表现依然足够好。</li>
 <li>缺点：在读写比例差不多的情况下，旋转操作过多。</li>
 </ul>
-<h2 id="红黑树-RB树"><a class="header-anchor" href="#红黑树-RB树">¶</a>红黑树(RB树)</h2>
+<h2><a href="#hong-hei-shu-rb-shu" class="header-anchor">#</a><span id="hong-hei-shu-rb-shu">红黑树(RB树)</span></h2>
 <p>AVL树的改进，引入着色规则，通过旋转和着色操作保证所有子树高度差不超过2。Map可以通过红黑树实现。</p>
 <ul>
 <li>优点：写性能更高。</li>
 <li>缺点：查询性能弱于AVL树，因为子树高度差比AVL多一层，最差情况会多一次比较。</li>
 </ul>
-<h2 id="B-树-B-Tree-B树"><a class="header-anchor" href="#B-树-B-Tree-B树">¶</a>B-树(B-Tree, B树)</h2>
+<h2><a href="#b-shu-b-tree-b-shu" class="header-anchor">#</a><span id="b-shu-b-tree-b-shu">B-树(B-Tree, B树)</span></h2>
 <p>多路搜索树，又称B树，用于数据索引，子节点内放指针和数据块。通过分裂操作维持树结构。</p>
-<h2 id="B-树"><a class="header-anchor" href="#B-树">¶</a>B+树</h2>
+<h2><a href="#b-shu" class="header-anchor">#</a><span id="b-shu">B+树</span></h2>
 <p>B-树改进型，子节点内不放数据块，统一放在叶节点内。查询性能稳定，IO数据利用率高。</p>
-<h2 id="B-树-v2"><a class="header-anchor" href="#B-树-v2">¶</a>B*树</h2>
+<h2><a href="#b-shu" class="header-anchor">#</a><span id="b-shu">B*树</span></h2>
 <p>B+树改进型，增加子节点间指针，如果兄弟节点数据未满，则将一部分指针移到兄弟节点，并修改父节点关键字，将结点的最低利用率从1/2提高到2/3。</p>
-<h1>实践</h1>
-<h2 id="二叉树的前序遍历"><a class="header-anchor" href="#二叉树的前序遍历">¶</a>二叉树的前序遍历</h2>
-<p><img src="https://img.shields.io/badge/leetcode-144-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/binary-tree-preorder-traversal/">二叉树的前序遍历</a></p>
+<h1><a href="#shi-jian" class="header-anchor">#</a><span id="shi-jian">实践</span></h1>
+<h2><a href="#er-cha-shu-de-qian-xu-bian-li" class="header-anchor">#</a><span id="er-cha-shu-de-qian-xu-bian-li">二叉树的前序遍历</span></h2>
+<p><img src="https://img.shields.io/badge/leetcode-144-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/binary-tree-preorder-traversal/">二叉树的前序遍历</a></p>
 <ul>
 <li>递归</li>
 </ul>
@@ -134,8 +134,8 @@ func preorderTraversal(root *TreeNode) []int &#123;
     &#125;
     return result
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="二叉树的后序遍历"><a class="header-anchor" href="#二叉树的后序遍历">¶</a>二叉树的后序遍历</h2>
-<p><img src="https://img.shields.io/badge/leetcode-145-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/binary-tree-postorder-traversal/">二叉树的后序遍历</a></p>
+<h2><a href="#er-cha-shu-de-hou-xu-bian-li" class="header-anchor">#</a><span id="er-cha-shu-de-hou-xu-bian-li">二叉树的后序遍历</span></h2>
+<p><img src="https://img.shields.io/badge/leetcode-145-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/binary-tree-postorder-traversal/">二叉树的后序遍历</a></p>
 <ul>
 <li>递归</li>
 </ul>
@@ -192,8 +192,8 @@ func postorderTraversal(root *TreeNode) []int &#123;
     &#125;
     return result
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="二叉树的中序遍历"><a class="header-anchor" href="#二叉树的中序遍历">¶</a>二叉树的中序遍历</h2>
-<p><img src="https://img.shields.io/badge/leetcode-94-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/binary-tree-inorder-traversal/">二叉树的中序遍历</a></p>
+<h2><a href="#er-cha-shu-de-zhong-xu-bian-li" class="header-anchor">#</a><span id="er-cha-shu-de-zhong-xu-bian-li">二叉树的中序遍历</span></h2>
+<p><img src="https://img.shields.io/badge/leetcode-94-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/binary-tree-inorder-traversal/">二叉树的中序遍历</a></p>
 <ul>
 <li>递归</li>
 </ul>
@@ -276,7 +276,7 @@ void midorder(TreeNode* root, vector<int>& v) &#123;
 &#125;
 
 void preorderIter(TreeNode* root, vector<int>& v) &#123;
-    std::stack<TreeNode*> s;
+    std::stack<treenode*> s;
     
     if (root != nullptr) &#123;
         s.push(root);
@@ -304,7 +304,7 @@ void preorderIter(TreeNode* root, vector<int>& v) &#123;
 &#125;
 
 void postorderIter(TreeNode* root, vector<int>& v) &#123;
-    std::stack<TreeNode*> s;
+    std::stack<treenode*> s;
     
     if (root != nullptr) &#123;
         s.push(root);
@@ -332,7 +332,7 @@ void postorderIter(TreeNode* root, vector<int>& v) &#123;
 &#125;
 
 void midorderIter(TreeNode* root, vector<int>& v) &#123;
-    std::stack<TreeNode*> s;
+    std::stack<treenode*> s;
     
     if (root != nullptr) &#123;
         s.push(root);
@@ -357,9 +357,9 @@ void midorderIter(TreeNode* root, vector<int>& v) &#123;
             v.push_back(node->val);
         &#125;
     &#125;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="二叉树的层序遍历"><a class="header-anchor" href="#二叉树的层序遍历">¶</a>二叉树的层序遍历</h2>
-<p><img src="https://img.shields.io/badge/leetcode-102-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/binary-tree-level-order-traversal/">二叉树的层序遍历</a></p>
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></treenode*></int></treenode*></int></treenode*></int></int></int></int></code></pre>
+<h2><a href="#er-cha-shu-de-ceng-xu-bian-li" class="header-anchor">#</a><span id="er-cha-shu-de-ceng-xu-bian-li">二叉树的层序遍历</span></h2>
+<p><img src="https://img.shields.io/badge/leetcode-102-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/binary-tree-level-order-traversal/">二叉树的层序遍历</a></p>
 <ul>
 <li>队列先进先出</li>
 </ul>
@@ -395,8 +395,8 @@ func levelOrder(root *TreeNode) [][]int &#123;
     &#125;
     return result
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="二叉树的层序遍历II"><a class="header-anchor" href="#二叉树的层序遍历II">¶</a>二叉树的层序遍历II</h2>
-<p><img src="https://img.shields.io/badge/leetcode-107-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/binary-tree-level-order-traversal-ii/">二叉树的层序遍历II</a></p>
+<h2><a href="#er-cha-shu-de-ceng-xu-bian-li-ii" class="header-anchor">#</a><span id="er-cha-shu-de-ceng-xu-bian-li-ii">二叉树的层序遍历II</span></h2>
+<p><img src="https://img.shields.io/badge/leetcode-107-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/binary-tree-level-order-traversal-ii/">二叉树的层序遍历II</a></p>
 <ul>
 <li>同二叉树的层序遍历</li>
 </ul>
@@ -435,8 +435,8 @@ func levelOrderBottom(root *TreeNode) [][]int &#123;
     &#125;
     return result
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="层序遍历获取二叉树的右视图"><a class="header-anchor" href="#层序遍历获取二叉树的右视图">¶</a>层序遍历获取二叉树的右视图</h2>
-<p><img src="https://img.shields.io/badge/leetcode-199-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/binary-tree-right-side-view/">二叉树的右视图</a></p>
+<h2><a href="#ceng-xu-bian-li-huo-qu-er-cha-shu-de-you-shi-tu" class="header-anchor">#</a><span id="ceng-xu-bian-li-huo-qu-er-cha-shu-de-you-shi-tu">层序遍历获取二叉树的右视图</span></h2>
+<p><img src="https://img.shields.io/badge/leetcode-199-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/binary-tree-right-side-view/">二叉树的右视图</a></p>
 <ul>
 <li>同二叉树的层序遍历</li>
 </ul>
@@ -472,8 +472,8 @@ func rightSideView(root *TreeNode) []int &#123;
     &#125;
     return result
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="层序遍历获取二叉树的层平均值"><a class="header-anchor" href="#层序遍历获取二叉树的层平均值">¶</a>层序遍历获取二叉树的层平均值</h2>
-<p><img src="https://img.shields.io/badge/leetcode-637-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/average-of-levels-in-binary-tree/">二叉树的层平均值</a></p>
+<h2><a href="#ceng-xu-bian-li-huo-qu-er-cha-shu-de-ceng-ping-jun-zhi" class="header-anchor">#</a><span id="ceng-xu-bian-li-huo-qu-er-cha-shu-de-ceng-ping-jun-zhi">层序遍历获取二叉树的层平均值</span></h2>
+<p><img src="https://img.shields.io/badge/leetcode-637-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/average-of-levels-in-binary-tree/">二叉树的层平均值</a></p>
 <ul>
 <li>同二叉树的层序遍历</li>
 </ul>
@@ -511,8 +511,8 @@ func averageOfLevels(root *TreeNode) []float64 &#123;
     &#125;
     return result
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="层序遍历获取N叉树的层序遍历"><a class="header-anchor" href="#层序遍历获取N叉树的层序遍历">¶</a>层序遍历获取N叉树的层序遍历</h2>
-<p><img src="https://img.shields.io/badge/leetcode-429-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/n-ary-tree-level-order-traversal/">N叉树的层序遍历</a></p>
+<h2><a href="#ceng-xu-bian-li-huo-qu-n-cha-shu-de-ceng-xu-bian-li" class="header-anchor">#</a><span id="ceng-xu-bian-li-huo-qu-n-cha-shu-de-ceng-xu-bian-li">层序遍历获取N叉树的层序遍历</span></h2>
+<p><img src="https://img.shields.io/badge/leetcode-429-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/n-ary-tree-level-order-traversal/">N叉树的层序遍历</a></p>
 <ul>
 <li>同二叉树的层序遍历</li>
 </ul>
@@ -545,8 +545,8 @@ func levelOrder(root *Node) [][]int &#123;
     &#125;
     return result
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="前序遍历二叉树展开为链表"><a class="header-anchor" href="#前序遍历二叉树展开为链表">¶</a>前序遍历二叉树展开为链表</h2>
-<p><img src="https://img.shields.io/badge/leetcode-114-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/flatten-binary-tree-to-linked-list/">二叉树展开为链表</a></p>
+<h2><a href="#qian-xu-bian-li-er-cha-shu-zhan-kai-wei-lian-biao" class="header-anchor">#</a><span id="qian-xu-bian-li-er-cha-shu-zhan-kai-wei-lian-biao">前序遍历二叉树展开为链表</span></h2>
+<p><img src="https://img.shields.io/badge/leetcode-114-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/flatten-binary-tree-to-linked-list/">二叉树展开为链表</a></p>
 <pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">/**
  * Definition for a binary tree node.
  * type TreeNode struct &#123;
@@ -576,8 +576,8 @@ func flatten(root *TreeNode)  &#123;
     &#125;
 &#125;
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="翻转二叉树"><a class="header-anchor" href="#翻转二叉树">¶</a>翻转二叉树</h2>
-<p><img src="https://img.shields.io/badge/leetcode-226-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/invert-binary-tree/">翻转二叉树</a></p>
+<h2><a href="#fan-zhuan-er-cha-shu" class="header-anchor">#</a><span id="fan-zhuan-er-cha-shu">翻转二叉树</span></h2>
+<p><img src="https://img.shields.io/badge/leetcode-226-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/invert-binary-tree/">翻转二叉树</a></p>
 <ul>
 <li>递归</li>
 </ul>
@@ -661,8 +661,8 @@ func invertTree(root *TreeNode) *TreeNode &#123;
     &#125;
     return root
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="对称二叉树"><a class="header-anchor" href="#对称二叉树">¶</a>对称二叉树</h2>
-<p><img src="https://img.shields.io/badge/leetcode-101-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/symmetric-tree/">对称二叉树</a></p>
+<h2><a href="#dui-cheng-er-cha-shu" class="header-anchor">#</a><span id="dui-cheng-er-cha-shu">对称二叉树</span></h2>
+<p><img src="https://img.shields.io/badge/leetcode-101-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/symmetric-tree/">对称二叉树</a></p>
 <ul>
 <li>递归</li>
 </ul>
@@ -722,8 +722,8 @@ func isSymmetric(root *TreeNode) bool &#123;
     &#125;
     return true
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="二叉树的最大深度"><a class="header-anchor" href="#二叉树的最大深度">¶</a>二叉树的最大深度</h2>
-<p><img src="https://img.shields.io/badge/leetcode-104-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/">二叉树的最大深度</a></p>
+<h2><a href="#er-cha-shu-de-zui-da-shen-du" class="header-anchor">#</a><span id="er-cha-shu-de-zui-da-shen-du">二叉树的最大深度</span></h2>
+<p><img src="https://img.shields.io/badge/leetcode-104-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/">二叉树的最大深度</a></p>
 <ul>
 <li>后序遍历</li>
 </ul>
@@ -751,8 +751,8 @@ func maxDepth(root *TreeNode) int &#123;
 <ul>
 <li>层序遍历</li>
 </ul>
-<h2 id="N叉树的最大深度"><a class="header-anchor" href="#N叉树的最大深度">¶</a>N叉树的最大深度</h2>
-<p><img src="https://img.shields.io/badge/leetcode-104-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/">N叉树的最大深度</a></p>
+<h2><a href="#n-cha-shu-de-zui-da-shen-du" class="header-anchor">#</a><span id="n-cha-shu-de-zui-da-shen-du">N叉树的最大深度</span></h2>
+<p><img src="https://img.shields.io/badge/leetcode-104-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/">N叉树的最大深度</a></p>
 <ul>
 <li>迭代，同二叉树</li>
 <li>层序遍历</li>
@@ -785,8 +785,8 @@ func maxDepth(root *Node) int &#123;
     &#125;
     return depth
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="二叉树的最小深度"><a class="header-anchor" href="#二叉树的最小深度">¶</a>二叉树的最小深度</h2>
-<p><img src="https://img.shields.io/badge/leetcode-111-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/minimum-depth-of-binary-tree/">二叉树的最小深度</a></p>
+<h2><a href="#er-cha-shu-de-zui-xiao-shen-du" class="header-anchor">#</a><span id="er-cha-shu-de-zui-xiao-shen-du">二叉树的最小深度</span></h2>
+<p><img src="https://img.shields.io/badge/leetcode-111-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/minimum-depth-of-binary-tree/">二叉树的最小深度</a></p>
 <ul>
 <li>递归</li>
 </ul>
@@ -858,8 +858,8 @@ func minDepth(root *TreeNode) int &#123;
     &#125;
     return depth
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="完全二叉树的节点数"><a class="header-anchor" href="#完全二叉树的节点数">¶</a>完全二叉树的节点数</h2>
-<p><img src="https://img.shields.io/badge/leetcode-222-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/count-complete-tree-nodes/">完全二叉树的节点个数</a></p>
+<h2><a href="#wan-quan-er-cha-shu-de-jie-dian-shu" class="header-anchor">#</a><span id="wan-quan-er-cha-shu-de-jie-dian-shu">完全二叉树的节点数</span></h2>
+<p><img src="https://img.shields.io/badge/leetcode-222-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/count-complete-tree-nodes/">完全二叉树的节点个数</a></p>
 <ul>
 <li>前序遍历递归</li>
 </ul>
@@ -911,8 +911,8 @@ func countNodes(root *TreeNode) int &#123;
     &#125;
     return count
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="平衡二叉树"><a class="header-anchor" href="#平衡二叉树">¶</a>平衡二叉树</h2>
-<p><img src="https://img.shields.io/badge/leetcode-110-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/balanced-binary-tree/">平衡二叉树</a></p>
+<h2><a href="#ping-heng-er-cha-shu" class="header-anchor">#</a><span id="ping-heng-er-cha-shu">平衡二叉树</span></h2>
+<p><img src="https://img.shields.io/badge/leetcode-110-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/balanced-binary-tree/">平衡二叉树</a></p>
 <ul>
 <li>递归</li>
 </ul>
@@ -944,8 +944,8 @@ func depth(node *TreeNode) int &#123;
 func isBalanced(root *TreeNode) bool &#123;
     return depth(root) >= 0
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="二叉树的所有路径"><a class="header-anchor" href="#二叉树的所有路径">¶</a>二叉树的所有路径</h2>
-<p><img src="https://img.shields.io/badge/leetcode-257-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/binary-tree-paths/">二叉树的所有路径</a></p>
+<h2><a href="#er-cha-shu-de-suo-you-lu-jing" class="header-anchor">#</a><span id="er-cha-shu-de-suo-you-lu-jing">二叉树的所有路径</span></h2>
+<p><img src="https://img.shields.io/badge/leetcode-257-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/binary-tree-paths/">二叉树的所有路径</a></p>
 <ul>
 <li>谦虚遍历递归</li>
 </ul>
@@ -977,8 +977,8 @@ func binaryTreePaths(root *TreeNode) []string &#123;
     if root == nil &#123; return []string&#123;&#125; &#125;
     return path(root, "")
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="相同的树"><a class="header-anchor" href="#相同的树">¶</a>相同的树</h2>
-<p><img src="https://img.shields.io/badge/leetcode-100-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/same-tree/">相同的树</a></p>
+<h2><a href="#xiang-tong-de-shu" class="header-anchor">#</a><span id="xiang-tong-de-shu">相同的树</span></h2>
+<p><img src="https://img.shields.io/badge/leetcode-100-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/same-tree/">相同的树</a></p>
 <ul>
 <li>递归，同对称树</li>
 </ul>
@@ -1031,8 +1031,8 @@ func isSameTree(p *TreeNode, q *TreeNode) bool &#123;
     &#125;
     return true
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="左叶子之和"><a class="header-anchor" href="#左叶子之和">¶</a>左叶子之和</h2>
-<p><img src="https://img.shields.io/badge/leetcode-404-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/sum-of-left-leaves/">左叶子之和</a></p>
+<h2><a href="#zuo-xie-zi-zhi-he" class="header-anchor">#</a><span id="zuo-xie-zi-zhi-he">左叶子之和</span></h2>
+<p><img src="https://img.shields.io/badge/leetcode-404-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/sum-of-left-leaves/">左叶子之和</a></p>
 <ul>
 <li>递归</li>
 </ul>
@@ -1052,8 +1052,8 @@ func sumOfLeftLeaves(root *TreeNode) int &#123;
     &#125;
     return sum + sumOfLeftLeaves(root.Left) + sumOfLeftLeaves(root.Right)
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="找树左下角的值"><a class="header-anchor" href="#找树左下角的值">¶</a>找树左下角的值</h2>
-<p><img src="https://img.shields.io/badge/leetcode-513-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/find-bottom-left-tree-value/">找树左下角的值</a></p>
+<h2><a href="#zhao-shu-zuo-xia-jiao-de-zhi" class="header-anchor">#</a><span id="zhao-shu-zuo-xia-jiao-de-zhi">找树左下角的值</span></h2>
+<p><img src="https://img.shields.io/badge/leetcode-513-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/find-bottom-left-tree-value/">找树左下角的值</a></p>
 <ul>
 <li>层序遍历</li>
 </ul>
@@ -1084,8 +1084,8 @@ func findBottomLeftValue(root *TreeNode) int &#123;
     &#125;
     return result
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="路径总和"><a class="header-anchor" href="#路径总和">¶</a>路径总和</h2>
-<p><img src="https://img.shields.io/badge/leetcode-112-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/path-sum/">路径总和</a></p>
+<h2><a href="#lu-jing-zong-he" class="header-anchor">#</a><span id="lu-jing-zong-he">路径总和</span></h2>
+<p><img src="https://img.shields.io/badge/leetcode-112-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/path-sum/">路径总和</a></p>
 <ul>
 <li>递归</li>
 </ul>
@@ -1105,8 +1105,8 @@ func hasPathSum(root *TreeNode, targetSum int) bool &#123;
     nextSum := targetSum - root.Val
     return hasPathSum(root.Left, nextSum) || hasPathSum(root.Right, nextSum)
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="路径总和II"><a class="header-anchor" href="#路径总和II">¶</a>路径总和II</h2>
-<p><img src="https://img.shields.io/badge/leetcode-113-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/path-sum-ii/">路径总和II</a></p>
+<h2><a href="#lu-jing-zong-he-ii" class="header-anchor">#</a><span id="lu-jing-zong-he-ii">路径总和II</span></h2>
+<p><img src="https://img.shields.io/badge/leetcode-113-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/path-sum-ii/">路径总和II</a></p>
 <ul>
 <li>递归，注意Go的引用</li>
 </ul>
@@ -1145,8 +1145,8 @@ func pathSum(root *TreeNode, targetSum int) [][]int &#123;
     traverse(root, targetSum, &result, path)
     return result
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="从中序与后序遍历序列构造二叉树"><a class="header-anchor" href="#从中序与后序遍历序列构造二叉树">¶</a>从中序与后序遍历序列构造二叉树</h2>
-<p><img src="https://img.shields.io/badge/leetcode-106-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/">从中序与后序遍历序列构造二叉树</a></p>
+<h2><a href="#cong-zhong-xu-yu-hou-xu-bian-li-xu-lie-gou-zao-er-cha-shu" class="header-anchor">#</a><span id="cong-zhong-xu-yu-hou-xu-bian-li-xu-lie-gou-zao-er-cha-shu">从中序与后序遍历序列构造二叉树</span></h2>
+<p><img src="https://img.shields.io/badge/leetcode-106-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/">从中序与后序遍历序列构造二叉树</a></p>
 <ul>
 <li>先取后序遍历最后一个值作为当前根节点，从中序遍历比对确定左右子树切割位置，后序遍历子树大小应和中序遍历数组子序列一致，将切分出的左右子序列递归。</li>
 </ul>
@@ -1183,8 +1183,8 @@ func (t TreeBuilder)traverse(inStart, inEnd, poStart, poEnd int) *TreeNode &#123
 func buildTree(inorder []int, postorder []int) *TreeNode &#123;
     return TreeBuilder&#123;inorder, postorder&#125;.traverse(0, len(inorder), 0, len(postorder))
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="从中序与前序遍历序列构造二叉树"><a class="header-anchor" href="#从中序与前序遍历序列构造二叉树">¶</a>从中序与前序遍历序列构造二叉树</h2>
-<p><img src="https://img.shields.io/badge/leetcode-105-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/">从中序与前序遍历序列构造二叉树</a></p>
+<h2><a href="#cong-zhong-xu-yu-qian-xu-bian-li-xu-lie-gou-zao-er-cha-shu" class="header-anchor">#</a><span id="cong-zhong-xu-yu-qian-xu-bian-li-xu-lie-gou-zao-er-cha-shu">从中序与前序遍历序列构造二叉树</span></h2>
+<p><img src="https://img.shields.io/badge/leetcode-105-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/">从中序与前序遍历序列构造二叉树</a></p>
 <ul>
 <li>类似后序+中序</li>
 </ul>
@@ -1250,8 +1250,8 @@ func buildTree(preorder []int, inorder []int) *TreeNode &#123;
     root.Right = buildTree(preorder[1+inMid:], inorder[inMid+1:])
     return root
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="最大二叉树"><a class="header-anchor" href="#最大二叉树">¶</a>最大二叉树</h2>
-<p><img src="https://img.shields.io/badge/leetcode-654-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/maximum-binary-tree/">最大二叉树</a></p>
+<h2><a href="#zui-da-er-cha-shu" class="header-anchor">#</a><span id="zui-da-er-cha-shu">最大二叉树</span></h2>
+<p><img src="https://img.shields.io/badge/leetcode-654-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/maximum-binary-tree/">最大二叉树</a></p>
 <ul>
 <li>递归</li>
 </ul>
@@ -1278,8 +1278,8 @@ func constructMaximumBinaryTree(nums []int) *TreeNode &#123;
     root.Right = constructMaximumBinaryTree(nums[index+1:])
     return root
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="合并二叉树"><a class="header-anchor" href="#合并二叉树">¶</a>合并二叉树</h2>
-<p><img src="https://img.shields.io/badge/leetcode-617-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/merge-two-binary-trees/">合并二叉树</a></p>
+<h2><a href="#he-bing-er-cha-shu" class="header-anchor">#</a><span id="he-bing-er-cha-shu">合并二叉树</span></h2>
+<p><img src="https://img.shields.io/badge/leetcode-617-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/merge-two-binary-trees/">合并二叉树</a></p>
 <ul>
 <li>递归</li>
 </ul>
@@ -1299,8 +1299,8 @@ func mergeTrees(root1 *TreeNode, root2 *TreeNode) *TreeNode &#123;
     root1.Right = mergeTrees(root1.Right, root2.Right)
     return root1
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="二叉搜索树中的搜索"><a class="header-anchor" href="#二叉搜索树中的搜索">¶</a>二叉搜索树中的搜索</h2>
-<p><img src="https://img.shields.io/badge/leetcode-700-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/search-in-a-binary-search-tree/">二叉搜索树中的搜索</a></p>
+<h2><a href="#er-cha-sou-suo-shu-zhong-de-sou-suo" class="header-anchor">#</a><span id="er-cha-sou-suo-shu-zhong-de-sou-suo">二叉搜索树中的搜索</span></h2>
+<p><img src="https://img.shields.io/badge/leetcode-700-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/search-in-a-binary-search-tree/">二叉搜索树中的搜索</a></p>
 <ul>
 <li>递归</li>
 </ul>
@@ -1341,8 +1341,8 @@ func searchBST(root *TreeNode, val int) *TreeNode &#123;
     &#125;
     return nil
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="验证二叉搜索树"><a class="header-anchor" href="#验证二叉搜索树">¶</a>验证二叉搜索树</h2>
-<p><img src="https://img.shields.io/badge/leetcode-98-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/validate-binary-search-tree/">验证二叉搜索树</a></p>
+<h2><a href="#yan-zheng-er-cha-sou-suo-shu" class="header-anchor">#</a><span id="yan-zheng-er-cha-sou-suo-shu">验证二叉搜索树</span></h2>
+<p><img src="https://img.shields.io/badge/leetcode-98-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/validate-binary-search-tree/">验证二叉搜索树</a></p>
 <ul>
 <li>递归，注意子树区间必须，需要上下界来判断</li>
 </ul>
@@ -1363,11 +1363,11 @@ func helper(root *TreeNode, lower, upper int) bool &#123;
     if root == nil &#123;
         return true
     &#125;
-    if root.Val <= lower || root.Val >= upper &#123;
+    if root.Val <= lower || root.val>= upper &#123;
         return false
     &#125;
     return helper(root.Left, lower, root.Val) && helper(root.Right, root.Val, upper)
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></=></code></pre>
 <ul>
 <li>中序遍历，序列递增</li>
 </ul>
@@ -1395,19 +1395,9 @@ func traverse(root *TreeNode, val int) (bool, int) &#123;
         return false, val
     &#125;
 
-    if root.Val <= val &#123;
-        return false, val
-    &#125;
-    val = root.Val
-
-    valid, val = traverse(root.Right, val)
-    if !valid &#123;
-        return false, val
-    &#125;
-    return true, val
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="二叉搜索树的最小绝对差"><a class="header-anchor" href="#二叉搜索树的最小绝对差">¶</a>二叉搜索树的最小绝对差</h2>
-<p><img src="https://img.shields.io/badge/leetcode-530-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/minimum-absolute-difference-in-bst/">二叉搜索树的最小绝对差</a></p>
+    if root.Val <= val &#123; return false, &#125; valid, val) if !valid true, &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></=></code></pre>
+<h2><a href="#er-cha-sou-suo-shu-de-zui-xiao-jue-dui-chai" class="header-anchor">#</a><span id="er-cha-sou-suo-shu-de-zui-xiao-jue-dui-chai">二叉搜索树的最小绝对差</span></h2>
+<p><img src="https://img.shields.io/badge/leetcode-530-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/minimum-absolute-difference-in-bst/">二叉搜索树的最小绝对差</a></p>
 <ul>
 <li>中序遍历，Go的struct指针</li>
 </ul>
@@ -1447,8 +1437,8 @@ func getMinimumDifference(root *TreeNode) int &#123;
     s.traverse(root)
     return s.min
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="二叉搜索树中的众数"><a class="header-anchor" href="#二叉搜索树中的众数">¶</a>二叉搜索树中的众数</h2>
-<p><img src="https://img.shields.io/badge/leetcode-501-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/find-mode-in-binary-search-tree/">二叉搜索树中的众数</a></p>
+<h2><a href="#er-cha-sou-suo-shu-zhong-de-zhong-shu" class="header-anchor">#</a><span id="er-cha-sou-suo-shu-zhong-de-zhong-shu">二叉搜索树中的众数</span></h2>
+<p><img src="https://img.shields.io/badge/leetcode-501-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/find-mode-in-binary-search-tree/">二叉搜索树中的众数</a></p>
 <ul>
 <li>二叉搜索树中序遍历有序</li>
 </ul>
@@ -1495,8 +1485,8 @@ func findMode(root *TreeNode) []int &#123;
     s.traverse(root)
     return s.Modes
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="二叉树的最近公共祖先"><a class="header-anchor" href="#二叉树的最近公共祖先">¶</a>二叉树的最近公共祖先</h2>
-<p><img src="https://img.shields.io/badge/leetcode-236-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/">二叉树的最近公共祖先</a></p>
+<h2><a href="#er-cha-shu-de-zui-jin-gong-gong-zu-xian" class="header-anchor">#</a><span id="er-cha-shu-de-zui-jin-gong-gong-zu-xian">二叉树的最近公共祖先</span></h2>
+<p><img src="https://img.shields.io/badge/leetcode-236-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/">二叉树的最近公共祖先</a></p>
 <ul>
 <li>递归</li>
 </ul>
@@ -1520,8 +1510,8 @@ func findMode(root *TreeNode) []int &#123;
      if left == nil && right != nil &#123; return right &#125;
      return nil
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="二叉搜索树的最近公共祖先"><a class="header-anchor" href="#二叉搜索树的最近公共祖先">¶</a>二叉搜索树的最近公共祖先</h2>
-<p><img src="https://img.shields.io/badge/leetcode-235-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-search-tree/">二叉搜索树的最近公共祖先</a></p>
+<h2><a href="#er-cha-sou-suo-shu-de-zui-jin-gong-gong-zu-xian" class="header-anchor">#</a><span id="er-cha-sou-suo-shu-de-zui-jin-gong-gong-zu-xian">二叉搜索树的最近公共祖先</span></h2>
+<p><img src="https://img.shields.io/badge/leetcode-235-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-search-tree/">二叉搜索树的最近公共祖先</a></p>
 <ul>
 <li>二叉搜索树有序，前序遍历，第一个落在[p, q]或[q, p]区间的就是公共祖先</li>
 </ul>
@@ -1566,8 +1556,8 @@ func lowestCommonAncestor(root, p, q *TreeNode) *TreeNode &#123;
         &#125;
     &#125;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="二叉搜索树中的插入操作"><a class="header-anchor" href="#二叉搜索树中的插入操作">¶</a>二叉搜索树中的插入操作</h2>
-<p><img src="https://img.shields.io/badge/leetcode-701-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/insert-into-a-binary-search-tree/">二叉搜索树中的插入操作</a></p>
+<h2><a href="#er-cha-sou-suo-shu-zhong-de-cha-ru-cao-zuo" class="header-anchor">#</a><span id="er-cha-sou-suo-shu-zhong-de-cha-ru-cao-zuo">二叉搜索树中的插入操作</span></h2>
+<p><img src="https://img.shields.io/badge/leetcode-701-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/insert-into-a-binary-search-tree/">二叉搜索树中的插入操作</a></p>
 <ul>
 <li>利用二叉搜索树的性质插入</li>
 </ul>
@@ -1591,8 +1581,8 @@ func insertIntoBST(root *TreeNode, val int) *TreeNode &#123;
     &#125;
     return root
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="删除二叉搜索树中的节点"><a class="header-anchor" href="#删除二叉搜索树中的节点">¶</a>删除二叉搜索树中的节点</h2>
-<p><img src="https://img.shields.io/badge/leetcode-450-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/delete-node-in-a-bst/">删除二叉搜索树中的节点</a></p>
+<h2><a href="#shan-chu-er-cha-sou-suo-shu-zhong-de-jie-dian" class="header-anchor">#</a><span id="shan-chu-er-cha-sou-suo-shu-zhong-de-jie-dian">删除二叉搜索树中的节点</span></h2>
+<p><img src="https://img.shields.io/badge/leetcode-450-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/delete-node-in-a-bst/">删除二叉搜索树中的节点</a></p>
 <ul>
 <li>删除节点时分五种情况：
 <ol>
@@ -1632,8 +1622,8 @@ func deleteNode(root *TreeNode, key int) *TreeNode &#123;
     root.Right = deleteNode(root.Right, key)
     return root
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="修剪二叉搜索树"><a class="header-anchor" href="#修剪二叉搜索树">¶</a>修剪二叉搜索树</h2>
-<p><img src="https://img.shields.io/badge/leetcode-669-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/trim-a-binary-search-tree/">修剪二叉搜索树</a></p>
+<h2><a href="#xiu-jian-er-cha-sou-suo-shu" class="header-anchor">#</a><span id="xiu-jian-er-cha-sou-suo-shu">修剪二叉搜索树</span></h2>
+<p><img src="https://img.shields.io/badge/leetcode-669-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/trim-a-binary-search-tree/">修剪二叉搜索树</a></p>
 <ul>
 <li>前序遍历，如果节点值小于下界，左子树一定都小于下界，右子树不一定，可以先把右子树替换当前节点，递归判断。</li>
 </ul>
@@ -1657,8 +1647,8 @@ func trimBST(root *TreeNode, low int, high int) *TreeNode &#123;
     root.Right = trimBST(root.Right, low, high)
     return root
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="将有序数组转换为二叉搜索树"><a class="header-anchor" href="#将有序数组转换为二叉搜索树">¶</a>将有序数组转换为二叉搜索树</h2>
-<p><img src="https://img.shields.io/badge/leetcode-108-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/convert-sorted-array-to-binary-search-tree/">将有序数组转换为二叉搜索树</a></p>
+<h2><a href="#jiang-you-xu-shu-zu-zhuan-huan-wei-er-cha-sou-suo-shu" class="header-anchor">#</a><span id="jiang-you-xu-shu-zu-zhuan-huan-wei-er-cha-sou-suo-shu">将有序数组转换为二叉搜索树</span></h2>
+<p><img src="https://img.shields.io/badge/leetcode-108-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/convert-sorted-array-to-binary-search-tree/">将有序数组转换为二叉搜索树</a></p>
 <ul>
 <li>利用二叉搜索树有序特性，二分数组</li>
 </ul>
@@ -1678,8 +1668,8 @@ func sortedArrayToBST(nums []int) *TreeNode &#123;
     root.Right = sortedArrayToBST(nums[mid+1:])
     return root
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="把二叉搜索树转换为累加树"><a class="header-anchor" href="#把二叉搜索树转换为累加树">¶</a>把二叉搜索树转换为累加树</h2>
-<p><img src="https://img.shields.io/badge/leetcode-538-blue.svg" alt=""> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/convert-bst-to-greater-tree/">把二叉搜索树转换为累加树</a></p>
+<h2><a href="#ba-er-cha-sou-suo-shu-zhuan-huan-wei-lei-jia-shu" class="header-anchor">#</a><span id="ba-er-cha-sou-suo-shu-zhuan-huan-wei-lei-jia-shu">把二叉搜索树转换为累加树</span></h2>
+<p><img src="https://img.shields.io/badge/leetcode-538-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/convert-bst-to-greater-tree/">把二叉搜索树转换为累加树</a></p>
 <ul>
 <li>反中序遍历累加即可</li>
 </ul>

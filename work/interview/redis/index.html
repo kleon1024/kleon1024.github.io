@@ -1,0 +1,284 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title>烤面筋 - Redis · KLEON</title><meta name="description" content="Redis
+
+https://juejin.cn/post/6844904127055527950
+https://www.runoob.com/redis/redis-commands.html
+#基本数据类型
+
+string：字符串
+
+redis 127.0.0.1:6379&gt; SET runo"><meta name="og:description" content="Redis
+
+https://juejin.cn/post/6844904127055527950
+https://www.runoob.com/redis/redis-commands.html
+#基本数据类型
+
+string：字符串
+
+redis 127.0.0.1:6379&gt; SET runo"><meta name="twitter:site" content="KLEON"><meta name="twitter:title" content="烤面筋 - Redis"><meta name="twitter:card" content="summary"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 6.1.0"><link rel="stylesheet" href="/css/prism.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body><div id="stage" class="container"><div class="row"><div id="side-bar" class="col-sm-3 col-xs-12 side-container invisible"><div class="vertical-text site-title"><h3 tabindex="-1" class="site-title-small"><a href="/" class="a-title"></a></h3><h1 tabindex="-1" class="site-title-large"><a href="/" class="a-title">自说自话</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div id="site-nav" class="site-title-links"><ul><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li><li><a href="/categories">Categories</a></li><li><a href="/tags">Tags</a></li><li><a href="/googlebe23cb0bc55fc412.html"></a></li><li><a href="/about/index.html"></a></li><li class="soc"><a href="https://github.com/kleon1024" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa fa-github">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div id="main-container" class="col-sm-9 col-xs-12 main-container invisible"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>烤面筋 - Redis</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-04-26</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/面筋/" title="面筋" class="a-tag">面筋</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/面筋/" title="面筋" class="a-tag">面筋</a><span>&nbsp;</span></span></p><p class="post-abstract"><p>Redis</p>
+<span id="more"></span>
+<p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844904127055527950">https://juejin.cn/post/6844904127055527950</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.runoob.com/redis/redis-commands.html">https://www.runoob.com/redis/redis-commands.html</a></p>
+<h1><a href="#ji-ben-shu-ju-lei-xing" class="header-anchor">#</a><span id="ji-ben-shu-ju-lei-xing">基本数据类型</span></h1>
+<ul>
+<li>string：字符串</li>
+</ul>
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">redis 127.0.0.1:6379> SET runoobkey redis
+OK
+redis 127.0.0.1:6379> GET runoobkey
+"redis"<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>list：列表</li>
+</ul>
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">redis 127.0.0.1:6379> LPUSH runoobkey redis
+(integer) 1
+redis 127.0.0.1:6379> LPUSH runoobkey mongodb
+(integer) 2
+redis 127.0.0.1:6379> LPUSH runoobkey mysql
+(integer) 3
+redis 127.0.0.1:6379> LRANGE runoobkey 0 10
+
+1) "mysql"
+2) "mongodb"
+3) "redis"
+
+redis 127.0.0.1:6379> LPOP runoobkey 
+redis 127.0.0.1:6379> RPOP runoobkey 
+redis 127.0.0.1:6379> LLEN runoobkey
+
+1
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>hash：散列表</li>
+</ul>
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">127.0.0.1:6379>  HMSET runoobkey name "redis tutorial" description "redis basic commands for caching" likes 20 visitors 23000
+OK
+127.0.0.1:6379>  HGETALL runoobkey
+1) "name"
+2) "redis tutorial"
+3) "description"
+4) "redis basic commands for caching"
+5) "likes"
+6) "20"
+7) "visitors"
+8) "23000"<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>set：无序集合</li>
+</ul>
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">redis 127.0.0.1:6379> SADD runoobkey redis
+(integer) 1
+redis 127.0.0.1:6379> SADD runoobkey mongodb
+(integer) 1
+redis 127.0.0.1:6379> SADD runoobkey mysql
+(integer) 1
+redis 127.0.0.1:6379> SADD runoobkey mysql
+(integer) 0
+redis 127.0.0.1:6379> SMEMBERS runoobkey
+
+1) "mysql"
+2) "mongodb"
+3) "redis"<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>zset：有序集合</li>
+</ul>
+<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">redis 127.0.0.1:6379> ZADD runoobkey 1 redis
+(integer) 1
+redis 127.0.0.1:6379> ZADD runoobkey 2 mongodb
+(integer) 1
+redis 127.0.0.1:6379> ZADD runoobkey 3 mysql
+(integer) 1
+redis 127.0.0.1:6379> ZADD runoobkey 3 mysql
+(integer) 0
+redis 127.0.0.1:6379> ZADD runoobkey 4 mysql
+(integer) 0
+redis 127.0.0.1:6379> ZRANGE runoobkey 0 10 WITHSCORES
+
+1) "redis"
+2) "1"
+3) "mongodb"
+4) "2"
+5) "mysql"
+6) "4"<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903856313368589">https://juejin.cn/post/6844903856313368589</a></p>
+<h1><a href="#you-dian" class="header-anchor">#</a><span id="you-dian">优点</span></h1>
+<ul>
+<li>读写性能优异， Redis能读的速度是110000次/s，写的速度是81000次/s。</li>
+<li>支持数据持久化，支持AOF和RDB两种持久化方式。</li>
+<li>支持事务，Redis的所有操作都是原子性的，同时Redis还支持对几个操作合并后的原子性执行。</li>
+<li>数据结构丰富，除了支持string类型的value外还支持hash、set、zset、list等数据结构。</li>
+<li>支持主从复制，主机会自动将数据同步到从机，可以进行读写分离。</li>
+</ul>
+<h1><a href="#que-dian" class="header-anchor">#</a><span id="que-dian">缺点</span></h1>
+<ul>
+<li>数据库容量受到物理内存的限制，不能用作海量数据的高性能读写，因此Redis适合的场景主要局限在较小数据量的高性能操作和运算上。</li>
+<li>Redis 不具备自动容错和恢复功能，主机从机的宕机都会导致前端部分读写请求失败，需要等待机器重启或者手动切换前端的IP才能恢复。</li>
+<li>主机宕机，宕机前有部分数据未能及时同步到从机，切换IP后还会引入数据不一致的问题，降低了系统的可用性。</li>
+<li>Redis 较难支持在线扩容，在集群容量达到上限时在线扩容会变得很复杂。为避免这一问题，运维人员在系统上线时必须确保有足够的空间，这对资源造成了很大的浪费。</li>
+</ul>
+<h1><a href="#pipline" class="header-anchor">#</a><span id="pipline">pipline</span></h1>
+<p>pipeline的作用是将一批命令进行打包，然后发送给服务器，服务器执行完按顺序打包返回。</p>
+<h1><a href="#shi-wu" class="header-anchor">#</a><span id="shi-wu">事务</span></h1>
+<p>redis事务就是一次性、顺序性、排他性的执行一个队列中的一系列命令。</p>
+<h1><a href="#chi-jiu-hua-aof-rdb-yuan-li-na-xie-can-shu-ke-diao" class="header-anchor">#</a><span id="chi-jiu-hua-aof-rdb-yuan-li-na-xie-can-shu-ke-diao">持久化(aof/rdb)原理，哪些参数可调</span></h1>
+<p>RDB是根据指定的规则定时将内存中的数据备份到硬盘上，AOF是在每次执行命令后命令本身记录下来，所以RDB的备份文件是一个二进制文件，而AOF的备份文件是一个文本文件。至于调参，网上可找。</p>
+<h2><a href="#rdb" class="header-anchor">#</a><span id="rdb">RDB</span></h2>
+<p>RDB是Redis默认的持久化方式。按照一定的时间将内存的数据以快照的形式保存到硬盘中，对应产生的数据文件为dump.rdb。通过配置文件中的save参数来定义快照的周期。</p>
+<ul>
+<li>
+<p>优点：<br>
+1、只有一个文件 dump.rdb，方便持久化。<br>
+2、容灾性好，一个文件可以保存到安全的磁盘。<br>
+3、性能最大化，fork 子进程来完成写操作，让主进程继续处理命令，所以是 IO 最大化。使用单独子进程来进行持久化，主进程不会进行任何 IO 操作，保证了 redis 的高性能<br>
+4.相对于数据集大时，比 AOF 的启动效率更高。</p>
+</li>
+<li>
+<p>缺点：<br>
+1、数据安全性低。RDB 是间隔一段时间进行持久化，如果持久化之间 redis 发生故障，会发生数据丢失。所以这种方式更适合数据要求不严谨的时候)</p>
+</li>
+</ul>
+<p>AOF持久化(即Append Only File持久化)，则是将Redis执行的每次写命令记录到单独的日志文件中，当重启Redis会重新将持久化的日志中文件恢复数据。</p>
+<p>当两种方式同时开启时，数据恢复Redis会优先选择AOF恢复</p>
+<ul>
+<li>
+<p>优点：<br>
+1、数据安全，aof 持久化可以配置 appendfsync 属性，有 always，每进行一次 命令操作就记录到 aof 文件中一次。<br>
+2、通过 append 模式写文件，即使中途服务器宕机，可以通过 redis-check-aof 工具解决数据一致性问题。<br>
+3、AOF 机制的 rewrite 模式。AOF 文件没被 rewrite 之前（文件过大时会对命令 进行合并重写），可以删除其中的某些命令（比如误操作的 flushall）)</p>
+</li>
+<li>
+<p>缺点：<br>
+1、AOF 文件比 RDB 文件大，且恢复速度慢。<br>
+2、数据集大的时候，比 rdb 启动效率低。</p>
+</li>
+</ul>
+<p>俩种持久化的优缺点是什么？</p>
+<ul>
+<li>AOF文件比RDB更新频率高，优先使用AOF还原数据。</li>
+<li>AOF比RDB更安全也更大</li>
+<li>RDB性能比AOF好</li>
+<li>如果两个都配了优先加载AOF</li>
+</ul>
+<p>一般来说， 如果想达到足以媲美PostgreSQL的数据安全性，你应该同时使用两种持久化功能。在这种情况下，当 Redis 重启的时候会优先载入AOF文件来恢复原始的数据，因为在通常情况下AOF文件保存的数据集要比RDB文件保存的数据集要完整。</p>
+<p>如果你非常关心你的数据， 但仍然可以承受数分钟以内的数据丢失，那么你可以只使用RDB持久化。</p>
+<p>有很多用户都只使用AOF持久化，但并不推荐这种方式，因为定时生成RDB快照（snapshot）非常便于进行数据库备份， 并且 RDB 恢复数据集的速度也要比AOF恢复的速度要快，除此之外，使用RDB还可以避免AOF程序的bug。</p>
+<p>如果你只希望你的数据在服务器运行的时候存在，你也可以不使用任何持久化方式。</p>
+<h1><a href="#wang-luo-mo-xing" class="header-anchor">#</a><span id="wang-luo-mo-xing">网络模型</span></h1>
+<p>redis网络模型，网上找，需要理解。</p>
+<p><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000039223696">https://segmentfault.com/a/1190000039223696</a></p>
+<h1><a href="#wei-shi-me-dan-xian-cheng-jiu-neng-hold-zhu-ji-wan-qps" class="header-anchor">#</a><span id="wei-shi-me-dan-xian-cheng-jiu-neng-hold-zhu-ji-wan-qps">为什么单线程就能hold住几万qps</span></h1>
+<p>I/O复用，Reactor 设计模式</p>
+<p>redis为什么这么快，我说了（内存，单线程避免切换，最后才是大头，多路复用IO的底层原理，就是epoll）</p>
+<p>1、完全基于内存，绝大部分请求是纯粹的内存操作，非常快速。数据存在内存中，类似于 HashMap，HashMap 的优势就是查找和操作的时间复杂度都是O(1)；</p>
+<p>2、数据结构简单，对数据操作也简单，Redis 中的数据结构是专门进行设计的；</p>
+<p>3、采用单线程，避免了不必要的上下文切换和竞争条件，也不存在多进程或者多线程导致的切换而消耗 CPU，不用去考虑各种锁的问题，不存在加锁释放锁操作，没有因为可能出现死锁而导致的性能消耗；</p>
+<p>4、使用多路 I/O 复用模型，非阻塞 IO；</p>
+<p>5、使用底层模型不同，它们之间底层实现方式以及与客户端之间通信的应用协议不一样，Redis 直接自己构建了 VM 机制 ，因为一般的系统调用系统函数的话，会浪费一定的时间去移动和请求；</p>
+<h1><a href="#re-dian-key-zen-me-chu-li" class="header-anchor">#</a><span id="re-dian-key-zen-me-chu-li">热点key怎么处理</span></h1>
+<p>缓存中的一个Key(比如一个促销商品)，在某个时间点过期的时候，恰好在这个时间点对这个Key有大量的并发请求过来，这些请求发现缓存过期一般都会从后端DB加载数据并回设到缓存，这个时候大并发的请求可能会瞬间把后端DB压垮。</p>
+<ol>
+<li>热key加载到系统内存中，直接从系统内存中取，而不走到redis层。</li>
+<li>redis集群，热点备份分布到集群中，避免单台redis集中访问。</li>
+<li>对缓存查询加锁，如果KEY不存在，就加锁，然后查DB入缓存，然后解锁；其他进程如果发现有锁就等待，然后等解锁后返回数据或者进入DB查询</li>
+</ol>
+<h1><a href="#yi-zhi-xing-hash-jie-jue-shi-me-wen-ti" class="header-anchor">#</a><span id="yi-zhi-xing-hash-jie-jue-shi-me-wen-ti">一致性hash解决什么问题</span></h1>
+<p>redis集群和负载均衡</p>
+<h1><a href="#redis-ji-qun-zhu-cong-gao-ke-yong-kuo-zhan-jie-dian" class="header-anchor">#</a><span id="redis-ji-qun-zhu-cong-gao-ke-yong-kuo-zhan-jie-dian">redis集群(主从，高可用，扩展节点)</span></h1>
+<h1><a href="#redis-nei-cun-man-liao" class="header-anchor">#</a><span id="redis-nei-cun-man-liao">redis内存满了</span></h1>
+<p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844904166154846221">https://juejin.cn/post/6844904166154846221</a></p>
+<p>maxmemory</p>
+<h1><a href="#yong-tu" class="header-anchor">#</a><span id="yong-tu">用途</span></h1>
+<h2><a href="#ji-shu-qi" class="header-anchor">#</a><span id="ji-shu-qi">计数器</span></h2>
+<p>可以对 String 进行自增自减运算，从而实现计数器功能。Redis 这种内存型数据库的读写性能非常高，很适合存储频繁读写的计数量。</p>
+<h2><a href="#huan-cun" class="header-anchor">#</a><span id="huan-cun">缓存</span></h2>
+<p>将热点数据放到内存中，设置内存的最大使用量以及淘汰策略来保证缓存的命中率。</p>
+<h2><a href="#hui-hua-huan-cun" class="header-anchor">#</a><span id="hui-hua-huan-cun">会话缓存</span></h2>
+<p>可以使用 Redis 来统一存储多台应用服务器的会话信息。当应用服务器不再存储用户的会话信息，也就不再具有状态，一个用户可以请求任意一个应用服务器，从而更容易实现高可用性以及可伸缩性。</p>
+<h2><a href="#quan-ye-huan-cun-fpc" class="header-anchor">#</a><span id="quan-ye-huan-cun-fpc">全页缓存（FPC）</span></h2>
+<p>除基本的会话token之外，Redis还提供很简便的FPC平台。以Magento为例，Magento提供一个插件来使用Redis作为全页缓存后端。此外，对WordPress的用户来说，Pantheon有一个非常好的插件 wp-redis，这个插件能帮助你以最快速度加载你曾浏览过的页面。</p>
+<h2><a href="#cha-zhao-biao" class="header-anchor">#</a><span id="cha-zhao-biao">查找表</span></h2>
+<p>例如 DNS 记录就很适合使用 Redis 进行存储。查找表和缓存类似，也是利用了 Redis 快速的查找特性。但是查找表的内容不能失效，而缓存的内容可以失效，因为缓存不作为可靠的数据来源。</p>
+<h2><a href="#xiao-xi-dui-lie-fa-bu-ding-yue-gong-neng" class="header-anchor">#</a><span id="xiao-xi-dui-lie-fa-bu-ding-yue-gong-neng">消息队列(发布/订阅功能)</span></h2>
+<p>List 是一个双向链表，可以通过 lpush 和 rpop 写入和读取消息。不过最好使用 Kafka、RabbitMQ 等消息中间件。</p>
+<h2><a href="#fen-bu-shi-suo-shi-xian" class="header-anchor">#</a><span id="fen-bu-shi-suo-shi-xian">分布式锁实现</span></h2>
+<p>在分布式场景下，无法使用单机环境下的锁来对多个节点上的进程进行同步。可以使用 Redis 自带的 SETNX 命令实现分布式锁，除此之外，还可以使用官方提供的 RedLock 分布式锁实现。</p>
+<h2><a href="#qi-ta" class="header-anchor">#</a><span id="qi-ta">其它</span></h2>
+<p>Set 可以实现交集、并集等操作，从而实现共同好友等功能。ZSet 可以实现有序性操作，从而实现排行榜等功能。</p>
+<h1><a href="#redis-setnx-expire-you-shi-me-que-dian-ru-he-you-hua" class="header-anchor">#</a><span id="redis-setnx-expire-you-shi-me-que-dian-ru-he-you-hua">redis setnx + expire 有什么缺点，如何优化。</span></h1>
+<h1><a href="#b-shu-he-b-shu-de-qu-bie-wei-shi-me-mysql-yao-yong-b-shu-mongodb-yao-yong-b-shu" class="header-anchor">#</a><span id="b-shu-he-b-shu-de-qu-bie-wei-shi-me-mysql-yao-yong-b-shu-mongodb-yao-yong-b-shu">B 树 和 B+ 树的区别，为什么 mysql 要用 B+ 树，mongodb 要用 B 树。</span></h1>
+<h1><a href="#redis-ji-qun-shi-zen-me-shi-xian-de-shuo-yi-xia-yi-zhi-xing-hash" class="header-anchor">#</a><span id="redis-ji-qun-shi-zen-me-shi-xian-de-shuo-yi-xia-yi-zhi-xing-hash">redis 集群是怎么实现的，说一下一致性 hash。</span></h1>
+<h1><a href="#redis-de-tiao-biao-zhi-dao-ma-wei-shi-me-bu-yong-hong-hei-shu-wo-hui-da-liao-yin-wei-hong-hei-shu-shi-xian-bi-tiao-biao-fu-za-dan-shi-mian-shi-guan-bu-shi-hen-man-yi-hou-lai-cha-liao-yi-xia-shi-you-zhe-bu-fen-yuan-yin-de" class="header-anchor">#</a><span id="redis-de-tiao-biao-zhi-dao-ma-wei-shi-me-bu-yong-hong-hei-shu-wo-hui-da-liao-yin-wei-hong-hei-shu-shi-xian-bi-tiao-biao-fu-za-dan-shi-mian-shi-guan-bu-shi-hen-man-yi-hou-lai-cha-liao-yi-xia-shi-you-zhe-bu-fen-yuan-yin-de">redis 的跳表知道吗，为什么不用红黑树。我回答了因为红黑树实现比跳表复杂。但是面试官不是很满意，后来查了一下是有这部分原因的。</span></h1>
+<p>优点：</p>
+<ol>
+<li>实现比红黑树简单</li>
+<li>跟红黑树更方便的支持范围查询</li>
+<li>在并发环境下skiplist有另外一个优势，红黑树在插入和删除的时候可能需要做一些rebalance的操作，这样的操作可能会涉及到整个树的其他部分，而skiplist的操作显然更加局部性一些，锁需要盯住的节点更少，因此在这样的情况下性能好一些。</li>
+</ol>
+<p>缺点：</p>
+<ol>
+<li>内存占用比红黑树大（每个节点4指针）</li>
+<li>由于插入时是随机选择level，cache友好性不够好</li>
+</ol>
+<h1><a href="#bu-long-guo-lu-qi" class="header-anchor">#</a><span id="bu-long-guo-lu-qi">布隆过滤器</span></h1>
+<h1><a href="#guo-qi-ce-lue" class="header-anchor">#</a><span id="guo-qi-ce-lue">过期策略</span></h1>
+<ul>
+<li>
+<p>定时过期：每个设置过期时间的key都需要创建一个定时器，到过期时间就会立即清除。该策略可以立即清除过期的数据，对内存很友好；但是会占用大量的CPU资源去处理过期的数据，从而影响缓存的响应时间和吞吐量。</p>
+</li>
+<li>
+<p>惰性过期：只有当访问一个key时，才会判断该key是否已过期，过期则清除。该策略可以最大化地节省CPU资源，却对内存非常不友好。极端情况可能出现大量的过期key没有再次被访问，从而不会被清除，占用大量内存。</p>
+</li>
+<li>
+<p>定期过期：每隔一定的时间，会扫描一定数量的数据库的expires字典中一定数量的key，并清除其中已过期的key。该策略是前两者的一个折中方案。通过调整定时扫描的时间间隔和每次扫描的限定耗时，可以在不同情况下使得CPU和内存资源达到最优的平衡效果。<br>
+(expires字典会保存所有设置了过期时间的key的过期时间数据，其中，key是指向键空间中的某个键的指针，value是该键的毫秒精度的UNIX时间戳表示的过期时间。键空间是指该Redis集群中保存的所有键。)</p>
+</li>
+</ul>
+<p>Redis中同时使用了惰性过期和定期过期两种过期策略。</p>
+<h1><a href="#redis-key-de-guo-qi-shi-jian-he-yong-jiu-you-xiao-fen-bie-zen-me-she-zhi" class="header-anchor">#</a><span id="redis-key-de-guo-qi-shi-jian-he-yong-jiu-you-xiao-fen-bie-zen-me-she-zhi">Redis key的过期时间和永久有效分别怎么设置？</span></h1>
+<p>expire和persist命令。</p>
+<h1><a href="#mysql-li-you-2000w-shu-ju-redis-zhong-zhi-cun-20w-de-shu-ju-ru-he-bao-zheng-redis-zhong-de-shu-ju-du-shi-re-dian-shu-ju" class="header-anchor">#</a><span id="mysql-li-you-2000w-shu-ju-redis-zhong-zhi-cun-20w-de-shu-ju-ru-he-bao-zheng-redis-zhong-de-shu-ju-du-shi-re-dian-shu-ju">MySQL里有2000w数据，redis中只存20w的数据，如何保证redis中的数据都是热点数据</span></h1>
+<p>redis内存数据集大小上升到一定大小的时候，就会施行数据淘汰策略。</p>
+<h1><a href="#nei-cun-tao-tai" class="header-anchor">#</a><span id="nei-cun-tao-tai">内存淘汰</span></h1>
+<p>全局的键空间选择性移除</p>
+<ul>
+<li>noeviction：当内存不足以容纳新写入数据时，新写入操作会报错。</li>
+<li>allkeys-lru：当内存不足以容纳新写入数据时，在键空间中，移除最近最少使用的key。（这个是最常用的）</li>
+<li>allkeys-random：当内存不足以容纳新写入数据时，在键空间中，随机移除某个key。</li>
+</ul>
+<p>设置过期时间的键空间选择性移除</p>
+<ul>
+<li>volatile-lru：当内存不足以容纳新写入数据时，在设置了过期时间的键空间中，移除最近最少使用的key。</li>
+<li>volatile-random：当内存不足以容纳新写入数据时，在设置了过期时间的键空间中，随机移除某个key。</li>
+<li>volatile-ttl：当内存不足以容纳新写入数据时，在设置了过期时间的键空间中，有更早过期时间的key优先移除。</li>
+</ul>
+<h2><a href="#huan-cun-chuan-tou" class="header-anchor">#</a><span id="huan-cun-chuan-tou">缓存穿透</span></h2>
+<ol>
+<li>从缓存取不到的数据，在数据库中也没有取到，这时也可以将key-value对写为key-null，缓存有效时间可以设置短点，如30秒（设置太长会导致正常情况也没法使用）。这样可以防止攻击用户反复用同一个id暴力攻击</li>
+<li>接口层增加校验，如用户鉴权校验，id做基础校验，id&lt;=0的直接拦截；</li>
+<li>采用布隆过滤器，将所有可能存在的数据哈希到一个足够大的 bitmap 中，一个一定不存在的数据会被这个 bitmap 拦截掉，从而避免了对底层存储系统的查询压力</li>
+</ol>
+<h2><a href="#huan-cun-xue-beng" class="header-anchor">#</a><span id="huan-cun-xue-beng">缓存雪崩</span></h2>
+<ol>
+<li>redis集群，将原来一个人干的工作，分发给多个人干</li>
+<li>缓存预热（关闭外网访问，先开启mysql，通过预热脚本将热点数据写入缓存中，启动缓存。开启外网服务）</li>
+<li>数据不要设置相同的生存时间，不然过期时，redis压力会大</li>
+</ol>
+<h2><a href="#xing-neng-you-hua-fang-fa" class="header-anchor">#</a><span id="xing-neng-you-hua-fang-fa">性能优化方法</span></h2>
+<p><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000022172968">https://segmentfault.com/a/1190000022172968</a></p>
+<ol>
+<li>缩短键值对的存储长度；</li>
+<li>使用 lazy free（延迟删除）特性；</li>
+<li>设置键值的过期时间；</li>
+<li>禁用长耗时的查询命令；使用SCAN</li>
+<li>使用 slowlog 优化耗时命令；</li>
+<li>使用 Pipeline 批量操作数据；</li>
+<li>避免大量数据同时失效；</li>
+<li>客户端使用优化；<br>
+在客户端的使用上我们除了要尽量使用 Pipeline 的技术外，还需要注意要尽量使用 Redis 连接池，而不是频繁创建销毁 Redis 连接，这样就可以减少网络传输次数和减少了非必要调用指令。</li>
+<li>限制 Redis 内存大小；</li>
+<li>使用物理机而非虚拟机安装 Redis 服务；<br>
+在虚拟机中运行 Redis 服务器，因为和物理机共享一个物理网口，并且一台物理机可能有多个虚拟机在运行，因此在内存占用上和网络延迟方面都会有很糟糕的表现，我们可以通过 ./redis-cli --intrinsic-latency 100 命令查看延迟时间，如果对 Redis 的性能有较高要求的话，应尽可能在物理机上直接部署 Redis 服务器。</li>
+<li>检查数据持久化策略；</li>
+<li>禁用 THP 特性；</li>
+<li>使用分布式架构来增加读写速度。</li>
+</ol>
+</p></div><div class="share"><span>Share</span>&nbsp;<span class="soc"><a href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank" class="fa fa-bookmark"></a></span><span class="soc"><a href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));" class="fa fa-weibo"></a></span><span class="soc"><a target="_blank" rel="noopener" href="http://twitter.com/home?status=https://blog.kleon.space/work/interview/redis/%20KLEON%20烤面筋 - Redis" class="fa fa-twitter"></a></span></div><div class="pagination"><p class="clearfix"><span class="pre pagbuttons"><a role="navigation" href="/work/interview/recommender/" title="烤面筋 - AI"><i class="fa fa-angle-double-left"></i>&nbsp;Previous post: 烤面筋 - AI</a></span><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/work/interview/third-party/" title="烤面筋 - 链接">Next post: 烤面筋 - 链接&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>

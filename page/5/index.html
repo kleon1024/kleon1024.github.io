@@ -1,87 +1,101 @@
 <!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title>KLEON</title><meta name="description" content="Keep Moving"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 6.1.0"><link rel="stylesheet" href="/css/prism.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body><div id="stage" class="container"><div class="row"><div id="side-bar" class="col-sm-3 col-xs-12 side-container invisible"><div class="vertical-text site-title"><h3 tabindex="-1" class="site-title-small"><a href="/" class="a-title"></a></h3><h1 tabindex="-1" class="site-title-large"><a href="/" class="a-title">自说自话</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div id="site-nav" class="site-title-links"><ul><li><a href="/" class="current">Home</a></li><li><a href="/archives">Archive</a></li><li><a href="/categories">Categories</a></li><li><a href="/tags">Tags</a></li><li><a href="/googlebe23cb0bc55fc412.html"></a></li><li><a href="/about/index.html"></a></li><li class="soc"><a href="https://github.com/kleon1024" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa fa-github">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div id="main-container" class="col-sm-9 col-xs-12 main-container invisible"><div class="autopagerize_page_element"><div class="content"><div class="post-container"><p class="post-title"><a href="/cs/algo/sort/">算法基础 - 排序</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-03-12</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/算法/" title="算法" class="a-tag">算法</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/算法/" title="算法" class="a-tag">算法</a><span>&nbsp;</span><a href="/tags/数据结构/" title="数据结构" class="a-tag">数据结构</a><span>&nbsp;</span><a href="/tags/leetcode/" title="leetcode" class="a-tag">leetcode</a><span>&nbsp;</span></span></p><p class="post-abstract">排序是最常用的操作。
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body><div id="stage" class="container"><div class="row"><div id="side-bar" class="col-sm-3 col-xs-12 side-container invisible"><div class="vertical-text site-title"><h3 tabindex="-1" class="site-title-small"><a href="/" class="a-title"></a></h3><h1 tabindex="-1" class="site-title-large"><a href="/" class="a-title">自说自话</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div id="site-nav" class="site-title-links"><ul><li><a href="/" class="current">Home</a></li><li><a href="/archives">Archive</a></li><li><a href="/categories">Categories</a></li><li><a href="/tags">Tags</a></li><li><a href="/googlebe23cb0bc55fc412.html"></a></li><li><a href="/about/index.html"></a></li><li class="soc"><a href="https://github.com/kleon1024" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa fa-github">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div id="main-container" class="col-sm-9 col-xs-12 main-container invisible"><div class="autopagerize_page_element"><div class="content"><div class="post-container"><p class="post-title"><a href="/work/interview/go/">烤面筋 - Go</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-04-26</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/面筋/" title="面筋" class="a-tag">面筋</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/面筋/" title="面筋" class="a-tag">面筋</a><span>&nbsp;</span></span></p><p class="post-abstract">基础问题
 
-快速排序
-快排(QUICK-SORT)基于分治思想，核心是对子数组partition，partition挑选一个参考基准(主元，通常为第一个或最后一个元素)，以主元为分界将数据分为两份，子数组递归partition。
- 
- 
- 
- 
-归并排序
-归并排序(MERGE-SORT)使用分治思想，...</p></div><div class="post-container"><p class="post-title"><a href="/ai/ml-system/recommender/3-feature-embedding/">机器学习系统 4-3 - 特征嵌入(Embedding)</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-04-25</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/机器学习/" title="机器学习" class="a-tag">机器学习</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/机器学习/" title="机器学习" class="a-tag">机器学习</a><span>&nbsp;</span><a href="/tags/推荐系统/" title="推荐系统" class="a-tag">推荐系统</a><span>&nbsp;</span></span></p><p class="post-abstract">Embedding是高维向量到低维空间的转换。在理想情况下，嵌入可以将语义上相似的不同输入映射到嵌入空间里的邻近处，以此来捕获输入的语义1。
+https://github.com/lifei6671/interview-go
+https://segmentfault.com/a/1190000038922260
+#Context
+golang context的理解，context主要用于父子任务之间的同步取消信号，本质上是一种协程调度的方式...</p></div><div class="post-container"><p class="post-title"><a href="/work/interview/algo/">烤面筋 - 算法</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-04-26</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/面筋/" title="面筋" class="a-tag">面筋</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/面筋/" title="面筋" class="a-tag">面筋</a><span>&nbsp;</span></span></p><p class="post-abstract">计算机算法
 
-在常见的特征中，通常可以用分桶或OneHot编码转为特征，对于类别较多的特征或者非结构化特征，可以通过Embedding转换为紧凑的实值特征向量表示。
-类型
-¶文本
-词嵌...</p></div><div class="post-container"><p class="post-title"><a href="/ai/ml-system/inference-optimization/5-system-level-optimization/">机器学习系统 2-5 - 系统级优化</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-04-25</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/机器学习/" title="机器学习" class="a-tag">机器学习</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/机器学习/" title="机器学习" class="a-tag">机器学习</a><span>&nbsp;</span><a href="/tags/推理优化/" title="推理优化" class="a-tag">推理优化</a><span>&nbsp;</span></span></p><p class="post-abstract">推理优化除了对模型本身的优化，还需要考虑计算框架、推理服务等系统层面的优化。
+https://github.com/sunnyandgood/StoreRoom
+#快速排序
+#找第K大数
+#捡石头
+#100盏灯
+#红黑树
+#AVL树
+#N个数取M个
+#两数之和
+哈希法
+双指针法：
+https://segmentfault.com/a/1190000023552474
 
-框架
+不增加...</p></div><div class="post-container"><p class="post-title"><a href="/work/interview/general/">烤面筋 - 通用</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-04-26</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/面筋/" title="面筋" class="a-tag">面筋</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/面筋/" title="面筋" class="a-tag">面筋</a><span>&nbsp;</span></span></p><p class="post-abstract">数学，智力题
 
-编译器优化
-线程并行
-Cache优化
-Memory
-稀疏化
-内存精细管理
-专用指令，比如ARM的NEON、Intel的AVX
-亲核性，NUMA
 
-服务
+从概率角度，5局3胜和3局2胜，哪个胜算更大？
 
-线程/进程/服务实例并行
-调度绑定
-资源复用
-网络开销
-缓存
-延时抖动
-...</p></div><div class="post-container"><p class="post-title"><a href="/ai/ml-system/inference-optimization/4-model-compression/">机器学习系统 2-4 - 模型压缩</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-04-25</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/机器学习/" title="机器学习" class="a-tag">机器学习</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/机器学习/" title="机器学习" class="a-tag">机器学习</a><span>&nbsp;</span><a href="/tags/推理优化/" title="推理优化" class="a-tag">推理优化</a><span>&nbsp;</span></span></p><p class="post-abstract">模型压缩相比图优化/编译优化无损优化方法，侧重减少网络参数量，达到节约服务器资源，端侧部署优化等目的。
+局数越多对高水平的越有利。
 
-结构优化
-如矩阵分解（Factor Machine），权值共享（CNN），分组卷积（MobileNet的depth-wise Conv)，分拆卷积（Inception）等。
-结构优化主要是模型结构创新，以更少...</p></div><div class="post-container"><p class="post-title"><a href="/ai/ml-system/inference-optimization/3-compilation-optimization/">机器学习系统 2-3 - 编译优化</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-04-23</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/机器学习/" title="机器学习" class="a-tag">机器学习</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/机器学习/" title="机器学习" class="a-tag">机器学习</a><span>&nbsp;</span><a href="/tags/推理优化/" title="推理优化" class="a-tag">推理优化</a><span>&nbsp;</span></span></p><p class="post-abstract">深度学习的编译优化方法师承程序语言，相比而言，程序语言的输入是语法树，深度学习的输入是计算图，有相似的编译结构，深度学习后端可以借鉴LLVM架构灵活支持新后端硬件。
+给定一枚不均匀硬币，抛出正面的概率为P，求抛2K+1至多有K次出现正面的概率
 
-不少社区都提出了自己的编译优化框架，定义了自己的一套中间表达（IR，Intermediate Represent），在发展过程中，这些框架和IR也...</p></div><div class="post-container"><p class="post-title"><a href="/ai/ml-system/inference-optimization/2-graph-optimization/">机器学习系统 2-2 - 图优化</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-04-23</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/机器学习/" title="机器学习" class="a-tag">机器学习</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/机器学习/" title="机器学习" class="a-tag">机器学习</a><span>&nbsp;</span><a href="/tags/推理优化/" title="推理优化" class="a-tag">推理优化</a><span>&nbsp;</span></span></p><p class="post-abstract">图结构优化在算子层面调整图结构，调整前后的计算图输入输出等价。
+</p></div><div class="post-container"><p class="post-title"><a href="/work/interview/mysql/">烤面筋 - MySQL</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-04-26</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/面筋/" title="面筋" class="a-tag">面筋</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/面筋/" title="面筋" class="a-tag">面筋</a><span>&nbsp;</span></span></p><p class="post-abstract">MySQL
 
-方法
-图层面优化主要包括：
-¶训练图清理
-主要针对TensorFlow 1.x， Tensorflowd的训练图包含较多非推理用算子，通常调用TF提供的API提取子图，但可能因为用户的构图不当不能被清理干净。常见的操作包括：
+#MYSQL规模优化
+从零到千万用户，我是如何一步步优化MySQL数据库的？
+系统从初期到支撑亿级流量，都经历了哪些架构上的演变？
+https://juejin.cn/post/6844904127047139335
+#分片
+https://zhuanlan.zhihu.com/p/57185574...</p></div><div class="post-container"><p class="post-title"><a href="/work/interview/redis/">烤面筋 - Redis</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-04-26</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/面筋/" title="面筋" class="a-tag">面筋</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/面筋/" title="面筋" class="a-tag">面筋</a><span>&nbsp;</span></span></p><p class="post-abstract">Redis
 
-固定输入Placeh...</p></div><div class="post-container"><p class="post-title"><a href="/ai/ml-system/system/1-overview/">机器学习系统 3-1 - 产品功能总览</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-04-22</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/机器学习/" title="机器学习" class="a-tag">机器学习</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/机器学习/" title="机器学习" class="a-tag">机器学习</a><span>&nbsp;</span><a href="/tags/推理优化/" title="推理优化" class="a-tag">推理优化</a><span>&nbsp;</span></span></p><p class="post-abstract">机器学习产品的基本功能，现状和趋势。
+https://juejin.cn/post/6844904127055527950
+https://www.runoob.com/redis/redis-commands.html
+#基本数据类型
 
-机器学习已经被广泛应用于推荐，风控，广告，搜索，图像，语音，文本等各个领域。机器学习系统也成为核心组件之一，用于建模，训练，预测的迭代流程。
-功能
-¶数据
-负责数据的存储，清洗，标注，以及特征工程，使用SQL，pandas，scikit等工具分析数据分布，提取特征。
-¶建模...</p></div><div class="post-container"><p class="post-title"><a href="/ai/ml-system/recommender/1-overview/">机器学习系统 4-1 - 推荐系统总览</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-04-07</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/机器学习/" title="机器学习" class="a-tag">机器学习</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/机器学习/" title="机器学习" class="a-tag">机器学习</a><span>&nbsp;</span><a href="/tags/推荐系统/" title="推荐系统" class="a-tag">推荐系统</a><span>&nbsp;</span></span></p><p class="post-abstract">推荐系统主要用来根据用户行为数据/用户特征实现个性化体验，行为预测，提高点击率/转化率等关键商业指标。
-
-特征
-数据很大程度上决定了模型的效果上限，通过特征工程构造合适的特征对效果有举足轻重的影响。
-流程
-推荐系统的功能模块主要包括：
-
-召回
-
-从全量候选物品中全选一小部分，规模在千/万级别。对运行速度要求高，通...</p></div><div class="post-container"><p class="post-title"><a href="/cs/algo/tree/">算法基础 - 树</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-03-14</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/算法/" title="算法" class="a-tag">算法</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/算法/" title="算法" class="a-tag">算法</a><span>&nbsp;</span><a href="/tags/数据结构/" title="数据结构" class="a-tag">数据结构</a><span>&nbsp;</span></span></p><p class="post-abstract">树是常用的数据结构，应用较多的有二叉搜索树，二叉平衡搜索树(AVL树)，红黑树，多路平衡搜索树(B-树，B+树，B*树)等。
-
-基础
-树可由链式结构或数组实现，遍历方式为前、中、后、层序遍历。
- 
-¶树
-有向无环非线性数据结构，每个节点可以指向多个节点，但至多有一个节点指向自身。
-¶二叉树
-每个节点至多只能指向两...</p></div><div class="post-container"><p class="post-title"><a href="/cs/algo/list/">算法基础 - 链表</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-03-12</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/算法/" title="算法" class="a-tag">算法</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/算法/" title="算法" class="a-tag">算法</a><span>&nbsp;</span><a href="/tags/数据结构/" title="数据结构" class="a-tag">数据结构</a><span>&nbsp;</span><a href="/tags/leetcode/" title="leetcode" class="a-tag">leetcode</a><span>&nbsp;</span></span></p><p class="post-abstract">表是最基础的数据结构之一，存储线性数据，内存结构不连续。
-
-基础
-链表可通过自定义数据结构，使用指针或引用指向前后节点。
-Go提供了&quot;container/list&quot;1标准库实现双向链表。
- 
-实战
-¶虚拟头结点移除链表中指定元素
- 移除链表元素
-
-基本链表操作
+string：字符串
 
  
-¶实现链表基本操作
- 设计...</p></div><div class="pagination no-margin-bottom"><p class="clearfix"><p> Page 5 / 7 &nbsp;</p><p><span class="pre pagbuttons"><i class="fa fa-angle-double-left"></i>&nbsp;<a role="navigation" href="/page/4/" aria-label="Previous">Previous</a></span><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/page/6/" aria-label="Next">Next</a>&nbsp;<i class="fa fa-angle-double-right"></i></span></p></p></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>
+
+list：列表
+
+ 
+
+hash：散列表
+
+ 
+
+set：无序集合
+...</p></div><div class="post-container"><p class="post-title"><a href="/work/interview/third-party/">烤面筋 - 链接</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-04-26</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/面筋/" title="面筋" class="a-tag">面筋</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/面筋/" title="面筋" class="a-tag">面筋</a><span>&nbsp;</span></span></p><p class="post-abstract">第三方链接统计
+
+https://zhuanlan.zhihu.com/p/43661309
+CF,MF,Graph Embedding,LR,JVM,Quick Sort,Coroutine,Thread,Process,HashMap,RB-Tree,AVL-Tree
+https://blog.csdn.ne...</p></div><div class="post-container"><p class="post-title"><a href="/work/interview/recommender/">烤面筋 - AI</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-04-26</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/面筋/" title="面筋" class="a-tag">面筋</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/面筋/" title="面筋" class="a-tag">面筋</a><span>&nbsp;</span></span></p><p class="post-abstract">机器学习，推荐系统
+
+百面机器学习算法工程师带你去面试
+https://github.com/stormstone/awesome-material/blob/master/Book/百面机器学习算法工程师带你去面试.pdf
+
+推荐系统中的三个要素
+
+三要素指的是挖掘用户兴趣的信息源。
+用户特征：年龄（如新闻，视...</p></div><div class="post-container"><p class="post-title"><a href="/work/interview/middleware/">烤面筋 - 中间件</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-04-26</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/面筋/" title="面筋" class="a-tag">面筋</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/面筋/" title="面筋" class="a-tag">面筋</a><span>&nbsp;</span></span></p><p class="post-abstract">Kafka/RabbitMQ
+
+#Kafka
+#消息是否按照时间有序，kafka分区的数据是否有序，如何保证有序
+不保证按时间有序，主题在单个分区是有序的。
+如何保证有序？kafka topic 只设置一个分区，或者producer将消息发送到指定分区
+#Kafka为什么吞吐量高
+1）顺序读写
+kafka的消息是...</p></div><div class="post-container"><p class="post-title"><a href="/work/interview/backend/">烤面筋 - 后端</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-04-26</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/面筋/" title="面筋" class="a-tag">面筋</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/面筋/" title="面筋" class="a-tag">面筋</a><span>&nbsp;</span></span></p><p class="post-abstract">操作系统，网络，系统设计
+
+#生产服务
+#高可用
+https://developer.aliyun.com/article/699892
+服务稳定性保障
+保障策略：限流，降级，隔离，超时，重试和集群
+#限流
+
+防止系统高负荷运行
+有效利用服务器资源
+
+算法
+
+漏桶算法
+令牌桶算法
+
+#降级
+系统上线之后总会遇到一...</p></div><div class="post-container"><p class="post-title"><a href="/work/interview/kubernetes/">烤面筋 - Kubernetes</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-05-25</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/面筋/" title="面筋" class="a-tag">面筋</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/面筋/" title="面筋" class="a-tag">面筋</a><span>&nbsp;</span></span></p><p class="post-abstract">k8s基本常识
+
+#基本概念
+https://segmentfault.com/a/1190000039334395
+https://www.kubernetes.org.cn/5578.html
+https://www.qikqiak.com/k8s-book/docs/15.基本概念与组件.html
+#资源隔...</p></div><div class="pagination no-margin-bottom"><p class="clearfix"><p> Page 5 / 11 &nbsp;</p><p><span class="pre pagbuttons"><i class="fa fa-angle-double-left"></i>&nbsp;<a role="navigation" href="/page/4/" aria-label="Previous">Previous</a></span><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/page/6/" aria-label="Next">Next</a>&nbsp;<i class="fa fa-angle-double-right"></i></span></p></p></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>

@@ -9,18 +9,18 @@
 <p>模型性能的优化也属于软件性能优化，特点是模型的运行调度框架已经确定，并且由社区平衡通用性和性能做了不少的优化。</p>
 <p>模型性能的问题主要在低效的计算密集型算子，不合理的子图结构，复杂的动态运行环境，冗余的模型结构和数据宽度。</p>
 <p>针对这些问题，模型推理优化方法主要分为：</p>
-<h1>计算图结构优化</h1>
+<h1><a href="#ji-suan-tu-jie-gou-you-hua" class="header-anchor">#</a><span id="ji-suan-tu-jie-gou-you-hua">计算图结构优化</span></h1>
 <p>主要是清理冗余节点，一般的训练节点，框架在开始运行前会根据输入和输出裁剪无关节点，通常对性能影响不大。</p>
 <p>但部分嵌入计算图的节点就很难被去除，Tensorflow引入的控制结构就是是图结构优化点之一，比如训练时需要的随机dropout结构等，用户可能在构建模型时把标记是否是训练的变量加入到计算图，在清理时就需要将对应placeholder转变为常量，提取子图。</p>
-<h1>算子融合</h1>
+<h1><a href="#suan-zi-rong-he" class="header-anchor">#</a><span id="suan-zi-rong-he">算子融合</span></h1>
 <p>主要是融合子图，比如对于Feature Embedding这类常用的特征预处理API，通常为了灵活性，生成的子图比较复杂，算子数量极多，框架调度算子的开销远远超过算子实际执行的开销。因此可以匹配对应子图，使用一个算子代替，大大提高执行效率。高频模型中Tensorflow引入的循环控制结构也可以被优化，比如LSTM结构。</p>
 <p>通常需要匹配识别的子图较复杂，依赖人工发现模式并编写匹配逻辑，基本纯手工，开发验证工作量大，由于引入了控制节点和Dynamic Shape，目前编译优化方法也没有很好的解法。因此，通常只针对成熟模型做此类定制优化，比如Transformer结构，Embedding结构等。</p>
-<h1>硬件计算库</h1>
+<h1><a href="#ying-jian-ji-suan-ku" class="header-anchor">#</a><span id="ying-jian-ji-suan-ku">硬件计算库</span></h1>
 <p>底层硬件开发者出于安全或其他原因考虑，不会开放底层实现细节，也不会开放精细控制接口，但为了迎合市场需求，会推出计算库。</p>
 <p>计算库内提供了粗粒度的算子接口，内置了不少汇编层级的优化经验，实现方法至于是if else还是JIT codegen就不得而知了。</p>
 <p>计算库内的核心是如何高效利用硬件执行矩阵并行计算，通常基于经验，比如考虑Cache大小，内存带宽，数据位宽等，利用一个“经验性”公式计算出合理的矩阵分块配置，比较重要也比较让人感到tricky的是公式中不时出现的magic number，很有可能是结合profiling得出的经验。</p>
 <p>常见的计算库比如CUDA和MKL-DNN，在单个算子优化的基础上，硬件厂家还会提供子图层面的计算优化库，比如TensorRT等。</p>
-<h1>编译优化</h1>
+<h1><a href="#bian-yi-you-hua" class="header-anchor">#</a><span id="bian-yi-you-hua">编译优化</span></h1>
 <p>编译优化包含一大类方法，也借鉴了上述方法的思路。主要目标是自动化地、通用化地实现图结构优化、算子融合、以及矩阵分块。</p>
 <p>和编译器的优化思路类似，不同框架的计算图经过分图，将可编译的子图会被统一转化为编译优化框架的中间表示（IR），再通过一系列的通用的编译优化pass得到优化后的IR，随后codegen生成执行代码。只要能被划分进编译子图，就能通用化地支持图结构优化和算子融合。</p>
 <p>最精华的地方在于codegen，主要思路有：</p>
@@ -33,7 +33,7 @@
 <p>编译优化方法在学术届内百花齐放，本质上还是新瓶装旧酒，关键还是在于如何把新问题转化为通用的老问题，并解决新的问题定义边界带来的新的约束带来的corner case。</p>
 <p>对于主流模型，硬件厂商的人力可以做到全图支持，定制优化的性能让编译优化难以超越，编译优化更多地是在通用化的corner case场景下发挥作用，与手工方法互补。</p>
 <p>同时现有的编译优化方法本身也会遇到比如Dynamic Shape的问题，严重影响分图和codegen，亟待解决。好在如MLIR等编译基础设施工作正在不断发展，解决多层IR信息联合优化，复用优化pass，解决共有的问题。</p>
-<h1>模型压缩</h1>
+<h1><a href="#mo-xing-ya-suo" class="header-anchor">#</a><span id="mo-xing-ya-suo">模型压缩</span></h1>
 <p>除了编译优化方法之外，模型压缩也被用来从算法层面去除降低数据位宽，冗余图结构，大幅并行化模型结构。</p>
 <ul>
 <li>量化</li>
@@ -47,7 +47,7 @@
 <li>蒸馏</li>
 </ul>
 <p>出于直观，可能使用串行结构（数据依赖）模型，导致计算效率不高，或者使用超大模型，模型参数非常多。但模型训练本质上是拟合数据的目标概率分布，那么就可以使用另一个并行模型“学习”串行模型的概率分布，或者使用一个小模型“学习”大模型的概率分布。只要模型精度控制在预期范围内，那么所需的计算量就能大幅下降。</p>
-<h1>推理服务性能优化</h1>
+<h1><a href="#tui-li-fu-wu-xing-neng-you-hua" class="header-anchor">#</a><span id="tui-li-fu-wu-xing-neng-you-hua">推理服务性能优化</span></h1>
 <p>这部分和模型关系不大，但也在关键路径上，因此放在这里。服务的性能优化，主要是优化数据链路，比如数据传输协议，Serving框架线程性能，网关性能等。</p>
 <hr>
 </p></div><div class="share"><span>Share</span>&nbsp;<span class="soc"><a href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank" class="fa fa-bookmark"></a></span><span class="soc"><a href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));" class="fa fa-weibo"></a></span><span class="soc"><a target="_blank" rel="noopener" href="http://twitter.com/home?status=https://blog.kleon.space/ai/ml-system/inference-optimization/1-overview/%20KLEON%20机器学习系统 2-1 - 推理优化总览" class="fa fa-twitter"></a></span></div><div class="pagination"><p class="clearfix"><span class="pre pagbuttons"><a role="navigation" href="/cs/algo/priority-queue/" title="算法基础 - 优先队列"><i class="fa fa-angle-double-left"></i>&nbsp;Previous post: 算法基础 - 优先队列</a></span><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/ai/ml-system/hardware-backend/11-system/" title="机器学习系统 1-11 - 后端硬件系统">Next post: 机器学习系统 1-11 - 后端硬件系统&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>

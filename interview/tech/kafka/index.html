@@ -1,0 +1,165 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title>Tech - Kafka · KLEON</title><meta name="description" content="Q &amp;amp; A of kafka[1].
+
+
+
+Basics
+
+What are some of the features of Kafka?
+What are the traditional methods of message transfer? How is Kafka better fr"><meta name="og:description" content="Q &amp;amp; A of kafka[1].
+
+
+
+Basics
+
+What are some of the features of Kafka?
+What are the traditional methods of message transfer? How is Kafka better fr"><meta name="twitter:site" content="KLEON"><meta name="twitter:title" content="Tech - Kafka"><meta name="twitter:card" content="summary"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 6.1.0"><link rel="stylesheet" href="/css/prism.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body><div id="stage" class="container"><div class="row"><div id="side-bar" class="col-sm-3 col-xs-12 side-container invisible"><div class="vertical-text site-title"><h3 tabindex="-1" class="site-title-small"><a href="/" class="a-title"></a></h3><h1 tabindex="-1" class="site-title-large"><a href="/" class="a-title">自说自话</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div id="site-nav" class="site-title-links"><ul><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li><li><a href="/categories">Categories</a></li><li><a href="/tags">Tags</a></li><li><a href="/googlebe23cb0bc55fc412.html"></a></li><li><a href="/about/index.html"></a></li><li class="soc"><a href="https://github.com/kleon1024" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa fa-github">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div id="main-container" class="col-sm-9 col-xs-12 main-container invisible"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>Tech - Kafka</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2022-04-29</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/interview/" title="interview" class="a-tag">interview</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/interview/" title="interview" class="a-tag">interview</a><span>&nbsp;</span><a href="/tags/tech/" title="tech" class="a-tag">tech</a><span>&nbsp;</span></span></p><p class="post-abstract"><p>Q &amp; A of kafka<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>.</p>
+<div class="toc">
+<!-- toc -->
+<ul>
+<li><a href="#basics">Basics</a>
+<ul>
+<li><a href="#what-are-some-of-the-features-of-kafka">What are some of the features of Kafka?</a></li>
+<li><a href="#what-are-the-traditional-methods-of-message-transfer-how-is-kafka-better-from-them">What are the traditional methods of message transfer? How is Kafka better from them?</a></li>
+<li><a href="#what-are-the-major-components-of-kafka">What are the major components of Kafka?</a></li>
+<li><a href="#explain-the-four-core-api-architecture-that-kafka-uses">Explain the four core API architecture that Kafka uses.</a></li>
+<li><a href="#what-do-you-mean-by-a-partition-in-kafka">What do you mean by a Partition in Kafka?</a></li>
+<li><a href="#what-do-you-mean-by-zookeeper-in-kafka-and-what-are-its-uses">What do you mean by zookeeper in Kafka and what are its uses?</a></li>
+<li><a href="#can-we-use-kafka-without-zookeeper">Can we use Kafka without Zookeeper?</a></li>
+<li><a href="#explain-the-concept-of-leader-and-follower-in-kafka">Explain the concept of Leader and Follower in Kafka.</a></li>
+<li><a href="#why-is-topic-replication-important-in-kafka-what-do-you-mean-by-isr-in-kafka">Why is Topic Replication important in Kafka? What do you mean by ISR in Kafka?</a></li>
+<li><a href="#what-do-you-understand-about-a-consumer-group-in-kafka">What do you understand about a consumer group in Kafka?</a></li>
+<li><a href="#what-is-the-maximum-size-of-a-message-that-kafka-can-receive">What is the maximum size of a message that Kafka can receive?</a></li>
+<li><a href="#what-does-it-mean-if-a-replica-is-not-an-in-sync-replica-for-a-long-time">What does it mean if a replica is not an In-Sync Replica for a long time?</a></li>
+<li><a href="#what-do-you-mean-by-geo-replication-in-kafka">What do you mean by geo-replication in Kafka?</a></li>
+<li><a href="#what-are-some-of-the-disadvantages-of-kafka">What are some of the disadvantages of Kafka?</a></li>
+<li><a href="#tell-me-about-some-of-the-real-world-usages-of-apache-kafka">Tell me about some of the real-world usages of Apache Kafka.</a></li>
+</ul>
+</li>
+<li><a href="#dive-deep">Dive Deep</a>
+<ul>
+<li><a href="#why-kafka-is-so-fast">Why Kafka is so fast?</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+</div>
+<h1><a href="#basics" class="header-anchor">#</a><span id="basics">Basics</span></h1>
+<h2><a href="#what-are-some-of-the-features-of-kafka" class="header-anchor">#</a><span id="what-are-some-of-the-features-of-kafka">What are some of the features of Kafka?</span></h2>
+<ul>
+<li>Kafka is a messaging system built for high throughput and fault tolerance.</li>
+<li>Kafka has a built-in partition system known as a Topic.</li>
+<li>Kafka Includes a replication feature as well.</li>
+<li>Kafka provides a queue that can handle large amounts of data and move messages from one sender to another.</li>
+<li>Kafka can also save the messages to storage and replicate them across the cluster.</li>
+<li>For coordination and synchronization with other services, Kafka collaborates with Zookeeper.</li>
+<li>Apache Spark is well supported by Kafka.</li>
+</ul>
+<h2><a href="#what-are-the-traditional-methods-of-message-transfer-how-is-kafka-better-from-them" class="header-anchor">#</a><span id="what-are-the-traditional-methods-of-message-transfer-how-is-kafka-better-from-them">What are the traditional methods of message transfer? How is Kafka better from them?</span></h2>
+<p>Following are the traditional methods of message transfer:</p>
+<ul>
+<li>Message Queuing:<br>
+A point-to-point technique is used in the message queuing pattern. A message in the queue will be destroyed once it has been consumed, similar to how a message is removed from the server once it has been delivered in the Post Office Protocol. Asynchronous messaging is possible with these queues.<br>
+If a network problem delays a message’s delivery, such as if a consumer is unavailable, the message will be held in the queue until it can be sent. This means that messages aren’t always sent in the same order. Instead, they are given on a first-come, first-served basis, which can improve efficiency in some situations.</li>
+<li>Publisher - Subscriber Model:<br>
+The publish-subscribe pattern entails publishers producing (“publishing”) messages in multiple categories and subscribers consuming published messages from the various categories to which they are subscribed. Unlike point-to-point texting, a message is only removed once it has been consumed by all category subscribers.<br>
+Kafka caters to a single consumer abstraction that encompasses both of the aforementioned- the consumer group. Following are the benefits of using Kafka over the traditional messaging transfer techniques:
+<ul>
+<li>Scalable: A cluster of devices is used to partition and streamline the data thereby, scaling up the storage capacity.</li>
+<li>Faster: Thousands of clients can be served by a single Kafka broker as it can manage megabytes of reads and writes per second.</li>
+<li>Durability and Fault-Tolerant: The data is kept persistent and tolerant to any hardware failures by copying the data in the clusters.</li>
+</ul>
+</li>
+</ul>
+<h2><a href="#what-are-the-major-components-of-kafka" class="header-anchor">#</a><span id="what-are-the-major-components-of-kafka">What are the major components of Kafka?</span></h2>
+<p><img src="/images/kafka_architecture.jpg" alt="kafka structure"></p>
+<ul>
+<li>Topic:
+<ul>
+<li>A Topic is a category or feed in which records are saved and published.</li>
+<li>Topics are used to organize all of Kafka’s records. Consumer apps read data from topics, whereas producer applications write data to them. Records published to the cluster remain in the cluster for the duration of a configurable retention period.</li>
+<li>Kafka keeps records in the log, and it’s up to the consumers to keep track of where they are in the log (the “offset”). As messages are read, a consumer typically advances the offset in a linear fashion. The consumer, on the other hand, is in charge of the position, as he or she can consume messages in any order. When reprocessing records, for example, a consumer can reset to an older offset.</li>
+</ul>
+</li>
+<li>Producer:
+<ul>
+<li>A Kafka producer is a data source for one or more Kafka topics that optimizes, writes, and publishes messages. Partitioning allows Kafka producers to serialize, compress, and load balance data among brokers.</li>
+</ul>
+</li>
+<li>Consumer:
+<ul>
+<li>Data is read by consumers by reading messages from topics to which they have subscribed. Consumers will be divided into groups. Each consumer in a consumer group will be responsible for reading a subset of the partitions of each subject to which they have subscribed.</li>
+</ul>
+</li>
+<li>Broker:
+<ul>
+<li>A Kafka broker is a server that works as part of a Kafka cluster (in other words, a Kafka cluster is made up of a number of brokers). Multiple brokers typically work together to build a Kafka cluster, which provides load balancing, reliable redundancy, and failover. The cluster is managed and coordinated by brokers using Apache ZooKeeper. Without sacrificing performance, each broker instance can handle read and write volumes of hundreds of thousands per second (and gigabytes of messages). Each broker has its own ID and can be in charge of one or more topic log divisions.</li>
+<li>ZooKeeper is also used by Kafka brokers for leader elections, in which a broker is chosen to lead the handling of client requests for a certain partition of a topic. Connecting to any broker will bring a client up to speed with the entire Kafka cluster. A minimum of three brokers should be used to achieve reliable failover; the higher the number of brokers, the more reliable the failover.</li>
+</ul>
+</li>
+</ul>
+<h2><a href="#explain-the-four-core-api-architecture-that-kafka-uses" class="header-anchor">#</a><span id="explain-the-four-core-api-architecture-that-kafka-uses">Explain the four core API architecture that Kafka uses.</span></h2>
+<p>Following are the four core APIs that Kafka uses:</p>
+<ul>
+<li>Producer API:<br>
+The Producer API in Kafka allows an application to publish a stream of records to one or more Kafka topics.</li>
+<li>Consumer API:<br>
+An application can subscribe to one or more Kafka topics using the Kafka Consumer API. It also enables the application to process streams of records generated in relation to such topics.</li>
+<li>Streams API:<br>
+The Kafka Streams API allows an application to use a stream processing architecture to process data in Kafka. An application can use this API to take input streams from one or more topics, process them using streams operations, and generate output streams to transmit to one or more topics. The Streams API allows you to convert input streams into output streams in this manner.</li>
+<li>Connect API:<br>
+The Kafka Connector API connects Kafka topics to applications. This opens up possibilities for constructing and managing the operations of producers and consumers, as well as establishing reusable links between these solutions. A connector, for example, may capture all database updates and ensure that they are made available in a Kafka topic.</li>
+</ul>
+<h2><a href="#what-do-you-mean-by-a-partition-in-kafka" class="header-anchor">#</a><span id="what-do-you-mean-by-a-partition-in-kafka">What do you mean by a Partition in Kafka?</span></h2>
+<p>Kafka topics are separated into partitions, each of which contains records in a fixed order. A unique offset is assigned and attributed to each record in a partition. Multiple partition logs can be found in a single topic. This allows several users to read from the same topic at the same time. Topics can be parallelized via partitions, which split data into a single topic among numerous brokers.</p>
+<p>Replication in Kafka is done at the partition level. A replica is the redundant element of a topic partition. Each partition often contains one or more replicas, which means that partitions contain messages that are duplicated across many Kafka brokers in the cluster.</p>
+<p>One server serves as the leader of each partition (replica), while the others function as followers. The leader replica is in charge of all read-write requests for the partition, while the followers replicate the leader. If the lead server goes down, one of the followers takes over as the leader. To disperse the burden, we should aim for a good balance of leaders, with each broker leading an equal number of partitions.</p>
+<h2><a href="#what-do-you-mean-by-zookeeper-in-kafka-and-what-are-its-uses" class="header-anchor">#</a><span id="what-do-you-mean-by-zookeeper-in-kafka-and-what-are-its-uses">What do you mean by zookeeper in Kafka and what are its uses?</span></h2>
+<p>Apache ZooKeeper is a naming registry for distributed applications as well as a distributed, open-source configuration and synchronization service. It keeps track of the Kafka cluster nodes’ status, as well as Kafka topics, partitions, and so on.</p>
+<p>ZooKeeper is used by Kafka brokers to maintain and coordinate the Kafka cluster. When the topology of the Kafka cluster changes, such as when brokers and topics are added or removed, ZooKeeper notifies all nodes. When a new broker enters the cluster, for example, ZooKeeper notifies the cluster, as well as when a broker fails. ZooKeeper also allows brokers and topic partition pairs to elect leaders, allowing them to select which broker will be the leader for a given partition (and server read and write operations from producers and consumers), as well as which brokers contain clones of the same data. When the cluster of brokers receives a notification from ZooKeeper, they immediately begin to coordinate with one another and elect any new partition leaders that are required. This safeguards against the unexpected absence of a broker.</p>
+<h2><a href="#can-we-use-kafka-without-zookeeper" class="header-anchor">#</a><span id="can-we-use-kafka-without-zookeeper">Can we use Kafka without Zookeeper?</span></h2>
+<ul>
+<li>Kafka can now be used without ZooKeeper as of version 2.8. The release of Kafka 2.8.0 in April 2021 gave us all the opportunity to try it out without ZooKeeper. However, this version is not yet ready for production and lacks some key features.</li>
+<li>In the previous versions, bypassing Zookeeper and connecting directly to the Kafka broker was not possible. This is because when the Zookeeper is down, it is unable to fulfill client requests.</li>
+</ul>
+<h2><a href="#explain-the-concept-of-leader-and-follower-in-kafka" class="header-anchor">#</a><span id="explain-the-concept-of-leader-and-follower-in-kafka">Explain the concept of Leader and Follower in Kafka.</span></h2>
+<p>In Kafka, each partition has one server that acts as a Leader and one or more servers that operate as Followers. The Leader is in charge of all read and writes requests for the partition, while the Followers are responsible for passively replicating the leader. In the case that the Leader fails, one of the Followers will assume leadership. The server’s load is balanced as a result of this.</p>
+<h2><a href="#why-is-topic-replication-important-in-kafka-what-do-you-mean-by-isr-in-kafka" class="header-anchor">#</a><span id="why-is-topic-replication-important-in-kafka-what-do-you-mean-by-isr-in-kafka">Why is Topic Replication important in Kafka? What do you mean by ISR in Kafka?</span></h2>
+<p><img src="/images/Topic_Replication_important_in_Kafka.jpg" alt="topic replication importance"><br>
+Topic replication is critical for constructing Kafka deployments that are both durable and highly available. When one broker fails, topic replicas on other brokers remain available to ensure that data is not lost and that the Kafka deployment is not disrupted. The replication factor specifies the number of copies of a topic that are kept across the Kafka cluster. It takes place at the partition level and is defined at the subject level. A replication factor of two, for example, will keep two copies of a topic for each partition.</p>
+<p>Each partition has an elected leader, and other brokers store a copy that can be used if necessary. Logically, the replication factor cannot be more than the cluster’s total number of brokers. An In-Sync Replica (ISR) is a replica that is up to date with the partition’s leader.</p>
+<h2><a href="#what-do-you-understand-about-a-consumer-group-in-kafka" class="header-anchor">#</a><span id="what-do-you-understand-about-a-consumer-group-in-kafka">What do you understand about a consumer group in Kafka?</span></h2>
+<p>A consumer group in Kafka is a collection of consumers who work together to ingest data from the same topic or range of topics. The name of an application is essentially represented by a consumer group. Consumers in Kafka often fall into one of several categories. The ‘-group’ command must be used to consume messages from a consumer group.</p>
+<h2><a href="#what-is-the-maximum-size-of-a-message-that-kafka-can-receive" class="header-anchor">#</a><span id="what-is-the-maximum-size-of-a-message-that-kafka-can-receive">What is the maximum size of a message that Kafka can receive?</span></h2>
+<p>By default, the maximum size of a Kafka message is 1MB (megabyte). The broker settings allow you to modify the size. Kafka, on the other hand, is designed to handle 1KB messages as well.</p>
+<h2><a href="#what-does-it-mean-if-a-replica-is-not-an-in-sync-replica-for-a-long-time" class="header-anchor">#</a><span id="what-does-it-mean-if-a-replica-is-not-an-in-sync-replica-for-a-long-time">What does it mean if a replica is not an In-Sync Replica for a long time?</span></h2>
+<p>A replica that has been out of ISR for a long period of time indicates that the follower is unable to fetch data at the same rate as the leader.</p>
+<h2><a href="#what-do-you-mean-by-geo-replication-in-kafka" class="header-anchor">#</a><span id="what-do-you-mean-by-geo-replication-in-kafka">What do you mean by geo-replication in Kafka?</span></h2>
+<p>Geo-Replication is a Kafka feature that allows messages in one cluster to be copied across many data centers or cloud regions. Geo-replication entails replicating all of the files and storing them throughout the globe if necessary. Geo-replication can be accomplished with Kafka’s MirrorMaker Tool. Geo-replication is a technique for ensuring data backup.</p>
+<h2><a href="#what-are-some-of-the-disadvantages-of-kafka" class="header-anchor">#</a><span id="what-are-some-of-the-disadvantages-of-kafka">What are some of the disadvantages of Kafka?</span></h2>
+<p>Following are the disadvantages of Kafka :</p>
+<ul>
+<li>Kafka performance degrades if there is message tweaking. When the message does not need to be updated, Kafka works well.</li>
+<li>Wildcard topic selection is not supported by Kafka. It is necessary to match the exact topic name.</li>
+<li>Brokers and consumers reduce Kafka’s performance when dealing with huge messages by compressing and decompressing the messages. This has an impact on Kafka’s throughput and performance.</li>
+<li>Certain message paradigms, including point-to-point queues and request/reply, are not supported by Kafka.</li>
+<li>Kafka does not have a complete set of monitoring tools.</li>
+</ul>
+<h2><a href="#tell-me-about-some-of-the-real-world-usages-of-apache-kafka" class="header-anchor">#</a><span id="tell-me-about-some-of-the-real-world-usages-of-apache-kafka">Tell me about some of the real-world usages of Apache Kafka.</span></h2>
+<ul>
+<li>As a Message Broker: Due to its high throughput value, Kafka is capable of managing a huge amount of comparable types of messages or data. Kafka can be used as a publish-subscribe messaging system that allows data to be read and published in a convenient manner.</li>
+<li>To Monitor operational data: Kafka can be used to keep track of metrics related to certain technologies, such as security logs.</li>
+<li>Website activity tracking: Kafka can be used to check that data is transferred and received successfully by websites. Kafka can handle the massive amounts of data created by websites for each page and for the activities of users.</li>
+<li>Data logging: Kafka’s data replication between nodes functionality can be used to restore data on nodes that have failed. Kafka may also be used to collect data from a variety of logs and make it available to consumers.</li>
+<li>Stream Processing with Kafka: Kafka may be used to handle streaming data, which is data that is read from one topic, processed, and then written to another. Users and applications will have access to a new topic containing the processed data.</li>
+</ul>
+<h1><a href="#dive-deep" class="header-anchor">#</a><span id="dive-deep">Dive Deep</span></h1>
+<h2><a href="#why-kafka-is-so-fast" class="header-anchor">#</a><span id="why-kafka-is-so-fast">Why Kafka is so fast?</span></h2>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://www.interviewbit.com/kafka-interview-questions/">Kafka Interview Questions</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+</p></div><div class="share"><span>Share</span>&nbsp;<span class="soc"><a href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank" class="fa fa-bookmark"></a></span><span class="soc"><a href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));" class="fa fa-weibo"></a></span><span class="soc"><a target="_blank" rel="noopener" href="http://twitter.com/home?status=https://blog.kleon.space/interview/tech/kafka/%20KLEON%20Tech - Kafka" class="fa fa-twitter"></a></span></div><div class="pagination"><p class="clearfix"><span class="pre pagbuttons"><a role="navigation" href="/interview/tech/flutter/" title="Tech - Flutter"><i class="fa fa-angle-double-left"></i>&nbsp;Previous post: Tech - Flutter</a></span><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/interview/tech/mongodb/" title="Tech - MongoDB">Next post: Tech - MongoDB&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>
