@@ -117,42 +117,11 @@
   </entry>
   
   <entry>
-    <title>Tech - Kafka</title>
-    <link href="https://blog.kleon.space/interview/tech/kafka/"/>
-    <id>https://blog.kleon.space/interview/tech/kafka/</id>
-    <published>2022-04-29T19:13:52.000Z</published>
-    <updated>2022-04-29T19:13:48.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;Q &amp;amp; A of kafka&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn1&quot; id=&quot;fnref1&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
-&lt;div class=&quot;toc&quot;&gt;
-&lt;!-- toc --&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="interview" scheme="https://blog.kleon.space/categories/interview/"/>
-    
-    
-    <category term="interview" scheme="https://blog.kleon.space/tags/interview/"/>
-    
-    <category term="tech" scheme="https://blog.kleon.space/tags/tech/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Tech - MongoDB</title>
     <link href="https://blog.kleon.space/interview/tech/mongodb/"/>
     <id>https://blog.kleon.space/interview/tech/mongodb/</id>
     <published>2022-04-29T19:13:52.000Z</published>
-    <updated>2022-04-29T19:13:48.000Z</updated>
+    <updated>2022-05-02T12:29:51.000Z</updated>
     
     
       
@@ -160,8 +129,10 @@
         
         
     <summary type="html">&lt;p&gt;Q &amp;amp; A of mongodb &lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn1&quot; id=&quot;fnref1&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
-&lt;hr class=&quot;footnotes-sep&quot;&gt;
-&lt;section</summary>
+&lt;div class=&quot;toc&quot;&gt;
+&lt;!-- toc --&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a</summary>
         
       
     
@@ -272,6 +243,37 @@
         
         
     <summary type="html">&lt;p&gt;Q &amp;amp; A of</summary>
+        
+      
+    
+    
+    
+    <category term="interview" scheme="https://blog.kleon.space/categories/interview/"/>
+    
+    
+    <category term="interview" scheme="https://blog.kleon.space/tags/interview/"/>
+    
+    <category term="tech" scheme="https://blog.kleon.space/tags/tech/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Tech - Kafka</title>
+    <link href="https://blog.kleon.space/interview/tech/kafka/"/>
+    <id>https://blog.kleon.space/interview/tech/kafka/</id>
+    <published>2022-04-29T19:13:52.000Z</published>
+    <updated>2022-04-29T19:13:48.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Q &amp;amp; A of kafka&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn1&quot; id=&quot;fnref1&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;div class=&quot;toc&quot;&gt;
+&lt;!-- toc --&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a</summary>
         
       
     
