@@ -6,7 +6,7 @@
   <link href="https://blog.kleon.space/atom.xml" rel="self"/>
   
   <link href="https://blog.kleon.space/"/>
-  <updated>2022-04-29T19:25:32.000Z</updated>
+  <updated>2022-05-02T21:15:28.000Z</updated>
   <id>https://blog.kleon.space/</id>
   
   <author>
@@ -17,12 +17,48 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>System - Tinder as a microservice architecture</title>
+    <link href="https://blog.kleon.space/interview/system/example_tinder_as_microservice/"/>
+    <id>https://blog.kleon.space/interview/system/example_tinder_as_microservice/</id>
+    <published>2022-05-02T21:15:24.000Z</published>
+    <updated>2022-05-02T21:15:28.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;subtitles from youtube&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn1&quot; id=&quot;fnref1&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;so I forgot to say this before we</summary>
+        
+      
+    
+    
+    
+    <category term="interview" scheme="https://blog.kleon.space/categories/interview/"/>
+    
+    
+    <category term="interview" scheme="https://blog.kleon.space/tags/interview/"/>
+    
+    <category term="system design" scheme="https://blog.kleon.space/tags/system-design/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Algorithm - Dynamic Programming</title>
     <link href="https://blog.kleon.space/interview/algo/dynamic_programming/"/>
     <id>https://blog.kleon.space/interview/algo/dynamic_programming/</id>
     <published>2022-04-29T19:25:28.000Z</published>
     <updated>2022-04-29T19:25:32.000Z</updated>
     
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;&lt;a href=&quot;#knapsack-problem&quot; class=&quot;header-anchor&quot;&gt;#&lt;/a&gt;&lt;span id=&quot;knapsack-problem&quot;&gt;Knapsack</summary>
+        
+      
     
     
     
@@ -117,37 +153,6 @@
   </entry>
   
   <entry>
-    <title>Tech - MongoDB</title>
-    <link href="https://blog.kleon.space/interview/tech/mongodb/"/>
-    <id>https://blog.kleon.space/interview/tech/mongodb/</id>
-    <published>2022-04-29T19:13:52.000Z</published>
-    <updated>2022-05-02T12:29:51.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;Q &amp;amp; A of mongodb &lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn1&quot; id=&quot;fnref1&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
-&lt;div class=&quot;toc&quot;&gt;
-&lt;!-- toc --&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="interview" scheme="https://blog.kleon.space/categories/interview/"/>
-    
-    
-    <category term="interview" scheme="https://blog.kleon.space/tags/interview/"/>
-    
-    <category term="tech" scheme="https://blog.kleon.space/tags/tech/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Tech - MySQL</title>
     <link href="https://blog.kleon.space/interview/tech/mysql/"/>
     <id>https://blog.kleon.space/interview/tech/mysql/</id>
@@ -204,33 +209,6 @@
   </entry>
   
   <entry>
-    <title>Tech - Redis</title>
-    <link href="https://blog.kleon.space/interview/tech/redis/"/>
-    <id>https://blog.kleon.space/interview/tech/redis/</id>
-    <published>2022-04-29T19:13:52.000Z</published>
-    <updated>2022-04-29T19:13:48.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;Q &amp;amp; A of</summary>
-        
-      
-    
-    
-    
-    <category term="interview" scheme="https://blog.kleon.space/categories/interview/"/>
-    
-    
-    <category term="interview" scheme="https://blog.kleon.space/tags/interview/"/>
-    
-    <category term="tech" scheme="https://blog.kleon.space/tags/tech/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Tech - Vue</title>
     <link href="https://blog.kleon.space/interview/tech/vue/"/>
     <id>https://blog.kleon.space/interview/tech/vue/</id>
@@ -242,7 +220,11 @@
       
         
         
-    <summary type="html">&lt;p&gt;Q &amp;amp; A of</summary>
+    <summary type="html">&lt;p&gt;Q &amp;amp; A of vue&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn1&quot; id=&quot;fnref1&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;div class=&quot;toc&quot;&gt;
+&lt;!-- toc --&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a</summary>
         
       
     
@@ -285,6 +267,88 @@
     <category term="interview" scheme="https://blog.kleon.space/tags/interview/"/>
     
     <category term="tech" scheme="https://blog.kleon.space/tags/tech/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Tech - Redis</title>
+    <link href="https://blog.kleon.space/interview/tech/redis/"/>
+    <id>https://blog.kleon.space/interview/tech/redis/</id>
+    <published>2022-04-29T19:13:52.000Z</published>
+    <updated>2022-05-03T23:46:43.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Q &amp;amp; A of redis&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn1&quot; id=&quot;fnref1&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt;&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn2&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="interview" scheme="https://blog.kleon.space/categories/interview/"/>
+    
+    
+    <category term="interview" scheme="https://blog.kleon.space/tags/interview/"/>
+    
+    <category term="tech" scheme="https://blog.kleon.space/tags/tech/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Tech - MongoDB</title>
+    <link href="https://blog.kleon.space/interview/tech/mongodb/"/>
+    <id>https://blog.kleon.space/interview/tech/mongodb/</id>
+    <published>2022-04-29T19:13:52.000Z</published>
+    <updated>2022-05-02T18:57:14.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Q &amp;amp; A of mongodb &lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn1&quot; id=&quot;fnref1&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt;&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn2&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="interview" scheme="https://blog.kleon.space/categories/interview/"/>
+    
+    
+    <category term="interview" scheme="https://blog.kleon.space/tags/interview/"/>
+    
+    <category term="tech" scheme="https://blog.kleon.space/tags/tech/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ML Design - Outline</title>
+    <link href="https://blog.kleon.space/interview/ml/outline/"/>
+    <id>https://blog.kleon.space/interview/ml/outline/</id>
+    <published>2022-04-29T18:19:14.000Z</published>
+    <updated>2022-04-29T18:19:18.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;&lt;a href=&quot;#algorithms&quot; class=&quot;header-anchor&quot;&gt;#&lt;/a&gt;&lt;span id=&quot;algorithms&quot;&gt;Algorithms&lt;/span&gt;&lt;/h1&gt;
+&lt;h1&gt;&lt;a href=&quot;#system&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="interview" scheme="https://blog.kleon.space/categories/interview/"/>
+    
+    
+    <category term="interview" scheme="https://blog.kleon.space/tags/interview/"/>
+    
+    <category term="system design" scheme="https://blog.kleon.space/tags/system-design/"/>
     
   </entry>
   
@@ -465,54 +529,6 @@
     
     
     <summary type="html">&lt;p&gt;Q &amp;amp; A of Operating System.&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="interview" scheme="https://blog.kleon.space/categories/interview/"/>
-    
-    
-    <category term="interview" scheme="https://blog.kleon.space/tags/interview/"/>
-    
-    <category term="tech" scheme="https://blog.kleon.space/tags/tech/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Tech - Recommend System</title>
-    <link href="https://blog.kleon.space/interview/tech/recommend_system/"/>
-    <id>https://blog.kleon.space/interview/tech/recommend_system/</id>
-    <published>2022-04-22T22:10:47.000Z</published>
-    <updated>2022-04-22T22:10:44.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;Q &amp;amp; A of recommend</summary>
-        
-      
-    
-    
-    
-    <category term="interview" scheme="https://blog.kleon.space/categories/interview/"/>
-    
-    
-    <category term="interview" scheme="https://blog.kleon.space/tags/interview/"/>
-    
-    <category term="tech" scheme="https://blog.kleon.space/tags/tech/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Tech - Outline</title>
-    <link href="https://blog.kleon.space/interview/tech/outline/"/>
-    <id>https://blog.kleon.space/interview/tech/outline/</id>
-    <published>2022-04-22T22:10:38.000Z</published>
-    <updated>2022-04-22T22:10:34.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;Q &amp;amp; A of tech.&lt;/p&gt;</summary>
     
     
     

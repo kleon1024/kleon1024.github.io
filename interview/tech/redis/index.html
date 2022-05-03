@@ -1,3 +1,464 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title>Tech - Redis · KLEON</title><meta name="description" content="Q &amp;amp; A of redis."><meta name="og:description" content="Q &amp;amp; A of redis."><meta name="twitter:site" content="KLEON"><meta name="twitter:title" content="Tech - Redis"><meta name="twitter:card" content="summary"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 6.1.0"><link rel="stylesheet" href="/css/prism.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body><div id="stage" class="container"><div class="row"><div id="side-bar" class="col-sm-3 col-xs-12 side-container invisible"><div class="vertical-text site-title"><h3 tabindex="-1" class="site-title-small"><a href="/" class="a-title"></a></h3><h1 tabindex="-1" class="site-title-large"><a href="/" class="a-title">自说自话</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div id="site-nav" class="site-title-links"><ul><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li><li><a href="/categories">Categories</a></li><li><a href="/tags">Tags</a></li><li><a href="/googlebe23cb0bc55fc412.html"></a></li><li><a href="/about/index.html"></a></li><li class="soc"><a href="https://github.com/kleon1024" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa fa-github">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div id="main-container" class="col-sm-9 col-xs-12 main-container invisible"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>Tech - Redis</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2022-04-29</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/interview/" title="interview" class="a-tag">interview</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/interview/" title="interview" class="a-tag">interview</a><span>&nbsp;</span><a href="/tags/tech/" title="tech" class="a-tag">tech</a><span>&nbsp;</span></span></p><p class="post-abstract"><p>Q &amp; A of redis.</p>
-</p></div><div class="share"><span>Share</span>&nbsp;<span class="soc"><a href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank" class="fa fa-bookmark"></a></span><span class="soc"><a href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));" class="fa fa-weibo"></a></span><span class="soc"><a target="_blank" rel="noopener" href="http://twitter.com/home?status=https://blog.kleon.space/interview/tech/redis/%20KLEON%20Tech - Redis" class="fa fa-twitter"></a></span></div><div class="pagination"><p class="clearfix"><span class="pre pagbuttons"><a role="navigation" href="/interview/tech/python/" title="Tech - Python"><i class="fa fa-angle-double-left"></i>&nbsp;Previous post: Tech - Python</a></span><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/interview/tech/vue/" title="Tech - Vue">Next post: Tech - Vue&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title>Tech - Redis · KLEON</title><meta name="description" content="Q &amp;amp; A of redis[1][2][3].
+
+
+
+Basics
+
+What is Redis?
+What is the meaning of Redis?
+How is Redis different from other databases?
+In which language Re"><meta name="og:description" content="Q &amp;amp; A of redis[1][2][3].
+
+
+
+Basics
+
+What is Redis?
+What is the meaning of Redis?
+How is Redis different from other databases?
+In which language Re"><meta name="twitter:site" content="KLEON"><meta name="twitter:title" content="Tech - Redis"><meta name="twitter:card" content="summary"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/github.min.css"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 6.1.0"></head><body><div id="stage" class="container"><div class="row"><div id="side-bar" class="col-sm-3 col-xs-12 side-container invisible"><div class="vertical-text site-title"><h3 tabindex="-1" class="site-title-small"><a href="/" class="a-title"></a></h3><h1 tabindex="-1" class="site-title-large"><a href="/" class="a-title">自说自话</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div id="site-nav" class="site-title-links"><ul><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li><li><a href="/categories">Categories</a></li><li><a href="/tags">Tags</a></li><li><a href="/googlebe23cb0bc55fc412.html"></a></li><li><a href="/about/index.html"></a></li><li class="soc"><a href="https://github.com/kleon1024" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa fa-github">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div id="main-container" class="col-sm-9 col-xs-12 main-container invisible"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>Tech - Redis</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2022-04-29</span><span class="date meta-item">Updated at&nbsp;2022-05-03</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/interview/" title="interview" class="a-tag">interview</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/interview/" title="interview" class="a-tag">interview</a><span>&nbsp;</span><a href="/tags/tech/" title="tech" class="a-tag">tech</a><span>&nbsp;</span></span></p><p class="post-abstract"><p>Q &amp; A of redis<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup><sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup><sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>.</p>
+<div class="toc">
+<!-- toc -->
+<ul>
+<li><a href="#basics">Basics</a>
+<ul>
+<li><a href="#what-is-redis">What is Redis?</a></li>
+<li><a href="#what-is-the-meaning-of-redis">What is the meaning of Redis?</a></li>
+<li><a href="#how-is-redis-different-from-other-databases">How is Redis different from other databases?</a></li>
+<li><a href="#in-which-language-redis-is-written">In which language Redis is written?</a></li>
+<li><a href="#what-is-the-usage-of-redis">What is the usage of Redis?</a></li>
+<li><a href="#what-are-the-main-features-of-redis">What are the main features of Redis?</a></li>
+<li><a href="#explain-the-replication-features-of-redis">Explain the Replication Features of Redis?</a></li>
+<li><a href="#what-are-the-advantages-of-using-redis">What are the advantages of using Redis?</a></li>
+<li><a href="#what-are-the-disadvantages-limitations-of-using-redis">What are the disadvantages/limitations of using Redis?</a></li>
+<li><a href="#what-is-the-difference-between-redis-and-rdbms">What is the difference between Redis and RDBMS?</a></li>
+<li><a href="#differentiate-memcached-and-redis">Differentiate Memcached and Redis?</a></li>
+<li><a href="#mention-operation-keys-of-redis">Mention Operation Keys of Redis.</a></li>
+<li><a href="#which-are-the-different-data-types-used-in-redis">Which are the different data types used in Redis?</a></li>
+<li><a href="#we-all-know-that-reds-is-fast-but-is-it-also-durable">We all know that Reds is fast, but is it also durable?</a></li>
+<li><a href="#how-can-you-enhance-the-durability-of-redis">How can you enhance the durability of Redis?</a></li>
+<li><a href="#what-are-the-concerned-things-while-using-redis">What are the concerned things while using Redis?</a></li>
+<li><a href="#does-redis-persist-data">Does Redis persist data?</a></li>
+<li><a href="#is-redis-just-a-cache">Is Redis just a cache?</a></li>
+<li><a href="#does-redis-support-transactions">Does Redis support transactions?</a></li>
+<li><a href="#how-are-redis-pipelining-and-transaction-different">How are Redis pipelining and transaction different?</a></li>
+<li><a href="#how-does-redis-handle-multiple-threads-from-different-clients-updating-the-same-data-structure-in-redis">How does Redis handle multiple threads (from different clients) updating the same data structure in Redis?</a></li>
+<li><a href="#what-is-the-difference-between-redis-replication-and-sharding">What is the difference between Redis replication and sharding?</a></li>
+<li><a href="#what-s-the-advantage-of-redis-vs-using-memory">What’s the advantage of Redis vs using memory?</a></li>
+<li><a href="#when-to-use-redis-lists-data-type">When to use Redis Lists data type?</a></li>
+<li><a href="#when-to-use-redis-sets">When to use Redis Sets?</a></li>
+<li><a href="#when-to-use-redis-sets-1">When to use Redis Sets?</a></li>
+<li><a href="#when-to-use-redis-over-mongodb">When to use Redis over MongoDB?</a></li>
+</ul>
+</li>
+<li><a href="#advanced">Advanced</a>
+<ul>
+<li><a href="#why-is-redis-so-fast">Why is redis so fast?</a></li>
+<li><a href="#explain-a-use-case-for-sorted-set-in-redis">Explain a use case for Sorted Set in Redis</a></li>
+<li><a href="#how-can-i-exploit-multiple-cpu-cores-for-redis">How can I exploit multiple CPU/cores for Redis?</a></li>
+<li><a href="#how-would-you-efficiently-store-json-in-redis">How would you efficiently store JSON in Redis?</a></li>
+<li><a href="#if-there-s-a-way-to-check-if-a-key-already-exists-in-a-redis-list">If there’s a way to check if a key already exists in a Redis list?</a></li>
+<li><a href="#what-do-the-terms-cpu-bound-and-i-o-bound-mean-in-context-of-redis">What do the terms “CPU bound” and “I/O bound” mean in context of Redis?</a></li>
+<li><a href="#what-is-aof-persistence-in-redis">What is AOF persistence in Redis?</a></li>
+<li><a href="#what-is-pipelining-in-redis-and-when-to-use-one">What is Pipelining in Redis and when to use one?</a></li>
+<li><a href="#when-to-use-redis-hashes-data-type">When to use Redis Hashes data type?</a></li>
+<li><a href="#why-redis-does-not-support-roll-backs">Why Redis does not support roll backs?</a></li>
+<li><a href="#how-much-faster-is-redis-than-mongodb">How much faster is Redis than MongoDB?</a></li>
+<li><a href="#is-redis-a-durable-datastore-d-from-acid">Is Redis a durable datastore (“D” from ACID)?</a></li>
+<li><a href="#rdb-and-aof-which-one-should-i-use">RDB and AOF, which one should I use?</a></li>
+<li><a href="#what-are-the-underlying-data-structures-used-for-redis">What are the underlying data structures used for Redis?</a></li>
+<li><a href="#how-is-redis-different-from-other-key-value-stores">How is Redis different from other key-value stores?</a></li>
+<li><a href="#what-s-the-redis-memory-footprint">What’s the Redis memory footprint?</a></li>
+<li><a href="#why-does-redis-keep-its-entire-dataset-in-memory">Why does Redis keep its entire dataset in memory?</a></li>
+<li><a href="#can-you-use-redis-with-a-disk-based-database">Can you use Redis with a disk-based database?</a></li>
+<li><a href="#how-can-i-reduce-redis-overall-memory-usage">How can I reduce Redis’ overall memory usage?</a></li>
+<li><a href="#what-happens-if-redis-runs-out-of-memory">What happens if Redis runs out of memory?</a></li>
+<li><a href="#are-redis-on-disk-snapshots-atomic">Are Redis on-disk snapshots atomic?</a></li>
+<li><a href="#what-is-the-maximum-number-of-keys-a-single-redis-instance-can-hold-what-is-the-maximum-number-of-elements-in-a-hash-list-set-and-sorted-set">What is the maximum number of keys a single Redis instance can hold? What is the maximum number of elements in a Hash, List, Set, and Sorted Set?</a></li>
+<li><a href="#why-does-my-replica-have-a-different-number-of-keys-its-master-instance">Why does my replica have a different number of keys its master instance?</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+</div>
+<h1><a href="#basics" class="header-anchor">#</a><span id="basics">Basics</span></h1>
+<h2><a href="#what-is-redis" class="header-anchor">#</a><span id="what-is-redis">What is Redis?</span></h2>
+<p>Redis is an open-source, advance key value data store and cache. It is also referred as a data structure server which keys not only contains strings, but also hashes, sets, lists, and sorted sets.</p>
+<p>Redis, which stands for Remote Dictionary Server, is a fast, open-source, in-memory key-value data store for use as a database, cache, message broker, and queue.<br>
+You can run atomic operations, like appending to a string; incrementing the value in a hash; pushing an element to a list; computing set intersection, union and difference; or getting the member with highest ranking in a sorted set.<br>
+In order to achieve performance, Redis works with an in-memory dataset. Depending on your use case, you can persist it either by dumping the dataset to disk every once in a while, or by appending each command to a log. Persistence can be optionally disabled, if you just need a feature-rich, networked, in-memory cache.<br>
+Redis is a popular choice for caching, session management, gaming, leaderboards, real-time analytics, geospatial, ride-hailing, chat/messaging, media streaming, and pub/sub apps.</p>
+<h2><a href="#what-is-the-meaning-of-redis" class="header-anchor">#</a><span id="what-is-the-meaning-of-redis">What is the meaning of Redis?</span></h2>
+<p>Redis stands for REmote DIctionary Server.</p>
+<h2><a href="#how-is-redis-different-from-other-databases" class="header-anchor">#</a><span id="how-is-redis-different-from-other-databases">How is Redis different from other databases?</span></h2>
+<p>Redis is a NoSQL, open-source, in-memory data-structure store. It follows the principle of key-value store.</p>
+<p>It is extremely fast, persistent, portable and supports many languages.</p>
+<h2><a href="#in-which-language-redis-is-written" class="header-anchor">#</a><span id="in-which-language-redis-is-written">In which language Redis is written?</span></h2>
+<p>Redis is written in ANSI C and mostly used for cache solution and session management. It creates unique keys for store values.</p>
+<h2><a href="#what-is-the-usage-of-redis" class="header-anchor">#</a><span id="what-is-the-usage-of-redis">What is the usage of Redis?</span></h2>
+<p>Redis is a special key-value store database that can function as a NoSQL database or as a memory-cache store to improve performance when serving data that is stored in system memory.</p>
+<h2><a href="#what-are-the-main-features-of-redis" class="header-anchor">#</a><span id="what-are-the-main-features-of-redis">What are the main features of Redis?</span></h2>
+<ul>
+<li>Redis is very simple to install setup and manage.</li>
+<li>Redis is very fast. It can execute 100000 queries per second.</li>
+<li>Redis is fast because data is being persistent in memory as well as stored on the disk.</li>
+<li>Redis is very fast because it loads the whole dataset in primary memory.</li>
+<li>Redis operations working on different data types are atomic so these operations can be accomplished safely i.e. to set or increase a key, add or remove elements from a set or increase a counter.</li>
+<li>It supports various types of data structure such as strings, hashes, sets, lists, sorted sets etc.</li>
+<li>Redis supports a variety of languages i.e. C, C++, C#, Ruby, Python, Twisted Python, PHP, Erlang, Tcl, Perl, Lua, Java, Scala etc.</li>
+<li>If your favorite language is not supported yet, you can write your own client library, as the Protocol is pretty simple.</li>
+<li>Redis supports simple master to slave replication.</li>
+<li>Redis is portable.</li>
+</ul>
+<h2><a href="#explain-the-replication-features-of-redis" class="header-anchor">#</a><span id="explain-the-replication-features-of-redis">Explain the Replication Features of Redis?</span></h2>
+<p>Replication is important in order to archive high level of availability in big data systems. The data needs to be replicated at n number of places. This follows the master-slave approach where the master copy is maintained by master-slave and replicated to n other nodes.</p>
+<h2><a href="#what-are-the-advantages-of-using-redis" class="header-anchor">#</a><span id="what-are-the-advantages-of-using-redis">What are the advantages of using Redis?</span></h2>
+<ul>
+<li>Redis is very fast.</li>
+<li>It supports a server-side locking.</li>
+<li>It has a rich client side library.</li>
+<li>It is a good counter.</li>
+<li>It supports Atomic Operation.</li>
+</ul>
+<h2><a href="#what-are-the-disadvantages-limitations-of-using-redis" class="header-anchor">#</a><span id="what-are-the-disadvantages-limitations-of-using-redis">What are the disadvantages/limitations of using Redis?</span></h2>
+<ul>
+<li>It is single threaded.</li>
+<li>It has got limited client support for consistent hashing.</li>
+<li>It has significant overhead for persistence.</li>
+<li>It is not deployed widely.</li>
+</ul>
+<h2><a href="#what-is-the-difference-between-redis-and-rdbms" class="header-anchor">#</a><span id="what-is-the-difference-between-redis-and-rdbms">What is the difference between Redis and RDBMS?</span></h2>
+<ul>
+<li>Redis is a NoSQL database while RDBMS is an SQL database.</li>
+<li>Redis follows the key-value structure while RDBMS follows the table structure.</li>
+<li>Redis extremely fast while RDBMS is comparatively slow.</li>
+<li>Redis stores all the dataset in primary memory while RDBMS stores its dataset in secondary memory.</li>
+<li>Redis is generally used to store small and frequently used files while RDBMS is used to store big files.</li>
+<li>Redis provides only official support for Linux, BSD, Mac OS X, Solaris. It doesn?t provide official support for Windows currently while RDBMS provides support for both.</li>
+</ul>
+<h2><a href="#differentiate-memcached-and-redis" class="header-anchor">#</a><span id="differentiate-memcached-and-redis">Differentiate Memcached and Redis?</span></h2>
+<table>
+<thead>
+<tr>
+<th>Memcached</th>
+<th>Redis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Memcached only does caching information.</td>
+<td>It provides some more functionalities like replication and persistence along with caching information.</td>
+</tr>
+<tr>
+<td>Memcached supports the functionality of LRU (Least Recently Used) eviction of values.</td>
+<td>LRU is not supported by Redis.</td>
+</tr>
+<tr>
+<td>In Memcached, when they overflow memory, the one you have not used recently (LRU- Least Recently Used) will get deleted.</td>
+<td>In Redis, there is a time set for each function, Three keys are maintained, the one, which is closest to expiry, will get deleted.</td>
+</tr>
+<tr>
+<td>CAS (Check and Set) is supported by Memcached.</td>
+<td>CAS is not supported by Redis.</td>
+</tr>
+<tr>
+<td>Array objects are needed to be serialized in order to get saved. We need to unserialize them for their retrieval.</td>
+<td>Redis has got stronger data structures; it can handle strings, binary safe strings, list of binary safe strings, sorted lists, etc.</td>
+</tr>
+<tr>
+<td>Memcached has at most 250 bytes length.</td>
+<td>Redis has at most 2 GB key length.</td>
+</tr>
+<tr>
+<td>It is Multi-threaded</td>
+<td>It is single threaded.</td>
+</tr>
+</tbody>
+</table>
+<h2><a href="#mention-operation-keys-of-redis" class="header-anchor">#</a><span id="mention-operation-keys-of-redis">Mention Operation Keys of Redis.</span></h2>
+<ul>
+<li>TYPE key</li>
+<li>TTL key</li>
+<li>EXPIRE key seconds</li>
+<li>EXPIREAT key timestamp</li>
+<li>EXISTS key</li>
+<li>DEL key</li>
+</ul>
+<h2><a href="#which-are-the-different-data-types-used-in-redis" class="header-anchor">#</a><span id="which-are-the-different-data-types-used-in-redis">Which are the different data types used in Redis?</span></h2>
+<ul>
+<li>Strings</li>
+<li>Hashes</li>
+<li>Lists</li>
+<li>Sets</li>
+<li>Sorted Sets</li>
+</ul>
+<h2><a href="#we-all-know-that-reds-is-fast-but-is-it-also-durable" class="header-anchor">#</a><span id="we-all-know-that-reds-is-fast-but-is-it-also-durable">We all know that Reds is fast, but is it also durable?</span></h2>
+<p>In Redis, there is always a trade-of between durability and speed. In the case of system failure, it may lose data which is not stored.</p>
+<h2><a href="#how-can-you-enhance-the-durability-of-redis" class="header-anchor">#</a><span id="how-can-you-enhance-the-durability-of-redis">How can you enhance the durability of Redis?</span></h2>
+<ul>
+<li>Whenever a new command is added to the append log file, call Fsysnc() each time.</li>
+<li>Keep calling Fsysnc() in every second. Despite of the 1 second data lose in the case of system fails.</li>
+</ul>
+<h2><a href="#what-are-the-concerned-things-while-using-redis" class="header-anchor">#</a><span id="what-are-the-concerned-things-while-using-redis">What are the concerned things while using Redis?</span></h2>
+<ul>
+<li>Consistent method selection in order to name and prefix the keys. Namespace management.</li>
+<li>Make key prefixes registry which can map every documents to their owner applications.</li>
+<li>Designing, implementing and testing the Garbage collection mechanism for each class we keep into the redis architecture.</li>
+<li>Maintain a sharding library before investing so much into the application.</li>
+</ul>
+<h2><a href="#does-redis-persist-data" class="header-anchor">#</a><span id="does-redis-persist-data">Does Redis persist data?</span></h2>
+<p>Redis supports so-called “snapshots”. This means that it will do a complete copy of whats in memory at some points in time (e.g. every full hour). When you lose power between two snapshots, you will lose the data from the time between the last snapshot and the crash (doesn’t have to be a power outage…). Redis trades data safety versus performance, like most NoSQL-DBs do.</p>
+<p>Redis saves data in one of the following cases:</p>
+<ul>
+<li>automatically from time to time</li>
+<li>when you manually call BGSAVE command</li>
+<li>when redis is shutting down</li>
+</ul>
+<p>But data in redis is not really persistent, because:</p>
+<ul>
+<li>crash of redis process means losing all changes since last save</li>
+<li>BGSAVE operation can only be performed if you have enough free RAM (the amount of extra RAM is equal to the size of redis DB)</li>
+</ul>
+<h2><a href="#is-redis-just-a-cache" class="header-anchor">#</a><span id="is-redis-just-a-cache">Is Redis just a cache?</span></h2>
+<p>Like a cache Redis offers:</p>
+<ul>
+<li>in memory key-value storage</li>
+</ul>
+<p>But unlike a cash Redis:</p>
+<ul>
+<li>Supports multiple datatypes (strings, hashes, lists, sets, sorted sets, bitmaps, and hyperloglogs)</li>
+<li>It provides an ability to store cache data into physical storage (if needed).</li>
+<li>Supports pub-sub model</li>
+<li>Redis cache provides replication for high availability (master/slave)</li>
+<li>Supports ultra-fast lua-scripts. Its execution time equals to C commands execution.</li>
+<li>Can be shared across multiple instances of the application (instead of in-memory cache for each app instance)</li>
+</ul>
+<h2><a href="#does-redis-support-transactions" class="header-anchor">#</a><span id="does-redis-support-transactions">Does Redis support transactions?</span></h2>
+<p>MULTI, EXEC, DISCARD and WATCH are the foundation of transactions in Redis. They allow the execution of a group of commands in a single step, with two important guarantees:</p>
+<ul>
+<li>All the commands in a transaction are serialized and executed sequentially. It can never happen that a request issued by another client is served in the middle of the execution of a Redis transaction. This guarantees that the commands are executed as a single isolated operation.</li>
+<li>Either all of the commands or none are processed, so a Redis transaction is also atomic.</li>
+</ul>
+<h2><a href="#how-are-redis-pipelining-and-transaction-different" class="header-anchor">#</a><span id="how-are-redis-pipelining-and-transaction-different">How are Redis pipelining and transaction different?</span></h2>
+<p>Pipelining is primarily a network optimization. It essentially means the client buffers up a bunch of commands and ships them to the server in one go. The commands are not guaranteed to be executed in a transaction. The benefit here is saving network round trip time for every command.</p>
+<p>Redis is single threaded so an individual command is always atomic, but two given commands from different clients can execute in sequence, alternating between them for example.</p>
+<p>Multi/exec, however, ensures no other clients are executing commands in between the commands in the multi/exec sequence.</p>
+<h2><a href="#how-does-redis-handle-multiple-threads-from-different-clients-updating-the-same-data-structure-in-redis" class="header-anchor">#</a><span id="how-does-redis-handle-multiple-threads-from-different-clients-updating-the-same-data-structure-in-redis">How does Redis handle multiple threads (from different clients) updating the same data structure in Redis?</span></h2>
+<p>Redis is actually single-threaded, which is how every command is guaranteed to be atomic. While one command is executing, no other command will run.</p>
+<p>A single-threaded program can definitely provide concurrency at the I/O level by using an I/O (de)multiplexing mechanism and an event loop (which is what Redis does). The fact that Redis operations are atomic is simply a consequence of the single-threaded event loop. The interesting point is atomicity is provided at no extra cost (it does not require synchronization between threads).</p>
+<h2><a href="#what-is-the-difference-between-redis-replication-and-sharding" class="header-anchor">#</a><span id="what-is-the-difference-between-redis-replication-and-sharding">What is the difference between Redis replication and sharding?</span></h2>
+<ul>
+<li>Sharding, also known as partitioning, is splitting the data up by key. Sharding is useful to increase performance, reducing the hit and memory load on any one resource.</li>
+<li>While replication, also known as mirroring, is to copy all data. Replication is useful for getting a high availability of reads. If you read from multiple replicas, you will also reduce the hit rate on all resources, but the memory requirement for all resources remains the same.</li>
+</ul>
+<p>Any key-value store (of which Redis is only one example) supports sharding, though certain cross-key functions will no longer work. Redis supports replication out of the box.</p>
+<h2><a href="#what-s-the-advantage-of-redis-vs-using-memory" class="header-anchor">#</a><span id="what-s-the-advantage-of-redis-vs-using-memory">What’s the advantage of Redis vs using memory?</span></h2>
+<p>Redis is a remote data structure server. It is certainly slower than just storing the data in local memory (since it involves socket roundtrips to fetch/store the data). However, it also brings some interesting properties:</p>
+<ul>
+<li>Redis can be accessed by all the processes of your applications, possibly running on several nodes (something local memory cannot achieve).</li>
+<li>Redis memory storage is quite efficient, and done in a separate process. If the application runs on a platform whose memory is garbage collected (node.js, java, etc …), it allows handling a much bigger memory cache/store. In practice, very large heaps do not perform well with garbage collected languages.</li>
+<li>Redis can persist the data on disk if needed.</li>
+<li>Redis is a bit more than a simple cache: it provides various data structures, various item eviction policies, blocking queues, pub/sub, atomicity, Lua scripting, etc …</li>
+<li>Redis can replicate its activity with a master/slave mechanism in order to implement high-availability.</li>
+</ul>
+<p>Basically, if you need your application to scale on several nodes sharing the same data, then something like Redis (or any other remote key/value store) will be required.</p>
+<h2><a href="#when-to-use-redis-lists-data-type" class="header-anchor">#</a><span id="when-to-use-redis-lists-data-type">When to use Redis Lists data type?</span></h2>
+<p>Redis lists are ordered collections of strings. They are optimized for inserting, reading, or removing values from the top or bottom (aka: left or right) of the list.<br>
+Redis provides many commands for leveraging lists, including commands to push/pop items, push/pop between lists, truncate lists, perform range queries, etc.<br>
+Lists make great durable, atomic, queues. These work great for job queues, logs, buffers, and many other use cases.</p>
+<h2><a href="#when-to-use-redis-sets" class="header-anchor">#</a><span id="when-to-use-redis-sets">When to use Redis Sets?</span></h2>
+<p>Sets are unordered collections of unique values. They are optimized to let you quickly check if a value is in the set, quickly add/remove values, and to measure overlap with other sets.</p>
+<p>These are great for things like access control lists, unique visitor trackers, and many other things. Most programming languages have something similar (usually called a Set). This is like that, only distributed.</p>
+<p>Redis provides several commands to manage sets. Obvious ones like adding, removing, and checking the set are present. So are less obvious commands like popping/reading a random item and commands for performing unions and intersections with other sets.</p>
+<h2><a href="#when-to-use-redis-sets" class="header-anchor">#</a><span id="when-to-use-redis-sets">When to use Redis Sets?</span></h2>
+<p>Sets are unordered collections of unique values. They are optimized to let you quickly check if a value is in the set, quickly add/remove values, and to measure overlap with other sets.</p>
+<p>These are great for things like access control lists, unique visitor trackers, and many other things. Most programming languages have something similar (usually called a Set). This is like that, only distributed.</p>
+<p>Redis provides several commands to manage sets. Obvious ones like adding, removing, and checking the set are present. So are less obvious commands like popping/reading a random item and commands for performing unions and intersections with other sets.</p>
+<h2><a href="#when-to-use-redis-over-mongodb" class="header-anchor">#</a><span id="when-to-use-redis-over-mongodb">When to use Redis over MongoDB?</span></h2>
+<p>It depends on kind of dev team you are and your application needs but some notes when to use Redis is probably a good idea:</p>
+<ul>
+<li>
+<p>Caching<br>
+Caching using MongoDB simply doesn’t make a lot of sense. It would be too slow.</p>
+</li>
+<li>
+<p>If you have enough time to think about your DB design.<br>
+You can’t simply throw in your documents into Redis. You have to think of the way you in which you want to store and organize your data. One example are hashes in Redis. They are quite different from “traditional”, nested objects, which means you’ll have to rethink the way you store nested documents. One solution would be to store a reference inside the hash to another hash (something like key: [id of second hash]). Another idea would be to store it as JSON, which seems counter-intuitive to most people with a SQL-background. Redis’s non-traditional approach requires more effort to learn, but greater flexibility.</p>
+</li>
+<li>
+<p>If you need really high performance.<br>
+Beating the performance Redis provides is nearly impossible. Imagine you database being as fast as your cache. That’s what it feels like using Redis as a real database.</p>
+</li>
+<li>
+<p>If you don’t care that much about scaling.<br>
+Scaling Redis is not as hard as it used to be. For instance, you could use a kind of proxy server in order to distribute the data among multiple Redis instances. Master-slave replication is not that complicated, but distributing you keys among multiple Redis-instances needs to be done on the application site (e.g. using a hash-function, Modulo etc.). Scaling MongoDB by comparison is much simpler.</p>
+</li>
+</ul>
+<h2><a href="#" class="header-anchor">#</a><span id></span></h2>
+<h1><a href="#advanced" class="header-anchor">#</a><span id="advanced">Advanced</span></h1>
+<h2><a href="#why-is-redis-so-fast" class="header-anchor">#</a><span id="why-is-redis-so-fast">Why is redis so fast?</span></h2>
+<ol>
+<li>Redis is a RAM-based data store. RAM access is at least 1000 times faster than random disk access.</li>
+<li>Redis leverages IO multiplexing and single-threaded execution loop for execution efficiency.</li>
+<li>Redis leverages several efficient lower-level data structures.</li>
+</ol>
+<h2><a href="#explain-a-use-case-for-sorted-set-in-redis" class="header-anchor">#</a><span id="explain-a-use-case-for-sorted-set-in-redis">Explain a use case for Sorted Set in Redis</span></h2>
+<p>Sorted Sets are also collections of unique values. These ones, as the name implies, are ordered. They are ordered by a score, then lexicographically.</p>
+<p>This data type is optimized for quick lookups by score. Getting the highest, lowest, or any range of values in between is extremely fast.</p>
+<p>If you add users to a sorted set along with their high score, you have yourself a perfect leader-board. As new high scores come in, just add them to the set again with their high score and it will re-order your leader-board. Also great for keeping track of the last time users visited and who is active in your application.</p>
+<p>Storing values with the same score causes them to be ordered lexicographically (think alphabetically). This can be useful for things like auto-complete features.</p>
+<p>Many of the sorted set commands are similar to commands for sets, sometimes with an additional score parameter. Also included are commands for managing scores and querying by score.</p>
+<h2><a href="#how-can-i-exploit-multiple-cpu-cores-for-redis" class="header-anchor">#</a><span id="how-can-i-exploit-multiple-cpu-cores-for-redis">How can I exploit multiple CPU/cores for Redis?</span></h2>
+<p>First Redis is single threaded but it’s not very frequent that CPU becomes your bottleneck with Redis, as usually Redis is either memory or network bound.</p>
+<p>For instance, using pipelining Redis running on an average Linux system can deliver even 1 million requests per second, so if your application mainly uses O(N) or O(log n) commands, it is hardly going to use too much CPU.</p>
+<p>However, to maximize CPU usage you can start multiple instances of Redis in the same box and treat them as different servers. At some point a single box may not be enough anyway, so if you want to use multiple CPUs you can start thinking of some way to shard earlier.</p>
+<p>With Redis 4.0 Redis team started to make Redis more threaded. For now this is limited to deleting objects in the background, and to blocking commands implemented via Redis modules. For future releases, the plan is to make Redis more and more threaded.</p>
+<h2><a href="#how-would-you-efficiently-store-json-in-redis" class="header-anchor">#</a><span id="how-would-you-efficiently-store-json-in-redis">How would you efficiently store JSON in Redis?</span></h2>
+<p>There are many ways to store an array of Objects in Redis:</p>
+<ol>
+<li>Store the entire object as JSON-encoded string in a single key and keep track of all Objects using a set (or list, if more appropriate):</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">INCR id:users<br>SET user:&#123;id&#125; &#x27;&#123;&quot;name&quot;:&quot;Fred&quot;,&quot;age&quot;:25&#125;&#x27;<br>SADD users &#123;id&#125;<br></code></pre></td></tr></table></figure>
+<p>Use when:</p>
+<ul>
+<li>If you use most of the fields on most of your accesses.</li>
+<li>If there is variance on possible keys</li>
+</ul>
+<p>Store each Object’s properties in a Redis hash:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">INCR id:users<br>HMSET user:&#123;id&#125; name &quot;Fred&quot; age 25<br>SADD users &#123;id&#125;<br></code></pre></td></tr></table></figure>
+<p>Use when:</p>
+<ul>
+<li>If you use just single fields on most of your accesses.</li>
+<li>If you always know which fields are available</li>
+<li>If there are a lot of fields in the Object</li>
+<li>Your Objects are not nested with other Objects</li>
+<li>You tend to only access a small subset of fields at a time</li>
+</ul>
+<p>Store each Object as a JSON string in a Redis hash:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">INCR id:users<br>HMSET users &#123;id&#125; &#x27;&#123;&quot;name&quot;:&quot;Fred&quot;,&quot;age&quot;:25&#125;&#x27;<br></code></pre></td></tr></table></figure>
+<p>Use when:</p>
+<ul>
+<li>really care about not polluting the main key namespace</li>
+</ul>
+<p>Store each property of each Object in a dedicated key:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">INCR id:users<br>SET user:&#123;id&#125;:name &quot;Fred&quot;<br>SET user:&#123;id&#125;:age 25<br>SADD users &#123;id&#125;<br></code></pre></td></tr></table></figure>
+<p>Use when:</p>
+<ul>
+<li>almost never preferred unless the property of the Object needs to have specific TTL or something</li>
+</ul>
+<p>Option 4 is generally not preferred. Options 1 and 2 are very similar, and they are both pretty common. Option 1 (generally speaking) may be most preferable because it allows you to store more complicated Objects (with multiple layers of nesting, etc.) Option 3 is used when you really care about not polluting the main key namespace (i.e. you don’t want there to be a lot of keys in your database and you don’t care about things like TTL, key sharding, or whatever).</p>
+<p>Also as a rule of the thumb, go for the option which requires fewer queries on most of your use cases.</p>
+<h2><a href="#if-there-s-a-way-to-check-if-a-key-already-exists-in-a-redis-list" class="header-anchor">#</a><span id="if-there-s-a-way-to-check-if-a-key-already-exists-in-a-redis-list">If there’s a way to check if a key already exists in a Redis list?</span></h2>
+<p>Your options are as follows:</p>
+<ul>
+<li>Using LREM and replacing it if it was found.</li>
+<li>Maintaining a separate SET in conjunction with your LIST</li>
+<li>Looping through the LIST until you find the item or reach the end.</li>
+</ul>
+<p>Redis lists are implemented as a, hence the limitations. I think your best option is maintaining a duplicate SET. Regardless, make sure your actions are atomic with MULTI-EXEC or Lua scripts.</p>
+<h2><a href="#what-do-the-terms-cpu-bound-and-i-o-bound-mean-in-context-of-redis" class="header-anchor">#</a><span id="what-do-the-terms-cpu-bound-and-i-o-bound-mean-in-context-of-redis">What do the terms “CPU bound” and “I/O bound” mean in context of Redis?</span></h2>
+<ul>
+<li>A program is CPU bound if it would go faster if the CPU were faster, i.e. it spends the majority of its time simply using the CPU (doing calculations). A program that computes new digits of π will typically be CPU-bound, it’s just crunching numbers.</li>
+<li>A program is I/O bound if it would go faster if the I/O subsystem was faster. Which exact I/O system is meant can vary; I typically associate it with disk, but of course networking or communication in general is common too. A program that looks through a huge file for some data might become I/O bound, since the bottleneck is then the reading of the data from disk (actually, this example is perhaps kind of old-fashioned these days with hundreds of MB/s coming in from SSDs).</li>
+<li>Memory bound means the rate at which a process progresses is limited by the amount memory available and the speed of that memory access. A task that processes large amounts of in memory data, for example multiplying large matrices, is likely to be Memory * Bound.</li>
+<li>Cache bound means the rate at which a process progress is limited by the amount and speed of the cache available. A task that simply processes more data than fits in the cache will be cache bound.</li>
+</ul>
+<p>It’s not very frequent that CPU becomes your bottleneck with Redis, as usually Redis is either memory or network bound.</p>
+<h2><a href="#what-is-aof-persistence-in-redis" class="header-anchor">#</a><span id="what-is-aof-persistence-in-redis">What is AOF persistence in Redis?</span></h2>
+<p>Redis AOF (Append Only Files) persistence logs every write operation received by the server, that will be played again at server startup, reconstructing the original dataset.</p>
+<p>Redis must be explicitly configured for AOF persistence, if this is required, and this will result in a performance penalty as well as growing logs. It may suffice for relatively reliable persistence of a limited amount of data flow.</p>
+<h2><a href="#what-is-pipelining-in-redis-and-when-to-use-one" class="header-anchor">#</a><span id="what-is-pipelining-in-redis-and-when-to-use-one">What is Pipelining in Redis and when to use one?</span></h2>
+<p>If you have many redis commands you want to execute you can use pipelining to send them to redis all-at-once instead of one-at-a-time.</p>
+<p>Normally when you execute a command, each command is a separate request/response cycle. With pipelining, Redis can buffer several commands and execute them all at once, responding with all of the responses to all of your commands in a single reply.</p>
+<p>This can allow you to achieve even greater throughput on <em>bulk importing</em> or other actions that involve lots of commands.</p>
+<h2><a href="#when-to-use-redis-hashes-data-type" class="header-anchor">#</a><span id="when-to-use-redis-hashes-data-type">When to use Redis Hashes data type?</span></h2>
+<p>Hashes are sort of like a key value store within a key value store. They map between string fields and string values. Field-&gt;value maps using a hash are slightly more space efficient than key-&gt;value maps using regular strings.</p>
+<p>Hashes are useful as a namespace, or when you want to logically group many keys. With a hash you can grab all the members efficiently, expire all the members together, delete all the members together, etc. Great for any use case where you have several key/value pairs that need to grouped.</p>
+<p>One example use of a hash is for storing user profiles between applications. A redis hash stored with the user ID as the key will allow you to store as many bits of data about a user as needed while keeping them stored under a single key. The advantage of using a hash instead of serializing the profile into a string is that you can have different applications read/write different fields within the user profile without having to worry about one app overriding changes made by others (which can happen if you serialize stale data).</p>
+<h2><a href="#why-redis-does-not-support-roll-backs" class="header-anchor">#</a><span id="why-redis-does-not-support-roll-backs">Why Redis does not support roll backs?</span></h2>
+<p>Redis commands can fail during a transaction, but still Redis will execute the rest of the transaction instead of rolling back.</p>
+<p>There are good opinions for this behavior:</p>
+<ul>
+<li>Redis commands can fail only if called with a wrong syntax (and the problem is not detectable during the command queueing), or against keys holding the wrong data type: this means that in practical terms a failing command is the result of a programming errors, and a kind of error that is very likely to be detected during development, and not in production.</li>
+<li>Redis is internally simplified and faster because it does not need the ability to roll back.</li>
+</ul>
+<h2><a href="#how-much-faster-is-redis-than-mongodb" class="header-anchor">#</a><span id="how-much-faster-is-redis-than-mongodb">How much faster is Redis than MongoDB?</span></h2>
+<p>The general answer is that Redis 10 - 30% faster when the data set fits within working memory of a single machine.</p>
+<h2><a href="#is-redis-a-durable-datastore-d-from-acid" class="header-anchor">#</a><span id="is-redis-a-durable-datastore-d-from-acid">Is Redis a durable datastore (“D” from ACID)?</span></h2>
+<p>Redis is not usually deployed as a “durable” datastore (in the sense of the “D” in ACID.), even with journaling. Most use cases intentionally sacrifice a little durability in return for speed.</p>
+<p>However, the “append only file” storage mode can optionally be configured to operate in a durable manner, at the cost of performance. It will have to pay for an fsync() on every modification. To configure this, set these two options in your .conf file:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">appendonly yes<br>appendfsync always<br></code></pre></td></tr></table></figure>
+<h2><a href="#rdb-and-aof-which-one-should-i-use" class="header-anchor">#</a><span id="rdb-and-aof-which-one-should-i-use">RDB and AOF, which one should I use?</span></h2>
+<p>Redis provides two persistence schemes, RDB and AOF:</p>
+<p>RDB: Generates a snapshot of data in Redis memory within a specified time interval, which is a binary file dumpr.rdb</p>
+<p>AOF: Record all Redis write commands except queries, and restore data by re-executing these commands when the Redis service starts.</p>
+<p>If you are very concerned about your data, but still can withstand data loss within minutes, then you can only use RDB persistence.<br>
+AOF adds every command that Redis executes to disk. Processing huge writes can degrade Redis’s performance. I wonder if you can accept it.<br>
+Database backup and disaster recovery:<br>
+Timely generation of RDB snapshot is very convenient for database backup, and RDB restores data sets faster than AOF restores.<br>
+Redis supports both RDB and AOF. When the system restarts, Redis will use AOF first to recover data, so that the lost data will be minimized.</p>
+<h2><a href="#what-are-the-underlying-data-structures-used-for-redis" class="header-anchor">#</a><span id="what-are-the-underlying-data-structures-used-for-redis">What are the underlying data structures used for Redis?</span></h2>
+<ul>
+<li>Strings are implemented using a C dynamic string library so that we don’t pay (asymptotically speaking) for allocations in append operations. This way we have O(N) appends, for instance, instead of having quadratic behavior.</li>
+<li>Lists are implemented with linked lists.</li>
+<li>Sets and Hashes are implemented with hash tables.</li>
+<li>Sorted sets are implemented with skip lists<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup> (a peculiar type of balanced trees).</li>
+</ul>
+<h2><a href="#how-is-redis-different-from-other-key-value-stores" class="header-anchor">#</a><span id="how-is-redis-different-from-other-key-value-stores">How is Redis different from other key-value stores?</span></h2>
+<ul>
+<li>Redis has a different evolution path in the key-value DBs where values can contain more complex data types, with atomic operations defined on those data types. Redis data types are closely related to fundamental data structures and are exposed to the programmer as such, without additional abstraction layers.</li>
+<li>Redis is an in-memory but persistent on disk database, so it represents a different trade off where very high write and read speed is achieved with the limitation of data sets that can’t be larger than memory. Another advantage of in-memory databases is that the memory representation of complex data structures is much simpler to manipulate compared to the same data structures on disk, so Redis can do a lot with little internal complexity. At the same time the two on-disk storage formats (RDB and AOF) don’t need to be suitable for random access, so they are compact and always generated in an append-only fashion (Even the AOF log rotation is an append-only operation, since the new version is generated from the copy of data in memory). However this design also involves different challenges compared to traditional on-disk stores. Being the main data representation on memory, Redis operations must be carefully handled to make sure there is always an updated version of the data set on disk.</li>
+</ul>
+<h2><a href="#what-s-the-redis-memory-footprint" class="header-anchor">#</a><span id="what-s-the-redis-memory-footprint">What’s the Redis memory footprint?</span></h2>
+<p>To give you a few examples (all obtained using 64-bit instances):</p>
+<ul>
+<li>An empty instance uses ~ 3MB of memory.</li>
+<li>1 Million small Keys -&gt; String Value pairs use ~ 85MB of memory.</li>
+<li>1 Million Keys -&gt; Hash value, representing an object with 5 fields, use ~ 160 MB of memory.</li>
+</ul>
+<p>Testing your use case is trivial. Use the redis-benchmark utility to generate random data sets then check the space used with the INFO memory command.</p>
+<p>64-bit systems will use considerably more memory than 32-bit systems to store the same keys, especially if the keys and values are small. This is because pointers take 8 bytes in 64-bit systems. But of course the advantage is that you can have a lot of memory in 64-bit systems, so in order to run large Redis servers a 64-bit system is more or less required. The alternative is sharding.</p>
+<h2><a href="#why-does-redis-keep-its-entire-dataset-in-memory" class="header-anchor">#</a><span id="why-does-redis-keep-its-entire-dataset-in-memory">Why does Redis keep its entire dataset in memory?</span></h2>
+<p>In the past the Redis developers experimented with Virtual Memory and other systems in order to allow larger than RAM datasets, but after all we are very happy if we can do one thing well: data served from memory, disk used for storage. So for now there are no plans to create an on disk backend for Redis. Most of what Redis is, after all, a direct result of its current design.</p>
+<p>If your real problem is not the total RAM needed, but the fact that you need to split your data set into multiple Redis instances, please read the partitioning page in this documentation for more info.</p>
+<p>Redis Ltd., the company sponsoring Redis development, has developed a “Redis on Flash” solution that uses a mixed RAM/flash approach for larger data sets with a biased access pattern. You may check their offering for more information, however this feature is not part of the open source Redis code base.</p>
+<h2><a href="#can-you-use-redis-with-a-disk-based-database" class="header-anchor">#</a><span id="can-you-use-redis-with-a-disk-based-database">Can you use Redis with a disk-based database?</span></h2>
+<p>Yes, a common design pattern involves taking very write-heavy small data in Redis (and data you need the Redis data structures to model your problem in an efficient way), and big blobs of data into an SQL or eventually consistent on-disk database. Similarly sometimes Redis is used in order to take in memory another copy of a subset of the same data stored in the on-disk database. This may look similar to caching, but actually is a more advanced model since normally the Redis dataset is updated together with the on-disk DB dataset, and not refreshed on cache misses.</p>
+<h2><a href="#how-can-i-reduce-redis-overall-memory-usage" class="header-anchor">#</a><span id="how-can-i-reduce-redis-overall-memory-usage">How can I reduce Redis’ overall memory usage?</span></h2>
+<p>If you can, use Redis 32 bit instances. Also make good use of small hashes, lists, sorted sets, and sets of integers, since Redis is able to represent those data types in the special case of a few elements in a much more compact way. There is more info in the Memory Optimization page<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup>.</p>
+<h2><a href="#what-happens-if-redis-runs-out-of-memory" class="header-anchor">#</a><span id="what-happens-if-redis-runs-out-of-memory">What happens if Redis runs out of memory?</span></h2>
+<p>Redis has built-in protections allowing the users to set a max limit on memory usage, using the maxmemory option in the configuration file to put a limit to the memory Redis can use. If this limit is reached, Redis will start to reply with an error to write commands (but will continue to accept read-only commands).</p>
+<p>You can also configure Redis to evict keys when the max memory limit is reached. See the eviction policy docs<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup> for more information on this.</p>
+<h2><a href="#are-redis-on-disk-snapshots-atomic" class="header-anchor">#</a><span id="are-redis-on-disk-snapshots-atomic">Are Redis on-disk snapshots atomic?</span></h2>
+<p>Yes, the Redis background saving process is always forked when the server is outside of the execution of a command, so every command reported to be atomic in RAM is also atomic from the point of view of the disk snapshot.</p>
+<h2><a href="#what-is-the-maximum-number-of-keys-a-single-redis-instance-can-hold-what-is-the-maximum-number-of-elements-in-a-hash-list-set-and-sorted-set" class="header-anchor">#</a><span id="what-is-the-maximum-number-of-keys-a-single-redis-instance-can-hold-what-is-the-maximum-number-of-elements-in-a-hash-list-set-and-sorted-set">What is the maximum number of keys a single Redis instance can hold? What is the maximum number of elements in a Hash, List, Set, and Sorted Set?</span></h2>
+<p>Redis can handle up to 2^32 keys, and was tested in practice to handle at least 250 million keys per instance.</p>
+<p>Every hash, list, set, and sorted set, can hold 2^32 elements.</p>
+<p>In other words your limit is likely the available memory in your system.</p>
+<h2><a href="#why-does-my-replica-have-a-different-number-of-keys-its-master-instance" class="header-anchor">#</a><span id="why-does-my-replica-have-a-different-number-of-keys-its-master-instance">Why does my replica have a different number of keys its master instance?</span></h2>
+<p>If you use keys with limited time to live (Redis expires) this is normal behavior. This is what happens:</p>
+<ul>
+<li>The primary generates an RDB file on the first synchronization with the replica.</li>
+<li>The RDB file will not include keys already expired in the primary but which are still in memory.</li>
+<li>These keys are still in the memory of the Redis primary, even if logically expired. They’ll be considered non-existent, and their memory will be reclaimed later, either incrementally or explicitly on access. While these keys are not logically part of the dataset, they are accounted for in the INFO output and in the DBSIZE command.</li>
+<li>When the replica reads the RDB file generated by the primary, this set of keys will not be loaded.</li>
+</ul>
+<p>Because of this, it’s common for users with many expired keys to see fewer keys in the replicas. However, logically, the primary and replica will have the same content.</p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://www.javatpoint.com/redis-interview-questions-and-answers">Redis Interview Questions</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://www.fullstack.cafe/blog/redis-interview-questions">25 Redis Interview Questions (ANSWERED) For Web Developers</a> <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://redis.io/docs/getting-started/faq/">Redis FAQ</a> <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn4" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/9d8296562806">Skip List–跳表</a> <a href="#fnref4" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn5" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://redis.io/docs/reference/optimization/memory-optimization/">Memory optimization - Redis</a> <a href="#fnref5" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn6" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://redis.io/docs/manual/eviction/">Key eviction - Overview of Redis key eviction policies (LRU, LFU, etc.)</a> <a href="#fnref6" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+</p></div><div class="share"><span>Share</span>&nbsp;<span class="soc"><a href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank" class="fa fa-bookmark"></a></span><span class="soc"><a href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));" class="fa fa-weibo"></a></span><span class="soc"><a target="_blank" rel="noopener" href="http://twitter.com/home?status=https://blog.kleon.space/interview/tech/redis/%20KLEON%20Tech - Redis" class="fa fa-twitter"></a></span></div><div class="pagination"><p class="clearfix"><span class="pre pagbuttons"><a role="navigation" href="/interview/tech/kafka/" title="Tech - Kafka"><i class="fa fa-angle-double-left"></i>&nbsp;Previous post: Tech - Kafka</a></span><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/interview/tech/mongodb/" title="Tech - MongoDB">Next post: Tech - MongoDB&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>

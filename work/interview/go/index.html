@@ -8,8 +8,7 @@ golang context的理解，context主要用于父子任务之间的同步取消�
 https://github.com/lifei6671/interview-go
 https://segmentfault.com/a/1190000038922260
 #Context
-golang context的理解，context主要用于父子任务之间的同步取消信号，本质上是一种"><meta name="twitter:site" content="KLEON"><meta name="twitter:title" content="烤面筋 - Go"><meta name="twitter:card" content="summary"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 6.1.0"><link rel="stylesheet" href="/css/prism.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body><div id="stage" class="container"><div class="row"><div id="side-bar" class="col-sm-3 col-xs-12 side-container invisible"><div class="vertical-text site-title"><h3 tabindex="-1" class="site-title-small"><a href="/" class="a-title"></a></h3><h1 tabindex="-1" class="site-title-large"><a href="/" class="a-title">自说自话</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div id="site-nav" class="site-title-links"><ul><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li><li><a href="/categories">Categories</a></li><li><a href="/tags">Tags</a></li><li><a href="/googlebe23cb0bc55fc412.html"></a></li><li><a href="/about/index.html"></a></li><li class="soc"><a href="https://github.com/kleon1024" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa fa-github">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div id="main-container" class="col-sm-9 col-xs-12 main-container invisible"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>烤面筋 - Go</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-04-26</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/面筋/" title="面筋" class="a-tag">面筋</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/面筋/" title="面筋" class="a-tag">面筋</a><span>&nbsp;</span></span></p><p class="post-abstract"><p>基础问题</p>
+golang context的理解，context主要用于父子任务之间的同步取消信号，本质上是一种"><meta name="twitter:site" content="KLEON"><meta name="twitter:title" content="烤面筋 - Go"><meta name="twitter:card" content="summary"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/github.min.css"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 6.1.0"></head><body><div id="stage" class="container"><div class="row"><div id="side-bar" class="col-sm-3 col-xs-12 side-container invisible"><div class="vertical-text site-title"><h3 tabindex="-1" class="site-title-small"><a href="/" class="a-title"></a></h3><h1 tabindex="-1" class="site-title-large"><a href="/" class="a-title">自说自话</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div id="site-nav" class="site-title-links"><ul><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li><li><a href="/categories">Categories</a></li><li><a href="/tags">Tags</a></li><li><a href="/googlebe23cb0bc55fc412.html"></a></li><li><a href="/about/index.html"></a></li><li class="soc"><a href="https://github.com/kleon1024" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa fa-github">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div id="main-container" class="col-sm-9 col-xs-12 main-container invisible"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>烤面筋 - Go</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-04-26</span><span class="date meta-item">Updated at&nbsp;2021-05-19</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/面筋/" title="面筋" class="a-tag">面筋</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/面筋/" title="面筋" class="a-tag">面筋</a><span>&nbsp;</span></span></p><p class="post-abstract"><p>基础问题</p>
 <span id="more"></span>
 <p><a target="_blank" rel="noopener" href="https://github.com/lifei6671/interview-go">https://github.com/lifei6671/interview-go</a></p>
 <p><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000038922260">https://segmentfault.com/a/1190000038922260</a></p>
@@ -110,10 +109,7 @@ channel一定记得close。</p>
 <li>缺少接收器，导致发送阻塞<br>
 这个例子中，每执行一次 query，则启动1000个协程向信道 ch 发送数字 0，但只接收了一次，导致 999 个协程被阻塞，不能退出。</li>
 </ul>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">func query() int &#123;
-	ch := make(chan int)
-	for i := 0; i < 1000; i++ &#123;
-		go func() &#123; ch <- 0 1001 2000 2999 &#125;() &#125; return <-ch func main() &#123; for i :="0;" < 4; i++ query() fmt.printf("goroutines: %d\n", runtime.numgoroutine()) goroutines: 3998<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></-></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">func query() int &#123;<br>  ch := make(chan int)<br>  for i := 0; i &lt; 1000; i++ &#123;<br>    go func() &#123; ch &lt;- 0 &#125;()<br>  &#125;<br>  return &lt;-ch<br>&#125;<br><br>func main() &#123;<br>  for i := 0; i &lt; 4; i++ &#123;<br>    query()<br>    fmt.Printf(&quot;goroutines: %d\n&quot;, runtime.NumGoroutine())<br>  &#125;<br>&#125;<br>// goroutines: 1001<br>// goroutines: 2000<br>// goroutines: 2999<br>// goroutines: 3998<br></code></pre></td></tr></table></figure>
 <ul>
 <li>缺少发送器，导致接收阻塞</li>
 </ul>
@@ -126,25 +122,7 @@ channel一定记得close。</p>
 <li>无限循环(infinite loops)</li>
 </ul>
 <p>这个例子中，为了避免网络等问题，采用了无限重试的方式，发送 HTTP 请求，直到获取到数据。那如果 HTTP 服务宕机，永远不可达，导致协程不能退出，发生泄漏。</p>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">func request(url string, wg sync.WaitGroup) &#123;
-	for &#123;
-		if _, err := http.Get(url); err == nil &#123;
-			// write to db
-			break
-		&#125;
-		time.Sleep(time.Second)
-	&#125;
-	wg.Done()
-&#125;
-
-func main() &#123;
-	var wg sync.WaitGroup
-	for i := 0; i < 1000; i++ &#123;
-		wg.Add(1)
-		go request(fmt.Sprintf("exampe.com/%d", i), wg)
-	&#125;
-	wg.Wait()
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">func request(url string, wg sync.WaitGroup) &#123;<br>  for &#123;<br>    if _, err := http.Get(url); err == nil &#123;<br>      // write to db<br>      break<br>    &#125;<br>    time.Sleep(time.Second)<br>  &#125;<br>  wg.Done()<br>&#125;<br><br>func main() &#123;<br>  var wg sync.WaitGroup<br>  for i := 0; i &lt; 1000; i++ &#123;<br>    wg.Add(1)<br>    go request(fmt.Sprintf(&quot;exampe.com/%d&quot;, i), wg)<br>  &#125;<br>  wg.Wait()<br>&#125;<br></code></pre></td></tr></table></figure>
 <h1><a href="#interface" class="header-anchor">#</a><span id="interface">interface</span></h1>
 <p>interface nil 比较</p>
 <h1><a href="#init" class="header-anchor">#</a><span id="init">init</span></h1>
@@ -249,81 +227,30 @@ Go如何减短这个过程呢？标记-清除(mark and sweep)算法包含两部�
 <ul>
 <li>闭包变量捕获</li>
 </ul>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">var ss [5]struct&#123;&#125;
-
-//第一种情况，很正常，输出0，1，2，3，4
-for i := range ss &#123;
-	fmt.Println(i)
-&#125;
-
-//第二种情况，典型的Go语言闭包，它捕获了变量i，但是要注意的是它持有的是引用不是拷贝，当for循环结束时，i=4
-//所以闭包输出的结果都是4
-for i := range ss &#123;
-	defer func() &#123;
-		fmt.Println(i)
-	&#125;()
-&#125;
-
-//第三种情况，这种情况下的闭包，它并没有捕获变量i，而是通过传参的方式，这种情况下它得到的是拷贝
-//所以其结果是4，3，2，1，0
-for i := range ss &#123;
-	defer func(i int) &#123;
-		fmt.Println(i)
-	&#125;(i)
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">var ss [5]struct&#123;&#125;<br><br>//第一种情况，很正常，输出0，1，2，3，4<br>for i := range ss &#123;<br>  fmt.Println(i)<br>&#125;<br><br>//第二种情况，典型的Go语言闭包，它捕获了变量i，但是要注意的是它持有的是引用不是拷贝，当for循环结束时，i=4<br>//所以闭包输出的结果都是4<br>for i := range ss &#123;<br>  defer func() &#123;<br>    fmt.Println(i)<br>  &#125;()<br>&#125;<br><br>//第三种情况，这种情况下的闭包，它并没有捕获变量i，而是通过传参的方式，这种情况下它得到的是拷贝<br>//所以其结果是4，3，2，1，0<br>for i := range ss &#123;<br>  defer func(i int) &#123;<br>    fmt.Println(i)<br>  &#125;(i)<br>&#125;<br></code></pre></td></tr></table></figure>
 <ul>
 <li>遍历取不到所有元素指针</li>
 </ul>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">arr := [2]int&#123;1, 2&#125;
-res := []*int&#123;&#125;
-for _, v := range arr &#123;
-    res = append(res, &v)
-&#125;
-//expect: 1 2
-fmt.Println(*res[0],*res[1]) 
-//but output: 2 2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">arr := [2]int&#123;1, 2&#125;<br>res := []*int&#123;&#125;<br>for _, v := range arr &#123;<br>    res = append(res, &amp;v)<br>&#125;<br>//expect: 1 2<br>fmt.Println(*res[0],*res[1]) <br>//but output: 2 2<br></code></pre></td></tr></table></figure>
 <p>通过查看go编译源码可以了解到, for-range其实是语法糖，内部调用还是for循环，初始化会拷贝带遍历的列表（如array，slice，map），然后每次遍历的v都是对同一个元素的遍历赋值。 也就是说如果直接对v取地址，最终只会拿到一个地址，而对应的值就是最后遍历的那个元素所附给v的值。对应伪代码如下：</p>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">// len_temp := len(range)
-// range_temp := range
-// for index_temp = 0; index_temp < len_temp; index_temp++ &#123;
-//     value_temp = range_temp[index_temp]
-//     index = index_temp
-//     value = value_temp
-//     original body
-//   &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">// len_temp := len(range)<br>// range_temp := range<br>// for index_temp = 0; index_temp &lt; len_temp; index_temp++ &#123;<br>//     value_temp = range_temp[index_temp]<br>//     index = index_temp<br>//     value = value_temp<br>//     original body<br>//   &#125;<br></code></pre></td></tr></table></figure>
 <ol>
 <li>那么怎么改？ 有两种 - 使用局部变量拷贝v</li>
 </ol>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">for _, v := range arr &#123;
-    //局部变量v替换了v，也可用别的局部变量名
-    v := v 
-    res = append(res, &v)
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">for _, v := range arr &#123;<br>    //局部变量v替换了v，也可用别的局部变量名<br>    v := v <br>    res = append(res, &amp;v)<br>&#125;<br></code></pre></td></tr></table></figure>
 <ol>
 <li>直接索引获取原来的元素</li>
 </ol>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">//这种其实退化为for循环的简写
-for k := range arr &#123;
-    res = append(res, &arr[k])
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">//这种其实退化为for循环的简写<br>for k := range arr &#123;<br>    res = append(res, &amp;arr[k])<br>&#125;<br></code></pre></td></tr></table></figure>
 <ul>
 <li>遍历会停止么？</li>
 </ul>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">v := []int&#123;1, 2, 3&#125;
-for i := range v &#123;
-    v = append(v, i)
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">v := []int&#123;1, 2, 3&#125;<br>for i := range v &#123;<br>    v = append(v, i)<br>&#125;<br></code></pre></td></tr></table></figure>
 <p>答案是【会】，因为遍历前对v做了拷贝，所以期间对原来v的修改不会反映到遍历中</p>
 <ul>
 <li>对大数组这样遍历有啥问题？</li>
 </ul>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">//假设值都为1，这里只赋值3个
-var arr = [102400]int&#123;1, 1, 1&#125; 
-for i, n := range arr &#123;
-    //just ignore i and n for simplify the example
-    _ = i 
-    _ = n 
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">//假设值都为1，这里只赋值3个<br>var arr = [102400]int&#123;1, 1, 1&#125; <br>for i, n := range arr &#123;<br>    //just ignore i and n for simplify the example<br>    _ = i <br>    _ = n <br>&#125;<br></code></pre></td></tr></table></figure>
 <p>答案是【有问题】！遍历前的拷贝对内存是极大浪费啊 怎么优化？有两种</p>
 <ul>
 <li>对数组取地址遍历 for i, n := range &amp;arr</li>
@@ -333,85 +260,28 @@ for i, n := range arr &#123;
 <ul>
 <li>对大数组这样重置效率高么？</li>
 </ul>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">//假设值都为1，这里只赋值3个
-var arr = [102400]int&#123;1, 1, 1&#125; 
-for i, _ := range &arr &#123;
-    arr[i] = 0
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">//假设值都为1，这里只赋值3个<br>var arr = [102400]int&#123;1, 1, 1&#125; <br>for i, _ := range &amp;arr &#123;<br>    arr[i] = 0<br>&#125;<br></code></pre></td></tr></table></figure>
 <p>答案是【高】，这个要理解得知道go对这种重置元素值为默认值的遍历是有优化的, 详见go源码：memclrrange</p>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">// Lower n into runtime·memclr if possible, for
-// fast zeroing of slices and arrays (issue 5373).
-// Look for instances of
-//
-// for i := range a &#123;
-//  a[i] = zero
-// &#125;
-//
-// in which the evaluation of a is side-effect-free.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">// Lower n into runtime·memclr if possible, for<br>// fast zeroing of slices and arrays (issue 5373).<br>// Look for instances of<br>//<br>// for i := range a &#123;<br>//  a[i] = zero<br>// &#125;<br>//<br>// in which the evaluation of a is side-effect-free.<br></code></pre></td></tr></table></figure>
 <ul>
 <li>对map遍历时删除元素能遍历到么？</li>
 </ul>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">var m = map[int]int&#123;1: 1, 2: 2, 3: 3&#125;
-//only del key once, and not del the current iteration key
-var o sync.Once 
-for i := range m &#123;
-    o.Do(func() &#123;
-        for _, key := range []int&#123;1, 2, 3&#125; &#123;
-            if key != i &#123;
-                fmt.Printf("when iteration key %d, del key %d\n", i, key)
-                delete(m, key)
-                break
-            &#125;
-        &#125;
-    &#125;)
-    fmt.Printf("%d%d ", i, m[i])
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">var m = map[int]int&#123;1: 1, 2: 2, 3: 3&#125;<br>//only del key once, and not del the current iteration key<br>var o sync.Once <br>for i := range m &#123;<br>    o.Do(func() &#123;<br>        for _, key := range []int&#123;1, 2, 3&#125; &#123;<br>            if key != i &#123;<br>                fmt.Printf(&quot;when iteration key %d, del key %d\n&quot;, i, key)<br>                delete(m, key)<br>                break<br>            &#125;<br>        &#125;<br>    &#125;)<br>    fmt.Printf(&quot;%d%d &quot;, i, m[i])<br>&#125;<br></code></pre></td></tr></table></figure>
 <p>答案是【不会】 map内部实现是一个链式hash表，为保证每次无序，初始化时会随机一个遍历开始的位置, 这样，如果删除的元素开始没被遍历到（上边once.Do函数内保证第一次执行时删除未遍历的一个元素），那就后边就不会出现。</p>
 <ul>
 <li>对map遍历时新增元素能遍历到么？</li>
 </ul>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">var m = map[int]int&#123;1:1, 2:2, 3:3&#125;
-for i, _ := range m &#123;
-    m[4] = 4
-    fmt.Printf("%d%d ", i, m[i])
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">var m = map[int]int&#123;1:1, 2:2, 3:3&#125;<br>for i, _ := range m &#123;<br>    m[4] = 4<br>    fmt.Printf(&quot;%d%d &quot;, i, m[i])<br>&#125;<br></code></pre></td></tr></table></figure>
 <p>答案是【可能会】，输出中可能会有44。原因同上一个, 可以用以下代码验证</p>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">var createElemDuringIterMap = func() &#123;
-    var m = map[int]int&#123;1: 1, 2: 2, 3: 3&#125;
-    for i := range m &#123;
-        m[4] = 4
-        fmt.Printf("%d%d ", i, m[i])
-    &#125;
-&#125;
-for i := 0; i < 50; i++ &#123;
-    //some line will not show 44, some line will
-    createElemDuringIterMap()
-    fmt.Println()
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">var createElemDuringIterMap = func() &#123;<br>    var m = map[int]int&#123;1: 1, 2: 2, 3: 3&#125;<br>    for i := range m &#123;<br>        m[4] = 4<br>        fmt.Printf(&quot;%d%d &quot;, i, m[i])<br>    &#125;<br>&#125;<br>for i := 0; i &lt; 50; i++ &#123;<br>    //some line will not show 44, some line will<br>    createElemDuringIterMap()<br>    fmt.Println()<br>&#125;<br></code></pre></td></tr></table></figure>
 <ul>
 <li>这样遍历中起goroutine可以么？</li>
 </ul>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">var m = []int&#123;1, 2, 3&#125;
-for i := range m &#123;
-    go func() &#123;
-        fmt.Print(i)
-    &#125;()
-&#125;
-//block main 1ms to wait goroutine finished
-time.Sleep(time.Millisecond)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">var m = []int&#123;1, 2, 3&#125;<br>for i := range m &#123;<br>    go func() &#123;<br>        fmt.Print(i)<br>    &#125;()<br>&#125;<br>//block main 1ms to wait goroutine finished<br>time.Sleep(time.Millisecond)<br></code></pre></td></tr></table></figure>
 <p>答案是【不可以】。预期输出0,1,2的某个组合，如012，210… 结果是222. 同样是拷贝的问题 怎么解决 - 以参数方式传入</p>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">for i := range m &#123;
-    go func(i int) &#123;
-        fmt.Print(i)
-    &#125;(i)
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">for i := range m &#123;<br>    go func(i int) &#123;<br>        fmt.Print(i)<br>    &#125;(i)<br>&#125;<br></code></pre></td></tr></table></figure>
 <p>使用局部变量拷贝</p>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">for i := range m &#123;
-    i := i
-    go func() &#123;
-        fmt.Print(i)
-    &#125;()
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">for i := range m &#123;<br>    i := i<br>    go func() &#123;<br>        fmt.Print(i)<br>    &#125;()<br>&#125;<br></code></pre></td></tr></table></figure>
 <h1><a href="#gao-ji-te-xing" class="header-anchor">#</a><span id="gao-ji-te-xing">高级特性</span></h1>
 <ul>
 <li>var _ io.Writer = (*myWriter)(nil)</li>
@@ -436,42 +306,7 @@ time.Sleep(time.Millisecond)<span aria-hidden="true" class="line-numbers-rows"><
 <p>队列 + 工作池</p>
 <h1><a href="#ding-shi-qi" class="header-anchor">#</a><span id="ding-shi-qi">定时器</span></h1>
 <p>NewTimer NewTicker AfterFunc Sleep</p>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">go func() &#123;
-    timer := time.NewTimer(time.Minute * 1)
-    for &#123;
-        select &#123;
-        case <-timer.c: o.lock.lock() for k, v :="range" o.visitips &#123; if time.now().sub(v)>= time.Minute*1 &#123;
-                    delete(o.visitIPs, k)
-                &#125;
-            &#125;
-            o.lock.Unlock()
-            timer.Reset(time.Minute * 1)
-        case <-ctx.done(): return &#125; &#125;()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></-ctx.done():></-timer.c:></code></pre>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">go func() &#123;
-	for &#123;
-		LoadConfigFromABParam()
-		time.Sleep(time.Minute)
-    &#125;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">go func() &#123;<br>    timer := time.NewTimer(time.Minute * 1)<br>    for &#123;<br>        select &#123;<br>        case &lt;-timer.C:<br>            o.lock.Lock()<br>            for k, v := range o.visitIPs &#123;<br>                if time.Now().Sub(v) &gt;= time.Minute*1 &#123;<br>                    delete(o.visitIPs, k)<br>                &#125;<br>            &#125;<br>            o.lock.Unlock()<br>            timer.Reset(time.Minute * 1)<br>        case &lt;-ctx.Done():<br>            return<br>        &#125;<br>    &#125;<br>&#125;()<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">go func() &#123;<br>  for &#123;<br>    LoadConfigFromABParam()<br>    time.Sleep(time.Minute)<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <h1><a href="#bi-mian-kao-bei" class="header-anchor">#</a><span id="bi-mian-kao-bei">避免拷贝</span></h1>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">import (
-    "reflect"
-    "unsafe"
-)
-
-func String(b []byte) (s string) &#123;
-    pbytes := (*reflect.SliceHeader)(unsafe.Pointer(&b))
-    pstring := (*reflect.StringHeader)(unsafe.Pointer(&s))
-    pstring.Data = pbytes.Data
-    pstring.Len = pbytes.Len
-    return
-&#125;
-
-func Slice(s string) (b []byte) &#123;
-    pbytes := (*reflect.SliceHeader)(unsafe.Pointer(&b))
-    pstring := (*reflect.StringHeader)(unsafe.Pointer(&s))
-    pbytes.Data = pstring.Data
-    pbytes.Len = pstring.Len
-    pbytes.Cap = pstring.Len
-    return
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></p></div><div class="share"><span>Share</span>&nbsp;<span class="soc"><a href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank" class="fa fa-bookmark"></a></span><span class="soc"><a href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));" class="fa fa-weibo"></a></span><span class="soc"><a target="_blank" rel="noopener" href="http://twitter.com/home?status=https://blog.kleon.space/work/interview/go/%20KLEON%20烤面筋 - Go" class="fa fa-twitter"></a></span></div><div class="pagination"><p class="clearfix"><span class="pre pagbuttons"><a role="navigation" href="/work/interview/backend/" title="烤面筋 - 后端"><i class="fa fa-angle-double-left"></i>&nbsp;Previous post: 烤面筋 - 后端</a></span><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/work/interview/resume/" title="烤面筋 - 简历">Next post: 烤面筋 - 简历&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">import (<br>    &quot;reflect&quot;<br>    &quot;unsafe&quot;<br>)<br><br>func String(b []byte) (s string) &#123;<br>    pbytes := (*reflect.SliceHeader)(unsafe.Pointer(&amp;b))<br>    pstring := (*reflect.StringHeader)(unsafe.Pointer(&amp;s))<br>    pstring.Data = pbytes.Data<br>    pstring.Len = pbytes.Len<br>    return<br>&#125;<br><br>func Slice(s string) (b []byte) &#123;<br>    pbytes := (*reflect.SliceHeader)(unsafe.Pointer(&amp;b))<br>    pstring := (*reflect.StringHeader)(unsafe.Pointer(&amp;s))<br>    pbytes.Data = pstring.Data<br>    pbytes.Len = pstring.Len<br>    pbytes.Cap = pstring.Len<br>    return<br>&#125;<br></code></pre></td></tr></table></figure></p></div><div class="share"><span>Share</span>&nbsp;<span class="soc"><a href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank" class="fa fa-bookmark"></a></span><span class="soc"><a href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));" class="fa fa-weibo"></a></span><span class="soc"><a target="_blank" rel="noopener" href="http://twitter.com/home?status=https://blog.kleon.space/work/interview/go/%20KLEON%20烤面筋 - Go" class="fa fa-twitter"></a></span></div><div class="pagination"><p class="clearfix"><span class="pre pagbuttons"><a role="navigation" href="/work/interview/backend/" title="烤面筋 - 后端"><i class="fa fa-angle-double-left"></i>&nbsp;Previous post: 烤面筋 - 后端</a></span><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/work/interview/resume/" title="烤面筋 - 简历">Next post: 烤面筋 - 简历&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>

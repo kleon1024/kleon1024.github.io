@@ -3,252 +3,44 @@
 #基础
 链表可通过自定义数据结构，使用指针或引用指向前后节点。
 Go提供了&amp;quot;container/list&amp;quot;1标准库实现双向链表。
-package main
-
-import (
-	&quot;container/list&quot;
-	&quot;fm"><meta name="og:description" content="表是最基础的数据结构之一，存储线性数据，内存结构不连续。
+123456789101112131415161718192021package main"><meta name="og:description" content="表是最基础的数据结构之一，存储线性数据，内存结构不连续。
 
 #基础
 链表可通过自定义数据结构，使用指针或引用指向前后节点。
 Go提供了&amp;quot;container/list&amp;quot;1标准库实现双向链表。
-package main
-
-import (
-	&quot;container/list&quot;
-	&quot;fm"><meta name="twitter:site" content="KLEON"><meta name="twitter:title" content="算法基础 - 链表"><meta name="twitter:card" content="summary"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 6.1.0"><link rel="stylesheet" href="/css/prism.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body><div id="stage" class="container"><div class="row"><div id="side-bar" class="col-sm-3 col-xs-12 side-container invisible"><div class="vertical-text site-title"><h3 tabindex="-1" class="site-title-small"><a href="/" class="a-title"></a></h3><h1 tabindex="-1" class="site-title-large"><a href="/" class="a-title">自说自话</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div id="site-nav" class="site-title-links"><ul><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li><li><a href="/categories">Categories</a></li><li><a href="/tags">Tags</a></li><li><a href="/googlebe23cb0bc55fc412.html"></a></li><li><a href="/about/index.html"></a></li><li class="soc"><a href="https://github.com/kleon1024" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa fa-github">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div id="main-container" class="col-sm-9 col-xs-12 main-container invisible"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>算法基础 - 链表</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-03-12</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/算法/" title="算法" class="a-tag">算法</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/算法/" title="算法" class="a-tag">算法</a><span>&nbsp;</span><a href="/tags/数据结构/" title="数据结构" class="a-tag">数据结构</a><span>&nbsp;</span><a href="/tags/leetcode/" title="leetcode" class="a-tag">leetcode</a><span>&nbsp;</span></span></p><p class="post-abstract"><p>表是最基础的数据结构之一，存储线性数据，内存结构不连续。</p>
+123456789101112131415161718192021package main"><meta name="twitter:site" content="KLEON"><meta name="twitter:title" content="算法基础 - 链表"><meta name="twitter:card" content="summary"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/github.min.css"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 6.1.0"></head><body><div id="stage" class="container"><div class="row"><div id="side-bar" class="col-sm-3 col-xs-12 side-container invisible"><div class="vertical-text site-title"><h3 tabindex="-1" class="site-title-small"><a href="/" class="a-title"></a></h3><h1 tabindex="-1" class="site-title-large"><a href="/" class="a-title">自说自话</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div id="site-nav" class="site-title-links"><ul><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li><li><a href="/categories">Categories</a></li><li><a href="/tags">Tags</a></li><li><a href="/googlebe23cb0bc55fc412.html"></a></li><li><a href="/about/index.html"></a></li><li class="soc"><a href="https://github.com/kleon1024" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa fa-github">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div id="main-container" class="col-sm-9 col-xs-12 main-container invisible"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>算法基础 - 链表</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-03-12</span><span class="date meta-item">Updated at&nbsp;2021-03-25</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/算法/" title="算法" class="a-tag">算法</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/算法/" title="算法" class="a-tag">算法</a><span>&nbsp;</span><a href="/tags/数据结构/" title="数据结构" class="a-tag">数据结构</a><span>&nbsp;</span><a href="/tags/leetcode/" title="leetcode" class="a-tag">leetcode</a><span>&nbsp;</span></span></p><p class="post-abstract"><p>表是最基础的数据结构之一，存储线性数据，内存结构不连续。</p>
 <span id="more"></span>
 <h1><a href="#ji-chu" class="header-anchor">#</a><span id="ji-chu">基础</span></h1>
 <p>链表可通过自定义数据结构，使用指针或引用指向前后节点。</p>
 <p>Go提供了&quot;container/list&quot;<a href="#refer-1"><sup>1</sup></a>标准库实现双向链表。</p>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">package main
-
-import (
-	"container/list"
-	"fmt"
-)
-
-func main() &#123;
-	// Create a new list and put some numbers in it.
-	l := list.New()
-	e4 := l.PushBack(4)
-	e1 := l.PushFront(1)
-	l.InsertBefore(3, e4)
-	l.InsertAfter(2, e1)
-
-	// Iterate through list and print its contents.
-	for e := l.Front(); e != nil; e = e.Next() &#123;
-		fmt.Println(e.Value)
-	&#125;
-
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">package main<br><br>import (<br>  &quot;container/list&quot;<br>  &quot;fmt&quot;<br>)<br><br>func main() &#123;<br>  // Create a new list and put some numbers in it.<br>  l := list.New()<br>  e4 := l.PushBack(4)<br>  e1 := l.PushFront(1)<br>  l.InsertBefore(3, e4)<br>  l.InsertAfter(2, e1)<br><br>  // Iterate through list and print its contents.<br>  for e := l.Front(); e != nil; e = e.Next() &#123;<br>    fmt.Println(e.Value)<br>  &#125;<br><br>&#125;<br></code></pre></td></tr></table></figure>
 <h1><a href="#shi-zhan" class="header-anchor">#</a><span id="shi-zhan">实战</span></h1>
 <h2><a href="#xu-ni-tou-jie-dian-yi-chu-lian-biao-zhong-zhi-ding-yuan-su" class="header-anchor">#</a><span id="xu-ni-tou-jie-dian-yi-chu-lian-biao-zhong-zhi-ding-yuan-su">虚拟头结点移除链表中指定元素</span></h2>
 <p><img src="https://img.shields.io/badge/leetcode-203-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/remove-linked-list-elements/">移除链表元素</a></p>
 <ul>
 <li>基本链表操作</li>
 </ul>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">/**
- * Definition for singly-linked list.
- * type ListNode struct &#123;
- *     Val int
- *     Next *ListNode
- * &#125;
- */
-func removeElements(head *ListNode, val int) *ListNode &#123;
-    vhead := &ListNode&#123;0,head&#125;
-    head = vhead
-
-    for head != nil && head.Next != nil &#123;
-        if head.Next.Val == val &#123;
-            head.Next = head.Next.Next
-        &#125; else &#123;
-            head = head.Next
-        &#125;
-    &#125;
-
-    return vhead.Next
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">/**<br> * Definition for singly-linked list.<br> * type ListNode struct &#123;<br> *     Val int<br> *     Next *ListNode<br> * &#125;<br> */<br>func removeElements(head *ListNode, val int) *ListNode &#123;<br>    vhead := &amp;ListNode&#123;0,head&#125;<br>    head = vhead<br><br>    for head != nil &amp;&amp; head.Next != nil &#123;<br>        if head.Next.Val == val &#123;<br>            head.Next = head.Next.Next<br>        &#125; else &#123;<br>            head = head.Next<br>        &#125;<br>    &#125;<br><br>    return vhead.Next<br>&#125;<br></code></pre></td></tr></table></figure>
 <h2><a href="#shi-xian-lian-biao-ji-ben-cao-zuo" class="header-anchor">#</a><span id="shi-xian-lian-biao-ji-ben-cao-zuo">实现链表基本操作</span></h2>
 <p><img src="https://img.shields.io/badge/leetcode-707-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/design-linked-list/">设计链表</a></p>
 <ul>
 <li>单向链表</li>
 </ul>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">type Node struct &#123;
-	Val  int
-	Next *Node
-&#125;
-
-type MyLinkedList struct &#123;
-	size int
-	head *Node
-&#125;
-
-/** Initialize your data structure here. */
-func Constructor() MyLinkedList &#123;
-	return MyLinkedList&#123;
-		0,
-		&Node&#123;&#125;,
-	&#125;
-&#125;
-
-/** Get the value of the index-th node in the linked list. If the index is invalid, return -1. */
-func (this *MyLinkedList) Get(index int) int &#123;
-    if index < 0 || index >= this.size &#123;
-        return -1
-    &#125;
-
-	prev := this.head
-	for i := 0; i < index; i++ &#123;
-		prev = prev.Next
-	&#125;
-	return prev.Next.Val
-&#125;
-
-/** Add a node of value val before the first element of the linked list. After the insertion, the new node will be the first node of the linked list. */
-func (this *MyLinkedList) AddAtHead(val int) &#123;
-	this.AddAtIndex(0, val)
-&#125;
-
-/** Append a node of value val to the last element of the linked list. */
-func (this *MyLinkedList) AddAtTail(val int) &#123;
-	this.AddAtIndex(this.size, val)
-&#125;
-
-/** Add a node of value val before the index-th node in the linked list. If index equals to the length of linked list, the node will be appended to the end of linked list. If index is greater than the length, the node will not be inserted. */
-func (this *MyLinkedList) AddAtIndex(index int, val int) &#123;
-    if index < 0 || index > this.size &#123;
-        return
-    &#125;
-
-	prev := this.head
-	for i := 0; i < index; i++ &#123;
-		prev = prev.Next
-	&#125;
-	node := &Node&#123;Val: val&#125;
-	node.Next = prev.Next
-	prev.Next = node
-
-	this.size++
-&#125;
-
-/** Delete the index-th node in the linked list, if the index is valid. */
-func (this *MyLinkedList) DeleteAtIndex(index int) &#123;
-    if index < 0 || index >= this.size &#123;
-        return
-    &#125;
-
-	prev := this.head
-	for i := 0; i < index; i++ &#123;
-		prev = prev.Next
-	&#125;
-	prev.Next = prev.Next.Next
-
-	this.size--
-&#125;
-
-/**
- * Your MyLinkedList object will be instantiated and called as such:
- * obj := Constructor();
- * param_1 := obj.Get(index);
- * obj.AddAtHead(val);
- * obj.AddAtTail(val);
- * obj.AddAtIndex(index,val);
- * obj.DeleteAtIndex(index);
- */<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">type Node struct &#123;<br>  Val  int<br>  Next *Node<br>&#125;<br><br>type MyLinkedList struct &#123;<br>  size int<br>  head *Node<br>&#125;<br><br>/** Initialize your data structure here. */<br>func Constructor() MyLinkedList &#123;<br>  return MyLinkedList&#123;<br>    0,<br>    &amp;Node&#123;&#125;,<br>  &#125;<br>&#125;<br><br>/** Get the value of the index-th node in the linked list. If the index is invalid, return -1. */<br>func (this *MyLinkedList) Get(index int) int &#123;<br>    if index &lt; 0 || index &gt;= this.size &#123;<br>        return -1<br>    &#125;<br><br>  prev := this.head<br>  for i := 0; i &lt; index; i++ &#123;<br>    prev = prev.Next<br>  &#125;<br>  return prev.Next.Val<br>&#125;<br><br>/** Add a node of value val before the first element of the linked list. After the insertion, the new node will be the first node of the linked list. */<br>func (this *MyLinkedList) AddAtHead(val int) &#123;<br>  this.AddAtIndex(0, val)<br>&#125;<br><br>/** Append a node of value val to the last element of the linked list. */<br>func (this *MyLinkedList) AddAtTail(val int) &#123;<br>  this.AddAtIndex(this.size, val)<br>&#125;<br><br>/** Add a node of value val before the index-th node in the linked list. If index equals to the length of linked list, the node will be appended to the end of linked list. If index is greater than the length, the node will not be inserted. */<br>func (this *MyLinkedList) AddAtIndex(index int, val int) &#123;<br>    if index &lt; 0 || index &gt; this.size &#123;<br>        return<br>    &#125;<br><br>  prev := this.head<br>  for i := 0; i &lt; index; i++ &#123;<br>    prev = prev.Next<br>  &#125;<br>  node := &amp;Node&#123;Val: val&#125;<br>  node.Next = prev.Next<br>  prev.Next = node<br><br>  this.size++<br>&#125;<br><br>/** Delete the index-th node in the linked list, if the index is valid. */<br>func (this *MyLinkedList) DeleteAtIndex(index int) &#123;<br>    if index &lt; 0 || index &gt;= this.size &#123;<br>        return<br>    &#125;<br><br>  prev := this.head<br>  for i := 0; i &lt; index; i++ &#123;<br>    prev = prev.Next<br>  &#125;<br>  prev.Next = prev.Next.Next<br><br>  this.size--<br>&#125;<br><br>/**<br> * Your MyLinkedList object will be instantiated and called as such:<br> * obj := Constructor();<br> * param_1 := obj.Get(index);<br> * obj.AddAtHead(val);<br> * obj.AddAtTail(val);<br> * obj.AddAtIndex(index,val);<br> * obj.DeleteAtIndex(index);<br> */<br></code></pre></td></tr></table></figure>
 <ul>
 <li>双向链表</li>
 </ul>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">type Node struct &#123;
-    Val int
-    Next *Node
-    Prev *Node
-&#125;
-
-type MyLinkedList struct &#123;
-    Head *Node
-    Tail *Node
-    Length int
-&#125;
-
-/** Initialize your data structure here. */
-func Constructor() MyLinkedList &#123;
-    head := &Node&#123;&#125;
-    tail := &Node&#123;&#125;
-    head.Next = tail
-    tail.Prev = head
-    return MyLinkedList&#123;
-        Head: head,
-        Tail: tail,
-        Length: 0,
-    &#125;
-&#125;
-
-func (this *MyLinkedList) Print(str string) &#123;
-    fmt.Printf("---%v---\n", str)
-    pt := this.Head
-    fmt.Printf("head %v\n", pt)
-    for i := 0; i <= this.length; i++&#123; pt="pt.Next" fmt.printf("%v %v\n", i, pt) &#125; fmt.printf("tail ** get the value of index-th node in linked list. if index is invalid, return -1. * func (this *mylinkedlist) get(index int) int &#123;>= this.Length &#123;
-        return -1
-    &#125;
-    ret := this.Head
-    for i := 0; i <= 0 index; i++ &#123; ret="ret.Next" &#125; return ret.val ** add a node of value val before the first element linked list. after insertion, new will be * func (this *mylinkedlist) addathead(val int) :="&Node&#123;" val: val, next: this.head.next, prev: this.head, this.head.next.prev="node" this.head.next="node" if this.tail.prev.prev="=" nil this.tail.prev="this.Head.Next" this.length++ this.print("addathead") append to last addattail(val this.tail, this.tail.prev, this.tail.prev.next="node" this.head.next.next="=" this.print("addattail") index-th in index equals length list, appended end is greater than length, not inserted. addatindex(index int, this.length this.addattail(val) < this.addathead(val) var pt *node for i pt, pt.prev, pt.prev.next="node" pt.prev="node" this.print("addatindex") delete valid. deleteatindex(index>= this.Length &#123;
-        return
-    &#125;
-
-    if index < 0 &#123;
-        index = this.Length + index
-    &#125;
-
-    var pt *Node
-    pt = this.Head
-    for i := 0; i <= index; i++ &#123; pt="pt.Next" &#125; pt.prev.next="pt.Next" pt.next.prev="pt.Prev" this.length-- this.print("deleteatindex") ** * your mylinkedlist object will be instantiated and called as such: obj :="Constructor();" param_1 obj.addathead(val); obj.addattail(val); obj.addatindex(index,val); obj.deleteatindex(index); <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></=></=></=></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">type Node struct &#123;<br>    Val int<br>    Next *Node<br>    Prev *Node<br>&#125;<br><br>type MyLinkedList struct &#123;<br>    Head *Node<br>    Tail *Node<br>    Length int<br>&#125;<br><br>/** Initialize your data structure here. */<br>func Constructor() MyLinkedList &#123;<br>    head := &amp;Node&#123;&#125;<br>    tail := &amp;Node&#123;&#125;<br>    head.Next = tail<br>    tail.Prev = head<br>    return MyLinkedList&#123;<br>        Head: head,<br>        Tail: tail,<br>        Length: 0,<br>    &#125;<br>&#125;<br><br>func (this *MyLinkedList) Print(str string) &#123;<br>    fmt.Printf(&quot;---%v---\n&quot;, str)<br>    pt := this.Head<br>    fmt.Printf(&quot;head %v\n&quot;, pt)<br>    for i := 0; i &lt;= this.Length; i++&#123;<br>        pt = pt.Next<br>        fmt.Printf(&quot;%v %v\n&quot;, i, pt)<br>    &#125;<br>    pt = pt.Next<br>    fmt.Printf(&quot;tail %v\n&quot;, pt)<br>&#125;<br><br><br>/** Get the value of the index-th node in the linked list. If the index is invalid, return -1. */<br>func (this *MyLinkedList) Get(index int) int &#123;<br>    if index &gt;= this.Length &#123;<br>        return -1<br>    &#125;<br>    ret := this.Head<br>    for i := 0; i &lt;= index; i++ &#123;<br>        ret = ret.Next<br>    &#125;<br>    return ret.Val<br>&#125;<br><br><br>/** Add a node of value val before the first element of the linked list. After the insertion, the new node will be the first node of the linked list. */<br>func (this *MyLinkedList) AddAtHead(val int)  &#123;<br>    node := &amp;Node&#123;<br>        Val: val,<br>        Next: this.Head.Next,<br>        Prev: this.Head,<br>    &#125;<br>    this.Head.Next.Prev = node<br>    this.Head.Next = node<br><br>    if this.Tail.Prev.Prev == nil &#123;<br>        this.Tail.Prev = this.Head.Next<br>    &#125;<br>    this.Length++<br>    // this.Print(&quot;AddAtHead&quot;)<br>&#125;<br><br><br>/** Append a node of value val to the last element of the linked list. */<br>func (this *MyLinkedList) AddAtTail(val int)  &#123;<br>    node := &amp;Node&#123;<br>        Val: val,<br>        Next: this.Tail,<br>        Prev: this.Tail.Prev,<br>    &#125;<br>    this.Tail.Prev.Next = node<br>    this.Tail.Prev = node<br>    if this.Head.Next.Next == nil &#123;<br>        this.Head.Next = this.Tail.Prev<br>    &#125;<br>    this.Length++<br>    // this.Print(&quot;AddAtTail&quot;)<br>&#125;<br><br><br>/** Add a node of value val before the index-th node in the linked list. If index equals to the length of linked list, the node will be appended to the end of linked list. If index is greater than the length, the node will not be inserted. */<br>func (this *MyLinkedList) AddAtIndex(index int, val int)  &#123;<br>    if index == this.Length &#123;<br>        this.AddAtTail(val)<br>        return<br>    &#125;<br><br>    if index &lt; 0 &#123;<br>        this.AddAtHead(val)<br>        return<br>    &#125;<br><br>    var pt *Node<br>    pt = this.Head<br>    for i := 0; i &lt;= index; i++ &#123;<br>        pt = pt.Next<br>    &#125;<br><br>    node := &amp;Node&#123;<br>        Val: val,<br>        Next: pt,<br>        Prev: pt.Prev,<br>    &#125;<br>    pt.Prev.Next = node<br>    pt.Prev = node<br>    this.Length++<br>    // this.Print(&quot;AddAtIndex&quot;)<br>&#125;<br><br><br>/** Delete the index-th node in the linked list, if the index is valid. */<br>func (this *MyLinkedList) DeleteAtIndex(index int)  &#123;<br>    if index &gt;= this.Length &#123;<br>        return<br>    &#125;<br><br>    if index &lt; 0 &#123;<br>        index = this.Length + index<br>    &#125;<br><br>    var pt *Node<br>    pt = this.Head<br>    for i := 0; i &lt;= index; i++ &#123;<br>        pt = pt.Next<br>    &#125;<br>    pt.Prev.Next = pt.Next<br>    pt.Next.Prev = pt.Prev<br>    this.Length--<br>    // this.Print(&quot;DeleteAtIndex&quot;)<br>&#125;<br><br><br>/**<br> * Your MyLinkedList object will be instantiated and called as such:<br> * obj := Constructor();<br> * param_1 := obj.Get(index);<br> * obj.AddAtHead(val);<br> * obj.AddAtTail(val);<br> * obj.AddAtIndex(index,val);<br> * obj.DeleteAtIndex(index);<br> */<br></code></pre></td></tr></table></figure>
 <h2><a href="#fan-zhuan-lian-biao" class="header-anchor">#</a><span id="fan-zhuan-lian-biao">反转链表</span></h2>
 <p><img src="https://img.shields.io/badge/leetcode-206-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/reverse-linked-list/">反转链表</a></p>
 <ul>
 <li>构建新链表</li>
 </ul>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">/**
- * Definition for singly-linked list.
- * type ListNode struct &#123;
- *     Val int
- *     Next *ListNode
- * &#125;
- */
-func reverseList(head *ListNode) *ListNode &#123;
-    pt := head
-    var tail *ListNode
-    for pt != nil &#123;
-        tail = &ListNode&#123;
-            pt.Val,
-            tail,
-        &#125;
-        pt = pt.Next
-    &#125;
-    return tail
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">/**<br> * Definition for singly-linked list.<br> * type ListNode struct &#123;<br> *     Val int<br> *     Next *ListNode<br> * &#125;<br> */<br>func reverseList(head *ListNode) *ListNode &#123;<br>    pt := head<br>    var tail *ListNode<br>    for pt != nil &#123;<br>        tail = &amp;ListNode&#123;<br>            pt.Val,<br>            tail,<br>        &#125;<br>        pt = pt.Next<br>    &#125;<br>    return tail<br>&#125;<br></code></pre></td></tr></table></figure>
 <ul>
 <li>双指针法</li>
 </ul>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">/**
- * Definition for singly-linked list.
- * type ListNode struct &#123;
- *     Val int
- *     Next *ListNode
- * &#125;
- */
-func reverseList(head *ListNode) *ListNode &#123;
-    var pre, temp *ListNode
-    cur := head
-    for cur != nil &#123;
-        temp = cur.Next
-        cur.Next = pre
-        pre = cur
-        cur = temp
-    &#125;
-    return pre
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">/**<br> * Definition for singly-linked list.<br> * type ListNode struct &#123;<br> *     Val int<br> *     Next *ListNode<br> * &#125;<br> */<br>func reverseList(head *ListNode) *ListNode &#123;<br>    var pre, temp *ListNode<br>    cur := head<br>    for cur != nil &#123;<br>        temp = cur.Next<br>        cur.Next = pre<br>        pre = cur<br>        cur = temp<br>    &#125;<br>    return pre<br>&#125;<br></code></pre></td></tr></table></figure>
 <h2><a href="#huan-xing-lian-biao-de-ru-huan-jie-dian" class="header-anchor">#</a><span id="huan-xing-lian-biao-de-ru-huan-jie-dian">环形链表的入环节点</span></h2>
 <p><img src="https://img.shields.io/badge/leetcode-141-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/linked-list-cycle/">环形链表</a><br>
 <img src="https://img.shields.io/badge/leetcode-142-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/linked-list-cycle-ii/">环形链表II</a></p>
@@ -271,63 +63,13 @@ $$</p>
 <ul>
 <li>快慢指针法</li>
 </ul>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">/**
- * Definition for singly-linked list.
- * type ListNode struct &#123;
- *     Val int
- *     Next *ListNode
- * &#125;
- */
-func detectCycle(head *ListNode) *ListNode &#123;
-    fast := head
-    slow := head
-    for fast != nil && fast.Next != nil &#123;
-        slow = slow.Next
-        fast = fast.Next.Next
-        if slow == fast &#123;
-            p1 := fast
-            p2 := head
-            for p1 != p2 &#123;
-                p1 = p1.Next
-                p2 = p2.Next
-            &#125;
-            return p2
-        &#125;
-    &#125;
-    return nil
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">/**<br> * Definition for singly-linked list.<br> * type ListNode struct &#123;<br> *     Val int<br> *     Next *ListNode<br> * &#125;<br> */<br>func detectCycle(head *ListNode) *ListNode &#123;<br>    fast := head<br>    slow := head<br>    for fast != nil &amp;&amp; fast.Next != nil &#123;<br>        slow = slow.Next<br>        fast = fast.Next.Next<br>        if slow == fast &#123;<br>            p1 := fast<br>            p2 := head<br>            for p1 != p2 &#123;<br>                p1 = p1.Next<br>                p2 = p2.Next<br>            &#125;<br>            return p2<br>        &#125;<br>    &#125;<br>    return nil<br>&#125;<br></code></pre></td></tr></table></figure>
 <h2><a href="#shan-chu-pai-xu-lian-biao-zhong-de-chong-fu-yuan-su-ii" class="header-anchor">#</a><span id="shan-chu-pai-xu-lian-biao-zhong-de-chong-fu-yuan-su-ii">删除排序链表中的重复元素 II</span></h2>
 <p><img src="https://img.shields.io/badge/leetcode-82-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list-ii/">删除排序链表中的重复元素 II</a></p>
 <ul>
 <li>操作指针，开始指针，结束指针。注意绝对不重复的条件是开始指针和结束指针相邻且不相等。</li>
 </ul>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">/**
- * Definition for singly-linked list.
- * type ListNode struct &#123;
- *     Val int
- *     Next *ListNode
- * &#125;
- */
-func deleteDuplicates(head *ListNode) *ListNode &#123;
-    if head == nil || head.Next == nil &#123; return head &#125;
-    vhead := &ListNode&#123;Next:head&#125;
-    cur := vhead
-    start := vhead.Next
-    end := vhead.Next.Next
-    for start != nil && end != nil &#123;
-        if start.Val != end.Val &#123;
-            if end == start.Next &#123;
-                cur = cur.Next
-            &#125;
-            start = end
-            end = end.Next
-        &#125; else &#123;
-            end = end.Next
-            cur.Next = end
-        &#125;
-    &#125;
-    return vhead.Next
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">/**<br> * Definition for singly-linked list.<br> * type ListNode struct &#123;<br> *     Val int<br> *     Next *ListNode<br> * &#125;<br> */<br>func deleteDuplicates(head *ListNode) *ListNode &#123;<br>    if head == nil || head.Next == nil &#123; return head &#125;<br>    vhead := &amp;ListNode&#123;Next:head&#125;<br>    cur := vhead<br>    start := vhead.Next<br>    end := vhead.Next.Next<br>    for start != nil &amp;&amp; end != nil &#123;<br>        if start.Val != end.Val &#123;<br>            if end == start.Next &#123;<br>                cur = cur.Next<br>            &#125;<br>            start = end<br>            end = end.Next<br>        &#125; else &#123;<br>            end = end.Next<br>            cur.Next = end<br>        &#125;<br>    &#125;<br>    return vhead.Next<br>&#125;<br></code></pre></td></tr></table></figure>
 <hr>
 <ul>
 <li>[1] <span id="refer-1"></span> <a target="_blank" rel="noopener" href="https://golang.org/pkg/container/list/">Package list</a></li>

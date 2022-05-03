@@ -1,0 +1,740 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title>System - Tinder as a microservice architecture · KLEON</title><meta name="description" content="subtitles from youtube[1]
+so I forgot to say this before we started but it’s important as prerequisites to know about the system design concepts
+we ha"><meta name="og:description" content="subtitles from youtube[1]
+so I forgot to say this before we started but it’s important as prerequisites to know about the system design concepts
+we ha"><meta name="twitter:site" content="KLEON"><meta name="twitter:title" content="System - Tinder as a microservice architecture"><meta name="twitter:card" content="summary"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/github.min.css"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 6.1.0"></head><body><div id="stage" class="container"><div class="row"><div id="side-bar" class="col-sm-3 col-xs-12 side-container invisible"><div class="vertical-text site-title"><h3 tabindex="-1" class="site-title-small"><a href="/" class="a-title"></a></h3><h1 tabindex="-1" class="site-title-large"><a href="/" class="a-title">自说自话</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div id="site-nav" class="site-title-links"><ul><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li><li><a href="/categories">Categories</a></li><li><a href="/tags">Tags</a></li><li><a href="/googlebe23cb0bc55fc412.html"></a></li><li><a href="/about/index.html"></a></li><li class="soc"><a href="https://github.com/kleon1024" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa fa-github">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div id="main-container" class="col-sm-9 col-xs-12 main-container invisible"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>System - Tinder as a microservice architecture</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2022-05-02</span><span class="date meta-item">Updated at&nbsp;2022-05-02</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/interview/" title="interview" class="a-tag">interview</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/interview/" title="interview" class="a-tag">interview</a><span>&nbsp;</span><a href="/tags/system-design/" title="system design" class="a-tag">system design</a><span>&nbsp;</span></span></p><p class="post-abstract"><p>subtitles from youtube<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
+<p>so I forgot to say this before we started but it’s important as prerequisites to know about the system design concepts</p>
+<p>we have talked about in this entire series uh</p>
+<p>stop looking at this diagram because you know you’re not going to understand</p>
+<p>we actually start discussing about it and each of these concepts that we’re going to discuss now can be you know broken down and gone deeper into</p>
+<p>so all those concepts will require prior knowledge that is going to be given to you through the videos that I made earlier</p>
+<p>and also of course through lots of links on the internet</p>
+<p>so you it’s your choice just make sure that you have your basics and fundamentals clear before you actually jump into uh actually designing a system</p>
+<p>okay let’s start</p>
+<p>hi everyone we’re finally here</p>
+<p>we are finally talking about tinder and we are talking about its architecture</p>
+<p>so let’s say you entered the interview room you meet the interviewer and you sit down</p>
+<p>so you’re asked to design tinder now</p>
+<p>in my experience I’ve seen that most candidates get really really into the game</p>
+<p>they start thinking about what services are they going to use</p>
+<p>what kind of databases are they going to use</p>
+<p>but you know my suggestion to you would be to take a step back and think of this system uh in a very logical calm way</p>
+<p>so if you have been inventing such a kind of an app</p>
+<p>what’s going to come up in your mind is what kind of features will I provide this person and with those features</p>
+<p>what can happen is you can actually think about how your system evolves um</p>
+<p>two approaches that you can have for this for starting off with this is to start with the er diagram which we are taught often enough in colleges that you know</p>
+<p>think about how the data is going to be modeled and then think about how your services are going to consume them</p>
+<p>finally think about what the clients will be doing to actually call the services</p>
+<p>so that kind of that kind of thinking is a little too constrained it’s also too abstract</p>
+<p>because you’re thinking about how to model your data without thinking about what do your users need</p>
+<p>the second approach is to go from the front to back that is think about what your users need as features</p>
+<p>think about how your services are going to actually be broken down</p>
+<p>so that you can fulfill these features and then think about their individual data</p>
+<p>uh you know requirements per service so in that way your system is far more flexible</p>
+<p>it’s also a lot easier to start off with the system immediately with with feature development per feature development</p>
+<p>so the features that we are picking up in tinder um are storing profiles</p>
+<p>all right so you won’t just write this down first of all</p>
+<p>what you could say or what you could ask your interviewer is</p>
+<p>so you’re definitely going to be storing profiles right</p>
+<p>so that’s an obvious question but best to get it out of the way</p>
+<p>in that profile there are going to be images</p>
+<p>that’s really important for any dating site</p>
+<p>so one thing to remember here is that images will be stored in the profile</p>
+<p>a follow-up question can be so how many images per user do you want, that could be five</p>
+<p>so I’ll just note that down, five images per user</p>
+<p>is there something else you want to think about images</p>
+<p>no</p>
+<p>we can move to the next feature that might come up which is how are we going to recommend matches</p>
+<p>yeah to look into that but if you think of this in a, in a story line what happens is you go to any dating site uh</p>
+<p>you make a profile and that’s how you think about storing profiles</p>
+<p>you start accepting or rejecting people based on your preferences</p>
+<p>so that would be the recommendation system</p>
+<p>that would be some sort of recommending matches</p>
+<p>yeah uh in that case what are the questions you can think of</p>
+<p>how many active users do you have is is a good question to ask</p>
+<p>so number of active users is there something else you want to ask</p>
+<p>maybe are there other certain countries where there’s too much population stuff but don’t get into too much details again</p>
+<p>if you’re if you’re running behind too many questions per feature</p>
+<p>that also shows that you’re getting into too much detail per feature</p>
+<p>so keep it fluffy keep keep it flying in the air</p>
+<p>even now and then you have the third feature which is the best one, which is when you match with someone</p>
+<p>so if you match with someone you need to note that down</p>
+<p>and you need to you need to do something between the two people</p>
+<p>so one of the things you want to do is you want to note down matches in which case the number of active users is kind of enough</p>
+<p>you can take a percentage of that</p>
+<p>as the number of matches you’ll have per day that’s going to be an assumption</p>
+<p>I’m going to assume that typical indian match rates are going to come up here which is for every swipe</p>
+<p>uh you have a 0.1 percentage of matching with someone</p>
+<p>all right so the number of matches you’ll have per person is going to be 0.1 percent</p>
+<p>so that’s going to be number of active users into 10 raised to power minus 3 matches and the fourth one is once you have matched with someone</p>
+<p>of course you need to chat with that person</p>
+<p>so there’s direct messaging which will be a feature of tinder once you once you guys match</p>
+<p>all right in direct messaging what kind of questions should you ask</p>
+<p>well</p>
+<p>we’ll get to that we’ll get to that um for now</p>
+<p>we have four features</p>
+<p>avoid taking too many features because it’s going to be an hour long interview at most</p>
+<p>and more often than not you’re going to be getting into the details that the interviewer wants you to get into</p>
+<p>anyways you don’t need to pull out more and more features just for the sake of showing that you know you can implement these</p>
+<p>okay</p>
+<p>so start with four or five features</p>
+<p>let’s start with solving profiles</p>
+<p>so storing profiles uh in fact the previous video also talked about this designing instagram</p>
+<p>uh there was a lot of jargon that a lot of you felt was there</p>
+<p>um storing images has only one important question in it all right and that is how are you going to store images</p>
+<p>so there’s going to be a lot of images, as you can see, number of active users are large per user</p>
+<p>you have about five images which is still a constant factor of the number of active users</p>
+<p>and the the question of how are you going to store these images is something which has been debated for a really long time</p>
+<p>in the whole technical field that we are in computer science and that is whether you want to store the images as a file or you want to store the images as a blob</p>
+<p>okay so blob is a binary large object and those of you don’t know about this, get back to your database classes because this is something which is taught in in engineering</p>
+<p>there’s also another one which is club character large object and that’s entirely useless</p>
+<p>so ignore that we are going to be having the argument of file versus blob.</p>
+<p>so images typically are large in size and you can’t store it as a varchar or something.</p>
+<p>that’s the reason why you have a binary large object which is specifically for large objects in databases</p>
+<p>now you might think that databases have definitely got a lot more to offer when it comes to specialized storage compared to files</p>
+<p>but my argument is not really not really, because the only few extra guarantees that a database gives you are mutability</p>
+<p>okay you can easily mutate the rows in that in that database, basically a one data entry</p>
+<p>the second one is transaction guarantees, so transaction guarantees</p>
+<p>the third one is indexes</p>
+<p>okay so indexes are mainly to improve your search capabilities</p>
+<p>right</p>
+<p>let’s start with mutability</p>
+<p>are you ever going to be changing the image</p>
+<p>you could yes but why would you ever want to do that why not just create a separate file because an update to an image is not going to be just a few bits</p>
+<p>so it’s going to be the entire image basically</p>
+<p>why not why not store that in a separate file and get rid of mutability， make it immutable</p>
+<p>so this is an unnecessary feature that the database is giving us</p>
+<p>the second thing is transaction properties. so transaction properties are again not required by the by an image because you’re not going to be doing an atomic operation on the image</p>
+<p>so you can get rid of this</p>
+<p>there’s another feature actually I better note that down so that will be the fourth feature which is required and that is access control</p>
+<p>so yeah let’s get to the third one again</p>
+<p>um indexes indexes are good for searching</p>
+<p>they allow your data to be sorted according to a particular field. let us say you know you have a profile table in that the name can be indexed</p>
+<p>so anyone who’s searching for gaurav will find that entry quickly. because it binary searches on on the name</p>
+<p>so for a for a binary large object that’s useless because you’re never going to be searching on the content of the file</p>
+<p>that’s going to be ones and zeros right</p>
+<p>so you can get rid of that.</p>
+<p>and finally access control.</p>
+<p>this is very important it’s one of the arguments for databases using binary launch objects but I would say that you can get the same access control mechanisms using a file system. right</p>
+<p>it is a little tedious maybe. but setting up a file system a secure file system is almost as tedious as setting up a secure database</p>
+<p>so nearly equal the good things about a file are that it’s it’s cheaper. that makes a big difference uh of storing files</p>
+<p>uh the the other things about files which are good are that they are they’re built for this they’re built for, you know, storing a file and an image is a little file</p>
+<p>so that’s that’s one good thing but it’s a little abstract instead</p>
+<p>they are also faster in a way because they are storing large objects separately. and you can do that in a database using something called vertical partitioning where the profile id is going to be over</p>
+<p>here and the image id is going to be over here and then you’re going to store the image somewhere else. but if you’re doing that then why not store it on the file which is not just cheaper, it’s also less likely to do a select star nightmare</p>
+<p>so if you do a select star on this table</p>
+<p>so instead go for the file system it’s going to take care of that, I mean you want you won’t do a buy mistake select star on the address and the id. okay</p>
+<p>uh this is a little bit of a flimsy argument but it’s still, you know, in practical real-life systems select star is used a lot so it’s one of the good things</p>
+<p>um the third thing is that these are static so you can easily build a cdn over this, content delivery network</p>
+<p>you can read up on this maybe in the description below, you can just read up on it</p>
+<p>in general content delivery network allows fast access</p>
+<p>one argument for databases which are going to be showing the files</p>
+<p>I mean at the end of the day your database is going to be storing all your data</p>
+<p>so it has to have some reference some address to your file and that is going to be the file url</p>
+<p>all right and this will be stored in the database so we are going to have an image id of image url and the profile id per image stored by user with profile id in location</p>
+<p>so and so where are you going to store this image this file url it’s going to be in a distributed file system</p>
+<p>right so your distributed file system is going to be handling requirement number one, and that’s how you argue for files versus blobs</p>
+<p>now if your interview is really really pushing you for blobs um you could take it.</p>
+<p>I mean it’s not going to really spoil your design</p>
+<p>it’s only that it’s good to have these arguments with you when you’re logically, you know, talking about what would be better in an interview. but don’t push too hard. if they say that blob is what I want</p>
+<p>go for it</p>
+<p>so taking this first option. let’s start designing our system</p>
+<p>the first thing to note here is that we have a client application on the mobile</p>
+<p>a user actually clicks a button to send us a request</p>
+<p>okay and over here we have our profile service</p>
+<p>now what does it need to do? it needs to register itself with our profile service. it needs to say here’s my username. here’s my password. and the profile service then stores that in the database</p>
+<p>okay of course there’s going to be multiple authentication mechanisms</p>
+<p>there’s going to be a password sent to the email. so there might be an email service which you’re using here but for the sake of brevity I’m just going to assume that the profile service can send emails and can do those two-step authentication stuff</p>
+<p>okay so once a user is stored in the database. the user then asks for something it’s probably going to be update profile. because they’re going to be adding their photos</p>
+<p>so in update profile with the username, how do you make sure that this is an authenticated request</p>
+<p>the person who’s claiming to update that profile is the person who that profile belongs to</p>
+<p>there’s multiple ways to do this. the monolithic service way goes that in the profile service you’re supposed to have authentication mechanisms making sure that yes this update has come from the right user. so they’ll send the username and password</p>
+<p>and if it is authenticated then a successful response goes back that yes there’s been an update.</p>
+<p>of course there’s multiple issues here the first one being that username and password is a little too insecure. so instead we can send a token right and these are all security mechanisms.</p>
+<p>if you mention token you should be good if your interviewer gets too deep into cryptography then best of luck</p>
+<p>but if you have if you are sending a token to the profile service it should be able to authenticate you and send back a response</p>
+<p>here’s the problem</p>
+<p>today there’s a profile service which is actually authenticating and sending you back responses if there’s a new service coming up tomorrow which doesn’t have information about tokens and usernames then that service is going to be requiring to talk to the<br>
+profile service every time and that logic is going to be duplicated in the third service which is going to come up. it needs to authenticate the user so every time a user sends a request, there’s going to be a lot of duplicated code which is going to be run.</p>
+<p>so one of the things you can do here is to a standard service which most places use is to use a gateway and the clients always talk to the gateway. no one talks to the clients except the gateway. so this is the gateway service.</p>
+<p>all right and the gateway does one thing essentially. it just takes this request the username and the token asks the profile service whether this is authenticated request or not</p>
+<p>so the profile service of course has information about the user and the profile service says yes or no</p>
+<p>a yes or no response tells the gateway whether it should respect this request or not</p>
+<p>if it needs to respect this request it will direct it to the correct service</p>
+<p>otherwise it will fail the request</p>
+<p>okay that’s that’s all that the gateway does and once of course it directs it to the correct service and it gets a response. it has to forward that response to the client.</p>
+<p>what you have done here is decoupled systems. you have taken away this. the requirement of talking to a user and after authenticating sending it to the correct service from the profile service. you move that to a gateway</p>
+<p>another good thing about this is that if you are going to be using some of the messaging protocols that we get to once we are at direct messaging then you have separated out the protocols over here and the protocols over here</p>
+<p>okay</p>
+<p>so now that we have our profile service. we are just going to be updating the profile. we are going to be changing the description. we are going to be changing the name maybe so on. and so forth uh images do you really want to store images in the same place other profile services. there’s no hard yes or no, but logically you would probably want to store the images in a separate service, because tomorrow if there’s any other service which just needs the images of the user maybe for machine learning, maybe for just, you know, it just needs images to send it across. so you could you could effectively do that by using an image service, rather more sensible scenarios when you just need the details of that person’s profile, maybe just a description or maybe just the<br>
+age and you can send it across easily, while the image service is used for heavy computations when you need all images of that user</p>
+<p>so image service is going to be of course having a distributed file system. uh in which it’s going to be storing all the images it’s also going to be having</p>
+<p>a database</p>
+<p>in which you have the profile id</p>
+<p>and you have the image id</p>
+<p>and you have the url</p>
+<p>of the image being stored in this</p>
+<p>distributed database right so these are</p>
+<p>references</p>
+<p>okay so</p>
+<p>first requirement done yay</p>
+<p>we’re taking care of the first</p>
+<p>requirement and</p>
+<p>what do we do next</p>
+<p>second requirement was uh</p>
+<p>recommendations I wouldn’t go for that</p>
+<p>just uh I mean just now because it’s a</p>
+<p>little complicated to get into what I</p>
+<p>would suggest is going for</p>
+<p>direct messaging which is chat so for</p>
+<p>that one of the things you can do is you</p>
+<p>can think about how do I connect from</p>
+<p>this client</p>
+<p>to another client which is</p>
+<p>over here</p>
+<p>so this client wants to talk to this</p>
+<p>client imagine that you just match with</p>
+<p>someone and you’re going to send a</p>
+<p>direct message uh</p>
+<p>it means that you’re going to be telling</p>
+<p>the gateway that hey I want to send</p>
+<p>message to user idx so</p>
+<p>instead of the update it’s going to be</p>
+<p>message</p>
+<p>to user</p>
+<p>id 1</p>
+<p>from user id 2. so this guy is user id 2</p>
+<p>and this person is user id 1.</p>
+<p>now the question is how do we send a</p>
+<p>message to this user there’s a lot of</p>
+<p>people who asked about what is xmpp last</p>
+<p>time</p>
+<p>and</p>
+<p>if you know about http which is a</p>
+<p>hypertext transfer protocol it’s it’s</p>
+<p>mainly</p>
+<p>a protocol a way of talking between two</p>
+<p>machines and in this way of talking</p>
+<p>there’s always going to be a client and</p>
+<p>there’s always going to be a server</p>
+<p>so a client</p>
+<p>talks to a server a server responds to</p>
+<p>that request it’s now that the server</p>
+<p>goes to the client and says that hey can</p>
+<p>you give me some data</p>
+<p>right so</p>
+<p>when you have a client</p>
+<p>server</p>
+<p>communication</p>
+<p>protocol you cannot have chat you cannot</p>
+<p>effectively have chat because if there’s</p>
+<p>a client on the server the only way that</p>
+<p>this user is going to get the messages</p>
+<p>that are</p>
+<p>sent to them is to poll the server is to</p>
+<p>say every five seconds hey are there any</p>
+<p>messages for me hey are there any</p>
+<p>messages for me and that is extremely</p>
+<p>inefficient</p>
+<p>from the from the overall app side so</p>
+<p>you don’t want to pull the server you</p>
+<p>want messages to be pushed to you</p>
+<p>and if you want them to be pushed to you</p>
+<p>there multiple ways you can actually do</p>
+<p>it with http also to some extent but</p>
+<p>instead the better way to do it would be</p>
+<p>to use a different protocol a</p>
+<p>peer-to-peer protocol where everyone is</p>
+<p>equal</p>
+<p>all right so there’s no client server</p>
+<p>now this is a machine this is a machine</p>
+<p>that appears</p>
+<p>and if the server needs to send any</p>
+<p>message to the client it can</p>
+<p>so one of the protocols actually doing</p>
+<p>this is xmpp</p>
+<p>all right and one of the clients our</p>
+<p>protocols of course is http</p>
+<p>so make sure you mention this because</p>
+<p>it’s uh</p>
+<p>it’s pretty important to know how</p>
+<p>clients and servers talk if if there’s a</p>
+<p>chat application</p>
+<p>right so this message is going to also</p>
+<p>be sent</p>
+<p>through xmpp probably</p>
+<p>so um</p>
+<p>we have discussed how we are going to</p>
+<p>send the message and get the message but</p>
+<p>what’s going to happen internally</p>
+<p>internally one of the things that could</p>
+<p>happen is</p>
+<p>you know the connections that this</p>
+<p>person this</p>
+<p>this xmpp</p>
+<p>is going to be taking a connection and</p>
+<p>that’s a</p>
+<p>web socket connection</p>
+<p>all right a lot of this might sound like</p>
+<p>jargon so study</p>
+<p>yeah well in a system design interview</p>
+<p>expected to know a few things about this</p>
+<p>instead of websocket you could also</p>
+<p>simplify and say that hey I’m going to</p>
+<p>be writing a protocol of my own but it’s</p>
+<p>going to be tcp</p>
+<p>yeah because you make a connection and</p>
+<p>you maintain it so tcp tcp</p>
+<p>happy happy</p>
+<p>now</p>
+<p>with these connections you can actually</p>
+<p>talk to the clients that’s good</p>
+<p>um</p>
+<p>who’s going to be maintaining the</p>
+<p>information on these connections as to</p>
+<p>with every connection id</p>
+<p>you need to know which user is using</p>
+<p>this connection</p>
+<p>right so there’s a set of connections on</p>
+<p>the gateway service</p>
+<p>each of these each of these users need</p>
+<p>to use this connection</p>
+<p>to be able to talk to other users you</p>
+<p>need to find out where does this user</p>
+<p>belong I mean which connection is that</p>
+<p>user listening to</p>
+<p>and if that is the case it could be done</p>
+<p>by the gateway service but again</p>
+<p>I suggest you decouple the system as</p>
+<p>much as possible so you take away</p>
+<p>responsibilities of</p>
+<p>maintaining connection info from the</p>
+<p>gateway service</p>
+<p>by putting</p>
+<p>that in another service which can handle</p>
+<p>sessions</p>
+<p>so this service is going to be handling</p>
+<p>sessions</p>
+<p>in your</p>
+<p>in your overall architecture</p>
+<p>if you are having direct messaging this</p>
+<p>is more than enough because it’s going</p>
+<p>to be storing</p>
+<p>connection information user id to</p>
+<p>connection</p>
+<p>right and with that what you can do is</p>
+<p>you can figure out where the other user</p>
+<p>is</p>
+<p>stored I mean which connection are they</p>
+<p>using and</p>
+<p>send a message to this socket then</p>
+<p>so</p>
+<p>direct messaging is possible if you do</p>
+<p>match</p>
+<p>things are looking good now</p>
+<p>however of course</p>
+<p>the</p>
+<p>two requirements that we had they have</p>
+<p>been taken care of out of the or the</p>
+<p>four that we had two of them have been</p>
+<p>taken care of the only two remaining are</p>
+<p>noting recommendations</p>
+<p>and the second one is</p>
+<p>what is the second one it’s recommending</p>
+<p>uh suggestions I mean recommending</p>
+<p>people to you</p>
+<p>so noting recommendations let’s quickly</p>
+<p>go over it let’s say that you have the</p>
+<p>client right it can store information</p>
+<p>it’s it’s an app it can store</p>
+<p>information why not have</p>
+<p>all of that information</p>
+<p>as to who you’re matched with or who you</p>
+<p>have asked to be matched with stored on</p>
+<p>the client</p>
+<p>are there any problems uh are there any</p>
+<p>pros and cons yeah are there any cons to</p>
+<p>this</p>
+<p>this thing</p>
+<p>well one of the cons is that the server</p>
+<p>should be the source of truth</p>
+<p>you should have</p>
+<p>the server knowing everything and you</p>
+<p>can then rebuild on on that I mean in</p>
+<p>case a client loses all the information</p>
+<p>in case they uninstall that app the</p>
+<p>server has all the information but what</p>
+<p>kind of information are you losing when</p>
+<p>you’re noting down matches</p>
+<p>if</p>
+<p>you match with someone</p>
+<p>send that to the server say that hey I</p>
+<p>match with this person that’s going to</p>
+<p>be</p>
+<p>probably sent to the profile service</p>
+<p>maybe it could it could handle that or</p>
+<p>it could be a match or service</p>
+<p>which just keeps</p>
+<p>a table of user id to user id</p>
+<p>which means this user has matched with</p>
+<p>this person</p>
+<p>now</p>
+<p>indexes like we talked about are going</p>
+<p>to be put on</p>
+<p>each user id over here right so um</p>
+<p>in fact you can put it on both but I’ll</p>
+<p>just put it over here and you can</p>
+<p>duplicate the records so a matched with</p>
+<p>b means b also matched with a and you</p>
+<p>can keep it that way</p>
+<p>now the matcher is going to be checking</p>
+<p>if</p>
+<p>your match with a particular person</p>
+<p>that can tell the</p>
+<p>session service whether you’re</p>
+<p>authenticated to actually send this</p>
+<p>message to that person a direct message</p>
+<p>so there will be some communication</p>
+<p>between the matcher</p>
+<p>and sessions so in case there’s a</p>
+<p>message being sent it’s first going to</p>
+<p>be sent actually to the matcher which</p>
+<p>will confirm that yes you have been</p>
+<p>validated to send this message it sends</p>
+<p>it to the sessions which then</p>
+<p>uh sends</p>
+<p>the the information as to where which</p>
+<p>connection you have to use and then you</p>
+<p>can always send it to the right place</p>
+<p>right so it’s a pretty long process you</p>
+<p>might find a better way to do it but</p>
+<p>you know</p>
+<p>in general this is fine this looks fine</p>
+<p>okay</p>
+<p>so we are talking about noting matches</p>
+<p>if we need to note down the matches the</p>
+<p>matcher service can</p>
+<p>note down all the matches that you have</p>
+<p>if the app is uninstalled when it is</p>
+<p>reinstalled it will pull out all the</p>
+<p>matches you have from the matcher make</p>
+<p>sure that you can chat with them your</p>
+<p>profile is going to be pulled out of</p>
+<p>this service</p>
+<p>and the only information you are going</p>
+<p>to lose is the number of people you saw</p>
+<p>swiped left or right</p>
+<p>is that critical information no because</p>
+<p>you should get a chance again to swipe a</p>
+<p>person right or left in case you’ve</p>
+<p>already done that earlier</p>
+<p>so you’re going to get</p>
+<p>re-recommendations of the same person</p>
+<p>so that takes care of requirement number</p>
+<p>three we</p>
+<p>are storing all information relevant to</p>
+<p>the number of matches you have had on</p>
+<p>this matter service</p>
+<p>and all information relevant to</p>
+<p>who you have swiped left or right inside</p>
+<p>your cell phone and in case you</p>
+<p>uninstall it too bad you will do it</p>
+<p>again that’s all not that big a loss</p>
+<p>so three requirements taken care of</p>
+<p>that’s good</p>
+<p>the final requirement we are going to be</p>
+<p>looking into is a little complicated</p>
+<p>it’s about recommending people to you</p>
+<p>and let’s see how we can actually put it</p>
+<p>in this architecture</p>
+<p>the biggest problem with recommendation</p>
+<p>will be to figure out</p>
+<p>who are the users close to me</p>
+<p>so I can figure out quite easily</p>
+<p>which genders I’m interested in</p>
+<p>which age group am I interested in using</p>
+<p>just indexes but when you look at this</p>
+<p>number of users you have a million</p>
+<p>active users</p>
+<p>you have to per user figure out which</p>
+<p>person is close to me right that is the</p>
+<p>core of</p>
+<p>all recommendations in this</p>
+<p>system</p>
+<p>so</p>
+<p>the profile service could have in its</p>
+<p>database</p>
+<p>I mean the name of the person and all</p>
+<p>those things but they also have the age</p>
+<p>that’s good</p>
+<p>we also need the gender</p>
+<p>right</p>
+<p>and we also need another thing which is</p>
+<p>the location</p>
+<p>so based on age gender and location</p>
+<p>these three things we need to make</p>
+<p>decisions now</p>
+<p>a lot of people would probably come to</p>
+<p>the conclusion that why not put indexes</p>
+<p>on all three okay and this is a common</p>
+<p>misconception</p>
+<p>you cannot have multiple indexes</p>
+<p>basically you cannot have the data</p>
+<p>sorted in multiple ways</p>
+<p>in one</p>
+<p>database table so if it is sorted by age</p>
+<p>and it is sorted by gender and it is</p>
+<p>sorted by location when you’re going to</p>
+<p>be making a query</p>
+<p>it’s only going to use one of those</p>
+<p>indexes</p>
+<p>okay so it might use the</p>
+<p>gender index maybe I am interested in</p>
+<p>females so the female category will be</p>
+<p>picked up by the database it will be</p>
+<p>made efficient that only females will be</p>
+<p>picked up in just one shot because</p>
+<p>there’s a there’s a binary search going</p>
+<p>on over there</p>
+<p>and in that I’ll have to search for</p>
+<p>people within a particular range and in</p>
+<p>that I’ll again have to search for</p>
+<p>people within a particular location so</p>
+<p>it depends on what the database picks up</p>
+<p>as the single index that you have but</p>
+<p>because it depends on the database</p>
+<p>because it depends on the database</p>
+<p>optimizer query optimizer</p>
+<p>it’s out of your control right pretty</p>
+<p>much</p>
+<p>so</p>
+<p>I mean you can you can suggest the query</p>
+<p>optimizer but</p>
+<p>what I’m getting to is that you need to</p>
+<p>optimize on multiple parameters</p>
+<p>and you can</p>
+<p>effectively do it only on just one</p>
+<p>so in this case what happens is you need</p>
+<p>to use</p>
+<p>either</p>
+<p>a nosql database like cassandra which is</p>
+<p>really good at querying for these kind</p>
+<p>of data types you know you just</p>
+<p>replicate the data in multiple places</p>
+<p>and depending on the query you build a</p>
+<p>table on that query and then you can</p>
+<p>have an efficient query so one of the</p>
+<p>things about the recommendation database</p>
+<p>is you could have a</p>
+<p>you could have a distributed database</p>
+<p>which is something like cassandra</p>
+<p>or</p>
+<p>amazon dynamo</p>
+<p>okay that’s the first solution the</p>
+<p>second solution is if a person is not</p>
+<p>very comfortable moving on to a</p>
+<p>distributed database you could use</p>
+<p>the same concepts kind of</p>
+<p>on a relational database and that</p>
+<p>requires something called sharding</p>
+<p>also known by</p>
+<p>the veterans as</p>
+<p>horizontal</p>
+<p>party shun</p>
+<p>horizontal partitioning means you take</p>
+<p>some property of a data basically um</p>
+<p>you set ranges</p>
+<p>in one in one column and you direct data</p>
+<p>to</p>
+<p>a location based on that range so a lot</p>
+<p>of fluff that I just talked about what</p>
+<p>about name</p>
+<p>right all</p>
+<p>users</p>
+<p>having the name starting from a to j</p>
+<p>are going to go to database node number</p>
+<ol start="36">
+<li></li>
+</ol>
+<p>all users having it from</p>
+<p>k to p are going to database node number</p>
+<ol start="79">
+<li>now you see what’s happening here</li>
+</ol>
+<p>I’m partitioning the data</p>
+<p>based on its value</p>
+<p>to different locations and in this case</p>
+<p>what happens is when I’m going to be</p>
+<p>querying the data I can easily figure</p>
+<p>out what’s the name of this person oh</p>
+<p>then it must exist in database number so</p>
+<p>and so</p>
+<p>right partitioning as a concept is</p>
+<p>really useful</p>
+<p>um</p>
+<p>one of the one of the ways that you can</p>
+<p>partition data is sharding or horizontal</p>
+<p>partitioning</p>
+<p>so I would suggest you have a look at</p>
+<p>the consistent hashing thing anyway this</p>
+<p>is consistent hashing is going to be</p>
+<p>critical to keeping your</p>
+<p>servers functioning so</p>
+<p>after that you can also have a look at</p>
+<p>sharding which I’ll probably take a</p>
+<p>video on sometime but that’s it that’s</p>
+<p>what charting is you just do horizontal</p>
+<p>partitioning and based on your value</p>
+<p>you’re going to go to a particular node</p>
+<p>um</p>
+<p>as usual what about the single point of</p>
+<p>failure what if this node crashes are</p>
+<p>all users from k to p going to fail I</p>
+<p>mean are the requests going to fail no</p>
+<p>you can have a master slave architecture</p>
+<p>so if the master fails the slave comes</p>
+<p>up if the slave fails then you’re happy</p>
+<p>no I mean the slave failing has a really</p>
+<p>low probability because both of them</p>
+<p>have failed at the same time you can</p>
+<p>bring up a node in between so uh that is</p>
+<p>sort of how you are going to be doing</p>
+<p>the horizontal partitioning per</p>
+<p>per partition you can have a master</p>
+<p>slave or multiple masters and slaves but</p>
+<p>then</p>
+<p>you know you need to convince your</p>
+<p>interviewer as to why you’re choosing</p>
+<p>sharding</p>
+<p>which is a little complicated versus</p>
+<p>using a using a database like cassandra</p>
+<p>dynamo which is going to give you all of</p>
+<p>those features in one shot</p>
+<p>okay now why am I using sharding why am</p>
+<p>I using cassandra I mean why am I</p>
+<p>talking about all this I’m so sorry</p>
+<p>the reason I’m doing this is because</p>
+<p>you need to shard</p>
+<p>the data based on the location that that</p>
+<p>person is in</p>
+<p>so it doesn’t need to be necessarily a</p>
+<p>city</p>
+<p>it could be chunks of that city you can</p>
+<p>you can figure out that okay a person</p>
+<p>within this location</p>
+<p>is within this chunk and if it is within</p>
+<p>this chunk they are being sharded to a</p>
+<p>particular node</p>
+<p>okay</p>
+<p>based on that chunk therefore you can</p>
+<p>easily pull out data also you can pull</p>
+<p>this data out all users within that</p>
+<p>chunk</p>
+<p>and then search amongst it within the</p>
+<p>age and the</p>
+<p>gender</p>
+<p>variables</p>
+<p>so each of these databases can actually</p>
+<p>have the age sorted and you can query on</p>
+<p>the age</p>
+<p>and then finally you just filter out the</p>
+<p>genders that the person is not</p>
+<p>interested in</p>
+<p>okay</p>
+<p>so</p>
+<p>this is the kind of stuff that you could</p>
+<p>do</p>
+<p>basically to improve your recommendation</p>
+<p>engine your recommendation engine is</p>
+<p>going to be simple enough it’s going to</p>
+<p>be</p>
+<p>recommendation service</p>
+<p>all it does is it pulls out all relevant</p>
+<p>people maybe from the same profile</p>
+<p>service thing or it could just be</p>
+<p>storing the user ids and the locations</p>
+<p>the current location</p>
+<p>this current location can be updated</p>
+<p>every hour every two hours every three</p>
+<p>hours depends on the client it can push</p>
+<p>that thing or the number of pushes it</p>
+<p>makes doesn’t matter only after an hour</p>
+<p>you are going to make an update to the</p>
+<p>location</p>
+<p>and based on this location you you’re</p>
+<p>going to be serving</p>
+<p>users</p>
+<p>for that particular user</p>
+<p>all right</p>
+<p>okay</p>
+<p>if all any of this is going you know</p>
+<p>seeming too complicated</p>
+<p>it’s fine it may not be the right time</p>
+<p>to just start off with building systems</p>
+<p>but you can you can get the general gist</p>
+<p>of what’s happening if you’re if you’re</p>
+<p>able to break this system down into</p>
+<p>pieces and if you’re able to</p>
+<p>essentially partition and partition and</p>
+<p>remove single points of failure and</p>
+<p>figure out how these features are going</p>
+<p>to be done using interactions with each</p>
+<p>of these services then you’re doing well</p>
+<p>all right</p>
+<p>good job good job</p>
+<p>um</p>
+<p>and that’s pretty much it I think that</p>
+<p>takes kind of the second</p>
+<p>point also of recommending people you</p>
+<p>can recommend using this way</p>
+<p>that takes care of all four points in</p>
+<p>fact</p>
+<p>and tinder is one of these services</p>
+<p>which</p>
+<p>in fact seems quite simple and is</p>
+<p>because</p>
+<p>there’s not so much of a news feed that</p>
+<p>you need to take care of there’s not</p>
+<p>really</p>
+<p>a lot of a lot of social interactions</p>
+<p>going on like it’s not group messaging</p>
+<p>it’s just direct messaging so</p>
+<p>it’s a nice system to start with I think</p>
+<p>it’s one of the interesting systems I</p>
+<p>felt uh that I should start with and if</p>
+<p>you have any suggestions or if you feel</p>
+<p>like there was something that we missed</p>
+<p>out on uh definitely leave them in the</p>
+<p>comments below I think we are going to</p>
+<p>have a really fruitful discussion in the</p>
+<p>comments below after this and</p>
+<p>if you have any</p>
+<p>doubts on this feel free to ask I’ll try</p>
+<p>to post as many relevant sources in the</p>
+<p>description um if you like this video</p>
+<p>then you can just hit the like button</p>
+<p>and also just subscribe to the channel</p>
+<p>because I’ll be posting on similar</p>
+<p>services</p>
+<p>uh all the time</p>
+<p>so uh yeah that also gives me</p>
+<p>the question as to which service do you</p>
+<p>guys want to see do you want to see</p>
+<p>instagram twitter</p>
+<p>it’s up to you guys I mean basically</p>
+<p>just leave a comment or maybe I’ll take</p>
+<p>a poll that will be easier</p>
+<p>just make sure that you subscribe so you</p>
+<p>get a notification for the poll also</p>
+<p>others have to ask every time</p>
+<p>and</p>
+<p>I’ll see you then next time</p>
+<hr>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=tndzLznxq40">System Design: Tinder as a microservice architecture</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+</p></div><div class="share"><span>Share</span>&nbsp;<span class="soc"><a href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank" class="fa fa-bookmark"></a></span><span class="soc"><a href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));" class="fa fa-weibo"></a></span><span class="soc"><a target="_blank" rel="noopener" href="http://twitter.com/home?status=https://blog.kleon.space/interview/system/example_tinder_as_microservice/%20KLEON%20System - Tinder as a microservice architecture" class="fa fa-twitter"></a></span></div><div class="pagination"><p class="clearfix"><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/interview/algo/dynamic_programming/" title="Algorithm - Dynamic Programming">Next post: Algorithm - Dynamic Programming&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>

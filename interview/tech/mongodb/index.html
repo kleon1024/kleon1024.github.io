@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title>Tech - MongoDB · KLEON</title><meta name="description" content="Q &amp;amp; A of mongodb [1].
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title>Tech - MongoDB · KLEON</title><meta name="description" content="Q &amp;amp; A of mongodb [1][2].
 
 
 
@@ -7,7 +7,7 @@ Basics
 What are some of the advantages of MongoDB?
 What is a Document in MongoDB?
 What is a Collection in MongoDB?
-What "><meta name="og:description" content="Q &amp;amp; A of mongodb [1].
+Wh"><meta name="og:description" content="Q &amp;amp; A of mongodb [1][2].
 
 
 
@@ -16,8 +16,7 @@ Basics
 What are some of the advantages of MongoDB?
 What is a Document in MongoDB?
 What is a Collection in MongoDB?
-What "><meta name="twitter:site" content="KLEON"><meta name="twitter:title" content="Tech - MongoDB"><meta name="twitter:card" content="summary"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 6.1.0"><link rel="stylesheet" href="/css/prism.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body><div id="stage" class="container"><div class="row"><div id="side-bar" class="col-sm-3 col-xs-12 side-container invisible"><div class="vertical-text site-title"><h3 tabindex="-1" class="site-title-small"><a href="/" class="a-title"></a></h3><h1 tabindex="-1" class="site-title-large"><a href="/" class="a-title">自说自话</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div id="site-nav" class="site-title-links"><ul><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li><li><a href="/categories">Categories</a></li><li><a href="/tags">Tags</a></li><li><a href="/googlebe23cb0bc55fc412.html"></a></li><li><a href="/about/index.html"></a></li><li class="soc"><a href="https://github.com/kleon1024" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa fa-github">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div id="main-container" class="col-sm-9 col-xs-12 main-container invisible"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>Tech - MongoDB</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2022-04-29</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/interview/" title="interview" class="a-tag">interview</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/interview/" title="interview" class="a-tag">interview</a><span>&nbsp;</span><a href="/tags/tech/" title="tech" class="a-tag">tech</a><span>&nbsp;</span></span></p><p class="post-abstract"><p>Q &amp; A of mongodb <sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>.</p>
+Wh"><meta name="twitter:site" content="KLEON"><meta name="twitter:title" content="Tech - MongoDB"><meta name="twitter:card" content="summary"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/github.min.css"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 6.1.0"></head><body><div id="stage" class="container"><div class="row"><div id="side-bar" class="col-sm-3 col-xs-12 side-container invisible"><div class="vertical-text site-title"><h3 tabindex="-1" class="site-title-small"><a href="/" class="a-title"></a></h3><h1 tabindex="-1" class="site-title-large"><a href="/" class="a-title">自说自话</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div id="site-nav" class="site-title-links"><ul><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li><li><a href="/categories">Categories</a></li><li><a href="/tags">Tags</a></li><li><a href="/googlebe23cb0bc55fc412.html"></a></li><li><a href="/about/index.html"></a></li><li class="soc"><a href="https://github.com/kleon1024" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa fa-github">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div id="main-container" class="col-sm-9 col-xs-12 main-container invisible"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>Tech - MongoDB</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2022-04-29</span><span class="date meta-item">Updated at&nbsp;2022-05-02</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/interview/" title="interview" class="a-tag">interview</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/interview/" title="interview" class="a-tag">interview</a><span>&nbsp;</span><a href="/tags/tech/" title="tech" class="a-tag">tech</a><span>&nbsp;</span></span></p><p class="post-abstract"><p>Q &amp; A of mongodb <sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup><sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>.</p>
 <div class="toc">
 <!-- toc -->
 <ul>
@@ -35,14 +34,31 @@ What "><meta name="twitter:site" content="KLEON"><meta name="twitter:title" cont
 <li><a href="#how-do-you-delete-a-document">How do you Delete a Document?</a></li>
 <li><a href="#how-to-perform-queries-in-mongodb">How to perform queries in MongoDB?</a></li>
 <li><a href="#what-are-the-data-types-in-mongodb">What are the data types in MongoDB?</a></li>
+<li><a href="#what-is-an-embedded-mongodb-document">What is an Embedded MongoDB Document?</a></li>
+<li><a href="#how-can-you-achieve-primary-key-foreign-key-relationships-in-mongodb">How can you achieve primary key - foreign key relationships in MongoDB?</a></li>
+<li><a href="#when-should-we-embed-one-document-within-another-in-mongodb">When should we embed one document within another in MongoDB?</a></li>
+<li><a href="#how-is-data-stored-in-mongodb">How is data stored in MongoDB?</a></li>
 <li><a href="#when-to-use-mongodb">When to use MongoDB?</a></li>
+<li><a href="#what-is-upsert-operation-in-mongodb">What is upsert operation in MongoDB?</a></li>
+<li><a href="#how-to-perform-a-delete-operation-in-mongodb">How to perform a delete operation in MongoDB?</a></li>
+<li><a href="#if-you-remove-a-document-from-database-does-mongodb-remove-it-from-disk">If you remove a document from database, does MongoDB remove it from disk?</a></li>
+<li><a href="#explain-the-structure-of-objectid-in-mongodb">Explain the structure of ObjectID in MongoDB?</a></li>
+<li><a href="#what-is-a-covered-query-in-mongodb">What is a covered query in MongoDB?</a></li>
 </ul>
 </li>
 <li><a href="#intermediate">Intermediate</a>
 <ul>
 <li><a href="#how-is-querying-done-in-mongodb">How is Querying done in MongoDB?</a></li>
 <li><a href="#explain-the-term-indexing-in-mongodb">Explain the term “Indexing” in MongoDB.</a></li>
+<li><a href="#what-are-indexes-in-mongodb">What are Indexes in MongoDB?</a></li>
+<li><a href="#what-are-the-types-of-indexes-available-in-mongodb">What are the types of Indexes available in MongoDB?</a></li>
+<li><a href="#explain-index-properties-in-mongodb">Explain Index Properties in MongoDB?</a></li>
 <li><a href="#what-are-geospatial-indexes-in-mongodb">What are Geospatial Indexes in MongoDB?</a></li>
+<li><a href="#how-many-indexes-does-mongodb-create-by-default-for-a-new-collection">How many indexes does MongoDB create by default for a new collection?</a></li>
+<li><a href="#why-does-profiler-use-in-mongodb">Why does Profiler use in MongoDB?</a></li>
+<li><a href="#how-to-remove-attribute-from-mongodb-object">How to remove attribute from MongoDB Object?</a></li>
+<li><a href="#what-is-namespace-in-mongodb">What is “Namespace” in MongoDB?</a></li>
+<li><a href="#what-is-replication-in-mongodb">What is Replication in Mongodb?</a></li>
 <li><a href="#explain-the-process-of-sharding">Explain the process of Sharding.</a></li>
 <li><a href="#explain-the-set-modifier-in-mongodb">Explain the SET Modifier in MongoDB?</a></li>
 </ul>
@@ -54,13 +70,47 @@ What "><meta name="twitter:site" content="KLEON"><meta name="twitter:title" cont
 <li><a href="#what-is-the-aggregation-framework-in-mongodb">What is the Aggregation Framework in MongoDB?</a></li>
 <li><a href="#explain-the-concept-of-pipeline-in-the-mongodb-aggregation-framework">Explain the concept of pipeline in the MongoDB aggregation framework.</a></li>
 <li><a href="#what-is-a-replica-set-in-mongodb">What is a Replica Set in MongoDB?</a></li>
+<li><a href="#what-is-replica-set-in-mongodb">What is Replica Set in MongoDB?</a></li>
+<li><a href="#how-does-mongodb-ensure-high-availability">How does MongoDB ensure high availability?</a></li>
 <li><a href="#explain-the-replication-architecture-in-mongodb">Explain the Replication Architecture in MongoDB.</a></li>
 <li><a href="#what-are-some-utilities-for-backup-and-restore-in-mongodb">What are some utilities for backup and restore in MongoDB?</a></li>
+<li><a href="#what-are-the-differences-between-mongodb-and-sql-server">What are the differences between MongoDB and SQL-SERVER?</a></li>
+<li><a href="#how-can-you-achieve-transaction-and-locking-in-mongodb">How can you achieve transaction and locking in MongoDB?</a></li>
+<li><a href="#how-mongodb-supports-acid-transactions-and-locking-functionalities">How MongoDB supports ACID transactions and locking functionalities?</a></li>
+<li><a href="#what-are-the-best-practices-for-mongodb-transactions">What are the best practices for MongoDB Transactions?</a></li>
+<li><a href="#explain-limitations-of-mongodb-transactions">Explain limitations of MongoDB Transactions?</a></li>
+<li><a href="#when-to-use-mongodb-rather-than-mysql">When to Use MongoDB Rather than MySQL?</a></li>
+<li><a href="#should-i-normalize-my-data-before-storing-it-in-mongodb">Should I normalize my data before storing it in MongoDB?</a></li>
+<li><a href="#what-is-oplog">What is oplog?</a></li>
+<li><a href="#does-mongodb-pushes-the-writes-to-disk-immediately-or-lazily">Does MongoDB pushes the writes to disk immediately or lazily?</a></li>
+<li><a href="#what-is-sharding-in-mongodb">What is Sharding in MongoDB?</a></li>
 </ul>
 </li>
 </ul>
 <!-- tocstop -->
 </div>
+<p>MongoDB is a document-oriented NoSQL database used for high volume data storage. Instead of using tables and rows as in the traditional relational databases, MongoDB makes use of collections and documents. Documents consist of key-value pairs which are the basic unit of data in MongoDB. Collections contain sets of documents and function which is the equivalent of relational database tables.</p>
+<p>Key Components</p>
+<ol>
+<li>
+<p>_id: The _id field represents a unique value in the MongoDB document. The _id field is like the document’s primary key. If you create a new document without an _id field, MongoDB will automatically create the field.</p>
+</li>
+<li>
+<p>Collection: This is a grouping of MongoDB documents. A collection is the equivalent of a table which is created in any other RDMS such as Oracle.</p>
+</li>
+<li>
+<p>Cursor: This is a pointer to the result set of a query. Clients can iterate through a cursor to retrieve results.</p>
+</li>
+<li>
+<p>Database: This is a container for collections like in RDMS wherein it is a container for tables. Each database gets its own set of files on the file system. A MongoDB server can store multiple databases.</p>
+</li>
+<li>
+<p>Document: A record in a MongoDB collection is basically called a document. The document, in turn, will consist of field name and values.</p>
+</li>
+<li>
+<p>Field: A name-value pair in a document. A document has zero or more fields. Fields are analogous to columns in relational databases.</p>
+</li>
+</ol>
 <h1><a href="#basics" class="header-anchor">#</a><span id="basics">Basics</span></h1>
 <h2><a href="#what-are-some-of-the-advantages-of-mongodb" class="header-anchor">#</a><span id="what-are-some-of-the-advantages-of-mongodb">What are some of the advantages of MongoDB?</span></h2>
 <ul>
@@ -73,15 +123,14 @@ What "><meta name="twitter:site" content="KLEON"><meta name="twitter:title" cont
 </ul>
 <h2><a href="#what-is-a-document-in-mongodb" class="header-anchor">#</a><span id="what-is-a-document-in-mongodb">What is a Document in MongoDB?</span></h2>
 <p>A Document in MongoDB is an ordered set of keys with associated values. It is represented by a map, hash, or dictionary. In JavaScript, documents are represented as objects:</p>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">&#123;"greeting" : "Hello world!"&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&#123;&quot;greeting&quot; : &quot;Hello world!&quot;&#125;<br></code></pre></td></tr></table></figure>
 <p>Complex documents will contain multiple key/value pairs:</p>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">&#123;"greeting" : "Hello world!", "views" : 3&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&#123;&quot;greeting&quot; : &quot;Hello world!&quot;, &quot;views&quot; : 3&#125;<br></code></pre></td></tr></table></figure>
 <h2><a href="#what-is-a-collection-in-mongodb" class="header-anchor">#</a><span id="what-is-a-collection-in-mongodb">What is a Collection in MongoDB?</span></h2>
 <p>A collection in MongoDB is a group of documents. If a document is the MongoDB analog of a row in a relational database, then a collection can be thought of as the analog to a table.<br>
 Documents within a single collection can have any number of different “shapes.”, i.e. collections have dynamic schemas.<br>
 For example, both of the following documents could be stored in a single collection:</p>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">&#123;"greeting" : "Hello world!", "views": 3&#125;
-&#123;"signoff": "Good bye"&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&#123;&quot;greeting&quot; : &quot;Hello world!&quot;, &quot;views&quot;: 3&#125;<br>&#123;&quot;signoff&quot;: &quot;Good bye&quot;&#125;<br></code></pre></td></tr></table></figure>
 <h2><a href="#what-are-databases-in-mongodb" class="header-anchor">#</a><span id="what-are-databases-in-mongodb">What are Databases in MongoDB?</span></h2>
 <p>MongoDB groups collections into databases. MongoDB can host several databases, each grouping together collections.<br>
 Some reserved database names are as follows:<br>
@@ -91,16 +140,9 @@ config</p>
 <h2><a href="#what-is-the-mongo-shell" class="header-anchor">#</a><span id="what-is-the-mongo-shell">What is the Mongo Shell?</span></h2>
 <p>It is a JavaScript shell that allows interaction with a MongoDB instance from the command line. With that one can perform administrative functions, inspecting an instance, or exploring MongoDB.</p>
 <p>To start the shell, run the mongo executable:</p>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">$ mongod
-$ mongo
-MongoDB shell version: 4.2.0
-connecting to: test
-><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">$ mongod<br>$ mongo<br>MongoDB shell version: 4.2.0<br>connecting to: test<br>&gt;<br></code></pre></td></tr></table></figure>
 <p>The shell is a full-featured JavaScript interpreter, capable of running arbitrary JavaScript programs. Let’s see how basic math works on this:</p>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">> x = 100;
-200
-> x / 5;
-20<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&gt; x = 100;<br>200<br>&gt; x / 5;<br>20<br></code></pre></td></tr></table></figure>
 <h2><a href="#how-does-scale-out-occur-in-mongodb" class="header-anchor">#</a><span id="how-does-scale-out-occur-in-mongodb">How does Scale-Out occur in MongoDB?</span></h2>
 <p>The document-oriented data model of MongoDB makes it easier to split data across multiple servers. Balancing and loading data across a cluster is done by MongoDB. It then redistributes documents automatically.<br>
 The mongos acts as a query router, providing an interface between client applications and the sharded cluster.<br>
@@ -116,49 +158,62 @@ Config servers store metadata and configuration settings for the cluster. MongoD
 </ul>
 <h2><a href="#how-to-add-data-in-mongodb" class="header-anchor">#</a><span id="how-to-add-data-in-mongodb">How to add data in MongoDB?</span></h2>
 <p>The basic method for adding data to MongoDB is “inserts”. To insert a single document, use the collection’s insertOne method:</p>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">> db.books.insertOne(&#123;"title" : "Start With Why"&#125;)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&gt; db.books.insertOne(&#123;&quot;title&quot; : &quot;Start With Why&quot;&#125;)<br></code></pre></td></tr></table></figure>
 <p>For inserting multiple documents into a collection, we use insertMany. This method enables passing an array of documents to the database.</p>
 <h2><a href="#how-do-you-update-a-document" class="header-anchor">#</a><span id="how-do-you-update-a-document">How do you Update a Document?</span></h2>
 <p>Once a document is stored in the database, it can be changed using one of several update methods: updateOne, updateMany, and replaceOne. updateOne and updateMany each takes a filter document as their first parameter and a modifier document, which describes changes to make, as the second parameter. replaceOne also takes a filter as the first parameter, but as the second parameter replaceOne expects a document with which it will replace the document matching the filter.</p>
-<p>For example, in order to replace a document:</p>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">&#123;
-   "_id" : ObjectId("4b2b9f67a1f631733d917a7a"),
-   "name" : "alice",
-   "friends" : 24,
-   "enemies" : 2
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2><a href="#how-do-you-delete-a-document" class="header-anchor">#</a><span id="how-do-you-delete-a-document">How do you Delete a Document?</span></h2>
 <p>The CRUD API in MongoDB provides deleteOne and deleteMany for this purpose. Both of these methods take a filter document as their first parameter. The filter specifies a set of criteria to match against in removing documents.<br>
 For example:</p>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">> db.books.deleteOne(&#123;"_id" : 3&#125;)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&gt; db.books.deleteOne(&#123;&quot;_id&quot; : 3&#125;)<br></code></pre></td></tr></table></figure>
 <h2><a href="#how-to-perform-queries-in-mongodb" class="header-anchor">#</a><span id="how-to-perform-queries-in-mongodb">How to perform queries in MongoDB?</span></h2>
 <p>The find method is used to perform queries in MongoDB. Querying returns a subset of documents in a collection, from no documents at all to the entire collection. Which documents get returned is determined by the first argument to find, which is a document specifying the query criteria.</p>
 <p>Example:</p>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">> db.users.find(&#123;"age" : 24&#125;)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&gt; db.users.find(&#123;&quot;age&quot; : 24&#125;)<br></code></pre></td></tr></table></figure>
 <h2><a href="#what-are-the-data-types-in-mongodb" class="header-anchor">#</a><span id="what-are-the-data-types-in-mongodb">What are the data types in MongoDB?</span></h2>
 <p>MongoDB supports a wide range of data types as values in documents. Documents in MongoDB are similar to objects in JavaScript. Along with JSON’s essential key/value–pair nature, MongoDB adds support for a number of additional data types. The common data types in MongoDB are:</p>
 <p>Null</p>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">&#123;"x" : null&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&#123;&quot;x&quot; : null&#125;<br></code></pre></td></tr></table></figure>
 <p>Boolean</p>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">&#123;"x" : true&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&#123;&quot;x&quot; : true&#125;<br></code></pre></td></tr></table></figure>
 <p>Number</p>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">&#123;"x" : 4&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&#123;&quot;x&quot; : 4&#125;<br></code></pre></td></tr></table></figure>
 <p>String</p>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">&#123;"x" : "foobar"&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&#123;&quot;x&quot; : &quot;foobar&quot;&#125;<br></code></pre></td></tr></table></figure>
 <p>Date</p>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">&#123;"x" : new Date()&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&#123;&quot;x&quot; : new Date()&#125;<br></code></pre></td></tr></table></figure>
 <p>Regular expression</p>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">&#123;"x" : /foobar/i&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&#123;&quot;x&quot; : /foobar/i&#125;<br></code></pre></td></tr></table></figure>
 <p>Array</p>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">&#123;"x" : ["a", "b", "c"]&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&#123;&quot;x&quot; : [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]&#125;<br></code></pre></td></tr></table></figure>
 <p>Embedded document</p>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">&#123;"x" : &#123;"foo" : "bar"&#125;&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&#123;&quot;x&quot; : &#123;&quot;foo&quot; : &quot;bar&quot;&#125;&#125;<br></code></pre></td></tr></table></figure>
 <p>Object ID</p>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">&#123;"x" : ObjectId()&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&#123;&quot;x&quot; : ObjectId()&#125;<br></code></pre></td></tr></table></figure>
 <p>Binary Data<br>
 Binary data is a string of arbitrary bytes.<br>
 Code</p>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">&#123;"x" : function() &#123; /* ... */ &#125;&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&#123;&quot;x&quot; : function() &#123; /* ... */ &#125;&#125;<br></code></pre></td></tr></table></figure>
+<h2><a href="#what-is-an-embedded-mongodb-document" class="header-anchor">#</a><span id="what-is-an-embedded-mongodb-document">What is an Embedded MongoDB Document?</span></h2>
+<p>An embedded, or nested, MongoDB Document is a normal document that is nested inside another document within a MongoDB collection. Embedding connected data in a single document can reduce the number of read operations required to obtain data. In general, we should structure our schema so that application receives all of its required information in a single read operation.</p>
+<p>Example:</p>
+<p>In the normalized data model, the address documents contain a reference to the patron document.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">// patron document<br>&#123;<br>   _id: &quot;joe&quot;,<br>   name: &quot;Joe Bookreader&quot;<br>&#125;<br><br>// address documents<br>&#123;<br>   patron_id: &quot;joe&quot;, // reference to patron document<br>   street: &quot;123 Fake Street&quot;,<br>   city: &quot;Faketon&quot;,<br>   state: &quot;MA&quot;,<br>   zip: &quot;12345&quot;<br>&#125;<br><br>&#123;<br>   patron_id: &quot;joe&quot;,<br>   street: &quot;1 Some Other Street&quot;,<br>   city: &quot;Boston&quot;,<br>   state: &quot;MA&quot;,<br>   zip: &quot;12345&quot;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>Embedded documents are particularly useful when a one-to-many relationship exists between documents. In the example shown above, we see that a single customer has multiple addresses associated with him. The nested document structure makes it easy to retrieve complete address information about this customer with just a single query.</p>
+<h2><a href="#how-can-you-achieve-primary-key-foreign-key-relationships-in-mongodb" class="header-anchor">#</a><span id="how-can-you-achieve-primary-key-foreign-key-relationships-in-mongodb">How can you achieve primary key - foreign key relationships in MongoDB?</span></h2>
+<p>The primary key-foreign key relationship can be achieved by embedding one document inside the another. As an example, a department document can have its employee document(s).</p>
+<h2><a href="#when-should-we-embed-one-document-within-another-in-mongodb" class="header-anchor">#</a><span id="when-should-we-embed-one-document-within-another-in-mongodb">When should we embed one document within another in MongoDB?</span></h2>
+<p>You should consider embedding documents for:</p>
+<ul>
+<li>contains relationships between entities</li>
+<li>One-to-many relationships</li>
+<li>Performance reasons</li>
+</ul>
+<h2><a href="#how-is-data-stored-in-mongodb" class="header-anchor">#</a><span id="how-is-data-stored-in-mongodb">How is data stored in MongoDB?</span></h2>
+<p>In MongoDB, Data is stored in BSON documents (short for Bin­ary JSON). These documents are stored in MongoDB in JSON (JavaScript Object Notation) format. JSON documents support embedded fields, so related data and lists of data can be stored with the document instead of an external table. Documents contain one or more fields, and each field contains a value of a specific data type, including arrays, binary data and sub-documents. Documents that tend to share a similar structure are organized as collections.</p>
+<p>JSON is formatted as name/value pairs. In JSON documents, field names and values are separated by a colon, field name and value pairs are separated by commas, and sets of fields are encapsulated in “curly braces” ({}).</p>
+<p>Example:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&#123;<br>  &quot;name&quot;: &quot;notebook&quot;,<br>  &quot;qty&quot;: 50,<br>  &quot;rating&quot;: [ &#123; &quot;score&quot;: 8 &#125;, &#123; &quot;score&quot;: 9 &#125; ],<br>  &quot;size&quot;: &#123; &quot;height&quot;: 11, &quot;width&quot;: 8.5, &quot;unit&quot;: &quot;in&quot; &#125;,<br>  &quot;status&quot;: &quot;A&quot;,<br>  &quot;tags&quot;: [ &quot;college-ruled&quot;, &quot;perforated&quot;]<br>&#125;<br></code></pre></td></tr></table></figure>
 <h2><a href="#when-to-use-mongodb" class="header-anchor">#</a><span id="when-to-use-mongodb">When to use MongoDB?</span></h2>
 <p>You should use MongoDB when you are building internet and business applications that need to evolve quickly and scale elegantly. MongoDB is popular with developers of all kinds who are building scalable applications using agile methodologies.<br>
 MongoDB is a great choice if one needs to:</p>
@@ -169,36 +224,230 @@ MongoDB is a great choice if one needs to:</p>
 <li>Evolve the type of deployment as the business changes.</li>
 <li>Store, manage and search data with text, geospatial, or time-series dimensions.</li>
 </ul>
+<h2><a href="#what-is-upsert-operation-in-mongodb" class="header-anchor">#</a><span id="what-is-upsert-operation-in-mongodb">What is upsert operation in MongoDB?</span></h2>
+<p>Upsert operation in MongoDB is utilized to save document into collection. If document matches query criteria then it will perform update operation otherwise it will insert a new document into collection.</p>
+<p>Upsert operation is useful while importing data from external source which will update existing documents if matched otherwise it will insert new documents into collection.</p>
+<p>Example: Upsert option set for update</p>
+<p>This operation first searches for the document if not present then inserts the new document into the database.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&gt; db.car.update(<br>...    &#123; name: &quot;Qualis&quot; &#125;,<br>...    &#123;<br>...       name: &quot;Qualis&quot;,<br>...       speed: 50<br>...    &#125;,<br>...    &#123; upsert: true &#125;<br>... )<br>WriteResult(&#123;<br>  &quot;nMatched&quot; : 0,<br>  &quot;nUpserted&quot; : 1,<br>  &quot;nModified&quot; : 0,<br>  &quot;_id&quot; : ObjectId(&quot;548d3a955a5072e76925dc1c&quot;)<br>&#125;)<br></code></pre></td></tr></table></figure>
+<p>The car with the name Qualis is checked for existence and if not, a document with car name “Qualis” and speed 50 is inserted into the database. The nUpserted with value “1” indicates a new document is inserted.</p>
+<h2><a href="#how-to-perform-a-delete-operation-in-mongodb" class="header-anchor">#</a><span id="how-to-perform-a-delete-operation-in-mongodb">How to perform a delete operation in MongoDB?</span></h2>
+<p>MongoDB’s db.collection.deleteMany() and db.collection.deleteOne() method is used to delete documents from the collection. Delete operations do not drop indexes, even if deleting all documents from a collection. All write operations in MongoDB are atomic on the level of a single document.</p>
+<p>Example:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">// Create Inventory Collection<br>db.inventory.insertMany( [<br>   &#123; item: &quot;journal&quot;, qty: 25, size: &#123; h: 14, w: 21, uom: &quot;cm&quot; &#125;, status: &quot;A&quot; &#125;,<br>   &#123; item: &quot;notebook&quot;, qty: 50, size: &#123; h: 8.5, w: 11, uom: &quot;in&quot; &#125;, status: &quot;P&quot; &#125;,<br>   &#123; item: &quot;paper&quot;, qty: 100, size: &#123; h: 8.5, w: 11, uom: &quot;in&quot; &#125;, status: &quot;D&quot; &#125;,<br>   &#123; item: &quot;planner&quot;, qty: 75, size: &#123; h: 22.85, w: 30, uom: &quot;cm&quot; &#125;, status: &quot;D&quot; &#125;,<br>   &#123; item: &quot;postcard&quot;, qty: 45, size: &#123; h: 10, w: 15.25, uom: &quot;cm&quot; &#125;, status: &quot;A&quot; &#125;,<br>] );<br><br><br><br>// Delete Commands<br>db.inventory.deleteMany(&#123;&#125;) // Delete All Documents<br><br>db.inventory.deleteMany(&#123; status : &quot;A&quot; &#125;) // Delete All Documents that Match a Condition<br><br>db.inventory.deleteOne( &#123; status: &quot;D&quot; &#125; ) // Delete Only One Document that Matches a Condition<br></code></pre></td></tr></table></figure>
+<h2><a href="#if-you-remove-a-document-from-database-does-mongodb-remove-it-from-disk" class="header-anchor">#</a><span id="if-you-remove-a-document-from-database-does-mongodb-remove-it-from-disk">If you remove a document from database, does MongoDB remove it from disk?</span></h2>
+<p>Yes. If you remove a document from database, MongoDB will remove it from disk too.</p>
+<h2><a href="#explain-the-structure-of-objectid-in-mongodb" class="header-anchor">#</a><span id="explain-the-structure-of-objectid-in-mongodb">Explain the structure of ObjectID in MongoDB?</span></h2>
+<p>The ObjectId(<hexadecimal>) class is the default primary key for a MongoDB document and is usually found in the _id field in an inserted document. It returns a new ObjectId value. The 12-byte ObjectId value consists of:</hexadecimal></p>
+<ul>
+<li>a 4-byte timestamp value, representing the ObjectId’s creation, measured in seconds since the Unix epoch</li>
+<li>a 5-byte random value</li>
+<li>a 3-byte incrementing counter, initialized to a random value<br>
+While the BSON format itself is little-endian, the timestamp and counter values are big-endian, with the most significant bytes appearing first in the byte sequence.<br>
+Create ObjectId</li>
+</ul>
+<p>To create a new objectID manually within the MongoDB we can declare objectId() as a method.</p>
+<blockquote>
+<p>newObjectId = ObjectId();</p>
+</blockquote>
+<p>// Output<br>
+ObjectId(“5349b4ddd2781d08c09890f3”)<br>
+MongoDB provides three methods for ObjectId</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ObjectId.getTimestamp()</td>
+<td>Returns the timestamp portion of the object as a Date.</td>
+</tr>
+<tr>
+<td>ObjectId.toString()</td>
+<td>Returns the JavaScript representation in the form of a string literal “ObjectId(…)”.</td>
+</tr>
+<tr>
+<td>ObjectId.valueOf()</td>
+<td>Returns the representation of the object as a hexadecimal string.</td>
+</tr>
+</tbody>
+</table>
+<h2><a href="#what-is-a-covered-query-in-mongodb" class="header-anchor">#</a><span id="what-is-a-covered-query-in-mongodb">What is a covered query in MongoDB?</span></h2>
+<p>The MongoDB covered query is one which uses an index and does not have to examine any documents. An index will cover a query if it satisfies the following conditions:</p>
+<ul>
+<li>All fields in a query are part of an index.</li>
+<li>All fields returned in the results are of the same index.</li>
+<li>No fields in the query are equal to null</li>
+</ul>
+<p>Since all the fields present in the query are part of an index, MongoDB matches the query conditions and returns the result using the same index without actually looking inside the documents.</p>
+<p>Example:</p>
+<p>A collection inventory has the following index on the type and item fields:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">db.inventory.createIndex( &#123; type: 1, item: 1 &#125; )<br></code></pre></td></tr></table></figure>
+<p>This index will cover the following operation which queries on the type and item fields and returns only the item field:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">db.inventory.find(<br>   &#123; type: &quot;food&quot;, item:/^c/ &#125;,<br>   &#123; item: 1, _id: 0 &#125;<br>)<br></code></pre></td></tr></table></figure>
 <h1><a href="#intermediate" class="header-anchor">#</a><span id="intermediate">Intermediate</span></h1>
 <h2><a href="#how-is-querying-done-in-mongodb" class="header-anchor">#</a><span id="how-is-querying-done-in-mongodb">How is Querying done in MongoDB?</span></h2>
 <p>The find method is used to perform queries in MongoDB. Querying returns a subset of documents in a collection, from no documents at all to the entire collection. Which documents get returned is determined by the first argument to find, which is a document specifying the query criteria.<br>
 For example: If we have a string we want to match, such as a “username” key with the value “alice”, we use that key/value pair instead:</p>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">> db.users.find(&#123;"username" : "alice"&#125;)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&gt; db.users.find(&#123;&quot;username&quot; : &quot;alice&quot;&#125;)<br></code></pre></td></tr></table></figure>
 <h2><a href="#explain-the-term-indexing-in-mongodb" class="header-anchor">#</a><span id="explain-the-term-indexing-in-mongodb">Explain the term “Indexing” in MongoDB.</span></h2>
 <p>In MongoDB, indexes help in efficiently resolving queries. What an Index does is that it stores a small part of the data set in a form that is easy to traverse. The index stores the value of the specific field or set of fields, ordered by the value of the field as specified in the index.<br>
 MongoDB’s indexes work almost identically to typical relational database indexes.</p>
 <p>Indexes look at an ordered list with references to the content. These in turn allow MongoDB to query orders of magnitude faster. To create an index, use the createIndex collection method.</p>
 <p>For example:</p>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">> db.users.find(&#123;"username": "user101"&#125;).explain("executionStats")<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&gt; db.users.find(&#123;&quot;username&quot;: &quot;user101&quot;&#125;).explain(&quot;executionStats&quot;)<br></code></pre></td></tr></table></figure>
 <p>Here, executionStats mode helps us understand the effect of using an index to satisfy queries.</p>
+<h2><a href="#what-are-indexes-in-mongodb" class="header-anchor">#</a><span id="what-are-indexes-in-mongodb">What are Indexes in MongoDB?</span></h2>
+<p>Indexes support the efficient execution of queries in MongoDB. Without indexes, MongoDB must perform a collection scan, i.e. scan every document in a collection, to select those documents that match the query statement. If an appropriate index exists for a query, MongoDB can use the index to limit the number of documents it must inspect.</p>
+<p>Indexes are special data structures that store a small portion of the collection’s data set in an easy to traverse form. The index stores the value of a specific field or set of fields, ordered by the value of the field. The ordering of the index entries supports efficient equality matches and range-based query operations. In addition, MongoDB can return sorted results by using the ordering in the index.</p>
+<p><strong>Example</strong><br>
+The createIndex() method only creates an index if an index of the same specification does not already exist. The following example ( using Node.js ) creates a single key descending index on the name field:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">collection.createIndex( &#123; name : -1 &#125;, function(err, result) &#123;<br>   console.log(result);<br>   callback(result);<br>&#125;<br></code></pre></td></tr></table></figure>
+<h2><a href="#what-are-the-types-of-indexes-available-in-mongodb" class="header-anchor">#</a><span id="what-are-the-types-of-indexes-available-in-mongodb">What are the types of Indexes available in MongoDB?</span></h2>
+<ol>
+<li>Single Field Index<br>
+MongoDB supports user-defined indexes like single field index. A single field index is used to create an index on the single field of a document. With single field index, MongoDB can traverse in ascending and descending order. By default, each collection has a single field index automatically created on the _id field, the primary key.</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&#123;<br>  &quot;_id&quot;: 1,<br>  &quot;person&quot;: &#123; name: &quot;Alex&quot;, surname: &quot;K&quot; &#125;,<br>  &quot;age&quot;: 29,<br>  &quot;city&quot;: &quot;New York&quot;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>We can define, a single field index on the age field.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">db.people.createIndex( &#123;age : 1&#125; ) // creates an ascending index<br><br>db.people.createIndex( &#123;age : -1&#125; ) // creates a descending index<br></code></pre></td></tr></table></figure>
+<p>With this kind of index we can improve all the queries that find documents with a condition and the age field, like the following:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">db.people.find( &#123; age : 20 &#125; )<br>db.people.find( &#123; name : &quot;Alex&quot;, age : 30 &#125; )<br>db.people.find( &#123; age : &#123; $gt : 25&#125; &#125; )<br></code></pre></td></tr></table></figure>
+<ol start="2">
+<li>Compound Index<br>
+A compound index is an index on multiple fields. Using the same people collection we can create a compound index combining the city and age field.</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">db.people.createIndex( &#123;city: 1, age: 1, person.surname: 1  &#125; )<br></code></pre></td></tr></table></figure>
+<p>In this case, we have created a compound index where the first entry is the value of the city field, the second is the value of the age field, and the third is the <a target="_blank" rel="noopener" href="http://person.name">person.name</a>. All the fields here are defined in ascending order.<br>
+Queries such as the following can benefit from the index:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">db.people.find( &#123; city: &quot;Miami&quot;, age: &#123; $gt: 50 &#125; &#125; )<br>db.people.find( &#123; city: &quot;Boston&quot; &#125; )<br>db.people.find( &#123; city: &quot;Atlanta&quot;, age: &#123;$lt: 25&#125;, &quot;person.surname&quot;: &quot;Green&quot; &#125; )<br></code></pre></td></tr></table></figure>
+<ol start="3">
+<li>Multikey Index<br>
+This is the index type for arrays. When creating an index on an array, MongoDB will create an index entry for every element.</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&#123;<br>   &quot;_id&quot;: 1,<br>   &quot;person&quot;: &#123; name: &quot;John&quot;, surname: &quot;Brown&quot; &#125;,<br>   &quot;age&quot;: 34,<br>   &quot;city&quot;: &quot;New York&quot;,<br>   &quot;hobbies&quot;: [ &quot;music&quot;, &quot;gardening&quot;, &quot;skiing&quot; ]<br> &#125;<br></code></pre></td></tr></table></figure>
+<p>The multikey index can be created as:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">db.people.createIndex( &#123; hobbies: 1&#125; )<br></code></pre></td></tr></table></figure>
+<p>Queries such as these next examples will use the index:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">db.people.find( &#123; hobbies: &quot;music&quot; &#125; )<br>db.people.find( &#123; hobbies: &quot;music&quot;, hobbies: &quot;gardening&quot; &#125; )<br></code></pre></td></tr></table></figure>
+<ol start="4">
+<li>Geospatial Index</li>
+</ol>
+<p>GeoIndexes are a special index type that allows a search based on location, distance from a point and many other different features. To query geospatial data, MongoDB supports two types of indexes – 2d indexes and 2d sphere indexes. 2d indexes use planar geometry when returning results and 2dsphere indexes use spherical geometry to return results.</p>
+<ol start="5">
+<li>Text Index</li>
+</ol>
+<p>It is another type of index that is supported by MongoDB. Text index supports searching for string content in a collection. These index types do not store language-specific stop words (e.g. “the”, “a”, “or”). Text indexes restrict the words in a collection to only store root words.<br>
+Let’s insert some sample documents.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">var entries = db.people(&quot;blogs&quot;).entries;<br>entries.insert( &#123;<br>  title : &quot;my blog post&quot;,<br>  text : &quot;i am writing a blog. yay&quot;,<br>  site: &quot;home&quot;,<br>  language: &quot;english&quot; &#125;);<br>entries.insert( &#123;<br>  title : &quot;my 2nd post&quot;,<br>  text : &quot;this is a new blog i am typing. yay&quot;,<br>  site: &quot;work&quot;,<br>  language: &quot;english&quot; &#125;);<br>entries.insert( &#123;<br>  title : &quot;knives are Fun&quot;,<br>  text : &quot;this is a new blog i am writing. yay&quot;,<br>  site: &quot;home&quot;,<br>  language: &quot;english&quot; &#125;);<br></code></pre></td></tr></table></figure>
+<p>Let’s define create the text index.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">var entries = db.people(&quot;blogs&quot;).entries;<br>entries.ensureIndex(&#123;title: &quot;text&quot;, text: &quot;text&quot;&#125;, &#123; weights: &#123;<br>    title: 10,<br>    text: 5<br>  &#125;,<br>  name: &quot;TextIndex&quot;,<br>  default_language: &quot;english&quot;,<br>  language_override: &quot;language&quot; &#125;);<br></code></pre></td></tr></table></figure>
+<p>Queries such as these next examples will use the index:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">var entries = db.people(&quot;blogs&quot;).entries;<br>entries.find(&#123;$text: &#123;$search: &quot;blog&quot;&#125;, site: &quot;home&quot;&#125;)<br></code></pre></td></tr></table></figure>
+<ol start="6">
+<li>Hashed Index</li>
+</ol>
+<p>MongoDB supports hash-based sharding and provides hashed indexes. These indexes are the hashes of the field value. Shards use hashed indexes and create a hash according to the field value to spread the writes across the sharded instances.</p>
+<h2><a href="#explain-index-properties-in-mongodb" class="header-anchor">#</a><span id="explain-index-properties-in-mongodb">Explain Index Properties in MongoDB?</span></h2>
+<ol>
+<li>TTL Indexes<br>
+TTL ( Time To Live ) is a special option that we can apply only to a single field index to permit the automatic deletion of documents after a certain time.</li>
+</ol>
+<p>During index creation, we can define an expiration time. After that time, all the documents that are older than the expiration time will be removed from the collection. This kind of feature is very useful when we are dealing with data that don’t need to persist in the database ( eg. session data ).</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">db.sessionlog.createIndex( &#123; &quot;lastUpdateTime&quot;: 1 &#125;, &#123; expireAfterSeconds: 1800 &#125; )<br></code></pre></td></tr></table></figure>
+<p>In this case, MongoDB will drop the documents from the collection automatically once half an hour (1800 seconds) has passed since the value in lastUpdateTime field.</p>
+<p>Restrictions:</p>
+<ul>
+<li>Only single field indexes can have the TTL option</li>
+<li>the _id single field index cannot support the TTL option</li>
+<li>the indexed field must be a date type</li>
+<li>a capped collection cannot have a TTL index</li>
+</ul>
+<ol start="2">
+<li>Partial indexes<br>
+A partial index is an index that contains only a subset of the values based on a filter rule. They are useful in cases where:</li>
+</ol>
+<ul>
+<li>The index size can be reduced</li>
+<li>We want to index the most relevant and used values in the query conditions</li>
+<li>We want to index the most selective values of a field</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">db.people.createIndex(<br>   &#123; &quot;city&quot;: 1, &quot;person.surname&quot;: 1 &#125;,<br>   &#123; partialFilterExpression: &#123; age : &#123; $lt: 30 &#125; &#125; &#125;<br>)<br></code></pre></td></tr></table></figure>
+<p>We have created a compound index on city and person.surname but only for the documents with age less than 30. In order for the partial index to be used the queries must contain a condition on the age field.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">db.people.find( &#123; city: &quot;New Tork&quot;, age: &#123; $eq: 20&#125; &#125; )<br></code></pre></td></tr></table></figure>
+<ol start="3">
+<li>Sparse indexes<br>
+Sparse indexes are a subset of partial indexes. A sparse index only contains elements for the documents that have the indexed field, even if it is null.</li>
+</ol>
+<p>Since MongoDB is a schemaless database, the documents in a collection can have different fields, so an indexed field may not be present in some of them.<br>
+To create such an index use the sparse option:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">db.people.createIndex( &#123; city: 1 &#125;, &#123; sparse: true &#125; )<br></code></pre></td></tr></table></figure>
+<p>In this case, we are assuming there could be documents in the collection with the field city missing. Sparse indexes are based on the existence of a field in the documents and are useful to reduce the size of the index.</p>
+<ol start="4">
+<li>Unique indexes</li>
+</ol>
+<p>MongoDB can create an index as unique. An index defined this way cannot contain duplicate entries.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">db.people.createIndex( &#123; city: 1 &#125;, &#123; unique: true &#125; )<br></code></pre></td></tr></table></figure>
+<p>Uniqueness can be defined for compound indexes too.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">db.people.createIndex( &#123; city: 1, person.surname: 1&#125;, &#123; unique: true &#125; )<br></code></pre></td></tr></table></figure>
+<p>By default, the index on _id is automatically created as unique.</p>
 <h2><a href="#what-are-geospatial-indexes-in-mongodb" class="header-anchor">#</a><span id="what-are-geospatial-indexes-in-mongodb">What are Geospatial Indexes in MongoDB?</span></h2>
 <p>MongoDB has two types of geospatial indexes: 2dsphere and 2d. 2dsphere indexes work with spherical geometries that model the surface of the earth based on the WGS84 datum. This datum model the surface of the earth as an oblate spheroid, meaning that there is some flattening at the poles. Distance calculations using 2sphere indexes, therefore, take the shape of the earth into account and provide a more accurate treatment of distance between, for example, two cities, than do 2d indexes. Use 2d indexes for points stored on a two-dimensional plane.<br>
 2dsphere allows you to specify geometries for points, lines, and polygons in the GeoJSON format. A point is given by a two-element array, representing [longitude, latitude]:</p>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">&#123;
-   "name" : "New York City",
-   "loc" : &#123;
-       "type" : "Point",
-       "coordinates" : [50, 2]
-   &#125;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&#123;<br>   &quot;name&quot; : &quot;New York City&quot;,<br>   &quot;loc&quot; : &#123;<br>       &quot;type&quot; : &quot;Point&quot;,<br>       &quot;coordinates&quot; : [50, 2]<br>   &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <p>A line is given by an array of points:</p>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">&#123;
-   "name" : "Hudson River",
-   "loc" : &#123;
-       "type" : "LineString",
-       "coordinates" : [[0,1], [0,2], [1,2]]
-   &#125;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&#123;<br>   &quot;name&quot; : &quot;Hudson River&quot;,<br>   &quot;loc&quot; : &#123;<br>       &quot;type&quot; : &quot;LineString&quot;,<br>       &quot;coordinates&quot; : [[0,1], [0,2], [1,2]]<br>   &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h2><a href="#how-many-indexes-does-mongodb-create-by-default-for-a-new-collection" class="header-anchor">#</a><span id="how-many-indexes-does-mongodb-create-by-default-for-a-new-collection">How many indexes does MongoDB create by default for a new collection?</span></h2>
+<p>By default MongoDB creates a unique index on the _id field during the creation of a collection. The _id index prevents clients from inserting two documents with the same value for the _id field.<br>
+Yes, To index a field that holds an array value, MongoDB creates an index key for each element in the array. Multikey indexes can be constructed over arrays that hold both scalar values (e.g. strings, numbers) and nested documents. MongoDB automatically creates a multikey index if any indexed field is an array.</p>
+<p>Syntax</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">db.collection.createIndex( &#123; &lt;field&gt;: &lt; 1 or -1 &gt; &#125; )<br></code></pre></td></tr></table></figure>
+<p>For example, consider an inventory collection that contains the following documents:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&#123; _id: 10, type: &quot;food&quot;, item: &quot;aaa&quot;, ratings: [ 5, 8, 9 ] &#125;<br>&#123; _id: 11, type: &quot;food&quot;, item: &quot;bbb&quot;, ratings: [ 5, 9 ] &#125;<br>&#123; _id: 12, type: &quot;food&quot;, item: &quot;ccc&quot;, ratings: [ 9, 5, 8, 4, 7 ] &#125;<br></code></pre></td></tr></table></figure>
+<p>The collection has a multikey index on the ratings field:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">db.inventory.createIndex( &#123; ratings: 1 &#125; )<br></code></pre></td></tr></table></figure>
+<p>The following query looks for documents where the ratings field is the array [ 5, 9 ]:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">db.inventory.find( &#123; ratings: [ 5, 9 ] &#125; )<br></code></pre></td></tr></table></figure>
+<p>MongoDB can use the multikey index to find documents that have 5 at any position in the ratings array. Then, MongoDB retrieves these documents and filters for documents whose ratings array equals the query array [ 5, 9 ].</p>
+<h2><a href="#why-does-profiler-use-in-mongodb" class="header-anchor">#</a><span id="why-does-profiler-use-in-mongodb">Why does Profiler use in MongoDB?</span></h2>
+<p>The database profiler captures data information about read and write operations, cursor operations, and database commands. The database profiler writes data in the system.profile collection, which is a capped collection.</p>
+<p>The database profiler collects detailed information about Database Commands executed against a running mongod instance. This includes CRUD operations as well as configuration and administration commands.</p>
+<p>Profiler has 3 profiling levels.</p>
+<ul>
+<li>Level 0 - Profiler will not log any data</li>
+<li>Level 1 - Profiler will log only slow operations above some threshold</li>
+<li>Level 2 - Profiler will log all the operations</li>
+</ul>
+<ol>
+<li>To get current profiling level.</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">db.getProfilingLevel()  <br><br>// Output<br>0<br></code></pre></td></tr></table></figure>
+<ol start="2">
+<li>To check current profiling status</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">db.getProfilingStatus()<br><br><br>// Output<br>&#123; &quot;was&quot; : 0, &quot;slowms&quot; : 100 &#125;<br></code></pre></td></tr></table></figure>
+<ol start="3">
+<li>To set profiling level</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">db.setProfilingLevel(1, 40)<br><br>// Output<br>&#123; &quot;was&quot; : 0, &quot;slowms&quot; : 100, &quot;ok&quot; : 1 &#125;<br></code></pre></td></tr></table></figure>
+<h2><a href="#how-to-remove-attribute-from-mongodb-object" class="header-anchor">#</a><span id="how-to-remove-attribute-from-mongodb-object">How to remove attribute from MongoDB Object?</span></h2>
+<p>$unset</p>
+<p>The $unset operator deletes a particular field. If the field does not exist, then $unset does nothing. When used with $ to match an array element, $unset replaces the matching element with null rather than removing the matching element from the array. This behavior keeps consistent the array size and element positions.</p>
+<p>syntax:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&#123; $unset: &#123; &lt;field1&gt;: &quot;&quot;, ... &#125; &#125;<br></code></pre></td></tr></table></figure>
+<p>Example:</p>
+<p>delete the properties.service attribute from all records on this collection.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">db.collection.update(<br>    &#123;&#125;,<br>    &#123;<br>        $unset : &#123;<br>            &quot;properties.service&quot; : 1<br>        &#125;<br>    &#125;,<br>    &#123;<br>        multi: true<br>    &#125;<br>);<br></code></pre></td></tr></table></figure>
+<p>To verify they have been deleted you can use:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">db.collection.find(<br>    &#123;<br>        &quot;properties.service&quot; : &#123;<br>            $exists : true<br>         &#125;<br>    &#125;<br>).count(true);<br></code></pre></td></tr></table></figure>
+<h2><a href="#what-is-namespace-in-mongodb" class="header-anchor">#</a><span id="what-is-namespace-in-mongodb">What is “Namespace” in MongoDB?</span></h2>
+<p>MongoDB stores BSON (Binary Interchange and Structure Object Notation) objects in the collection. The concatenation of the collection name and database name is called a namespace</p>
+<h2><a href="#what-is-replication-in-mongodb" class="header-anchor">#</a><span id="what-is-replication-in-mongodb">What is Replication in Mongodb?</span></h2>
+<p>Replication exists primarily to offer data redundancy and high availability. It maintain the durability of data by keeping multiple copies or replicas of that data on physically isolated servers. Replication allows to increase data availability by creating multiple copies of data across servers. This is especially useful if a server crashes or hardware failure.</p>
+<p>With MongoDB, replication is achieved through a Replica Set. Writer operations are sent to the primary server (node), which applies the operations across secondary servers, replicating the data. If the primary server fails (through a crash or system failure), one of the secondary servers takes over and becomes the new primary node via election. If that server comes back online, it becomes a secondary once it fully recovers, aiding the new primary node.</p>
 <h2><a href="#explain-the-process-of-sharding" class="header-anchor">#</a><span id="explain-the-process-of-sharding">Explain the process of Sharding.</span></h2>
 <p>Sharding is the process of splitting data up across machines. We also use the term “partitioning” sometimes to describe this concept. We can store more data and handle more load without requiring larger or more powerful machines, by putting a subset of data on each machine.<br>
 In the figure below, RS0 and RS1 are shards. MongoDB’s sharding allows you to create a cluster of many machines (shards) and break up a collection across them, putting a subset of data on each shard. This allows your application to grow beyond the resource limits of a standalone server or replica set.<br>
@@ -207,18 +456,9 @@ In the figure below, RS0 and RS1 are shards. MongoDB’s sharding allows you to 
 <h2><a href="#explain-the-set-modifier-in-mongodb" class="header-anchor">#</a><span id="explain-the-set-modifier-in-mongodb">Explain the SET Modifier in MongoDB?</span></h2>
 <p>If the value of a field does not yet exist, the “$set” sets the value. This can be useful for updating schemas or adding user-defined keys.</p>
 <p>Example:</p>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">> db.users.findOne()
-&#123;
-   "_id" : ObjectId("4b253b067525f35f94b60a31"),
-   "name" : "alice",
-   "age" : 23,
-   "sex" : "female",
-   "location" : "India"
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&gt; db.users.findOne()<br>&#123;<br>   &quot;_id&quot; : ObjectId(&quot;4b253b067525f35f94b60a31&quot;),<br>   &quot;name&quot; : &quot;alice&quot;,<br>   &quot;age&quot; : 23,<br>   &quot;sex&quot; : &quot;female&quot;,<br>   &quot;location&quot; : &quot;India&quot;<br>&#125;<br></code></pre></td></tr></table></figure>
 <p>To add a field to this, we use “$set”:</p>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">> db.users.updateOne(&#123;"_id" : 
-ObjectId("4b253b067525f35f94b60a31")&#125;,
-... &#123;"$set" : &#123;"favorite book" : "Start with Why"&#125;&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&gt; db.users.updateOne(&#123;&quot;_id&quot; : <br>ObjectId(&quot;4b253b067525f35f94b60a31&quot;)&#125;,<br>... &#123;&quot;$set&quot; : &#123;&quot;favorite book&quot; : &quot;Start with Why&quot;&#125;&#125;<br></code></pre></td></tr></table></figure>
 <h1><a href="#advanced" class="header-anchor">#</a><span id="advanced">Advanced</span></h1>
 <h2><a href="#what-do-you-mean-by-transactions" class="header-anchor">#</a><span id="what-do-you-mean-by-transactions">What do you mean by Transactions?</span></h2>
 <p>A transaction is a logical unit of processing in a database that includes one or more database operations, which can be read or write operations. Transactions provide a useful feature in MongoDB to ensure consistency.<br>
@@ -247,6 +487,20 @@ It allows users to perform quick data representation from a database without wri
 <h2><a href="#what-is-a-replica-set-in-mongodb" class="header-anchor">#</a><span id="what-is-a-replica-set-in-mongodb">What is a Replica Set in MongoDB?</span></h2>
 <p>To keep identical copies of your data on multiple servers, we use replication. It is recommended for all production deployments. Use replication to keep your application running and your data safe, even if something happens to one or more of your servers.</p>
 <p>Such replication can be created by a replica set with MongoDB. A replica set is a group of servers with one primary, the server taking writes, and multiple secondaries, servers that keep copies of the primary’s data. If the primary crashes, the secondaries can elect a new primary from amongst themselves.</p>
+<h2><a href="#what-is-replica-set-in-mongodb" class="header-anchor">#</a><span id="what-is-replica-set-in-mongodb">What is Replica Set in MongoDB?</span></h2>
+<p>It is a group of mongo processes that maintain same data set. Replica sets provide redundancy and high availability, and are the basis for all production deployments. A replica set contains a primary node and multiple secondary nodes.</p>
+<p>The primary node receives all write operations. A replica set can have only one primary capable of confirming writes with { w: “majority” } write concern; although in some circumstances, another mongod instance may transiently believe itself to also be primary.</p>
+<p>The secondaries replicate the primary’s oplog and apply the operations to their data sets such that the secondaries’ data sets reflect the primary’s data set. If the primary is unavailable, an eligible secondary will hold an election to elect itself the new primary.</p>
+<h2><a href="#how-does-mongodb-ensure-high-availability" class="header-anchor">#</a><span id="how-does-mongodb-ensure-high-availability">How does MongoDB ensure high availability?</span></h2>
+<p>High Availability (HA) refers to the improvement of system and app availability by minimizing the downtime caused by routine maintenance operations (planned) and sudden system crashes (unplanned).</p>
+<p>Replica Set</p>
+<p>The replica set mechanism of MongoDB has two main purposes:</p>
+<ul>
+<li>One is for data redundancy for failure recovery. When the hardware fails, or the node is down for other reasons, you can use a replica for recovery.</li>
+<li>The other purpose is for read-write splitting. It routes the reading requests to the replica to reduce the reading pressure on the primary node.<br>
+MongoDB automatically maintains replica sets, multiple copies of data that are distributed across servers, racks and data centers. Replica sets help prevent database downtime using native replication and automatic failover.</li>
+</ul>
+<p>A replica set consists of multiple replica set members. At any given time, one member acts as the primary member, and the other members act as secondary members. If the primary member fails for any reason (e.g., hardware failure), one of the secondary members is automatically elected to primary and begins to process all reads and writes.</p>
 <h2><a href="#explain-the-replication-architecture-in-mongodb" class="header-anchor">#</a><span id="explain-the-replication-architecture-in-mongodb">Explain the Replication Architecture in MongoDB.</span></h2>
 <p>The following diagram depicts the architecture diagram of a simple replica set cluster with only three server nodes – one primary node and two secondary nodes:</p>
 <ul>
@@ -263,11 +517,238 @@ It allows users to perform quick data representation from a database without wri
 <li>mongodump</li>
 <li>mongorestore</li>
 </ul>
+<h2><a href="#what-are-the-differences-between-mongodb-and-sql-server" class="header-anchor">#</a><span id="what-are-the-differences-between-mongodb-and-sql-server">What are the differences between MongoDB and SQL-SERVER?</span></h2>
+<ul>
+<li>The MongoDB store the data in documents with JSON format but SQL store the data in Table format.</li>
+<li>The MongoDB provides high performance, high availability, easy scalability etc. rather than SQL Server.</li>
+<li>In the MongoDB, we can change the structure simply by adding, removing column from the existing documents.</li>
+</ul>
+<p><img src="/images/RDBMS_MongoDB_Mapping.jpg" alt="sql mongo mapping"></p>
+<p><strong>MongoDB and SQL Server Comparision Table</strong></p>
+<table>
+<thead>
+<tr>
+<th>Base of Comparison</th>
+<th>MS SQL Server</th>
+<th>MongoDB</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Storage Model</td>
+<td>RDBMS</td>
+<td>Document-Oriented</td>
+</tr>
+<tr>
+<td>Joins</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Transaction</td>
+<td>ACID</td>
+<td>Multi-document ACID Transactions with snapshot isolation</td>
+</tr>
+<tr>
+<td>Agile practices</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Data Schema</td>
+<td>Fixed</td>
+<td>Dynamic</td>
+</tr>
+<tr>
+<td>Scalability</td>
+<td>Vertical</td>
+<td>Horizontal</td>
+</tr>
+<tr>
+<td>Map Reduce</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Language</td>
+<td>SQL query language</td>
+<td>JSON Query Language</td>
+</tr>
+<tr>
+<td>Secondary index</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Triggers</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Foreign Keys</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Concurrency</td>
+<td>Yes</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>XML Support</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h2><a href="#how-can-you-achieve-transaction-and-locking-in-mongodb" class="header-anchor">#</a><span id="how-can-you-achieve-transaction-and-locking-in-mongodb">How can you achieve transaction and locking in MongoDB?</span></h2>
+<p>In MongoDB (4.2), an operation on a single document is atomic. For situations that require atomicity of reads and writes to multiple documents (in a single or multiple collections), MongoDB supports multi-document transactions. With distributed transactions, transactions can be used across multiple operations, collections, databases, documents, and shards.</p>
+<p>MongoDB allows multiple clients to read and write the same data. In order to ensure consistency, it uses locking and other concurrency control measures to prevent multiple clients from modifying the same piece of data simultaneously.</p>
+<p>MongoDB uses multi-granularity locking that allows operations to lock at the global, database or collection level, and allows for individual storage engines to implement their own concurrency control below the collection level (e.g., at the document-level in WiredTiger). MongoDB uses reader-writer locks that allow concurrent readers shared access to a resource, such as a database or collection.</p>
+<p>The lock modes are represented as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Lock Mode</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>R</td>
+<td>Represents Shared (S) lock.</td>
+</tr>
+<tr>
+<td>W</td>
+<td>Represents Exclusive (X) lock.</td>
+</tr>
+<tr>
+<td>r</td>
+<td>Represents Intent Shared (IS) lock.</td>
+</tr>
+<tr>
+<td>w</td>
+<td>Represents Intent Exclusive (IX) lock.</td>
+</tr>
+</tbody>
+</table>
+<p>Example:</p>
+<p>The following example highlights the key components of the transactions API</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">const client = new MongoClient(uri);<br>await client.connect();<br><br>// Prereq: Create collections.<br><br>await client.db(&#x27;mydb1&#x27;).collection(&#x27;foo&#x27;).insertOne(&#123; abc: 0 &#125;, &#123; w: &#x27;majority&#x27; &#125;);<br><br>await client.db(&#x27;mydb2&#x27;).collection(&#x27;bar&#x27;).insertOne(&#123; xyz: 0 &#125;, &#123; w: &#x27;majority&#x27; &#125;);<br><br>// Step 1: Start a Client Session<br>const session = client.startSession();<br><br>// Step 2: Optional. Define options to use for the transaction<br>const transactionOptions = &#123;<br>  readPreference: &#x27;primary&#x27;,<br>  readConcern: &#123; level: &#x27;local&#x27; &#125;,<br>  writeConcern: &#123; w: &#x27;majority&#x27; &#125;<br>&#125;;<br><br>// Step 3: Use withTransaction to start a transaction, execute the callback, and commit (or abort on error)<br>// Note: The callback for withTransaction MUST be async and/or return a Promise.<br>try &#123;<br>  await session.withTransaction(async () =&gt; &#123;<br>    const coll1 = client.db(&#x27;mydb1&#x27;).collection(&#x27;foo&#x27;);<br>    const coll2 = client.db(&#x27;mydb2&#x27;).collection(&#x27;bar&#x27;);<br><br>    // Important:: You must pass the session to the operations<br><br>    await coll1.insertOne(&#123; abc: 1 &#125;, &#123; session &#125;);<br>    await coll2.insertOne(&#123; xyz: 999 &#125;, &#123; session &#125;);<br>  &#125;, transactionOptions);<br>&#125; finally &#123;<br>   await session.endSession();<br>   await client.close();<br>&#125;<br></code></pre></td></tr></table></figure>
+<h2><a href="#how-mongodb-supports-acid-transactions-and-locking-functionalities" class="header-anchor">#</a><span id="how-mongodb-supports-acid-transactions-and-locking-functionalities">How MongoDB supports ACID transactions and locking functionalities?</span></h2>
+<p>ACID stands that any update is:</p>
+<ul>
+<li>Atomic: it either fully completes or it does not</li>
+<li>Consistent: no reader will see a “partially applied” update</li>
+<li>Isolated: no reader will see a “dirty” read</li>
+<li>Durable: (with the appropriate write concern)</li>
+</ul>
+<p>MongoDB, has always supported ACID transactions in a single document and, when leveraging the document model appropriately, many applications don’t need ACID guarantees across multiple documents.</p>
+<p>MongoDB is a document based NoSQL database with a flexible schema. Transactions are not operations that should be executed for every write operation since they incur a greater performance cost over a single document writes. With a document based structure and denormalized data model, there will be a minimized need for transactions. Since MongoDB allows document embedding, you don’t necessarily need to use a transaction to meet a write operation.</p>
+<p>MongoDB version 4.0 provides multi-document transaction support for replica set deployments only and probably the version 4.2 will extend support for sharded deployments.</p>
+<p>Example: Multi-Document ACID Transactions in MongoDB</p>
+<p>These are multi-statement operations that need to be executed sequentially without affecting each other. For example below we can create two transactions, one to add a user and another to update a user with a field of age.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">$session.startTransaction()<br><br>   db.users.insert(&#123;_id: 6, name: &quot;John&quot;&#125;)<br><br>   db.users.updateOne(&#123;_id: 3, &#123;$set: &#123;age:26&#125; &#125;&#125;)<br><br>session.commit_transaction()<br></code></pre></td></tr></table></figure>
+<p>Transactions can be applied to operations against multiple documents contained in one or many collection/database. Any changes due to document transaction do not impact performance for workloads not related or do not require them. Until the transaction is committed, uncommitted writes are neither replicated to the secondary nodes nor are they readable outside the transactions.</p>
+<h2><a href="#what-are-the-best-practices-for-mongodb-transactions" class="header-anchor">#</a><span id="what-are-the-best-practices-for-mongodb-transactions">What are the best practices for MongoDB Transactions?</span></h2>
+<p>The multi-document transactions are only supported in the WiredTiger storage engine. For a single ACID transaction, if you try performing an excessive number of operations, it can result in high pressure on the WiredTiger cache. The cache is always dictated to maintain state for all subsequent writes since the oldest snapshot was created. This means new writes will accumulate in the cache throughout the duration of the transaction and will be flushed only after transactions currently running on old snapshots are committed or aborted.</p>
+<p>For the best database performance on the transaction, developers should consider:</p>
+<ul>
+<li>Always modify a small number of documents in a transaction. Otherwise, you will need to break the transaction into different parts and process the documents in different batches. At most, process 1000 documents at a time.</li>
+<li>Temporary exceptions such as awaiting to elect primary and transient network hiccups may result in abortion of the transaction. Developers should establish a logic to retry the transaction if the defined errors are presented.</li>
+<li>Configure optimal duration for the execution of the transaction from the default 60 seconds provided by MongoDB. Besides, employ indexing so that it can allow fast data access within the transaction.</li>
+<li>Decompose your transaction into a small set of operation so that it fits the 16MB size constraints. Otherwise, if the operation together with oplog description exceed this limit, the transaction will be aborted.</li>
+<li>All data relating to an entity should be stored in a single, rich document structure. This is to reduce the number of documents that are to be cached when different fields are going to be changed.</li>
+</ul>
+<h2><a href="#explain-limitations-of-mongodb-transactions" class="header-anchor">#</a><span id="explain-limitations-of-mongodb-transactions">Explain limitations of MongoDB Transactions?</span></h2>
+<p>MongoDB transactions can exist only for relatively short time periods. By default, a transaction must span no more than one minute of clock time. This limitation results from the underlying MongoDB implementation. MongoDB uses MVCC, but unlike databases such as Oracle, the “older” versions of data are kept only in memory.</p>
+<ul>
+<li>You cannot create or drop a collection inside a transaction.</li>
+<li>Transactions cannot make writes to a capped collection</li>
+<li>Transactions take plenty of time to execute and somehow they can slow the performance of the database.</li>
+<li>Transaction size is limited to 16MB requiring one to split any that tends to exceed this size into smaller transactions.</li>
+<li>Subjecting a large number of documents to a transaction may exert excessive pressure on the WiredTiger engine and since it relies on the snapshot capability, there will be a retention of large unflushed operations in memory. This renders some performance cost on the database.</li>
+</ul>
+<h2><a href="#when-to-use-mongodb-rather-than-mysql" class="header-anchor">#</a><span id="when-to-use-mongodb-rather-than-mysql">When to Use MongoDB Rather than MySQL?</span></h2>
+<ol>
+<li>MongoDB</li>
+</ol>
+<p>MongoDB is one of the most popular document-oriented databases under the banner of NoSQL database. It employs the format of key-value pairs, here called document store. Document stores in MongoDB are created is stored in BSON files which are, in fact, a little-modified version of JSON files and hence all JS are supported.</p>
+<p>It offers greater efficiency and reliability which in turn can meet your storage capacity and speed demands. The schema-free implementation of MongoDB eliminates the prerequisites of defining a fixed structure. These models allow hierarchical relationships representation and facilitate the ability to change the structure of the record.</p>
+<p>Pros</p>
+<ul>
+<li>MongoDB has a lower latency per query &amp; spends less CPU time per query because it is doing a lot less work (e.g. no joins, transactions). As a result, it can handle a higher load in terms of queries per second.</li>
+<li>MongoDB is easier to shard (use in a cluster) because it doesn’t have to worry about transactions and consistency.</li>
+<li>MongoDB has a faster write speed because it does not have to worry about transactions or rollbacks (and thus does not have to worry about locking).</li>
+<li>It supports many Features like automatic repair, easier data distribution, and simpler data models make administration and tuning requirements lesser in NoSQL.</li>
+<li>NoSQL databases are cheap and open source.</li>
+<li>NoSQL database support caching in system memory so it increases data output performance.</li>
+</ul>
+<p>Cons</p>
+<ul>
+<li>MongoDB does not support transactions.</li>
+<li>In general, MongoDB creates more work (e.g. more CPU cost) for the client server. For example, to join data one has to issue multiple queries and do the join on the client.</li>
+<li>No Stored Procedures in mongo dB (NoSQL database).</li>
+<li>Reasons to Use a NoSQL Database</li>
+</ul>
+<p>Storing large volumes of data without structure: A NoSQL database doesn’t limit storable data types. Plus, you can add new types as business needs change.<br>
+Using cloud computing and storage: Cloud-based storage is a great solution, but it requires data to be easily spread across multiple servers for scaling. Using affordable hardware on-site for testing and then for production in the cloud is what NoSQL databases are designed for.<br>
+Rapid development: If you are developing using modern agile methodologies, a relational database will slow you down. A NoSQL database doesn’t require the level of preparation typically needed for relational databases.</p>
+<ol start="2">
+<li>MySQL</li>
+</ol>
+<p>MySQL is a popular open-source relational database management system (RDBMS) that is developed, distributed and supported by Oracle Corporation. MySQL stores data in tables and uses structured query language (SQL) for database access. It uses Structured Query Language SQL to access and transfer the data and commands such as ‘SELECT’, ‘UPDATE’, ‘INSERT’ and ‘DELETE’ to manage it.</p>
+<p>Related information is stored in different tables but the concept of JOIN operations simplifies the process of correlating it and performing queries across multiple tables and minimize the chances of data duplication. It follows the ACID (Atomic, Consistent, Isolated and Durable) model. This means that once a transaction is complete, the data remains consistent and stable on the disc which may include distinct multiple memory locations.</p>
+<p>Pros</p>
+<ul>
+<li>SQL databases are table based databases.</li>
+<li>Data store in rows and columns</li>
+<li>Each row contains a unique instance of data for the categories defined by the columns.</li>
+<li>Provide facility primary key, to uniquely identify the rows.</li>
+</ul>
+<p>Cons</p>
+<ul>
+<li>Users have to scale relational database on powerful servers that are expensive and difficult to handle. To scale relational database, it has to be distributed on to multiple servers. Handling tables across different servers is difficult.</li>
+<li>In SQL server’s data has to fit into tables anyhow. If your data doesn’t fit into tables, then you need to design your database structure that will be complex and again difficult to handle.</li>
+</ul>
+<h2><a href="#should-i-normalize-my-data-before-storing-it-in-mongodb" class="header-anchor">#</a><span id="should-i-normalize-my-data-before-storing-it-in-mongodb">Should I normalize my data before storing it in MongoDB?</span></h2>
+<p>Data used by multiple documents can either be embedded (denormalized) or referenced (normalized). Normalization, which is increasing the complexity of the schema by splitting tables into multiple smaller ones to reduce the data redundancy( 1NF, 2NF, 3NF).</p>
+<p>But Mongo follows the exact opposite way of what we do with SQL. In MongoDB, data normalization is not requried. Indeed we need to de-normalize and fit it into a collection of multiple documents.</p>
+<p>Example: Let’s say we have three tables</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">Table - 1 : ColumnA, ColumnB (primary key)<br>Table - 2 : ColumnC (Foreign key), ColumnD (primary key)<br>Table - 3 : ColumnE (foreign key), ColumnF<br>In this case, mongoDB document structure should be as follows.<br><br>&#123;<br>    ColumnA : ValueA,<br>    ColumnB : ValueB,<br>    Subset1 : [&#123;<br>       ColumnC : ValueC,<br>       ColumnD : ValueD,<br>       Subset2 : [&#123;<br>           ColumnE : ValueE,<br>           ColumnF : ValueF<br>       &#125;]<br>    &#125;]<br>&#125;<br></code></pre></td></tr></table></figure>
+<h2><a href="#what-is-oplog" class="header-anchor">#</a><span id="what-is-oplog">What is oplog?</span></h2>
+<p>The OpLog (Operations Log) is a special capped collection that keeps a rolling record of all operations that modify the data stored in databases.</p>
+<p>MongoDB applies database operations on the primary and then records the operations on the primary’s oplog. The secondary members then copy and apply these operations in an asynchronous process. All replica set members contain a copy of the oplog, in the <a target="_blank" rel="noopener" href="http://local.oplog.rs">local.oplog.rs</a> collection, which allows them to maintain the current state of the database.</p>
+<p>Each operation in the oplog is idempotent. That is, oplog operations produce the same results whether applied once or multiple times to the target dataset.</p>
+<p>Example: Querying The OpLog</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">MongoDB shell version: 2.0.4<br>connecting to: mongodb:27017/test<br>PRIMARY&gt; use local<br>PRIMARY&gt; db.oplog.rs.find()<br></code></pre></td></tr></table></figure>
+<h2><a href="#does-mongodb-pushes-the-writes-to-disk-immediately-or-lazily" class="header-anchor">#</a><span id="does-mongodb-pushes-the-writes-to-disk-immediately-or-lazily">Does MongoDB pushes the writes to disk immediately or lazily?</span></h2>
+<p>MongoDB pushes the data to disk lazily. It updates the immediately written to the journal but writing the data from journal to disk happens lazily.</p>
+<h2><a href="#what-is-sharding-in-mongodb" class="header-anchor">#</a><span id="what-is-sharding-in-mongodb">What is Sharding in MongoDB?</span></h2>
+<p>Sharding is a method for distributing data across multiple machines. MongoDB uses sharding to support deployments with very large data sets and high throughput operations.</p>
+<p>Database systems with large data sets or high throughput applications can challenge the capacity of a single server. For example, high query rates can exhaust the CPU capacity of the server. Working set sizes larger than the system’s RAM stress the I/O capacity of disk drives. There are two methods for addressing system growth: vertical and horizontal scaling.</p>
+<ol>
+<li>Vertical Scaling</li>
+</ol>
+<p>Vertical Scaling involves increasing the capacity of a single server, such as using a more powerful CPU, adding more RAM, or increasing the amount of storage space.</p>
+<ol start="2">
+<li>Horizontal Scaling</li>
+</ol>
+<p>Horizontal Scaling involves dividing the system dataset and load over multiple servers, adding additional servers to increase capacity as required. While the overall speed or capacity of a single machine may not be high, each machine handles a subset of the overall workload, potentially providing better efficiency than a single high-speed high-capacity server.</p>
+<p><img src="/images/sharding.png" alt="mongo sharding"></p>
+<p>MongoDB supports horizontal scaling through sharding. A MongoDB sharded cluster consists of the following components:</p>
+<ul>
+<li>Shards: Each shard contains a subset of the sharded data. Each shard can be deployed as a replica set.</li>
+<li>Mongos: The mongos acts as a query router, providing an interface between client applications and the sharded cluster. Starting in MongoDB 4.4, mongos can support hedged reads to minimize latencies.</li>
+<li>Config Servers: Config servers store metadata and configuration settings for the cluster.</li>
+</ul>
 <hr class="footnotes-sep">
 <section class="footnotes">
 <ol class="footnotes-list">
 <li id="fn1" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://github.com/learning-zone/mongodb-interview-questions">MongoDB Interview Questions ( v4.4 )</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
 </li>
+<li id="fn2" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://www.interviewbit.com/mongodb-interview-questions/">MongoDB Interview Questions</a> <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
 </ol>
 </section>
-</p></div><div class="share"><span>Share</span>&nbsp;<span class="soc"><a href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank" class="fa fa-bookmark"></a></span><span class="soc"><a href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));" class="fa fa-weibo"></a></span><span class="soc"><a target="_blank" rel="noopener" href="http://twitter.com/home?status=https://blog.kleon.space/interview/tech/mongodb/%20KLEON%20Tech - MongoDB" class="fa fa-twitter"></a></span></div><div class="pagination"><p class="clearfix"><span class="pre pagbuttons"><a role="navigation" href="/interview/tech/flutter/" title="Tech - Flutter"><i class="fa fa-angle-double-left"></i>&nbsp;Previous post: Tech - Flutter</a></span><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/interview/tech/mysql/" title="Tech - MySQL">Next post: Tech - MySQL&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>
+</p></div><div class="share"><span>Share</span>&nbsp;<span class="soc"><a href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank" class="fa fa-bookmark"></a></span><span class="soc"><a href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));" class="fa fa-weibo"></a></span><span class="soc"><a target="_blank" rel="noopener" href="http://twitter.com/home?status=https://blog.kleon.space/interview/tech/mongodb/%20KLEON%20Tech - MongoDB" class="fa fa-twitter"></a></span></div><div class="pagination"><p class="clearfix"><span class="pre pagbuttons"><a role="navigation" href="/interview/tech/redis/" title="Tech - Redis"><i class="fa fa-angle-double-left"></i>&nbsp;Previous post: Tech - Redis</a></span><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/interview/ml/outline/" title="ML Design - Outline">Next post: ML Design - Outline&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>

@@ -18,8 +18,7 @@ map，映射
 set，集合
 
 Go的map底层使用哈希表实现，set可通过将map的value置空实现。
-C++的std::map/std::multimap由红黑树实现，s"><meta name="twitter:site" content="KLEON"><meta name="twitter:title" content="算法基础 - 哈希表"><meta name="twitter:card" content="summary"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 6.1.0"><link rel="stylesheet" href="/css/prism.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body><div id="stage" class="container"><div class="row"><div id="side-bar" class="col-sm-3 col-xs-12 side-container invisible"><div class="vertical-text site-title"><h3 tabindex="-1" class="site-title-small"><a href="/" class="a-title"></a></h3><h1 tabindex="-1" class="site-title-large"><a href="/" class="a-title">自说自话</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div id="site-nav" class="site-title-links"><ul><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li><li><a href="/categories">Categories</a></li><li><a href="/tags">Tags</a></li><li><a href="/googlebe23cb0bc55fc412.html"></a></li><li><a href="/about/index.html"></a></li><li class="soc"><a href="https://github.com/kleon1024" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa fa-github">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div id="main-container" class="col-sm-9 col-xs-12 main-container invisible"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>算法基础 - 哈希表</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-03-21</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/算法/" title="算法" class="a-tag">算法</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/算法/" title="算法" class="a-tag">算法</a><span>&nbsp;</span><a href="/tags/数据结构/" title="数据结构" class="a-tag">数据结构</a><span>&nbsp;</span><a href="/tags/leetcode/" title="leetcode" class="a-tag">leetcode</a><span>&nbsp;</span></span></p><p class="post-abstract"><p>哈希函数用于缩小映射空间，可能会发生碰撞，可用链表法或多哈希函数。</p>
+C++的std::map/std::multimap由红黑树实现，s"><meta name="twitter:site" content="KLEON"><meta name="twitter:title" content="算法基础 - 哈希表"><meta name="twitter:card" content="summary"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/github.min.css"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 6.1.0"></head><body><div id="stage" class="container"><div class="row"><div id="side-bar" class="col-sm-3 col-xs-12 side-container invisible"><div class="vertical-text site-title"><h3 tabindex="-1" class="site-title-small"><a href="/" class="a-title"></a></h3><h1 tabindex="-1" class="site-title-large"><a href="/" class="a-title">自说自话</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div id="site-nav" class="site-title-links"><ul><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li><li><a href="/categories">Categories</a></li><li><a href="/tags">Tags</a></li><li><a href="/googlebe23cb0bc55fc412.html"></a></li><li><a href="/about/index.html"></a></li><li class="soc"><a href="https://github.com/kleon1024" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa fa-github">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div id="main-container" class="col-sm-9 col-xs-12 main-container invisible"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>算法基础 - 哈希表</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-03-21</span><span class="date meta-item">Updated at&nbsp;2021-03-21</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/算法/" title="算法" class="a-tag">算法</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/算法/" title="算法" class="a-tag">算法</a><span>&nbsp;</span><a href="/tags/数据结构/" title="数据结构" class="a-tag">数据结构</a><span>&nbsp;</span><a href="/tags/leetcode/" title="leetcode" class="a-tag">leetcode</a><span>&nbsp;</span></span></p><p class="post-abstract"><p>哈希函数用于缩小映射空间，可能会发生碰撞，可用链表法或多哈希函数。</p>
 <span id="more"></span>
 <h1><a href="#ji-chu" class="header-anchor">#</a><span id="ji-chu">基础</span></h1>
 <p>常用数据结构：</p>
@@ -36,182 +35,34 @@ C++的std::map/std::multimap由红黑树实现，std::unorderd_map由哈希表�
 <ul>
 <li>数组直接存储</li>
 </ul>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">func isAnagram(s string, t string) bool &#123;
-    var a,b [26]int
-    for _, i:= range s &#123;
-        a[i-&#x27;a&#x27;]++
-    &#125;
-    for _, i:= range t &#123;
-        b[i-&#x27;a&#x27;]++
-    &#125;
-    return a==b
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">func isAnagram(s string, t string) bool &#123;<br>    var a,b [26]int<br>    for _, i:= range s &#123;<br>        a[i-&#x27;a&#x27;]++<br>    &#125;<br>    for _, i:= range t &#123;<br>        b[i-&#x27;a&#x27;]++<br>    &#125;<br>    return a==b<br>&#125;<br></code></pre></td></tr></table></figure>
 <h2><a href="#shu-jin-xin" class="header-anchor">#</a><span id="shu-jin-xin">赎金信</span></h2>
 <p><img src="https://img.shields.io/badge/leetcode-242-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/valid-anagram/">有效的字母异位词</a></p>
 <ul>
 <li>数组直接存储</li>
 </ul>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">func canConstruct(ransomNote string, magazine string) bool &#123;
-    var r [26]int
-    for _, c := range magazine &#123;
-        r[c - &#x27;a&#x27;]++
-    &#125;
-    for _, c := range ransomNote &#123;
-        if r[c - &#x27;a&#x27;] == 0 &#123;
-            return false
-        &#125;
-        r[c - &#x27;a&#x27;]--
-    &#125;
-    return true
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">func canConstruct(ransomNote string, magazine string) bool &#123;<br>    var r [26]int<br>    for _, c := range magazine &#123;<br>        r[c - &#x27;a&#x27;]++<br>    &#125;<br>    for _, c := range ransomNote &#123;<br>        if r[c - &#x27;a&#x27;] == 0 &#123;<br>            return false<br>        &#125;<br>        r[c - &#x27;a&#x27;]--<br>    &#125;<br>    return true<br>&#125;<br></code></pre></td></tr></table></figure>
 <h2><a href="#ji-he-pan-duan-shu-zu-xiang-jiao" class="header-anchor">#</a><span id="ji-he-pan-duan-shu-zu-xiang-jiao">集合判断数组相交</span></h2>
 <p><img src="https://img.shields.io/badge/leetcode-349-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/intersection-of-two-arrays/">两个数组的交集</a></p>
 <ul>
 <li>集合存储</li>
 </ul>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">type Set map[int]struct&#123;&#125;
-
-func (s Set)Add(n int) &#123;
-    s[n] = struct&#123;&#125;&#123;&#125;
-&#125;
-
-func (s Set)And(t Set) []int &#123;
-    ret := []int&#123;&#125;
-    if len(s) > len(t) &#123;
-        s, t = t, s
-    &#125;
-    for k := range s &#123;
-        if _, ok := t[k]; ok &#123;
-            ret = append(ret, k)
-        &#125; 
-    &#125;
-    return ret
-&#125;
-
-func intersection(nums1 []int, nums2 []int) []int &#123;
-    a, b := Set&#123;&#125;, Set&#123;&#125;
-    for _, n := range nums1 &#123;
-        a.Add(n)
-    &#125;
-    for _, n := range nums2 &#123;
-        b.Add(n)
-    &#125;
-    return a.And(b)
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">type Set map[int]struct&#123;&#125;<br><br>func (s Set)Add(n int) &#123;<br>    s[n] = struct&#123;&#125;&#123;&#125;<br>&#125;<br><br>func (s Set)And(t Set) []int &#123;<br>    ret := []int&#123;&#125;<br>    if len(s) &gt; len(t) &#123;<br>        s, t = t, s<br>    &#125;<br>    for k := range s &#123;<br>        if _, ok := t[k]; ok &#123;<br>            ret = append(ret, k)<br>        &#125; <br>    &#125;<br>    return ret<br>&#125;<br><br>func intersection(nums1 []int, nums2 []int) []int &#123;<br>    a, b := Set&#123;&#125;, Set&#123;&#125;<br>    for _, n := range nums1 &#123;<br>        a.Add(n)<br>    &#125;<br>    for _, n := range nums2 &#123;<br>        b.Add(n)<br>    &#125;<br>    return a.And(b)<br>&#125;<br></code></pre></td></tr></table></figure>
 <h2><a href="#ji-he-pan-duan-kuai-le-shu" class="header-anchor">#</a><span id="ji-he-pan-duan-kuai-le-shu">集合判断快乐数</span></h2>
 <p><img src="https://img.shields.io/badge/leetcode-202-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/happy-number/">快乐数</a></p>
 <ul>
 <li>集合存储</li>
 </ul>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">func happy(n int) int &#123;
-    sum := 0
-    for n > 0 &#123;
-        s := n % 10
-        sum += s * s
-        n /= 10
-    &#125;
-    return sum
-&#125;
-
-func isHappy(n int) bool &#123;
-   set := map[int]struct&#123;&#125;&#123;&#125;
-   for &#123;
-       sum := happy(n)
-       if sum == 1 &#123;
-           return true
-       &#125;
-       if _, ok := set[sum]; ok &#123;
-           return false
-       &#125; else &#123;
-           set[sum] = struct&#123;&#125;&#123;&#125;
-       &#125;
-       n = sum
-   &#125;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">func happy(n int) int &#123;<br>    sum := 0<br>    for n &gt; 0 &#123;<br>        s := n % 10<br>        sum += s * s<br>        n /= 10<br>    &#125;<br>    return sum<br>&#125;<br><br>func isHappy(n int) bool &#123;<br>   set := map[int]struct&#123;&#125;&#123;&#125;<br>   for &#123;<br>       sum := happy(n)<br>       if sum == 1 &#123;<br>           return true<br>       &#125;<br>       if _, ok := set[sum]; ok &#123;<br>           return false<br>       &#125; else &#123;<br>           set[sum] = struct&#123;&#125;&#123;&#125;<br>       &#125;<br>       n = sum<br>   &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <h2><a href="#ying-she-cun-chu-liang-shu-zhi-he" class="header-anchor">#</a><span id="ying-she-cun-chu-liang-shu-zhi-he">映射存储两数之和</span></h2>
 <p><img src="https://img.shields.io/badge/leetcode-1-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/two-sum/">两数之和</a></p>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">func twoSum(nums []int, target int) []int &#123;
-    m := map[int]int&#123;&#125;
-    for i, n := range nums &#123;
-        if v, ok := m[target - n]; ok &#123;
-            return []int&#123;v, i&#125;
-        &#125;
-        m[n] = i
-    &#125;
-    return []int&#123;&#125;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">class Solution &#123;
-public:
-    /**
-     * 
-     * @param numbers int整型vector 
-     * @param target int整型 
-     * @return int整型vector
-     */
-    vector<int> twoSum(vector<int>& numbers, int target) &#123;
-        std::map<int, int> h;
-        int tmp = 0;
-        for (int i = 0; i < numbers.size(); i++) &#123;
-            tmp = numbers[i];
-            auto it = h.find(target - tmp);
-            if (it != h.end()) &#123;
-                return vector<int>&#123;h[target - tmp] + 1, i + 1&#125;;
-            &#125;
-            h[tmp] = i;
-        &#125;
-        return vector<int>&#123;&#125;;
-    &#125;
-&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></int></int></int,></int></int></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">func twoSum(nums []int, target int) []int &#123;<br>    m := map[int]int&#123;&#125;<br>    for i, n := range nums &#123;<br>        if v, ok := m[target - n]; ok &#123;<br>            return []int&#123;v, i&#125;<br>        &#125;<br>        m[n] = i<br>    &#125;<br>    return []int&#123;&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">class Solution &#123;<br>public:<br>    /**<br>     * <br>     * @param numbers int整型vector <br>     * @param target int整型 <br>     * @return int整型vector<br>     */<br>    vector&lt;int&gt; twoSum(vector&lt;int&gt;&amp; numbers, int target) &#123;<br>        std::map&lt;int, int&gt; h;<br>        int tmp = 0;<br>        for (int i = 0; i &lt; numbers.size(); i++) &#123;<br>            tmp = numbers[i];<br>            auto it = h.find(target - tmp);<br>            if (it != h.end()) &#123;<br>                return vector&lt;int&gt;&#123;h[target - tmp] + 1, i + 1&#125;;<br>            &#125;<br>            h[tmp] = i;<br>        &#125;<br>        return vector&lt;int&gt;&#123;&#125;;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
 <h2><a href="#ying-she-tong-ji-si-shu-xiang-jia-jie-guo-ci-shu" class="header-anchor">#</a><span id="ying-she-tong-ji-si-shu-xiang-jia-jie-guo-ci-shu">映射统计四数相加结果次数</span></h2>
 <p><img src="https://img.shields.io/badge/leetcode-454-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/4sum-ii/">四数相加 II</a></p>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">func fourSumCount(A []int, B []int, C []int, D []int) int &#123;
-    m := map[int]int&#123;&#125;
-    for _, a := range A &#123;
-        for _, b := range B &#123;
-            m[a + b]++
-        &#125;
-    &#125;
-    count := 0 
-    for _, c := range C &#123;
-        for _, d := range D &#123;
-            if v, ok := m[-c-d]; ok &#123;
-                count += v
-            &#125;
-        &#125;
-    &#125;
-    return count
-&#125;
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">func fourSumCount(A []int, B []int, C []int, D []int) int &#123;<br>    m := map[int]int&#123;&#125;<br>    for _, a := range A &#123;<br>        for _, b := range B &#123;<br>            m[a + b]++<br>        &#125;<br>    &#125;<br>    count := 0 <br>    for _, c := range C &#123;<br>        for _, d := range D &#123;<br>            if v, ok := m[-c-d]; ok &#123;<br>                count += v<br>            &#125;<br>        &#125;<br>    &#125;<br>    return count<br>&#125;<br><br></code></pre></td></tr></table></figure>
 <h2><a href="#yuan-gong-de-chong-yao-xing" class="header-anchor">#</a><span id="yuan-gong-de-chong-yao-xing">员工的重要性</span></h2>
 <p><img src="https://img.shields.io/badge/leetcode-690-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/employee-importance/">员工的重要性</a></p>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">/**
- * Definition for Employee.
- * type Employee struct &#123;
- *     Id int
- *     Importance int
- *     Subordinates []int
- * &#125;
- */
-
-func getImportance(employees []*Employee, id int) int &#123;
-    m := make(map[int]*Employee)
-    for _, e := range employees &#123;
-        m[e.Id] = e
-    &#125;
-    count := 0
-    queue := []int&#123;&#125;
-    queue = append(queue, id)
-    for len(queue) > 0 &#123;
-        id = queue[0]
-        queue = queue[1:]
-        if e, ok := m[id]; ok &#123;
-            count += e.Importance
-            for _, sub := range e.Subordinates &#123;
-                queue = append(queue, sub)
-            &#125;
-        &#125;
-    &#125;
-    return count
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">/**<br> * Definition for Employee.<br> * type Employee struct &#123;<br> *     Id int<br> *     Importance int<br> *     Subordinates []int<br> * &#125;<br> */<br><br>func getImportance(employees []*Employee, id int) int &#123;<br>    m := make(map[int]*Employee)<br>    for _, e := range employees &#123;<br>        m[e.Id] = e<br>    &#125;<br>    count := 0<br>    queue := []int&#123;&#125;<br>    queue = append(queue, id)<br>    for len(queue) &gt; 0 &#123;<br>        id = queue[0]<br>        queue = queue[1:]<br>        if e, ok := m[id]; ok &#123;<br>            count += e.Importance<br>            for _, sub := range e.Subordinates &#123;<br>                queue = append(queue, sub)<br>            &#125;<br>        &#125;<br>    &#125;<br>    return count<br>&#125;<br></code></pre></td></tr></table></figure>
 <hr>
 </p></div><div class="share"><span>Share</span>&nbsp;<span class="soc"><a href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank" class="fa fa-bookmark"></a></span><span class="soc"><a href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));" class="fa fa-weibo"></a></span><span class="soc"><a target="_blank" rel="noopener" href="http://twitter.com/home?status=https://blog.kleon.space/cs/algo/hash-table/%20KLEON%20算法基础 - 哈希表" class="fa fa-twitter"></a></span></div><div class="pagination"><p class="clearfix"><span class="pre pagbuttons"><a role="navigation" href="/cs/algo/stack/" title="算法基础 - 栈"><i class="fa fa-angle-double-left"></i>&nbsp;Previous post: 算法基础 - 栈</a></span><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/cs/algo/array/" title="算法基础 - 数组">Next post: 算法基础 - 数组&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>

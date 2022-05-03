@@ -2,253 +2,34 @@
 
 #基础
 栈的底层可由数组或链表实现。
-type Stack []interface &amp;#123;&amp;#125;
-
-func (stack Stack) Len() int &amp;#123;
-    return len(stack)
-&amp;#125;
-
-func (stac"><meta name="og:description" content="栈是线性结构，遵循FILO原则。
+12345678910111213141516171819202122232425262728293031323334type Stack []interface &amp;#123;&amp;#125;func (stack Stack) "><meta name="og:description" content="栈是线性结构，遵循FILO原则。
 
 #基础
 栈的底层可由数组或链表实现。
-type Stack []interface &amp;#123;&amp;#125;
-
-func (stack Stack) Len() int &amp;#123;
-    return len(stack)
-&amp;#125;
-
-func (stac"><meta name="twitter:site" content="KLEON"><meta name="twitter:title" content="算法基础 - 栈"><meta name="twitter:card" content="summary"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 6.1.0"><link rel="stylesheet" href="/css/prism.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body><div id="stage" class="container"><div class="row"><div id="side-bar" class="col-sm-3 col-xs-12 side-container invisible"><div class="vertical-text site-title"><h3 tabindex="-1" class="site-title-small"><a href="/" class="a-title"></a></h3><h1 tabindex="-1" class="site-title-large"><a href="/" class="a-title">自说自话</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div id="site-nav" class="site-title-links"><ul><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li><li><a href="/categories">Categories</a></li><li><a href="/tags">Tags</a></li><li><a href="/googlebe23cb0bc55fc412.html"></a></li><li><a href="/about/index.html"></a></li><li class="soc"><a href="https://github.com/kleon1024" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa fa-github">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div id="main-container" class="col-sm-9 col-xs-12 main-container invisible"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>算法基础 - 栈</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-03-21</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/算法/" title="算法" class="a-tag">算法</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/算法/" title="算法" class="a-tag">算法</a><span>&nbsp;</span><a href="/tags/数据结构/" title="数据结构" class="a-tag">数据结构</a><span>&nbsp;</span><a href="/tags/leetcode/" title="leetcode" class="a-tag">leetcode</a><span>&nbsp;</span></span></p><p class="post-abstract"><p>栈是线性结构，遵循FILO原则。</p>
+12345678910111213141516171819202122232425262728293031323334type Stack []interface &amp;#123;&amp;#125;func (stack Stack) "><meta name="twitter:site" content="KLEON"><meta name="twitter:title" content="算法基础 - 栈"><meta name="twitter:card" content="summary"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/github.min.css"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 6.1.0"></head><body><div id="stage" class="container"><div class="row"><div id="side-bar" class="col-sm-3 col-xs-12 side-container invisible"><div class="vertical-text site-title"><h3 tabindex="-1" class="site-title-small"><a href="/" class="a-title"></a></h3><h1 tabindex="-1" class="site-title-large"><a href="/" class="a-title">自说自话</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div id="site-nav" class="site-title-links"><ul><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li><li><a href="/categories">Categories</a></li><li><a href="/tags">Tags</a></li><li><a href="/googlebe23cb0bc55fc412.html"></a></li><li><a href="/about/index.html"></a></li><li class="soc"><a href="https://github.com/kleon1024" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa fa-github">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div id="main-container" class="col-sm-9 col-xs-12 main-container invisible"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>算法基础 - 栈</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-03-21</span><span class="date meta-item">Updated at&nbsp;2021-03-21</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/算法/" title="算法" class="a-tag">算法</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/算法/" title="算法" class="a-tag">算法</a><span>&nbsp;</span><a href="/tags/数据结构/" title="数据结构" class="a-tag">数据结构</a><span>&nbsp;</span><a href="/tags/leetcode/" title="leetcode" class="a-tag">leetcode</a><span>&nbsp;</span></span></p><p class="post-abstract"><p>栈是线性结构，遵循FILO原则。</p>
 <span id="more"></span>
 <h1><a href="#ji-chu" class="header-anchor">#</a><span id="ji-chu">基础</span></h1>
 <p>栈的底层可由数组或链表实现。</p>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">type Stack []interface &#123;&#125;
-
-func (stack Stack) Len() int &#123;
-    return len(stack)
-&#125;
-
-func (stack Stack) IsEmpty() bool  &#123;
-    return len(stack) == 0
-&#125;
-
-func (stack Stack) Cap() int &#123;
-    return cap(stack)
-&#125;
-
-func (stack *Stack) Push(value interface&#123;&#125;)  &#123;
-    *stack = append(*stack, value)
-&#125;
-
-func (stack Stack) Top() interface&#123;&#125;  &#123;
-    if len(stack) == 0 &#123;
-        return nil
-    &#125;
-    return stack[len(stack) - 1]
-&#125;
-
-func (stack *Stack) Pop() interface&#123;&#125;  &#123;
-    refStack := *stack
-    if len(refStack) == 0 &#123;
-        return nil
-    &#125;
-    value := refStack[len(refStack) - 1]
-    *stack = refStack[:len(refStack) - 1]
-    return value
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">type Stack []interface &#123;&#125;<br><br>func (stack Stack) Len() int &#123;<br>    return len(stack)<br>&#125;<br><br>func (stack Stack) IsEmpty() bool  &#123;<br>    return len(stack) == 0<br>&#125;<br><br>func (stack Stack) Cap() int &#123;<br>    return cap(stack)<br>&#125;<br><br>func (stack *Stack) Push(value interface&#123;&#125;)  &#123;<br>    *stack = append(*stack, value)<br>&#125;<br><br>func (stack Stack) Top() interface&#123;&#125;  &#123;<br>    if len(stack) == 0 &#123;<br>        return nil<br>    &#125;<br>    return stack[len(stack) - 1]<br>&#125;<br><br>func (stack *Stack) Pop() interface&#123;&#125;  &#123;<br>    refStack := *stack<br>    if len(refStack) == 0 &#123;<br>        return nil<br>    &#125;<br>    value := refStack[len(refStack) - 1]<br>    *stack = refStack[:len(refStack) - 1]<br>    return value<br>&#125;<br></code></pre></td></tr></table></figure>
 <h1><a href="#shi-jian" class="header-anchor">#</a><span id="shi-jian">实践</span></h1>
 <h2><a href="#zhan-shi-xian-dui-lie" class="header-anchor">#</a><span id="zhan-shi-xian-dui-lie">栈实现队列</span></h2>
 <p><img src="https://img.shields.io/badge/leetcode-232-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/implement-queue-using-stacks/">用栈实现队列</a></p>
 <ul>
 <li>查看队列首个元素时检查出栈是否为空，如果已排空，则将入栈元素依次压入出栈中</li>
 </ul>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">type MyQueue struct &#123;
-    i,o []int
-&#125;
-
-
-/** Initialize your data structure here. */
-func Constructor() MyQueue &#123;
-    return MyQueue&#123;&#125;
-&#125;
-
-
-/** Push element x to the back of queue. */
-func (this *MyQueue) Push(x int)  &#123;
-    this.i = append(this.i, x)
-&#125;
-
-
-/** Removes the element from in front of queue and returns that element. */
-func (this *MyQueue) Pop() int &#123;
-    ret := this.Peek()
-    this.o = this.o[:len(this.o) - 1]
-    return ret
-&#125;
-
-
-/** Get the front element. */
-func (this *MyQueue) Peek() int &#123;
-    if len(this.o) == 0 &#123;
-        for len(this.i) > 0 &#123;
-            this.o = append(this.o, this.i[len(this.i) - 1])
-            this.i = this.i[:len(this.i) - 1]
-        &#125;
-    &#125;
-    return this.o[len(this.o) - 1]
-&#125;
-
-
-/** Returns whether the queue is empty. */
-func (this *MyQueue) Empty() bool &#123;
-    return len(this.o) == 0 && len(this.i) == 0
-&#125;
-
-
-/**
- * Your MyQueue object will be instantiated and called as such:
- * obj := Constructor();
- * obj.Push(x);
- * param_2 := obj.Pop();
- * param_3 := obj.Peek();
- * param_4 := obj.Empty();
- */<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">type MyQueue struct &#123;<br>    i,o []int<br>&#125;<br><br><br>/** Initialize your data structure here. */<br>func Constructor() MyQueue &#123;<br>    return MyQueue&#123;&#125;<br>&#125;<br><br><br>/** Push element x to the back of queue. */<br>func (this *MyQueue) Push(x int)  &#123;<br>    this.i = append(this.i, x)<br>&#125;<br><br><br>/** Removes the element from in front of queue and returns that element. */<br>func (this *MyQueue) Pop() int &#123;<br>    ret := this.Peek()<br>    this.o = this.o[:len(this.o) - 1]<br>    return ret<br>&#125;<br><br><br>/** Get the front element. */<br>func (this *MyQueue) Peek() int &#123;<br>    if len(this.o) == 0 &#123;<br>        for len(this.i) &gt; 0 &#123;<br>            this.o = append(this.o, this.i[len(this.i) - 1])<br>            this.i = this.i[:len(this.i) - 1]<br>        &#125;<br>    &#125;<br>    return this.o[len(this.o) - 1]<br>&#125;<br><br><br>/** Returns whether the queue is empty. */<br>func (this *MyQueue) Empty() bool &#123;<br>    return len(this.o) == 0 &amp;&amp; len(this.i) == 0<br>&#125;<br><br><br>/**<br> * Your MyQueue object will be instantiated and called as such:<br> * obj := Constructor();<br> * obj.Push(x);<br> * param_2 := obj.Pop();<br> * param_3 := obj.Peek();<br> * param_4 := obj.Empty();<br> */<br></code></pre></td></tr></table></figure>
 <h2><a href="#yong-dui-lie-shi-xian-zhan" class="header-anchor">#</a><span id="yong-dui-lie-shi-xian-zhan">用队列实现栈</span></h2>
 <p><img src="https://img.shields.io/badge/leetcode-225-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/implement-stack-using-queues/">用队列实现栈</a></p>
 <ul>
 <li>队列1记录，队列2备份，top/pop需要循环取出最近插入的值。也可以把值循环放在push做。</li>
 </ul>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">type MyStack struct &#123;
-    i, o []int
-&#125;
-
-
-/** Initialize your data structure here. */
-func Constructor() MyStack &#123;
-    return MyStack&#123;&#125;
-&#125;
-
-
-/** Push element x onto stack. */
-func (this *MyStack) Push(x int)  &#123;
-    this.i = append(this.i, x)
-    // fmt.Printf("PUSH %v, %v\n", this.i, this.o)
-&#125;
-
-
-/** Removes the element on top of the stack and returns that element. */
-func (this *MyStack) Pop() int &#123;
-    ret := 0
-    for len(this.i) > 0 &#123;
-        if len(this.i) == 1 &#123;
-            ret = this.i[0]
-            this.i = []int&#123;&#125;
-            break
-        &#125;
-        this.o = append(this.o, this.i[0])
-        this.i = this.i[1:]
-    &#125;
-    for len(this.o) > 0 &#123;
-        this.i = append(this.i, this.o[0])
-        this.o = this.o[1:]
-    &#125;
-    // fmt.Printf("POP %v, %v\n", this.i, this.o)
-    return ret
-&#125;
-
-
-/** Get the top element. */
-func (this *MyStack) Top() int &#123;
-    ret := 0
-    for len(this.i) > 0 &#123;
-        if len(this.i) == 1 &#123;
-            ret = this.i[0]
-        &#125;
-        this.o = append(this.o, this.i[0])
-        this.i = this.i[1:]
-    &#125;
-    for len(this.o) > 0 &#123;
-        this.i = append(this.i, this.o[0])
-        this.o = this.o[1:]
-    &#125;
-    // fmt.Printf("TOP %v, %v\n", this.i, this.o)
-    return ret
-&#125;
-
-
-/** Returns whether the stack is empty. */
-func (this *MyStack) Empty() bool &#123;
-    return len(this.i) == 0
-&#125;
-
-
-/**
- * Your MyStack object will be instantiated and called as such:
- * obj := Constructor();
- * obj.Push(x);
- * param_2 := obj.Pop();
- * param_3 := obj.Top();
- * param_4 := obj.Empty();
- */<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">type MyStack struct &#123;<br>    i, o []int<br>&#125;<br><br><br>/** Initialize your data structure here. */<br>func Constructor() MyStack &#123;<br>    return MyStack&#123;&#125;<br>&#125;<br><br><br>/** Push element x onto stack. */<br>func (this *MyStack) Push(x int)  &#123;<br>    this.i = append(this.i, x)<br>    // fmt.Printf(&quot;PUSH %v, %v\n&quot;, this.i, this.o)<br>&#125;<br><br><br>/** Removes the element on top of the stack and returns that element. */<br>func (this *MyStack) Pop() int &#123;<br>    ret := 0<br>    for len(this.i) &gt; 0 &#123;<br>        if len(this.i) == 1 &#123;<br>            ret = this.i[0]<br>            this.i = []int&#123;&#125;<br>            break<br>        &#125;<br>        this.o = append(this.o, this.i[0])<br>        this.i = this.i[1:]<br>    &#125;<br>    for len(this.o) &gt; 0 &#123;<br>        this.i = append(this.i, this.o[0])<br>        this.o = this.o[1:]<br>    &#125;<br>    // fmt.Printf(&quot;POP %v, %v\n&quot;, this.i, this.o)<br>    return ret<br>&#125;<br><br><br>/** Get the top element. */<br>func (this *MyStack) Top() int &#123;<br>    ret := 0<br>    for len(this.i) &gt; 0 &#123;<br>        if len(this.i) == 1 &#123;<br>            ret = this.i[0]<br>        &#125;<br>        this.o = append(this.o, this.i[0])<br>        this.i = this.i[1:]<br>    &#125;<br>    for len(this.o) &gt; 0 &#123;<br>        this.i = append(this.i, this.o[0])<br>        this.o = this.o[1:]<br>    &#125;<br>    // fmt.Printf(&quot;TOP %v, %v\n&quot;, this.i, this.o)<br>    return ret<br>&#125;<br><br><br>/** Returns whether the stack is empty. */<br>func (this *MyStack) Empty() bool &#123;<br>    return len(this.i) == 0<br>&#125;<br><br><br>/**<br> * Your MyStack object will be instantiated and called as such:<br> * obj := Constructor();<br> * obj.Push(x);<br> * param_2 := obj.Pop();<br> * param_3 := obj.Top();<br> * param_4 := obj.Empty();<br> */<br></code></pre></td></tr></table></figure>
 <h2><a href="#zhan-pan-duan-you-xiao-de-gua-hao" class="header-anchor">#</a><span id="zhan-pan-duan-you-xiao-de-gua-hao">栈判断有效的括号</span></h2>
 <p><img src="https://img.shields.io/badge/leetcode-20-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/valid-parentheses/">有效的括号</a></p>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">func isValid(s string) bool &#123;
-    stack := []int&#123;&#125;
-    for _, c := range s &#123;
-        if c == &#x27;(&#x27; || c == &#x27;&#123;&#x27; || c == &#x27;[&#x27; &#123;
-            stack = append(stack, int(c))
-            continue
-        &#125;
-        if len(stack) == 0 &#123;
-            return false
-        &#125;
-        t := stack[len(stack) - 1]
-        if (c == &#x27;)&#x27; && t == &#x27;(&#x27; ||
-            c == &#x27;&#125;&#x27; && t == &#x27;&#123;&#x27; ||
-            c == &#x27;]&#x27; && t == &#x27;[&#x27;) &#123;
-            stack = stack[:len(stack) - 1]
-            continue
-        &#125;
-        return false
-    &#125;
-    if len(stack) > 0 &#123;
-        return false
-    &#125;
-    return true
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">func isValid(s string) bool &#123;<br>    stack := []int&#123;&#125;<br>    for _, c := range s &#123;<br>        if c == &#x27;(&#x27; || c == &#x27;&#123;&#x27; || c == &#x27;[&#x27; &#123;<br>            stack = append(stack, int(c))<br>            continue<br>        &#125;<br>        if len(stack) == 0 &#123;<br>            return false<br>        &#125;<br>        t := stack[len(stack) - 1]<br>        if (c == &#x27;)&#x27; &amp;&amp; t == &#x27;(&#x27; ||<br>            c == &#x27;&#125;&#x27; &amp;&amp; t == &#x27;&#123;&#x27; ||<br>            c == &#x27;]&#x27; &amp;&amp; t == &#x27;[&#x27;) &#123;<br>            stack = stack[:len(stack) - 1]<br>            continue<br>        &#125;<br>        return false<br>    &#125;<br>    if len(stack) &gt; 0 &#123;<br>        return false<br>    &#125;<br>    return true<br>&#125;<br></code></pre></td></tr></table></figure>
 <h2><a href="#zhan-shan-chu-zi-fu-chuan-zhong-de-suo-you-xiang-lin-chong-fu-xiang" class="header-anchor">#</a><span id="zhan-shan-chu-zi-fu-chuan-zhong-de-suo-you-xiang-lin-chong-fu-xiang">栈删除字符串中的所有相邻重复项</span></h2>
 <p><img src="https://img.shields.io/badge/leetcode-1047-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/remove-all-adjacent-duplicates-in-string/">删除字符串中的所有相邻重复项</a></p>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">func removeDuplicates(S string) string &#123;
-    stack := []byte&#123;&#125;
-    for i := range S &#123;
-        if len(stack) > 0 && stack[len(stack) - 1] == S[i] &#123;
-            stack = stack[:len(stack) - 1]
-        &#125; else &#123;
-            stack = append(stack, S[i])
-        &#125; 
-    &#125;
-    return string(stack)
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">func removeDuplicates(S string) string &#123;<br>    stack := []byte&#123;&#125;<br>    for i := range S &#123;<br>        if len(stack) &gt; 0 &amp;&amp; stack[len(stack) - 1] == S[i] &#123;<br>            stack = stack[:len(stack) - 1]<br>        &#125; else &#123;<br>            stack = append(stack, S[i])<br>        &#125; <br>    &#125;<br>    return string(stack)<br>&#125;<br></code></pre></td></tr></table></figure>
 <h2><a href="#zhan-shi-xian-ni-bo-lan-biao-da-shi-qiu-zhi" class="header-anchor">#</a><span id="zhan-shi-xian-ni-bo-lan-biao-da-shi-qiu-zhi">栈实现逆波兰表达式求值</span></h2>
 <p><img src="https://img.shields.io/badge/leetcode-150-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/evaluate-reverse-polish-notation/">逆波兰表达式求值</a></p>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">func evalRPN(tokens []string) int &#123;
-	var stack []int
-	for _, val := range tokens &#123;
-		size := len(stack)
-		switch val &#123;
-		case "+":
-			stack = append(stack[:size-2], stack[size-2]+stack[size-1])
-		case "-":
-			stack = append(stack[:size-2], stack[size-2]-stack[size-1])
-		case "*":
-			stack = append(stack[:size-2], stack[size-2]*stack[size-1])
-		case "/":
-			stack = append(stack[:size-2], stack[size-2]/stack[size-1])
-		default:
-			val, _ := strconv.Atoi(val)
-			stack = append(stack, val)
-		&#125;
-	&#125;
-	return stack[0]
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></p></div><div class="share"><span>Share</span>&nbsp;<span class="soc"><a href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank" class="fa fa-bookmark"></a></span><span class="soc"><a href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));" class="fa fa-weibo"></a></span><span class="soc"><a target="_blank" rel="noopener" href="http://twitter.com/home?status=https://blog.kleon.space/cs/algo/stack/%20KLEON%20算法基础 - 栈" class="fa fa-twitter"></a></span></div><div class="pagination"><p class="clearfix"><span class="pre pagbuttons"><a role="navigation" href="/cs/algo/queue/" title="算法基础 - 队列"><i class="fa fa-angle-double-left"></i>&nbsp;Previous post: 算法基础 - 队列</a></span><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/cs/algo/hash-table/" title="算法基础 - 哈希表">Next post: 算法基础 - 哈希表&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">func evalRPN(tokens []string) int &#123;<br>  var stack []int<br>  for _, val := range tokens &#123;<br>    size := len(stack)<br>    switch val &#123;<br>    case &quot;+&quot;:<br>      stack = append(stack[:size-2], stack[size-2]+stack[size-1])<br>    case &quot;-&quot;:<br>      stack = append(stack[:size-2], stack[size-2]-stack[size-1])<br>    case &quot;*&quot;:<br>      stack = append(stack[:size-2], stack[size-2]*stack[size-1])<br>    case &quot;/&quot;:<br>      stack = append(stack[:size-2], stack[size-2]/stack[size-1])<br>    default:<br>      val, _ := strconv.Atoi(val)<br>      stack = append(stack, val)<br>    &#125;<br>  &#125;<br>  return stack[0]<br>&#125;<br></code></pre></td></tr></table></figure></p></div><div class="share"><span>Share</span>&nbsp;<span class="soc"><a href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank" class="fa fa-bookmark"></a></span><span class="soc"><a href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));" class="fa fa-weibo"></a></span><span class="soc"><a target="_blank" rel="noopener" href="http://twitter.com/home?status=https://blog.kleon.space/cs/algo/stack/%20KLEON%20算法基础 - 栈" class="fa fa-twitter"></a></span></div><div class="pagination"><p class="clearfix"><span class="pre pagbuttons"><a role="navigation" href="/cs/algo/queue/" title="算法基础 - 队列"><i class="fa fa-angle-double-left"></i>&nbsp;Previous post: 算法基础 - 队列</a></span><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/cs/algo/hash-table/" title="算法基础 - 哈希表">Next post: 算法基础 - 哈希表&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>

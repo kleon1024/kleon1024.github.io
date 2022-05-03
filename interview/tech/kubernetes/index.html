@@ -16,8 +16,7 @@ Basics
 What is Kubernetes?
 How Container orchestration is beneficial?
 How are Kubernetes and Docker related?
-What "><meta name="twitter:site" content="KLEON"><meta name="twitter:title" content="Tech - Kubernetes"><meta name="twitter:card" content="summary"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 6.1.0"><link rel="stylesheet" href="/css/prism.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body><div id="stage" class="container"><div class="row"><div id="side-bar" class="col-sm-3 col-xs-12 side-container invisible"><div class="vertical-text site-title"><h3 tabindex="-1" class="site-title-small"><a href="/" class="a-title"></a></h3><h1 tabindex="-1" class="site-title-large"><a href="/" class="a-title">自说自话</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div id="site-nav" class="site-title-links"><ul><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li><li><a href="/categories">Categories</a></li><li><a href="/tags">Tags</a></li><li><a href="/googlebe23cb0bc55fc412.html"></a></li><li><a href="/about/index.html"></a></li><li class="soc"><a href="https://github.com/kleon1024" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa fa-github">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div id="main-container" class="col-sm-9 col-xs-12 main-container invisible"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>Tech - Kubernetes</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2022-04-22</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/interview/" title="interview" class="a-tag">interview</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/interview/" title="interview" class="a-tag">interview</a><span>&nbsp;</span><a href="/tags/tech/" title="tech" class="a-tag">tech</a><span>&nbsp;</span></span></p><p class="post-abstract"><p>Q &amp; A of Kubernetes <sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup><sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>.</p>
+What "><meta name="twitter:site" content="KLEON"><meta name="twitter:title" content="Tech - Kubernetes"><meta name="twitter:card" content="summary"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/github.min.css"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 6.1.0"></head><body><div id="stage" class="container"><div class="row"><div id="side-bar" class="col-sm-3 col-xs-12 side-container invisible"><div class="vertical-text site-title"><h3 tabindex="-1" class="site-title-small"><a href="/" class="a-title"></a></h3><h1 tabindex="-1" class="site-title-large"><a href="/" class="a-title">自说自话</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div id="site-nav" class="site-title-links"><ul><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li><li><a href="/categories">Categories</a></li><li><a href="/tags">Tags</a></li><li><a href="/googlebe23cb0bc55fc412.html"></a></li><li><a href="/about/index.html"></a></li><li class="soc"><a href="https://github.com/kleon1024" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa fa-github">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div id="main-container" class="col-sm-9 col-xs-12 main-container invisible"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>Tech - Kubernetes</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2022-04-22</span><span class="date meta-item">Updated at&nbsp;2022-04-24</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/interview/" title="interview" class="a-tag">interview</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/interview/" title="interview" class="a-tag">interview</a><span>&nbsp;</span><a href="/tags/tech/" title="tech" class="a-tag">tech</a><span>&nbsp;</span></span></p><p class="post-abstract"><p>Q &amp; A of Kubernetes <sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup><sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>.</p>
 <div class="toc">
 <!-- toc -->
 <ul>
@@ -238,31 +237,7 @@ CNI offers a standardized, minimal specification for network connectivity in con
 <p>Init Containers are the containers that should run and complete before the startup of the main container in the pod. It provides a separate lifecycle for the initialization so that it enables separation of concerns in the applications.</p>
 <p>All the init Containers will be executed sequentially and if there is an error in the Init container the pod will be restarted which means all the Init containers are executed again. So, it’s better to design your Init container as simple, quick, and Idompodent.</p>
 <p>Example:</p>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">apiVersion: v1
-kind: Pod
-metadata:
-  name: init-container-demo
-spec:
-  containers:
-  - name: nginx
-    image: nginx
-    ports:
-    - containerPort: 80
-    volumeMounts:
-    - name: workdir
-      mountPath: /usr/share/nginx/html
-  initContainers:
-  - name: busybox
-    image: busybox
-    command: ["/bin/sh"]
-    args: ["-c", "echo &#x27;Hi I am from Init container&#x27; >> /work-dir/index.html"]
-    volumeMounts:
-    - name: workdir
-      mountPath: "/work-dir"
-  dnsPolicy: Default
-  volumes:
-  - name: workdir
-    emptyDir: &#123;&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">apiVersion: v1<br>kind: Pod<br>metadata:<br>  name: init-container-demo<br>spec:<br>  containers:<br>  - name: nginx<br>    image: nginx<br>    ports:<br>    - containerPort: 80<br>    volumeMounts:<br>    - name: workdir<br>      mountPath: /usr/share/nginx/html<br>  initContainers:<br>  - name: busybox<br>    image: busybox<br>    command: [&quot;/bin/sh&quot;]<br>    args: [&quot;-c&quot;, &quot;echo &#x27;Hi I am from Init container&#x27; &gt;&gt; /work-dir/index.html&quot;]<br>    volumeMounts:<br>    - name: workdir<br>      mountPath: &quot;/work-dir&quot;<br>  dnsPolicy: Default<br>  volumes:<br>  - name: workdir<br>    emptyDir: &#123;&#125;<br></code></pre></td></tr></table></figure>
 <h2><a href="#when-do-you-use-init-container-pattern" class="header-anchor">#</a><span id="when-do-you-use-init-container-pattern">When do you use Init Container Pattern?</span></h2>
 <p>You can use this pattern where your application or main containers need some prerequisites such as installing some software, database setup, permissions on the file system before starting.<br>
 You can use this pattern where you want to delay the start of the main containers.</p>
@@ -277,32 +252,7 @@ You can use this pattern where you want to delay the start of the main container
 <p>Imagine that you have the pod with a single container working very well and you want to add some functionality to the current container without touching or changing, how can you add the additional functionality or extending the current functionality? This sidecar container pattern really helps exactly in that situation.</p>
 <p>All the Containers will be executed parallelly and the whole functionality works only if both types of containers are running successfully. Most of the time these sidecar containers are simple and small that consume fewer resources than the main container.</p>
 <p><strong>Example:</strong></p>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">apiVersion: v1
-kind: Pod
-metadata:
-  name: sidecar-container-demo
-spec:
-  containers:
-  - image: busybox
-    command: ["/bin/sh"]
-    args: ["-c", "while true; do echo echo $(date -u) &#x27;Hi I am from Sidecar container&#x27; >> /var/log/index.html; sleep 5;done"]
-    name: sidecar-container
-    resources: &#123;&#125;
-    volumeMounts:
-    - name: var-logs
-      mountPath: /var/log
-  - image: nginx
-    name: main-container
-    resources: &#123;&#125;
-    ports:
-      - containerPort: 80
-    volumeMounts:
-    - name: var-logs
-      mountPath: /usr/share/nginx/html
-  dnsPolicy: Default
-  volumes:
-  - name: var-logs
-    emptyDir: &#123;&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">apiVersion: v1<br>kind: Pod<br>metadata:<br>  name: sidecar-container-demo<br>spec:<br>  containers:<br>  - image: busybox<br>    command: [&quot;/bin/sh&quot;]<br>    args: [&quot;-c&quot;, &quot;while true; do echo echo $(date -u) &#x27;Hi I am from Sidecar container&#x27; &gt;&gt; /var/log/index.html; sleep 5;done&quot;]<br>    name: sidecar-container<br>    resources: &#123;&#125;<br>    volumeMounts:<br>    - name: var-logs<br>      mountPath: /var/log<br>  - image: nginx<br>    name: main-container<br>    resources: &#123;&#125;<br>    ports:<br>      - containerPort: 80<br>    volumeMounts:<br>    - name: var-logs<br>      mountPath: /usr/share/nginx/html<br>  dnsPolicy: Default<br>  volumes:<br>  - name: var-logs<br>    emptyDir: &#123;&#125;<br></code></pre></td></tr></table></figure>
 <h2><a href="#when-do-you-use-sidecar-container-pattern" class="header-anchor">#</a><span id="when-do-you-use-sidecar-container-pattern">When do you use Sidecar Container Pattern?</span></h2>
 <ul>
 <li>Whenever you want to extend the functionality of the existing single container pod without touching the existing one.</li>
@@ -321,33 +271,7 @@ spec:
 <p>Imagine that you have the pod with a single container working very well but, it doesn’t have the same interface with other systems to integrate or work with it. How can you make this container to have a unified interface with a standardized format so that other systems can to your container? This adapter container pattern really helps exactly in that situation.</p>
 <p>All the Containers will be executed parallelly and the whole functionality works only if both types of containers are running successfully. Most of the time these adapter containers are simple and small that consume fewer resources than the main container.</p>
 <p><strong>Example:</strong></p>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">apiVersion: v1
-kind: Pod
-metadata:
-  name: adapter-container-demo
-spec:
-  containers:
-  - image: busybox
-    command: ["/bin/sh"]
-    args: ["-c", "while true; do echo $(date -u)&#x27;#This is log&#x27; >> /var/log/file.log; sleep 5;done"]
-    name: main-container
-    resources: &#123;&#125;
-    volumeMounts:
-    - name: var-logs
-      mountPath: /var/log
-  - image: bbachin1/adapter-node-server
-    name: adapter-container
-    imagePullPolicy: Always
-    resources: &#123;&#125;
-    ports:
-      - containerPort: 3080
-    volumeMounts:
-    - name: var-logs
-      mountPath: /var/log
-  dnsPolicy: Default
-  volumes:
-  - name: var-logs
-    emptyDir: &#123;&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">apiVersion: v1<br>kind: Pod<br>metadata:<br>  name: adapter-container-demo<br>spec:<br>  containers:<br>  - image: busybox<br>    command: [&quot;/bin/sh&quot;]<br>    args: [&quot;-c&quot;, &quot;while true; do echo $(date -u)&#x27;#This is log&#x27; &gt;&gt; /var/log/file.log; sleep 5;done&quot;]<br>    name: main-container<br>    resources: &#123;&#125;<br>    volumeMounts:<br>    - name: var-logs<br>      mountPath: /var/log<br>  - image: bbachin1/adapter-node-server<br>    name: adapter-container<br>    imagePullPolicy: Always<br>    resources: &#123;&#125;<br>    ports:<br>      - containerPort: 3080<br>    volumeMounts:<br>    - name: var-logs<br>      mountPath: /var/log<br>  dnsPolicy: Default<br>  volumes:<br>  - name: var-logs<br>    emptyDir: &#123;&#125;<br></code></pre></td></tr></table></figure>
 <h2><a href="#when-do-you-use-adapter-container-pattern" class="header-anchor">#</a><span id="when-do-you-use-adapter-container-pattern">When do you use Adapter Container Pattern?</span></h2>
 <ul>
 <li>Whenever you want to extend the functionality of the existing single container pod without touching the existing one.</li>
@@ -364,25 +288,7 @@ spec:
 <p>Imagine that you have the pod with one container running successfully but, you need to access external services. But, these external services are dynamic in nature or difficult to access. Sometimes there is a different format that external service returns. There are some other reasons as well and you don’t want to handle this complexity in the main container. So, we use the Ambassador containers to handle these kinds of scenarios.</p>
 <p>All the Containers will be executed parallelly and the whole functionality works only if both types of containers are running successfully. Most of the time these ambassador containers are simple and small that consume fewer resources than the main container.</p>
 <p><strong>Example:</strong></p>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">apiVersion: v1
-kind: Pod
-metadata:
-  name: ambassador-container-demo
-spec:
-  containers:
-  - image: bbachin1/main-container
-    name: main-container
-    imagePullPolicy: Always
-    resources: &#123;&#125;
-    ports:
-      - containerPort: 9000
-  - image: bbachin1/nginx-server-proxy
-    name: ambassador-container
-    imagePullPolicy: Always
-    resources: &#123;&#125;
-    ports:
-      - containerPort: 3000
-  dnsPolicy: Default<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">apiVersion: v1<br>kind: Pod<br>metadata:<br>  name: ambassador-container-demo<br>spec:<br>  containers:<br>  - image: bbachin1/main-container<br>    name: main-container<br>    imagePullPolicy: Always<br>    resources: &#123;&#125;<br>    ports:<br>      - containerPort: 9000<br>  - image: bbachin1/nginx-server-proxy<br>    name: ambassador-container<br>    imagePullPolicy: Always<br>    resources: &#123;&#125;<br>    ports:<br>      - containerPort: 3000<br>  dnsPolicy: Default<br></code></pre></td></tr></table></figure>
 <h2><a href="#when-do-you-use-ambassador-container-pattern" class="header-anchor">#</a><span id="when-do-you-use-ambassador-container-pattern">When do you use Ambassador Container Pattern?</span></h2>
 <ul>
 <li>Whenever you want to hide the complexity from the main container such as service discovery.</li>
@@ -492,22 +398,10 @@ GKE can be utilized to make a replication regulator, occupations, load balancer,
 </ul>
 <h2><a href="#how-to-turn-the-service-defined-below-in-the-spec-into-an-external-one" class="header-anchor">#</a><span id="how-to-turn-the-service-defined-below-in-the-spec-into-an-external-one">How to turn the service defined below in the spec into an external one?</span></h2>
 <p>Adding type: LoadBalancer and nodePort as follows:</p>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">spec:
- selector:
-   app: some-app
- type: LoadBalancer
- ports:
-   - protocol: UDP
-     port: 8080
-     targetPort: 8080
-     nodePort: 32412<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">spec:<br> selector:<br>   app: some-app<br> type: LoadBalancer<br> ports:<br>   - protocol: UDP<br>     port: 8080<br>     targetPort: 8080<br>     nodePort: 32412<br></code></pre></td></tr></table></figure>
 <h2><a href="#how-to-configure-tls-with-ingress" class="header-anchor">#</a><span id="how-to-configure-tls-with-ingress">How to configure TLS with Ingress?</span></h2>
 <p>Add tls and secretName entries.</p>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">spec:
- tls:
- - hosts:
-   - some_app.com
-   secretName: someapp-secret-tls<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">spec:<br> tls:<br> - hosts:<br>   - some_app.com<br>   secretName: someapp-secret-tls<br></code></pre></td></tr></table></figure>
 <h2><a href="#what-is-a-kubernetes-operator" class="header-anchor">#</a><span id="what-is-a-kubernetes-operator">What is a Kubernetes Operator?</span></h2>
 <p>Operators are software extensions to K8s which make use of custom resources to manage applications and their components. Operators follow Kubernetes principles, notably the control loop.</p>
 <h2><a href="#why-do-we-need-operators" class="header-anchor">#</a><span id="why-do-we-need-operators">Why do we need Operators?</span></h2>
@@ -702,19 +596,12 @@ GKE can be utilized to make a replication regulator, occupations, load balancer,
 </table>
 <h2><a href="#how-to-use-secrets-in-kubernetes" class="header-anchor">#</a><span id="how-to-use-secrets-in-kubernetes">How to use secrets in Kubernetes?</span></h2>
 <p>Secrets can be defined as Kubernetes objects used to store sensitive data such as user name and passwords with encryption.</p>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">apiVersion: v1
-kind: Secret
-metadata:
-name: tomcat-pass
-type: Opaque
-data:
-   password: <user password>
-   username: <user name><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></user></user></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">apiVersion: v1<br>kind: Secret<br>metadata:<br>name: tomcat-pass<br>type: Opaque<br>data:<br>   password: &lt;User Password&gt;<br>   username: &lt;User Name&gt;<br></code></pre></td></tr></table></figure>
 <h2><a href="#how-to-create-and-use-configmap-with-kubernetes" class="header-anchor">#</a><span id="how-to-create-and-use-configmap-with-kubernetes">How to Create and Use ConfigMap with Kubernetes?</span></h2>
 <p>A Kubernetes ConfigMap is an API object that allows you to store data as key-value pairs. Kubernetes pods can use ConfigMaps as configuration files, environment variables or command-line arguments.</p>
 <p>ConfigMaps allow you to decouple environment-specific configurations from containers to make applications portable. However, they are not suitable for confidential data storage.</p>
 <h2><a href="#what-is-a-kubernetes-statefulset" class="header-anchor">#</a><span id="what-is-a-kubernetes-statefulset">What is a Kubernetes StatefulSet?</span></h2>
-<p>StatefulSet is the workload API object used to manage stateful applications. Manages the deployment and scaling of a set of Pods, and provides guarantees about the ordering and uniqueness of these Pods.</p>
+<p>StatefulSet<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup> is the workload API object used to manage stateful applications. Manages the deployment and scaling of a set of Pods, and provides guarantees about the ordering and uniqueness of these Pods.</p>
 <p>Like a Deployment, a StatefulSet manages Pods that are based on an identical container spec. Unlike a Deployment, a StatefulSet maintains a sticky identity for each of their Pods. These pods are created from the same spec, but are not interchangeable: each has a persistent identifier that it maintains across any rescheduling.</p>
 <p><strong>Using StatefulSets:</strong></p>
 <p>StatefulSets are valuable for applications that require one or more of the following.</p>
@@ -725,54 +612,7 @@ data:
 <li>Ordered, automated rolling updates.</li>
 </ul>
 <p><strong>Example:</strong> The example below demonstrates the components of a StatefulSet.</p>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">apiVersion: v1
-kind: Service
-metadata:
-  name: nginx
-  labels:
-    app: nginx
-spec:
-  ports:
-  - port: 80
-    name: web
-  clusterIP: None
-  selector:
-    app: nginx
----
-apiVersion: apps/v1
-kind: StatefulSet
-metadata:
-  name: web
-spec:
-  selector:
-    matchLabels:
-      app: nginx # has to match .spec.template.metadata.labels
-  serviceName: "nginx"
-  replicas: 3 # by default is 1
-  template:
-    metadata:
-      labels:
-        app: nginx # has to match .spec.selector.matchLabels
-    spec:
-      terminationGracePeriodSeconds: 10
-      containers:
-      - name: nginx
-        image: k8s.gcr.io/nginx-slim:0.8
-        ports:
-        - containerPort: 80
-          name: web
-        volumeMounts:
-        - name: www
-          mountPath: /usr/share/nginx/html
-  volumeClaimTemplates:
-  - metadata:
-      name: www
-    spec:
-      accessModes: [ "ReadWriteOnce" ]
-      storageClassName: "my-storage-class"
-      resources:
-        requests:
-          storage: 1Gi<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">apiVersion: v1<br>kind: Service<br>metadata:<br>  name: nginx<br>  labels:<br>    app: nginx<br>spec:<br>  ports:<br>  - port: 80<br>    name: web<br>  clusterIP: None<br>  selector:<br>    app: nginx<br>---<br>apiVersion: apps/v1<br>kind: StatefulSet<br>metadata:<br>  name: web<br>spec:<br>  selector:<br>    matchLabels:<br>      app: nginx # has to match .spec.template.metadata.labels<br>  serviceName: &quot;nginx&quot;<br>  replicas: 3 # by default is 1<br>  template:<br>    metadata:<br>      labels:<br>        app: nginx # has to match .spec.selector.matchLabels<br>    spec:<br>      terminationGracePeriodSeconds: 10<br>      containers:<br>      - name: nginx<br>        image: k8s.gcr.io/nginx-slim:0.8<br>        ports:<br>        - containerPort: 80<br>          name: web<br>        volumeMounts:<br>        - name: www<br>          mountPath: /usr/share/nginx/html<br>  volumeClaimTemplates:<br>  - metadata:<br>      name: www<br>    spec:<br>      accessModes: [ &quot;ReadWriteOnce&quot; ]<br>      storageClassName: &quot;my-storage-class&quot;<br>      resources:<br>        requests:<br>          storage: 1Gi<br></code></pre></td></tr></table></figure>
 <h2><a href="#what-are-levels-of-abstraction-in-kubernetes" class="header-anchor">#</a><span id="what-are-levels-of-abstraction-in-kubernetes">What are levels of abstraction in Kubernetes?</span></h2>
 <p>Deployments create and manage ReplicaSets, which create and manage Pods, which run on Nodes, which have a container runtime, which run the app code you put in your Docker image.</p>
 <p>Here are the six layers of abstractions when running a workload in Kubernetes starting with the highest-level abstraction.</p>
@@ -787,56 +627,21 @@ spec:
 <h2><a href="#how-to-configure-kubernetes-for-rolling-update" class="header-anchor">#</a><span id="how-to-configure-kubernetes-for-rolling-update">How to Configure Kubernetes for Rolling Update?</span></h2>
 <p>One of the primary benefits of using a Deployment to control your pods is the ability to perform rolling updates. Rolling updates allow you to update the configuration of your pods gradually, and Deployments offer many options to control this process.</p>
 <p>The deployment file properly configured for rolling updates should look like this:</p>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: nginx-deployment
-  labels:
-    app: nginx
-spec:
-  replicas: 4
-  selector:
-
-    matchLabels:
-      app: nginx
-  minReadySeconds: 5
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxSurge: 1
-      maxUnavailable: 1
-  template:
-    metadata:
-      labels:
-        app: nginx
-    spec:
-      containers:
-      - name: nginx
-        image: nginx:1.14.0
-
-        ports:
-        - containerPort: 80
-        readinessProbe:
-          httpGet:
-            path: /
-            port: 8080
-            initialDelaySeconds: 5
-            periodSeconds: 5
-            successThreshold: 1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">apiVersion: apps/v1<br>kind: Deployment<br>metadata:<br>  name: nginx-deployment<br>  labels:<br>    app: nginx<br>spec:<br>  replicas: 4<br>  selector:<br><br>    matchLabels:<br>      app: nginx<br>  minReadySeconds: 5<br>  strategy:<br>    type: RollingUpdate<br>    rollingUpdate:<br>      maxSurge: 1<br>      maxUnavailable: 1<br>  template:<br>    metadata:<br>      labels:<br>        app: nginx<br>    spec:<br>      containers:<br>      - name: nginx<br>        image: nginx:1.14.0<br><br>        ports:<br>        - containerPort: 80<br>        readinessProbe:<br>          httpGet:<br>            path: /<br>            port: 8080<br>            initialDelaySeconds: 5<br>            periodSeconds: 5<br>            successThreshold: 1<br></code></pre></td></tr></table></figure>
 <ul>
 <li><strong>initialDelaySeconds</strong> specifies how long the probe has to wait to start after the container starts.</li>
 <li><strong>periodSeconds</strong> is the time between two probes. The default is <strong>10</strong> seconds, while the minimal value is <strong>1</strong> second.</li>
 <li><strong>successThreshold</strong> is the minimum number of consecutive successful probes after a failed one for the entire process to be considered successful. The default and minimal values are both <strong>1</strong>.</li>
 </ul>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">kubectl apply -f nginx-text.yaml --record<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">kubectl apply -f nginx-text.yaml --record<br></code></pre></td></tr></table></figure>
 <p>There are three ways to perform rolling updates.</p>
 <p>For example, to change the app image:</p>
 <p>Option 1: You can use kubectl set to perform the action on the command line:</p>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">kubectl set image deployment nginx-deployment nginx=nginx:1.14.2 --record<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">kubectl set image deployment nginx-deployment nginx=nginx:1.14.2 --record<br></code></pre></td></tr></table></figure>
 <p>Option 2: Alternatively, modify the image version in the spec.templates.spec.containers section of the yaml file. Then, use kubectl replace to perform the update:</p>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">kubectl replace -f nginx-test.yaml<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">kubectl replace -f nginx-test.yaml<br></code></pre></td></tr></table></figure>
 <p>Option 3: You can also use kubectl edit to edit the deployment directly:</p>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">kubectl edit deployment nginx-deployment --record<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">kubectl edit deployment nginx-deployment --record<br></code></pre></td></tr></table></figure>
 <h2><a href="#what-is-the-difference-between-docker-compose-and-kubernetes" class="header-anchor">#</a><span id="what-is-the-difference-between-docker-compose-and-kubernetes">What is the difference between Docker Compose and Kubernetes?</span></h2>
 <p>Docker (or specifically, the docker command) is used to manage individual containers, docker-compose is used to manage multi-container applications and Kubernetes is a container orchestration tool.</p>
 <p><strong>Docker Compose:</strong></p>
@@ -913,7 +718,7 @@ spec:
 <p>Role-based access control (RBAC) is a method of regulating access to computer or network resources based on the roles of individual users within your organization.</p>
 <p>RBAC authorization uses the <a target="_blank" rel="noopener" href="http://rbac.authorization.k8s.io">rbac.authorization.k8s.io</a> API group to drive authorization decisions, allowing you to dynamically configure policies through the Kubernetes API.</p>
 <p>To enable RBAC, start the API server with the --authorization-mode flag set to a comma-separated list that includes RBAC; for example:</p>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">kube-apiserver --authorization-mode=Example,RBAC --other-options --more-options<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">kube-apiserver --authorization-mode=Example,RBAC --other-options --more-options<br></code></pre></td></tr></table></figure>
 <p>The RBAC API declares four kinds of Kubernetes object: Role, ClusterRole, RoleBinding and ClusterRoleBinding.</p>
 <h2><a href="#what-is-helm-charts" class="header-anchor">#</a><span id="what-is-helm-charts">What is Helm Charts?</span></h2>
 <p>Helm Charts are simply Kubernetes YAML manifests combined into a single package that can be advertised to your Kubernetes clusters. Once packaged, installing a Helm Chart into your cluster is as easy as running a single helm install, which really simplifies the deployment of containerized applications.</p>
@@ -933,18 +738,7 @@ spec:
 <h2><a href="#how-to-create-storage-class-in-kubernetes" class="header-anchor">#</a><span id="how-to-create-storage-class-in-kubernetes">How to create storage class in kubernetes?</span></h2>
 <p>A StorageClass provides a way for administrators to describe the “classes” of storage they offer. Each StorageClass contains the fields provisioner, parameters, and reclaimPolicy, which are used when a PersistentVolume belonging to the class needs to be dynamically provisioned.</p>
 <p>Administrators set the name and other parameters of a class when first creating StorageClass objects, and the objects cannot be updated once they are created. Administrators can specify a default StorageClass only for PVCs that don’t request any particular class to bind to.</p>
-<pre class="line-numbers language-highlight plaintext"><code class="language-highlight plaintext">apiVersion: storage.k8s.io/v1
-kind: StorageClass
-metadata:
-  name: standard
-provisioner: kubernetes.io/aws-ebs
-parameters:
-  type: gp2
-reclaimPolicy: Retain
-allowVolumeExpansion: true
-mountOptions:
-  - debug
-volumeBindingMode: Immediate<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">apiVersion: storage.k8s.io/v1<br>kind: StorageClass<br>metadata:<br>  name: standard<br>provisioner: kubernetes.io/aws-ebs<br>parameters:<br>  type: gp2<br>reclaimPolicy: Retain<br>allowVolumeExpansion: true<br>mountOptions:<br>  - debug<br>volumeBindingMode: Immediate<br></code></pre></td></tr></table></figure>
 <hr>
 <hr class="footnotes-sep">
 <section class="footnotes">
@@ -956,6 +750,8 @@ volumeBindingMode: Immediate<span aria-hidden="true" class="line-numbers-rows"><
 <li id="fn3" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/54153164">K8S容器编排之Headless浅谈</a> <a href="#fnref3" class="footnote-backref">↩︎</a> <a href="#fnref3:1" class="footnote-backref">↩︎</a></p>
 </li>
 <li id="fn4" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://spot.io/resources/kubernetes-architecture-11-core-components-explained">Kubernetes Architecture: 11 Core Components Explained</a> <a href="#fnref4" class="footnote-backref">↩︎</a> <a href="#fnref4:1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn5" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://jkzhao.github.io/2019/08/30/Kubernetes-StatefulSet%E6%8E%A7%E5%88%B6%E5%99%A8/">Kubernetes StatefulSet控制器</a> <a href="#fnref5" class="footnote-backref">↩︎</a></p>
 </li>
 </ol>
 </section>
