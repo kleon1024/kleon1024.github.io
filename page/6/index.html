@@ -38,7 +38,10 @@ https://www.qikqiak.com/k8s-book/docs/15.基本概念与组件.html
 数据收集，包括移动端埋点，服务端日志，第三方数据等
 数据仓库，长期保存结构化数据，Hive，提供数据清洗，特征工程等功能。
 数据湖，长期保存非结构化数据，如S3,Minio。
-数据库，线上服务使用的数据源，按...</p></div><div class="post-container"><p class="post-title"><a href="/ai/ml-system/recommender/11-factor-machine/">机器学习系统 4-11 - 因子分解机</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-05-02</span><span class="date meta-item">Updated at&nbsp;2021-05-12</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/机器学习/" title="机器学习" class="a-tag">机器学习</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/机器学习/" title="机器学习" class="a-tag">机器学习</a><span>&nbsp;</span><a href="/tags/推荐系统/" title="推荐系统" class="a-tag">推荐系统</a><span>&nbsp;</span></span></p><p class="post-abstract">因子分解机
+数据库，线上服务使用的数据源，按...</p></div><div class="post-container"><p class="post-title"><a href="/ai/ml-system/recommender/10-logistic-regression/">机器学习系统 4-10 - 逻辑回归</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-05-02</span><span class="date meta-item">Updated at&nbsp;2021-05-12</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/机器学习/" title="机器学习" class="a-tag">机器学习</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/机器学习/" title="机器学习" class="a-tag">机器学习</a><span>&nbsp;</span><a href="/tags/推荐系统/" title="推荐系统" class="a-tag">推荐系统</a><span>&nbsp;</span></span></p><p class="post-abstract">Logistic Regression
+
+–
+</p></div><div class="post-container"><p class="post-title"><a href="/ai/ml-system/recommender/11-factor-machine/">机器学习系统 4-11 - 因子分解机</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-05-02</span><span class="date meta-item">Updated at&nbsp;2021-05-12</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/机器学习/" title="机器学习" class="a-tag">机器学习</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/机器学习/" title="机器学习" class="a-tag">机器学习</a><span>&nbsp;</span><a href="/tags/推荐系统/" title="推荐系统" class="a-tag">推荐系统</a><span>&nbsp;</span></span></p><p class="post-abstract">因子分解机
 
 #原理
 
@@ -47,23 +50,20 @@ FM具有线性的计算复杂度，而SVM依赖于support vector。
 FM能够在任意的实数特征向量中生效。
 
 –
-</p></div><div class="post-container"><p class="post-title"><a href="/ai/ml-system/recommender/10-logistic-regression/">机器学习系统 4-10 - 逻辑回归</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-05-02</span><span class="date meta-item">Updated at&nbsp;2021-05-12</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/机器学习/" title="机器学习" class="a-tag">机器学习</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/机器学习/" title="机器学习" class="a-tag">机器学习</a><span>&nbsp;</span><a href="/tags/推荐系统/" title="推荐系统" class="a-tag">推荐系统</a><span>&nbsp;</span></span></p><p class="post-abstract">Logistic Regression
-
-–
 </p></div><div class="post-container"><p class="post-title"><a href="/ai/ml-system/recommender/12-gbdt-lr/">机器学习系统 4-12 - GBDR+LR</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-05-02</span><span class="date meta-item">Updated at&nbsp;2021-05-12</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/机器学习/" title="机器学习" class="a-tag">机器学习</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/机器学习/" title="机器学习" class="a-tag">机器学习</a><span>&nbsp;</span><a href="/tags/推荐系统/" title="推荐系统" class="a-tag">推荐系统</a><span>&nbsp;</span></span></p><p class="post-abstract">GBDT+LR
 
-–
-</p></div><div class="post-container"><p class="post-title"><a href="/ai/ml-system/recommender/9-matrix-factorization/">机器学习系统 4-9 - 矩阵分解</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-05-02</span><span class="date meta-item">Updated at&nbsp;2021-05-12</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/机器学习/" title="机器学习" class="a-tag">机器学习</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/机器学习/" title="机器学习" class="a-tag">机器学习</a><span>&nbsp;</span><a href="/tags/推荐系统/" title="推荐系统" class="a-tag">推荐系统</a><span>&nbsp;</span></span></p><p class="post-abstract">矩阵分解将用户行为矩阵分解为两个低秩矩阵的乘积，本质上是一种嵌入(Embedding)方法。
-
-#原理
-矩阵分解2主要使用的是特征分解和奇异值分解（SVD）。
-SVD++ BiasSVD
 –
 </p></div><div class="post-container"><p class="post-title"><a href="/ai/ml-system/recommender/8-collaborative-filter/">机器学习系统 4-8 - 协同过滤</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-05-02</span><span class="date meta-item">Updated at&nbsp;2021-05-12</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/机器学习/" title="机器学习" class="a-tag">机器学习</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/机器学习/" title="机器学习" class="a-tag">机器学习</a><span>&nbsp;</span><a href="/tags/推荐系统/" title="推荐系统" class="a-tag">推荐系统</a><span>&nbsp;</span></span></p><p class="post-abstract">协同过滤利用了用户对标的物的行为相似性来推荐。
 
 #原理
 协同过滤1 24（Collaborative Filter，CF）主要用于召回，主要分为ItemCF和UserCF。
-协同过滤的核心是怎么计算标的物之间的相似度以及用户之间的相似度。我们可以采用非常朴素的思想来计算相似度。我们将用户对标的物的评分(或者隐式...</p></div><div class="post-container"><p class="post-title"><a href="/ai/ml-system/recommender/4-recall/">机器学习系统 4-4 - 召回</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-05-02</span><span class="date meta-item">Updated at&nbsp;2021-05-10</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/机器学习/" title="机器学习" class="a-tag">机器学习</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/机器学习/" title="机器学习" class="a-tag">机器学习</a><span>&nbsp;</span><a href="/tags/推荐系统/" title="推荐系统" class="a-tag">推荐系统</a><span>&nbsp;</span></span></p><p class="post-abstract">多种策略混合，快而全
+协同过滤的核心是怎么计算标的物之间的相似度以及用户之间的相似度。我们可以采用非常朴素的思想来计算相似度。我们将用户对标的物的评分(或者隐式...</p></div><div class="post-container"><p class="post-title"><a href="/ai/ml-system/recommender/9-matrix-factorization/">机器学习系统 4-9 - 矩阵分解</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-05-02</span><span class="date meta-item">Updated at&nbsp;2021-05-12</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/机器学习/" title="机器学习" class="a-tag">机器学习</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/机器学习/" title="机器学习" class="a-tag">机器学习</a><span>&nbsp;</span><a href="/tags/推荐系统/" title="推荐系统" class="a-tag">推荐系统</a><span>&nbsp;</span></span></p><p class="post-abstract">矩阵分解将用户行为矩阵分解为两个低秩矩阵的乘积，本质上是一种嵌入(Embedding)方法。
+
+#原理
+矩阵分解2主要使用的是特征分解和奇异值分解（SVD）。
+SVD++ BiasSVD
+–
+</p></div><div class="post-container"><p class="post-title"><a href="/ai/ml-system/recommender/4-recall/">机器学习系统 4-4 - 召回</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-05-02</span><span class="date meta-item">Updated at&nbsp;2021-05-10</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/机器学习/" title="机器学习" class="a-tag">机器学习</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/机器学习/" title="机器学习" class="a-tag">机器学习</a><span>&nbsp;</span><a href="/tags/推荐系统/" title="推荐系统" class="a-tag">推荐系统</a><span>&nbsp;</span></span></p><p class="post-abstract">多种策略混合，快而全
 
 #策略
 召回阶段需要从海量的标的物中选取，通常使用不同的召回策略满足内容的多样性，新颖性等要求。
