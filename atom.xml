@@ -72,9 +72,9 @@
   </entry>
   
   <entry>
-    <title>Tech - C++</title>
-    <link href="https://blog.kleon.space/interview/tech/c++/"/>
-    <id>https://blog.kleon.space/interview/tech/c++/</id>
+    <title>Tech - CMake</title>
+    <link href="https://blog.kleon.space/interview/tech/cmake/"/>
+    <id>https://blog.kleon.space/interview/tech/cmake/</id>
     <published>2022-04-29T19:13:52.000Z</published>
     <updated>2022-04-29T19:13:48.000Z</updated>
     
@@ -225,6 +225,34 @@
 &lt;!-- toc --&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="interview" scheme="https://blog.kleon.space/categories/interview/"/>
+    
+    
+    <category term="interview" scheme="https://blog.kleon.space/tags/interview/"/>
+    
+    <category term="tech" scheme="https://blog.kleon.space/tags/tech/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Tech - C++</title>
+    <link href="https://blog.kleon.space/interview/tech/c++/"/>
+    <id>https://blog.kleon.space/interview/tech/c++/</id>
+    <published>2022-04-29T19:13:52.000Z</published>
+    <updated>2022-05-04T10:22:42.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Q &amp;amp; A of C++ &lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn1&quot; id=&quot;fnref1&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;p&gt;C++ is a powerful and all-purpose</summary>
         
       
     
@@ -517,27 +545,6 @@
     <category term="interview" scheme="https://blog.kleon.space/tags/interview/"/>
     
     <category term="system design" scheme="https://blog.kleon.space/tags/system-design/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Tech - Operating System</title>
-    <link href="https://blog.kleon.space/interview/tech/operating_system/"/>
-    <id>https://blog.kleon.space/interview/tech/operating_system/</id>
-    <published>2022-04-22T22:10:47.000Z</published>
-    <updated>2022-04-22T22:10:44.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;Q &amp;amp; A of Operating System.&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="interview" scheme="https://blog.kleon.space/categories/interview/"/>
-    
-    
-    <category term="interview" scheme="https://blog.kleon.space/tags/interview/"/>
-    
-    <category term="tech" scheme="https://blog.kleon.space/tags/tech/"/>
     
   </entry>
   

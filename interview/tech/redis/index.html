@@ -294,7 +294,6 @@ Beating the performance Redis provides is nearly impossible. Imagine you databas
 Scaling Redis is not as hard as it used to be. For instance, you could use a kind of proxy server in order to distribute the data among multiple Redis instances. Master-slave replication is not that complicated, but distributing you keys among multiple Redis-instances needs to be done on the application site (e.g. using a hash-function, Modulo etc.). Scaling MongoDB by comparison is much simpler.</p>
 </li>
 </ul>
-<h2><a href="#" class="header-anchor">#</a><span id></span></h2>
 <h1><a href="#advanced" class="header-anchor">#</a><span id="advanced">Advanced</span></h1>
 <h2><a href="#why-is-redis-so-fast" class="header-anchor">#</a><span id="why-is-redis-so-fast">Why is redis so fast?</span></h2>
 <ol>
@@ -318,14 +317,14 @@ Scaling Redis is not as hard as it used to be. For instance, you could use a kin
 <ol>
 <li>Store the entire object as JSON-encoded string in a single key and keep track of all Objects using a set (or list, if more appropriate):</li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">INCR id:users<br>SET user:&#123;id&#125; &#x27;&#123;&quot;name&quot;:&quot;Fred&quot;,&quot;age&quot;:25&#125;&#x27;<br>SADD users &#123;id&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-variable constant_">INCR</span> <span class="hljs-attr">id</span>:users<br><span class="hljs-variable constant_">SET</span> <span class="hljs-attr">user</span>:&#123;id&#125; <span class="hljs-string">&#x27;&#123;&quot;name&quot;:&quot;Fred&quot;,&quot;age&quot;:25&#125;&#x27;</span><br><span class="hljs-variable constant_">SADD</span> users &#123;id&#125;<br></code></pre></td></tr></table></figure>
 <p>Use when:</p>
 <ul>
 <li>If you use most of the fields on most of your accesses.</li>
 <li>If there is variance on possible keys</li>
 </ul>
 <p>Store each Object’s properties in a Redis hash:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">INCR id:users<br>HMSET user:&#123;id&#125; name &quot;Fred&quot; age 25<br>SADD users &#123;id&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-variable constant_">INCR</span> <span class="hljs-attr">id</span>:users<br><span class="hljs-variable constant_">HMSET</span> <span class="hljs-attr">user</span>:&#123;id&#125; name <span class="hljs-string">&quot;Fred&quot;</span> age <span class="hljs-number">25</span><br><span class="hljs-variable constant_">SADD</span> users &#123;id&#125;<br></code></pre></td></tr></table></figure>
 <p>Use when:</p>
 <ul>
 <li>If you use just single fields on most of your accesses.</li>
@@ -335,13 +334,13 @@ Scaling Redis is not as hard as it used to be. For instance, you could use a kin
 <li>You tend to only access a small subset of fields at a time</li>
 </ul>
 <p>Store each Object as a JSON string in a Redis hash:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">INCR id:users<br>HMSET users &#123;id&#125; &#x27;&#123;&quot;name&quot;:&quot;Fred&quot;,&quot;age&quot;:25&#125;&#x27;<br></code></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-variable constant_">INCR</span> <span class="hljs-attr">id</span>:users<br><span class="hljs-variable constant_">HMSET</span> users &#123;id&#125; <span class="hljs-string">&#x27;&#123;&quot;name&quot;:&quot;Fred&quot;,&quot;age&quot;:25&#125;&#x27;</span><br></code></pre></td></tr></table></figure>
 <p>Use when:</p>
 <ul>
 <li>really care about not polluting the main key namespace</li>
 </ul>
 <p>Store each property of each Object in a dedicated key:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">INCR id:users<br>SET user:&#123;id&#125;:name &quot;Fred&quot;<br>SET user:&#123;id&#125;:age 25<br>SADD users &#123;id&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-variable constant_">INCR</span> <span class="hljs-attr">id</span>:users<br><span class="hljs-variable constant_">SET</span> <span class="hljs-attr">user</span>:&#123;id&#125;:name <span class="hljs-string">&quot;Fred&quot;</span><br><span class="hljs-variable constant_">SET</span> <span class="hljs-attr">user</span>:&#123;id&#125;:age <span class="hljs-number">25</span><br><span class="hljs-variable constant_">SADD</span> users &#123;id&#125;<br></code></pre></td></tr></table></figure>
 <p>Use when:</p>
 <ul>
 <li>almost never preferred unless the property of the Object needs to have specific TTL or something</li>
@@ -387,7 +386,7 @@ Scaling Redis is not as hard as it used to be. For instance, you could use a kin
 <h2><a href="#is-redis-a-durable-datastore-d-from-acid" class="header-anchor">#</a><span id="is-redis-a-durable-datastore-d-from-acid">Is Redis a durable datastore (“D” from ACID)?</span></h2>
 <p>Redis is not usually deployed as a “durable” datastore (in the sense of the “D” in ACID.), even with journaling. Most use cases intentionally sacrifice a little durability in return for speed.</p>
 <p>However, the “append only file” storage mode can optionally be configured to operate in a durable manner, at the cost of performance. It will have to pay for an fsync() on every modification. To configure this, set these two options in your .conf file:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">appendonly yes<br>appendfsync always<br></code></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs javascript">appendonly yes<br>appendfsync always<br></code></pre></td></tr></table></figure>
 <h2><a href="#rdb-and-aof-which-one-should-i-use" class="header-anchor">#</a><span id="rdb-and-aof-which-one-should-i-use">RDB and AOF, which one should I use?</span></h2>
 <p>Redis provides two persistence schemes, RDB and AOF:</p>
 <p>RDB: Generates a snapshot of data in Redis memory within a specified time interval, which is a binary file dumpr.rdb</p>
