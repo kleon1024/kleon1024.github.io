@@ -12,7 +12,7 @@ What are the traditional methods of message transfer? How is Kafka better fr"><m
 Basics
 
 What are some of the features of Kafka?
-What are the traditional methods of message transfer? How is Kafka better fr"><meta name="twitter:site" content="KLEON"><meta name="twitter:title" content="Tech - Kafka"><meta name="twitter:card" content="summary"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/github.min.css"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 6.1.0"></head><body><div id="stage" class="container"><div class="row"><div id="side-bar" class="col-sm-3 col-xs-12 side-container invisible"><div class="vertical-text site-title"><h3 tabindex="-1" class="site-title-small"><a href="/" class="a-title"></a></h3><h1 tabindex="-1" class="site-title-large"><a href="/" class="a-title">自说自话</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div id="site-nav" class="site-title-links"><ul><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li><li><a href="/categories">Categories</a></li><li><a href="/tags">Tags</a></li><li><a href="/googlebe23cb0bc55fc412.html"></a></li><li><a href="/about/index.html"></a></li><li class="soc"><a href="https://github.com/kleon1024" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa fa-github">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div id="main-container" class="col-sm-9 col-xs-12 main-container invisible"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>Tech - Kafka</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2022-04-29</span><span class="date meta-item">Updated at&nbsp;2022-04-29</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/interview/" title="interview" class="a-tag">interview</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/interview/" title="interview" class="a-tag">interview</a><span>&nbsp;</span><a href="/tags/tech/" title="tech" class="a-tag">tech</a><span>&nbsp;</span></span></p><p class="post-abstract"><p>Q &amp; A of kafka<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>.</p>
+What are the traditional methods of message transfer? How is Kafka better fr"><meta name="twitter:site" content="KLEON"><meta name="twitter:title" content="Tech - Kafka"><meta name="twitter:card" content="summary"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/github.min.css"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/KaTeX/0.10.2/katex.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 6.1.0"></head><body><div id="stage" class="container"><div class="row"><div id="side-bar" class="col-sm-3 col-xs-12 side-container invisible"><div class="vertical-text site-title"><h3 tabindex="-1" class="site-title-small"><a href="/" class="a-title"></a></h3><h1 tabindex="-1" class="site-title-large"><a href="/" class="a-title">自说自话</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div id="site-nav" class="site-title-links"><ul><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li><li><a href="/categories">Categories</a></li><li><a href="/tags">Tags</a></li><li><a href="/googlebe23cb0bc55fc412.html"></a></li><li><a href="/about/index.html"></a></li><li class="soc"><a href="https://github.com/kleon1024" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa fa-github">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div id="main-container" class="col-sm-9 col-xs-12 main-container invisible"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>Tech - Kafka</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2022-04-29</span><span class="date meta-item">Updated at&nbsp;2022-04-29</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/interview/" title="interview" class="a-tag">interview</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/interview/" title="interview" class="a-tag">interview</a><span>&nbsp;</span><a href="/tags/tech/" title="tech" class="a-tag">tech</a><span>&nbsp;</span></span></p><p class="post-abstract"><p>Q &amp; A of kafka<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>.</p>
 <div class="toc">
 <!-- toc -->
 <ul>
@@ -70,8 +70,8 @@ What are the traditional methods of message transfer? How is Kafka better fr"><m
 </ul>
 <!-- tocstop -->
 </div>
-<h1><a href="#basics" class="header-anchor">#</a><span id="basics">Basics</span></h1>
-<h2><a href="#what-are-some-of-the-features-of-kafka" class="header-anchor">#</a><span id="what-are-some-of-the-features-of-kafka">What are some of the features of Kafka?</span></h2>
+<h1><a href="#basics" class="header-anchor">#</a><span id="basics"> Basics</span></h1>
+<h2><a href="#what-are-some-of-the-features-of-kafka" class="header-anchor">#</a><span id="what-are-some-of-the-features-of-kafka"> What are some of the features of Kafka?</span></h2>
 <ul>
 <li>Kafka is a messaging system built for high throughput and fault tolerance.</li>
 <li>Kafka has a built-in partition system known as a Topic.</li>
@@ -81,7 +81,7 @@ What are the traditional methods of message transfer? How is Kafka better fr"><m
 <li>For coordination and synchronization with other services, Kafka collaborates with Zookeeper.</li>
 <li>Apache Spark is well supported by Kafka.</li>
 </ul>
-<h2><a href="#what-are-the-traditional-methods-of-message-transfer-how-is-kafka-better-from-them" class="header-anchor">#</a><span id="what-are-the-traditional-methods-of-message-transfer-how-is-kafka-better-from-them">What are the traditional methods of message transfer? How is Kafka better from them?</span></h2>
+<h2><a href="#what-are-the-traditional-methods-of-message-transfer-how-is-kafka-better-from-them" class="header-anchor">#</a><span id="what-are-the-traditional-methods-of-message-transfer-how-is-kafka-better-from-them"> What are the traditional methods of message transfer? How is Kafka better from them?</span></h2>
 <p>Following are the traditional methods of message transfer:</p>
 <ul>
 <li>Message Queuing:<br>
@@ -97,7 +97,7 @@ Kafka caters to a single consumer abstraction that encompasses both of the afore
 </ul>
 </li>
 </ul>
-<h2><a href="#what-are-the-major-components-of-kafka" class="header-anchor">#</a><span id="what-are-the-major-components-of-kafka">What are the major components of Kafka?</span></h2>
+<h2><a href="#what-are-the-major-components-of-kafka" class="header-anchor">#</a><span id="what-are-the-major-components-of-kafka"> What are the major components of Kafka?</span></h2>
 <p><img src="/images/kafka_architecture.jpg" alt="kafka structure"></p>
 <ul>
 <li>Topic:
@@ -124,7 +124,7 @@ Kafka caters to a single consumer abstraction that encompasses both of the afore
 </ul>
 </li>
 </ul>
-<h2><a href="#explain-the-four-core-api-architecture-that-kafka-uses" class="header-anchor">#</a><span id="explain-the-four-core-api-architecture-that-kafka-uses">Explain the four core API architecture that Kafka uses.</span></h2>
+<h2><a href="#explain-the-four-core-api-architecture-that-kafka-uses" class="header-anchor">#</a><span id="explain-the-four-core-api-architecture-that-kafka-uses"> Explain the four core API architecture that Kafka uses.</span></h2>
 <p>Following are the four core APIs that Kafka uses:</p>
 <ul>
 <li>Producer API:<br>
@@ -136,33 +136,33 @@ The Kafka Streams API allows an application to use a stream processing architect
 <li>Connect API:<br>
 The Kafka Connector API connects Kafka topics to applications. This opens up possibilities for constructing and managing the operations of producers and consumers, as well as establishing reusable links between these solutions. A connector, for example, may capture all database updates and ensure that they are made available in a Kafka topic.</li>
 </ul>
-<h2><a href="#what-do-you-mean-by-a-partition-in-kafka" class="header-anchor">#</a><span id="what-do-you-mean-by-a-partition-in-kafka">What do you mean by a Partition in Kafka?</span></h2>
+<h2><a href="#what-do-you-mean-by-a-partition-in-kafka" class="header-anchor">#</a><span id="what-do-you-mean-by-a-partition-in-kafka"> What do you mean by a Partition in Kafka?</span></h2>
 <p>Kafka topics are separated into partitions, each of which contains records in a fixed order. A unique offset is assigned and attributed to each record in a partition. Multiple partition logs can be found in a single topic. This allows several users to read from the same topic at the same time. Topics can be parallelized via partitions, which split data into a single topic among numerous brokers.</p>
 <p>Replication in Kafka is done at the partition level. A replica is the redundant element of a topic partition. Each partition often contains one or more replicas, which means that partitions contain messages that are duplicated across many Kafka brokers in the cluster.</p>
 <p>One server serves as the leader of each partition (replica), while the others function as followers. The leader replica is in charge of all read-write requests for the partition, while the followers replicate the leader. If the lead server goes down, one of the followers takes over as the leader. To disperse the burden, we should aim for a good balance of leaders, with each broker leading an equal number of partitions.</p>
-<h2><a href="#what-do-you-mean-by-zookeeper-in-kafka-and-what-are-its-uses" class="header-anchor">#</a><span id="what-do-you-mean-by-zookeeper-in-kafka-and-what-are-its-uses">What do you mean by zookeeper in Kafka and what are its uses?</span></h2>
+<h2><a href="#what-do-you-mean-by-zookeeper-in-kafka-and-what-are-its-uses" class="header-anchor">#</a><span id="what-do-you-mean-by-zookeeper-in-kafka-and-what-are-its-uses"> What do you mean by zookeeper in Kafka and what are its uses?</span></h2>
 <p>Apache ZooKeeper is a naming registry for distributed applications as well as a distributed, open-source configuration and synchronization service. It keeps track of the Kafka cluster nodes’ status, as well as Kafka topics, partitions, and so on.</p>
 <p>ZooKeeper is used by Kafka brokers to maintain and coordinate the Kafka cluster. When the topology of the Kafka cluster changes, such as when brokers and topics are added or removed, ZooKeeper notifies all nodes. When a new broker enters the cluster, for example, ZooKeeper notifies the cluster, as well as when a broker fails. ZooKeeper also allows brokers and topic partition pairs to elect leaders, allowing them to select which broker will be the leader for a given partition (and server read and write operations from producers and consumers), as well as which brokers contain clones of the same data. When the cluster of brokers receives a notification from ZooKeeper, they immediately begin to coordinate with one another and elect any new partition leaders that are required. This safeguards against the unexpected absence of a broker.</p>
-<h2><a href="#can-we-use-kafka-without-zookeeper" class="header-anchor">#</a><span id="can-we-use-kafka-without-zookeeper">Can we use Kafka without Zookeeper?</span></h2>
+<h2><a href="#can-we-use-kafka-without-zookeeper" class="header-anchor">#</a><span id="can-we-use-kafka-without-zookeeper"> Can we use Kafka without Zookeeper?</span></h2>
 <ul>
 <li>Kafka can now be used without ZooKeeper as of version 2.8. The release of Kafka 2.8.0 in April 2021 gave us all the opportunity to try it out without ZooKeeper. However, this version is not yet ready for production and lacks some key features.</li>
 <li>In the previous versions, bypassing Zookeeper and connecting directly to the Kafka broker was not possible. This is because when the Zookeeper is down, it is unable to fulfill client requests.</li>
 </ul>
-<h2><a href="#explain-the-concept-of-leader-and-follower-in-kafka" class="header-anchor">#</a><span id="explain-the-concept-of-leader-and-follower-in-kafka">Explain the concept of Leader and Follower in Kafka.</span></h2>
+<h2><a href="#explain-the-concept-of-leader-and-follower-in-kafka" class="header-anchor">#</a><span id="explain-the-concept-of-leader-and-follower-in-kafka"> Explain the concept of Leader and Follower in Kafka.</span></h2>
 <p>In Kafka, each partition has one server that acts as a Leader and one or more servers that operate as Followers. The Leader is in charge of all read and writes requests for the partition, while the Followers are responsible for passively replicating the leader. In the case that the Leader fails, one of the Followers will assume leadership. The server’s load is balanced as a result of this.</p>
-<h2><a href="#why-is-topic-replication-important-in-kafka-what-do-you-mean-by-isr-in-kafka" class="header-anchor">#</a><span id="why-is-topic-replication-important-in-kafka-what-do-you-mean-by-isr-in-kafka">Why is Topic Replication important in Kafka? What do you mean by ISR in Kafka?</span></h2>
+<h2><a href="#why-is-topic-replication-important-in-kafka-what-do-you-mean-by-isr-in-kafka" class="header-anchor">#</a><span id="why-is-topic-replication-important-in-kafka-what-do-you-mean-by-isr-in-kafka"> Why is Topic Replication important in Kafka? What do you mean by ISR in Kafka?</span></h2>
 <p><img src="/images/Topic_Replication_important_in_Kafka.jpg" alt="topic replication importance"><br>
 Topic replication is critical for constructing Kafka deployments that are both durable and highly available. When one broker fails, topic replicas on other brokers remain available to ensure that data is not lost and that the Kafka deployment is not disrupted. The replication factor specifies the number of copies of a topic that are kept across the Kafka cluster. It takes place at the partition level and is defined at the subject level. A replication factor of two, for example, will keep two copies of a topic for each partition.</p>
 <p>Each partition has an elected leader, and other brokers store a copy that can be used if necessary. Logically, the replication factor cannot be more than the cluster’s total number of brokers. An In-Sync Replica (ISR) is a replica that is up to date with the partition’s leader.</p>
-<h2><a href="#what-do-you-understand-about-a-consumer-group-in-kafka" class="header-anchor">#</a><span id="what-do-you-understand-about-a-consumer-group-in-kafka">What do you understand about a consumer group in Kafka?</span></h2>
+<h2><a href="#what-do-you-understand-about-a-consumer-group-in-kafka" class="header-anchor">#</a><span id="what-do-you-understand-about-a-consumer-group-in-kafka"> What do you understand about a consumer group in Kafka?</span></h2>
 <p>A consumer group in Kafka is a collection of consumers who work together to ingest data from the same topic or range of topics. The name of an application is essentially represented by a consumer group. Consumers in Kafka often fall into one of several categories. The ‘-group’ command must be used to consume messages from a consumer group.</p>
-<h2><a href="#what-is-the-maximum-size-of-a-message-that-kafka-can-receive" class="header-anchor">#</a><span id="what-is-the-maximum-size-of-a-message-that-kafka-can-receive">What is the maximum size of a message that Kafka can receive?</span></h2>
+<h2><a href="#what-is-the-maximum-size-of-a-message-that-kafka-can-receive" class="header-anchor">#</a><span id="what-is-the-maximum-size-of-a-message-that-kafka-can-receive"> What is the maximum size of a message that Kafka can receive?</span></h2>
 <p>By default, the maximum size of a Kafka message is 1MB (megabyte). The broker settings allow you to modify the size. Kafka, on the other hand, is designed to handle 1KB messages as well.</p>
-<h2><a href="#what-does-it-mean-if-a-replica-is-not-an-in-sync-replica-for-a-long-time" class="header-anchor">#</a><span id="what-does-it-mean-if-a-replica-is-not-an-in-sync-replica-for-a-long-time">What does it mean if a replica is not an In-Sync Replica for a long time?</span></h2>
+<h2><a href="#what-does-it-mean-if-a-replica-is-not-an-in-sync-replica-for-a-long-time" class="header-anchor">#</a><span id="what-does-it-mean-if-a-replica-is-not-an-in-sync-replica-for-a-long-time"> What does it mean if a replica is not an In-Sync Replica for a long time?</span></h2>
 <p>A replica that has been out of ISR for a long period of time indicates that the follower is unable to fetch data at the same rate as the leader.</p>
-<h2><a href="#what-do-you-mean-by-geo-replication-in-kafka" class="header-anchor">#</a><span id="what-do-you-mean-by-geo-replication-in-kafka">What do you mean by geo-replication in Kafka?</span></h2>
+<h2><a href="#what-do-you-mean-by-geo-replication-in-kafka" class="header-anchor">#</a><span id="what-do-you-mean-by-geo-replication-in-kafka"> What do you mean by geo-replication in Kafka?</span></h2>
 <p>Geo-Replication is a Kafka feature that allows messages in one cluster to be copied across many data centers or cloud regions. Geo-replication entails replicating all of the files and storing them throughout the globe if necessary. Geo-replication can be accomplished with Kafka’s MirrorMaker Tool. Geo-replication is a technique for ensuring data backup.</p>
-<h2><a href="#what-are-some-of-the-disadvantages-of-kafka" class="header-anchor">#</a><span id="what-are-some-of-the-disadvantages-of-kafka">What are some of the disadvantages of Kafka?</span></h2>
+<h2><a href="#what-are-some-of-the-disadvantages-of-kafka" class="header-anchor">#</a><span id="what-are-some-of-the-disadvantages-of-kafka"> What are some of the disadvantages of Kafka?</span></h2>
 <p>Following are the disadvantages of Kafka :</p>
 <ul>
 <li>Kafka performance degrades if there is message tweaking. When the message does not need to be updated, Kafka works well.</li>
@@ -171,7 +171,7 @@ Topic replication is critical for constructing Kafka deployments that are both d
 <li>Certain message paradigms, including point-to-point queues and request/reply, are not supported by Kafka.</li>
 <li>Kafka does not have a complete set of monitoring tools.</li>
 </ul>
-<h2><a href="#tell-me-about-some-of-the-real-world-usages-of-apache-kafka" class="header-anchor">#</a><span id="tell-me-about-some-of-the-real-world-usages-of-apache-kafka">Tell me about some of the real-world usages of Apache Kafka.</span></h2>
+<h2><a href="#tell-me-about-some-of-the-real-world-usages-of-apache-kafka" class="header-anchor">#</a><span id="tell-me-about-some-of-the-real-world-usages-of-apache-kafka"> Tell me about some of the real-world usages of Apache Kafka.</span></h2>
 <ul>
 <li>As a Message Broker: Due to its high throughput value, Kafka is capable of managing a huge amount of comparable types of messages or data. Kafka can be used as a publish-subscribe messaging system that allows data to be read and published in a convenient manner.</li>
 <li>To Monitor operational data: Kafka can be used to keep track of metrics related to certain technologies, such as security logs.</li>
@@ -179,25 +179,25 @@ Topic replication is critical for constructing Kafka deployments that are both d
 <li>Data logging: Kafka’s data replication between nodes functionality can be used to restore data on nodes that have failed. Kafka may also be used to collect data from a variety of logs and make it available to consumers.</li>
 <li>Stream Processing with Kafka: Kafka may be used to handle streaming data, which is data that is read from one topic, processed, and then written to another. Users and applications will have access to a new topic containing the processed data.</li>
 </ul>
-<h2><a href="#what-are-the-use-cases-of-kafka-monitoring" class="header-anchor">#</a><span id="what-are-the-use-cases-of-kafka-monitoring">What are the use cases of Kafka monitoring?</span></h2>
+<h2><a href="#what-are-the-use-cases-of-kafka-monitoring" class="header-anchor">#</a><span id="what-are-the-use-cases-of-kafka-monitoring"> What are the use cases of Kafka monitoring?</span></h2>
 <ul>
 <li>Track System Resource Consumption: It can be used to keep track of system resources such as memory, CPU, and disk utilization over time.</li>
 <li>Monitor threads and JVM usage: Kafka relies on the Java garbage collector to free up memory, ensuring that it runs frequently thereby guaranteeing that the Kafka cluster is more active.</li>
 <li>Keep an eye on the broker, controller, and replication statistics so that the statuses of partitions and replicas can be modified as needed.</li>
 <li>Finding out which applications are causing excessive demand and identifying performance bottlenecks might help solve performance issues rapidly.</li>
 </ul>
-<h2><a href="#what-do-you-mean-by-kafka-schema-registry" class="header-anchor">#</a><span id="what-do-you-mean-by-kafka-schema-registry">What do you mean by Kafka schema registry?</span></h2>
+<h2><a href="#what-do-you-mean-by-kafka-schema-registry" class="header-anchor">#</a><span id="what-do-you-mean-by-kafka-schema-registry"> What do you mean by Kafka schema registry?</span></h2>
 <p>A Schema Registry is present for both producers and consumers in a Kafka cluster, and it holds Avro schemas. For easy serialization and de-serialization, Avro schemas enable the configuration of compatibility parameters between producers and consumers. The Kafka Schema Registry is used to ensure that the schema used by the consumer and the schema used by the producer are identical. The producers just need to submit the schema ID and not the whole schema when using the Confluent schema registry in Kafka. The consumer looks up the matching schema in the Schema Registry using the schema ID.</p>
-<h2><a href="#what-are-the-benefits-of-using-clusters-in-kafka" class="header-anchor">#</a><span id="what-are-the-benefits-of-using-clusters-in-kafka">What are the benefits of using clusters in Kafka?</span></h2>
+<h2><a href="#what-are-the-benefits-of-using-clusters-in-kafka" class="header-anchor">#</a><span id="what-are-the-benefits-of-using-clusters-in-kafka"> What are the benefits of using clusters in Kafka?</span></h2>
 <p>Kafka cluster is basically a group of multiple brokers. They are used to maintain load balance. Because Kafka brokers are stateless, they rely on Zookeeper to keep track of their cluster state. A single Kafka broker instance can manage hundreds of thousands of reads and writes per second, and each broker can handle TBs of messages without compromising performance. Zookeeper can be used to choose the Kafka broker leader. Thus having a cluster of Kafka brokers heavily increases the performance.</p>
-<h2><a href="#describe-partitioning-key-in-kafka" class="header-anchor">#</a><span id="describe-partitioning-key-in-kafka">Describe partitioning key in Kafka.</span></h2>
+<h2><a href="#describe-partitioning-key-in-kafka" class="header-anchor">#</a><span id="describe-partitioning-key-in-kafka"> Describe partitioning key in Kafka.</span></h2>
 <p>In Kafka terminology, messages are referred to as records. Each record has a key and a value, with the key being optional. For record partitioning, the record’s key is used. There will be one or more partitions for each topic. Partitioning is a straightforward data structure. It’s the append-only sequence of records, which is arranged chronologically by the time they were attached. Once a record is written to a partition, it is given an offset – a sequential id that reflects the record’s position in the partition and uniquely identifies it inside it.<br>
 Partitioning is done using the record’s key. By default, Kafka producer uses the record’s key to determine which partition the record should be written to. The producer will always choose the same partition for two records with the same key.<br>
 This is important because we may have to deliver records to customers in the same order that they were made. You want these events to come in the order they were created when a consumer purchases an eBook from your webshop and subsequently cancels the transaction. If you receive a cancellation event before a buy event, the cancellation will be rejected as invalid (since the purchase has not yet been registered in the system), and the system will then record the purchase and send the product to the client (and lose you money). You might use a customer id as the key of these Kafka records to solve this problem and assure ordering. This will ensure that all of a customer’s purchase events are grouped together in the same partition.</p>
-<h2><a href="#what-is-the-purpose-of-partitions-in-kafka" class="header-anchor">#</a><span id="what-is-the-purpose-of-partitions-in-kafka">What is the purpose of partitions in Kafka?</span></h2>
+<h2><a href="#what-is-the-purpose-of-partitions-in-kafka" class="header-anchor">#</a><span id="what-is-the-purpose-of-partitions-in-kafka"> What is the purpose of partitions in Kafka?</span></h2>
 <p>Partitions allow a single topic to be partitioned across numerous servers from the perspective of the Kafka broker. This allows you to store more data in a single topic than a single server can. If you have three brokers and need to store 10TB of data in a topic, one option is to construct a topic with only one partition and store all 10TB on one broker. Another alternative is to build a three-partitioned topic and distribute 10 TB of data among all brokers. A partition is a unit of parallelism from the consumer’s perspective.</p>
-<h1><a href="#dive-deep" class="header-anchor">#</a><span id="dive-deep">Dive Deep</span></h1>
-<h2><a href="#why-is-kafka-so-fast" class="header-anchor">#</a><span id="why-is-kafka-so-fast">Why is Kafka so fast?</span></h2>
+<h1><a href="#dive-deep" class="header-anchor">#</a><span id="dive-deep"> Dive Deep</span></h1>
+<h2><a href="#why-is-kafka-so-fast" class="header-anchor">#</a><span id="why-is-kafka-so-fast"> Why is Kafka so fast?</span></h2>
 <p>6 reasons<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>:</p>
 <ul>
 <li>Multiple partitions. Data is processed in parallel.</li>
@@ -215,9 +215,9 @@ Using mmap to avoid the copy between the kernel and the user space.</li>
 <li>Batch processing.</li>
 <li>Data compressing. Supported compression algorithms includes: Snappy、Gzip、LZ4.</li>
 </ul>
-<h2><a href="#what-do-you-mean-by-multi-tenancy-in-kafka" class="header-anchor">#</a><span id="what-do-you-mean-by-multi-tenancy-in-kafka">What do you mean by multi-tenancy in Kafka?</span></h2>
+<h2><a href="#what-do-you-mean-by-multi-tenancy-in-kafka" class="header-anchor">#</a><span id="what-do-you-mean-by-multi-tenancy-in-kafka"> What do you mean by multi-tenancy in Kafka?</span></h2>
 <p>Multi-tenancy is a software operation mode in which many instances of one or more programs operate in a shared environment independently of one another. The instances are considered to be physically separate yet logically connected. The level of logical isolation in a system that supports multi-tenancy must be comprehensive, but the level of physical integration can vary. Kafka is multi-tenant because it allows for the configuration of many topics for data consumption and production on the same cluster.</p>
-<h2><a href="#what-is-a-replication-tool-in-kafka-explain-some-of-the-replication-tools-available-in-kafka" class="header-anchor">#</a><span id="what-is-a-replication-tool-in-kafka-explain-some-of-the-replication-tools-available-in-kafka">What is a Replication Tool in Kafka? Explain some of the replication tools available in Kafka.</span></h2>
+<h2><a href="#what-is-a-replication-tool-in-kafka-explain-some-of-the-replication-tools-available-in-kafka" class="header-anchor">#</a><span id="what-is-a-replication-tool-in-kafka-explain-some-of-the-replication-tools-available-in-kafka"> What is a Replication Tool in Kafka? Explain some of the replication tools available in Kafka.</span></h2>
 <p>The Kafka Replication Tool is used to create a high-level design for the replica maintenance process. The following are some of the replication tools available:</p>
 <ul>
 <li>Preferred Replica Leader Election Tool: Partitions are spread to many brokers in a cluster, each copy known as a replica, using the Preferred Replica Leader Election Tool. The leader is frequently referred to as the favored replica. The brokers normally spread the leader position equitably across the cluster for various partitions, but owing to failures, planned shutdowns, and other factors, an imbalance can develop over time. This tool can be used to preserve the balance in these situations by reassigning the preferred replicas, and hence the leaders.</li>
@@ -234,7 +234,7 @@ Using mmap to avoid the copy between the kernel and the user space.</li>
 <li>StateChangeLogMerger tool: The StateChangeLogMerger tool collects data from brokers in a cluster, formats it into a central log, and aids in the troubleshooting of state change issues. Sometimes there are issues with the election of a leader for a particular partition. This tool can be used to figure out what’s causing the issue.</li>
 <li>Change topic configuration tool: used to create new configuration choices, modify current configuration options, and delete configuration options.</li>
 </ul>
-<h2><a href="#differentiate-between-rabbitmq-and-kafka" class="header-anchor">#</a><span id="differentiate-between-rabbitmq-and-kafka">Differentiate between Rabbitmq and Kafka.</span></h2>
+<h2><a href="#differentiate-between-rabbitmq-and-kafka" class="header-anchor">#</a><span id="differentiate-between-rabbitmq-and-kafka"> Differentiate between Rabbitmq and Kafka.</span></h2>
 <p><em><strong>Based on Architecture:</strong></em><br>
 <strong>Rabbitmq:</strong></p>
 <ul>
@@ -294,7 +294,7 @@ Because of Kafka’s partitions, a pull model makes sense. In a partition with n
 <li>Kafka: Compared to message brokers like RabbitMQ, Kafka provides significantly better performance. It boosts performance by using sequential disc I/O, making it a good choice for queue implementation. With limited resources, it can achieve high throughput (millions of messages per second), which is essential for large data use cases.</li>
 <li>Rabbitmq: RabbitMQ can also handle a million messages per second, but it does so at the expense of more resources (around 30 nodes). RabbitMQ can be used for many of the same applications as Kafka, however, it must be used in conjunction with other technologies such as Apache Cassandra.</li>
 </ul>
-<h2><a href="#what-are-the-parameters-that-you-should-look-for-while-optimising-kafka-for-optimal-performance" class="header-anchor">#</a><span id="what-are-the-parameters-that-you-should-look-for-while-optimising-kafka-for-optimal-performance">What are the parameters that you should look for while optimising kafka for optimal performance?</span></h2>
+<h2><a href="#what-are-the-parameters-that-you-should-look-for-while-optimising-kafka-for-optimal-performance" class="header-anchor">#</a><span id="what-are-the-parameters-that-you-should-look-for-while-optimising-kafka-for-optimal-performance"> What are the parameters that you should look for while optimising kafka for optimal performance?</span></h2>
 <p>Two major measurements are taken into account while tuning for optimal performance: latency measures, which relate to the amount of time it takes to process one event, and throughput measures, which refer to the number of events that can be processed in a given length of time. Most systems are tuned for one of two things: delay or throughput, whereas Kafka can do both.</p>
 <p>The following stages are involved in optimizing Kafka’s performance:</p>
 <ul>
@@ -302,7 +302,7 @@ Because of Kafka’s partitions, a pull model makes sense. In a partition with n
 <li>Tuning the Kafka broker: Each partition in a topic has a leader, and each leader has 0 or more followers. It’s critical that the leaders are appropriately balanced, and that some nodes aren’t overworked in comparison to others.</li>
 <li>Tuning Kafka Consumers: To ensure that consumers keep up with producers, the number of partitions for a topic should be equal to the number of consumers. The divisions are divided among the consumers in the same consumer group.</li>
 </ul>
-<h2><a href="#differentiate-between-redis-and-kafka" class="header-anchor">#</a><span id="differentiate-between-redis-and-kafka">Differentiate between Redis and Kafka.</span></h2>
+<h2><a href="#differentiate-between-redis-and-kafka" class="header-anchor">#</a><span id="differentiate-between-redis-and-kafka"> Differentiate between Redis and Kafka.</span></h2>
 <table>
 <thead>
 <tr>
@@ -333,13 +333,13 @@ Because of Kafka’s partitions, a pull model makes sense. In a partition with n
 </tr>
 </tbody>
 </table>
-<h2><a href="#describe-in-what-ways-kafka-enforces-security" class="header-anchor">#</a><span id="describe-in-what-ways-kafka-enforces-security">Describe in what ways Kafka enforces security.</span></h2>
+<h2><a href="#describe-in-what-ways-kafka-enforces-security" class="header-anchor">#</a><span id="describe-in-what-ways-kafka-enforces-security"> Describe in what ways Kafka enforces security.</span></h2>
 <ul>
 <li>Encryption: All communications sent between the Kafka broker and its many clients are encrypted. This prevents data from being intercepted by other clients. All messages are shared in an encrypted format between the components.</li>
 <li>Authentication: Before being able to connect to Kafka, apps that use the Kafka broker must be authenticated. Only approved applications will be able to send or receive messages. To identify themselves, authorized applications will have unique ids and passwords.</li>
 <li>After authentication, authorization is carried out. It is possible for a client to publish or consume messages once it has been validated. The permission ensures that write access to apps can be restricted to prevent data contamination.</li>
 </ul>
-<h2><a href="#differentiate-between-kafka-and-java-messaging-service-jms" class="header-anchor">#</a><span id="differentiate-between-kafka-and-java-messaging-service-jms">Differentiate between Kafka and Java Messaging Service(JMS).</span></h2>
+<h2><a href="#differentiate-between-kafka-and-java-messaging-service-jms" class="header-anchor">#</a><span id="differentiate-between-kafka-and-java-messaging-service-jms"> Differentiate between Kafka and Java Messaging Service(JMS).</span></h2>
 <table>
 <thead>
 <tr>
@@ -366,9 +366,9 @@ Because of Kafka’s partitions, a pull model makes sense. In a partition with n
 </tr>
 </tbody>
 </table>
-<h2><a href="#what-do-you-understand-about-kafka-mirrormaker" class="header-anchor">#</a><span id="what-do-you-understand-about-kafka-mirrormaker">What do you understand about Kafka MirrorMaker?</span></h2>
+<h2><a href="#what-do-you-understand-about-kafka-mirrormaker" class="header-anchor">#</a><span id="what-do-you-understand-about-kafka-mirrormaker"> What do you understand about Kafka MirrorMaker?</span></h2>
 <p>The MirrorMaker is a standalone utility for copying data from one Apache Kafka cluster to another. The MirrorMaker reads data from original cluster topics and writes it to a destination cluster with the same topic name. The source and destination clusters are separate entities that can have various partition counts and offset values.</p>
-<h2><a href="#differentiate-between-kafka-and-flume" class="header-anchor">#</a><span id="differentiate-between-kafka-and-flume">Differentiate between Kafka and Flume.</span></h2>
+<h2><a href="#differentiate-between-kafka-and-flume" class="header-anchor">#</a><span id="differentiate-between-kafka-and-flume"> Differentiate between Kafka and Flume.</span></h2>
 <p>Apache Flume is a dependable, distributed, and available software for aggregating, collecting, and transporting massive amounts of log data quickly and efficiently. Its architecture is versatile and simple, based on streaming data flows. It’s written in the Java programming language. It features its own query processing engine, allowing it to alter each fresh batch of data before sending it to its intended sink. It is designed to be adaptable.</p>
 <table>
 <thead>
@@ -408,7 +408,7 @@ Because of Kafka’s partitions, a pull model makes sense. In a partition with n
 </tr>
 </tbody>
 </table>
-<h2><a href="#what-do-you-mean-by-confluent-kafka-what-are-its-advantages" class="header-anchor">#</a><span id="what-do-you-mean-by-confluent-kafka-what-are-its-advantages">What do you mean by confluent kafka? What are its advantages?</span></h2>
+<h2><a href="#what-do-you-mean-by-confluent-kafka-what-are-its-advantages" class="header-anchor">#</a><span id="what-do-you-mean-by-confluent-kafka-what-are-its-advantages"> What do you mean by confluent kafka? What are its advantages?</span></h2>
 <p>Confluent is an Apache Kafka-based data streaming platform: a full-scale streaming platform capable of not just publish-and-subscribe but also data storage and processing within the stream. Confluent Kafka is a more comprehensive Apache Kafka distribution. It enhances Kafka’s integration capabilities by including tools for optimizing and managing Kafka clusters, as well as ways for ensuring the streams’ security. Kafka is easy to construct and operate because of the Confluent Platform. Confluent’s software comes in three varieties:</p>
 <ul>
 <li>A free, open-source streaming platform that makes it simple to get started with real-time data streams;</li>
@@ -421,7 +421,7 @@ Because of Kafka’s partitions, a pull model makes sense. In a partition with n
 <li>It greatly simplifies the administrative operations procedures.</li>
 <li>It relieves data managers of the burden of thinking about data relaying.</li>
 </ul>
-<h2><a href="#describe-message-compression-in-kafka-what-is-the-need-of-message-compression-in-kafka-also-mention-if-there-are-any-disadvantages-of-it" class="header-anchor">#</a><span id="describe-message-compression-in-kafka-what-is-the-need-of-message-compression-in-kafka-also-mention-if-there-are-any-disadvantages-of-it">Describe message compression in Kafka. What is the need of message compression in Kafka? Also mention if there are any disadvantages of it.</span></h2>
+<h2><a href="#describe-message-compression-in-kafka-what-is-the-need-of-message-compression-in-kafka-also-mention-if-there-are-any-disadvantages-of-it" class="header-anchor">#</a><span id="describe-message-compression-in-kafka-what-is-the-need-of-message-compression-in-kafka-also-mention-if-there-are-any-disadvantages-of-it"> Describe message compression in Kafka. What is the need of message compression in Kafka? Also mention if there are any disadvantages of it.</span></h2>
 <p>Producers transmit data to brokers in JSON format in Kafka. The JSON format stores data in string form, which can result in several duplicate records being stored in the Kafka topic. As a result, the amount of disc space used increases. As a result, before delivering messages to Kafka, compression or delaying of data is performed to save disk space. Because message compression is performed on the producer side, no changes to the consumer or broker setup are required.</p>
 <p>It is advantageous because of the following factors:</p>
 <ul>
@@ -436,7 +436,7 @@ Because of Kafka’s partitions, a pull model makes sense. In a partition with n
 <li>Decompression takes up several CPU cycles for consumers.</li>
 <li>Compression and decompression place a higher burden on the CPU.</li>
 </ul>
-<h2><a href="#tell-me-about-some-of-the-use-cases-where-kafka-is-not-suitable" class="header-anchor">#</a><span id="tell-me-about-some-of-the-use-cases-where-kafka-is-not-suitable">Tell me about some of the use cases where Kafka is not suitable.</span></h2>
+<h2><a href="#tell-me-about-some-of-the-use-cases-where-kafka-is-not-suitable" class="header-anchor">#</a><span id="tell-me-about-some-of-the-use-cases-where-kafka-is-not-suitable"> Tell me about some of the use cases where Kafka is not suitable.</span></h2>
 <p>Following are some of the use cases where Kafka is not suitable :</p>
 <ul>
 <li>Kafka is designed to manage large amounts of data. Traditional messaging systems would be more appropriate if only a small number of messages need to be processed every day.</li>
@@ -444,18 +444,18 @@ Because of Kafka’s partitions, a pull model makes sense. In a partition with n
 <li>There are superior options, such as RabbitMQ, for scenarios when a simple task queue is required.</li>
 <li>If long-term storage is necessary, Kafka is not a good choice. It simply allows you to save data for a specific retention period and no longer.</li>
 </ul>
-<h2><a href="#what-do-you-understand-about-log-compaction-and-quotas-in-kafka" class="header-anchor">#</a><span id="what-do-you-understand-about-log-compaction-and-quotas-in-kafka">What do you understand about log compaction and quotas in Kafka?</span></h2>
+<h2><a href="#what-do-you-understand-about-log-compaction-and-quotas-in-kafka" class="header-anchor">#</a><span id="what-do-you-understand-about-log-compaction-and-quotas-in-kafka"> What do you understand about log compaction and quotas in Kafka?</span></h2>
 <p>Log compaction is a way through which Kafka assures that for each topic partition, at least the last known value for each message key within the log of data is kept. This allows for the restoration of state following an application crash or a system failure. During any operational maintenance, it allows refreshing caches after an application restarts. Any consumer processing the log from the beginning will be able to see at least the final state of all records in the order in which they were written, because of the log compaction.<br>
 <img src="/images/log_compaction_in_Kafka.jpg" alt="log_compaction"><br>
 A Kafka cluster can apply quotas on producers and fetch requests as of Kafka 0.9. Quotas are byte-rate limits that are set for each client-id. A client-id is a logical identifier for a request-making application. A single client-id can therefore link to numerous producers and client instances. The quota will be applied to them all as a single unit. Quotas prevent a single application from monopolizing broker resources and causing network saturation by consuming extremely large amounts of data.<br>
 <img src="/images/quotas_in_Kafka.jpg" alt="kafka_quota"></p>
-<h2><a href="#what-are-the-guarantees-that-kafka-provides" class="header-anchor">#</a><span id="what-are-the-guarantees-that-kafka-provides">What are the guarantees that Kafka provides?</span></h2>
+<h2><a href="#what-are-the-guarantees-that-kafka-provides" class="header-anchor">#</a><span id="what-are-the-guarantees-that-kafka-provides"> What are the guarantees that Kafka provides?</span></h2>
 <ul>
 <li>The messages are displayed in the same order as they were published by the producers. The order of the messages is maintained.</li>
 <li>The replication factor determines the number of replicas. If the replication factor is n, the Kafka cluster has fault tolerance for up to n-1 servers.</li>
 <li>Per partition, Kafka can provide “at least one” delivery semantics. This means that if a partition is given numerous times, Kafka assures that it will reach a customer at least once.</li>
 </ul>
-<h2><a href="#what-do-you-mean-by-an-unbalanced-cluster-in-kafka-how-can-you-balance-it" class="header-anchor">#</a><span id="what-do-you-mean-by-an-unbalanced-cluster-in-kafka-how-can-you-balance-it">What do you mean by an unbalanced cluster in Kafka? How can you balance it?</span></h2>
+<h2><a href="#what-do-you-mean-by-an-unbalanced-cluster-in-kafka-how-can-you-balance-it" class="header-anchor">#</a><span id="what-do-you-mean-by-an-unbalanced-cluster-in-kafka-how-can-you-balance-it"> What do you mean by an unbalanced cluster in Kafka? How can you balance it?</span></h2>
 <p>It’s as simple as assigning a unique broker id, listeners, and log directory to the server.properties file to add new brokers to an existing Kafka cluster. However, these brokers will not be allocated any data partitions from the cluster’s existing topics, so they won’t be performing much work unless the partitions are moved or new topics are formed. A cluster is referred to as unbalanced if it has any of the following problems :</p>
 <p><strong>Leader Skew:</strong></p>
 <p>Consider the following scenario: a topic with three partitions and a replication factor of three across three brokers.</p>
@@ -479,36 +479,36 @@ When <a target="_blank" rel="noopener" href="http://Kafka-preferred-replica-elec
 <li>To update the metadata for balancing, run the partition reassignment tool.</li>
 <li>Run the “<a target="_blank" rel="noopener" href="http://Kafka-preferred-replica-election.sh">Kafka-preferred-replica-election.sh</a>” tool to complete the balancing after the partition reassignment is complete.</li>
 </ul>
-<h2><a href="#how-will-you-expand-a-cluster-in-kafka" class="header-anchor">#</a><span id="how-will-you-expand-a-cluster-in-kafka">How will you expand a cluster in Kafka?</span></h2>
+<h2><a href="#how-will-you-expand-a-cluster-in-kafka" class="header-anchor">#</a><span id="how-will-you-expand-a-cluster-in-kafka"> How will you expand a cluster in Kafka?</span></h2>
 <p>To add a server to a Kafka cluster, it only needs to be given a unique broker id and Kafka must be started on that server. However, until a new topic is created, a new server will not be given any of the data partitions. As a result, when a new machine is introduced to the cluster, some existing data must be migrated to these new machines. To relocate some partitions to the new broker, we use the partition reassignment tool. Kafka will make the new server a follower of the partition it is migrating to, allowing it to replicate the data on that partition completely. When all of the data has been duplicated, the new server can join the ISR, and one of the current replicas will erase the data it has for that partition.</p>
-<h2><a href="#what-do-you-mean-by-graceful-shutdown-in-kafka" class="header-anchor">#</a><span id="what-do-you-mean-by-graceful-shutdown-in-kafka">What do you mean by graceful shutdown in Kafka?</span></h2>
+<h2><a href="#what-do-you-mean-by-graceful-shutdown-in-kafka" class="header-anchor">#</a><span id="what-do-you-mean-by-graceful-shutdown-in-kafka"> What do you mean by graceful shutdown in Kafka?</span></h2>
 <p>The Apache cluster will automatically identify any broker shutdown or failure. In this instance, new leaders for partitions previously handled by that device will be chosen. This can happen as a result of a server failure or even if it is shut down for maintenance or configuration changes. When a server is taken down on purpose, Kafka provides a graceful method for terminating the server rather than killing it.</p>
 <p>When a server is switched off:</p>
 <ul>
 <li>To prevent having to undertake any log recovery when Kafka is restarted, it ensures that all of its logs are synced onto a disk. Because log recovery takes time, purposeful restarts can be sped up.</li>
 <li>Prior to shutting down, all partitions for which the server is the leader will be moved to the replicas. The leadership transfer will be faster as a result, and the period each partition is inaccessible will be decreased to a few milliseconds.</li>
 </ul>
-<h2><a href="#can-the-number-of-partitions-for-a-topic-be-changed-in-kafka" class="header-anchor">#</a><span id="can-the-number-of-partitions-for-a-topic-be-changed-in-kafka">Can the number of partitions for a topic be changed in Kafka?</span></h2>
+<h2><a href="#can-the-number-of-partitions-for-a-topic-be-changed-in-kafka" class="header-anchor">#</a><span id="can-the-number-of-partitions-for-a-topic-be-changed-in-kafka"> Can the number of partitions for a topic be changed in Kafka?</span></h2>
 <p>Currently, Kafka does not allow you to reduce the number of partitions for a topic. The partitions can be expanded but not shrunk. The alter command in Apache Kafka allows you to change the behavior of a topic and its associated configurations. To add extra partitions, use the alter command.</p>
 <p>To increase the number of partitions to five, use the following command:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">./bin/kafka-topics.sh --alter --zookeeper localhost:2181 --topic sample-topic --partitions 5<br></code></pre></td></tr></table></figure>
-<h2><a href="#what-do-you-mean-by-bufferexhaustedexception-and-outofmemoryexception-in-kafka" class="header-anchor">#</a><span id="what-do-you-mean-by-bufferexhaustedexception-and-outofmemoryexception-in-kafka">What do you mean by BufferExhaustedException and OutOfMemoryException in Kafka?</span></h2>
+<h2><a href="#what-do-you-mean-by-bufferexhaustedexception-and-outofmemoryexception-in-kafka" class="header-anchor">#</a><span id="what-do-you-mean-by-bufferexhaustedexception-and-outofmemoryexception-in-kafka"> What do you mean by BufferExhaustedException and OutOfMemoryException in Kafka?</span></h2>
 <p>When the producer can’t assign memory to a record because the buffer is full, a BufferExhaustedException is thrown. If the producer is in non-blocking mode, and the rate of production exceeds the rate at which data is transferred from the buffer for long enough, the allocated buffer will be depleted, the exception will be thrown.</p>
 <p>If the consumers are sending huge messages or if there is a spike in the number of messages sent at a rate quicker than the rate of downstream processing, an OutOfMemoryException may arise. As a result, the message queue fills up, consuming memory space.</p>
-<h2><a href="#how-will-you-change-the-retention-time-in-kafka-at-runtime" class="header-anchor">#</a><span id="how-will-you-change-the-retention-time-in-kafka-at-runtime">How will you change the retention time in Kafka at runtime?</span></h2>
+<h2><a href="#how-will-you-change-the-retention-time-in-kafka-at-runtime" class="header-anchor">#</a><span id="how-will-you-change-the-retention-time-in-kafka-at-runtime"> How will you change the retention time in Kafka at runtime?</span></h2>
 <p>A topic’s retention time can be configured in Kafka. A topic’s default retention time is seven days. While creating a new subject, we can set the retention time. When a topic is generated, the broker’s property log.retention.hours are used to set the retention time. When configurations for a currently operating topic need to be modified, <a target="_blank" rel="noopener" href="http://kafka-topic.sh">kafka-topic.sh</a> must be used.</p>
 <p>The right command is determined on the Kafka version in use.</p>
 <ul>
 <li>The command to use up to 0.8.2 is <a target="_blank" rel="noopener" href="http://kafka-topics.sh">kafka-topics.sh</a> --alter.</li>
 <li>Use <a target="_blank" rel="noopener" href="http://kafka-configs.sh">kafka-configs.sh</a> --alter starting with version 0.9.0.</li>
 </ul>
-<h2><a href="#differentiate-between-kafka-streams-and-spark-streaming" class="header-anchor">#</a><span id="differentiate-between-kafka-streams-and-spark-streaming">Differentiate between Kafka streams and Spark Streaming.</span></h2>
+<h2><a href="#differentiate-between-kafka-streams-and-spark-streaming" class="header-anchor">#</a><span id="differentiate-between-kafka-streams-and-spark-streaming"> Differentiate between Kafka streams and Spark Streaming.</span></h2>
 <p>| Kafka Streams	| Spark Streaming |<br>
 | Kafka is fault-tolerant because of partitions and their replicas.	| Using Cache and RDD (Resilient Distributed Dataset), Spark can restore partitions. |<br>
 | It is only capable of handling real-time streams	| It is capable of handling both real-time and batch tasks. |<br>
 | Messages in the Kafka log are persistent.	| To keep the data durable, you’ll need to utilize a dataframe or another data structure. |<br>
 | There are no interactive modes in Kafka. | The data from the producer is simply consumed by the broker, who then waits for the client to read it.	Interactive modes are available. |</p>
-<h2><a href="#what-are-znodes-in-kafka-zookeeper-how-many-types-of-znodes-are-there" class="header-anchor">#</a><span id="what-are-znodes-in-kafka-zookeeper-how-many-types-of-znodes-are-there">What are Znodes in Kafka Zookeeper? How many types of Znodes are there?</span></h2>
+<h2><a href="#what-are-znodes-in-kafka-zookeeper-how-many-types-of-znodes-are-there" class="header-anchor">#</a><span id="what-are-znodes-in-kafka-zookeeper-how-many-types-of-znodes-are-there"> What are Znodes in Kafka Zookeeper? How many types of Znodes are there?</span></h2>
 <p>The nodes in a ZooKeeper tree are called znodes. Version numbers for data modifications, ACL changes, and timestamps are kept by Znodes in a structure. ZooKeeper uses the version number and timestamp to verify the cache and guarantee that updates are coordinated. Each time the data on Znode changes, the version number connected with it grows.</p>
 <p>There are three different types of Znodes:</p>
 <ul>

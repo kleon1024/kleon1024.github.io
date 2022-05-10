@@ -2,24 +2,24 @@
 
 https://github.com/lifei6671/interview-go
 https://segmentfault.com/a/1190000038922260
-#Context
-golang context的理解，context主要用于父子任务之间的同步取消信号，本质上是一种"><meta name="og:description" content="基础问题
+# Context
+golang context的理解，context主要用于父子任务之间的同步取消信号，本质上是一"><meta name="og:description" content="基础问题
 
 https://github.com/lifei6671/interview-go
 https://segmentfault.com/a/1190000038922260
-#Context
-golang context的理解，context主要用于父子任务之间的同步取消信号，本质上是一种"><meta name="twitter:site" content="KLEON"><meta name="twitter:title" content="烤面筋 - Go"><meta name="twitter:card" content="summary"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/github.min.css"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 6.1.0"></head><body><div id="stage" class="container"><div class="row"><div id="side-bar" class="col-sm-3 col-xs-12 side-container invisible"><div class="vertical-text site-title"><h3 tabindex="-1" class="site-title-small"><a href="/" class="a-title"></a></h3><h1 tabindex="-1" class="site-title-large"><a href="/" class="a-title">自说自话</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div id="site-nav" class="site-title-links"><ul><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li><li><a href="/categories">Categories</a></li><li><a href="/tags">Tags</a></li><li><a href="/googlebe23cb0bc55fc412.html"></a></li><li><a href="/about/index.html"></a></li><li class="soc"><a href="https://github.com/kleon1024" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa fa-github">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div id="main-container" class="col-sm-9 col-xs-12 main-container invisible"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>烤面筋 - Go</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-04-26</span><span class="date meta-item">Updated at&nbsp;2021-05-19</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/面筋/" title="面筋" class="a-tag">面筋</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/面筋/" title="面筋" class="a-tag">面筋</a><span>&nbsp;</span></span></p><p class="post-abstract"><p>基础问题</p>
+# Context
+golang context的理解，context主要用于父子任务之间的同步取消信号，本质上是一"><meta name="twitter:site" content="KLEON"><meta name="twitter:title" content="烤面筋 - Go"><meta name="twitter:card" content="summary"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/github.min.css"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/KaTeX/0.10.2/katex.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 6.1.0"></head><body><div id="stage" class="container"><div class="row"><div id="side-bar" class="col-sm-3 col-xs-12 side-container invisible"><div class="vertical-text site-title"><h3 tabindex="-1" class="site-title-small"><a href="/" class="a-title"></a></h3><h1 tabindex="-1" class="site-title-large"><a href="/" class="a-title">自说自话</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div id="site-nav" class="site-title-links"><ul><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li><li><a href="/categories">Categories</a></li><li><a href="/tags">Tags</a></li><li><a href="/googlebe23cb0bc55fc412.html"></a></li><li><a href="/about/index.html"></a></li><li class="soc"><a href="https://github.com/kleon1024" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa fa-github">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div id="main-container" class="col-sm-9 col-xs-12 main-container invisible"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>烤面筋 - Go</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-04-26</span><span class="date meta-item">Updated at&nbsp;2021-05-19</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/面筋/" title="面筋" class="a-tag">面筋</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/面筋/" title="面筋" class="a-tag">面筋</a><span>&nbsp;</span></span></p><p class="post-abstract"><p>基础问题</p>
 <span id="more"></span>
 <p><a target="_blank" rel="noopener" href="https://github.com/lifei6671/interview-go">https://github.com/lifei6671/interview-go</a></p>
 <p><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000038922260">https://segmentfault.com/a/1190000038922260</a></p>
-<h1><a href="#context" class="header-anchor">#</a><span id="context">Context</span></h1>
+<h1><a href="#context" class="header-anchor">#</a><span id="context"> Context</span></h1>
 <p>golang context的理解，context主要用于父子任务之间的同步取消信号，本质上是一种协程调度的方式。另外在使用context时有两点值得注意：上游任务仅仅使用context通知下游任务不再需要，但不会直接干涉和中断下游任务的执行，由下游任务自行决定后续的处理操作，也就是说context的取消操作是无侵入的；context是线程安全的，因为context本身是不可变的（immutable），因此可以放心地在多个协程中传递使用。</p>
 <p>Context的用法</p>
-<h1><a href="#qie-pian-he-shu-zu" class="header-anchor">#</a><span id="qie-pian-he-shu-zu">切片和数组</span></h1>
+<h1><a href="#qie-pian-he-shu-zu" class="header-anchor">#</a><span id="qie-pian-he-shu-zu"> 切片和数组</span></h1>
 <p>slice和array</p>
 <p>扩容机制</p>
 <p>slice，len，cap，共享，扩容</p>
-<h1><a href="#gpm" class="header-anchor">#</a><span id="gpm">GPM 🌟</span></h1>
+<h1><a href="#gpm" class="header-anchor">#</a><span id="gpm"> GPM 🌟</span></h1>
 <p>channel，process</p>
 <p>CSP(communicating sequential processes)</p>
 <p>GPM</p>
@@ -52,13 +52,13 @@ golang context的理解，context主要用于父子任务之间的同步取消�
 <p>当线程阻塞时，其它的线程进可能被执行，这叫做线程的切换。切换的时候，调度器需要保存当前阻塞的线程的状态，恢复要执行的线程状态，包括所有的寄存器，16个通用寄存器、程序计数器、栈指针、段寄存器、16个XMM寄存器、FP协处理器、16个 AVX寄存器、所有的MSR等等</p>
 <p><a target="_blank" rel="noopener" href="https://developer.aliyun.com/article/611313">https://developer.aliyun.com/article/611313</a></p>
 <p>Do not communicate by sharing memory; instead, share memory by communicating.</p>
-<h1><a href="#xian-cheng" class="header-anchor">#</a><span id="xian-cheng">线程</span></h1>
+<h1><a href="#xian-cheng" class="header-anchor">#</a><span id="xian-cheng"> 线程</span></h1>
 <p>kernel threads, user threads, and fibers</p>
 <p>kernel thread是由操作系统内核支持的线程,也是基本意义上的线程,kernel thread切换由内核完成.一般程序不会直接使用kernel thread,而是使用kernel thread的一种高级接口-轻量级进程(Light Weight Process)一个LWP对应于一个kernel thread.</p>
 <p>user thread指不需要内核支持而在用户程序中实现的线程,它不依赖于内核,用户自己实现user thread的创建,同步,调度,管理等功能.这里一个LWP对应多个user thread,简单点说 一个进程拥有多个LWP,一个LWP又拥有多个user thread.,这里的用户一般指的是编程语言</p>
 <p>Go使用了user thread的线程模型,在Go中称之为goroutine,这是Go称为并发型语言的基础.<br>
 Go语言中有逻辑处理器(Logic Processor)的概念,通过它完成user thread的调度.</p>
-<h1><a href="#tao-yi-fen-xi" class="header-anchor">#</a><span id="tao-yi-fen-xi">逃逸分析 🌟</span></h1>
+<h1><a href="#tao-yi-fen-xi" class="header-anchor">#</a><span id="tao-yi-fen-xi"> 逃逸分析 🌟</span></h1>
 <p>逃逸分配在堆上，否则分配到栈上。</p>
 <p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/itbsl/p/10476674.html">https://www.cnblogs.com/itbsl/p/10476674.html</a></p>
 <p>go build -gcflags ‘-m -l’ main.go</p>
@@ -82,7 +82,7 @@ Go语言中有逻辑处理器(Logic Processor)的概念,通过它完成user thre
 <li>slice 的背后数组被重新分配了，因为 append 时可能会超出其容量( cap )。 slice 初始化的地方在编译时是可以知道的，它最开始会在栈上分配。如果切片背后的存储要基于运行时的数据进行扩充，就会在堆上分配。</li>
 <li>在 interface 类型上调用方法。 在 interface 类型上调用方法都是动态调度的 —— 方法的真正实现只能在运行时知道。想像一个 io.Reader 类型的变量 r , 调用 r.Read(b) 会使得 r 的值和切片b 的背后存储都逃逸掉，所以会在堆上分配。</li>
 </ol>
-<h1><a href="#sync-map" class="header-anchor">#</a><span id="sync-map">sync.Map</span></h1>
+<h1><a href="#sync-map" class="header-anchor">#</a><span id="sync-map"> sync.Map</span></h1>
 <p>原生map非线程安全，加锁以及sync.Map{}的实现</p>
 <p>优点：是官方出的，是亲儿子；通过空间换时间的方式；读写分离；<br>
 缺点：不适用于大量写的场景，这样会导致read map读不到数据而进一步加锁读取，同时dirty map也会一直晋升为read map，整体性能较差。<br>
@@ -91,19 +91,19 @@ Go语言中有逻辑处理器(Logic Processor)的概念,通过它完成user thre
 <p>（1）给定key的键值对只写了一次，但是读了很多次，比如在只增长的缓存中；</p>
 <p>（2）当多个goroutine读取、写入和覆盖的key值不相交时。</p>
 <p><a target="_blank" rel="noopener" href="https://github.com/orcaman/concurrent-map">https://github.com/orcaman/concurrent-map</a></p>
-<h1><a href="#sync-waitgroup" class="header-anchor">#</a><span id="sync-waitgroup">sync.WaitGroup</span></h1>
-<h1><a href="#sync-rwmutex" class="header-anchor">#</a><span id="sync-rwmutex">sync.RWMutex</span></h1>
-<h1><a href="#sync-mutex" class="header-anchor">#</a><span id="sync-mutex">sync.Mutex</span></h1>
-<h1><a href="#channel" class="header-anchor">#</a><span id="channel">channel</span></h1>
+<h1><a href="#sync-waitgroup" class="header-anchor">#</a><span id="sync-waitgroup"> sync.WaitGroup</span></h1>
+<h1><a href="#sync-rwmutex" class="header-anchor">#</a><span id="sync-rwmutex"> sync.RWMutex</span></h1>
+<h1><a href="#sync-mutex" class="header-anchor">#</a><span id="sync-mutex"> sync.Mutex</span></h1>
+<h1><a href="#channel" class="header-anchor">#</a><span id="channel"> channel</span></h1>
 <p>channel no buffer以及buffer的区别<br>
 channel一定记得close。</p>
-<h1><a href="#goroutine" class="header-anchor">#</a><span id="goroutine">goroutine</span></h1>
+<h1><a href="#goroutine" class="header-anchor">#</a><span id="goroutine"> goroutine</span></h1>
 <p>goroutine记得return或者中断，不然容易造成goroutine占用大量CPU。</p>
 <ol>
 <li>主动自己退出： 经过多少时间后主动退出（channel） func main() { var wg sync. WaitGroup quit := time. …</li>
 <li>外部被动退出： 我们可以通过外部操作接收信号方式来退出： func main() { var wg sync.</li>
 </ol>
-<h1><a href="#goroutine-xie-lu-huo-shi-nei-cun-xie-lou" class="header-anchor">#</a><span id="goroutine-xie-lu-huo-shi-nei-cun-xie-lou">goroutine泄露，或是内存泄漏</span></h1>
+<h1><a href="#goroutine-xie-lu-huo-shi-nei-cun-xie-lou" class="header-anchor">#</a><span id="goroutine-xie-lu-huo-shi-nei-cun-xie-lou"> goroutine泄露，或是内存泄漏</span></h1>
 <p>协程泄露是指协程创建后，长时间得不到释放，并且还在不断地创建新的协程，最终导致内存耗尽，程序崩溃。常见的导致协程泄露的场景有以下几种：</p>
 <ul>
 <li>缺少接收器，导致发送阻塞<br>
@@ -123,24 +123,24 @@ channel一定记得close。</p>
 </ul>
 <p>这个例子中，为了避免网络等问题，采用了无限重试的方式，发送 HTTP 请求，直到获取到数据。那如果 HTTP 服务宕机，永远不可达，导致协程不能退出，发生泄漏。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">func request(url string, wg sync.WaitGroup) &#123;<br>  for &#123;<br>    if _, err := http.Get(url); err == nil &#123;<br>      // write to db<br>      break<br>    &#125;<br>    time.Sleep(time.Second)<br>  &#125;<br>  wg.Done()<br>&#125;<br><br>func main() &#123;<br>  var wg sync.WaitGroup<br>  for i := 0; i &lt; 1000; i++ &#123;<br>    wg.Add(1)<br>    go request(fmt.Sprintf(&quot;exampe.com/%d&quot;, i), wg)<br>  &#125;<br>  wg.Wait()<br>&#125;<br></code></pre></td></tr></table></figure>
-<h1><a href="#interface" class="header-anchor">#</a><span id="interface">interface</span></h1>
+<h1><a href="#interface" class="header-anchor">#</a><span id="interface"> interface</span></h1>
 <p>interface nil 比较</p>
-<h1><a href="#init" class="header-anchor">#</a><span id="init">init</span></h1>
+<h1><a href="#init" class="header-anchor">#</a><span id="init"> init</span></h1>
 <p>init函数先于main函数自动执行，不能被其他函数调用； … 每个包可以有多个init函数； 包的每个源文件也可以有多个init函数，这点比较特殊； 同一个包的init执行顺序，golang没有明确定义，编程时要注意程序不要依赖这个执行顺序。</p>
 <p>go init 的执行顺序，注意是不按导入规则的（这里是编译时按文件名的顺序执行的）</p>
-<h1><a href="#defer" class="header-anchor">#</a><span id="defer">defer</span></h1>
+<h1><a href="#defer" class="header-anchor">#</a><span id="defer"> defer</span></h1>
 <p>go中多个defer的执行顺序, FILO</p>
-<h1><a href="#slice" class="header-anchor">#</a><span id="slice">Slice</span></h1>
+<h1><a href="#slice" class="header-anchor">#</a><span id="slice"> Slice</span></h1>
 <p>从slice创建slice的时候，注意原slice的操作可能导致底层数组变化。</p>
 <p>如果你要创建一个很长的slice，尽量创建成一个slice里存引用，这样可以分批释放，避免gc在低配机器上stop the world</p>
-<h1><a href="#socket" class="header-anchor">#</a><span id="socket">Socket</span></h1>
-<h1><a href="#you-lie" class="header-anchor">#</a><span id="you-lie">优劣</span></h1>
+<h1><a href="#socket" class="header-anchor">#</a><span id="socket"> Socket</span></h1>
+<h1><a href="#you-lie" class="header-anchor">#</a><span id="you-lie"> 优劣</span></h1>
 <p>优势：容易学习，生产力，并发，动态语法。劣势：包管理，错误处理，缺乏框架。</p>
-<h1><a href="#kuang-jia" class="header-anchor">#</a><span id="kuang-jia">框架</span></h1>
+<h1><a href="#kuang-jia" class="header-anchor">#</a><span id="kuang-jia"> 框架</span></h1>
 <p>beego<br>
 go-micro<br>
 gin</p>
-<h1><a href="#gc" class="header-anchor">#</a><span id="gc">GC 🌟</span></h1>
+<h1><a href="#gc" class="header-anchor">#</a><span id="gc"> GC 🌟</span></h1>
 <p>优缺点</p>
 <p>三色并发标记法</p>
 <p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903793855987719">https://juejin.cn/post/6844903793855987719</a></p>
@@ -170,18 +170,18 @@ Go如何减短这个过程呢？标记-清除(mark and sweep)算法包含两部�
 看如下图，一个黑色对象引用了曾经标记的白色对象。</p>
 <p>这时候，写屏障机制被触发，向GC发送信号，GC重新扫描对象并标位灰色。</p>
 <p>因此，gc一旦开始，无论是创建对象还是对象的引用改变，都会先变为灰色。</p>
-<h2><a href="#xie-ping-zhang-he-hun-he-xie-ping-zhang" class="header-anchor">#</a><span id="xie-ping-zhang-he-hun-he-xie-ping-zhang">写屏障和混合写屏障</span></h2>
+<h2><a href="#xie-ping-zhang-he-hun-he-xie-ping-zhang" class="header-anchor">#</a><span id="xie-ping-zhang-he-hun-he-xie-ping-zhang"> 写屏障和混合写屏障</span></h2>
 <p><a target="_blank" rel="noopener" href="https://www.huaweicloud.com/articles/9aa423940e224bc6ff57a0c63e2615fa.html">https://www.huaweicloud.com/articles/9aa423940e224bc6ff57a0c63e2615fa.html</a></p>
-<h1><a href="#go-nei-cun-tcmalloc" class="header-anchor">#</a><span id="go-nei-cun-tcmalloc">Go内存(tcmalloc)</span></h1>
+<h1><a href="#go-nei-cun-tcmalloc" class="header-anchor">#</a><span id="go-nei-cun-tcmalloc"> Go内存(tcmalloc)</span></h1>
 <p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/29216091">https://zhuanlan.zhihu.com/p/29216091</a></p>
-<h2><a href="#ding-chang-fen-pei" class="header-anchor">#</a><span id="ding-chang-fen-pei">定长分配</span></h2>
+<h2><a href="#ding-chang-fen-pei" class="header-anchor">#</a><span id="ding-chang-fen-pei"> 定长分配</span></h2>
 <p>首先是基本问题，如何分配定长记录？例如，我们有一个 Page 的内存，大小为 4KB，现在要以 N 字节为单位进行分配。为了简化问题，就以 16 字节为单位进行分配。</p>
 <p>解法有很多，比如，bitmap。4KB / 16 / 8 = 32, 用 32 字节做 bitmap即可，实现也相当简单。</p>
 <p>出于最大化内存利用率的目的，我们使用另一种经典的方式，freelist。将 4KB 的内存划分为 16 字节的单元，每个单元的前8个字节作为节点指针，指向下一个单元。初始化的时候把所有指针指向下一个单元；分配时，从链表头分配一个对象出去；释放时，插入到链表。</p>
 <p>由于链表指针直接分配在待分配内存中，因此不需要额外的内存开销，而且分配速度也是相当快。</p>
-<h2><a href="#bian-chang-fen-pei" class="header-anchor">#</a><span id="bian-chang-fen-pei">变长分配</span></h2>
+<h2><a href="#bian-chang-fen-pei" class="header-anchor">#</a><span id="bian-chang-fen-pei"> 变长分配</span></h2>
 <p>我们把所有的变长记录进行“取整”，例如分配7字节，就分配8字节，31字节分配32字节，得到多种规格的定长记录。这里带来了内部内存碎片的问题，即分配出去的空间不会被完全利用，有一定浪费。为了减少内部碎片，分配规则按照 8, 16, 32, 48, 64, 80这样子来。注意到，这里并不是简单地使用2的幂级数，因为按照2的幂级数，内存碎片会相当严重，分配65字节，实际会分配128字节，接近50%的内存碎片。而按照这里的分配规格，只会分配80字节，一定程度上减轻了问题。</p>
-<h2><a href="#duo-page" class="header-anchor">#</a><span id="duo-page">多Page</span></h2>
+<h2><a href="#duo-page" class="header-anchor">#</a><span id="duo-page"> 多Page</span></h2>
 <p>这里提出了 Span 的概念，也就是多个连续的 Page 会组成一个 Span，在 Span 中记录起始 Page 的编号，以及 Page 数量。</p>
 <p>分配对象时，大的对象直接分配 Span，小的对象从 Span 中分配。</p>
 <p>还是用多种定长 Page 来实现变长 Page 的分配，初始时只有 128 Page 的 Span，如果要分配 1 个 Page 的 Span，就把这个 Span 分裂成两个，1 + 127，把127再记录下来。对于 Span 的回收，需要考虑Span的合并问题，否则在分配回收多次之后，就只剩下很小的 Span 了，也就是带来了外部碎片 问题。</p>
@@ -192,7 +192,7 @@ Go如何减短这个过程呢？标记-清除(mark and sweep)算法包含两部�
 <p>为此，我们可以使用 RadixTree 这种数据结构，用较少的空间开销，和不错的速度来完成这件事：</p>
 <p>乍一看可能有点懵，这个跟 RadixTree 能扯上关系吗？可以把 RadixTree 理解成压缩过的前缀树（trie），所谓压缩，就是在一条路径上的节点都只有一个子节点，就把这条路径合并到父节点去，因此内部节点最少会有 Radix 个字节点。具体的分析可以参考一下 wikipedia 。</p>
 <p>实现时，可以通过一定的空间换来时间，也就是减少层数，比如说3层。每层都是一个数组，用一个地址的前 1/3 的bit 索引数组，剩下的 bit 对下一层进行寻址。实际的寻址也可以非常快。</p>
-<h2><a href="#pageheap" class="header-anchor">#</a><span id="pageheap">PageHeap</span></h2>
+<h2><a href="#pageheap" class="header-anchor">#</a><span id="pageheap"> PageHeap</span></h2>
 <p>到这里，我们已经实现了 PageHeap，对所有 Page进行管理。</p>
 <p>既然有了基于 Page 的对象分配，和Page本身的管理，我们把它们串起来就可以得到一个简单的内存分配器了：</p>
 <p>按照我们之前设计的，每种规格的对象，都从不同的 Span 进行分配；每种规则的对象都有一个独立的内存分配单元：CentralCache。在一个CentralCache 内存，我们用链表把所有 Span 组织起来，每次需要分配时就找一个 Span 从中分配一个 Object；当没有空闲的 Span 时，就从 PageHeap 申请 Span。</p>
@@ -201,9 +201,9 @@ Go如何减短这个过程呢？标记-清除(mark and sweep)算法包含两部�
 <p>每个线程都一个线程局部的 ThreadCache，按照不同的规格，维护了对象的链表；如果ThreadCache 的对象不够了，就从 CentralCache 进行批量分配；如果 CentralCache 依然没有，就从PageHeap申请Span；如果 PageHeap没有合适的 Page，就只能从操作系统申请了。</p>
 <p>在释放内存的时候，ThreadCache依然遵循批量释放的策略，对象积累到一定程度就释放给 CentralCache；CentralCache发现一个 Span的内存完全释放了，就可以把这个 Span 归还给 PageHeap；PageHeap发现一批连续的Page都释放了，就可以归还给操作系统。</p>
 <p>至此，TCMalloc 的大体结构便呈现在我们眼前了。</p>
-<h1><a href="#recover" class="header-anchor">#</a><span id="recover">recover</span></h1>
-<h1><a href="#sql-pool" class="header-anchor">#</a><span id="sql-pool">sql pool</span></h1>
-<h1><a href="#duo-tai" class="header-anchor">#</a><span id="duo-tai">多态</span></h1>
+<h1><a href="#recover" class="header-anchor">#</a><span id="recover"> recover</span></h1>
+<h1><a href="#sql-pool" class="header-anchor">#</a><span id="sql-pool"> sql pool</span></h1>
+<h1><a href="#duo-tai" class="header-anchor">#</a><span id="duo-tai"> 多态</span></h1>
 <p>语言基础是否学习完整？<br>
 例：除了 mutex 以外还有那些方式安全读写共享变量？</p>
 <p>语言基础是否足够扎实？<br>
@@ -216,14 +216,14 @@ Go如何减短这个过程呢？标记-清除(mark and sweep)算法包含两部�
 例：说说 golang 中常用的并发模式？</p>
 <p>考察实际经验，例：JSON 标准库对 nil slice 和 空 slice 的处理是一致的吗？</p>
 <p>考察学习历程，例：学习 Go 的主要途径？读过那些书？</p>
-<h1><a href="#go-defer-for-defer" class="header-anchor">#</a><span id="go-defer-for-defer">go defer / for defer</span></h1>
-<h1><a href="#select" class="header-anchor">#</a><span id="select">select</span></h1>
-<h1><a href="#map" class="header-anchor">#</a><span id="map">map</span></h1>
+<h1><a href="#go-defer-for-defer" class="header-anchor">#</a><span id="go-defer-for-defer"> go defer / for defer</span></h1>
+<h1><a href="#select" class="header-anchor">#</a><span id="select"> select</span></h1>
+<h1><a href="#map" class="header-anchor">#</a><span id="map"> map</span></h1>
 <p>顺序读取</p>
-<h1><a href="#set" class="header-anchor">#</a><span id="set">set</span></h1>
-<h1><a href="#xiao-xi-dui-lie" class="header-anchor">#</a><span id="xiao-xi-dui-lie">消息队列</span></h1>
-<h1><a href="#da-wen-jian-pai-xu" class="header-anchor">#</a><span id="da-wen-jian-pai-xu">大文件排序</span></h1>
-<h1><a href="#go-for-range-cai-keng" class="header-anchor">#</a><span id="go-for-range-cai-keng">Go for range 踩坑</span></h1>
+<h1><a href="#set" class="header-anchor">#</a><span id="set"> set</span></h1>
+<h1><a href="#xiao-xi-dui-lie" class="header-anchor">#</a><span id="xiao-xi-dui-lie"> 消息队列</span></h1>
+<h1><a href="#da-wen-jian-pai-xu" class="header-anchor">#</a><span id="da-wen-jian-pai-xu"> 大文件排序</span></h1>
+<h1><a href="#go-for-range-cai-keng" class="header-anchor">#</a><span id="go-for-range-cai-keng"> Go for range 踩坑</span></h1>
 <ul>
 <li>闭包变量捕获</li>
 </ul>
@@ -282,7 +282,7 @@ Go如何减短这个过程呢？标记-清除(mark and sweep)算法包含两部�
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">for i := range m &#123;<br>    go func(i int) &#123;<br>        fmt.Print(i)<br>    &#125;(i)<br>&#125;<br></code></pre></td></tr></table></figure>
 <p>使用局部变量拷贝</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">for i := range m &#123;<br>    i := i<br>    go func() &#123;<br>        fmt.Print(i)<br>    &#125;()<br>&#125;<br></code></pre></td></tr></table></figure>
-<h1><a href="#gao-ji-te-xing" class="header-anchor">#</a><span id="gao-ji-te-xing">高级特性</span></h1>
+<h1><a href="#gao-ji-te-xing" class="header-anchor">#</a><span id="gao-ji-te-xing"> 高级特性</span></h1>
 <ul>
 <li>var _ io.Writer = (*myWriter)(nil)</li>
 </ul>
@@ -301,12 +301,12 @@ Go如何减短这个过程呢？标记-清除(mark and sweep)算法包含两部�
 <li>内存对齐</li>
 </ul>
 <p><a target="_blank" rel="noopener" href="https://ms2008.github.io/2019/08/01/golang-memory-alignment/">https://ms2008.github.io/2019/08/01/golang-memory-alignment/</a></p>
-<h1><a href="#gao-bing-fa" class="header-anchor">#</a><span id="gao-bing-fa">高并发</span></h1>
+<h1><a href="#gao-bing-fa" class="header-anchor">#</a><span id="gao-bing-fa"> 高并发</span></h1>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42117918/article/details/107561920">https://blog.csdn.net/weixin_42117918/article/details/107561920</a></p>
 <p>队列 + 工作池</p>
-<h1><a href="#ding-shi-qi" class="header-anchor">#</a><span id="ding-shi-qi">定时器</span></h1>
+<h1><a href="#ding-shi-qi" class="header-anchor">#</a><span id="ding-shi-qi"> 定时器</span></h1>
 <p>NewTimer NewTicker AfterFunc Sleep</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">go func() &#123;<br>    timer := time.NewTimer(time.Minute * 1)<br>    for &#123;<br>        select &#123;<br>        case &lt;-timer.C:<br>            o.lock.Lock()<br>            for k, v := range o.visitIPs &#123;<br>                if time.Now().Sub(v) &gt;= time.Minute*1 &#123;<br>                    delete(o.visitIPs, k)<br>                &#125;<br>            &#125;<br>            o.lock.Unlock()<br>            timer.Reset(time.Minute * 1)<br>        case &lt;-ctx.Done():<br>            return<br>        &#125;<br>    &#125;<br>&#125;()<br></code></pre></td></tr></table></figure>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">go func() &#123;<br>  for &#123;<br>    LoadConfigFromABParam()<br>    time.Sleep(time.Minute)<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-<h1><a href="#bi-mian-kao-bei" class="header-anchor">#</a><span id="bi-mian-kao-bei">避免拷贝</span></h1>
+<h1><a href="#bi-mian-kao-bei" class="header-anchor">#</a><span id="bi-mian-kao-bei"> 避免拷贝</span></h1>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">import (<br>    &quot;reflect&quot;<br>    &quot;unsafe&quot;<br>)<br><br>func String(b []byte) (s string) &#123;<br>    pbytes := (*reflect.SliceHeader)(unsafe.Pointer(&amp;b))<br>    pstring := (*reflect.StringHeader)(unsafe.Pointer(&amp;s))<br>    pstring.Data = pbytes.Data<br>    pstring.Len = pbytes.Len<br>    return<br>&#125;<br><br>func Slice(s string) (b []byte) &#123;<br>    pbytes := (*reflect.SliceHeader)(unsafe.Pointer(&amp;b))<br>    pstring := (*reflect.StringHeader)(unsafe.Pointer(&amp;s))<br>    pbytes.Data = pstring.Data<br>    pbytes.Len = pstring.Len<br>    pbytes.Cap = pstring.Len<br>    return<br>&#125;<br></code></pre></td></tr></table></figure></p></div><div class="share"><span>Share</span>&nbsp;<span class="soc"><a href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank" class="fa fa-bookmark"></a></span><span class="soc"><a href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));" class="fa fa-weibo"></a></span><span class="soc"><a target="_blank" rel="noopener" href="http://twitter.com/home?status=https://blog.kleon.space/work/interview/go/%20KLEON%20烤面筋 - Go" class="fa fa-twitter"></a></span></div><div class="pagination"><p class="clearfix"><span class="pre pagbuttons"><a role="navigation" href="/work/interview/backend/" title="烤面筋 - 后端"><i class="fa fa-angle-double-left"></i>&nbsp;Previous post: 烤面筋 - 后端</a></span><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/work/interview/resume/" title="烤面筋 - 简历">Next post: 烤面筋 - 简历&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>
