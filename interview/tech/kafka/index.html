@@ -12,7 +12,7 @@ What are the traditional methods of message transfer? How is Kafka better fr"><m
 Basics
 
 What are some of the features of Kafka?
-What are the traditional methods of message transfer? How is Kafka better fr"><meta name="twitter:site" content="KLEON"><meta name="twitter:title" content="Tech - Kafka"><meta name="twitter:card" content="summary"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/github.min.css"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/KaTeX/0.10.2/katex.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 6.1.0"></head><body><div id="stage" class="container"><div class="row"><div id="side-bar" class="col-sm-3 col-xs-12 side-container invisible"><div class="vertical-text site-title"><h3 tabindex="-1" class="site-title-small"><a href="/" class="a-title"></a></h3><h1 tabindex="-1" class="site-title-large"><a href="/" class="a-title">自说自话</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div id="site-nav" class="site-title-links"><ul><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li><li><a href="/categories">Categories</a></li><li><a href="/tags">Tags</a></li><li><a href="/googlebe23cb0bc55fc412.html"></a></li><li><a href="/about/index.html"></a></li><li class="soc"><a href="https://github.com/kleon1024" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa fa-github">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div id="main-container" class="col-sm-9 col-xs-12 main-container invisible"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>Tech - Kafka</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2022-04-29</span><span class="date meta-item">Updated at&nbsp;2022-04-29</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/interview/" title="interview" class="a-tag">interview</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/interview/" title="interview" class="a-tag">interview</a><span>&nbsp;</span><a href="/tags/tech/" title="tech" class="a-tag">tech</a><span>&nbsp;</span></span></p><p class="post-abstract"><p>Q &amp; A of kafka<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>.</p>
+What are the traditional methods of message transfer? How is Kafka better fr"><meta name="twitter:site" content="KLEON"><meta name="twitter:title" content="Tech - Kafka"><meta name="twitter:card" content="summary"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/github.min.css"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/KaTeX/0.10.2/katex.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 6.1.0"></head><body><div id="stage" class="container"><div class="row"><div id="side-bar" class="col-sm-3 col-xs-12 side-container invisible"><div class="vertical-text site-title"><h3 tabindex="-1" class="site-title-small"><a href="/" class="a-title"></a></h3><h1 tabindex="-1" class="site-title-large"><a href="/" class="a-title">吹拉弹唱</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div id="site-nav" class="site-title-links"><ul><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li><li><a href="/categories">Categories</a></li><li><a href="/tags">Tags</a></li><li><a href="/googlebe23cb0bc55fc412.html"></a></li><li><a href="/about/index.html"></a></li><li class="soc"><a href="https://github.com/kleon1024" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa fa-github">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div id="main-container" class="col-sm-9 col-xs-12 main-container invisible"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>Tech - Kafka</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2022-04-29</span><span class="date meta-item">Updated at&nbsp;2022-04-29</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/interview/" title="interview" class="a-tag">interview</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/interview/" title="interview" class="a-tag">interview</a><span>&nbsp;</span><a href="/tags/tech/" title="tech" class="a-tag">tech</a><span>&nbsp;</span></span></p><p class="post-abstract"><p>Q &amp; A of kafka<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>.</p>
 <div class="toc">
 <!-- toc -->
 <ul>
@@ -459,10 +459,14 @@ A Kafka cluster can apply quotas on producers and fetch requests as of Kafka 0.9
 <p>It’s as simple as assigning a unique broker id, listeners, and log directory to the server.properties file to add new brokers to an existing Kafka cluster. However, these brokers will not be allocated any data partitions from the cluster’s existing topics, so they won’t be performing much work unless the partitions are moved or new topics are formed. A cluster is referred to as unbalanced if it has any of the following problems :</p>
 <p><strong>Leader Skew:</strong></p>
 <p>Consider the following scenario: a topic with three partitions and a replication factor of three across three brokers.</p>
+<p><img src="/images/Leader_Skew-1.jpg" alt="leader skew"></p>
 <p>The leader receives all reads and writes on a partition. Followers send fetch requests to the leaders in order to receive their most recent messages. Followers exist solely for redundancy and fail-over purposes.</p>
 <p>Consider the case of a broker who has failed. It’s possible that the failed broker was a collection of numerous leader partitions. Each unsuccessful broker’s leader partition is promoted as the leader by its followers on the other brokers. Because fail-over to an out-of-sync replica is not allowed, the follower must be in sync with the leader in order to be promoted as the leader.</p>
+<p><img src="/images/Leader_Skew-2.jpg" alt="leader skew"></p>
 <p>If another broker goes down, all of the leaders are on the same broker, therefore there is no redundancy.</p>
+<p><img src="/images/Leader_Skew-3.jpg" alt="leader skew"></p>
 <p>When both brokers 1 and 3 go live, the partitions gain some redundancy, but the leaders stay focused on broker 2.</p>
+<p><img src="/images/Leader_Skew-4.jpg" alt="leader skew"></p>
 <p>As a result, the Kafka brokers have a leader imbalance. When a node is a leader for more partitions than the number of partitions/number of brokers, the cluster is in a leader skewed condition.</p>
 <p><strong>Solving the leader skew problem:</strong></p>
 <p>Kafka offers the ability to reassign leaders to the desired replicas in order to tackle this problem. This can be accomplished in one of two ways:</p>
@@ -470,6 +474,72 @@ A Kafka cluster can apply quotas on producers and fetch requests as of Kafka 0.9
 When <a target="_blank" rel="noopener" href="http://Kafka-preferred-replica-election.sh">Kafka-preferred-replica-election.sh</a> is run, the preferred replica is selected for all partitions: The utility requires a JSON file containing a mandatory list of zookeeper hosts and an optional list of topic partitions. If no list is provided, the utility uses a zookeeper to retrieve all of the cluster’s topic partitions. The <a target="_blank" rel="noopener" href="http://Kafka-preferred-replica-election.sh">Kafka-preferred-replica-election.sh</a> utility can be time-consuming to use. Custom scripts can render only the topics and partitions that are required, automating the process across the cluster.</p>
 <p><strong>Broker Skew:</strong></p>
 <p>Let us consider a Kafka cluster with nine brokers. Let the topic name be “sample_topic.” The following is how the brokers are assigned to the topic in our example:</p>
+<table>
+<thead>
+<tr>
+<th>Broker Id</th>
+<th>Number of Partitions</th>
+<th>Partitions</th>
+<th>Is Skewed?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>3</td>
+<td>(0, 7, 8)</td>
+<td>No</td>
+</tr>
+<tr>
+<td>1</td>
+<td>4</td>
+<td>(0, 1, 8, 9)</td>
+<td>No</td>
+</tr>
+<tr>
+<td>2</td>
+<td>5</td>
+<td>(0, 1, 2 , 9, 10)</td>
+<td>No</td>
+</tr>
+<tr>
+<td>3</td>
+<td>6</td>
+<td>(1, 2, 3, 9, 19, 11)</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>4</td>
+<td>6</td>
+<td>(2, 3, 4, 10, 11, 12)</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>5</td>
+<td>6</td>
+<td>(3, 4, 5, 11, 12, 13)</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>6</td>
+<td>5</td>
+<td>(4, 5, 6, 12, 13)</td>
+<td>No</td>
+</tr>
+<tr>
+<td>7</td>
+<td>4</td>
+<td>(5, 6, 7, 13)</td>
+<td>No</td>
+</tr>
+<tr>
+<td>8</td>
+<td>3</td>
+<td>(6, 7, 8)</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
 <p>On brokers 3,4 and 5, the topic “sample_topic” is skewed. This is because if the number of partitions per broker on a given issue is more than the average, the broker is considered to be skewed.</p>
 <p><strong>Solving the broker skew problem :</strong></p>
 <p>The following steps can be used to solve it:</p>
