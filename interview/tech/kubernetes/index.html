@@ -170,7 +170,8 @@ Clusters are the heart of Kubernetes that gives the ability to schedule and run 
 <h2><a href="#what-is-heapster-in-kubernetes" class="header-anchor">#</a><span id="what-is-heapster-in-kubernetes"> What is Heapster in Kubernetes?</span></h2>
 <p>A Heapster is a performance monitoring and metrics collection system for data collected by the Kublet. This aggregator is natively supported and runs like any other pod within a Kubernetes cluster, which allows it to discover and query usage data from all nodes within the cluster.</p>
 <h2><a href="#what-is-a-namespace-in-kubernetes" class="header-anchor">#</a><span id="what-is-a-namespace-in-kubernetes"> What is a Namespace in Kubernetes?</span></h2>
-<p>Namespaces are used for dividing cluster resources between multiple users. They are meant for environments where there are many users spread across projects or teams and provide a scope of resources.</p>
+<p>Namespaces are used for dividing cluster resources between multiple users. They are meant for environments where there are many users spread across projects or teams and provide a scope of resources.<br>
+<img src="/images/namespace.png" alt="namespace"></p>
 <h2><a href="#why-use-namespaces" class="header-anchor">#</a><span id="why-use-namespaces"> Why use namespaces?</span></h2>
 <p>While using the default namespace alone, it becomes hard over time to get an overview of all the applications you can manage in your cluster. Namespaces make it easier to organize the applications into groups that make sense, like a namespace of all the monitoring applications and a namespace for all the security applications, etc.</p>
 <p>Namespaces can also be useful for managing Blue/Green environments where each namespace can include a different version of an app and also share resources that are in other namespaces (namespaces like logging, monitoring, etc.).</p>
@@ -186,7 +187,8 @@ Clusters are the heart of Kubernetes that gives the ability to schedule and run 
 <h2><a href="#what-are-the-types-of-controller-managers" class="header-anchor">#</a><span id="what-are-the-types-of-controller-managers"> What are the types of controller managers?</span></h2>
 <p>The primary controller managers that can run on the master node are the endpoints controller, service accounts controller, namespace controller, node controller, token controller, and replication controller.</p>
 <h2><a href="#what-s-the-components-in-kubernetes-s-control-plane" class="header-anchor">#</a><span id="what-s-the-components-in-kubernetes-s-control-plane"> What’s the components in Kubernetes’s control plane?</span></h2>
-<p>The control plane includes <sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>:</p>
+<p><img src="/images/components-of-kubernetes.svg" alt="kubernetes components"><br>
+The control plane includes <sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup><sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup>:</p>
 <ul>
 <li>kube-apiserver. Provides an API that serves as the front end of a Kubernetes control plane. It is responsible for handling external and internal requests—determining whether a request is valid and then processing it. The API can be accessed via the kubectl command-line interface or other tools like kubeadm, and via REST calls.</li>
 <li>kube-scheduler. This component is responsible for scheduling pods on specific nodes according to automated workflows and user defined conditions, which can include resource requests, concerns like affinity and taints or tolerations, priority, persistent volumes (PV), and more</li>
@@ -601,7 +603,7 @@ GKE can be utilized to make a replication regulator, occupations, load balancer,
 <p>A Kubernetes ConfigMap is an API object that allows you to store data as key-value pairs. Kubernetes pods can use ConfigMaps as configuration files, environment variables or command-line arguments.</p>
 <p>ConfigMaps allow you to decouple environment-specific configurations from containers to make applications portable. However, they are not suitable for confidential data storage.</p>
 <h2><a href="#what-is-a-kubernetes-statefulset" class="header-anchor">#</a><span id="what-is-a-kubernetes-statefulset"> What is a Kubernetes StatefulSet?</span></h2>
-<p>StatefulSet<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup> is the workload API object used to manage stateful applications. Manages the deployment and scaling of a set of Pods, and provides guarantees about the ordering and uniqueness of these Pods.</p>
+<p>StatefulSet<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup> is the workload API object used to manage stateful applications. Manages the deployment and scaling of a set of Pods, and provides guarantees about the ordering and uniqueness of these Pods.</p>
 <p>Like a Deployment, a StatefulSet manages Pods that are based on an identical container spec. Unlike a Deployment, a StatefulSet maintains a sticky identity for each of their Pods. These pods are created from the same spec, but are not interchangeable: each has a persistent identifier that it maintains across any rescheduling.</p>
 <p><strong>Using StatefulSets:</strong></p>
 <p>StatefulSets are valuable for applications that require one or more of the following.</p>
@@ -751,7 +753,9 @@ GKE can be utilized to make a replication regulator, occupations, load balancer,
 </li>
 <li id="fn4" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://spot.io/resources/kubernetes-architecture-11-core-components-explained">Kubernetes Architecture: 11 Core Components Explained</a> <a href="#fnref4" class="footnote-backref">↩︎</a> <a href="#fnref4:1" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn5" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://jkzhao.github.io/2019/08/30/Kubernetes-StatefulSet%E6%8E%A7%E5%88%B6%E5%99%A8/">Kubernetes StatefulSet控制器</a> <a href="#fnref5" class="footnote-backref">↩︎</a></p>
+<li id="fn5" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://kubernetes.io/docs/concepts/overview/components/">Kubernetes Components</a> <a href="#fnref5" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn6" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://jkzhao.github.io/2019/08/30/Kubernetes-StatefulSet%E6%8E%A7%E5%88%B6%E5%99%A8/">Kubernetes StatefulSet控制器</a> <a href="#fnref6" class="footnote-backref">↩︎</a></p>
 </li>
 </ol>
 </section>

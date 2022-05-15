@@ -195,6 +195,7 @@ Developer on hardware, framework and inference optimization.</p>
 </li>
 <li>
 <p>⚠️3.1.2 ZooKeeper知道吗？介绍一下？ZooKeeper是Kafka的基本组件。</p>
+<p><sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup><sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup></p>
 </li>
 <li>
 <p>3</p>
@@ -227,7 +228,7 @@ Developer on hardware, framework and inference optimization.</p>
 </li>
 <li>
 <p>3.1.4 Kafka保序吗？如何保序？</p>
-<p>参考<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>。Kafka分布式的单位是Partition，同一个Partition可以保证FIFO，不同Partition之间不能保证顺序。但是可以通过message key来保序，同一个key只会发送到同一个partition，能保证同一个key的message是保序的。同时如果需要所有信息严格保序，只设置一个partition即可。</p>
+<p>参考<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup>。Kafka分布式的单位是Partition，同一个Partition可以保证FIFO，不同Partition之间不能保证顺序。但是可以通过message key来保序，同一个key只会发送到同一个partition，能保证同一个key的message是保序的。同时如果需要所有信息严格保序，只设置一个partition即可。</p>
 </li>
 <li>
 <p>3.1.4.1 如果Key Skew了怎么办？</p>
@@ -241,7 +242,7 @@ Developer on hardware, framework and inference optimization.</p>
 </li>
 <li>
 <p>3.1.5 Rebalance是什么？讲讲具体过程？如何避免Rebalance？</p>
-<p>参考<sup class="footnote-ref"><a href="#fn4" id="fnref4:1">[4:1]</a></sup><sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup>。<br>
+<p>参考<sup class="footnote-ref"><a href="#fn6" id="fnref6:1">[6:1]</a></sup><sup class="footnote-ref"><a href="#fn7" id="fnref7">[7]</a></sup>。<br>
 Rebalance发生在以下情况，需要避免:</p>
 <ol>
 <li>Consumer加入或退出或无心跳之后</li>
@@ -251,7 +252,7 @@ Rebalance发生在以下情况，需要避免:</p>
 </li>
 <li>
 <p>⚠️3.1.5.1 Rebalance策略有哪些？各自的优缺点是什么？</p>
-<p>Range RoundRobin Sticky<sup class="footnote-ref"><a href="#fn5" id="fnref5:1">[5:1]</a></sup></p>
+<p>Range RoundRobin Sticky<sup class="footnote-ref"><a href="#fn7" id="fnref7:1">[7:1]</a></sup></p>
 </li>
 <li>
 <p>3.1.6 Kafka怎么实现超高并发/吞吐的？为什么这么快？</p>
@@ -262,16 +263,21 @@ Rebalance发生在以下情况，需要避免:</p>
 <li>零拷贝技术。</li>
 <li>批量发送读取。</li>
 <li>数据压缩节省磁盘网络延迟。</li>
-<li>reactor模式，I/O多路复用<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup>。</li>
+<li>reactor模式，I/O多路复用<sup class="footnote-ref"><a href="#fn8" id="fnref8">[8]</a></sup>。</li>
 </ol>
 </li>
 <li>
 <p>⚠️3.1.7 知道其他消息队列吗？为什么不用？</p>
-<p>参考<sup class="footnote-ref"><a href="#fn7" id="fnref7">[7]</a></sup><sup class="footnote-ref"><a href="#fn8" id="fnref8">[8]</a></sup>。</p>
+<p>参考<sup class="footnote-ref"><a href="#fn9" id="fnref9">[9]</a></sup><sup class="footnote-ref"><a href="#fn10" id="fnref10">[10]</a></sup>。</p>
 <p>RabbitMQ，RocketMQ。</p>
 </li>
 <li>
 <p>3.1.7.1 RocketMQ有什么优势？</p>
+<p><sup class="footnote-ref"><a href="#fn11" id="fnref11">[11]</a></sup><sup class="footnote-ref"><a href="#fn12" id="fnref12">[12]</a></sup>。</p>
+</li>
+<li>
+<p>3.1.7.2 RocketMQ是什么架构？</p>
+<p><sup class="footnote-ref"><a href="#fn13" id="fnref13">[13]</a></sup></p>
 </li>
 <li>
 <p>3.1.8 如何保证幂等性？也就是不重复消费？</p>
@@ -282,7 +288,7 @@ Rebalance发生在以下情况，需要避免:</p>
 <li>
 <p>3.1.10 怎么保证Kafka消息不丢失？</p>
 <p>配置ack=always</p>
-<p>参考<sup class="footnote-ref"><a href="#fn9" id="fnref9">[9]</a></sup></p>
+<p>参考<sup class="footnote-ref"><a href="#fn14" id="fnref14">[14]</a></sup></p>
 </li>
 <li>
 <p>⚠️3.2 如何区分优先级？</p>
@@ -321,6 +327,21 @@ Rebalance发生在以下情况，需要避免:</p>
 </li>
 <li>
 <p>4.1 无损格式写出的中间视频体积很大，会消耗存储和传输资源，这部分可以怎么避免吗？Minio没有出现过带宽瓶颈吗？</p>
+</li>
+<li>
+<p>5 网络基本知识</p>
+</li>
+<li>
+<p>5.1 HTTP格式？</p>
+</li>
+<li>
+<p>5.2 HTTPS基本原理？如何加密的？</p>
+</li>
+<li>
+<p>5.3 长轮询怎么做？什么原理？</p>
+</li>
+<li>
+<p>5.4 Websocket用过吗？</p>
 </li>
 </ul>
 <p><strong>算法与模型</strong></p>
@@ -388,7 +409,7 @@ Rebalance发生在以下情况，需要避免:</p>
 </li>
 <li>
 <p>4 介绍一下Hologres的原理？</p>
-<p>参考<sup class="footnote-ref"><a href="#fn10" id="fnref10">[10]</a></sup>。</p>
+<p>参考<sup class="footnote-ref"><a href="#fn15" id="fnref15">[15]</a></sup>。</p>
 </li>
 <li>
 <p>5 本地缓存怎么做的？</p>
@@ -401,7 +422,7 @@ Rebalance发生在以下情况，需要避免:</p>
 <li>
 <p>5.2 为什么不用Redis？</p>
 <p>需要缓存的规模比较小，而且没有很强的一致性要求，所以就用了Local Cache。像用户Session信息都是由阿里云的网关服务负责的，我们产品的服务收到的请求头部里有用户相关的各类信息，比如用户主账号id，子账号id，以及一系列其他的鉴权相关的信息。<br>
-问题其实在问什么时候应该用Redis，参考<sup class="footnote-ref"><a href="#fn10" id="fnref10:1">[10:1]</a></sup>，同时也是在问用Local Cache的局限性，参考<sup class="footnote-ref"><a href="#fn11" id="fnref11">[11]</a></sup>，同时也是在问能否结合Redis与本地缓存<sup class="footnote-ref"><a href="#fn12" id="fnref12">[12]</a></sup>。</p>
+问题其实在问什么时候应该用Redis，参考<sup class="footnote-ref"><a href="#fn15" id="fnref15:1">[15:1]</a></sup>，同时也是在问用Local Cache的局限性，参考<sup class="footnote-ref"><a href="#fn16" id="fnref16">[16]</a></sup>，同时也是在问能否结合Redis与本地缓存<sup class="footnote-ref"><a href="#fn17" id="fnref17">[17]</a></sup><sup class="footnote-ref"><a href="#fn18" id="fnref18">[18]</a></sup>。</p>
 </li>
 <li>
 <p>5.3 Redis为什么快？</p>
@@ -412,25 +433,25 @@ Rebalance发生在以下情况，需要避免:</p>
 <li>数据结构简单，操作也简单，提升性能。</li>
 <li>使用底层模型不同，它们之间底层实现方式以及与客户端之间通信的应用协议不一样，Redis 直接自己构建了 VM 机制 ，因为一般的系统调用系统函数的话，会浪费一定的时间去移动和请求。</li>
 </ol>
-<p>参考<sup class="footnote-ref"><a href="#fn13" id="fnref13">[13]</a></sup>。</p>
+<p>参考<sup class="footnote-ref"><a href="#fn19" id="fnref19">[19]</a></sup>。</p>
 </li>
 <li>
 <p>5.3.1 说一下Redis的内存模型？</p>
-<p><sup class="footnote-ref"><a href="#fn14" id="fnref14">[14]</a></sup></p>
+<p><sup class="footnote-ref"><a href="#fn20" id="fnref20">[20]</a></sup></p>
 </li>
 <li>
 <p>5.3.2 Redis是单线程的吗？</p>
-<p>参考<sup class="footnote-ref"><a href="#fn15" id="fnref15">[15]</a></sup>。Redis在处理客户端的请求时，包括获取 (socket 读)、解析、执行、内容返回 (socket 写) 等都由一个顺序串行的主线程处理，这就是所谓的“单线程”。但如果严格来讲从Redis4.0之后并不是单线程，除了主线程外，它也有后台线程在处理一些较为缓慢的操作，例如清理脏数据、无用连接的释放、大 key 的删除等等。</p>
+<p>参考<sup class="footnote-ref"><a href="#fn21" id="fnref21">[21]</a></sup>。Redis在处理客户端的请求时，包括获取 (socket 读)、解析、执行、内容返回 (socket 写) 等都由一个顺序串行的主线程处理，这就是所谓的“单线程”。但如果严格来讲从Redis4.0之后并不是单线程，除了主线程外，它也有后台线程在处理一些较为缓慢的操作，例如清理脏数据、无用连接的释放、大 key 的删除等等。</p>
 </li>
 <li>
 <p>5.3.2.1 为什么Redis不用多线程？</p>
-<p>参考<sup class="footnote-ref"><a href="#fn16" id="fnref16">[16]</a></sup>。</p>
+<p>参考<sup class="footnote-ref"><a href="#fn22" id="fnref22">[22]</a></sup>。</p>
 <p>官方曾做过类似问题的回复：使用Redis时，几乎不存在CPU成为瓶颈的情况， Redis主要受限于内存和网络。例如在一个普通的Linux系统上，Redis通过使用pipelining每秒可以处理100万个请求，所以如果应用程序主要使用O(N)或O(log(N))的命令，它几乎不会占用太多CPU。</p>
 <p>使用了单线程后，可维护性高。多线程模型虽然在某些方面表现优异，但是它却引入了程序执行顺序的不确定性，带来了并发读写的一系列问题，增加了系统复杂度、同时可能存在线程切换、甚至加锁解锁、死锁造成的性能损耗。Redis通过AE事件模型以及IO多路复用等技术，处理性能非常高，因此没有必要使用多线程。单线程机制使得 Redis 内部实现的复杂度大大降低，Hash 的惰性 Rehash、Lpush 等等 “线程不安全” 的命令都可以无锁进行。</p>
 </li>
 <li>
 <p>5.3.2.2 知道Redis 6.0之后多线程化了吗？为什么要引入多线程？</p>
-<p>参考<sup class="footnote-ref"><a href="#fn16" id="fnref16:1">[16:1]</a></sup>。</p>
+<p>参考<sup class="footnote-ref"><a href="#fn22" id="fnref22:1">[22:1]</a></sup>。</p>
 <p>Redis将所有数据放在内存中，内存的响应时长大约为100纳秒，对于小数据包，Redis服务器可以处理80,000到100,000 QPS，这也是Redis处理的极限了，对于80%的公司来说，单线程的Redis已经足够使用了。</p>
 <p>但随着越来越复杂的业务场景，有些公司动不动就上亿的交易量，因此需要更大的QPS。常见的解决方案是在分布式架构中对数据进行分区并采用多个服务器，但该方案有非常大的缺点，例如要管理的Redis服务器太多，维护代价大；某些适用于单个Redis服务器的命令不适用于数据分区；数据分区无法解决热点读/写问题；数据偏斜，重新分配和放大/缩小变得更加复杂等等。</p>
 <p>从Redis自身角度来说，因为读写网络的read/write系统调用占用了Redis执行期间大部分CPU时间，瓶颈主要在于网络的 IO 消耗, 优化主要有两个方向:</p>
@@ -473,13 +494,13 @@ Rebalance发生在以下情况，需要避免:</p>
 </li>
 <li>
 <p>5.3.3.1 什么是epoll？</p>
-<p>参考<sup class="footnote-ref"><a href="#fn17" id="fnref17">[17]</a></sup>。</p>
+<p>参考<sup class="footnote-ref"><a href="#fn23" id="fnref23">[23]</a></sup>。</p>
 <p>select 和 poll 是 Linux 的底层synchronous通信机制。</p>
 <p>epoll 是改进版。</p>
 </li>
 <li>
 <p>5.3.4 Redis的基本数据结构？底层是怎么实现的？</p>
-<p>参考<sup class="footnote-ref"><a href="#fn18" id="fnref18">[18]</a></sup>。</p>
+<p>参考<sup class="footnote-ref"><a href="#fn24" id="fnref24">[24]</a></sup>。</p>
 <ul>
 <li>string</li>
 <li>list</li>
@@ -490,7 +511,7 @@ Rebalance发生在以下情况，需要避免:</p>
 </li>
 <li>
 <p>5.3.5 说说Redis的VM机制。</p>
-<p>参考<sup class="footnote-ref"><a href="#fn19" id="fnref19">[19]</a></sup>。</p>
+<p>参考<sup class="footnote-ref"><a href="#fn25" id="fnref25">[25]</a></sup>。</p>
 <p>Redis自己实现了一套虚拟内存的管理机制。</p>
 </li>
 <li>
@@ -499,7 +520,7 @@ Rebalance发生在以下情况，需要避免:</p>
 官方推荐最大的节点数量为1000，由于Cluster架构中无Proxy层，Master与Slave之间使用异步replication。<br>
 客户端容忍一定程度的数据丢失，集群尽可能保存Client write操作的数据，保证数据一致性。<br>
 Redis集群通过partition来提供一定程度的可用性，当集群中的一部分节点失效或者无法进行通讯时，集群仍可以继续提供服务。</p>
-<p>参考<sup class="footnote-ref"><a href="#fn20" id="fnref20">[20]</a></sup></p>
+<p>参考<sup class="footnote-ref"><a href="#fn26" id="fnref26">[26]</a></sup><sup class="footnote-ref"><a href="#fn27" id="fnref27">[27]</a></sup></p>
 </li>
 <li>
 <p>5.3.6.1 为什么节点数量为1000？</p>
@@ -516,18 +537,21 @@ Redis集群通过partition来提供一定程度的可用性，当集群中的一
 <li>持久化机制。AOF(Append Only File) 和 RDB (Redis Database)。</li>
 <li>主从复制。</li>
 <li>哨兵。Sentinel。</li>
-<li>Cluster。</li>
+<li>Cluster。<br>
+<sup class="footnote-ref"><a href="#fn28" id="fnref28">[28]</a></sup></li>
 </ol>
 </li>
 <li>
 <p>5.3.7.1 具体讲讲持久化两个方案的原理和具体机制，以及如何配置？</p>
-<p><sup class="footnote-ref"><a href="#fn21" id="fnref21">[21]</a></sup></p>
+<p><sup class="footnote-ref"><a href="#fn29" id="fnref29">[29]</a></sup></p>
 </li>
 <li>
 <p>5.3.7.2 讲讲哨兵Sentinel机制？</p>
+<p><sup class="footnote-ref"><a href="#fn30" id="fnref30">[30]</a></sup></p>
 </li>
 <li>
 <p>5.3.7.3 Redis是怎么主从复制的？</p>
+<p><sup class="footnote-ref"><a href="#fn31" id="fnref31">[31]</a></sup></p>
 </li>
 <li>
 <p>6 Kafka 是你们自己搭的吗？是怎么配置的？</p>
@@ -546,6 +570,32 @@ Redis集群通过partition来提供一定程度的可用性，当集群中的一
 <li>
 <p>7 怎么部署的服务？</p>
 <p>阿里云ACK集群，k8s。</p>
+</li>
+<li>
+<p>7.1 k8s的服务结构知道？</p>
+<p><img src="/images/kubernetes-high-level-component-archtecture.jpg" alt="k8s arch"></p>
+<p>Control Plane:</p>
+<ul>
+<li>etcd 分布式KV数据库，用于保存集群状态</li>
+<li>api-server 提供了资源操作的唯一入口，并提供认证、授权、访问控制、API 注册和发现等机制</li>
+<li>scheduler 负责资源的调度，按照预定的调度策略将 Pod 调度到相应的机器上</li>
+<li>controller-manager 负责维护集群的状态，比如故障检测、自动扩展、滚动更新等</li>
+<li>cloud-controller-manager 可选，云服务商API</li>
+</ul>
+<p>Node:</p>
+<ul>
+<li>kube-proxy 为 Service 提供 cluster 内部的服务发现和负载均衡</li>
+<li>kubelet 负责维护容器的生命周期，同时也负责 Volume（CSI）和网络（CNI）的管理</li>
+<li>container runtime 负责镜像管理以及 Pod 和容器的真正运行（CRI）</li>
+</ul>
+<p>Plugin:</p>
+<ul>
+<li>CoreDNS 负责为整个集群提供 DNS 服务</li>
+<li>Ingress Controller 为服务提供外网入口</li>
+<li>Prometheus 提供资源监控</li>
+<li>Dashboard 提供 GUI</li>
+<li>Federation 提供跨可用区的集群</li>
+</ul>
 </li>
 <li>
 <p>8 计量计费这块是怎么做的？怎么防止计费出错？</p>
@@ -567,9 +617,90 @@ Redis集群通过partition来提供一定程度的可用性，当集群中的一
 </li>
 <li>
 <p>11.1 Kafka的Topic有数量限制吗？</p>
+<p>超过1000个会明显影响性能。</p>
 </li>
 <li>
 <p>12 节点挂了怎么处理？升级的时候怎么不影响业务？</p>
+</li>
+<li>
+<p>13 Go的基础知识</p>
+</li>
+<li>
+<p>13.1 怎么管理go的包的，会有版本冲突问题吗？</p>
+</li>
+<li>
+<p>13.2 go为什么这么快？</p>
+</li>
+<li>
+<p>13.3 go的并发模型？</p>
+<p>CSP。 CSP（communicating sequential processes）</p>
+<ul>
+<li>并发实体，通常可以理解为执行线程，它们相互独立，且并发执行；</li>
+<li>通道，并发实体之间使用通道发送信息。</li>
+</ul>
+</li>
+<li>
+<p>13.3.1 go的线程模型和常见的线程模型有什么区别。</p>
+<p><sup class="footnote-ref"><a href="#fn32" id="fnref32">[32]</a></sup><sup class="footnote-ref"><a href="#fn33" id="fnref33">[33]</a></sup></p>
+<p>常见的线程模型是1级模型，包括1:1, 1:M，M:N。Go用的是GMP模型，两级模型。GMP分别表示Goroutine，Machine和Process，第一级是Goroutine到Process，goroutine被分配到全局队列和process的队列，第二级是Process到Machine，Machine对应操作系统的内核线程，当Machine不足时会创建新的M。</p>
+<p>G理论上没有数量上限限制的。查看当前G的数量可以使用runtime. NumGoroutine()。<br>
+P由启动时环境变量 $GOMAXPROCS 或者是由runtime.GOMAXPROCS() 决定。这意味着在程序执行的任意时刻都只有 $GOMAXPROCS 个 goroutine 在同时运行。<br>
+M go 语言本身的限制：go 程序启动时，会设置 M 的最大数量，默认 10000. 但是内核很难支持这么多的线程数，所以这个限制可以忽略。 runtime/debug 中的 SetMaxThreads 函数，设置 M 的最大数量 一个 M 阻塞了，会创建新的 M。M 与 P 的数量没有绝对关系，一个 M 阻塞，P 就会去创建或者切换另一个 M，所以，即使 P 的默认数量是 1，也有可能会创建很多个 M 出来。</p>
+</li>
+<li>
+<p>13.3.2 Linux的线程调度模型是1:1，1:M，还是M:N？</p>
+<p>是1:1。Linux历史上经历了三个主要版本的线程模型，首先是LinuxThreads，是1:1模型，但因为LinuxThreads不符合POSIX规范并且有许多缺陷，后来IBM开发了NGPT，是M:N模型，性能比LinuxThreads高，但比较复杂。后来NPTL又出现，是1:1模型，性能更高，曾经它也想用M:N模型，但过于复杂，需要对内核进行大范围改动。<sup class="footnote-ref"><a href="#fn34" id="fnref34">[34]</a></sup><sup class="footnote-ref"><a href="#fn35" id="fnref35">[35]</a></sup></p>
+</li>
+<li>
+<p>13.4 go的内存模型？</p>
+</li>
+<li>
+<p>13.5 go的gc怎么做的？</p>
+</li>
+<li>
+<p>13.6 为什么goroutine可以开很多，有数量限制吗？和线程和进程有什么区别？</p>
+<p>goroutine是在user space的轻量级调度结构，由go runtime调度。相比之下，线程与进程是由操作系统调度，context switching的开销要大很多。</p>
+</li>
+<li>
+<p>13.6.1 协程，线程和进程具体有什么区别？</p>
+</li>
+<li>
+<p>13.7 go怎么做错误处理，sub goroutine的panic怎么处理。</p>
+</li>
+<li>
+<p>13.8 go有什么问题？</p>
+</li>
+<li>
+<p>13.9 channel有什么坑？</p>
+</li>
+<li>
+<p>13.9.1 无缓冲 chan 的发送和接收是否同步？</p>
+<p>发送端会阻塞直到接受。</p>
+</li>
+<li>
+<p>13.9.2 channel是怎么实现的？</p>
+<p>环形队列加锁。Circular Queue With Mutex。</p>
+</li>
+<li>
+<p>13.10 GOPATH 和 GOROOT 有什么区别？</p>
+</li>
+<li>
+<p>13.11 go的逃逸分析有什么用？</p>
+</li>
+<li>
+<p>13.12 线程安全，怎么启动多个goroutine并等待所有goroutine执行完成。</p>
+</li>
+<li>
+<p>13.12.1 怎么加锁？</p>
+</li>
+<li>
+<p>13.12.2 如何顺序输出？</p>
+</li>
+<li>
+<p>13.12.3 goroutine泄露有什么成因？怎么处理？</p>
+</li>
+<li>
+<p>13.12.4 除了mutex外还有哪些方式安全读写共享变量？</p>
 </li>
 </ul>
 <p><strong>算法与模型</strong></p>
@@ -622,41 +753,69 @@ Redis集群通过partition来提供一定程度的可用性，当集群中的一
 </li>
 <li id="fn3" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903688088059912">再有人问你分布式锁，这篇文章扔给他</a> <a href="#fnref3" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn4" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/266390197">kafka分布式的情况下，如何保证消息的顺序?</a> <a href="#fnref4" class="footnote-backref">↩︎</a> <a href="#fnref4:1" class="footnote-backref">↩︎</a></p>
+<li id="fn4" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/detectiveHLH/p/14713438.html">深入了解Zookeeper核心原理</a> <a href="#fnref4" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn5" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/yidan7063/article/details/108234222">kafka 笔记四 kafka消费者 再均衡</a> <a href="#fnref5" class="footnote-backref">↩︎</a> <a href="#fnref5:1" class="footnote-backref">↩︎</a></p>
+<li id="fn5" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/detectiveHLH/p/14677914.html">Zookeeper基础原理&amp;应用场景详解</a> <a href="#fnref5" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn6" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://www.tpvlog.com/article/283">透彻理解Kafka（五）——通信机制：多路复用</a> <a href="#fnref6" class="footnote-backref">↩︎</a></p>
+<li id="fn6" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/266390197">kafka分布式的情况下，如何保证消息的顺序?</a> <a href="#fnref6" class="footnote-backref">↩︎</a> <a href="#fnref6:1" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn7" class="footnote-item"><p><a target="_blank" rel="noopener" href="http://www.wangqingzheng.com/huaweiyun/15/218415.html">17 个方面，综合对比 Kafka、RabbitMQ、RocketMQ、ActiveMQ</a> <a href="#fnref7" class="footnote-backref">↩︎</a></p>
+<li id="fn7" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/yidan7063/article/details/108234222">kafka 笔记四 kafka消费者 再均衡</a> <a href="#fnref7" class="footnote-backref">↩︎</a> <a href="#fnref7:1" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn8" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/detectiveHLH/p/14412391.html">消息队列杂谈</a> <a href="#fnref8" class="footnote-backref">↩︎</a></p>
+<li id="fn8" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://www.tpvlog.com/article/283">透彻理解Kafka（五）——通信机制：多路复用</a> <a href="#fnref8" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn9" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6999572991340183588">Kafka：保证消息不重复不丢失</a> <a href="#fnref9" class="footnote-backref">↩︎</a></p>
+<li id="fn9" class="footnote-item"><p><a target="_blank" rel="noopener" href="http://www.wangqingzheng.com/huaweiyun/15/218415.html">17 个方面，综合对比 Kafka、RabbitMQ、RocketMQ、ActiveMQ</a> <a href="#fnref9" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn10" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://developer.aliyun.com/article/778789">Hologres产品介绍与技术揭秘</a> <a href="#fnref10" class="footnote-backref">↩︎</a> <a href="#fnref10:1" class="footnote-backref">↩︎</a></p>
+<li id="fn10" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/detectiveHLH/p/14412391.html">消息队列杂谈</a> <a href="#fnref10" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn11" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6986470315584913415">什么时候使用Redis缓存</a> <a href="#fnref11" class="footnote-backref">↩︎</a></p>
+<li id="fn11" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/60196818">技术选型：RocketMQ or Kafka</a> <a href="#fnref11" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn12" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/you18131371836/article/details/118212987">缓存基础----本地缓存、分布式缓存以及多级缓存</a> <a href="#fnref12" class="footnote-backref">↩︎</a></p>
+<li id="fn12" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/prestigeding/article/details/110408415">Kafka与RocketMQ性能对比大揭秘</a> <a href="#fnref12" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn13" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/a745233700/article/details/113488673">Redis为什么这么快？Redis的线程模型与Redis多线程</a> <a href="#fnref13" class="footnote-backref">↩︎</a></p>
+<li id="fn13" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/shi_hong_fei_hei/article/details/115603204">RocketMQ 架构设计和设计原理</a> <a href="#fnref13" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn14" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/kismetv/p/8654978.html">深入学习Redis（1）：Redis内存模型 </a> <a href="#fnref14" class="footnote-backref">↩︎</a></p>
+<li id="fn14" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6999572991340183588">Kafka：保证消息不重复不丢失</a> <a href="#fnref14" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn15" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://juejin.cn/post/7065960336335044645">Redis 究竟是单线程还是多线程呢？</a> <a href="#fnref15" class="footnote-backref">↩︎</a></p>
+<li id="fn15" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://developer.aliyun.com/article/778789">Hologres产品介绍与技术揭秘</a> <a href="#fnref15" class="footnote-backref">↩︎</a> <a href="#fnref15:1" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn16" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://www.51cto.com/article/616601.html">Redis 6.0 新特性-多线程连环13问！</a> <a href="#fnref16" class="footnote-backref">↩︎</a> <a href="#fnref16:1" class="footnote-backref">↩︎</a></p>
+<li id="fn16" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6986470315584913415">什么时候使用Redis缓存</a> <a href="#fnref16" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn17" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000003063859">Linux IO模式及 select、poll、epoll详解</a> <a href="#fnref17" class="footnote-backref">↩︎</a></p>
+<li id="fn17" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/you18131371836/article/details/118212987">缓存基础----本地缓存、分布式缓存以及多级缓存</a> <a href="#fnref17" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn18" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/a745233700/article/details/113449889">Redis的五种数据结构的底层实现原理</a> <a href="#fnref18" class="footnote-backref">↩︎</a></p>
+<li id="fn18" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://juejin.cn/post/7000263632151904293">Redis与本地缓存组合</a> <a href="#fnref18" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn19" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1846145">拒绝躺平，Redis选择实现了自己的VM</a> <a href="#fnref19" class="footnote-backref">↩︎</a></p>
+<li id="fn19" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/a745233700/article/details/113488673">Redis为什么这么快？Redis的线程模型与Redis多线程</a> <a href="#fnref19" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn20" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/detectiveHLH/p/14154665.html">深度图解Redis Cluster原理</a> <a href="#fnref20" class="footnote-backref">↩︎</a></p>
+<li id="fn20" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/kismetv/p/8654978.html">深入学习Redis（1）：Redis内存模型 </a> <a href="#fnref20" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn21" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903655527677960">一文看懂Redis的持久化原理</a> <a href="#fnref21" class="footnote-backref">↩︎</a></p>
+<li id="fn21" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://juejin.cn/post/7065960336335044645">Redis 究竟是单线程还是多线程呢？</a> <a href="#fnref21" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn22" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://www.51cto.com/article/616601.html">Redis 6.0 新特性-多线程连环13问！</a> <a href="#fnref22" class="footnote-backref">↩︎</a> <a href="#fnref22:1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn23" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000003063859">Linux IO模式及 select、poll、epoll详解</a> <a href="#fnref23" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn24" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/a745233700/article/details/113449889">Redis的五种数据结构的底层实现原理</a> <a href="#fnref24" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn25" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1846145">拒绝躺平，Redis选择实现了自己的VM</a> <a href="#fnref25" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn26" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/detectiveHLH/p/14154665.html">深度图解Redis Cluster原理</a> <a href="#fnref26" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn27" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/kismetv/p/9853040.html">深入学习Redis（5）：集群</a> <a href="#fnref27" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn28" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/62947738">Redis哨兵、复制、集群的设计原理与区别</a> <a href="#fnref28" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn29" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903655527677960">一文看懂Redis的持久化原理</a> <a href="#fnref29" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn30" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/kismetv/p/9609938.html">深入学习Redis（4）：哨兵</a> <a href="#fnref30" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn31" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/kismetv/p/9236731.html">深入学习Redis（3）：主从复制</a> <a href="#fnref31" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn32" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://go.cyub.vip/gmp/gmp-model.html">GMP模型</a> <a href="#fnref32" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn33" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://learnku.com/articles/41728">Golang 调度器 GMP 原理与调度全分析</a> <a href="#fnref33" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn34" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/6c507b966ad1">【译】Linux 线程模型比较：LinuxThreads 和 NPTL</a> <a href="#fnref34" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn35" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://www.linuxidc.com/Linux/2016-01/127559.htm">Linux历史上线程的3种实现模型</a> <a href="#fnref35" class="footnote-backref">↩︎</a></p>
 </li>
 </ol>
 </section>
