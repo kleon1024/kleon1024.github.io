@@ -6,7 +6,7 @@
   <link href="https://blog.kleon.space/atom.xml" rel="self"/>
   
   <link href="https://blog.kleon.space/"/>
-  <updated>2022-05-05T18:13:53.000Z</updated>
+  <updated>2022-05-15T22:12:44.000Z</updated>
   <id>https://blog.kleon.space/</id>
   
   <author>
@@ -15,6 +15,39 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Code - Tree</title>
+    <link href="https://blog.kleon.space/interview/code/tree/"/>
+    <id>https://blog.kleon.space/interview/code/tree/</id>
+    <published>2022-05-15T22:12:41.000Z</published>
+    <updated>2022-05-15T22:12:44.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;div class=&quot;toc&quot;&gt;
+&lt;!-- toc --&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#basics&quot;&gt;Basics&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#tree&quot;&gt;Tree&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="interview" scheme="https://blog.kleon.space/categories/interview/"/>
+    
+    
+    <category term="interview" scheme="https://blog.kleon.space/tags/interview/"/>
+    
+    <category term="algorithm" scheme="https://blog.kleon.space/tags/algorithm/"/>
+    
+  </entry>
   
   <entry>
     <title>Code - Array</title>
@@ -575,34 +608,6 @@
         
     <summary type="html">&lt;h1&gt;&lt;a href=&quot;#algorithms&quot; class=&quot;header-anchor&quot;&gt;#&lt;/a&gt;&lt;span id=&quot;algorithms&quot;&gt; Algorithms&lt;/span&gt;&lt;/h1&gt;
 &lt;h1&gt;&lt;a href=&quot;#system&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="interview" scheme="https://blog.kleon.space/categories/interview/"/>
-    
-    
-    <category term="interview" scheme="https://blog.kleon.space/tags/interview/"/>
-    
-    <category term="system design" scheme="https://blog.kleon.space/tags/system-design/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>System Design - Asynchronism</title>
-    <link href="https://blog.kleon.space/interview/system/asynchronism/"/>
-    <id>https://blog.kleon.space/interview/system/asynchronism/</id>
-    <published>2022-04-29T18:19:14.000Z</published>
-    <updated>2022-04-29T18:19:18.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;Message queues, task queues and back pressure.&lt;/p&gt;
-&lt;h1&gt;&lt;a href=&quot;#message-queue&quot; class=&quot;header-anchor&quot;&gt;#&lt;/a&gt;&lt;span id=&quot;message-queue&quot;&gt;</summary>
         
       
     
