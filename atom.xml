@@ -50,6 +50,32 @@
   </entry>
   
   <entry>
+    <title></title>
+    <link href="https://blog.kleon.space/interview/code/string/"/>
+    <id>https://blog.kleon.space/interview/code/string/</id>
+    <published>2022-05-15T16:48:04.083Z</published>
+    <updated>2022-05-15T16:48:04.083Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;div class=&quot;toc&quot;&gt;
+&lt;!-- toc --&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#leetcode&quot;&gt;LeetCode&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#166-fraction-to-recurring-decimal&quot;&gt;166.</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>Code - Array</title>
     <link href="https://blog.kleon.space/interview/code/array/"/>
     <id>https://blog.kleon.space/interview/code/array/</id>
@@ -101,6 +127,38 @@
 &lt;!-- tocstop --&gt;
 &lt;/div&gt;
 &lt;h2&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="interview" scheme="https://blog.kleon.space/categories/interview/"/>
+    
+    
+    <category term="interview" scheme="https://blog.kleon.space/tags/interview/"/>
+    
+    <category term="algorithm" scheme="https://blog.kleon.space/tags/algorithm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Code - Greedy</title>
+    <link href="https://blog.kleon.space/interview/code/greedy/"/>
+    <id>https://blog.kleon.space/interview/code/greedy/</id>
+    <published>2022-05-05T18:13:57.000Z</published>
+    <updated>2022-05-05T18:13:53.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;div class=&quot;toc&quot;&gt;
+&lt;!-- toc --&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#leetcode&quot;&gt;LeetCode&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#860-lemonade-change&quot;&gt;860. Lemonade</summary>
         
       
     
@@ -564,61 +622,6 @@
     <category term="interview" scheme="https://blog.kleon.space/tags/interview/"/>
     
     <category term="tech" scheme="https://blog.kleon.space/tags/tech/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Tech - MongoDB</title>
-    <link href="https://blog.kleon.space/interview/tech/mongodb/"/>
-    <id>https://blog.kleon.space/interview/tech/mongodb/</id>
-    <published>2022-04-29T19:13:52.000Z</published>
-    <updated>2022-05-02T18:57:14.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;Q &amp;amp; A of mongodb &lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn1&quot; id=&quot;fnref1&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt;&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn2&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="interview" scheme="https://blog.kleon.space/categories/interview/"/>
-    
-    
-    <category term="interview" scheme="https://blog.kleon.space/tags/interview/"/>
-    
-    <category term="tech" scheme="https://blog.kleon.space/tags/tech/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ML Design - Outline</title>
-    <link href="https://blog.kleon.space/interview/ml/outline/"/>
-    <id>https://blog.kleon.space/interview/ml/outline/</id>
-    <published>2022-04-29T18:19:14.000Z</published>
-    <updated>2022-04-29T18:19:18.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1&gt;&lt;a href=&quot;#algorithms&quot; class=&quot;header-anchor&quot;&gt;#&lt;/a&gt;&lt;span id=&quot;algorithms&quot;&gt; Algorithms&lt;/span&gt;&lt;/h1&gt;
-&lt;h1&gt;&lt;a href=&quot;#system&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="interview" scheme="https://blog.kleon.space/categories/interview/"/>
-    
-    
-    <category term="interview" scheme="https://blog.kleon.space/tags/interview/"/>
-    
-    <category term="system design" scheme="https://blog.kleon.space/tags/system-design/"/>
     
   </entry>
   
