@@ -49,6 +49,40 @@
   </entry>
   
   <entry>
+    <title>Code - DFS</title>
+    <link href="https://blog.kleon.space/interview/code/dfs/"/>
+    <id>https://blog.kleon.space/interview/code/dfs/</id>
+    <published>2022-05-05T18:13:57.000Z</published>
+    <updated>2022-05-05T18:13:53.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;div class=&quot;toc&quot;&gt;
+&lt;!-- toc --&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#980-unique-paths-iii&quot;&gt;980. Unique Paths III&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- tocstop --&gt;
+&lt;/div&gt;
+&lt;h2&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="interview" scheme="https://blog.kleon.space/categories/interview/"/>
+    
+    
+    <category term="interview" scheme="https://blog.kleon.space/tags/interview/"/>
+    
+    <category term="algorithm" scheme="https://blog.kleon.space/tags/algorithm/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Code - Hash Table</title>
     <link href="https://blog.kleon.space/interview/code/hash_table/"/>
     <id>https://blog.kleon.space/interview/code/hash_table/</id>
@@ -569,34 +603,6 @@
         
     <summary type="html">&lt;p&gt;Message queues, task queues and back pressure.&lt;/p&gt;
 &lt;h1&gt;&lt;a href=&quot;#message-queue&quot; class=&quot;header-anchor&quot;&gt;#&lt;/a&gt;&lt;span id=&quot;message-queue&quot;&gt;</summary>
-        
-      
-    
-    
-    
-    <category term="interview" scheme="https://blog.kleon.space/categories/interview/"/>
-    
-    
-    <category term="interview" scheme="https://blog.kleon.space/tags/interview/"/>
-    
-    <category term="system design" scheme="https://blog.kleon.space/tags/system-design/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>System Design - Cache</title>
-    <link href="https://blog.kleon.space/interview/system/cache/"/>
-    <id>https://blog.kleon.space/interview/system/cache/</id>
-    <published>2022-04-29T18:19:14.000Z</published>
-    <updated>2022-04-29T18:19:18.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1&gt;&lt;a href=&quot;#client-cache&quot; class=&quot;header-anchor&quot;&gt;#&lt;/a&gt;&lt;span id=&quot;client-cache&quot;&gt; Client Cache&lt;/span&gt;&lt;/h1&gt;
-&lt;h1&gt;&lt;a href=&quot;#server-cache&quot;</summary>
         
       
     
