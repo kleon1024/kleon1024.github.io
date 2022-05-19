@@ -6,7 +6,7 @@
   <link href="https://blog.kleon.space/atom.xml" rel="self"/>
   
   <link href="https://blog.kleon.space/"/>
-  <updated>2022-05-15T22:12:44.000Z</updated>
+  <updated>2022-05-19T00:37:31.000Z</updated>
   <id>https://blog.kleon.space/</id>
   
   <author>
@@ -15,6 +15,161 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>System Design</title>
+    <link href="https://blog.kleon.space/interview/system/"/>
+    <id>https://blog.kleon.space/interview/system/</id>
+    <published>2022-05-19T00:37:28.000Z</published>
+    <updated>2022-05-19T00:37:31.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;Q &amp;amp; A of system design&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn1&quot; id=&quot;fnref1&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt;&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn2&quot; id=&quot;fnref2&quot;&gt;[2]&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/system_design.png&quot; alt=&quot;system design&quot; /&gt;&lt;/p&gt;
+&lt;div class=&quot;tocStart&quot;&gt;&lt;/div&gt;
+&lt;!-- toc --&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#database&quot;&gt;Database&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#cap&quot;&gt;CAP&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#table&quot;&gt;Table&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#primary-key&quot;&gt;Primary Key&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#sql&quot;&gt;SQL&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#mysql&quot;&gt;MySQL&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#sql-injection&quot;&gt;SQL Injection&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#nosql&quot;&gt;NoSQL&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#salt&quot;&gt;Salt&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#access-times&quot;&gt;Access Times&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#cache&quot;&gt;Cache&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#hot-data&quot;&gt;Hot Data&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#elimination-strategy&quot;&gt;Elimination Strategy&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#lru&quot;&gt;LRU&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#lfu&quot;&gt;LFU&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#monitor&quot;&gt;Monitor&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#real-time-stream-processing&quot;&gt;Real Time Stream Processing&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#availability&quot;&gt;Availability&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#fuse&quot;&gt;Fuse&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#traffic-control&quot;&gt;Traffic Control&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#replica-set&quot;&gt;Replica Set&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#network&quot;&gt;Network&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#protocol&quot;&gt;Protocol&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#http&quot;&gt;HTTP&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#https&quot;&gt;HTTPS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#tcp&quot;&gt;TCP&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#authentication&quot;&gt;Authentication&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#cookie&quot;&gt;Cookie&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#session&quot;&gt;Session&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#token&quot;&gt;Token&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#csrf&quot;&gt;CSRF&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#cdn&quot;&gt;CDN&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#encryption&quot;&gt;Encryption&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#rsa&quot;&gt;RSA&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#aes&quot;&gt;AES&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#case&quot;&gt;Case&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#design-recommend-system&quot;&gt;Design Recommend System&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#design-short-link-service&quot;&gt;Design Short Link Service&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#design-shopee&quot;&gt;Design Shopee&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#design-tiktok&quot;&gt;Design TikTok&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#design-dropbox&quot;&gt;Design Dropbox&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#design-netflix&quot;&gt;Design Netflix&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- tocstop --&gt;
+&lt;div class=&quot;tocEnd&quot;&gt;&lt;/div&gt;
+&lt;h1 id=&quot;database&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#database&quot;&gt;&lt;/a&gt; Database&lt;/h1&gt;
+&lt;h2 id=&quot;cap&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#cap&quot;&gt;&lt;/a&gt; CAP&lt;/h2&gt;
+&lt;h2 id=&quot;table&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#table&quot;&gt;&lt;/a&gt; Table&lt;/h2&gt;
+&lt;h2 id=&quot;primary-key&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#primary-key&quot;&gt;&lt;/a&gt; Primary Key&lt;/h2&gt;
+&lt;p&gt;uuid vs snowflake &lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn3&quot; id=&quot;fnref3&quot;&gt;[3]&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;h2 id=&quot;sql&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#sql&quot;&gt;&lt;/a&gt; SQL&lt;/h2&gt;
+&lt;h3 id=&quot;mysql&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#mysql&quot;&gt;&lt;/a&gt; MySQL&lt;/h3&gt;
+&lt;p&gt;&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn4&quot; id=&quot;fnref4&quot;&gt;[4]&lt;/a&gt;&lt;/sup&gt;&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn5&quot; id=&quot;fnref5&quot;&gt;[5]&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;h3 id=&quot;sql-injection&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#sql-injection&quot;&gt;&lt;/a&gt; SQL Injection&lt;/h3&gt;
+&lt;h2 id=&quot;nosql&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#nosql&quot;&gt;&lt;/a&gt; NoSQL&lt;/h2&gt;
+&lt;h2 id=&quot;salt&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#salt&quot;&gt;&lt;/a&gt; Salt&lt;/h2&gt;
+&lt;p&gt;SHA256 bcrypt&lt;br /&gt;
+&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn6&quot; id=&quot;fnref6&quot;&gt;[6]&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;h2 id=&quot;access-times&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#access-times&quot;&gt;&lt;/a&gt; Access Times&lt;/h2&gt;
+&lt;h1 id=&quot;cache&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#cache&quot;&gt;&lt;/a&gt; Cache&lt;/h1&gt;
+&lt;h2 id=&quot;hot-data&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#hot-data&quot;&gt;&lt;/a&gt; Hot Data&lt;/h2&gt;
+&lt;p&gt;&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn7&quot; id=&quot;fnref7&quot;&gt;[7]&lt;/a&gt;&lt;/sup&gt;&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn8&quot; id=&quot;fnref8&quot;&gt;[8]&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;h2 id=&quot;elimination-strategy&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#elimination-strategy&quot;&gt;&lt;/a&gt; Elimination Strategy&lt;/h2&gt;
+&lt;h3 id=&quot;lru&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#lru&quot;&gt;&lt;/a&gt; LRU&lt;/h3&gt;
+&lt;h3 id=&quot;lfu&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#lfu&quot;&gt;&lt;/a&gt; LFU&lt;/h3&gt;
+&lt;h1 id=&quot;monitor&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#monitor&quot;&gt;&lt;/a&gt; Monitor&lt;/h1&gt;
+&lt;h2 id=&quot;real-time-stream-processing&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#real-time-stream-processing&quot;&gt;&lt;/a&gt; Real Time Stream Processing&lt;/h2&gt;
+&lt;h1 id=&quot;availability&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#availability&quot;&gt;&lt;/a&gt; Availability&lt;/h1&gt;
+&lt;h2 id=&quot;fuse&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#fuse&quot;&gt;&lt;/a&gt; Fuse&lt;/h2&gt;
+&lt;h2 id=&quot;traffic-control&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#traffic-control&quot;&gt;&lt;/a&gt; Traffic Control&lt;/h2&gt;
+&lt;h2 id=&quot;replica-set&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#replica-set&quot;&gt;&lt;/a&gt; Replica Set&lt;/h2&gt;
+&lt;h1 id=&quot;network&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#network&quot;&gt;&lt;/a&gt; Network&lt;/h1&gt;
+&lt;h2 id=&quot;protocol&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#protocol&quot;&gt;&lt;/a&gt; Protocol&lt;/h2&gt;
+&lt;h3 id=&quot;http&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#http&quot;&gt;&lt;/a&gt; HTTP&lt;/h3&gt;
+&lt;h3 id=&quot;https&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#https&quot;&gt;&lt;/a&gt; HTTPS&lt;/h3&gt;
+&lt;p&gt;TLS&lt;/p&gt;
+&lt;h3 id=&quot;tcp&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#tcp&quot;&gt;&lt;/a&gt; TCP&lt;/h3&gt;
+&lt;h2 id=&quot;authentication&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#authentication&quot;&gt;&lt;/a&gt; Authentication&lt;/h2&gt;
+&lt;h2 id=&quot;cookie&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#cookie&quot;&gt;&lt;/a&gt; Cookie&lt;/h2&gt;
+&lt;h2 id=&quot;session&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#session&quot;&gt;&lt;/a&gt; Session&lt;/h2&gt;
+&lt;h2 id=&quot;token&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#token&quot;&gt;&lt;/a&gt; Token&lt;/h2&gt;
+&lt;h2 id=&quot;csrf&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#csrf&quot;&gt;&lt;/a&gt; CSRF&lt;/h2&gt;
+&lt;h1 id=&quot;cdn&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#cdn&quot;&gt;&lt;/a&gt; CDN&lt;/h1&gt;
+&lt;h1 id=&quot;encryption&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#encryption&quot;&gt;&lt;/a&gt; Encryption&lt;/h1&gt;
+&lt;h2 id=&quot;rsa&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#rsa&quot;&gt;&lt;/a&gt; RSA&lt;/h2&gt;
+&lt;h2 id=&quot;aes&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#aes&quot;&gt;&lt;/a&gt; AES&lt;/h2&gt;
+&lt;p&gt;非对称加密相比对称加密的显著优点在于，对称加密需要协商密钥，而非对称加密可以安全地公开各自的公钥，在N个人之间通信的时候：使用非对称加密只需要N个密钥对，每个人只管理自己的密钥对。而使用对称加密需要则需要N*(N-1)/2个密钥，因此每个人需要管理N-1个密钥，密钥管理难度大，而且非常容易泄漏。&lt;/p&gt;
+&lt;p&gt;既然非对称加密这么好，那我们抛弃对称加密，完全使用非对称加密行不行？也不行。因为非对称加密的缺点就是运算速度非常慢，比对称加密要慢很多。&lt;/p&gt;
+&lt;p&gt;所以，在实际应用的时候，非对称加密总是和对称加密一起使用。假设小明需要给小红需要传输加密文件，他俩首先交换了各自的公钥，然后：&lt;/p&gt;
+&lt;p&gt;小明生成一个随机的AES口令，然后用小红的公钥通过RSA加密这个口令，并发给小红；&lt;br /&gt;
+小红用自己的RSA私钥解密得到AES口令；&lt;br /&gt;
+双方使用这个共享的AES口令用AES加密通信。&lt;br /&gt;
+可见非对称加密实际上应用在第一步，即加密“AES口令”。这也是我们在浏览器中常用的HTTPS协议的做法，即浏览器和服务器先通过RSA交换AES口令，接下来双方通信实际上采用的是速度较快的AES对称加密，而不是缓慢的RSA非对称加密。&lt;/p&gt;
+&lt;h1 id=&quot;case&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#case&quot;&gt;&lt;/a&gt; Case&lt;/h1&gt;
+&lt;h2 id=&quot;design-recommend-system&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#design-recommend-system&quot;&gt;&lt;/a&gt; Design Recommend System&lt;/h2&gt;
+&lt;h2 id=&quot;design-short-link-service&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#design-short-link-service&quot;&gt;&lt;/a&gt; Design Short Link Service&lt;/h2&gt;
+&lt;h2 id=&quot;design-shopee&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#design-shopee&quot;&gt;&lt;/a&gt; Design Shopee&lt;/h2&gt;
+&lt;h2 id=&quot;design-tiktok&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#design-tiktok&quot;&gt;&lt;/a&gt; Design TikTok&lt;/h2&gt;
+&lt;h2 id=&quot;design-dropbox&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#design-dropbox&quot;&gt;&lt;/a&gt; Design Dropbox&lt;/h2&gt;
+&lt;h2 id=&quot;design-netflix&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#design-netflix&quot;&gt;&lt;/a&gt; Design Netflix&lt;/h2&gt;</summary>
+    
+    
+    
+    <category term="interview" scheme="https://blog.kleon.space/categories/interview/"/>
+    
+    
+    <category term="interview" scheme="https://blog.kleon.space/tags/interview/"/>
+    
+    <category term="system design" scheme="https://blog.kleon.space/tags/system-design/"/>
+    
+  </entry>
   
   <entry>
     <title>Code - Tree</title>
@@ -370,34 +525,6 @@
     <category term="interview" scheme="https://blog.kleon.space/tags/interview/"/>
     
     <category term="algorithm" scheme="https://blog.kleon.space/tags/algorithm/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>System - Tinder as a microservice architecture</title>
-    <link href="https://blog.kleon.space/interview/system/example_tinder_as_microservice/"/>
-    <id>https://blog.kleon.space/interview/system/example_tinder_as_microservice/</id>
-    <published>2022-05-02T21:15:24.000Z</published>
-    <updated>2022-05-02T21:15:28.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;subtitles from youtube&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn1&quot; id=&quot;fnref1&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-&lt;p&gt;so I forgot to say this before we</summary>
-        
-      
-    
-    
-    
-    <category term="interview" scheme="https://blog.kleon.space/categories/interview/"/>
-    
-    
-    <category term="interview" scheme="https://blog.kleon.space/tags/interview/"/>
-    
-    <category term="system design" scheme="https://blog.kleon.space/tags/system-design/"/>
     
   </entry>
   

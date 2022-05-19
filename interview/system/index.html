@@ -1,0 +1,206 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title>System Design · KLEON</title><meta name="description" content="Q &amp;amp; A of system design[1][2].
+
+
+
+
+Database
+
+CAP
+Table
+Primary Key
+SQL
+
+MySQL
+SQL Injection
+
+
+NoSQL
+Salt
+Access Times
+
+
+Cache
+
+Hot Data
+Elimination"><meta name="og:description" content="Q &amp;amp; A of system design[1][2].
+
+
+
+
+Database
+
+CAP
+Table
+Primary Key
+SQL
+
+MySQL
+SQL Injection
+
+
+NoSQL
+Salt
+Access Times
+
+
+Cache
+
+Hot Data
+Elimination"><meta name="twitter:site" content="KLEON"><meta name="twitter:title" content="System Design"><meta name="twitter:card" content="summary"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/github.min.css"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/KaTeX/0.10.2/katex.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 6.1.0"></head><body><div id="stage" class="container"><div class="row"><div id="side-bar" class="col-sm-3 col-xs-12 side-container invisible"><div class="vertical-text site-title"><h3 tabindex="-1" class="site-title-small"><a href="/" class="a-title"></a></h3><h1 tabindex="-1" class="site-title-large"><a href="/" class="a-title">吹拉弹唱</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div id="site-nav" class="site-title-links"><ul><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li><li><a href="/categories">Categories</a></li><li><a href="/tags">Tags</a></li><li><a href="/googlebe23cb0bc55fc412.html"></a></li><li><a href="/about/index.html"></a></li><li class="soc"><a href="https://github.com/kleon1024" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa fa-github">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div id="main-container" class="col-sm-9 col-xs-12 main-container invisible"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>System Design</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2022-05-19</span><span class="date meta-item">Updated at&nbsp;2022-05-19</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/interview/" title="interview" class="a-tag">interview</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/interview/" title="interview" class="a-tag">interview</a><span>&nbsp;</span><a href="/tags/system-design/" title="system design" class="a-tag">system design</a><span>&nbsp;</span></span></p><p class="post-abstract"><p>Q &amp; A of system design<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup><sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>.</p>
+<p><img src="/images/system_design.png" alt="system design"></p>
+<div class="toc">
+<!-- toc -->
+<ul>
+<li><a href="#database">Database</a>
+<ul>
+<li><a href="#cap">CAP</a></li>
+<li><a href="#table">Table</a></li>
+<li><a href="#primary-key">Primary Key</a></li>
+<li><a href="#sql">SQL</a>
+<ul>
+<li><a href="#mysql">MySQL</a></li>
+<li><a href="#sql-injection">SQL Injection</a></li>
+</ul>
+</li>
+<li><a href="#nosql">NoSQL</a></li>
+<li><a href="#salt">Salt</a></li>
+<li><a href="#access-times">Access Times</a></li>
+</ul>
+</li>
+<li><a href="#cache">Cache</a>
+<ul>
+<li><a href="#hot-data">Hot Data</a></li>
+<li><a href="#elimination-strategy">Elimination Strategy</a>
+<ul>
+<li><a href="#lru">LRU</a></li>
+<li><a href="#lfu">LFU</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#monitor">Monitor</a>
+<ul>
+<li><a href="#real-time-stream-processing">Real Time Stream Processing</a></li>
+</ul>
+</li>
+<li><a href="#availability">Availability</a>
+<ul>
+<li><a href="#fuse">Fuse</a></li>
+<li><a href="#traffic-control">Traffic Control</a></li>
+<li><a href="#replica-set">Replica Set</a></li>
+</ul>
+</li>
+<li><a href="#network">Network</a>
+<ul>
+<li><a href="#protocol">Protocol</a>
+<ul>
+<li><a href="#http">HTTP</a></li>
+<li><a href="#https">HTTPS</a></li>
+<li><a href="#tcp">TCP</a></li>
+</ul>
+</li>
+<li><a href="#authentication">Authentication</a></li>
+<li><a href="#cookie">Cookie</a></li>
+<li><a href="#session">Session</a></li>
+<li><a href="#token">Token</a></li>
+<li><a href="#csrf">CSRF</a></li>
+</ul>
+</li>
+<li><a href="#cdn">CDN</a></li>
+<li><a href="#encryption">Encryption</a>
+<ul>
+<li><a href="#rsa">RSA</a></li>
+<li><a href="#aes">AES</a></li>
+</ul>
+</li>
+<li><a href="#case">Case</a>
+<ul>
+<li><a href="#design-recommend-system">Design Recommend System</a></li>
+<li><a href="#design-short-link-service">Design Short Link Service</a></li>
+<li><a href="#design-shopee">Design Shopee</a></li>
+<li><a href="#design-tiktok">Design TikTok</a></li>
+<li><a href="#design-dropbox">Design Dropbox</a></li>
+<li><a href="#design-netflix">Design Netflix</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+</div>
+<h1><a href="#database" class="header-anchor">#</a><span id="database"> Database</span></h1>
+<h2><a href="#cap" class="header-anchor">#</a><span id="cap"> CAP</span></h2>
+<h2><a href="#table" class="header-anchor">#</a><span id="table"> Table</span></h2>
+<h2><a href="#primary-key" class="header-anchor">#</a><span id="primary-key"> Primary Key</span></h2>
+<p>uuid vs snowflake <sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup></p>
+<h2><a href="#sql" class="header-anchor">#</a><span id="sql"> SQL</span></h2>
+<h3><a href="#mysql" class="header-anchor">#</a><span id="mysql"> MySQL</span></h3>
+<p><sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup><sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup></p>
+<h3><a href="#sql-injection" class="header-anchor">#</a><span id="sql-injection"> SQL Injection</span></h3>
+<h2><a href="#nosql" class="header-anchor">#</a><span id="nosql"> NoSQL</span></h2>
+<h2><a href="#salt" class="header-anchor">#</a><span id="salt"> Salt</span></h2>
+<p>SHA256 bcrypt<br>
+<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup></p>
+<h2><a href="#access-times" class="header-anchor">#</a><span id="access-times"> Access Times</span></h2>
+<h1><a href="#cache" class="header-anchor">#</a><span id="cache"> Cache</span></h1>
+<h2><a href="#hot-data" class="header-anchor">#</a><span id="hot-data"> Hot Data</span></h2>
+<p><sup class="footnote-ref"><a href="#fn7" id="fnref7">[7]</a></sup><sup class="footnote-ref"><a href="#fn8" id="fnref8">[8]</a></sup></p>
+<h2><a href="#elimination-strategy" class="header-anchor">#</a><span id="elimination-strategy"> Elimination Strategy</span></h2>
+<h3><a href="#lru" class="header-anchor">#</a><span id="lru"> LRU</span></h3>
+<h3><a href="#lfu" class="header-anchor">#</a><span id="lfu"> LFU</span></h3>
+<h1><a href="#monitor" class="header-anchor">#</a><span id="monitor"> Monitor</span></h1>
+<h2><a href="#real-time-stream-processing" class="header-anchor">#</a><span id="real-time-stream-processing"> Real Time Stream Processing</span></h2>
+<h1><a href="#availability" class="header-anchor">#</a><span id="availability"> Availability</span></h1>
+<h2><a href="#fuse" class="header-anchor">#</a><span id="fuse"> Fuse</span></h2>
+<h2><a href="#traffic-control" class="header-anchor">#</a><span id="traffic-control"> Traffic Control</span></h2>
+<h2><a href="#replica-set" class="header-anchor">#</a><span id="replica-set"> Replica Set</span></h2>
+<h1><a href="#network" class="header-anchor">#</a><span id="network"> Network</span></h1>
+<h2><a href="#protocol" class="header-anchor">#</a><span id="protocol"> Protocol</span></h2>
+<h3><a href="#http" class="header-anchor">#</a><span id="http"> HTTP</span></h3>
+<h3><a href="#https" class="header-anchor">#</a><span id="https"> HTTPS</span></h3>
+<p>TLS</p>
+<h3><a href="#tcp" class="header-anchor">#</a><span id="tcp"> TCP</span></h3>
+<h2><a href="#authentication" class="header-anchor">#</a><span id="authentication"> Authentication</span></h2>
+<h2><a href="#cookie" class="header-anchor">#</a><span id="cookie"> Cookie</span></h2>
+<h2><a href="#session" class="header-anchor">#</a><span id="session"> Session</span></h2>
+<h2><a href="#token" class="header-anchor">#</a><span id="token"> Token</span></h2>
+<h2><a href="#csrf" class="header-anchor">#</a><span id="csrf"> CSRF</span></h2>
+<h1><a href="#cdn" class="header-anchor">#</a><span id="cdn"> CDN</span></h1>
+<h1><a href="#encryption" class="header-anchor">#</a><span id="encryption"> Encryption</span></h1>
+<h2><a href="#rsa" class="header-anchor">#</a><span id="rsa"> RSA</span></h2>
+<h2><a href="#aes" class="header-anchor">#</a><span id="aes"> AES</span></h2>
+<p>非对称加密相比对称加密的显著优点在于，对称加密需要协商密钥，而非对称加密可以安全地公开各自的公钥，在N个人之间通信的时候：使用非对称加密只需要N个密钥对，每个人只管理自己的密钥对。而使用对称加密需要则需要N*(N-1)/2个密钥，因此每个人需要管理N-1个密钥，密钥管理难度大，而且非常容易泄漏。</p>
+<p>既然非对称加密这么好，那我们抛弃对称加密，完全使用非对称加密行不行？也不行。因为非对称加密的缺点就是运算速度非常慢，比对称加密要慢很多。</p>
+<p>所以，在实际应用的时候，非对称加密总是和对称加密一起使用。假设小明需要给小红需要传输加密文件，他俩首先交换了各自的公钥，然后：</p>
+<p>小明生成一个随机的AES口令，然后用小红的公钥通过RSA加密这个口令，并发给小红；<br>
+小红用自己的RSA私钥解密得到AES口令；<br>
+双方使用这个共享的AES口令用AES加密通信。<br>
+可见非对称加密实际上应用在第一步，即加密“AES口令”。这也是我们在浏览器中常用的HTTPS协议的做法，即浏览器和服务器先通过RSA交换AES口令，接下来双方通信实际上采用的是速度较快的AES对称加密，而不是缓慢的RSA非对称加密。</p>
+<h1><a href="#case" class="header-anchor">#</a><span id="case"> Case</span></h1>
+<h2><a href="#design-recommend-system" class="header-anchor">#</a><span id="design-recommend-system"> Design Recommend System</span></h2>
+<h2><a href="#design-short-link-service" class="header-anchor">#</a><span id="design-short-link-service"> Design Short Link Service</span></h2>
+<h2><a href="#design-shopee" class="header-anchor">#</a><span id="design-shopee"> Design Shopee</span></h2>
+<h2><a href="#design-tiktok" class="header-anchor">#</a><span id="design-tiktok"> Design TikTok</span></h2>
+<h2><a href="#design-dropbox" class="header-anchor">#</a><span id="design-dropbox"> Design Dropbox</span></h2>
+<h2><a href="#design-netflix" class="header-anchor">#</a><span id="design-netflix"> Design Netflix</span></h2>
+<span id="more"></span>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://github.com/donnemartin/system-design-primer">The System Design Primer</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://wizardforcel.gitbooks.io/gainlo-interview-guide/content/">Gainlo Mock Interview</a> <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://eightpigs.io/2019/02/28/unique_identifier/">常见的统一标识符算法（UUID、NUID、Snowflake）</a> <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn4" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://acecodeinterview.com/sql_vs_nosql/">系统设计常见取舍之一 SQL vs NoSQL</a> <a href="#fnref4" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn5" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://dbaplus.cn/news-162-3843-1.html">千亿数据扛不住，三思后还是从MySQL迁走了……</a> <a href="#fnref5" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn6" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/20299384">加盐密码保存的最通用方法是？</a> <a href="#fnref6" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn7" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Anenan/article/details/114935349">热点数据的发现、处理、更新</a> <a href="#fnref7" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn8" class="footnote-item"><p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/76b359480940">秒杀系统的“热点数据”</a> <a href="#fnref8" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+</p></div><div class="share"><span>Share</span>&nbsp;<span class="soc"><a href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank" class="fa fa-bookmark"></a></span><span class="soc"><a href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));" class="fa fa-weibo"></a></span><span class="soc"><a target="_blank" rel="noopener" href="http://twitter.com/home?status=https://blog.kleon.space/interview/system/%20KLEON%20System Design" class="fa fa-twitter"></a></span></div><div class="pagination"><p class="clearfix"><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/interview/code/tree/" title="Code - Tree">Next post: Code - Tree&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>
