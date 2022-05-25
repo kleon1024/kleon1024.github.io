@@ -242,38 +242,6 @@
   </entry>
   
   <entry>
-    <title>Code - Array</title>
-    <link href="https://blog.kleon.space/interview/code/array/"/>
-    <id>https://blog.kleon.space/interview/code/array/</id>
-    <published>2022-05-05T18:13:57.000Z</published>
-    <updated>2022-05-05T18:13:53.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;div class=&quot;toc&quot;&gt;
-&lt;!-- toc --&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#leetcode&quot;&gt;LeetCode&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#9-palindrome-number&quot;&gt;9. Palindrome</summary>
-        
-      
-    
-    
-    
-    <category term="interview" scheme="https://blog.kleon.space/categories/interview/"/>
-    
-    
-    <category term="interview" scheme="https://blog.kleon.space/tags/interview/"/>
-    
-    <category term="algorithm" scheme="https://blog.kleon.space/tags/algorithm/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Code - DFS</title>
     <link href="https://blog.kleon.space/interview/code/dfs/"/>
     <id>https://blog.kleon.space/interview/code/dfs/</id>
@@ -487,6 +455,38 @@
 &lt;li&gt;&lt;a href=&quot;#leetcode&quot;&gt;LeetCode&lt;/a&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;#166-fraction-to-recurring-decimal&quot;&gt;166.</summary>
+        
+      
+    
+    
+    
+    <category term="interview" scheme="https://blog.kleon.space/categories/interview/"/>
+    
+    
+    <category term="interview" scheme="https://blog.kleon.space/tags/interview/"/>
+    
+    <category term="algorithm" scheme="https://blog.kleon.space/tags/algorithm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Code - Array</title>
+    <link href="https://blog.kleon.space/interview/code/array/"/>
+    <id>https://blog.kleon.space/interview/code/array/</id>
+    <published>2022-05-05T18:13:57.000Z</published>
+    <updated>2022-05-05T18:13:53.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;div class=&quot;toc&quot;&gt;
+&lt;!-- toc --&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#leetcode&quot;&gt;LeetCode&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#9-palindrome-number&quot;&gt;9. Palindrome</summary>
         
       
     

@@ -14,6 +14,7 @@ What’s your most challenging project / project you are most proud o"><meta nam
 <ul>
 <li><a href="#tell-me-about-yourself">Tell me about yourself?</a></li>
 <li><a href="#what-s-your-most-challenging-project-project-you-are-most-proud-of">What’s your most challenging project / project you are most proud of ?</a></li>
+<li><a href="#what-s-your-weakness">What’s your weakness?</a></li>
 <li><a href="#tell-me-about-a-time-when-you-demonstrated-leadership-skills">Tell me about a time when you demonstrated leadership skills.</a></li>
 <li><a href="#what-s-do-you-see-yourself-in-5-years-what-s-your-career-path-is-there-anything-change-in-the-past-few-years">What’s do you see yourself in 5 years? What’s your career path? Is there anything change in the past few years?</a></li>
 <li><a href="#why-do-you-want-to-leave-your-current-position-why-us">Why do you want to leave your current position? Why us?</a></li>
@@ -71,6 +72,15 @@ What’s your most challenging project / project you are most proud o"><meta nam
 <!-- tocstop -->
 </div>
 <p>BQ Compilation<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
+<p>Operational Roles:</p>
+<ul>
+<li>Marketing specialist</li>
+<li>Business analyst</li>
+<li>Human resource personnel</li>
+<li>Accountant</li>
+<li>Sales representative</li>
+<li>Customer service representative</li>
+</ul>
 <h1><a href="#tell-me-about-yourself" class="header-anchor">#</a><span id="tell-me-about-yourself"> Tell me about yourself?</span></h1>
 <p>As you can see from resume,<br>
 Go down to your resume chronologically, from the oldest experience.<br>
@@ -82,16 +92,62 @@ Limits time into 45 seconds to 1 minute at most. With a conclusion: that’s wha
 <p><sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup><br>
 I am XXX from XXXX, majored in XXX.这是第一句。（如果不是CS的话呢，这后面要加一句你现在在做的CS的相关的东西。还有提一下Myprimary programming language is XXX） I am concentrated on XXXX and I have experience in XXX./I am solid in XXX（这一句是technical的强势方向，一般如果说的是project的话强调相关性，不然就说一说你会的语言啊，XXXX experience之类比较以广度取胜的东西）. I am interested in XXXX inyour companry.  基本上就是这个格式。如果是转专业的人的话要加一句为什么你想要转CS，一个比较常用的模式就是i found my interest when I am doing XXX差不多是这样吧~重点是简短！当然对于一些强势相关方向一定要提，比如说做过的app之于iOS开发，后面可以加一句提一下下载量什么的。</p>
 <p>一般在面试刚开始几分钟作为热身问题，让面试官和面试者互相了解。这类问题一般都是标准模板，相信所有人都会准备，总之就是事先准备好比较长的介绍，可以超过3分钟，然后在面试的前几天，针对你要面试的公司和职位，专门裁剪一下答案，突出自己适合这类工作。比如面试职位要求有一定的Web Services经验，你就可以在介绍中说自己不少项目都开发或者使用过REST API。</p>
+<p>Hi, I’m XX. As you can see from my resume, I graduated from Fudan University in Shanghai and earned a Master degree of engineering. In college, I mainly concentrated on the acceleration of computing system, by designing the architecture and instructions of dedicated chips and developing the runtimes and compilers for those chips in C++. After graduation, I have been working in Alibaba Group for 4 years. I work in the team PAI (which is short for platform of AI) in the computing platform department of Alibaba Cloud .</p>
+<p>I started with designing the custom chip solutions to accelerate the inference of deep learning models, which is similar to what I’ve done in college.</p>
+<blockquote>
+<p>I wrote hardware logics (mostly are compute-intensive operators) in Verilog, a hardware description language for chips. And I also wrote the runtime and the compiler for our chips, which are used to mapping the computational graph of TensorFlow to our chip’s instructions. For those operators which are not implemented in the chip, we use TensorFlow to handle them. Therefore, we integrated our chip’s runtime into TensorFlow using custom operator (which is a mechanism for user to customize their own operators in C++) and XLA (which is a compilation framework embedded in the TensorFlow, generating instructions for different hardware backend from the computational graph).<br>
+I developed chip logics for compute-intensive operators in Verilog, a hardware description language and the runtime and compiler as well in C++. We integrated our runtime into tensorflow to make it a complete solution.</p>
+</blockquote>
+<p>The speedup is about several to hundreds of times depending on the proportion of the compute-intensive operators.</p>
+<p>Then I participated in the project to optimize the inference service from a higher level perspective.</p>
+<blockquote>
+<p>We researched and integrated different solutions including community, vendor and our own acceleration chip solution at the operator, computational graph and service levels.<br>
+To be more specific, the operator level focus on how to improve the utility of hardware in an operator. We can develop a customized chip with dedicated operator logics which will very fast but expensive, considering the time and cost of development. Or we can use computing libraries provided by vendors, like MKL-DNN or cuDNN. And more, since the intensive computation is usually a group of nested loop, we can “tune” the operator to find the most efficient combination of the loops, which is a main function of TVM.<br>
+As for the system level, we deployed models in our model serving platform called EAS, which have a flexible architecture supporting different frameworks. We found the system level optimization is also very important. Data transmission format, threads, core affinity and network gateway may influence the end-to-end performance significantly. And we use a bunch of methods to optimize them.</p>
+</blockquote>
+<p>The end-to-end latency and throughput of inference services are improved by combining different approaches at different levels.</p>
+<p>In 2019, Alibaba Cloud started to set revenue targets for every departments,</p>
+<blockquote>
+<p>and therefore, apart form the products that we already had for the professional machine learning customers and the engineers inside the our company,</p>
+</blockquote>
+<p>We started to develope application level products which provide machine learning abilities for the customers who want out-of-the-box features.<br>
+Those products target traditional companies which have accumulated data but lack the ability to utilize them.</p>
+<blockquote>
+<p>or the companies which already use a simple machine learning system but want to improve the business indicators further.</p>
+</blockquote>
+<p>I participated in tree products:<br>
+A modularized recommendation engine, used to provide recommendation services for small and medium companies.<br>
+A marketing and growth platform, used to optimize the click-through rate of marketing campaigns or the efficiency and accuracy of recovering lost customers via text messages.<br>
+And a video enhancement platform, used to improve the video quality under the same bandwidth or reduce the bandwidth while keeping the quality.<br>
+The microservices of these products are developed in Go, and deployed in k8s.<br>
+And those products have quite different requirements and are used in various scenarios but share similar engineer approaches.</p>
+<p>That’s my experience so far, and I think I’m qualified for this position.</p>
 <h1><a href="#what-s-your-most-challenging-project-project-you-are-most-proud-of" class="header-anchor">#</a><span id="what-s-your-most-challenging-project-project-you-are-most-proud-of"> What’s your most challenging project / project you are most proud of ?</span></h1>
 <p>有的人可能经验比较少，或者觉得目前的学习/工作上接触的项目都太简单，实在没有什么好说的。我一开始也是这么觉得的，但是后来经过一段时间研究和实践，我发现其实这类问题都可以用类似的套路来解决，总的回答框架还是STAR原则，介绍问题的时候终点突出问题的严重性（比如：我们一个页面要好几分钟才能加载完成），我们要提高到1秒以内，考虑到网络延时（Network Latency），实际上留给服务器的时间只有几百毫秒，这是一个非常有挑战性的项目。然后我首先分析问题，我们知道服务器端响应时间长，要么是获取数据时间长，要么是内存处理运算量过大，然后我从这两个角度来审视代码，发现我们频繁从数据库拿信息，同时，所以我提出了两个方案：</p>
 <p>数据库反范式化 （Denormalization）<br>
 分析载入的数据，对于实时性要求不高的我写了缓存（因为某些限制我们不能用第三方的缓存，所以我自己写了一个）<br>
 最后我载入大量数据进行测试，发现通过这两个优化办法，我减少了大量的数据库访问，原来载入一个页面需要100次，现在只要5次。大大提高了速度。</p>
 <p>上面这个例子很简单直接，但是我认为是一个比较好的回答，其实很多时候讲有挑战性的项目并不需要讲什么高大上的东西，甩一大堆目前流行的概念，比如说页面访问慢我就搞分布式，多加机器并行计算之类的，很多时候你可以通过一个很简单的例子来阐述，我认为重点应该是思维方式，突出你是一个愿意发现问题，愿意刨根问底，愿意积极解决问题的人。</p>
+<p>I think the project would be the marketing &amp; growth platform product. My colleagues and I design it from 0 to 1 together. I have to balance the technical complexity and product functionality, and make the choice. I build and optimize it to meet the business requirements and handle the corner case encountered in practical use.</p>
+<p>For example, designing the features details of product is quite complex, and I play a important role to help product manager and modeling engineer understand the whole process.<br>
+For another example, I encountered performance problem, and have to profile to the bottleneck inside the system, and when I finally solved the problem, I’m quite proud of that.</p>
+<p>In the whole process, I learned many valuable practical experiences for both product design and technical solutions.</p>
+<h1><a href="#what-s-your-weakness" class="header-anchor">#</a><span id="what-s-your-weakness"> What’s your weakness?</span></h1>
+<p>Under some circumstances, I insists on the principles considering the technical and product level features like extensibility and flexibilities, which may potentially requires a bit more work. Sales men want the product to go live as soon as possible because they tend to over-commit to customers but ignore the design and development details of the product. In the long run, my insistence is proved worthwhile. A plenty of time and costs are saved by designing and developing a relatively general and extensible architecture, which avoids re-designing and developing for dedicated architecture.</p>
+<p>I actually fully understand that we couldn’t consider all possible situations in the future, but at least we should design a relatively reasonable architecture balancing the sales requirements and product features. If the project is vital, I may choose to work overtime to implement my technical decisions. And by deep communication between me and my colleagues and thorough consideration on both the business and engineering, my insist can play an important role helping the product more sustainable and scalable for more similar business cases.</p>
 <h1><a href="#tell-me-about-a-time-when-you-demonstrated-leadership-skills" class="header-anchor">#</a><span id="tell-me-about-a-time-when-you-demonstrated-leadership-skills"> Tell me about a time when you demonstrated leadership skills.</span></h1>
 <p>对于有经验的面试来说有的时候会考察领导力（Leadership），对于应届毕业生也有可能会问到，问题也很简单，就是让你说说你领导的经历，很多人实际上都没有领导的经验，毕竟这样的机会不多，我觉得可以有种化解方法：把上面提到的最有挑战性的项目转化成你带领几个组员一起做，然后在这个过程中你怎么体现领导力，重点放在领导上面而不是技术细节。</p>
+<p>How I lead and make the technical decisions and how I coordinate people from different positions to work together and provide a global perspective to clarify the details and connections between each product features.</p>
 <h1><a href="#what-s-do-you-see-yourself-in-5-years-what-s-your-career-path-is-there-anything-change-in-the-past-few-years" class="header-anchor">#</a><span id="what-s-do-you-see-yourself-in-5-years-what-s-your-career-path-is-there-anything-change-in-the-past-few-years"> What’s do you see yourself in 5 years? What’s your career path? Is there anything change in the past few years?</span></h1>
 <p>如果不是General Hire, 面试前看看职位要求，然后自己介绍未来计划的时候可以多，如果是General Hire，那么面试前可以稍微了解一下公司的的常见的Career Path（如果网上找不到，可以问面试官）。遇到这类问题表达结构清晰一些，像写GRE作文，比如可以说：首先，我希望在技术上有所提高，成为某方面的的专家… 其次，我希望能体现出领导力（Leadership)…</p>
+<blockquote>
+<p>I expect to be advancing based on my job performance, and likely taking on some new job responsibilities.<br>
+Do you mind me asking where you see this compony going in the future?<br>
+What is the long term plan of this department?</p>
+</blockquote>
+<p>First, become an expert on the architecture, and participate more in product design, and I expect to be advancing and taking on some new job responsibilities.</p>
+<p>Do you mind me asking where you see our department going in the future? What is the long term plan of our team?</p>
+<p>What’s the business vision of our team? What’s the tech stack of our team?</p>
 <h1><a href="#why-do-you-want-to-leave-your-current-position-why-us" class="header-anchor">#</a><span id="why-do-you-want-to-leave-your-current-position-why-us"> Why do you want to leave your current position? Why us?</span></h1>
 <p>关于为什么跳槽，有不少经验或者攻略说可以说一些诸如个人、家庭原因所以要跳槽，但是我觉得这种回答是中性的，不好也不坏，能作为答案，但是不能给自己的面试加分。还有一个比较讨巧的回答就是：我想要迎接新的挑战。我认为是可以这么回答的，但是不能就这么直接的甩一句话给面试官，需要结合自身经历，用一些故事或者例子来引出结论，然面试官明白你确实是这么想的，而不是因为看了面试攻略，攻略上说这样回答比较好。</p>
 <blockquote>
@@ -117,6 +173,11 @@ I am XXX from XXXX, majored in XXX.这是第一句。（如果不是CS的话呢�
 </blockquote>
 <p>我个人觉得这样回答是不错的，首先体现了你一直在关注这个公司的产品，然后透过这个产品你观察到了什么，最后再升华成大道理，很像写高考作文。所以在面试之前，多了解公司的产品，有条件的话多使用几次（如果公司是做B2B的产品，用不到怎么办？那么多看看新闻，找找线索），然找到属于自己的那个“特殊理由”，让自己能与众不同，脱颖而出。</p>
 <p>总结：为什么选我们 = 常用套话/进阶套话 + 自己的闪光点</p>
+<p>I’ve been working in the current team for 4 years, and participated in several projects. Now, I’ve learned a lot experience from those projects and formed a global view from the low-level optimization to the high-level application development.<br>
+I’d like to try something new and learn how it works in a large global company. And I think I will learn a lot from that. I’m considering it to be stepping out of my comfort zone, so I came out and look for different opportunities.<br>
+A important reason is Shopee is still a company has a large growth potential.<br>
+Be honest, one of the reasons is that TikTok is an international company with rich culture diversities.<br>
+I’m expecting to work with the talented co-workers together and something extraordinary from them.</p>
 <h1><a href="#describe-a-situation-tell-me-about-a-time-conflict-with-co-worker-manager" class="header-anchor">#</a><span id="describe-a-situation-tell-me-about-a-time-conflict-with-co-worker-manager"> Describe a situation… / Tell me about a time, conflict with co-worker/manager</span></h1>
 <p>这个问题也是非常常见的面试题了，主要目的就是考察面试者是不是一个能和别人合作的人，算是一个比较容易回答的问题。回答的要点在于不要假设，而是讲故事。如果你觉得找不到一个比较合适的故事，或者是实在没有那种真的算得上冲突的经历，可以这么思考：不要把冲突想成很大的事情，冲突可以是两个人对某个问题有不同的看法，尤其是遇到Design Decision这种没有标准答案的情况，肯定会有意见不统一的时候。</p>
 <blockquote>
@@ -130,9 +191,11 @@ I am XXX from XXXX, majored in XXX.这是第一句。（如果不是CS的话呢�
 <li>在说你怎么处理问题时候体现你专业素养，是一个好的team player，是愿意沟通的人，是努力想让项目成功的人。</li>
 </ul>
 <p>有的时候会反过来考你，让你说说有冲突而且你失败的故事，那么你就可以把上面的故事反过来说，同样在说的过程中体现出你是愿意倾听别人意见，愿意承认错误并且配合的人。</p>
+<p>The problem is they had planned a lot of features to do, but without prioritizing product features and clarifying the connections between those features. The good thing is that we all want our product to go live as early as possible and be convenient and handy for our customers. It takes some time to communicate and discuss the details together. And I explained why we shouldn’t put too many features unrelated in a single sprint. From the technical view, that means a lot of work of developing and testing. And there’s a great possibility that we couldn’t release any of these features. What we should do here is to aggregate the related features and prioritize them and then have a plan of how to develop and test these features in every sprint in the future.</p>
 <h1><a href="#what-s-your-biggest-failure-what-s-your-most-regretful-decision-in-your-work" class="header-anchor">#</a><span id="what-s-your-biggest-failure-what-s-your-most-regretful-decision-in-your-work"> What’s your biggest failure? What’s your most regretful decision in your work?</span></h1>
 <p>这种负面问题是最讨厌的，很容易一不小心说多了给面试官留下坏印象，又不能太油滑回避问题。回答原则就是实话实说，说说你过去的失败经历，你犯的错误造成的后果，以及你学到了什么，比如说你可以这样：我曾经领导一个项目（可以是course project, 或者是工作上的项目），带着一堆人，起初我觉得大家都是优秀的工程师，所以开始就简单的做一个计划， 分配好任务就开始做了，做到后面慢慢发现当我们把大家的东西整合到一起的时候，我们发现了很多问题，比如有人默认其他人已经handle好了exception，他就没有再做检查等等。最后我们浪费了不少时间在debug上面。如果让我再做一次，我会花更多的时间在分析上，明确好每个人的责任，定好interface等等再分配任务，这样就能避免很多问题。</p>
 <p>我觉得这个例子一般，暂时想不到更好的回答。我在面试中遇到过这个问题，我的回答是结合我自身经历来说的，并不通用，但是回答结构和上面的例子差不多。之后如果有看到更好的例子，会再做补充。</p>
+<p>Lead a group of people, but I realized there should someone take the leadership, because most of them are passively decide what they will do according the priority of tasks assigned to them. I have to make a clear deadline from my point of view, rather than letting themselves make a assessment. I don’t know, maybe what I encounter in work is not a common case. After that, I will always step out and keep the track of whole project.</p>
 <h1><a href="#ask-me" class="header-anchor">#</a><span id="ask-me"> Ask me</span></h1>
 <p>无论什么面试最后一般都会留时间让你问问题，虽然很多时候只是走过场，但是并不代表这个环节不会挂人（Mitbbs的帖子也提到了：behavior question要认真准备）。</p>
 <p>最后这个环节很简单，肯定是要体现出对面试的职位的渴望，对面试公司的热爱。一些经典的提问：</p>
