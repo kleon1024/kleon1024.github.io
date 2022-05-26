@@ -1,52 +1,34 @@
 <!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title>System Design · KLEON</title><meta name="description" content="Q &amp;amp; A of system design[1][2].
-
-
-
-
-Database
-
 CAP
-Table
-Primary Key
-SQL
-
-MySQL
-SQL Injection
-
-
-NoSQL
-Salt
-Access Times
-
-
+LoadBalance
+Reverse-Proxy
+Distributed Database
+Distributed Transaction
 Cache
-
-Hot Data
-Elimination"><meta name="og:description" content="Q &amp;amp; A of system design[1][2].
-
-
-
-
-Database
-
+CDN
+Microservices
+Service Discovery"><meta name="og:description" content="Q &amp;amp; A of system design[1][2].
 CAP
-Table
-Primary Key
-SQL
-
-MySQL
-SQL Injection
-
-
-NoSQL
-Salt
-Access Times
-
-
+LoadBalance
+Reverse-Proxy
+Distributed Database
+Distributed Transaction
 Cache
-
-Hot Data
-Elimination"><meta name="twitter:site" content="KLEON"><meta name="twitter:title" content="System Design"><meta name="twitter:card" content="summary"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/github.min.css"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/KaTeX/0.10.2/katex.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 6.1.0"></head><body><div id="stage" class="container"><div class="row"><div id="side-bar" class="col-sm-3 col-xs-12 side-container invisible"><div class="vertical-text site-title"><h3 tabindex="-1" class="site-title-small"><a href="/" class="a-title"></a></h3><h1 tabindex="-1" class="site-title-large"><a href="/" class="a-title">吹拉弹唱</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div id="site-nav" class="site-title-links"><ul><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li><li><a href="/categories">Categories</a></li><li><a href="/tags">Tags</a></li><li><a href="/googlebe23cb0bc55fc412.html"></a></li><li><a href="/about/index.html"></a></li><li class="soc"><a href="https://github.com/kleon1024" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa fa-github">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div id="main-container" class="col-sm-9 col-xs-12 main-container invisible"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>System Design</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2022-05-19</span><span class="date meta-item">Updated at&nbsp;2022-05-19</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/interview/" title="interview" class="a-tag">interview</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/interview/" title="interview" class="a-tag">interview</a><span>&nbsp;</span><a href="/tags/system-design/" title="system design" class="a-tag">system design</a><span>&nbsp;</span></span></p><p class="post-abstract"><p>Q &amp; A of system design<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup><sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>.</p>
+CDN
+Microservices
+Service Discovery"><meta name="twitter:site" content="KLEON"><meta name="twitter:title" content="System Design"><meta name="twitter:card" content="summary"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/github.min.css"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/KaTeX/0.10.2/katex.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 6.1.0"></head><body><div id="stage" class="container"><div class="row"><div id="side-bar" class="col-sm-3 col-xs-12 side-container invisible"><div class="vertical-text site-title"><h3 tabindex="-1" class="site-title-small"><a href="/" class="a-title"></a></h3><h1 tabindex="-1" class="site-title-large"><a href="/" class="a-title">吹拉弹唱</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div id="site-nav" class="site-title-links"><ul><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li><li><a href="/categories">Categories</a></li><li><a href="/tags">Tags</a></li><li><a href="/googlebe23cb0bc55fc412.html"></a></li><li><a href="/about/index.html"></a></li><li class="soc"><a href="https://github.com/kleon1024" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa fa-github">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div id="main-container" class="col-sm-9 col-xs-12 main-container invisible"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>System Design</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2022-05-19</span><span class="date meta-item">Updated at&nbsp;2022-05-19</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/interview/" title="interview" class="a-tag">interview</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/interview/" title="interview" class="a-tag">interview</a><span>&nbsp;</span><a href="/tags/system-design/" title="system design" class="a-tag">system design</a><span>&nbsp;</span></span></p><p class="post-abstract"><p>Q &amp; A of system design<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup><sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>.</p>
+<p><input type="checkbox" id="checkbox11"><label for="checkbox11">CAP</label><br>
+<input type="checkbox" id="checkbox10"><label for="checkbox10">LoadBalance</label><br>
+<input type="checkbox" id="checkbox9"><label for="checkbox9">Reverse-Proxy</label><br>
+<input type="checkbox" id="checkbox8"><label for="checkbox8">Distributed Database</label><br>
+<input type="checkbox" id="checkbox7"><label for="checkbox7">Distributed Transaction</label><br>
+<input type="checkbox" id="checkbox6"><label for="checkbox6">Cache</label><br>
+<input type="checkbox" id="checkbox5"><label for="checkbox5">CDN</label><br>
+<input type="checkbox" id="checkbox4"><label for="checkbox4">Microservices</label><br>
+<input type="checkbox" id="checkbox3"><label for="checkbox3">Service Discovery</label><br>
+<input type="checkbox" id="checkbox2"><label for="checkbox2">Asynchronism</label><br>
+<input type="checkbox" id="checkbox1"><label for="checkbox1">Communication Protocol</label><br>
+<input type="checkbox" id="checkbox0"><label for="checkbox0">Security</label></p>
 <p><img src="/images/system_design.png" alt="system design"></p>
 <div class="toc">
 <!-- toc -->
@@ -64,7 +46,10 @@ Elimination"><meta name="twitter:site" content="KLEON"><meta name="twitter:title
 </li>
 <li><a href="#nosql">NoSQL</a></li>
 <li><a href="#salt">Salt</a></li>
+<li><a href="#vertical-partitioning-and-horizontal-partitioning">Vertical partitioning and Horizontal partitioning</a></li>
 <li><a href="#access-times">Access Times</a></li>
+<li><a href="#oltp-vs-olap">OLTP vs OLAP</a></li>
+<li><a href="#key">Key</a></li>
 </ul>
 </li>
 <li><a href="#cache">Cache</a>
@@ -95,6 +80,7 @@ Elimination"><meta name="twitter:site" content="KLEON"><meta name="twitter:title
 <li><a href="#protocol">Protocol</a>
 <ul>
 <li><a href="#http">HTTP</a></li>
+<li><a href="#quic">QUIC</a></li>
 <li><a href="#https">HTTPS</a></li>
 <li><a href="#tcp">TCP</a></li>
 </ul>
@@ -103,7 +89,10 @@ Elimination"><meta name="twitter:site" content="KLEON"><meta name="twitter:title
 <li><a href="#cookie">Cookie</a></li>
 <li><a href="#session">Session</a></li>
 <li><a href="#token">Token</a></li>
+<li><a href="#hmac-ak-sk">HMAC(AK/SK)</a></li>
 <li><a href="#csrf">CSRF</a></li>
+<li><a href="#replay-attack">Replay Attack</a></li>
+<li><a href="#cache-miss-attack">Cache Miss Attack</a></li>
 </ul>
 </li>
 <li><a href="#cdn">CDN</a></li>
@@ -113,7 +102,33 @@ Elimination"><meta name="twitter:site" content="KLEON"><meta name="twitter:title
 <li><a href="#aes">AES</a></li>
 </ul>
 </li>
+<li><a href="#safety">Safety</a>
+<ul>
+<li><a href="#password">Password</a></li>
+</ul>
+</li>
+<li><a href="#os">OS</a>
+<ul>
+<li><a href="#process-vs-thread">Process vs Thread</a></li>
+<li><a href="#debug">Debug</a></li>
+</ul>
+</li>
+<li><a href="#microservices">Microservices</a></li>
+<li><a href="#virtualization">Virtualization</a></li>
+<li><a href="#bloom-filter">Bloom Filter</a></li>
 <li><a href="#case">Case</a>
+<ul>
+<li><a href="#strategies">Strategies</a></li>
+</ul>
+</li>
+<li><a href="#global">Global</a>
+<ul>
+<li><a href="#multi-site-high-availability-ha-and-disaster-recovery-dr">Multi-site high availability (HA) and disaster recovery (DR)</a></li>
+<li><a href="#globally-distributed-application">Globally Distributed Application</a></li>
+<li><a href="#cdn-1">CDN</a></li>
+</ul>
+</li>
+<li><a href="#block-storage-file-storage-and-object-storage">Block storage, file storage and object storage</a>
 <ul>
 <li><a href="#design-recommend-system">Design Recommend System</a></li>
 <li><a href="#design-short-link-service">Design Short Link Service</a></li>
@@ -124,6 +139,11 @@ Elimination"><meta name="twitter:site" content="KLEON"><meta name="twitter:title
 <li><a href="#design-e-commerce-spike-activity">Design E-commerce spike activity</a></li>
 <li><a href="#design-video-transcoding-system">Design Video Transcoding System</a></li>
 <li><a href="#design-task-queue">Design Task Queue</a></li>
+</ul>
+</li>
+<li><a href="#story">Story</a>
+<ul>
+<li><a href="#handling-a-large-scale-outage">Handling a large-scale outage</a></li>
 </ul>
 </li>
 </ul>
@@ -142,7 +162,24 @@ Elimination"><meta name="twitter:site" content="KLEON"><meta name="twitter:title
 <h2><a href="#salt" class="header-anchor">#</a><span id="salt"> Salt</span></h2>
 <p>SHA256 bcrypt<br>
 <sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup></p>
+<h2><a href="#vertical-partitioning-and-horizontal-partitioning" class="header-anchor">#</a><span id="vertical-partitioning-and-horizontal-partitioning"> Vertical partitioning and Horizontal partitioning</span></h2>
+<p>Sharding Horizontal Partitioning</p>
 <h2><a href="#access-times" class="header-anchor">#</a><span id="access-times"> Access Times</span></h2>
+<h2><a href="#oltp-vs-olap" class="header-anchor">#</a><span id="oltp-vs-olap"> OLTP vs OLAP</span></h2>
+<p>OLTP and OLAP: The two terms look similar but refer to different kinds of systems. Online transaction processing (OLTP) captures, stores, and processes data from transactions in real time. Online analytical processing (OLAP) uses complex queries to analyze aggregated historical data from OLTP systems.</p>
+<h2><a href="#key" class="header-anchor">#</a><span id="key"> Key</span></h2>
+<p>🔹 Globally unique - If IDs are not globally unique, there could be collisions.<br>
+🔹 Roughly sorted by time - So user IDs, post IDs can be sorted by time without fetching additional info.<br>
+🔹 Numerical values only - Naturally sortable by time.<br>
+🔹 64 bits - 2^32 = ~4 billion -&gt; not enough IDs | 2^64 is big enough | 2^128 waste space<br>
+🔹 Highly scalable, low latency | Ability to generate a lot of IDs per second in low latency fashion is critical.</p>
+<ul>
+<li>DB auto-increment: easy but only for single server setup</li>
+<li>UUID Easy to generate globally unique, not sorted by time, not numeric</li>
+<li>Snowflake open sourced by Twitter, widely used in the industry, discord/twitter uses this</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_32828253/article/details/110679170">Snowflake</a></p>
+<p><a target="_blank" rel="noopener" href="https://tech.meituan.com/2017/04/21/mt-leaf.html">Leaf——美团点评分布式ID生成系统</a></p>
 <h1><a href="#cache" class="header-anchor">#</a><span id="cache"> Cache</span></h1>
 <h2><a href="#hot-data" class="header-anchor">#</a><span id="hot-data"> Hot Data</span></h2>
 <p><sup class="footnote-ref"><a href="#fn7" id="fnref7">[7]</a></sup><sup class="footnote-ref"><a href="#fn8" id="fnref8">[8]</a></sup></p>
@@ -158,14 +195,67 @@ Elimination"><meta name="twitter:site" content="KLEON"><meta name="twitter:title
 <h1><a href="#network" class="header-anchor">#</a><span id="network"> Network</span></h1>
 <h2><a href="#protocol" class="header-anchor">#</a><span id="protocol"> Protocol</span></h2>
 <h3><a href="#http" class="header-anchor">#</a><span id="http"> HTTP</span></h3>
+<p>HTTP 1.0<br>
+HTTP over TCP</p>
+<p>HTTP 1.1<br>
+Persistent connection “keep-alive”<br>
+HOL (head-of-line) blocking issue in HTTP layer</p>
+<p>HTTP 2.0 2015<br>
+HTTP streams<br>
+HOL in transport layer</p>
+<p>HTTP 3.0<br>
+HTTP over QUIC<br>
+QUIC on UDP</p>
+<h3><a href="#quic" class="header-anchor">#</a><span id="quic"> QUIC</span></h3>
+<ol>
+<li>连接迁移 use unique id rather than ip-port tuples.</li>
+<li>low-latency handshake 0-RTT</li>
+<li>customizable congestion control</li>
+<li>No HOL blocking</li>
+</ol>
 <h3><a href="#https" class="header-anchor">#</a><span id="https"> HTTPS</span></h3>
 <p>TLS</p>
+<ol>
+<li>client -&gt; hello -&gt; server</li>
+<li>server -&gt; certificate -&gt; client</li>
+<li>client -&gt; verify certificate -&gt; Certificate Server</li>
+<li>client -&gt; session key | public key encrypted RSA -&gt; server</li>
+<li>server -&gt; private key decrypt RSA | session key</li>
+<li>server -&gt; AES symmetric encrypt with session key | content -&gt; client</li>
+<li>client -&gt; decrypt with session key | content</li>
+</ol>
+<p>how much performance overhead does HTTPS add, compared to HTTP?</p>
+<p>Assume a common MTU of 1500 bytes packet size ; the HTTPS protocol overhead will still leave at least 1400 bytes effective payload data size, therefore in max 6-7% increase in bandwidth.<br>
+The pure data-transfer speed penalty is negligible.</p>
 <h3><a href="#tcp" class="header-anchor">#</a><span id="tcp"> TCP</span></h3>
 <h2><a href="#authentication" class="header-anchor">#</a><span id="authentication"> Authentication</span></h2>
 <h2><a href="#cookie" class="header-anchor">#</a><span id="cookie"> Cookie</span></h2>
 <h2><a href="#session" class="header-anchor">#</a><span id="session"> Session</span></h2>
 <h2><a href="#token" class="header-anchor">#</a><span id="token"> Token</span></h2>
+<p>expired time<br>
+replay attack<br>
+rely on server-side key, only for single server</p>
+<h2><a href="#hmac-ak-sk" class="header-anchor">#</a><span id="hmac-ak-sk"> HMAC(AK/SK)</span></h2>
+<p>compute on every request<br>
+no expired time, delete on server anytime<br>
+generate multiple</p>
 <h2><a href="#csrf" class="header-anchor">#</a><span id="csrf"> CSRF</span></h2>
+<h2><a href="#replay-attack" class="header-anchor">#</a><span id="replay-attack"> Replay Attack</span></h2>
+<p>a hacker intercepts your data and resends the same web request to a server, so it looks like that data is coming from your browser.</p>
+<ol>
+<li>Adding timestamps on all messages. You can create a timestamp on your server and set it to ignore any requests that are older than your selected time frame. This means that a server can detect which messages fail to meet your timestamp requirements, and then ignore them.</li>
+<li>Using SSL or TLS. When a website supports SSL or TLS security protocols, all the data traveling between a browser and a server is encrypted. Hackers won’t be able to spy on your session ID and use it to impersonate you.</li>
+<li>Using one-time passwords. This method is mostly used by banks to authenticate their users and prevent criminals from accessing their clients’ accounts.</li>
+</ol>
+<h2><a href="#cache-miss-attack" class="header-anchor">#</a><span id="cache-miss-attack"> Cache Miss Attack</span></h2>
+<ol>
+<li>
+<p>Cache Non-existent keys, Set a short TTL (Time to Live) for keys with null value.</p>
+</li>
+<li>
+<p>Use bloom filters Key exists | Key not exists</p>
+</li>
+</ol>
 <h1><a href="#cdn" class="header-anchor">#</a><span id="cdn"> CDN</span></h1>
 <h1><a href="#encryption" class="header-anchor">#</a><span id="encryption"> Encryption</span></h1>
 <h2><a href="#rsa" class="header-anchor">#</a><span id="rsa"> RSA</span></h2>
@@ -177,7 +267,70 @@ Elimination"><meta name="twitter:site" content="KLEON"><meta name="twitter:title
 小红用自己的RSA私钥解密得到AES口令；<br>
 双方使用这个共享的AES口令用AES加密通信。<br>
 可见非对称加密实际上应用在第一步，即加密“AES口令”。这也是我们在浏览器中常用的HTTPS协议的做法，即浏览器和服务器先通过RSA交换AES口令，接下来双方通信实际上采用的是速度较快的AES对称加密，而不是缓慢的RSA非对称加密。</p>
+<h1><a href="#safety" class="header-anchor">#</a><span id="safety"> Safety</span></h1>
+<h2><a href="#password" class="header-anchor">#</a><span id="password"> Password</span></h2>
+<p>如何存储密码？</p>
+<ul>
+<li>不要直接存储明文，存储哈希值</li>
+<li>加盐，防止查表破解</li>
+<li>使用慢速hash函数让破解更加困难，比如PBKDF2或者bcrypt， Blowfish-based crypt</li>
+</ul>
+<h1><a href="#os" class="header-anchor">#</a><span id="os"> OS</span></h1>
+<h2><a href="#process-vs-thread" class="header-anchor">#</a><span id="process-vs-thread"> Process vs Thread</span></h2>
+<h2><a href="#debug" class="header-anchor">#</a><span id="debug"> Debug</span></h2>
+<p><img src="/images/linux_debug.png" alt="Linux Debug"></p>
+<h1><a href="#microservices" class="header-anchor">#</a><span id="microservices"> Microservices</span></h1>
+<p>There are two ways: orchestration and choreography</p>
+<h1><a href="#virtualization" class="header-anchor">#</a><span id="virtualization"> Virtualization</span></h1>
+<p>Virtualization is a technology that allows you to create multiple<br>
+simulated environments or dedicated resources from a single, physical<br>
+hardware system</p>
+<p>Containerization is the packaging together of software code with all its<br>
+necessary components like libraries, frameworks, and other<br>
+dependencies so that they are isolated in their own “container”</p>
+<h1><a href="#bloom-filter" class="header-anchor">#</a><span id="bloom-filter"> Bloom Filter</span></h1>
+<p>Multiple hash functions get multiple hashing results converted to a one-hot vector.<br>
+For the element we want to test, get hashing results from the same hash functions. If all bits are occupied, it may exist.<br>
+At least one bit is marked with 0, it definitely not exists.</p>
+<p><a target="_blank" rel="noopener" href="https://llimllib.github.io/bloomfilter-tutorial/">tutorial</a></p>
+<p>假设元素的全集个数为 n, 过滤器槽为 m, 共有 k 个函数, 那么误判率为 (1-e<sup>(-kn/m))</sup>k</p>
+<p>Your false positive rate will be approximately (1-e-kn/m)k, so you can just plug the number n of elements you expect to insert, and try various values of k and m to configure your filter for your application.</p>
+<p>The more hash functions you have, the slower your bloom filter, and the quicker it fills up. If you have too few, however, you may suffer too many false positives.</p>
+<p>Since you have to pick k when you create the filter, you’ll have to ballpark what range you expect n to be in. Once you have that, you still have to choose a potential m (the number of bits) and k (the number of hash functions).</p>
+<p>So, to choose the size of a bloom filter, we:</p>
+<ol>
+<li>Choose a ballpark value for n</li>
+<li>Choose a value for m</li>
+<li>Calculate the optimal value of k</li>
+<li>Calculate the error rate for our chosen values of n, m, and k. If it’s unacceptable, return to step 2 and change m; otherwise we’re done.</li>
+</ol>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi><mo>=</mo><mo stretchy="false">(</mo><mi>m</mi><mi mathvariant="normal">/</mi><mi>n</mi><mo stretchy="false">)</mo><mi>l</mi><mi>n</mi><mo stretchy="false">(</mo><mn>2</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex"> k = (m/n)ln(2) 
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">m</span><span class="mord">/</span><span class="mord mathdefault">n</span><span class="mclose">)</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">n</span><span class="mopen">(</span><span class="mord">2</span><span class="mclose">)</span></span></span></span></span></p>
 <h1><a href="#case" class="header-anchor">#</a><span id="case"> Case</span></h1>
+<h2><a href="#strategies" class="header-anchor">#</a><span id="strategies"> Strategies</span></h2>
+<p>read</p>
+<ol>
+<li>Cache Aside read caches first if data exists or read database and write cache</li>
+<li>Read Through read cache, cache read db</li>
+</ol>
+<p>write</p>
+<ol>
+<li>Write Around Write to db, then read from cache = write to db + cache aside</li>
+<li>Write Back applications write to caches constantly, caches write to dbs once in a while</li>
+<li>Write Through applications write to caches constantly, caches write to db immediately</li>
+</ol>
+<h1><a href="#global" class="header-anchor">#</a><span id="global"> Global</span></h1>
+<h2><a href="#multi-site-high-availability-ha-and-disaster-recovery-dr" class="header-anchor">#</a><span id="multi-site-high-availability-ha-and-disaster-recovery-dr"> Multi-site high availability (HA) and disaster recovery (DR)</span></h2>
+<p>feature allows customers to deploy field-proven high availability and disaster recovery solutions over multiple sites, keeping three concurrent copies of data.</p>
+<h2><a href="#globally-distributed-application" class="header-anchor">#</a><span id="globally-distributed-application"> Globally Distributed Application</span></h2>
+<h2><a href="#cdn" class="header-anchor">#</a><span id="cdn"> CDN</span></h2>
+<ol>
+<li>IP whitelist</li>
+<li>Referer</li>
+<li>Timestamp</li>
+<li>Centralized Authentication</li>
+</ol>
+<h1><a href="#block-storage-file-storage-and-object-storage" class="header-anchor">#</a><span id="block-storage-file-storage-and-object-storage"> Block storage, file storage and object storage</span></h1>
 <h2><a href="#design-recommend-system" class="header-anchor">#</a><span id="design-recommend-system"> Design Recommend System</span></h2>
 <h2><a href="#design-short-link-service" class="header-anchor">#</a><span id="design-short-link-service"> Design Short Link Service</span></h2>
 <h2><a href="#design-shopee" class="header-anchor">#</a><span id="design-shopee"> Design Shopee</span></h2>
@@ -187,6 +340,41 @@ Elimination"><meta name="twitter:site" content="KLEON"><meta name="twitter:title
 <h2><a href="#design-e-commerce-spike-activity" class="header-anchor">#</a><span id="design-e-commerce-spike-activity"> Design E-commerce spike activity</span></h2>
 <h2><a href="#design-video-transcoding-system" class="header-anchor">#</a><span id="design-video-transcoding-system"> Design Video Transcoding System</span></h2>
 <h2><a href="#design-task-queue" class="header-anchor">#</a><span id="design-task-queue"> Design Task Queue</span></h2>
+<h1><a href="#story" class="header-anchor">#</a><span id="story"> Story</span></h1>
+<h2><a href="#handling-a-large-scale-outage" class="header-anchor">#</a><span id="handling-a-large-scale-outage"> Handling a large-scale outage</span></h2>
+<p>This is a true story about handling a large-scale outage written by Staff<br>
+Engineers at Discord Sahn Lam.<br>
+About 10 years ago, I witnessed the most impactful UI bugs in my<br>
+career.<br>
+It was 9PM on a Friday. I was on the team responsible for one of the<br>
+largest social games at the time. It had about 30 million DAU. I just so<br>
+happened to glance at the operational dashboard before shutting down<br>
+for the night.<br>
+Every line on the dashboard was at zero.<br>
+At that very moment, I got a phone call from my boss. He said the<br>
+entire game was down. Firefighting mode. Full on.<br>
+Everything had shut down. Every single instance on AWS was<br>
+terminated. HA proxy instances, PHP web servers, MySQL databases,<br>
+Memcache nodes, everything.<br>
+It took 50 people 10 hours to bring everything back up. It was quite a<br>
+feat. That in itself is a story for another day.<br>
+We used a cloud management software vendor to manage our AWS<br>
+deployment. This was before Infrastructure as Code was a thing. There<br>
+was no Terraform. It was so early in cloud computing and we were so<br>
+big that AWS required an advanced warning before we scaled up.<br>
+What had gone wrong? The software vendor had introduced a bug that<br>
+week in their confirmation dialog flow. When terminating a subset of<br>
+nodes in the UI, it would correctly show in the confirmation dialog box<br>
+the list of nodes to be terminated, but under the hood, it terminated<br>
+everything.<br>
+Shortly before 9PM that fateful evening, one of our poor SREs fulfilled<br>
+our routine request and terminated an unused Memcache pool. I could<br>
+only imagine the horror and the phone conversation that ensured.<br>
+49<br>
+What kind of code structure could allow this disastrous bug to slip<br>
+through? We could only guess. We never received a full explanation.<br>
+What are some of the most impactful software bugs you encountered<br>
+in your career?</p>
 <span id="more"></span>
 <hr class="footnotes-sep">
 <section class="footnotes">
