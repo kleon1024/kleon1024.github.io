@@ -1,0 +1,264 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title>System - Web Crawler · KLEON</title><meta name="description" content="Design a web crawler
+
+
+
+Requirements
+
+Functional Requirements
+Non-Functional Requirements
+
+
+Estimations
+
+Assumptions
+Estimations
+
+
+Domain Design
+Core "><meta name="og:description" content="Design a web crawler
+
+
+
+Requirements
+
+Functional Requirements
+Non-Functional Requirements
+
+
+Estimations
+
+Assumptions
+Estimations
+
+
+Domain Design
+Core "><meta name="twitter:site" content="KLEON"><meta name="twitter:title" content="System - Web Crawler"><meta name="twitter:card" content="summary"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/github.min.css"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/KaTeX/0.10.2/katex.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 6.1.0"></head><body><div id="stage" class="container"><div class="row"><div id="side-bar" class="col-sm-3 col-xs-12 side-container invisible"><div class="vertical-text site-title"><h3 tabindex="-1" class="site-title-small"><a href="/" class="a-title"></a></h3><h1 tabindex="-1" class="site-title-large"><a href="/" class="a-title">吹拉弹唱</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div id="site-nav" class="site-title-links"><ul><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li><li><a href="/categories">Categories</a></li><li><a href="/tags">Tags</a></li><li><a href="/googlebe23cb0bc55fc412.html"></a></li><li><a href="/about/index.html"></a></li><li class="soc"><a href="https://github.com/kleon1024" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa fa-github">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div id="main-container" class="col-sm-9 col-xs-12 main-container invisible"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>System - Web Crawler</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2022-05-30</span><span class="date meta-item">Updated at&nbsp;2022-05-30</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/interview/" title="interview" class="a-tag">interview</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/interview/" title="interview" class="a-tag">interview</a><span>&nbsp;</span><a href="/tags/system/" title="system" class="a-tag">system</a><span>&nbsp;</span></span></p><p class="post-abstract"><p><a target="_blank" rel="noopener" href="https://github.com/donnemartin/system-design-primer/blob/master/solutions/system_design/web_crawler/README.md">Design a web crawler</a></p>
+<div class="toc">
+<!-- toc -->
+<ul>
+<li><a href="#requirements">Requirements</a>
+<ul>
+<li><a href="#functional-requirements">Functional Requirements</a></li>
+<li><a href="#non-functional-requirements">Non-Functional Requirements</a></li>
+</ul>
+</li>
+<li><a href="#estimations">Estimations</a>
+<ul>
+<li><a href="#assumptions">Assumptions</a></li>
+<li><a href="#estimations-1">Estimations</a></li>
+</ul>
+</li>
+<li><a href="#domain-design">Domain Design</a></li>
+<li><a href="#core-components">Core Components</a>
+<ul>
+<li><a href="#handling-duplicates">Handling duplicates</a></li>
+<li><a href="#determining-when-to-update-the-crawl-results">Determining when to update the crawl results</a></li>
+<li><a href="#reverse-index">Reverse Index</a></li>
+<li><a href="#use-case-user-inputs-a-search-term-and-sees-a-list-of-relevant-pages-with-titles-and-snippets">Use case: User inputs a search term and sees a list of relevant pages with titles and snippets</a></li>
+<li><a href="#scale-the-design">Scale the design</a></li>
+</ul>
+</li>
+<li><a href="#practical">Practical</a>
+<ul>
+<li><a href="#elasticsearch">ElasticSearch</a></li>
+<li><a href="#lucene">Lucene</a></li>
+<li><a href="#spark">Spark</a></li>
+<li><a href="#mapreduce">MapReduce</a></li>
+<li><a href="#embedding">Embedding</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+</div>
+<h1><a href="#requirements" class="header-anchor">#</a><span id="requirements"> Requirements</span></h1>
+<h2><a href="#functional-requirements" class="header-anchor">#</a><span id="functional-requirements"> Functional Requirements</span></h2>
+<ul>
+<li>service crawls a list of urls
+<ul>
+<li>generates reverse index of words to pages containing the search items</li>
+<li>generates titles and snippets for pages
+<ul>
+<li>Title and snippets are static, they do not change based on search query</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>User inputs a search term and sees a list of relevant pages with titles and snippets the crawler generated
+<ul>
+<li>Only sketch high level components and interactions for this use case, no need to go into depth</li>
+</ul>
+</li>
+<li>Service has high availability</li>
+</ul>
+<p>Out of scope:<br>
+Search analytics<br>
+Personalized search results<br>
+Page rank</p>
+<h2><a href="#non-functional-requirements" class="header-anchor">#</a><span id="non-functional-requirements"> Non-Functional Requirements</span></h2>
+<ol>
+<li>Availability</li>
+<li>Scalability</li>
+</ol>
+<h1><a href="#estimations" class="header-anchor">#</a><span id="estimations"> Estimations</span></h1>
+<h2><a href="#assumptions" class="header-anchor">#</a><span id="assumptions"> Assumptions</span></h2>
+<ul>
+<li>Traffic is not evenly distributed
+<ul>
+<li>Some searches are very popular, while others are only executed once</li>
+</ul>
+</li>
+<li>Support only anonymous users
+<ul>
+<li>We won’t implement a login system</li>
+</ul>
+</li>
+<li>Generating search results should be fast
+<ul>
+<li>Performance</li>
+</ul>
+</li>
+<li>The web crawler should not get stuck in an infinite loop
+<ul>
+<li>We get stuck in an infinite loop if the graph contains a cycle</li>
+</ul>
+</li>
+<li>1 billion links to crawl
+<ul>
+<li>Pages need to be crawled regularly to ensure freshness</li>
+<li>Average refresh rate of about once per week, more frequent for popular sites
+<ul>
+<li>4 billion links crawled each month</li>
+</ul>
+</li>
+<li>Average stored size per web page: 500 KB
+<ul>
+<li>For simplicity, count changes the same as new pages</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>100 billion searches per month</li>
+<li>Text only</li>
+</ul>
+<h2><a href="#estimations" class="header-anchor">#</a><span id="estimations"> Estimations</span></h2>
+<p>I will have a back-of-the-envelope calculations here</p>
+<ul>
+<li>2 PB of stored page content per month
+<ul>
+<li>500 KB * 4 billion links crawled per month</li>
+<li>72 PB of stored page content in 3 years</li>
+</ul>
+</li>
+<li>1,600 write requests per second
+<ul>
+<li>1 billion / 24 / 7 / 3600 = 1653 ~ 1600</li>
+</ul>
+</li>
+<li>40,000 search requests per second
+<ul>
+<li>400 * 100, for the peak traffic, 4 times of 80,000 requests per second</li>
+</ul>
+</li>
+</ul>
+<h1><a href="#domain-design" class="header-anchor">#</a><span id="domain-design"> Domain Design</span></h1>
+<h1><a href="#core-components" class="header-anchor">#</a><span id="core-components"> Core Components</span></h1>
+<p>We’ll assume we have an initial list of links_to_crawl ranked initially based on overall site popularity. If this is not a reasonable assumption, we can seed the crawler with popular sites that link to outside content such as Yahoo, DMOZ, etc.</p>
+<p>We’ll use a table crawled_links to store processed links and their page signatures.</p>
+<p>We could store links_to_crawl and crawled_links in a key-value NoSQL Database. For the ranked links in links_to_crawl, we could use Redis with sorted sets to maintain a ranking of page links. We should discuss the use cases and tradeoffs between choosing SQL or NoSQL.</p>
+<p>Why are you choosing NoSQL?</p>
+<p>As we don’t need the relations between different records, but simply just store the reverse index to the contents. KV Store would be a reasonable database for that.</p>
+<p>The Crawler Service processes each page link by doing the following in a loop:</p>
+<ul>
+<li>Takes the top ranked page link to crawl</li>
+<li>Checks crawled_links in the NoSQL Database for an entry with a similar page signature
+<ul>
+<li>If we have a similar page, reduces the priority of the page link
+<ul>
+<li>This prevents us from getting into a cycle</li>
+<li>Continue</li>
+</ul>
+</li>
+<li>Else, crawls the link
+<ul>
+<li>Adds a job to the Reverse Index Service queue to generate a reverse index</li>
+<li>Adds a job to the Document Service queue to generate a static title and snippet</li>
+<li>Generates the page signature</li>
+<li>Removes the link from links_to_crawl in the NoSQL Database</li>
+<li>Inserts the page link and signature to crawled_links in the NoSQL Database</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Clarify with your interviewer how much code you are expected to write.</p>
+<p>TABLE Page:<br>
+url<br>
+contents<br>
+child_urls<br>
+signature</p>
+<h2><a href="#handling-duplicates" class="header-anchor">#</a><span id="handling-duplicates"> Handling duplicates</span></h2>
+<p>We need to be careful the web crawler doesn’t get stuck in an infinite loop, which happens when the graph contains a cycle.</p>
+<p>We’ll want to remove duplicate urls:</p>
+<ul>
+<li>For smaller lists we could use something like sort | unique</li>
+<li>With 1 billion links to crawl, we could use MapReduce to output only entries that have a frequency of 1</li>
+</ul>
+<p>Detecting duplicate content is more complex. We could generate a signature based on the contents of the page and compare those two signatures for similarity. Some potential algorithms are Jaccard index and cosine similarity.</p>
+<p>Or we could just use article embedding to get a similarity vector.</p>
+<h2><a href="#determining-when-to-update-the-crawl-results" class="header-anchor">#</a><span id="determining-when-to-update-the-crawl-results"> Determining when to update the crawl results</span></h2>
+<p>Pages need to be crawled regularly to ensure freshness. Crawl results could have a timestamp field that indicates the last time a page was crawled. After a default time period, say one week, all pages should be refreshed. Frequently updated or more popular sites could be refreshed in shorter intervals.</p>
+<p>Although we won’t dive into details on analytics, we could do some data mining to determine the mean time before a particular page is updated, and use that statistic to determine how often to re-crawl the page.</p>
+<p>We might also choose to support a Robots.txt file that gives webmasters control of crawl frequency.</p>
+<h2><a href="#reverse-index" class="header-anchor">#</a><span id="reverse-index"> Reverse Index</span></h2>
+<ul>
+<li>Get the document</li>
+<li>Segmentation, split the whole documents into words by spaces and eliminates non-important characters and words like a, the, this, that</li>
+<li>Count the frequency of each word and insert them into the reverse index table</li>
+<li>word -&gt; document id &amp; frequency</li>
+</ul>
+<h2><a href="#use-case-user-inputs-a-search-term-and-sees-a-list-of-relevant-pages-with-titles-and-snippets" class="header-anchor">#</a><span id="use-case-user-inputs-a-search-term-and-sees-a-list-of-relevant-pages-with-titles-and-snippets"> Use case: User inputs a search term and sees a list of relevant pages with titles and snippets</span></h2>
+<ul>
+<li>The Client sends a request to the Web Server, running as a reverse proxy</li>
+<li>The Web Server forwards the request to the Query API server</li>
+<li>The Query API server does the following:
+<ul>
+<li>Parses the query
+<ul>
+<li>Removes markup</li>
+<li>Breaks up the text into terms</li>
+<li>Fixes typos</li>
+<li>Normalizes capitalization</li>
+<li>Converts the query to use boolean operations</li>
+</ul>
+</li>
+<li>Uses the Reverse Index Service to find documents matching the query
+<ul>
+<li>The Reverse Index Service ranks the matching results and returns the top ones</li>
+</ul>
+</li>
+<li>Uses the Document Service to return titles and snippets</li>
+</ul>
+</li>
+</ul>
+<h2><a href="#scale-the-design" class="header-anchor">#</a><span id="scale-the-design"> Scale the design</span></h2>
+<p>Use DNS, LoadBalancer, Web Server, API Server, Memory Cache</p>
+<p>State you would 1) Benchmark/Load Test, 2) Profile for bottlenecks 3) address bottlenecks while evaluating alternatives and trade-offs, and 4) repeat. See Design a system that scales to millions of users on AWS as a sample on how to iteratively scale the initial design.</p>
+<p>It’s important to discuss what bottlenecks you might encounter with the initial design and how you might address each of them. For example, what issues are addressed by adding a Load Balancer with multiple Web Servers? CDN? Master-Slave Replicas? What are the alternatives and Trade-Offs for each?</p>
+<p>Some searches are very popular, while others are only executed once. Popular queries can be served from a Memory Cache such as Redis or Memcached to reduce response times and to avoid overloading the Reverse Index Service and Document Service. The Memory Cache is also useful for handling the unevenly distributed traffic and traffic spikes. Reading 1 MB sequentially from memory takes about 250 microseconds, while reading from SSD takes 4x and from disk takes 80x longer.1</p>
+<p>Below are a few other optimizations to the Crawling Service:</p>
+<ul>
+<li>To handle the data size and request load, the Reverse Index Service and Document Service will likely need to make heavy use sharding and federation.</li>
+<li>DNS lookup can be a bottleneck, the Crawler Service can keep its own DNS lookup that is refreshed periodically</li>
+<li>The Crawler Service can improve performance and reduce memory usage by keeping many open connections at a time, referred to as connection pooling</li>
+<li>Switching to UDP could also boost performance</li>
+<li>Web crawling is bandwidth intensive, ensure there is enough bandwidth to sustain high throughput</li>
+</ul>
+<h1><a href="#practical" class="header-anchor">#</a><span id="practical"> Practical</span></h1>
+<h2><a href="#elasticsearch" class="header-anchor">#</a><span id="elasticsearch"> ElasticSearch</span></h2>
+<h2><a href="#lucene" class="header-anchor">#</a><span id="lucene"> Lucene</span></h2>
+<p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6947984489960177677">Lucene 倒排索引原理</a></p>
+<h2><a href="#spark" class="header-anchor">#</a><span id="spark"> Spark</span></h2>
+<h2><a href="#mapreduce" class="header-anchor">#</a><span id="mapreduce"> MapReduce</span></h2>
+<h2><a href="#embedding" class="header-anchor">#</a><span id="embedding"> Embedding</span></h2>
+<p><a target="_blank" rel="noopener" href="https://dev.to/mage_ai/how-to-build-a-search-engine-with-word-embeddings-56jd">How to build a search engine with word embeddings</a></p>
+</p></div><div class="share"><span>Share</span>&nbsp;<span class="soc"><a href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank" class="fa fa-bookmark"></a></span><span class="soc"><a href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));" class="fa fa-weibo"></a></span><span class="soc"><a target="_blank" rel="noopener" href="http://twitter.com/home?status=https://blog.kleon.space/interview/system/web_crawler/%20KLEON%20System - Web Crawler" class="fa fa-twitter"></a></span></div><div class="pagination"><p class="clearfix"><span class="pre pagbuttons"><a role="navigation" href="/interview/system/url_shortener/" title="System - URL Shortener"><i class="fa fa-angle-double-left"></i>&nbsp;Previous post: System - URL Shortener</a></span><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/interview/code/number/" title="Code - Number">Next post: Code - Number&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>

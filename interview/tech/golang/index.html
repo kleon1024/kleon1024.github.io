@@ -57,6 +57,9 @@ Why should one use Golang? What are the advantages of Golang over other languag"
 <li><a href="#describe-the-hierarchical-memory-management-strategy">Describe the hierarchical memory management strategy?</a></li>
 <li><a href="#what-s-the-data-structure-of-map">What’s the data structure of <code>map</code>?</a></li>
 <li><a href="#how-is-channel-implemented">How is <code>channel</code> implemented?</a></li>
+<li><a href="#lock">Lock</a></li>
+<li><a href="#runtime">runtime</a></li>
+<li><a href="#sentinel-go">Sentinel-Go</a></li>
 </ul>
 </li>
 </ul>
@@ -249,6 +252,11 @@ Then, after a few microseconds (20 to be precise), another independent special G
 <p>A linked hash table.</p>
 <h2><a href="#how-is-channel-implemented" class="header-anchor">#</a><span id="how-is-channel-implemented"> How is <code>channel</code> implemented?</span></h2>
 <p>A ring linked list with mutex <sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup>.</p>
+<h2><a href="#lock" class="header-anchor">#</a><span id="lock"> Lock</span></h2>
+<p>mutex TryLock()</p>
+<h2><a href="#runtime" class="header-anchor">#</a><span id="runtime"> runtime</span></h2>
+<p>runtime.GoSche()</p>
+<h2><a href="#sentinel-go" class="header-anchor">#</a><span id="sentinel-go"> Sentinel-Go</span></h2>
 <hr>
 <hr class="footnotes-sep">
 <section class="footnotes">
