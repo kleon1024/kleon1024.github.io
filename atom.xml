@@ -17,6 +17,61 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>System - Auto Complete</title>
+    <link href="https://blog.kleon.space/interview/system/auto_complete/"/>
+    <id>https://blog.kleon.space/interview/system/auto_complete/</id>
+    <published>2022-05-30T17:12:28.000Z</published>
+    <updated>2022-05-30T17:12:32.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://medium.com/double-pointer/system-design-interview-autocomplete-type-ahead-system-for-a-search-box-1ac968f9f121&quot;&gt;System</summary>
+        
+      
+    
+    
+    
+    <category term="interview" scheme="https://blog.kleon.space/categories/interview/"/>
+    
+    
+    <category term="interview" scheme="https://blog.kleon.space/tags/interview/"/>
+    
+    <category term="system" scheme="https://blog.kleon.space/tags/system/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>System - Chat App</title>
+    <link href="https://blog.kleon.space/interview/system/chat_app/"/>
+    <id>https://blog.kleon.space/interview/system/chat_app/</id>
+    <published>2022-05-30T17:12:28.000Z</published>
+    <updated>2022-05-30T17:12:32.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://bytebytego.com/courses/system-design-interview/design-a-chat-system&quot;&gt;Design A Chat System&lt;/a&gt;&lt;/p&gt;
+&lt;div</summary>
+        
+      
+    
+    
+    
+    <category term="interview" scheme="https://blog.kleon.space/categories/interview/"/>
+    
+    
+    <category term="interview" scheme="https://blog.kleon.space/tags/interview/"/>
+    
+    <category term="system" scheme="https://blog.kleon.space/tags/system/"/>
+    
+  </entry>
+  
+  <entry>
     <title>System - Consistent Hashing</title>
     <link href="https://blog.kleon.space/interview/system/consistant_hashing/"/>
     <id>https://blog.kleon.space/interview/system/consistant_hashing/</id>
@@ -30,6 +85,33 @@
         
     <summary type="html">&lt;p&gt;&lt;a href=&quot;https://www.toptal.com/big-data/consistent-hashing&quot;&gt;A Guide to Consistent Hashing&lt;/a&gt;&lt;br&gt;
 &lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="interview" scheme="https://blog.kleon.space/categories/interview/"/>
+    
+    
+    <category term="interview" scheme="https://blog.kleon.space/tags/interview/"/>
+    
+    <category term="system" scheme="https://blog.kleon.space/tags/system/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>System - YouTube</title>
+    <link href="https://blog.kleon.space/interview/system/google_drive/"/>
+    <id>https://blog.kleon.space/interview/system/google_drive/</id>
+    <published>2022-05-30T17:12:28.000Z</published>
+    <updated>2022-05-30T17:12:32.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://towardsdatascience.com/system-design-analysis-of-google-drive-ca3408f22ed3&quot;&gt;System Design Analysis of Google</summary>
         
       
     
@@ -62,6 +144,61 @@
 &lt;li&gt;&lt;a href=&quot;#requirements&quot;&gt;Requirements&lt;/a&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;#functional-features&quot;&gt;Functional</summary>
+        
+      
+    
+    
+    
+    <category term="interview" scheme="https://blog.kleon.space/categories/interview/"/>
+    
+    
+    <category term="interview" scheme="https://blog.kleon.space/tags/interview/"/>
+    
+    <category term="system" scheme="https://blog.kleon.space/tags/system/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>System - News Feed</title>
+    <link href="https://blog.kleon.space/interview/system/news_feed/"/>
+    <id>https://blog.kleon.space/interview/system/news_feed/</id>
+    <published>2022-05-30T17:12:28.000Z</published>
+    <updated>2022-05-30T17:12:32.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://liuzhenglaichn.gitbook.io/system-design/news-feed/design-a-news-feed-system&quot;&gt;Design a News Feed System&lt;/a&gt;&lt;/p&gt;
+&lt;div</summary>
+        
+      
+    
+    
+    
+    <category term="interview" scheme="https://blog.kleon.space/categories/interview/"/>
+    
+    
+    <category term="interview" scheme="https://blog.kleon.space/tags/interview/"/>
+    
+    <category term="system" scheme="https://blog.kleon.space/tags/system/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>System - Notification</title>
+    <link href="https://blog.kleon.space/interview/system/notification/"/>
+    <id>https://blog.kleon.space/interview/system/notification/</id>
+    <published>2022-05-30T17:12:28.000Z</published>
+    <updated>2022-05-30T17:12:32.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://towardsdatascience.com/designing-notification-system-with-message-queues-c30a2c9046de&quot;&gt;Designing a Notification System</summary>
         
       
     
@@ -174,6 +311,35 @@
         
         
     <summary type="html">&lt;p&gt;&lt;a href=&quot;https://github.com/donnemartin/system-design-primer/blob/master/solutions/system_design/web_crawler/README.md&quot;&gt;Design a web</summary>
+        
+      
+    
+    
+    
+    <category term="interview" scheme="https://blog.kleon.space/categories/interview/"/>
+    
+    
+    <category term="interview" scheme="https://blog.kleon.space/tags/interview/"/>
+    
+    <category term="system" scheme="https://blog.kleon.space/tags/system/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>System - YouTube</title>
+    <link href="https://blog.kleon.space/interview/system/youtube/"/>
+    <id>https://blog.kleon.space/interview/system/youtube/</id>
+    <published>2022-05-30T17:12:28.000Z</published>
+    <updated>2022-05-30T17:12:32.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://bytebytego.com/courses/system-design-interview/design-youtube&quot;&gt;Design YouTube&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;toc&quot;&gt;
+&lt;!-- toc</summary>
         
       
     
@@ -795,190 +961,6 @@ in your career?&lt;/p&gt;</summary>
     <category term="interview" scheme="https://blog.kleon.space/tags/interview/"/>
     
     <category term="algorithm" scheme="https://blog.kleon.space/tags/algorithm/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Code - Stack</title>
-    <link href="https://blog.kleon.space/interview/code/stack/"/>
-    <id>https://blog.kleon.space/interview/code/stack/</id>
-    <published>2022-05-05T18:13:57.000Z</published>
-    <updated>2022-05-05T18:13:53.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;div class=&quot;toc&quot;&gt;
-&lt;!-- toc --&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#problems&quot;&gt;Problems&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#pairing&quot;&gt;Pairing&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="interview" scheme="https://blog.kleon.space/categories/interview/"/>
-    
-    
-    <category term="interview" scheme="https://blog.kleon.space/tags/interview/"/>
-    
-    <category term="algorithm" scheme="https://blog.kleon.space/tags/algorithm/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Code - String</title>
-    <link href="https://blog.kleon.space/interview/code/string/"/>
-    <id>https://blog.kleon.space/interview/code/string/</id>
-    <published>2022-05-05T18:13:57.000Z</published>
-    <updated>2022-05-05T18:13:53.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;div class=&quot;toc&quot;&gt;
-&lt;!-- toc --&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#leetcode&quot;&gt;LeetCode&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#166-fraction-to-recurring-decimal&quot;&gt;166.</summary>
-        
-      
-    
-    
-    
-    <category term="interview" scheme="https://blog.kleon.space/categories/interview/"/>
-    
-    
-    <category term="interview" scheme="https://blog.kleon.space/tags/interview/"/>
-    
-    <category term="algorithm" scheme="https://blog.kleon.space/tags/algorithm/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Code - Array</title>
-    <link href="https://blog.kleon.space/interview/code/array/"/>
-    <id>https://blog.kleon.space/interview/code/array/</id>
-    <published>2022-05-05T18:13:57.000Z</published>
-    <updated>2022-05-05T18:13:53.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;div class=&quot;toc&quot;&gt;
-&lt;!-- toc --&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#leetcode&quot;&gt;LeetCode&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#9-palindrome-number&quot;&gt;9. Palindrome</summary>
-        
-      
-    
-    
-    
-    <category term="interview" scheme="https://blog.kleon.space/categories/interview/"/>
-    
-    
-    <category term="interview" scheme="https://blog.kleon.space/tags/interview/"/>
-    
-    <category term="algorithm" scheme="https://blog.kleon.space/tags/algorithm/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Code - Dynamic Programming</title>
-    <link href="https://blog.kleon.space/interview/code/dynamic_programming/"/>
-    <id>https://blog.kleon.space/interview/code/dynamic_programming/</id>
-    <published>2022-05-05T18:13:57.000Z</published>
-    <updated>2022-05-05T18:13:53.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;div class=&quot;toc&quot;&gt;
-&lt;!-- toc --&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#principles&quot;&gt;Principles&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#problems&quot;&gt;Problems&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="interview" scheme="https://blog.kleon.space/categories/interview/"/>
-    
-    
-    <category term="interview" scheme="https://blog.kleon.space/tags/interview/"/>
-    
-    <category term="algorithm" scheme="https://blog.kleon.space/tags/algorithm/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Code - Outline</title>
-    <link href="https://blog.kleon.space/interview/code/outline/"/>
-    <id>https://blog.kleon.space/interview/code/outline/</id>
-    <published>2022-05-05T17:09:39.000Z</published>
-    <updated>2022-05-05T17:09:36.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;All about cracking the code challenge&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn1&quot; id=&quot;fnref1&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt;&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="interview" scheme="https://blog.kleon.space/categories/interview/"/>
-    
-    
-    <category term="interview" scheme="https://blog.kleon.space/tags/interview/"/>
-    
-    <category term="algorithm" scheme="https://blog.kleon.space/tags/algorithm/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Tech - Flutter</title>
-    <link href="https://blog.kleon.space/interview/tech/flutter/"/>
-    <id>https://blog.kleon.space/interview/tech/flutter/</id>
-    <published>2022-04-29T19:13:52.000Z</published>
-    <updated>2022-04-29T19:13:48.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;Q &amp;amp; A of</summary>
-        
-      
-    
-    
-    
-    <category term="interview" scheme="https://blog.kleon.space/categories/interview/"/>
-    
-    
-    <category term="interview" scheme="https://blog.kleon.space/tags/interview/"/>
-    
-    <category term="tech" scheme="https://blog.kleon.space/tags/tech/"/>
     
   </entry>
   

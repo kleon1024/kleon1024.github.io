@@ -1,0 +1,230 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title>System - Chat App · KLEON</title><meta name="description" content="Design A Chat System
+
+
+
+Requirements
+
+Functional Features
+Non-Functional Features
+
+
+Estimations
+
+Assumptions
+
+
+Communication
+
+Polling
+Long Polling
+Web"><meta name="og:description" content="Design A Chat System
+
+
+
+Requirements
+
+Functional Features
+Non-Functional Features
+
+
+Estimations
+
+Assumptions
+
+
+Communication
+
+Polling
+Long Polling
+Web"><meta name="twitter:site" content="KLEON"><meta name="twitter:title" content="System - Chat App"><meta name="twitter:card" content="summary"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/github.min.css"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/KaTeX/0.10.2/katex.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 6.1.0"></head><body><div id="stage" class="container"><div class="row"><div id="side-bar" class="col-sm-3 col-xs-12 side-container invisible"><div class="vertical-text site-title"><h3 tabindex="-1" class="site-title-small"><a href="/" class="a-title"></a></h3><h1 tabindex="-1" class="site-title-large"><a href="/" class="a-title">吹拉弹唱</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div id="site-nav" class="site-title-links"><ul><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li><li><a href="/categories">Categories</a></li><li><a href="/tags">Tags</a></li><li><a href="/googlebe23cb0bc55fc412.html"></a></li><li><a href="/about/index.html"></a></li><li class="soc"><a href="https://github.com/kleon1024" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa fa-github">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div id="main-container" class="col-sm-9 col-xs-12 main-container invisible"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>System - Chat App</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2022-05-30</span><span class="date meta-item">Updated at&nbsp;2022-05-30</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/interview/" title="interview" class="a-tag">interview</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/interview/" title="interview" class="a-tag">interview</a><span>&nbsp;</span><a href="/tags/system/" title="system" class="a-tag">system</a><span>&nbsp;</span></span></p><p class="post-abstract"><p><a target="_blank" rel="noopener" href="https://bytebytego.com/courses/system-design-interview/design-a-chat-system">Design A Chat System</a></p>
+<div class="toc">
+<!-- toc -->
+<ul>
+<li><a href="#requirements">Requirements</a>
+<ul>
+<li><a href="#functional-features">Functional Features</a></li>
+<li><a href="#non-functional-features">Non-Functional Features</a></li>
+</ul>
+</li>
+<li><a href="#estimations">Estimations</a>
+<ul>
+<li><a href="#assumptions">Assumptions</a></li>
+</ul>
+</li>
+<li><a href="#communication">Communication</a>
+<ul>
+<li><a href="#polling">Polling</a></li>
+<li><a href="#long-polling">Long Polling</a></li>
+<li><a href="#web-socket">Web-Socket</a></li>
+</ul>
+</li>
+<li><a href="#domain-model">Domain Model</a></li>
+<li><a href="#storage">Storage</a></li>
+<li><a href="#data-models">Data Models</a></li>
+<li><a href="#deep-dive">Deep Dive</a>
+<ul>
+<li><a href="#service-discovery">Service Discovery</a></li>
+<li><a href="#message-flows">Message flows</a>
+<ul>
+<li><a href="#1-on-1-chat-flow">1 on 1 chat flow</a></li>
+<li><a href="#message-synchronization-across-multiple-devices">Message synchronization across multiple devices</a></li>
+<li><a href="#small-group-chat-flow">Small group chat flow</a></li>
+</ul>
+</li>
+<li><a href="#online-presence">Online presence</a>
+<ul>
+<li><a href="#user-login">User Login</a></li>
+<li><a href="#user-logout">User Logout</a></li>
+<li><a href="#user-disconnection">User disconnection</a></li>
+<li><a href="#online-status-fanout">Online status fanout</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#extra">Extra</a></li>
+<li><a href="#practical">Practical</a></li>
+</ul>
+<!-- tocstop -->
+</div>
+<h1><a href="#requirements" class="header-anchor">#</a><span id="requirements"> Requirements</span></h1>
+<h2><a href="#functional-features" class="header-anchor">#</a><span id="functional-features"> Functional Features</span></h2>
+<ol>
+<li>Two types of app:</li>
+<li>one-on-one</li>
+<li>group</li>
+<li>Text-Only, Media Support, Real-Time Voice/Video?</li>
+<li>A one-on-one chat with low delivery latency</li>
+<li>Small group chat (max of 100 people)</li>
+<li>Online presence</li>
+<li>Multiple device support. The same account can be logged in to multiple accounts at the same time.</li>
+<li>Push notifications</li>
+</ol>
+<h2><a href="#non-functional-features" class="header-anchor">#</a><span id="non-functional-features"> Non-Functional Features</span></h2>
+<h1><a href="#estimations" class="header-anchor">#</a><span id="estimations"> Estimations</span></h1>
+<h2><a href="#assumptions" class="header-anchor">#</a><span id="assumptions"> Assumptions</span></h2>
+<p>Scale: 50 million DAU<br>
+Group: 100 Max<br>
+Text-Size: &lt; 100000 chars<br>
+End-to-End Encryption: not required, but we could talk about that<br>
+History: No History on Server Side, Store History for a Expiration Date, Forever</p>
+<h1><a href="#communication" class="header-anchor">#</a><span id="communication"> Communication</span></h1>
+<h2><a href="#polling" class="header-anchor">#</a><span id="polling"> Polling</span></h2>
+<h2><a href="#long-polling" class="header-anchor">#</a><span id="long-polling"> Long Polling</span></h2>
+<h2><a href="#web-socket" class="header-anchor">#</a><span id="web-socket"> Web-Socket</span></h2>
+<h1><a href="#domain-model" class="header-anchor">#</a><span id="domain-model"> Domain Model</span></h1>
+<p>To develop a high-quality design, we should have a basic knowledge of how clients and servers communicate. In a chat system, clients can be either mobile applications or web applications. Clients do not communicate directly with each other. Instead, each client connects to a chat service, which supports all the features mentioned above. Let us focus on fundamental operations. The chat service must support the following functions:</p>
+<ul>
+<li>Receive messages from other clients.</li>
+<li>Find the right recipients for each message and relay the message to the recipients.</li>
+<li>If a recipient is not online, hold the messages for that recipient on the server until she is online.</li>
+</ul>
+<ol>
+<li>Chat servers facilitate message sending/receiving.</li>
+<li>Presence servers manage online/offline status.</li>
+<li>API servers handle everything including user login, signup, change profile, etc.</li>
+<li>Notification servers send push notifications.</li>
+<li>Finally, the key-value store is used to store chat history. When an offline user comes online, she will see all her previous chat history.</li>
+</ol>
+<h1><a href="#storage" class="header-anchor">#</a><span id="storage"> Storage</span></h1>
+<p>At this point, we have servers ready, services up running and third-party integrations complete. Deep down the technical stack is the data layer. Data layer usually requires some effort to get it correct. An important decision we must make is to decide on the right type of database to use: relational databases or NoSQL databases? To make an informed decision, we will examine the data types and read/write patterns.</p>
+<p>Two types of data exist in a typical chat system. The first is generic data, such as user profile, setting, user friends list. These data are stored in robust and reliable relational databases. Replication and sharding are common techniques to satisfy availability and scalability requirements.</p>
+<p>The second is unique to chat systems: chat history data. It is important to understand the read/write pattern.</p>
+<ol>
+<li>The amount of data is enormous for chat systems. A previous study [2] reveals that Facebook messenger and Whatsapp process 60 billion messages a day.</li>
+<li>Only recent chats are accessed frequently. Users do not usually look up for old chats.</li>
+<li>Although very recent chat history is viewed in most cases, users might use features that require random access of data, such as search, view your mentions, jump to specific messages, etc. These cases should be supported by the data access layer.</li>
+<li>The read to write ratio is about 1:1 for 1 on 1 chat apps.</li>
+</ol>
+<p>Selecting the correct storage system that supports all of our use cases is crucial. We recommend key-value stores for the following reasons:</p>
+<ol>
+<li>Key-value stores allow easy horizontal scaling.</li>
+<li>Key-value stores provide very low latency to access data.</li>
+<li>Relational databases do not handle long tail [3] of data well. When the indexes grow large, random access is expensive.</li>
+<li>Key-value stores are adopted by other proven reliable chat applications. For example, both Facebook messenger and Discord use key-value stores. Facebook messenger uses HBase [4], and Discord uses Cassandra [5].</li>
+</ol>
+<h1><a href="#data-models" class="header-anchor">#</a><span id="data-models"> Data Models</span></h1>
+<p>TABLE messages_1_on_1</p>
+<p>PK message_id: bigint<br>
+message_form: bigint<br>
+message_to: bigint<br>
+content: text<br>
+created_at: timestamp</p>
+<p>TABLE messages_group</p>
+<p>PK channel_id: bigint<br>
+PK message_id: bigint<br>
+user_id: bigint<br>
+content: text<br>
+created_at: timestamp</p>
+<p>Message ID</p>
+<p>How to generate message_id is an interesting topic worth exploring. Message_id carries the responsibility of ensuring the order of messages. To ascertain the order of messages, message_id must satisfy the following two requirements:</p>
+<ul>
+<li>IDs must be unique.</li>
+<li>IDs should be sortable by time, meaning new rows have higher IDs than old ones.</li>
+</ul>
+<p>How can we achieve those two guarantees? The first idea that comes to mind is the “auto_increment” keyword in MySql. However, NoSQL databases usually do not provide such a feature.</p>
+<p>The second approach is to use a global 64-bit sequence number generator like Snowflake [6]. This is discussed in the “Design a unique ID generator in a distributed system” chapter.</p>
+<p>The final approach is to use local sequence number generator. Local means IDs are only unique within a group. The reason why local IDs work is that maintaining message sequence within one-on-one channel or a group channel is sufficient. This approach is easier to implement in comparison to the global ID implementation.</p>
+<h1><a href="#deep-dive" class="header-anchor">#</a><span id="deep-dive"> Deep Dive</span></h1>
+<h2><a href="#service-discovery" class="header-anchor">#</a><span id="service-discovery"> Service Discovery</span></h2>
+<p>ZooKeeper or etcd</p>
+<ol>
+<li>User A tries to log in to the app.</li>
+<li>The load balancer sends the login request to API servers.</li>
+<li>After the backend authenticates the user, service discovery finds the best chat server for User A. In this example, server 2 is chosen and the server info is returned back to User A.</li>
+<li>User A connects to chat server 2 through WebSocket.</li>
+</ol>
+<h2><a href="#message-flows" class="header-anchor">#</a><span id="message-flows"> Message flows</span></h2>
+<h3><a href="#1-on-1-chat-flow" class="header-anchor">#</a><span id="1-on-1-chat-flow"> 1 on 1 chat flow</span></h3>
+<ol>
+<li>User A sends a chat message to Chat server 1.</li>
+<li>Chat server 1 obtains a message ID from the ID generator.</li>
+<li>Chat server 1 sends the message to the message sync queue.</li>
+<li>The message is stored in a key-value store.<br>
+5.a. If User B is online, the message is forwarded to Chat server 2 where User B is connected.<br>
+5.b. If User B is offline, a push notification is sent from push notification (PN) servers.</li>
+<li>Chat server 2 forwards the message to User B. There is a persistent WebSocket connection between User B and Chat server 2.</li>
+</ol>
+<h3><a href="#message-synchronization-across-multiple-devices" class="header-anchor">#</a><span id="message-synchronization-across-multiple-devices"> Message synchronization across multiple devices</span></h3>
+<p>User A has two devices: a phone and a laptop. When User A logs in to the chat app with her phone, it establishes a WebSocket connection with Chat server 1. Similarly, there is a connection between the laptop and Chat server 1.</p>
+<p>Each device maintains a variable called cur_max_message_id, which keeps track of the latest message ID on the device. Messages that satisfy the following two conditions are considered as news messages:</p>
+<ul>
+<li>The recipient ID is equal to the currently logged-in user ID.</li>
+<li>Message ID in the key-value store is larger than cur_max_message_id.</li>
+</ul>
+<p>With distinct cur_max_message_id on each device, message synchronization is easy as each device can get new messages from the KV store.</p>
+<h3><a href="#small-group-chat-flow" class="header-anchor">#</a><span id="small-group-chat-flow"> Small group chat flow</span></h3>
+<p>Figure 14 explains what happens when User A sends a message in a group chat. Assume there are 3 members in the group (User A, User B and user C). First, the message from User A is copied to each group member’s message sync queue: one for User B and the second for User C. You can think of the message sync queue as an inbox for a recipient. This design choice is good for small group chat because:</p>
+<ul>
+<li>it simplifies message sync flow as each client only needs to check its own inbox to get new messages.</li>
+<li>when the group number is small, storing a copy in each recipient’s inbox is not too expensive.</li>
+</ul>
+<p>WeChat uses a similar approach, and it limits a group to 500 members [8]. However, for groups with a lot of users, storing a message copy for each member is not acceptable.<br>
+On the recipient side, a recipient can receive messages from multiple users. Each recipient has an inbox (message sync queue) which contains messages from different senders. Figure 15 illustrates the design.</p>
+<h2><a href="#online-presence" class="header-anchor">#</a><span id="online-presence"> Online presence</span></h2>
+<p>In the high-level design, presence servers are responsible for managing online status and communicating with clients through WebSocket. There are a few flows that will trigger online status change. Let us examine each of them.</p>
+<h3><a href="#user-login" class="header-anchor">#</a><span id="user-login"> User Login</span></h3>
+<p>The user login flow is explained in the “Service Discovery” section. After a WebSocket connection is built between the client and the real-time service, user A’s online status and last_active_at timestamp are saved in the KV store. Presence indicator shows the user is online after she logs in.</p>
+<h3><a href="#user-logout" class="header-anchor">#</a><span id="user-logout"> User Logout</span></h3>
+<p>When a user logs out, it goes through the user logout flow as shown in Figure 17. The online status is changed to offline in the KV store. The presence indicator shows a user is offline.</p>
+<h3><a href="#user-disconnection" class="header-anchor">#</a><span id="user-disconnection"> User disconnection</span></h3>
+<p>We all wish our internet connection is consistent and reliable. However, that is not always the case; thus, we must address this issue in our design. When a user disconnects from the internet, the persistent connection between the client and server is lost. A naive way to handle user disconnection is to mark the user as offline and change the status to online when the connection re-establishes. However, this approach has a major flaw. It is common for users to disconnect and reconnect to the internet frequently in a short time. For example, network connections can be on and off while a user goes through a tunnel. Updating online status on every disconnect/reconnect would make the presence indicator change too often, resulting in poor user experience.</p>
+<p>We introduce a heartbeat mechanism to solve this problem. Periodically, an online client sends a heartbeat event to presence servers. If presence servers receive a heartbeat event within a certain time, say x seconds from the client, a user is considered as online. Otherwise, it is offline.</p>
+<p>In Figure 18, the client sends a heartbeat event to the server every 5 seconds. After sending 3 heartbeat events, the client is disconnected and does not reconnect within x = 30 seconds (This number is arbitrarily chosen to demonstrate the logic). The online status is changed to offline.</p>
+<h3><a href="#online-status-fanout" class="header-anchor">#</a><span id="online-status-fanout"> Online status fanout</span></h3>
+<p>How do user A’s friends know about the status changes? Figure 19 explains how it works. Presence servers use a publish-subscribe model, in which each friend pair maintains a channel. When User A’s online status changes, it publishes the event to three channels, channel A-B, A-C, and A-D. Those three channels are subscribed by User B, C, and D, respectively. Thus, it is easy for friends to get online status updates. The communication between clients and servers is through real-time WebSocket.</p>
+<p>The above design is effective for a small user group. For instance, WeChat uses a similar approach because its user group is capped to 500. For larger groups, informing all members about online status is expensive and time consuming. Assume a group has 100,000 members. Each status change will generate 100,000 events. To solve the performance bottleneck, a possible solution is to fetch online status only when a user enters a group or manually refreshes the friend list.</p>
+<h1><a href="#extra" class="header-anchor">#</a><span id="extra"> Extra</span></h1>
+<p>In this chapter, we presented a chat system architecture that supports both 1-to-1 chat and small group chat. WebSocket is used for real-time communication between the client and server. The chat system contains the following components: chat servers for real-time messaging, presence servers for managing online presence, push notification servers for sending push notifications, key-value stores for chat history persistence and API servers for other functionalities.</p>
+<p>If you have extra time at the end of the interview, here are additional talking points:</p>
+<ul>
+<li>Extend the chat app to support media files such as photos and videos. Media files are significantly larger than text in size. Compression, cloud storage, and thumbnails are interesting topics to talk about.</li>
+<li>End-to-end encryption. Whatsapp supports end-to-end encryption for messages. Only the sender and the recipient can read messages. Interested readers should refer to the article in the reference materials [9].</li>
+<li>Caching messages on the client-side is effective to reduce the data transfer between the client and server.</li>
+<li>Improve load time. Slack built a geographically distributed network to cache users’ data, channels, etc. for better load time [10].</li>
+<li>Error handling.</li>
+<li>The chat server error. There might be hundreds of thousands, or even more persistent connections to a chat server. If a chat server goes offline, service discovery (Zookeeper) will provide a new chat server for clients to establish new connections with.</li>
+<li>Message resent mechanism. Retry and queueing are common techniques for resending messages.</li>
+</ul>
+<h1><a href="#practical" class="header-anchor">#</a><span id="practical"> Practical</span></h1>
+<p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1494210">【多人聊天室】WebSocket集群/分布式改造</a></p>
+</p></div><div class="share"><span>Share</span>&nbsp;<span class="soc"><a href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank" class="fa fa-bookmark"></a></span><span class="soc"><a href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));" class="fa fa-weibo"></a></span><span class="soc"><a target="_blank" rel="noopener" href="http://twitter.com/home?status=https://blog.kleon.space/interview/system/chat_app/%20KLEON%20System - Chat App" class="fa fa-twitter"></a></span></div><div class="pagination"><p class="clearfix"><span class="pre pagbuttons"><a role="navigation" href="/interview/system/auto_complete/" title="System - Auto Complete"><i class="fa fa-angle-double-left"></i>&nbsp;Previous post: System - Auto Complete</a></span><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/interview/system/consistant_hashing/" title="System - Consistent Hashing">Next post: System - Consistent Hashing&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>
