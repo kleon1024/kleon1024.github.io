@@ -93,6 +93,7 @@ Service Discovery"><meta name="twitter:site" content="KLEON"><meta name="twitter
 <li><a href="#token">Token</a></li>
 <li><a href="#hmac-ak-sk">HMAC(AK/SK)</a></li>
 <li><a href="#csrf">CSRF</a></li>
+<li><a href="#xss">XSS</a></li>
 <li><a href="#replay-attack">Replay Attack</a></li>
 <li><a href="#cache-miss-attack">Cache Miss Attack</a></li>
 </ul>
@@ -164,6 +165,7 @@ Service Discovery"><meta name="twitter:site" content="KLEON"><meta name="twitter
 <h2><a href="#salt" class="header-anchor">#</a><span id="salt"> Salt</span></h2>
 <p>SHA256 bcrypt<br>
 <sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup></p>
+<p>bcrypt()</p>
 <h2><a href="#vertical-partitioning-and-horizontal-partitioning" class="header-anchor">#</a><span id="vertical-partitioning-and-horizontal-partitioning"> Vertical partitioning and Horizontal partitioning</span></h2>
 <p>Sharding Horizontal Partitioning</p>
 <h2><a href="#access-times" class="header-anchor">#</a><span id="access-times"> Access Times</span></h2>
@@ -240,10 +242,45 @@ The pure data-transfer speed penalty is negligible.</p>
 replay attack<br>
 rely on server-side key, only for single server</p>
 <h2><a href="#hmac-ak-sk" class="header-anchor">#</a><span id="hmac-ak-sk"> HMAC(AK/SK)</span></h2>
+<p>Hash-based message authentication code</p>
 <p>compute on every request<br>
 no expired time, delete on server anytime<br>
 generate multiple</p>
 <h2><a href="#csrf" class="header-anchor">#</a><span id="csrf"> CSRF</span></h2>
+<p><a target="_blank" rel="noopener" href="https://tech.meituan.com/2018/10/11/fe-security-csrf.html">前端安全系列（二）：如何防止CSRF攻击？</a></p>
+<p>跨站伪造请求</p>
+<ul>
+<li>阻止不明外域的访问
+<ul>
+<li>同源检测</li>
+<li>Samesite Cookie</li>
+</ul>
+</li>
+<li>提交时要求附加本域才能获取的信息
+<ul>
+<li>CSRF Token</li>
+<li>双重Cookie验证</li>
+</ul>
+</li>
+</ul>
+<h2><a href="#xss" class="header-anchor">#</a><span id="xss"> XSS</span></h2>
+<p><a target="_blank" rel="noopener" href="https://tech.meituan.com/2018/09/27/fe-security.html">前端安全系列（一）：如何防止XSS攻击？</a></p>
+<p>跨站脚本攻击</p>
+<p>Content Security Policy</p>
+<ul>
+<li>禁止加载外域代码，防止复杂的攻击逻辑。</li>
+<li>禁止外域提交，网站被攻击后，用户的数据不会泄露到外域。</li>
+<li>禁止内联脚本执行（规则较严格，目前发现 GitHub 使用）。</li>
+<li>禁止未授权的脚本执行（新特性，Google Map 移动版在使用）。</li>
+<li>合理使用上报可以及时发现 XSS，利于尽快修复问题。</li>
+</ul>
+<p>输入内容长度控制<br>
+对于不受信任的输入，都应该限定一个合理的长度。虽然无法完全防止 XSS 发生，但可以增加 XSS 攻击的难度。</p>
+<p>其他安全措施</p>
+<ul>
+<li>HTTP-only Cookie: 禁止 JavaScript 读取某些敏感 Cookie，攻击者完成 XSS 注入后也无法窃取此 Cookie。</li>
+<li>验证码：防止脚本冒充用户提交危险操作。</li>
+</ul>
 <h2><a href="#replay-attack" class="header-anchor">#</a><span id="replay-attack"> Replay Attack</span></h2>
 <p>a hacker intercepts your data and resends the same web request to a server, so it looks like that data is coming from your browser.</p>
 <ol>

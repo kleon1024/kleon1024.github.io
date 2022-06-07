@@ -1,94 +1,100 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title>KLEON</title><meta name="description" content="Keep Moving"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/github.min.css"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/KaTeX/0.10.2/katex.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 6.1.0"></head><body><div id="stage" class="container"><div class="row"><div id="side-bar" class="col-sm-3 col-xs-12 side-container invisible"><div class="vertical-text site-title"><h3 tabindex="-1" class="site-title-small"><a href="/" class="a-title"></a></h3><h1 tabindex="-1" class="site-title-large"><a href="/" class="a-title">吹拉弹唱</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div id="site-nav" class="site-title-links"><ul><li><a href="/" class="current">Home</a></li><li><a href="/archives">Archive</a></li><li><a href="/categories">Categories</a></li><li><a href="/tags">Tags</a></li><li><a href="/googlebe23cb0bc55fc412.html"></a></li><li><a href="/about/index.html"></a></li><li class="soc"><a href="https://github.com/kleon1024" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa fa-github">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div id="main-container" class="col-sm-9 col-xs-12 main-container invisible"><div class="autopagerize_page_element"><div class="content"><div class="post-container"><p class="post-title"><a href="/ai/ml-system/recommender/1-overview/">机器学习系统 4-1 - 推荐系统总览</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-04-07</span><span class="date meta-item">Updated at&nbsp;2021-04-08</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/机器学习/" title="机器学习" class="a-tag">机器学习</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/机器学习/" title="机器学习" class="a-tag">机器学习</a><span>&nbsp;</span><a href="/tags/推荐系统/" title="推荐系统" class="a-tag">推荐系统</a><span>&nbsp;</span></span></p><p class="post-abstract">推荐系统主要用来根据用户行为数据/用户特征实现个性化体验，行为预测，提高点击率/转化率等关键商业指标。
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title>KLEON</title><meta name="description" content="Keep Moving"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/github.min.css"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/KaTeX/0.10.2/katex.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 6.1.0"></head><body><div id="stage" class="container"><div class="row"><div id="side-bar" class="col-sm-3 col-xs-12 side-container invisible"><div class="vertical-text site-title"><h3 tabindex="-1" class="site-title-small"><a href="/" class="a-title"></a></h3><h1 tabindex="-1" class="site-title-large"><a href="/" class="a-title">吹拉弹唱</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div id="site-nav" class="site-title-links"><ul><li><a href="/" class="current">Home</a></li><li><a href="/archives">Archive</a></li><li><a href="/categories">Categories</a></li><li><a href="/tags">Tags</a></li><li><a href="/googlebe23cb0bc55fc412.html"></a></li><li><a href="/about/index.html"></a></li><li class="soc"><a href="https://github.com/kleon1024" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa fa-github">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div id="main-container" class="col-sm-9 col-xs-12 main-container invisible"><div class="autopagerize_page_element"><div class="content"><div class="post-container"><p class="post-title"><a href="/ai/ml-system/recommender/7-content-based/">机器学习系统 4-7 - 基于内容的推荐算法</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-05-02</span><span class="date meta-item">Updated at&nbsp;2021-05-02</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/机器学习/" title="机器学习" class="a-tag">机器学习</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/机器学习/" title="机器学习" class="a-tag">机器学习</a><span>&nbsp;</span><a href="/tags/推荐系统/" title="推荐系统" class="a-tag">推荐系统</a><span>&nbsp;</span></span></p><p class="post-abstract">基于内容的推荐算法又叫基于标签的推荐算法，是最早被大规模应用的，思路直观，仍在系统冷启动中发挥作用。
 
-# 特征
-数据很大程度上决定了模型的效果上限，通过特征工程构造合适的特征对效果有举足轻重的影响。
-# 流程
-推荐系统的功能模块主要包括：
-
-召回
-
-从全量候选物品中全选一小部分，规模在千/万级别。对运行速度要...</p></div><div class="post-container"><p class="post-title"><a href="/cs/algo/tree/">算法基础 - 树</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-03-14</span><span class="date meta-item">Updated at&nbsp;2021-03-25</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/算法/" title="算法" class="a-tag">算法</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/算法/" title="算法" class="a-tag">算法</a><span>&nbsp;</span><a href="/tags/数据结构/" title="数据结构" class="a-tag">数据结构</a><span>&nbsp;</span></span></p><p class="post-abstract">树是常用的数据结构，应用较多的有二叉搜索树，二叉平衡搜索树(AVL树)，红黑树，多路平衡搜索树(B-树，B+树，B*树)等。
+# 原理
+所谓基于内容的推荐算法(Content-Based Recommendations)是基于标的物相关信息、用户相关信息及用户对标的物的操作行为来构建推荐算法模型，为用户提供推荐服务。这里的标的物相关信...</p></div><div class="post-container"><p class="post-title"><a href="/cs/algo/dynamic-programming/">算法基础 - 动态规划法</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-04-28</span><span class="date meta-item">Updated at&nbsp;2021-04-28</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/算法/" title="算法" class="a-tag">算法</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/算法/" title="算法" class="a-tag">算法</a><span>&nbsp;</span><a href="/tags/数据结构/" title="数据结构" class="a-tag">数据结构</a><span>&nbsp;</span><a href="/tags/leetcode/" title="leetcode" class="a-tag">leetcode</a><span>&nbsp;</span></span></p><p class="post-abstract">动态规划用于就解决包含重叠子问题的问题，其中每一个子问题的状态都是由上一个状态推导出来的。
 
 # 基础
-树可由链式结构或数组实现，遍历方式为前、中、后、层序遍历。
-  
-# 树
-有向无环非线性数据结构，每个节点可以指向多个节点，但至多有一个节点指向自身。
-# 二叉树
-每个节点至多...</p></div><div class="post-container"><p class="post-title"><a href="/cs/algo/list/">算法基础 - 链表</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-03-12</span><span class="date meta-item">Updated at&nbsp;2021-03-25</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/算法/" title="算法" class="a-tag">算法</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/算法/" title="算法" class="a-tag">算法</a><span>&nbsp;</span><a href="/tags/数据结构/" title="数据结构" class="a-tag">数据结构</a><span>&nbsp;</span><a href="/tags/leetcode/" title="leetcode" class="a-tag">leetcode</a><span>&nbsp;</span></span></p><p class="post-abstract">表是最基础的数据结构之一，存储线性数据，内存结构不连续。
+动态规划的一般步骤：
 
-# 基础
-链表可通过自定义数据结构，使用指针或引用指向前后节点。
-Go提供了&quot;container/list&quot;1标准库实现双向链表。
-  
-# 实战
-# 虚拟头结点移除链表中指定元素
- 移除链表元素
+确定dp数组和其下标的含义
+确定递推公式
+dp数组如何初始化
+确定遍历顺序
+举例推导dp数组
 
-基本链表操作
+# 实践
+# 斐波那契数
+ 斐波那契数
 
-  
-# 实现链表...</p></div><div class="post-container"><p class="post-title"><a href="/cs/algo/queue/">算法基础 - 队列</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-03-21</span><span class="date meta-item">Updated at&nbsp;2021-03-21</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/算法/" title="算法" class="a-tag">算法</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/算法/" title="算法" class="a-tag">算法</a><span>&nbsp;</span><a href="/tags/数据结构/" title="数据结构" class="a-tag">数据结构</a><span>&nbsp;</span><a href="/tags/leetcode/" title="leetcode" class="a-tag">leetcode</a><span>&nbsp;</span></span></p><p class="post-abstract">队列是线性结构，遵循FIFO原则。
+动规，dp数组代表第i个数，和题目直接对应
 
-# 基础
-队列的底层可由数组或链表实现。
+ ...</p></div><div class="post-container"><p class="post-title"><a href="/cs/algo/array/">算法基础 - 数组</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-03-18</span><span class="date meta-item">Updated at&nbsp;2021-04-28</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/算法/" title="算法" class="a-tag">算法</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/算法/" title="算法" class="a-tag">算法</a><span>&nbsp;</span><a href="/tags/数据结构/" title="数据结构" class="a-tag">数据结构</a><span>&nbsp;</span><a href="/tags/leetcode/" title="leetcode" class="a-tag">leetcode</a><span>&nbsp;</span></span></p><p class="post-abstract">数组是最基础的数据结构之一，存储线性数据，内存结构连续。
+
+数组是Go的内置类型，分为静态数组和动态切片。
   
 # 实践
-# 单调队列求滑动窗口最大值
- 滑动窗口最大值
+# 多个有序数组的第k小数
+ 寻找两个正序数组的中位数
 
-单调队列。单调队列的性质是维持有序序列，最值位于最头部，常用于不断有值替换（去除最久的，加入最新的）的场景中取最值。
+暴力法: 归并排序后取中位数
+指针法：只计中位数
+通用寻找第k小数方法
 
-  
-# 最小k个数
-
-暴力：排序
-优先队列，最...</p></div><div class="post-container"><p class="post-title"><a href="/cs/algo/stack/">算法基础 - 栈</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-03-21</span><span class="date meta-item">Updated at&nbsp;2021-03-21</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/算法/" title="算法" class="a-tag">算法</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/算法/" title="算法" class="a-tag">算法</a><span>&nbsp;</span><a href="/tags/数据结构/" title="数据结构" class="a-tag">数据结构</a><span>&nbsp;</span><a href="/tags/leetcode/" title="leetcode" class="a-tag">leetcode</a><span>&nbsp;</span></span></p><p class="post-abstract">栈是线性结构，遵循FILO原则。
+二分法比较排除较小数组的前k/2个元素
+递归查找(k - ...</p></div><div class="post-container"><p class="post-title"><a href="/cs/algo/greedy/">算法基础 - 贪心法</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-04-26</span><span class="date meta-item">Updated at&nbsp;2021-04-27</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/算法/" title="算法" class="a-tag">算法</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/算法/" title="算法" class="a-tag">算法</a><span>&nbsp;</span><a href="/tags/数据结构/" title="数据结构" class="a-tag">数据结构</a><span>&nbsp;</span><a href="/tags/leetcode/" title="leetcode" class="a-tag">leetcode</a><span>&nbsp;</span></span></p><p class="post-abstract">贪心法用来解可由局部最优推出全局最优的问题。
 
 # 基础
-栈的底层可由数组或链表实现。
-  
+贪心法一般步骤：
+
+将问题分解为子问题
+找出适合的贪心策略
+求子问题的最优解
+局部最优堆叠为全局最优
+
 # 实践
-# 栈实现队列
- 用栈实现队列
+# 分发饼干
+ 分发饼干
 
-查看队列首个元素时检查出栈是否为空，如果已排空，则将入栈元素依次压入出栈中
+从最大的开始，依次试图满足孩子的胃口
 
   
-# 用队列实现栈
- 用队列实现栈
+# 摆动序列
+ 摆动序列
 
-队列1记录，队列2备份，top/pop需要循环取出最近插入的值。也可...</p></div><div class="post-container"><p class="post-title"><a href="/cs/algo/hash-table/">算法基础 - 哈希表</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-03-21</span><span class="date meta-item">Updated at&nbsp;2021-03-21</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/算法/" title="算法" class="a-tag">算法</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/算法/" title="算法" class="a-tag">算法</a><span>&nbsp;</span><a href="/tags/数据结构/" title="数据结构" class="a-tag">数据结构</a><span>&nbsp;</span><a href="/tags/leetcode/" title="leetcode" class="a-tag">leetcode</a><span>&nbsp;</span></span></p><p class="post-abstract">哈希函数用于缩小映射空间，可能会发生碰撞，可用链表法或多哈希函数。
+依次判断前后差值，当差值异号时计入统计，...</p></div><div class="post-container"><p class="post-title"><a href="/cs/algo/sort/">算法基础 - 排序</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-03-12</span><span class="date meta-item">Updated at&nbsp;2021-04-26</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/算法/" title="算法" class="a-tag">算法</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/算法/" title="算法" class="a-tag">算法</a><span>&nbsp;</span><a href="/tags/数据结构/" title="数据结构" class="a-tag">数据结构</a><span>&nbsp;</span><a href="/tags/leetcode/" title="leetcode" class="a-tag">leetcode</a><span>&nbsp;</span></span></p><p class="post-abstract">排序是最常用的操作。
 
-# 基础
-常用数据结构：
+# 快速排序
+快排(QUICK-SORT)基于分治思想，核心是对子数组partition，partition挑选一个参考基准(主元，通常为第一个或最后一个元素)，以主元为分界将数据分为两份，子数组递归partition。
+  
+  
+  
+  
+# 归并排序
+归并排序(MERGE-SORT...</p></div><div class="post-container"><p class="post-title"><a href="/ai/ml-system/recommender/3-feature-embedding/">机器学习系统 4-3 - 特征嵌入(Embedding)</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-04-25</span><span class="date meta-item">Updated at&nbsp;2021-04-25</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/机器学习/" title="机器学习" class="a-tag">机器学习</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/机器学习/" title="机器学习" class="a-tag">机器学习</a><span>&nbsp;</span><a href="/tags/推荐系统/" title="推荐系统" class="a-tag">推荐系统</a><span>&nbsp;</span></span></p><p class="post-abstract">Embedding是高维向量到低维空间的转换。在理想情况下，嵌入可以将语义上相似的不同输入映射到嵌入空间里的邻近处，以此来捕获输入的语义1。
 
-数组，有限确定项，比如字母串
-map，映射
-set，集合
+在常见的特征中，通常可以用分桶或OneHot编码转为特征，对于类别较多的特征或者非结构化特征，可以通过Embedding转换为紧凑的实值特征向量表示。
+# 类型
+# 文本...</p></div><div class="post-container"><p class="post-title"><a href="/ai/ml-system/inference-optimization/5-system-level-optimization/">机器学习系统 2-5 - 系统级优化</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-04-25</span><span class="date meta-item">Updated at&nbsp;2021-04-25</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/机器学习/" title="机器学习" class="a-tag">机器学习</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/机器学习/" title="机器学习" class="a-tag">机器学习</a><span>&nbsp;</span><a href="/tags/推理优化/" title="推理优化" class="a-tag">推理优化</a><span>&nbsp;</span></span></p><p class="post-abstract">推理优化除了对模型本身的优化，还需要考虑计算框架、推理服务等系统层面的优化。
 
-Go的map底层使用哈希表实现，set可通过将map的value置空实现。
-C++的std::map/std::multimap由红黑树实现，std::un...</p></div><div class="post-container"><p class="post-title"><a href="/cs/algo/priority-queue/">算法基础 - 优先队列</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-03-12</span><span class="date meta-item">Updated at&nbsp;2021-03-12</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/算法/" title="算法" class="a-tag">算法</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/算法/" title="算法" class="a-tag">算法</a><span>&nbsp;</span><a href="/tags/数据结构/" title="数据结构" class="a-tag">数据结构</a><span>&nbsp;</span><a href="/tags/leetcode/" title="leetcode" class="a-tag">leetcode</a><span>&nbsp;</span></span></p><p class="post-abstract">优先队列以比排序更小的代价维护顺序。二叉堆是实现优先队列的一种实现。二叉堆的最简单实现是数组。
+# 框架
 
-# 基础
-堆的基本操作：
+编译器优化
+线程并行
+Cache优化
+Memory
+稀疏化
+内存精细管理
+专用指令，比如ARM的NEON、Intel的AVX
+亲核性，NUMA
 
-插入
-堆化，Sift Up，Sift Down
-取出最值
+# 服务
 
-使用数组表示的二叉堆的基本性质：
+线程/进程/服务实例并行
+调度绑定
+资源复用
+网络开销
+缓存
+延...</p></div><div class="post-container"><p class="post-title"><a href="/ai/ml-system/inference-optimization/4-model-compression/">机器学习系统 2-4 - 模型压缩</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-04-25</span><span class="date meta-item">Updated at&nbsp;2021-04-25</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/机器学习/" title="机器学习" class="a-tag">机器学习</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/机器学习/" title="机器学习" class="a-tag">机器学习</a><span>&nbsp;</span><a href="/tags/推理优化/" title="推理优化" class="a-tag">推理优化</a><span>&nbsp;</span></span></p><p class="post-abstract">模型压缩相比图优化/编译优化无损优化方法，侧重减少网络参数量，达到节约服务器资源，端侧部署优化等目的。
 
+# 结构优化
+如矩阵分解（Factor Machine），权值共享（CNN），分组卷积（MobileNet的depth-wise Conv)，分拆卷积（Inception）等。
+结构优化主要是模型结构创新，以...</p></div><div class="post-container"><p class="post-title"><a href="/ai/ml-system/inference-optimization/3-compilation-optimization/">机器学习系统 2-3 - 编译优化</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-04-23</span><span class="date meta-item">Updated at&nbsp;2021-04-23</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/机器学习/" title="机器学习" class="a-tag">机器学习</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/机器学习/" title="机器学习" class="a-tag">机器学习</a><span>&nbsp;</span><a href="/tags/推理优化/" title="推理优化" class="a-tag">推理优化</a><span>&nbsp;</span></span></p><p class="post-abstract">深度学习的编译优化方法师承程序语言，相比而言，程序语言的输入是语法树，深度学习的输入是计算图，有相似的编译结构，深度学习后端可以借鉴LLVM架构灵活支持新后端硬件。
 
-每个结点的左孩子为下标i的2倍：left child(i) = i * 2；每个结点的右孩...</p></div><div class="post-container"><p class="post-title"><a href="/ai/ml-system/inference-optimization/1-overview/">机器学习系统 2-1 - 推理优化总览</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-02-05</span><span class="date meta-item">Updated at&nbsp;2021-02-05</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/机器学习/" title="机器学习" class="a-tag">机器学习</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/机器学习/" title="机器学习" class="a-tag">机器学习</a><span>&nbsp;</span><a href="/tags/推理优化/" title="推理优化" class="a-tag">推理优化</a><span>&nbsp;</span></span></p><p class="post-abstract">模型推理服务是在业务关键路径上的，其性能足以收到高度重视。如何优化训练后的模型，提高性能，降低资源占用，维持推理精度，优化方法的通用化与自动化，这些是模型推理优化的核心目标。
+不少社区都提出了自己的编译优化框架，定义了自己的一套中间表达（IR，Intermediate Represent），在发展过程中，这些框架和IR也...</p></div><div class="post-container"><p class="post-title"><a href="/ai/ml-system/inference-optimization/2-graph-optimization/">机器学习系统 2-2 - 图优化</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-04-23</span><span class="date meta-item">Updated at&nbsp;2021-04-23</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/机器学习/" title="机器学习" class="a-tag">机器学习</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/机器学习/" title="机器学习" class="a-tag">机器学习</a><span>&nbsp;</span><a href="/tags/推理优化/" title="推理优化" class="a-tag">推理优化</a><span>&nbsp;</span></span></p><p class="post-abstract">图结构优化在算子层面调整图结构，调整前后的计算图输入输出等价。
 
-说起性能优化，软件的性能优化应该是必备功课，通过profiling定位bottleneck，再针对性优化，可以说具备一定程度通用的方法论...</p></div><div class="post-container"><p class="post-title"><a href="/ai/ml-system/hardware-backend/11-system/">机器学习系统 1-11 - 后端硬件系统</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-02-04</span><span class="date meta-item">Updated at&nbsp;2021-02-04</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/机器学习/" title="机器学习" class="a-tag">机器学习</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/机器学习/" title="机器学习" class="a-tag">机器学习</a><span>&nbsp;</span><a href="/tags/FPGA/" title="FPGA" class="a-tag">FPGA</a><span>&nbsp;</span></span></p><p class="post-abstract">现代的服务系统已经变得庞大复杂，硬件后端需要与服务系统整合，才能在整个pipeline中发挥作用。相比于底层更关注局部性能，服务系统更关心端到端延迟，并发量和硬件利用率，性能稳定性，服务可用率等指标。
+# 方法
+图层面优化主要包括：
+# 训练图清理
+主要针对TensorFlow 1.x， Tensorflowd的训练图包含较多非推理用算子，通常调用TF提供的API提取子图，但可能因为用户的构图不当不能被清理干净。常见的操作包括：
 
-# Serving
-后端硬件接入框架后，基本就可以依赖框架的Serving能力对外输出了。比如Tensorfl...</p></div><div class="post-container"><p class="post-title"><a href="/ai/ml-system/hardware-backend/10-framework-integration/">机器学习系统 1-10 - 后端硬件框架接入</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2021-02-03</span><span class="date meta-item">Updated at&nbsp;2021-02-03</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/机器学习/" title="机器学习" class="a-tag">机器学习</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/机器学习/" title="机器学习" class="a-tag">机器学习</a><span>&nbsp;</span><a href="/tags/FPGA/" title="FPGA" class="a-tag">FPGA</a><span>&nbsp;</span></span></p><p class="post-abstract">在开源背景下，框架在社区的加持下不断迭代，后端硬件通常不能cover所有应用场景，需要接入框架借用框架的能力。那什么样的实现最合适，又会有哪些问题？
-
-按需求不同，可以有多种方法：
-
-不接入
-
-实际上还是借用了框架的模型定义。如果整个模型都能被支持，并且对性能有较高的要求，场景定制，那么可以不接入框架，比如Ten...</p></div><div class="pagination no-margin-bottom"><p class="clearfix"><p> Page 10 / 12 &nbsp;</p><p><span class="pre pagbuttons"><i class="fa fa-angle-double-left"></i>&nbsp;<a role="navigation" href="/page/9/" aria-label="Previous">Previous</a></span><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/page/11/" aria-label="Next">Next</a>&nbsp;<i class="fa fa-angle-double-right"></i></span></p></p></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>
+固定输入Pla...</p></div><div class="pagination no-margin-bottom"><p class="clearfix"><p> Page 10 / 13 &nbsp;</p><p><span class="pre pagbuttons"><i class="fa fa-angle-double-left"></i>&nbsp;<a role="navigation" href="/page/9/" aria-label="Previous">Previous</a></span><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/page/11/" aria-label="Next">Next</a>&nbsp;<i class="fa fa-angle-double-right"></i></span></p></p></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>
