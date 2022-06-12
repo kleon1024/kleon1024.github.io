@@ -81,6 +81,7 @@ Video Enhancemen"><meta name="twitter:site" content="KLEON"><meta name="twitter:
 <li><a href="#fen-bu-shi-ren-wu-xi-tong">分布式任务系统</a></li>
 <li><a href="#zookeeper">ZooKeeper</a></li>
 <li><a href="#redis-distributed-lock">Redis Distributed Lock</a></li>
+<li><a href="#etcd-fen-bu-shi-suo">etcd分布式锁</a></li>
 <li><a href="#pipeline-shi-xian">Pipeline实现</a></li>
 <li><a href="#kafka">Kafka</a></li>
 <li><a href="#rocketmq">RocketMQ</a></li>
@@ -106,6 +107,20 @@ Video Enhancemen"><meta name="twitter:site" content="KLEON"><meta name="twitter:
 <li><a href="#performance-optimization-of-inference">Performance Optimization of Inference</a></li>
 <li><a href="#self-developed-fpga-inference-acceleration-chip-solution">Self-developed FPGA inference acceleration chip solution</a></li>
 <li><a href="#devops">DevOps</a></li>
+<li><a href="#jia-gou-she-ji">架构设计</a>
+<ul>
+<li><a href="#miao-sha-xi-tong">秒杀系统</a></li>
+<li><a href="#duan-lian-jie">短链接</a></li>
+<li><a href="#hong-bao">红包</a></li>
+<li><a href="#fen-bu-shi-id">分布式ID</a></li>
+<li><a href="#fen-bu-shi-xian-liu">分布式限流</a></li>
+<li><a href="#fen-bu-shi-ding-shi-ren-wu">分布式定时任务</a></li>
+<li><a href="#wei-bo-tui-song">微博推送</a></li>
+<li><a href="#da-wen-jian-pai-xu">大文件排序</a></li>
+<li><a href="#im-id">IM ID</a></li>
+<li><a href="#top-k">top K</a></li>
+</ul>
+</li>
 <li><a href="#gao-bing-fa">高并发</a></li>
 <li><a href="#liang-dian-zu-gou-shen-ru-zu-gou-liao-jie">亮点，足够深入，足够了解</a></li>
 </ul>
@@ -120,59 +135,60 @@ Video Enhancemen"><meta name="twitter:site" content="KLEON"><meta name="twitter:
 <input type="checkbox" id="checkbox2" checked="true"><label for="checkbox2">Kafka</label><br>
 <input type="checkbox" id="checkbox1" checked="true"><label for="checkbox1">RocketMQ</label><br>
 <input type="checkbox" id="checkbox0" checked="true"><label for="checkbox0">RabbitMQ</label></p>
-<p><input type="checkbox" id="checkbox11" checked="true"><label for="checkbox11">MySQL</label><br>
-<input type="checkbox" id="checkbox10" checked="true"><label for="checkbox10">PostgreSQL</label><br>
-<input type="checkbox" id="checkbox9"><label for="checkbox9">MongoDB</label><br>
-<input type="checkbox" id="checkbox8"><label for="checkbox8">HBase</label><br>
-<input type="checkbox" id="checkbox7"><label for="checkbox7">Cassandra</label><br>
-<input type="checkbox" id="checkbox6"><label for="checkbox6">Hologres</label></p>
-<p><input type="checkbox" id="checkbox14" checked="true"><label for="checkbox14">Kubernetes</label><br>
-<input type="checkbox" id="checkbox13"><label for="checkbox13">Docker</label><br>
-<input type="checkbox" id="checkbox12"><label for="checkbox12">Helm</label></p>
-<p><input type="checkbox" id="checkbox17" checked="true"><label for="checkbox17">Golang</label><br>
-<input type="checkbox" id="checkbox16"><label for="checkbox16">Python</label><br>
-<input type="checkbox" id="checkbox15"><label for="checkbox15">C++</label></p>
-<p><input type="checkbox" id="checkbox22" checked="true"><label for="checkbox22">Operating System</label><br>
-<input type="checkbox" id="checkbox21"><label for="checkbox21">Network</label><br>
-<input type="checkbox" id="checkbox20"><label for="checkbox20">Security/Authentication</label><br>
-<input type="checkbox" id="checkbox19"><label for="checkbox19">CPU</label><br>
-<input type="checkbox" id="checkbox18"><label for="checkbox18">GPU/CUDA</label></p>
-<p><input type="checkbox" id="checkbox41"><label for="checkbox41">Tensorflow</label><br>
-<input type="checkbox" id="checkbox40"><label for="checkbox40">PyTorch</label><br>
-<input type="checkbox" id="checkbox39" checked="true"><label for="checkbox39">Model Training Optimization</label><br>
-<input type="checkbox" id="checkbox38" checked="true"><label for="checkbox38">Model Serving Optimization &amp; Platform</label><br>
-<input type="checkbox" id="checkbox37"><label for="checkbox37">TensorRT</label><br>
-<input type="checkbox" id="checkbox36"><label for="checkbox36"></label><s>TVM</s><br>
-<input type="checkbox" id="checkbox35"><label for="checkbox35"></label><s>ONNX Runtime</s><br>
-<input type="checkbox" id="checkbox34"><label for="checkbox34">SR</label><br>
-<input type="checkbox" id="checkbox33"><label for="checkbox33">GAN</label><br>
-<input type="checkbox" id="checkbox32"><label for="checkbox32"></label><s>ffmpeg</s><br>
-<input type="checkbox" id="checkbox31"><label for="checkbox31">Feature Engineering</label><br>
-<input type="checkbox" id="checkbox30"><label for="checkbox30">Distributed Training</label><br>
-<input type="checkbox" id="checkbox29"><label for="checkbox29">Sms Recall Modeling/Cross Validation</label><br>
-<input type="checkbox" id="checkbox28"><label for="checkbox28">LR</label><br>
-<input type="checkbox" id="checkbox27"><label for="checkbox27">GBDT/XGBOOST/RF</label><br>
-<input type="checkbox" id="checkbox26"><label for="checkbox26">Overfit/Underfit/Feature Selecting/Data Clean</label><br>
-<input type="checkbox" id="checkbox25"><label for="checkbox25">Recommend System</label><br>
-<input type="checkbox" id="checkbox24"><label for="checkbox24">Recommend Modeling</label><br>
-<input type="checkbox" id="checkbox23"><label for="checkbox23">KubeFlow</label></p>
-<p><input type="checkbox" id="checkbox48"><label for="checkbox48">CI</label><br>
-<input type="checkbox" id="checkbox47"><label for="checkbox47">Testing/Pressure Testing</label><br>
-<input type="checkbox" id="checkbox46"><label for="checkbox46">System Level Optimization</label><br>
-<input type="checkbox" id="checkbox45"><label for="checkbox45">Release</label><br>
-<input type="checkbox" id="checkbox44"><label for="checkbox44">CR</label><br>
-<input type="checkbox" id="checkbox43"><label for="checkbox43">Code Format</label><br>
-<input type="checkbox" id="checkbox42"><label for="checkbox42">Team</label></p>
-<p><input type="checkbox" id="checkbox55"><label for="checkbox55">Spark</label><br>
-<input type="checkbox" id="checkbox54"><label for="checkbox54">Spark Streaming</label><br>
-<input type="checkbox" id="checkbox53"><label for="checkbox53">Flink</label><br>
-<input type="checkbox" id="checkbox52"><label for="checkbox52">MapReduce</label><br>
-<input type="checkbox" id="checkbox51"><label for="checkbox51">Hive</label><br>
-<input type="checkbox" id="checkbox50"><label for="checkbox50">Hadoop</label><br>
-<input type="checkbox" id="checkbox49"><label for="checkbox49">ES</label></p>
-<p><input type="checkbox" id="checkbox58"><label for="checkbox58">Event Tracking埋点</label><br>
-<input type="checkbox" id="checkbox57"><label for="checkbox57">LogStash</label><br>
-<input type="checkbox" id="checkbox56"><label for="checkbox56">ETL</label></p>
+<p><input type="checkbox" id="checkbox12" checked="true"><label for="checkbox12">MySQL</label><br>
+<input type="checkbox" id="checkbox11" checked="true"><label for="checkbox11">PostgreSQL</label><br>
+<input type="checkbox" id="checkbox10"><label for="checkbox10">MongoDB</label><br>
+<input type="checkbox" id="checkbox9"><label for="checkbox9">HBase</label><br>
+<input type="checkbox" id="checkbox8"><label for="checkbox8">Cassandra</label><br>
+<input type="checkbox" id="checkbox7"><label for="checkbox7">Hologres</label><br>
+<input type="checkbox" id="checkbox6"><label for="checkbox6">ElasticSearch</label></p>
+<p><input type="checkbox" id="checkbox15" checked="true"><label for="checkbox15">Kubernetes</label><br>
+<input type="checkbox" id="checkbox14"><label for="checkbox14">Docker</label><br>
+<input type="checkbox" id="checkbox13"><label for="checkbox13">Helm</label></p>
+<p><input type="checkbox" id="checkbox18" checked="true"><label for="checkbox18">Golang</label><br>
+<input type="checkbox" id="checkbox17"><label for="checkbox17">Python</label><br>
+<input type="checkbox" id="checkbox16"><label for="checkbox16">C++</label></p>
+<p><input type="checkbox" id="checkbox23" checked="true"><label for="checkbox23">Operating System</label><br>
+<input type="checkbox" id="checkbox22"><label for="checkbox22">Network</label><br>
+<input type="checkbox" id="checkbox21"><label for="checkbox21">Security/Authentication</label><br>
+<input type="checkbox" id="checkbox20"><label for="checkbox20">CPU</label><br>
+<input type="checkbox" id="checkbox19"><label for="checkbox19">GPU/CUDA</label></p>
+<p><input type="checkbox" id="checkbox42"><label for="checkbox42">Tensorflow</label><br>
+<input type="checkbox" id="checkbox41"><label for="checkbox41">PyTorch</label><br>
+<input type="checkbox" id="checkbox40" checked="true"><label for="checkbox40">Model Training Optimization</label><br>
+<input type="checkbox" id="checkbox39" checked="true"><label for="checkbox39">Model Serving Optimization &amp; Platform</label><br>
+<input type="checkbox" id="checkbox38"><label for="checkbox38">TensorRT</label><br>
+<input type="checkbox" id="checkbox37"><label for="checkbox37"></label><s>TVM</s><br>
+<input type="checkbox" id="checkbox36"><label for="checkbox36"></label><s>ONNX Runtime</s><br>
+<input type="checkbox" id="checkbox35"><label for="checkbox35">SR</label><br>
+<input type="checkbox" id="checkbox34"><label for="checkbox34">GAN</label><br>
+<input type="checkbox" id="checkbox33"><label for="checkbox33"></label><s>ffmpeg</s><br>
+<input type="checkbox" id="checkbox32"><label for="checkbox32">Feature Engineering</label><br>
+<input type="checkbox" id="checkbox31"><label for="checkbox31">Distributed Training</label><br>
+<input type="checkbox" id="checkbox30"><label for="checkbox30">Sms Recall Modeling/Cross Validation</label><br>
+<input type="checkbox" id="checkbox29"><label for="checkbox29">LR</label><br>
+<input type="checkbox" id="checkbox28"><label for="checkbox28">GBDT/XGBOOST/RF</label><br>
+<input type="checkbox" id="checkbox27"><label for="checkbox27">Overfit/Underfit/Feature Selecting/Data Clean</label><br>
+<input type="checkbox" id="checkbox26"><label for="checkbox26">Recommend System</label><br>
+<input type="checkbox" id="checkbox25"><label for="checkbox25">Recommend Modeling</label><br>
+<input type="checkbox" id="checkbox24"><label for="checkbox24">KubeFlow</label></p>
+<p><input type="checkbox" id="checkbox49"><label for="checkbox49">CI</label><br>
+<input type="checkbox" id="checkbox48"><label for="checkbox48">Testing/Pressure Testing</label><br>
+<input type="checkbox" id="checkbox47"><label for="checkbox47">System Level Optimization</label><br>
+<input type="checkbox" id="checkbox46"><label for="checkbox46">Release</label><br>
+<input type="checkbox" id="checkbox45"><label for="checkbox45">CR</label><br>
+<input type="checkbox" id="checkbox44"><label for="checkbox44">Code Format</label><br>
+<input type="checkbox" id="checkbox43"><label for="checkbox43">Team</label></p>
+<p><input type="checkbox" id="checkbox56"><label for="checkbox56">Spark</label><br>
+<input type="checkbox" id="checkbox55"><label for="checkbox55">Spark Streaming</label><br>
+<input type="checkbox" id="checkbox54"><label for="checkbox54">Flink</label><br>
+<input type="checkbox" id="checkbox53"><label for="checkbox53">MapReduce</label><br>
+<input type="checkbox" id="checkbox52"><label for="checkbox52">Hive</label><br>
+<input type="checkbox" id="checkbox51"><label for="checkbox51">Hadoop</label><br>
+<input type="checkbox" id="checkbox50"><label for="checkbox50">ES</label></p>
+<p><input type="checkbox" id="checkbox59"><label for="checkbox59">Event Tracking埋点</label><br>
+<input type="checkbox" id="checkbox58"><label for="checkbox58">LogStash</label><br>
+<input type="checkbox" id="checkbox57"><label for="checkbox57">ETL</label></p>
 <h1><a href="#outline" class="header-anchor">#</a><span id="outline"> Outline</span></h1>
 <ol>
 <li>Business background</li>
@@ -583,6 +599,11 @@ XX: 仅当key存在时设置值</p>
 </ul>
 </li>
 </ul>
+<h3><a href="#etcd-fen-bu-shi-suo" class="header-anchor">#</a><span id="etcd-fen-bu-shi-suo"> etcd分布式锁</span></h3>
+<p><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000021603215">基于 etcd 实现分布式锁</a></p>
+<p>ETCD client/v3 concurrency.Mutex</p>
+<p>基于ETCD的选主</p>
+<p>concurrency.NewElection</p>
 <h3><a href="#pipeline-shi-xian" class="header-anchor">#</a><span id="pipeline-shi-xian"> Pipeline实现</span></h3>
 <ul>
 <li>
@@ -927,15 +948,101 @@ partition replication</p>
 <ul>
 <li>
 <p>4 介绍一下Hologres的原理？</p>
-<p>参考<sup class="footnote-ref"><a href="#fn25" id="fnref25">[25]</a></sup><sup class="footnote-ref"><a href="#fn26" id="fnref26">[26]</a></sup><sup class="footnote-ref"><a href="#fn27" id="fnref27">[27]</a></sup>。<br>
-<img src="/images/hologres.png" alt="hologres"></p>
+<p>参考<sup class="footnote-ref"><a href="#fn25" id="fnref25">[25]</a></sup><sup class="footnote-ref"><a href="#fn26" id="fnref26">[26]</a></sup><sup class="footnote-ref"><a href="#fn27" id="fnref27">[27]</a></sup>。</p>
+<p><strong>数据类型</strong></p>
+<p>Hologres存储引擎的基本抽象是分布式的表，为了让系统可扩展，我们需要把表切分为分片（Shard）。 为了更高效地支持JOIN以及多表更新等场景，用户可能需要把几个相关的表存放在一起，为此Hologres引入了表组（Table Group）的概念。分片策略完全一样的一组表就构成了一个表组，同一个表组的所有表有同样数量的分片。用户可以通过“shard_count&quot;来指定表的分片数，通过“distribution_key&quot;来指定分片列。目前我们只支持Hash的分片方式。</p>
+<p>表的数据存储格式分为两类，一类是行存表，一类是列存表，格式可以通过“orientation&quot;来指定。</p>
+<p>每张表里的记录都有一定的存储顺序，用户可以通过“clustering_key&quot;来指定。如果没有指定排序列，存储引擎会按照插入的顺序自动排序。选择合适的排序列能够大大优化一些查询的性能。</p>
+<p>表还可以支持多种索引，目前我们支持了字典索引和位图索引。用户可以通过“dictionary_encoding_columns&quot;和“bitmap_columns&quot;来指定需要索引的列。</p>
+<p><strong>存储引擎架构</strong></p>
+<p><img src="/images/hologres.png" alt="hologres"></p>
 <p>每个分片（Table Group Shard， 简称Shard）构成了一个存储管理和恢复的单元 （Recovery Unit）。上图显示了一个分片的基本架构。一个分片由多个tablet组成，这些tablet会共享一个日志（Write-Ahead Log，WAL）。存储引擎用了Log-Structured Merge （LSM）的技术，所有的新数据都是以append-only的形式插入的。 数据先写到tablet所在的内存表 (MemTable)，积累到一定规模后写入到文件中。当一个数据文件关闭后，里面的内容就不会变了。新的数据以及后续的更新都会写到新的文件。 与传统数据库的B±tree数据结构相比，LSM减少了随机IO，大幅的提高了写的性能。</p>
 <p>当写操作不断进来，每个tablet里会积累出很多文件。当一个tablet里小文件积累到一定数量时，存储引擎会在后台把小文件合并起来 （Compaction），这样系统就不需要同时打开很多文件，能减少使用系统资源，更重要的是合并后， 文件减少了，提高了读的性能。</p>
 <p>在DML的功能上，存储引擎提供了单条或者批量的创建，查询，更新，和删除（CRUD操作）访问方法的接口，查询引擎可以通过这些接口访问存储的数据。</p>
-<p>Distributed Database With PostgreSQL Query Engine Support. Hologres divides data into different shards by hashing the key, stores data into DFS(Pangu,HDFS,OSS) and aggregates the results from different shards. and provides dictionary index and bitmap index to accelerate the execution. A shard consists of multiple tablets. And those tablets shares a common write-ahead log (WAL for short).</p>
+<p>下面是存储引擎几个重要的的组件：</p>
+<ul>
+<li>
+<p>WAL 和 WAL Manager<br>
+WAL Manager是来管理日志文件的。存储引擎用预写式日志(WAL) 来保证数据的原子性和持久性。当CUD操作发生时，存储引擎先写WAL，再写到对应tablet的MemTable中，等到MemTable积累到一定的规模或者到了一定的时间，就会把这个MemTable切换为不可更改的flushing MemTable， 并新开一个 MemTable接收新的写入请求。 而这个不可更改的flushing MemTable就可以刷磁盘，变成不可更改的文件； 当不可更改的文件生成后，数据就可以算持久化。 当系统发生错误崩溃后，系统重启时会去WAL读日志，恢复还没有持久化的数据。 只有当一个日志文件对应的数据都持久化后，WAL Manager才会把这个日志文件删除。</p>
 </li>
 <li>
-<p>4.1 Hologres的行存列存数据格式？</p>
+<p>文件存储<br>
+每个tablet会把数据存在一组文件中，这些文件是存在DFS里 （阿里巴巴盘古或者Apache HDFS ）。 行存文件的存储方式是Sorted String Table（SST） 格式。 列存文件支持两种存储格式： 一种是类似PAX的自研格式， 另外一种是改进版的Apache ORC格式 （在AliORC的基础上针对Hologres的场景做了很多优化）。 这两种列存格式都针对文件扫描的场景做了优化。</p>
+</li>
+<li>
+<p>Block Cache (Read Cache)<br>
+为了避免每次读数据都用IO到文件中取，存储引擎通过BlockCache把常用和最近用的数据放在内存中，减少不必要的IO，加快读的性能。在同一个节点内，所有的Shard共享一个Block Cache。 Block Cache有两种淘汰策略： LRU （Least Recently Used，最近最少使用） 和 LFU （Least Frequently Used, 最近不常用）。 顾名思义，LRU算法是首先淘汰最长时间未被使用的Block，而LFU是先淘汰一定时间内被访问次数最少的Block。</p>
+</li>
+</ul>
+<p>Distributed Database With PostgreSQL Query Engine Support. Hologres divides data into different shards by hashing the key, stores data into DFS(Pangu,HDFS,OSS) and aggregates the results from different shards. and provides dictionary index and bitmap index to accelerate the execution. A shard consists of multiple tablets. And those tablets shares a common write-ahead log (WAL for short).</p>
+<p><strong>读写原理</strong></p>
+<p>Hologres支持两种类型的写入：单分片写入和分布式批量写入。两种类型的写入都是原子的（Atomic Write)，即写入或回滚。单分片写入一次更新一个Shard，但是需要支持极高的写入频率。另一方面，分布式批写用于将大量数据作为单个事务写到多个Shard中的场景，并且通常以低得多的频率执行。</p>
+<ul>
+<li>单分片写入<br>
+如上图所示，WAL管理器在接收到单分片写请求后，（1）为写请求分配一条Log Sequence Number （LSN），这个LSN是由时间戳和递增的序号组成，并且（2）创建一条新的日志，并在文件系统中的持久化这条日志。这条日志包含了恢复写操作所需的信息。在完全保留这条日志后，才向tablet提交写入。之后，（3）我们会在相应tablet的内存表（MemTable) 中执行这个写操作，并使其对新的读请求可见。值得注意的是，不同tablet上的更新可以并行化。当一个MemTable满了以后，（4）将其刷新到文件系统中，并初始化一个新的MemTable。最后，（5）将多个分片文件在后台异步合并（Compaction）。在合并或MemTable刷新结束时，管理tablet的元数据文件将相应更新。</li>
+<li>分布式批量写入<br>
+接收到写入请求的前台节点会将写请求分发到所有相关的分片。这些分片通过两阶段提交机制（Two Phase Commit) 来保证分布式批量写入的写入原子性。</li>
+<li>多版本读<br>
+Hologres支持在tablet中多版本读取数据。读请求的一致性是read-your-writes，即客户端始终能看到自己最新提交的写操作。每个读取请求都包含一个读取时间戳，用于构造读的snapshot LSN。如果有一行数据的LSN大于snapshot LSN的记录， 这行数据就会被过滤掉， 因为他是在读的snapshot产生后才被插入到这个tablet的。</li>
+</ul>
+<p><strong>技术亮点</strong></p>
+<p>1）存储计算分离<br>
+存储引擎采取存储计算分离的架构，所有的数据文件存在一个分布式文件系统(DFS, 例如阿里巴巴盘古或者Apache HDFS)的里面。当查询负载变大需要更多的计算资源的时候可以单独扩展计算资源； 当数据量快速增长的时候可以快速单独扩展存储资源。计算节点和存储节点可以独立扩展的架构保证了不需要等待数据的拷贝或者移动就能快速扩展资源； 而且，可以利用DFS存多副本的机制保证数据的高可用性。 这种架构不但极大地简化了运维，而且为系统的稳定性提供了很大的保障。</p>
+<p>2）异步执行流程<br>
+存储引擎采用了基于事件触发, 非阻塞的纯异步执行架构, 这样能够充分发挥现代CPU多core的处理能力，提高了吞吐量， 支持高并发的写入和查询。这种架构得益于HOS（HoloOS) 框架，HOS在提供高效的异步执行和并发能力的同时，还能自动地做CPU的负载均衡提升系统的利用率。</p>
+<p>3）统一的存储<br>
+在HSAP场景下，有两类查询模式，一类是简单的点查询（数据服务Serving类场景），另一类是扫描大量数据的复杂查询（分析Analytical类场景）。 当然，也有很多查询是介于两者之间的。这两种查询模式对数据存储提出了不同的要求。行存能够比较高效地支持点查询，而列存在支持大量扫描的查询上有明显的优势。<br>
+为了能够支持各种查询模式，统一的实时存储是非常重要的。存储引擎支持行存和列存的存储格式。根据用户的需求，一个tablet可以是行存的存储格式 （适用于Serving的场景）； 也可以是列存的存储格式（适用于Analytical的场景）。 比如，在一个典型HSAP的场景，很多用户会把数据存在列存的存储格式下，便于大规模扫描做分析；与此同时，数据的索引存在行存的存储格式下，便于点查。并通过定义primary key constraint （我们是用行存来实现的）用来防止数据重复·。不管底层用的是行存还是列存，读写的接口是一样的，用户没有感知，只在建表的时候指定即可。</p>
+<p>4）读写隔离<br>
+存储引擎采用了snapshot read的语意，读数据时采用读开始时的数据状态，不需要数据锁，读操作不会被写操作block住； 当有新的写操作进来的时候，因为写操作是append-only，所有写操作也不会被读操作block住。这样可以很好的支持HSAP的高并发混合工作负载场景。</p>
+<p>5）丰富的索引<br>
+存储引擎提供了多种索引类型，用于提升查询的效率。一个表可以支持clustered index 和 non-clustered index这两类索引。一个表只能有一个clustered index， 它包含表里所有的列。一个表可以有多个non-clustered indices。在non-clustered indexes里，除了排序用的non-clustered index key外，还有用来找到全行数据的Row Identifier (RID)。 如果clustered index存在， 而且是独特的，clustered index key就是RID； 否则存储引擎会产生一个独特的RID。 为了提高查询的效率，在non-clustered index中还可以有其他的列， 这样在某些查询时，扫一个索引就可以拿到所有的列的值了 （covering index)。</p>
+<p>在数据文件内部，存储引擎支持了字典和位图索引。字典可以用来提高处理字符串的效率和提高数据的压缩比，位图索引可以帮助高效地过滤掉不需要的记录。</p>
+<p><a target="_blank" rel="noopener" href="https://developer.aliyun.com/article/784506">Hologres揭秘:深度解析高效率分布式查询引擎</a></p>
+<p>Hologres 是能够弹性无限水平扩展数据量和计算能力的系统，需要能够支持高效的分布式查询。<br>
+Hologres 查询引擎执行的是由优化器生成的分布式执行计划。执行计划由算子组成。因为 Hologres 的一个表的数据会根据 Distribution Key 分布在多个 Shard 上，每个 Shard 内又可以包含很多 Segment，执行计划也会反映这样的结构，并分布到数据所在的节点去执行。每个Table Shard 会被加载到一个计算节点，数据会被缓存到这个节点的内存和本地存储。因为是存储计算分离的架构，如果一个节点出错，其服务的 Shard 可以被重新加载到任意一个计算节点，只是相当于清空了缓存。</p>
+<p><a target="_blank" rel="noopener" href="https://developer.aliyun.com/article/865786">Hologres揭秘：实时数仓Hologres如何支持超大规模部署与运维</a></p>
+<p>Kubernetes万台调度<br>
+Kubernetes官方公布集群最大规模为5000台，而在阿里云场景下，为了满足业务规模需求、资源利用率提升等要求，云原生集群规模要达万台。众所周知Kubernetes是中心节点式服务，强依赖ETCD与kube-apiserver，该块是性能瓶颈的所在，突破万台规模需要对相关组件做深度优化。同时要解决单点Failover速度问题，提升云原生集群的可用率。<br>
+通过压测，模拟在万台node和百万pod下的压力，发现了比较严重的响应延迟问题，包括：</p>
+<ol>
+<li>etcd大量的读写延迟，并且产生了拒绝服务的情形，同时因其空间的限制也无法承载 Kubernetes 存储大量的对象；</li>
+<li>API Server 查询延迟非常高，并发查询请求可能导致后端 etcd oom；</li>
+<li>Controller 处理延时高，异常恢复时间久，当发生异常重启时，服务的恢复时间需要几分钟；</li>
+<li>Scheduler 延迟高、吞吐低，无法适应业务日常运维的需求，更无法支持大促态的极端场景<br>
+为了突破k8s集群规模的瓶颈，相关团队做了详细调研，找到了造成处理瓶颈的原因：</li>
+<li>发现性能瓶颈在kubelet，每10s上报一次自身全量信息作为心跳同步给k8s，该数据量小则几KB大则10KB+，当节点到达5000时，会对kube-apiserver和ETCD造成写压力。</li>
+<li>etcd 推荐的存储能力只有2G，而万台规模下k8s集群的对象存储要求远远超过这个要求，同时要求性能不能下降；</li>
+<li>用于支持集群高可用能力的多API Server部署中，会出现负载不均衡的情况，影响整体吞吐能力；</li>
+<li>原生的scheduler 性能较差，能力弱，无法满足针对混部、大促等场景下的能力。<br>
+针对该情况，做了如下优化，从而达到万台规模调度：</li>
+<li>etcd设计新的内存空闲页管理算法，大幅优化etcd性能；</li>
+<li>通过落地 Kubernetes 轻量级心跳、改进 HA 集群下多个 API Server 节点的负载均衡，解决了APIServer的性能瓶颈；</li>
+<li>通过热备的方式大幅缩短了 controller/scheduler 在主备切换时的服务中断时间，提高了整个集群的可用性；</li>
+<li>通过支持等价类处理以及随机松弛算法的引入，提升了Scheduler的调度性能</li>
+</ol>
+</li>
+<li>
+<p>4.1 Hologres的行存列存数据格式？<br>
+行存 Sorted String Table(SST)</p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/103855686">从SSTable到LSM-Tree之一</a></p>
+<p>每个日志结构的存储段都是一组 key-value 对的序列，按照写入顺序排列，并且对于段内日志中的同一个键，后出现的值优于之前的值。</p>
+<p>当段文件达到一定大小之后就会关闭它，并生成一个新的段文件，一般大小为64KB。随着写入数据的不断追加，段文件不断增多。段内重复的键和段间重复的键不断增多。然后可以在这些段上执行压缩（有些存储引擎叫重写），压缩意味着在日志中丢弃重复的键，仅保留每个键最近的更新。这样既可以使段更小，也可以在执行压缩阶段将段合并，由于段的不变性，合并的时候，需要写入到一个段文件。</p>
+<p>在执行压缩和合并过程中，旧的段并不会被修改，依然可以继续处理读写请求。合并完成之后，就可以安全地删除旧的段文件。</p>
+<p>至于压缩算法，往往采用可配的方式支持。Google 论文[1]中提到可以采用&quot;两遍&quot;方式：第一个遍采用 Bentley and McIlroy’s 方式，这种方式在一个很大的扫描窗口里对常见的长字 符串进行压缩；第二遍采用快速压缩算法，即在一个16KB的小扫描窗口中寻找重复数据。</p>
+<p>为什么 SSTable 是不可变的？<br>
+不可变的段文件，对于并发控制和奔溃恢复非常友好。</p>
+<p>列存 Optimized Record Columnar (ORC)<br>
+<a target="_blank" rel="noopener" href="https://blog.51cto.com/u_8887390/3304856">Hive:ORC File Format存储格式详解</a></p>
+<p>(1)、每个task只输出单个文件，这样可以减少NameNode的负载；<br>
+(2)、支持各种复杂的数据类型，比如： datetime, decimal, 以及一些复杂类型(struct, list, map, and union)；<br>
+(3)、在文件中存储了一些轻量级的索引数据；<br>
+(4)、基于数据类型的块模式压缩：a、integer类型的列用行程长度编码(run-length encoding);b、String类型的列用字典编码(dictionary encoding)；<br>
+(5)、用多个互相独立的RecordReaders并行读相同的文件；<br>
+(6)、无需扫描markers就可以分割文件；<br>
+(7)、绑定读写所需要的内存；<br>
+(8)、metadata的存储是用 Protocol Buffers的，所以它支持添加和删除一些列。</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/dc_726/article/details/41143175">几张图看懂列式存储</a></p>
 </li>
 </ul>
 <h3><a href="#cache" class="header-anchor">#</a><span id="cache"> Cache</span></h3>
@@ -1989,6 +2096,130 @@ Gossip: redis, cassandra</p>
 </ol>
 </li>
 </ul>
+<h2><a href="#jia-gou-she-ji" class="header-anchor">#</a><span id="jia-gou-she-ji"> 架构设计</span></h2>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/crazymakercircle/p/14367907.html">架构设计篇</a></p>
+<h3><a href="#miao-sha-xi-tong" class="header-anchor">#</a><span id="miao-sha-xi-tong"> 秒杀系统</span></h3>
+<p>作者：阿里云云栖号<br>
+链接：<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/54895548/answer/146924420">https://www.zhihu.com/question/54895548/answer/146924420</a><br>
+来源：知乎<br>
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+<p>一、为什么难<br>
+秒杀系统难做的原因：库存只有一份，所有人会在集中的时间读和写这些数据。<br>
+例如小米手机每周二的秒杀，可能手机只有1万部，但瞬时进入的流量可能是几百几千万。<br>
+又例如12306抢票，亦与秒杀类似，瞬时流量更甚。二、常见架构</p>
+<p>流量到了亿级别，常见站点架构如上：<br>
+1）浏览器端，最上层，会执行到一些JS代码<br>
+2）站点层，这一层会访问后端数据，拼html页面返回给浏览器<br>
+3）服务层，向上游屏蔽底层数据细节<br>
+4）数据层，最终的库存是存在这里的，mysql是一个典型三、优化方向<br>
+1）将请求尽量拦截在系统上游：传统秒杀系统之所以挂，请求都压倒了后端数据层，数据读写锁冲突严重，并发高响应慢，几乎所有请求都超时，流量虽大，下单成功的有效流量甚小【一趟火车其实只有2000张票，200w个人来买，基本没有人能买成功，请求有效率为0】<br>
+2）充分利用缓存：这是一个典型的读多写少的应用场景【一趟火车其实只有2000张票，200w个人来买，最多2000个人下单成功，其他人都是查询库存，写比例只有0.1%，读比例占99.9%】，非常适合使用缓存四、优化细节<br>
+4.1）浏览器层请求拦截<br>
+点击了“查询”按钮之后，系统那个卡呀，进度条涨的慢呀，作为用户，我会不自觉的再去点击“查询”，继续点，继续点，点点点。。。有用么？平白无故的增加了系统负载（一个用户点5次，80%的请求是这么多出来的），怎么整？<br>
+a）产品层面，用户点击“查询”或者“购票”后，按钮置灰，禁止用户重复提交请求<br>
+b）JS层面，限制用户在x秒之内只能提交一次请求<br>
+如此限流，80%流量已拦。4.2）站点层请求拦截与页面缓存<br>
+浏览器层的请求拦截，只能拦住小白用户（不过这是99%的用户哟），高端的程序员根本不吃这一套，写个for循环，直接调用你后端的http请求，怎么整？<br>
+a）同一个uid，限制访问频度，做页面缓存，x秒内到达站点层的请求，均返回同一页面<br>
+b）同一个item的查询，例如手机车次，做页面缓存，x秒内到达站点层的请求，均返回同一页面<br>
+如此限流，又有99%的流量会被拦截在站点层4.3）服务层请求拦截与数据缓存<br>
+站点层的请求拦截，只能拦住普通程序员，高级黑客，假设他控制了10w台肉鸡（并且假设买票不需要实名认证），这下uid的限制不行了吧？怎么整？<br>
+a）大哥，我是服务层，我清楚的知道小米只有1万部手机，我清楚的知道一列火车只有2000张车票，我透10w个请求去数据库有什么意义呢？对于写请求，做请求队列，每次只透有限的写请求去数据层，如果均成功再放下一批，如果库存不够则队列里的写请求全部返回“已售完”<br>
+b）对于读请求，还要我说么？cache抗，不管是memcached还是redis，单机抗个每秒10w应该都是没什么问题的<br>
+如此限流，只有非常少的写请求，和非常少的读缓存mis的请求会透到数据层去，又有99.9%的请求被拦住了4.4）数据层闲庭信步<br>
+到了数据这一层，几乎就没有什么请求了，单机也能扛得住，还是那句话，库存是有限的，小米的产能有限，透这么多请求来数据库没有意义。五、总结<br>
+没什么总结了，上文应该描述的非常清楚了，对于秒杀系统，再次重复下笔者的两个架构优化思路：<br>
+1）尽量将请求拦截在系统上游<br>
+2）读多写少的常用多使用缓存</p>
+<p>秒杀系统基本面试被问烂了，网上资料也很多，基本整理了内容如下：</p>
+<p>设计难点：并发量大，应用、数据库都承受不了。另外难控制超卖。</p>
+<p>设计要点：</p>
+<p>将请求尽量拦截在系统上游，html尽量静态化，部署到cdn上面。按钮及时设置为不可用，禁止用户重复提交请求。<br>
+设置页面缓存，针对同一个页面和uid一段时间内返回缓存页面。<br>
+数据用缓存抗，不直接落到数据库。<br>
+读数据的时候不做强一致性教研，写数据的时候再做。<br>
+在每台物理机上也缓存商品信息等等变动不大的相关的数据<br>
+像商品中的标题和描述这些本身不变的会在秒杀开始之前全量推送到秒杀机器上并一直缓存直到秒杀结束。<br>
+像库存这种动态数据会采用被动失效的方式缓存一定时间（一般是数秒），失效后再去Tair缓存拉取最新的数据。<br>
+如果允许的话，用异步的模式，等缓存都落库之后再返回结果。<br>
+如果允许的话，增加答题教研等验证措施。<br>
+其他业务和技术保障措施：</p>
+<p>业务隔离。把秒杀做成一种营销活动，卖家要参加秒杀这种营销活动需要单独报名，从技术上来说，卖家报名后对我们来说就是已知热点，当真正开始时我们可以提前做好预热。<br>
+系统隔离。系统隔离更多是运行时的隔离，可以通过分组部署的方式和另外 99% 分开。秒杀还申请了单独的域名，目的也是让请求落到不同的集群中。<br>
+数据隔离。秒杀所调用的数据大部分都是热数据，比如会启用单独 cache 集群或 MySQL 数据库来放热点数据，目前也是不想0.01%的数据影响另外99.99%。</p>
+<p>另外需要复习<strong>缓存穿透</strong>、<strong>雪崩</strong>等等问题，主要的流量都落在了缓存数据库上，需要针对缓存数据库的高可用作保障。</p>
+<h3><a href="#duan-lian-jie" class="header-anchor">#</a><span id="duan-lian-jie"> 短链接</span></h3>
+<p>这个应该是比较公认的方案了：</p>
+<p>分布式ID生成器产生ID<br>
+ID转62进制字符串<br>
+记录数据库，根据业务要求确定过期时间，可以保留部分永久链接<br>
+主要难点在于分布式ID生成。鉴于短链一般没有严格递增的需求，可以使用预先分发一个号段，然后生成的方式。</p>
+<p>看了下新浪微博的短链接，8位，理论上可以保存超过200万亿对关系，具体怎么存储的还有待研究。</p>
+<h3><a href="#hong-bao" class="header-anchor">#</a><span id="hong-bao"> 红包</span></h3>
+<p>红包系统其实很像秒杀系统，只不过同一个秒杀的总量不大，但是全局的并发量非常大，比如春晚可能几百万人同时抢红包。</p>
+<p>主要技术难点也类似，主要在数据库，减库存的时候会抢锁。另外由于业务需求不同，没办法异步，也不能超卖，事务更加严格。</p>
+<p>不能采用的方式：</p>
+<p>乐观锁：手慢会失败，DB 面临更大压力，所以不能采用。<br>
+直接用缓存顶，涉及到钱，一旦缓存挂掉就完了。<br>
+建议的方式：</p>
+<p>接入层垂直切分，根据红包ID，发红包、抢红包、拆红包、查详情详情等等都在同一台机器上处理，互不影响，分而治之。<br>
+请求进行排队，到数据库的时候是串行的，就不涉及抢锁的问题了。<br>
+为了防止队列太长过载导致队列被降级，直接打到数据库上，所以数据库前面再加上一个缓存，用CAS自增控制并发，太高的并发直接返回失败。<br>
+红包冷热数据分离，按时间分表。</p>
+<h3><a href="#fen-bu-shi-id" class="header-anchor">#</a><span id="fen-bu-shi-id"> 分布式ID</span></h3>
+<p>分布式ID生成大概也算老生常谈的问题了，主要关键在于是否需要严格递增，严格递增的话效率必然大降。</p>
+<p>不需要递增的话比较简单:</p>
+<p>一种方式是预先分片，比如十台机器，每台先分一千个ID，一号机从0开始，二号从1000开始等等。缺点是大致上可以被人看出来业务量。<br>
+另一种方式是类似雪花算法，每个机器有个id，然后基于时间算一个id，再加上一个递增id。比如如下美团的方案。缺点是机器的时间戳不能回拨，回拨的话会出现问题。<br>
+img</p>
+<p>如果要求严格递增，我没找到现成的很好的方案，大概只能单机生成，不能分布式了，然后都去单机上取号。效率的话，类似Redis的数据库大概能到每秒十几二十几万的速度。</p>
+<h3><a href="#fen-bu-shi-xian-liu" class="header-anchor">#</a><span id="fen-bu-shi-xian-liu"> 分布式限流</span></h3>
+<p>常见的限流方法：</p>
+<p>固定窗口计数器：按照时间段划分窗口，有一次请求就+1，最为简单的算法，但这个算法有时会让通过请求量允许为限制的两倍。<br>
+滑动窗口计数器：通过将窗口再细分，并且按照时间“滑动”来解决突破限制的问题，但是时间区间的精度越高，算法所需的空间容量就越大。<br>
+漏桶：请求类似水滴，先放到桶里，服务的提供方则按照固定的速率从桶里面取出请求并执行。缺陷也很明显，当短时间内有大量的突发请求时，即便此时服务器没有任何负载，每个请求也都得在队列中等待一段时间才能被响应。<br>
+令牌桶：往桶里面发放令牌，每个请求过来之后拿走一个令牌，然后只处理有令牌的请求。令牌桶满了则多余的令牌会直接丢弃。令牌桶算法既能够将所有的请求平均分布到时间区间内，又能接受服务器能够承受范围内的突发请求，因此是目前使用较为广泛的一种限流算法。<br>
+Google 的开源项目 guava 提供了 RateLimiter 类，实现了单点的令牌桶限流。</p>
+<p>分布式环境下，可以考虑用 Redis+Lua 脚本实现令牌桶。</p>
+<p>如果请求量太大了，Redis 也撑不住怎么办？我觉得可以类似于分布式 ID 的处理方式，Redis 前面在增加预处理，比如每台及其预先申请一部分令牌，只有令牌用完之后才去 Redis。如果还是太大，是否可以垂直切分？按照流量的来源，比如地理位置、IP 之类的再拆开。</p>
+<h3><a href="#fen-bu-shi-ding-shi-ren-wu" class="header-anchor">#</a><span id="fen-bu-shi-ding-shi-ren-wu"> 分布式定时任务</span></h3>
+<p>任务轮询或任务轮询+抢占排队方案</p>
+<p>每个服务器首次启动时加入队列；<br>
+每次任务运行首先判断自己是否是当前可运行任务，如果是便运行；<br>
+如果不是当前运行的任务，检查自己是否在队列中，如果在，便退出，如果不在队列中，进入队列。</p>
+<h3><a href="#wei-bo-tui-song" class="header-anchor">#</a><span id="wei-bo-tui-song"> 微博推送</span></h3>
+<p>主要难点：关系复杂，数据量大。一个人可以关注非常多的用户，一个大 V 也有可能有几千万的粉丝。</p>
+<p>先介绍最基本的方案：</p>
+<p>推模式：推模式就是，用户A关注了用户 B，用户 B 每发送一个动态，后台遍历用户B的粉丝，往他们粉丝的 feed 里面推送一条动态。<br>
+拉模式：推模式相反，拉模式则是，用户每次刷新 feed 第一页，都去遍历关注的人，把最新的动态拉取回来。<br>
+一般采用推拉结合的方式，用户发送状态之后，先推送给粉丝里面在线的用户，然后不在线的那部分等到上线的时候再来拉取。</p>
+<p>另外冷热数据分离，用户关系在缓存里面可以设置一个过期时间，比如七天。七天没上线的可能就很少用这个 APP。</p>
+<h3><a href="#da-wen-jian-pai-xu" class="header-anchor">#</a><span id="da-wen-jian-pai-xu"> 大文件排序</span></h3>
+<p>对于远高于内存的文件排序。</p>
+<p>外归并排序：</p>
+<ul>
+<li>对文件分割，然后分别排序</li>
+<li>排好序的文件依次读取一个缓冲区的大小，然后进行排序，输出到输出缓冲区，然后保存到结果文件。<br>
+如果是数字，可以用位图排序，但是要求比较苛刻：</li>
+</ul>
+<p>数字不重复<br>
+知道最大值<br>
+相对密集，因为没出现的数字也会占用空间<br>
+比较适合电话号之类的。</p>
+<h3><a href="#im-id" class="header-anchor">#</a><span id="im-id"> IM ID</span></h3>
+<p><a target="_blank" rel="noopener" href="http://www.52im.net/thread-1998-1-1.html">IM消息ID技术专题(一)：微信的海量IM聊天消息序列号生成实践（算法原理篇</a></p>
+<h3><a href="#top-k" class="header-anchor">#</a><span id="top-k"> top K</span></h3>
+<p>在大规模数据处理中，经常会遇到的一类问题：在海量数据中找出出现频率最好的前k个数，或者从海量数据中找出最大的前k个数，这类问题通常被称为top K问题。例如，在搜索引擎中，统计搜索最热门的10个查询词；在歌曲库中统计下载最高的前10首歌等。<br>
+针对top K类问题，通常比较好的方案是分治+Trie树/hash+小顶堆（就是上面提到的最小堆），即先将数据集按照Hash方法分解成多个小数据集，然后使用Trie树活着Hash统计每个小数据集中的query词频，之后用小顶堆求出每个数据集中出现频率最高的前K个数，最后在所有top K中求出最终的top K。</p>
+<p>（1）有10000000个记录，这些查询串的重复度比较高，如果除去重复后，不超过3000000个。一个查询串的重复度越高，说明查询它的用户越多，也就是越热门。请统计最热门的10个查询串，要求使用的内存不能超过1GB。</p>
+<p>（2）有10个文件，每个文件1GB，每个文件的每一行存放的都是用户的query，每个文件的query都可能重复。按照query的频度排序。</p>
+<p>（3）有一个1GB大小的文件，里面的每一行是一个词，词的大小不超过16个字节，内存限制大小是1MB。返回频数最高的100个词。</p>
+<p>（4）提取某日访问网站次数最多的那个IP。</p>
+<p>（5）10亿个整数找出重复次数最多的100个整数。</p>
+<p>（6）搜索的输入信息是一个字符串，统计300万条输入信息中最热门的前10条，每次输入的一个字符串为不超过255B，内存使用只有1GB。</p>
+<p>（7）有1000万个身份证号以及他们对应的数据，身份证号可能重复，找出出现次数最多的身份证号。</p>
+<p>在海量数据中查找出重复出现的元素或者去除重复出现的元素也是常考的问题。针对此类问题，一般可以通过位图法实现。例如，已知某个文件内包含一些电话号码，每个号码为8位数字，统计不同号码的个数。</p>
+<p>本题最好的解决方法是通过使用位图法来实现。8位整数可以表示的最大十进制数值为99999999。如果每个数字对应于位图中一个bit位，那么存储8位整数大约需要99MB。因为1B=8bit，所以99Mbit折合成内存为99/8=12.375MB的内存，即可以只用12.375MB的内存表示所有的8位数电话号码的内容。</p>
 <h2><a href="#gao-bing-fa" class="header-anchor">#</a><span id="gao-bing-fa"> 高并发</span></h2>
 <ul>
 <li>

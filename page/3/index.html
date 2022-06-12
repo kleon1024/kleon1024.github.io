@@ -1,4 +1,67 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title>KLEON</title><meta name="description" content="Keep Moving"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/github.min.css"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/KaTeX/0.10.2/katex.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 6.1.0"></head><body><div id="stage" class="container"><div class="row"><div id="side-bar" class="col-sm-3 col-xs-12 side-container invisible"><div class="vertical-text site-title"><h3 tabindex="-1" class="site-title-small"><a href="/" class="a-title"></a></h3><h1 tabindex="-1" class="site-title-large"><a href="/" class="a-title">吹拉弹唱</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div id="site-nav" class="site-title-links"><ul><li><a href="/" class="current">Home</a></li><li><a href="/archives">Archive</a></li><li><a href="/categories">Categories</a></li><li><a href="/tags">Tags</a></li><li><a href="/googlebe23cb0bc55fc412.html"></a></li><li><a href="/about/index.html"></a></li><li class="soc"><a href="https://github.com/kleon1024" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa fa-github">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div id="main-container" class="col-sm-9 col-xs-12 main-container invisible"><div class="autopagerize_page_element"><div class="content"><div class="post-container"><p class="post-title"><a href="/interview/system/url_shortener/">System - URL Shortener</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2022-05-30</span><span class="date meta-item">Updated at&nbsp;2022-05-30</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/interview/" title="interview" class="a-tag">interview</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/interview/" title="interview" class="a-tag">interview</a><span>&nbsp;</span><a href="/tags/system/" title="system" class="a-tag">system</a><span>&nbsp;</span></span></p><p class="post-abstract">Designing a URL Shortening service like TinyURL
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title>KLEON</title><meta name="description" content="Keep Moving"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/github.min.css"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/KaTeX/0.10.2/katex.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 6.1.0"></head><body><div id="stage" class="container"><div class="row"><div id="side-bar" class="col-sm-3 col-xs-12 side-container invisible"><div class="vertical-text site-title"><h3 tabindex="-1" class="site-title-small"><a href="/" class="a-title"></a></h3><h1 tabindex="-1" class="site-title-large"><a href="/" class="a-title">吹拉弹唱</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div id="site-nav" class="site-title-links"><ul><li><a href="/" class="current">Home</a></li><li><a href="/archives">Archive</a></li><li><a href="/categories">Categories</a></li><li><a href="/tags">Tags</a></li><li><a href="/googlebe23cb0bc55fc412.html"></a></li><li><a href="/about/index.html"></a></li><li class="soc"><a href="https://github.com/kleon1024" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa fa-github">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div id="main-container" class="col-sm-9 col-xs-12 main-container invisible"><div class="autopagerize_page_element"><div class="content"><div class="post-container"><p class="post-title"><a href="/interview/system/key_value_store/">System - Key Value Store</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2022-05-30</span><span class="date meta-item">Updated at&nbsp;2022-05-30</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/interview/" title="interview" class="a-tag">interview</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/interview/" title="interview" class="a-tag">interview</a><span>&nbsp;</span><a href="/tags/system/" title="system" class="a-tag">system</a><span>&nbsp;</span></span></p><p class="post-abstract">
+
+
+Requirements
+
+Functional Features
+Non-Functional Features
+
+
+Estimations
+
+Memory Estimations
+
+
+Domain Model
+
+Single Server
+Multiple Servers
+Clusters
+
+
+Prac...</p></div><div class="post-container"><p class="post-title"><a href="/interview/system/news_feed/">System - News Feed</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2022-05-30</span><span class="date meta-item">Updated at&nbsp;2022-05-30</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/interview/" title="interview" class="a-tag">interview</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/interview/" title="interview" class="a-tag">interview</a><span>&nbsp;</span><a href="/tags/system/" title="system" class="a-tag">system</a><span>&nbsp;</span></span></p><p class="post-abstract">Design a News Feed System
+
+
+
+
+</p></div><div class="post-container"><p class="post-title"><a href="/interview/system/notification/">System - Notification</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2022-05-30</span><span class="date meta-item">Updated at&nbsp;2022-05-30</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/interview/" title="interview" class="a-tag">interview</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/interview/" title="interview" class="a-tag">interview</a><span>&nbsp;</span><a href="/tags/system/" title="system" class="a-tag">system</a><span>&nbsp;</span></span></p><p class="post-abstract">Designing a Notification System with Message Queues
+
+
+
+
+</p></div><div class="post-container"><p class="post-title"><a href="/interview/system/rate_limiter/">System - Rate Limiter</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2022-05-30</span><span class="date meta-item">Updated at&nbsp;2022-05-30</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/interview/" title="interview" class="a-tag">interview</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/interview/" title="interview" class="a-tag">interview</a><span>&nbsp;</span><a href="/tags/system/" title="system" class="a-tag">system</a><span>&nbsp;</span></span></p><p class="post-abstract">Designing a Rate Limiter
+
+
+
+Basics
+
+Fixed Window
+Slide Window
+Leaky Bucket
+Token Bucket
+
+
+Requirements
+
+Functional Requirements
+Non-functional requirements
+
+...</p></div><div class="post-container"><p class="post-title"><a href="/interview/system/unique_id_generator/">System - Unique Id Generator</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2022-05-30</span><span class="date meta-item">Updated at&nbsp;2022-05-30</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/interview/" title="interview" class="a-tag">interview</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/interview/" title="interview" class="a-tag">interview</a><span>&nbsp;</span><a href="/tags/system/" title="system" class="a-tag">system</a><span>&nbsp;</span></span></p><p class="post-abstract">常见的分布式ID生成方案浅析及大厂方案调研
+
+
+
+Requirements
+
+Functional Features
+Non-Functional Features
+Functional Features
+Non-Functional Features
+
+
+Solutions
+
+UUID
+Primary Key ...</p></div><div class="post-container"><p class="post-title"><a href="/interview/system/url_shortener/">System - URL Shortener</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2022-05-30</span><span class="date meta-item">Updated at&nbsp;2022-05-30</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/interview/" title="interview" class="a-tag">interview</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/interview/" title="interview" class="a-tag">interview</a><span>&nbsp;</span><a href="/tags/system/" title="system" class="a-tag">system</a><span>&nbsp;</span></span></p><p class="post-abstract">Designing a URL Shortening service like TinyURL
 
 
 
@@ -55,86 +118,4 @@ Cache
 CDN
 Microservices
 Service Discovery
-Asynch...</p></div><div class="post-container"><p class="post-title"><a href="/interview/code/tree/">Code - Tree</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2022-05-15</span><span class="date meta-item">Updated at&nbsp;2022-05-15</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/interview/" title="interview" class="a-tag">interview</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/interview/" title="interview" class="a-tag">interview</a><span>&nbsp;</span><a href="/tags/algorithm/" title="algorithm" class="a-tag">algorithm</a><span>&nbsp;</span></span></p><p class="post-abstract">
-
-
-Basics
-
-Tree
-Binary Tree
-Full Binary Tree
-Complete Binary Tree
-Binary Search Tree
-Balanced Search Tree
-AVL Tree
-Red–Black Tree
-B-Tree
-B+Tree
-B*Tree
-
-
-Leet...</p></div><div class="post-container"><p class="post-title"><a href="/interview/resume/">Common - Resume</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2022-04-20</span><span class="date meta-item">Updated at&nbsp;2022-05-14</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/interview/" title="interview" class="a-tag">interview</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/interview/" title="interview" class="a-tag">interview</a><span>&nbsp;</span></span></p><p class="post-abstract">Resumes.
-
-
-
-TODO
-Outline
-Backend Developer Engineer
-
-Experience
-
-
-后端开发工程师
-
-工作经历
-
-Video Enhancement
-营销增长平台
-推荐引擎
-推理优化
-硬件加速
-
-
-
-
-Q&amp;A
-
-Video Enhancement
-
-分布式任...</p></div><div class="post-container"><p class="post-title"><a href="/interview/behavior/">Common - Behavior</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2022-04-19</span><span class="date meta-item">Updated at&nbsp;2022-05-13</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/interview/" title="interview" class="a-tag">interview</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/interview/" title="interview" class="a-tag">interview</a><span>&nbsp;</span></span></p><p class="post-abstract">Intros and common questions in non-technical interview.
-
-
-
-Projects
-
-Challenging Project #1 Optimize Throughput
-Challenging Project #2 Optimize Worker Pool
-C...</p></div><div class="post-container"><p class="post-title"><a href="/interview/jobs/">Common - Jobs</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2022-04-19</span><span class="date meta-item">Updated at&nbsp;2022-05-13</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/interview/" title="interview" class="a-tag">interview</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/interview/" title="interview" class="a-tag">interview</a><span>&nbsp;</span></span></p><p class="post-abstract">All about jobs.
-
-# Company
-FoodPanda
-Grab
-Lazada
-SHEIN
-Indeed
-Stripe
-Shopee
-Amazon
-MicroSoft
-Google
-Facebook
-Apple
-Twitter
-ByteDance(TikTok)
-Tencent
-Basicall...</p></div><div class="post-container"><p class="post-title"><a href="/interview/code/dfs/">Code - DFS</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2022-05-05</span><span class="date meta-item">Updated at&nbsp;2022-05-05</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/interview/" title="interview" class="a-tag">interview</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/interview/" title="interview" class="a-tag">interview</a><span>&nbsp;</span><a href="/tags/algorithm/" title="algorithm" class="a-tag">algorithm</a><span>&nbsp;</span></span></p><p class="post-abstract">
-
-
-980. Unique Paths III
-
-
-
-# 980. Unique Paths III
-leetcode
-It seems that dp cannot solve this problem. Try DFS.
-  </p></div><div class="pagination no-margin-bottom"><p class="clearfix"><p> Page 3 / 13 &nbsp;</p><p><span class="pre pagbuttons"><i class="fa fa-angle-double-left"></i>&nbsp;<a role="navigation" href="/page/2/" aria-label="Previous">Previous</a></span><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/page/4/" aria-label="Next">Next</a>&nbsp;<i class="fa fa-angle-double-right"></i></span></p></p></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>
+Asynch...</p></div><div class="pagination no-margin-bottom"><p class="clearfix"><p> Page 3 / 13 &nbsp;</p><p><span class="pre pagbuttons"><i class="fa fa-angle-double-left"></i>&nbsp;<a role="navigation" href="/page/2/" aria-label="Previous">Previous</a></span><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/page/4/" aria-label="Next">Next</a>&nbsp;<i class="fa fa-angle-double-right"></i></span></p></p></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2022&nbsp;<a target="_blank" href="https://blog.kleon.space" rel="noopener noreferrer">Kleon</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>

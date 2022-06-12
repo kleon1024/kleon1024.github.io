@@ -57,12 +57,76 @@
   </entry>
   
   <entry>
+    <title>Database - ElasticSearch</title>
+    <link href="https://blog.kleon.space/backend/db/es/"/>
+    <id>https://blog.kleon.space/backend/db/es/</id>
+    <published>2022-06-06T10:54:44.000Z</published>
+    <updated>2022-06-06T10:54:49.000Z</updated>
+    
+    
+    
+    
+    <category term="backend" scheme="https://blog.kleon.space/categories/backend/"/>
+    
+    
+    <category term="backend" scheme="https://blog.kleon.space/tags/backend/"/>
+    
+    <category term="database" scheme="https://blog.kleon.space/tags/database/"/>
+    
+    <category term="es" scheme="https://blog.kleon.space/tags/es/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Database - MongoDB</title>
+    <link href="https://blog.kleon.space/backend/db/mongo/"/>
+    <id>https://blog.kleon.space/backend/db/mongo/</id>
+    <published>2022-06-06T10:54:44.000Z</published>
+    <updated>2022-06-06T10:54:49.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="backend" scheme="https://blog.kleon.space/categories/backend/"/>
+    
+    
+    <category term="backend" scheme="https://blog.kleon.space/tags/backend/"/>
+    
+    <category term="database" scheme="https://blog.kleon.space/tags/database/"/>
+    
+    <category term="mongo" scheme="https://blog.kleon.space/tags/mongo/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Database - MySQL</title>
     <link href="https://blog.kleon.space/backend/db/mysql/"/>
     <id>https://blog.kleon.space/backend/db/mysql/</id>
     <published>2022-06-06T10:54:44.000Z</published>
     <updated>2022-06-06T10:54:49.000Z</updated>
     
+    
+      
+      
+        
+        
+    <summary type="html">&lt;div class=&quot;toc&quot;&gt;
+&lt;!-- toc --&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#grammar&quot;&gt;Grammar&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#architecture&quot;&gt;Architecture&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a</summary>
+        
+      
     
     
     
@@ -106,6 +170,20 @@
     <updated>2022-06-06T10:54:49.000Z</updated>
     
     
+      
+      
+        
+        
+    <summary type="html">&lt;div class=&quot;toc&quot;&gt;
+&lt;!-- toc --&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#data-structure&quot;&gt;Data Structure&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#string&quot;&gt;String&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a</summary>
+        
+      
+    
     
     
     <category term="backend" scheme="https://blog.kleon.space/categories/backend/"/>
@@ -116,6 +194,79 @@
     <category term="database" scheme="https://blog.kleon.space/tags/database/"/>
     
     <category term="redis" scheme="https://blog.kleon.space/tags/redis/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>DevOps - Outline</title>
+    <link href="https://blog.kleon.space/backend/devops/devops/"/>
+    <id>https://blog.kleon.space/backend/devops/devops/</id>
+    <published>2022-06-06T10:54:44.000Z</published>
+    <updated>2022-06-06T10:54:49.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;Dev
+&lt;ul&gt;
+&lt;li&gt;Methodology
+&lt;ul&gt;
+&lt;li&gt;Sprint&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Design
+&lt;ul&gt;
+&lt;li&gt;Domain</summary>
+        
+      
+    
+    
+    
+    <category term="backend" scheme="https://blog.kleon.space/categories/backend/"/>
+    
+    
+    <category term="backend" scheme="https://blog.kleon.space/tags/backend/"/>
+    
+    <category term="devops" scheme="https://blog.kleon.space/tags/devops/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Language - Go</title>
+    <link href="https://blog.kleon.space/backend/lang/go/"/>
+    <id>https://blog.kleon.space/backend/lang/go/</id>
+    <published>2022-06-06T10:54:44.000Z</published>
+    <updated>2022-06-06T10:54:49.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;div class=&quot;toc&quot;&gt;
+&lt;!-- toc --&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#concurrency&quot;&gt;Concurrency&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#lock&quot;&gt;Lock&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="backend" scheme="https://blog.kleon.space/categories/backend/"/>
+    
+    
+    <category term="backend" scheme="https://blog.kleon.space/tags/backend/"/>
+    
+    <category term="language" scheme="https://blog.kleon.space/tags/language/"/>
+    
+    <category term="go" scheme="https://blog.kleon.space/tags/go/"/>
     
   </entry>
   
@@ -297,6 +448,37 @@
   </entry>
   
   <entry>
+    <title>OS - Outline</title>
+    <link href="https://blog.kleon.space/backend/os/os/"/>
+    <id>https://blog.kleon.space/backend/os/os/</id>
+    <published>2022-06-06T10:54:44.000Z</published>
+    <updated>2022-06-06T10:54:49.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;Process, Thread, Coroutine&lt;/li&gt;
+&lt;li&gt;Lock&lt;/li&gt;
+&lt;li&gt;System Call&lt;/li&gt;
+&lt;li&gt;IO</summary>
+        
+      
+    
+    
+    
+    <category term="backend" scheme="https://blog.kleon.space/categories/backend/"/>
+    
+    
+    <category term="backend" scheme="https://blog.kleon.space/tags/backend/"/>
+    
+    <category term="os" scheme="https://blog.kleon.space/tags/os/"/>
+    
+  </entry>
+  
+  <entry>
     <title>System - Auto Complete</title>
     <link href="https://blog.kleon.space/interview/system/auto_complete/"/>
     <id>https://blog.kleon.space/interview/system/auto_complete/</id>
@@ -392,151 +574,6 @@
         
         
     <summary type="html">&lt;p&gt;&lt;a href=&quot;https://towardsdatascience.com/system-design-analysis-of-google-drive-ca3408f22ed3&quot;&gt;System Design Analysis of Google</summary>
-        
-      
-    
-    
-    
-    <category term="interview" scheme="https://blog.kleon.space/categories/interview/"/>
-    
-    
-    <category term="interview" scheme="https://blog.kleon.space/tags/interview/"/>
-    
-    <category term="system" scheme="https://blog.kleon.space/tags/system/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>System - Key Value Store</title>
-    <link href="https://blog.kleon.space/interview/system/key_value_store/"/>
-    <id>https://blog.kleon.space/interview/system/key_value_store/</id>
-    <published>2022-05-30T17:12:28.000Z</published>
-    <updated>2022-05-30T17:12:32.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;div class=&quot;toc&quot;&gt;
-&lt;!-- toc --&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#requirements&quot;&gt;Requirements&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#functional-features&quot;&gt;Functional</summary>
-        
-      
-    
-    
-    
-    <category term="interview" scheme="https://blog.kleon.space/categories/interview/"/>
-    
-    
-    <category term="interview" scheme="https://blog.kleon.space/tags/interview/"/>
-    
-    <category term="system" scheme="https://blog.kleon.space/tags/system/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>System - News Feed</title>
-    <link href="https://blog.kleon.space/interview/system/news_feed/"/>
-    <id>https://blog.kleon.space/interview/system/news_feed/</id>
-    <published>2022-05-30T17:12:28.000Z</published>
-    <updated>2022-05-30T17:12:32.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://liuzhenglaichn.gitbook.io/system-design/news-feed/design-a-news-feed-system&quot;&gt;Design a News Feed System&lt;/a&gt;&lt;/p&gt;
-&lt;div</summary>
-        
-      
-    
-    
-    
-    <category term="interview" scheme="https://blog.kleon.space/categories/interview/"/>
-    
-    
-    <category term="interview" scheme="https://blog.kleon.space/tags/interview/"/>
-    
-    <category term="system" scheme="https://blog.kleon.space/tags/system/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>System - Notification</title>
-    <link href="https://blog.kleon.space/interview/system/notification/"/>
-    <id>https://blog.kleon.space/interview/system/notification/</id>
-    <published>2022-05-30T17:12:28.000Z</published>
-    <updated>2022-05-30T17:12:32.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://towardsdatascience.com/designing-notification-system-with-message-queues-c30a2c9046de&quot;&gt;Designing a Notification System</summary>
-        
-      
-    
-    
-    
-    <category term="interview" scheme="https://blog.kleon.space/categories/interview/"/>
-    
-    
-    <category term="interview" scheme="https://blog.kleon.space/tags/interview/"/>
-    
-    <category term="system" scheme="https://blog.kleon.space/tags/system/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>System - Rate Limiter</title>
-    <link href="https://blog.kleon.space/interview/system/rate_limiter/"/>
-    <id>https://blog.kleon.space/interview/system/rate_limiter/</id>
-    <published>2022-05-30T17:12:28.000Z</published>
-    <updated>2022-05-30T17:12:32.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://towardsdatascience.com/designing-a-rate-limiter-6351bd8762c6&quot;&gt;Designing a Rate Limiter&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;toc&quot;&gt;
-&lt;!--</summary>
-        
-      
-    
-    
-    
-    <category term="interview" scheme="https://blog.kleon.space/categories/interview/"/>
-    
-    
-    <category term="interview" scheme="https://blog.kleon.space/tags/interview/"/>
-    
-    <category term="system" scheme="https://blog.kleon.space/tags/system/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>System - Unique Id Generator</title>
-    <link href="https://blog.kleon.space/interview/system/unique_id_generator/"/>
-    <id>https://blog.kleon.space/interview/system/unique_id_generator/</id>
-    <published>2022-05-30T17:12:28.000Z</published>
-    <updated>2022-05-30T17:12:32.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://blog.nowcoder.net/n/69fd7ba74a2641299d7c484ef454d9d0&quot;&gt;常见的分布式ID生成方案浅析及大厂方案调研&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;toc&quot;&gt;
-&lt;!-- toc</summary>
         
       
     
