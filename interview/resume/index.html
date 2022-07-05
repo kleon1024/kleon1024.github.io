@@ -1083,10 +1083,12 @@ redisObject</p>
 <p><strong>SDS</strong><br>
 Redis没有直接使用C字符串(即以空字符’\0’结尾的字符数组)作为默认的字符串表示，而是使用了SDS。SDS是简单动态字符串(Simple Dynamic String)的缩写。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">struct sdshdr &#123;<br>    int len;<br>    int free;<br>    char buf[];<br>&#125;;<br></code></pre></td></tr></table></figure>
-<p><strong>String</strong><br>
-int<br>
-embstr 39Byte why? 39 + redisObject 16 + sds 9 jemalloc正好可以分配64字节的内存单元。<br>
-raw len(string)&gt;39或者modified(append)</p>
+<p><strong>String</strong></p>
+<ul>
+<li>int</li>
+<li>embstr 39Byte why? 39 + redisObject 16 + sds 9 jemalloc正好可以分配64字节的内存单元。</li>
+<li>raw len(string)&gt;39或者modified(append)</li>
+</ul>
 <p><strong>List</strong></p>
 <ul>
 <li>压缩列表 ziplist<br>
@@ -2230,6 +2232,8 @@ Google 的开源项目 guava 提供了 RateLimiter 类，实现了单点的令�
 <p><a target="_blank" rel="noopener" href="https://www.codeleading.com/article/51164401415/">订单超时</a></p>
 <h2><a href="#liang-dian-zu-gou-shen-ru-zu-gou-liao-jie" class="header-anchor">#</a><span id="liang-dian-zu-gou-shen-ru-zu-gou-liao-jie"> 亮点，足够深入，足够了解</span></h2>
 <p>性能优化、工程化、缓存、http</p>
+<p>Shopee面经</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext"><br></code></pre></td></tr></table></figure>
 <hr>
 <hr class="footnotes-sep">
 <section class="footnotes">

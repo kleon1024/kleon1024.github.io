@@ -6,7 +6,7 @@
   <link href="https://blog.kleon.space/atom.xml" rel="self"/>
   
   <link href="https://blog.kleon.space/"/>
-  <updated>2022-06-06T10:54:49.000Z</updated>
+  <updated>2022-07-05T09:00:00.000Z</updated>
   <id>https://blog.kleon.space/</id>
   
   <author>
@@ -15,6 +15,58 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Backend</title>
+    <link href="https://blog.kleon.space/backend/backend/"/>
+    <id>https://blog.kleon.space/backend/backend/</id>
+    <published>2022-07-05T09:00:00.000Z</published>
+    <updated>2022-07-05T09:00:00.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;This is a guidance of backend development knowledge. We will go through basic applications, implementations and practical</summary>
+        
+      
+    
+    
+    
+    <category term="backend" scheme="https://blog.kleon.space/categories/backend/"/>
+    
+    
+    <category term="backend" scheme="https://blog.kleon.space/tags/backend/"/>
+    
+    <category term="database" scheme="https://blog.kleon.space/tags/database/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>程序员健康小提示</title>
+    <link href="https://blog.kleon.space/health/health/"/>
+    <id>https://blog.kleon.space/health/health/</id>
+    <published>2022-07-05T09:00:00.000Z</published>
+    <updated>2022-07-05T09:00:00.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;谈谈程序员如何预防职业病。程序员的职业特性决定了能成为程序员的人通常耐受力能高，专注力更持久，这些因素对开发工作来说是有利的，但若不注意同样会引发一系列健康问题，如久坐、熬夜、少运动、缺水等。其中很多健康问题是不可逆的且慢性的，一旦发生只能缓解症状而无法根治。因此防患未然尤</summary>
+        
+      
+    
+    
+    
+    <category term="health" scheme="https://blog.kleon.space/categories/health/"/>
+    
+    
+    <category term="health" scheme="https://blog.kleon.space/tags/health/"/>
+    
+  </entry>
   
   <entry>
     <title>Database - Outline</title>
@@ -519,61 +571,6 @@
         
     <summary type="html">&lt;p&gt;&lt;a href=&quot;https://bytebytego.com/courses/system-design-interview/design-a-chat-system&quot;&gt;Design A Chat System&lt;/a&gt;&lt;/p&gt;
 &lt;div</summary>
-        
-      
-    
-    
-    
-    <category term="interview" scheme="https://blog.kleon.space/categories/interview/"/>
-    
-    
-    <category term="interview" scheme="https://blog.kleon.space/tags/interview/"/>
-    
-    <category term="system" scheme="https://blog.kleon.space/tags/system/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>System - Consistent Hashing</title>
-    <link href="https://blog.kleon.space/interview/system/consistant_hashing/"/>
-    <id>https://blog.kleon.space/interview/system/consistant_hashing/</id>
-    <published>2022-05-30T17:12:28.000Z</published>
-    <updated>2022-05-30T17:12:32.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://www.toptal.com/big-data/consistent-hashing&quot;&gt;A Guide to Consistent Hashing&lt;/a&gt;&lt;br&gt;
-&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="interview" scheme="https://blog.kleon.space/categories/interview/"/>
-    
-    
-    <category term="interview" scheme="https://blog.kleon.space/tags/interview/"/>
-    
-    <category term="system" scheme="https://blog.kleon.space/tags/system/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>System - YouTube</title>
-    <link href="https://blog.kleon.space/interview/system/google_drive/"/>
-    <id>https://blog.kleon.space/interview/system/google_drive/</id>
-    <published>2022-05-30T17:12:28.000Z</published>
-    <updated>2022-05-30T17:12:32.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://towardsdatascience.com/system-design-analysis-of-google-drive-ca3408f22ed3&quot;&gt;System Design Analysis of Google</summary>
         
       
     

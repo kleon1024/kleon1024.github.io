@@ -43,6 +43,12 @@
 <p>B-树改进型，子节点内不放数据块，统一放在叶节点内。查询性能稳定，IO数据利用率高。</p>
 <h2><a href="#b-shu" class="header-anchor">#</a><span id="b-shu"> B*树</span></h2>
 <p>B+树改进型，增加子节点间指针，如果兄弟节点数据未满，则将一部分指针移到兄弟节点，并修改父节点关键字，将结点的最低利用率从1/2提高到2/3。</p>
+<h2><a href="#dui" class="header-anchor">#</a><span id="dui"> 堆</span></h2>
+<p>完全二叉树</p>
+<p>插入：插入队尾，上浮，如果大于parent则交换<br>
+删除：删除堆顶元素，用队尾元素替换，下沉，如果小于子节点中较大的，则交换<br>
+替换：先删除再插入<br>
+堆化：将数组当作完全二叉树，依次对所有非叶子结点下沉</p>
 <h1><a href="#shi-jian" class="header-anchor">#</a><span id="shi-jian"> 实践</span></h1>
 <h2><a href="#er-cha-shu-de-qian-xu-bian-li" class="header-anchor">#</a><span id="er-cha-shu-de-qian-xu-bian-li"> 二叉树的前序遍历</span></h2>
 <p><img src="https://img.shields.io/badge/leetcode-144-blue.svg" alt> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/binary-tree-preorder-traversal/">二叉树的前序遍历</a></p>
