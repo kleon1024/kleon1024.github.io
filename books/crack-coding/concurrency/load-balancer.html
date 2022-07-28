@@ -230,7 +230,7 @@
 		lb.count = <span class="hljs-number">0</span>
 	}
 	<span class="hljs-keyword">return</span> lb.ips[lb.count]
-}</code></pre></p>
+}</code></pre><div class="github-embed-caption"><a title="Show Full Source of lb.go" href="https://github.com/kleon1024/crack-coding/blob/7768a763a957498d6db5ab3cc422f99fffe6752e/golang/concurrency/lb.go" target="_blank">lb.go</a></div></p>
 <h1 id="concurrency-version">Concurrency Version</h1>
 <p>We could use a mutex lock to protect the counter.</p>
 <p><pre><code class="lang-go"><span class="hljs-keyword">package</span> main
@@ -281,7 +281,7 @@
 		lb.count = <span class="hljs-number">0</span>
 	}
 	<span class="hljs-keyword">return</span> lb.ips[lb.count]
-}</code></pre></p>
+}</code></pre><div class="github-embed-caption"><a title="Show Full Source of lb-con.go" href="https://github.com/kleon1024/crack-coding/blob/7e36a6ecbb6863d2749097935f518348e8db26b2/golang/concurrency/lb-con.go" target="_blank">lb-con.go</a></div></p>
 <h1 id="grouped-ips">Grouped Ips</h1>
 <p>Follow-Up: Suppose ips are grouped. e.g. A: [1, 2, 3], B: [1, 4, 5]. Get the next round-robined result for the specified group combination.
 Input A means selecting from the group A. Input B means select from the group B. Input AB means select from the intersection of group A and B. Empty means select from all ips.</p>
@@ -324,7 +324,7 @@ Input A means selecting from the group A. Input B means select from the group B.
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Load Balancer","level":"1.2.1","depth":2,"previous":{"title":"Concurrency","level":"1.2","depth":1,"path":"concurrency/concurrency.md","ref":"concurrency/concurrency.md","articles":[{"title":"Load Balancer","level":"1.2.1","depth":2,"path":"concurrency/load-balancer.md","ref":"concurrency/load-balancer.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","back-to-top-button","chapter-fold","github-embed"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github-embed":{"showLink":false,"reindent":false},"search-pro":{},"back-to-top-button":{},"chapter-fold":{},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Crack Coding Companion","gitbook":"*"},"file":{"path":"concurrency/load-balancer.md","mtime":"2022-07-28T12:18:49.353Z","type":"markdown"},"gitbook":{"version":"3.7.5","time":"2022-07-28T12:20:01.888Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Load Balancer","level":"1.2.1","depth":2,"previous":{"title":"Concurrency","level":"1.2","depth":1,"path":"concurrency/concurrency.md","ref":"concurrency/concurrency.md","articles":[{"title":"Load Balancer","level":"1.2.1","depth":2,"path":"concurrency/load-balancer.md","ref":"concurrency/load-balancer.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","back-to-top-button","chapter-fold","github-embed"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github-embed":{"showLink":true,"reindent":false},"search-pro":{},"back-to-top-button":{},"chapter-fold":{},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Crack Coding Companion","gitbook":"*"},"file":{"path":"concurrency/load-balancer.md","mtime":"2022-07-28T12:23:54.439Z","type":"markdown"},"gitbook":{"version":"3.7.5","time":"2022-07-28T12:24:25.221Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
