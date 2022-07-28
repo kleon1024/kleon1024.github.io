@@ -3,7 +3,7 @@
 <html lang="" >
     <head>
         <meta charset="UTF-8">
-        <title>Reverse Linked List · HonKit</title>
+        <title>Load Balancer · HonKit</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 3.7.5">
@@ -57,7 +57,7 @@
 
     
     
-    <link rel="prev" href="outline.html" />
+    <link rel="prev" href="concurrency.html" />
     
 
     </head>
@@ -99,12 +99,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2" data-path="outline.html">
+        <li class="chapter " data-level="1.2" data-path="concurrency.html">
             
-                <a href="outline.html">
+                <a href="concurrency.html">
             
                     
-                    Linked List
+                    Concurrency
             
                 </a>
             
@@ -113,12 +113,12 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.2.1" data-path="lc202.html">
+        <li class="chapter active" data-level="1.2.1" data-path="load-balancer.html">
             
-                <a href="lc202.html">
+                <a href="load-balancer.html">
             
                     
-                    Reverse Linked List
+                    Load Balancer
             
                 </a>
             
@@ -161,7 +161,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Reverse Linked List</a>
+        <a href=".." >Load Balancer</a>
     </h1>
 </div>
 
@@ -176,7 +176,49 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="reverse-the-linked-list">Reverse the linked list</h1>
+                                <h1 id="load-balancer-strategy">Load Balancer Strategy</h1>
+<p>Suppose you are implementing the load balancing strategy for a nginx-liked web server. Given a list of ip [1, 2, 3], return the next round-robined result.</p>
+<p>At the first glance, we can use a counter to track the number of the next ip.</p>
+<pre><code class="lang-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> {
+    ips := []<span class="hljs-keyword">int</span>{<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>}
+    lb := NewLB(ips)
+    <span class="hljs-keyword">for</span> i := <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i++ {
+        lb.Next()
+    }
+}
+
+<span class="hljs-keyword">type</span> LB <span class="hljs-keyword">struct</span> {
+    ips []<span class="hljs-keyword">int</span>
+    count <span class="hljs-keyword">int</span>
+    size <span class="hljs-keyword">int</span>
+}
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">NewLB</span><span class="hljs-params">(ips []<span class="hljs-keyword">int</span>)</span> *<span class="hljs-title">LB</span></span> {
+    <span class="hljs-keyword">return</span> &amp;LB{
+        ips: ips,
+        count: <span class="hljs-number">0</span>,
+        size: <span class="hljs-built_in">len</span>(ips),
+    }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">func</span><span class="hljs-params">(lb *LB)</span> <span class="hljs-title">Next</span><span class="hljs-params">()</span> <span class="hljs-title">int</span></span> {
+    lb.count += <span class="hljs-number">1</span>
+    lb.count %= lb.size
+    <span class="hljs-keyword">return</span> lb.ips[lb.count]
+}
+
+<span class="hljs-comment">// equivalent to Next but more efficient</span>
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(lb *LB)</span> <span class="hljs-title">Next1</span><span class="hljs-params">()</span> <span class="hljs-title">int</span></span> {
+    lb.count += <span class="hljs-number">1</span>
+    <span class="hljs-keyword">if</span> lb.count == lb.size {
+        lb.count = <span class="hljs-number">0</span>
+    }
+    <span class="hljs-keyword">return</span> lb.ips[lb.count]    
+}
+</code></pre>
+<h1 id="grouped-ips">Grouped Ips</h1>
+<p>Follow-Up: Suppose ips are grouped. e.g. A: [1, 2, 3], B: [1, 4, 5]. Get the next round-robined result for the specified group combination.
+Input A means selecting from the group A. Input B means select from the group B. Input AB means select from the intersection of group A and B. Empty means select from all ips.</p>
 
                                 
                                 </section>
@@ -204,7 +246,7 @@
 
             
                 
-                <a href="outline.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Linked List">
+                <a href="concurrency.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Concurrency">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
@@ -216,7 +258,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Reverse Linked List","level":"1.2.1","depth":2,"previous":{"title":"Linked List","level":"1.2","depth":1,"path":"linked-list/outline.md","ref":"linked-list/outline.md","articles":[{"title":"Reverse Linked List","level":"1.2.1","depth":2,"path":"linked-list/lc202.md","ref":"linked-list/lc202.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"linked-list/lc202.md","mtime":"2022-07-26T04:15:25.334Z","type":"markdown"},"gitbook":{"version":"3.7.5","time":"2022-07-26T04:16:05.470Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Load Balancer","level":"1.2.1","depth":2,"previous":{"title":"Concurrency","level":"1.2","depth":1,"path":"concurrency/concurrency.md","ref":"concurrency/concurrency.md","articles":[{"title":"Load Balancer","level":"1.2.1","depth":2,"path":"concurrency/load-balancer.md","ref":"concurrency/load-balancer.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"concurrency/load-balancer.md","mtime":"2022-07-28T10:36:54.580Z","type":"markdown"},"gitbook":{"version":"3.7.5","time":"2022-07-28T10:37:25.250Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
