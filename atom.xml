@@ -194,6 +194,27 @@
   </entry>
   
   <entry>
+    <title>Database - MySQL</title>
+    <link href="https://blog.kleon.space/backend/db/postgres/"/>
+    <id>https://blog.kleon.space/backend/db/postgres/</id>
+    <published>2022-06-06T10:54:44.000Z</published>
+    <updated>2022-06-06T10:54:49.000Z</updated>
+    
+    
+    
+    
+    <category term="backend" scheme="https://blog.kleon.space/categories/backend/"/>
+    
+    
+    <category term="backend" scheme="https://blog.kleon.space/tags/backend/"/>
+    
+    <category term="database" scheme="https://blog.kleon.space/tags/database/"/>
+    
+    <category term="mysql" scheme="https://blog.kleon.space/tags/mysql/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Database - Redis</title>
     <link href="https://blog.kleon.space/backend/db/redis/"/>
     <id>https://blog.kleon.space/backend/db/redis/</id>
@@ -225,27 +246,6 @@
     <category term="database" scheme="https://blog.kleon.space/tags/database/"/>
     
     <category term="redis" scheme="https://blog.kleon.space/tags/redis/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Database - MySQL</title>
-    <link href="https://blog.kleon.space/backend/db/postgres/"/>
-    <id>https://blog.kleon.space/backend/db/postgres/</id>
-    <published>2022-06-06T10:54:44.000Z</published>
-    <updated>2022-06-06T10:54:49.000Z</updated>
-    
-    
-    
-    
-    <category term="backend" scheme="https://blog.kleon.space/categories/backend/"/>
-    
-    
-    <category term="backend" scheme="https://blog.kleon.space/tags/backend/"/>
-    
-    <category term="database" scheme="https://blog.kleon.space/tags/database/"/>
-    
-    <category term="mysql" scheme="https://blog.kleon.space/tags/mysql/"/>
     
   </entry>
   
