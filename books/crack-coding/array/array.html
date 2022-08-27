@@ -3,7 +3,7 @@
 <html lang="" >
     <head>
         <meta charset="UTF-8">
-        <title>Concurrency · Crack Coding Companion</title>
+        <title>Array · Crack Coding Companion</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 3.7.5">
@@ -76,10 +76,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="load-balancer.html" />
+    <link rel="next" href="maximum.html" />
     
     
-    <link rel="prev" href="../dp/dp.html" />
+    <link rel="prev" href="../" />
     
 
     </head>
@@ -121,9 +121,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2" data-path="../array/array.html">
+        <li class="chapter active" data-level="1.2" data-path="array.html">
             
-                <a href="../array/array.html">
+                <a href="array.html">
             
                     
                     Array
@@ -135,9 +135,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.1" data-path="../array/maximum.html">
+        <li class="chapter " data-level="1.2.1" data-path="maximum.html">
             
-                <a href="../array/maximum.html">
+                <a href="maximum.html">
             
                     
                     Find Maximum
@@ -321,9 +321,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.11" data-path="concurrency.html">
+        <li class="chapter " data-level="1.11" data-path="../concurrency/concurrency.html">
             
-                <a href="concurrency.html">
+                <a href="../concurrency/concurrency.html">
             
                     
                     Concurrency
@@ -335,9 +335,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.11.1" data-path="load-balancer.html">
+        <li class="chapter " data-level="1.11.1" data-path="../concurrency/load-balancer.html">
             
-                <a href="load-balancer.html">
+                <a href="../concurrency/load-balancer.html">
             
                     
                     Load Balancer
@@ -383,7 +383,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Concurrency</a>
+        <a href=".." >Array</a>
     </h1>
 </div>
 
@@ -398,14 +398,26 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="concurrency">Concurrency</h1>
-<p>Concurrency involves multi-threading, coroutine, lock and atomic operations.</p>
-<p>First, explain how process, thread and coroutine work and are implemented in different operating systems and languages.</p>
-<h2 id="process">Process</h2>
-<h2 id="thread">Thread</h2>
-<h2 id="couroutine">Couroutine</h2>
-<h2 id="locks">Locks</h2>
-<h2 id="atomic">Atomic</h2>
+                                <h1 id="array">Array</h1>
+<p>An array is a piece of data continously spreaded which commonly used to save data with preallocated space or known size.</p>
+<p>A dynamic array, also called vector, slice, handled the expansion of the array with pre-defined threshold.</p>
+<h2 id="sort">Sort</h2>
+<h3 id="bubble-sort">Bubble Sort</h3>
+<p>The basic idea of bubble sort is:</p>
+<ol>
+<li>Start from the first two element, compare and swap them until all elements are compared.</li>
+<li>Repeat 1 but each time the start position adds one.</li>
+</ol>
+<h3 id="quick-sort">Quick Sort</h3>
+<p>The basic idea of quick sort is:</p>
+<ol>
+<li>Select the first or the last element of to-be-sorted array as a pivot. </li>
+<li>Compare and swap the rest elements until the elements reside on the left of the pivot are less than the pivot and the elements reside on the right of the pivot are greater than the pivot.</li>
+<li>sort the left and right subarray reside on both side of the pivot.</li>
+</ol>
+<h2 id="reverse">Reverse</h2>
+<h3 id="double-pointer">Double Pointer</h3>
+<h2 id="binary-search">Binary Search</h2>
 
                                 
                                 </section>
@@ -433,12 +445,12 @@
 
             
                 
-                <a href="../dp/dp.html" class="navigation navigation-prev " aria-label="Previous page: Dynamic Programming">
+                <a href="../" class="navigation navigation-prev " aria-label="Previous page: Introduction">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="load-balancer.html" class="navigation navigation-next " aria-label="Next page: Load Balancer">
+                <a href="maximum.html" class="navigation navigation-next " aria-label="Next page: Find Maximum">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -449,7 +461,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Concurrency","level":"1.11","depth":1,"next":{"title":"Load Balancer","level":"1.11.1","depth":2,"path":"concurrency/load-balancer.md","ref":"concurrency/load-balancer.md","articles":[]},"previous":{"title":"Dynamic Programming","level":"1.10","depth":1,"path":"dp/dp.md","ref":"dp/dp.md","articles":[]},"articles":[{"title":"Load Balancer","level":"1.11.1","depth":2,"path":"concurrency/load-balancer.md","ref":"concurrency/load-balancer.md","articles":[]}],"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","back-to-top-button","chapter-fold","tabs2","github-embed","graphviz@git+https://github.com/kleon1024/gitbook-plugin-graphviz.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"search-pro":{},"github-embed":{"showLink":true,"reindent":false},"fontsettings":{"theme":"white","family":"sans","size":2},"tabs2":{},"highlight":{},"back-to-top-button":{},"graphviz":{"format":"svg","engine":"dot"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Crack Coding Companion","gitbook":"*"},"file":{"path":"concurrency/concurrency.md","mtime":"2022-08-27T10:48:09.153Z","type":"markdown"},"gitbook":{"version":"3.7.5","time":"2022-08-27T10:49:41.020Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Array","level":"1.2","depth":1,"next":{"title":"Find Maximum","level":"1.2.1","depth":2,"path":"array/maximum.md","ref":"array/maximum.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"articles":[{"title":"Find Maximum","level":"1.2.1","depth":2,"path":"array/maximum.md","ref":"array/maximum.md","articles":[]}],"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","back-to-top-button","chapter-fold","tabs2","github-embed","graphviz@git+https://github.com/kleon1024/gitbook-plugin-graphviz.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"search-pro":{},"github-embed":{"showLink":true,"reindent":false},"fontsettings":{"theme":"white","family":"sans","size":2},"tabs2":{},"highlight":{},"back-to-top-button":{},"graphviz":{"format":"svg","engine":"dot"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Crack Coding Companion","gitbook":"*"},"file":{"path":"array/array.md","mtime":"2022-08-27T10:48:09.153Z","type":"markdown"},"gitbook":{"version":"3.7.5","time":"2022-08-27T10:49:41.020Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

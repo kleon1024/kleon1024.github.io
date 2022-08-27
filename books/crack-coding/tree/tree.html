@@ -3,7 +3,7 @@
 <html lang="" >
     <head>
         <meta charset="UTF-8">
-        <title>Concurrency · Crack Coding Companion</title>
+        <title>Tree · Crack Coding Companion</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 3.7.5">
@@ -76,10 +76,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="load-balancer.html" />
+    <link rel="next" href="../hash-table/hash-table.html" />
     
     
-    <link rel="prev" href="../dp/dp.html" />
+    <link rel="prev" href="../linked-list/reverse-list.html" />
     
 
     </head>
@@ -224,9 +224,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6" data-path="../tree/tree.html">
+        <li class="chapter active" data-level="1.6" data-path="tree.html">
             
-                <a href="../tree/tree.html">
+                <a href="tree.html">
             
                     
                     Tree
@@ -321,9 +321,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.11" data-path="concurrency.html">
+        <li class="chapter " data-level="1.11" data-path="../concurrency/concurrency.html">
             
-                <a href="concurrency.html">
+                <a href="../concurrency/concurrency.html">
             
                     
                     Concurrency
@@ -335,9 +335,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.11.1" data-path="load-balancer.html">
+        <li class="chapter " data-level="1.11.1" data-path="../concurrency/load-balancer.html">
             
-                <a href="load-balancer.html">
+                <a href="../concurrency/load-balancer.html">
             
                     
                     Load Balancer
@@ -383,7 +383,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Concurrency</a>
+        <a href=".." >Tree</a>
     </h1>
 </div>
 
@@ -398,14 +398,27 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="concurrency">Concurrency</h1>
-<p>Concurrency involves multi-threading, coroutine, lock and atomic operations.</p>
-<p>First, explain how process, thread and coroutine work and are implemented in different operating systems and languages.</p>
-<h2 id="process">Process</h2>
-<h2 id="thread">Thread</h2>
-<h2 id="couroutine">Couroutine</h2>
-<h2 id="locks">Locks</h2>
-<h2 id="atomic">Atomic</h2>
+                                <h1 id="tree">Tree</h1>
+<p>A tree is used to represent a hierarchical tree structure with a set of connected nodes. Each node in the tree can be connected to many children (depending on the type of tree), but must be connected to exactly one parent, except for the root node, which has no parent. <a href="https://en.wikipedia.org/wiki/Tree_(data_structure" target="_blank">wiki</a>)</p>
+<h2 id="classification">Classification</h2>
+<h3 id="binary-tree">Binary Tree</h3>
+<h3 id="complete-binary-tree">Complete Binary Tree</h3>
+<h3 id="perfect-binary-tree">Perfect Binary Tree</h3>
+<h3 id="balanced-tree-b-tree">Balanced Tree (B-Tree)</h3>
+<h3 id="binary-search-tree">Binary Search Tree</h3>
+<h3 id="avl-tree">AVL Tree</h3>
+<h3 id="red-black-tree">Red Black Tree</h3>
+<h3 id="b-tree">B+ Tree</h3>
+<p>MySQL </p>
+<h3 id="b-tree">B* Tree</h3>
+<h3 id="heap">Heap</h3>
+<h3 id="trie-prefix-tree-digital-tree">Trie, Prefix Tree, Digital Tree</h3>
+<h2 id="traversal">Traversal</h2>
+<h3 id="pre-order">Pre-order</h3>
+<h3 id="post-order">Post-order</h3>
+<h3 id="mid-order">Mid-order</h3>
+<h3 id="layer-order">Layer-order</h3>
+<h2 id="reconstruction">Reconstruction</h2>
 
                                 
                                 </section>
@@ -433,12 +446,12 @@
 
             
                 
-                <a href="../dp/dp.html" class="navigation navigation-prev " aria-label="Previous page: Dynamic Programming">
+                <a href="../linked-list/reverse-list.html" class="navigation navigation-prev " aria-label="Previous page: Reverse List">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="load-balancer.html" class="navigation navigation-next " aria-label="Next page: Load Balancer">
+                <a href="../hash-table/hash-table.html" class="navigation navigation-next " aria-label="Next page: Hash Table">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -449,7 +462,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Concurrency","level":"1.11","depth":1,"next":{"title":"Load Balancer","level":"1.11.1","depth":2,"path":"concurrency/load-balancer.md","ref":"concurrency/load-balancer.md","articles":[]},"previous":{"title":"Dynamic Programming","level":"1.10","depth":1,"path":"dp/dp.md","ref":"dp/dp.md","articles":[]},"articles":[{"title":"Load Balancer","level":"1.11.1","depth":2,"path":"concurrency/load-balancer.md","ref":"concurrency/load-balancer.md","articles":[]}],"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","back-to-top-button","chapter-fold","tabs2","github-embed","graphviz@git+https://github.com/kleon1024/gitbook-plugin-graphviz.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"search-pro":{},"github-embed":{"showLink":true,"reindent":false},"fontsettings":{"theme":"white","family":"sans","size":2},"tabs2":{},"highlight":{},"back-to-top-button":{},"graphviz":{"format":"svg","engine":"dot"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Crack Coding Companion","gitbook":"*"},"file":{"path":"concurrency/concurrency.md","mtime":"2022-08-27T10:48:09.153Z","type":"markdown"},"gitbook":{"version":"3.7.5","time":"2022-08-27T10:49:41.020Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Tree","level":"1.6","depth":1,"next":{"title":"Hash Table","level":"1.7","depth":1,"path":"hash-table/hash-table.md","ref":"hash-table/hash-table.md","articles":[{"title":"Bloom Filter","level":"1.7.1","depth":2,"path":"hash-table/bloom-filter.md","ref":"hash-table/bloom-filter.md","articles":[]},{"title":"Cache","level":"1.7.2","depth":2,"path":"hash-table/cache.md","ref":"hash-table/cache.md","articles":[]}]},"previous":{"title":"Reverse List","level":"1.5.2","depth":2,"path":"linked-list/reverse-list.md","ref":"linked-list/reverse-list.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","back-to-top-button","chapter-fold","tabs2","github-embed","graphviz@git+https://github.com/kleon1024/gitbook-plugin-graphviz.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"search-pro":{},"github-embed":{"showLink":true,"reindent":false},"fontsettings":{"theme":"white","family":"sans","size":2},"tabs2":{},"highlight":{},"back-to-top-button":{},"graphviz":{"format":"svg","engine":"dot"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Crack Coding Companion","gitbook":"*"},"file":{"path":"tree/tree.md","mtime":"2022-08-27T10:48:09.157Z","type":"markdown"},"gitbook":{"version":"3.7.5","time":"2022-08-27T10:49:41.020Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
