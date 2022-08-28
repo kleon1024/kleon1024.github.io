@@ -3,7 +3,7 @@
 <html lang="" >
     <head>
         <meta charset="UTF-8">
-        <title>Concurrency · Crack Coding Companion</title>
+        <title>Sum · Crack Coding Companion</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 3.7.5">
@@ -76,10 +76,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="load-balancer.html" />
+    <link rel="next" href="bloom-filter.html" />
     
     
-    <link rel="prev" href="../dp/dp.html" />
+    <link rel="prev" href="hash-table.html" />
     
 
     </head>
@@ -237,9 +237,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7" data-path="../hash-table/hash-table.html">
+        <li class="chapter " data-level="1.7" data-path="hash-table.html">
             
-                <a href="../hash-table/hash-table.html">
+                <a href="hash-table.html">
             
                     
                     Hash Table
@@ -251,9 +251,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.7.1" data-path="../hash-table/sum.html">
+        <li class="chapter active" data-level="1.7.1" data-path="sum.html">
             
-                <a href="../hash-table/sum.html">
+                <a href="sum.html">
             
                     
                     Sum
@@ -264,9 +264,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7.2" data-path="../hash-table/bloom-filter.html">
+        <li class="chapter " data-level="1.7.2" data-path="bloom-filter.html">
             
-                <a href="../hash-table/bloom-filter.html">
+                <a href="bloom-filter.html">
             
                     
                     Bloom Filter
@@ -277,9 +277,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7.3" data-path="../hash-table/cache.html">
+        <li class="chapter " data-level="1.7.3" data-path="cache.html">
             
-                <a href="../hash-table/cache.html">
+                <a href="cache.html">
             
                     
                     Cache
@@ -334,9 +334,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.11" data-path="concurrency.html">
+        <li class="chapter " data-level="1.11" data-path="../concurrency/concurrency.html">
             
-                <a href="concurrency.html">
+                <a href="../concurrency/concurrency.html">
             
                     
                     Concurrency
@@ -348,9 +348,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.11.1" data-path="load-balancer.html">
+        <li class="chapter " data-level="1.11.1" data-path="../concurrency/load-balancer.html">
             
-                <a href="load-balancer.html">
+                <a href="../concurrency/load-balancer.html">
             
                     
                     Load Balancer
@@ -396,7 +396,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Concurrency</a>
+        <a href=".." >Sum</a>
     </h1>
 </div>
 
@@ -411,14 +411,63 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="concurrency">Concurrency</h1>
-<p>Concurrency involves multi-threading, coroutine, lock and atomic operations.</p>
-<p>First, explain how process, thread and coroutine work and are implemented in different operating systems and languages.</p>
-<h2 id="process">Process</h2>
-<h2 id="thread">Thread</h2>
-<h2 id="couroutine">Couroutine</h2>
-<h2 id="locks">Locks</h2>
-<h2 id="atomic">Atomic</h2>
+                                <h1 id="sum">Sum</h1>
+<h2 id="lc1546-maximum-number-of-non-overlapping-subarrays-with-sum-equals-target">LC1546 Maximum Number of Non-Overlapping Subarrays With Sum Equals Target</h2>
+<p>🟡<a href="https://leetcode.com/problems/maximum-number-of-non-overlapping-subarrays-with-sum-equals-target/" target="_blank">lc1546</a></p>
+<p>The basic idea is using a map to store the prefix sum and the target = prefixSum[0...i] - prefixSum[0...j]</p>
+<ol>
+<li>use a map to store prefixSum and it&apos;s rightMost index</li>
+<li>initialize sum with O, available Index with -1, which means index bigger than -1 are unused</li>
+<li>initialize map with {0:-1}, which means the initial sum is 0</li>
+<li>for each nums[il in the array:<ol>
+<li>update prefixSum with nums[il</li>
+<li>Let&apos;s say there&apos;s a subarray from index j to current index i whose sum is target, prefixSum[0...i] - prefixSum[0...j] = target, which means prefixSum - remain = target</li>
+<li>if remain = prefixSum-target exists, and it&apos;s starting index is bigger than availablelndex, it means a valid subarray exists:<ol>
+<li>res++</li>
+<li>update availablelndex with i, because subarray from j to i is used</li>
+</ol>
+</li>
+<li>always update map with prefixSum and i, so that it is guaranteed that the starting index j above is the rightMost index for prefixSum so that the subarray is as short as possible</li>
+</ol>
+</li>
+<li>return res in the end</li>
+</ol>
+<p><div class="markdown-tabs"><ul class="nav nav-tabs" role="tablist"><li role="presentation" class="active"><a href="#tab-913" aria-controls="tab-913" role="tab" data-toggle="tab">Go</a></li><li role="presentation" class><a href="#tab-914" aria-controls="tab-914" role="tab" data-toggle="tab">Java</a></li></ul><div class="tab-content"><div role="tabpanel" class="tab-pane active" id="tab-913"><pre><code class="lang-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">maxNonOverlapping</span><span class="hljs-params">(nums []<span class="hljs-keyword">int</span>, target <span class="hljs-keyword">int</span>)</span> <span class="hljs-title">int</span></span> {
+    m := <span class="hljs-keyword">map</span>[<span class="hljs-keyword">int</span>]<span class="hljs-keyword">int</span>{}
+    prefixSum, availableIdx, res := <span class="hljs-number">0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">0</span>
+    m[<span class="hljs-number">0</span>] = <span class="hljs-number">-1</span>
+    <span class="hljs-keyword">for</span> i := <span class="hljs-number">0</span>; i &lt; <span class="hljs-built_in">len</span>(nums); i++ {
+        prefixSum += nums[i]
+        remain := prefixSum - target
+        <span class="hljs-keyword">if</span> value, exists := m[remain]; exists {
+            <span class="hljs-keyword">if</span> value &gt;= availableIdx {
+                res++
+                availableIdx = i
+            }
+        }
+        m[prefixSum] = i
+    }
+
+    <span class="hljs-keyword">return</span> res
+}</code></pre>
+</div><div role="tabpanel" class="tab-pane " id="tab-914"><pre><code class="lang-go">class Solution {
+    public <span class="hljs-keyword">int</span> maxNonOverlapping(<span class="hljs-keyword">int</span>[] nums, <span class="hljs-keyword">int</span> target) {
+        Map&lt;Integer, Integer&gt; <span class="hljs-keyword">map</span>= <span class="hljs-built_in">new</span> HashMap&lt;&gt;();
+        <span class="hljs-keyword">int</span> prefixSum=<span class="hljs-number">0</span>, availableIdx=<span class="hljs-number">-1</span>, res=<span class="hljs-number">0</span>;
+        <span class="hljs-keyword">map</span>.put(<span class="hljs-number">0</span>,<span class="hljs-number">-1</span>);
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>; i&lt;nums.length; i++){
+            prefixSum+=nums[i];
+            <span class="hljs-keyword">int</span> remain = prefixSum - target;
+            <span class="hljs-keyword">if</span> (<span class="hljs-keyword">map</span>.containsKey(remain) &amp;&amp; <span class="hljs-keyword">map</span>.get(remain)&gt;=availableIdx){
+                res++;
+                availableIdx=i;
+            }
+            <span class="hljs-keyword">map</span>.put(prefixSum, i);
+        }
+        <span class="hljs-keyword">return</span> res;
+    }
+}</code></pre>
+</div></div></div></p>
 
                                 
                                 </section>
@@ -446,12 +495,12 @@
 
             
                 
-                <a href="../dp/dp.html" class="navigation navigation-prev " aria-label="Previous page: Dynamic Programming">
+                <a href="hash-table.html" class="navigation navigation-prev " aria-label="Previous page: Hash Table">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="load-balancer.html" class="navigation navigation-next " aria-label="Next page: Load Balancer">
+                <a href="bloom-filter.html" class="navigation navigation-next " aria-label="Next page: Bloom Filter">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -462,7 +511,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Concurrency","level":"1.11","depth":1,"next":{"title":"Load Balancer","level":"1.11.1","depth":2,"path":"concurrency/load-balancer.md","ref":"concurrency/load-balancer.md","articles":[]},"previous":{"title":"Dynamic Programming","level":"1.10","depth":1,"path":"dp/dp.md","ref":"dp/dp.md","articles":[]},"articles":[{"title":"Load Balancer","level":"1.11.1","depth":2,"path":"concurrency/load-balancer.md","ref":"concurrency/load-balancer.md","articles":[]}],"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","back-to-top-button","chapter-fold","tabs2","github-embed","graphviz@git+https://github.com/kleon1024/gitbook-plugin-graphviz.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"search-pro":{},"github-embed":{"showLink":true,"reindent":false},"fontsettings":{"theme":"white","family":"sans","size":2},"tabs2":{},"highlight":{},"back-to-top-button":{},"graphviz":{"format":"svg","engine":"dot"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Crack Coding Companion","gitbook":"*"},"file":{"path":"concurrency/concurrency.md","mtime":"2022-08-28T10:14:01.499Z","type":"markdown"},"gitbook":{"version":"3.7.5","time":"2022-08-28T10:14:28.824Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Sum","level":"1.7.1","depth":2,"next":{"title":"Bloom Filter","level":"1.7.2","depth":2,"path":"hash-table/bloom-filter.md","ref":"hash-table/bloom-filter.md","articles":[]},"previous":{"title":"Hash Table","level":"1.7","depth":1,"path":"hash-table/hash-table.md","ref":"hash-table/hash-table.md","articles":[{"title":"Sum","level":"1.7.1","depth":2,"path":"hash-table/sum.md","ref":"hash-table/sum.md","articles":[]},{"title":"Bloom Filter","level":"1.7.2","depth":2,"path":"hash-table/bloom-filter.md","ref":"hash-table/bloom-filter.md","articles":[]},{"title":"Cache","level":"1.7.3","depth":2,"path":"hash-table/cache.md","ref":"hash-table/cache.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","back-to-top-button","chapter-fold","tabs2","github-embed","graphviz@git+https://github.com/kleon1024/gitbook-plugin-graphviz.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"search-pro":{},"github-embed":{"showLink":true,"reindent":false},"fontsettings":{"theme":"white","family":"sans","size":2},"tabs2":{},"highlight":{},"back-to-top-button":{},"graphviz":{"format":"svg","engine":"dot"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Crack Coding Companion","gitbook":"*"},"file":{"path":"hash-table/sum.md","mtime":"2022-08-28T10:14:01.499Z","type":"markdown"},"gitbook":{"version":"3.7.5","time":"2022-08-28T10:14:28.824Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
