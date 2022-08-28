@@ -400,7 +400,112 @@
 <p>Suppose you are implementing the load balancing strategy for a nginx-liked web server. Given a list of ip [1, 2, 3], return the next round-robined result.</p>
 <h1 id="basic-version">Basic Version</h1>
 <p>At the first glance, we can use a counter to track the number of the next ip.</p>
-<p><div class="markdown-tabs"><ul class="nav nav-tabs" role="tablist"><li role="presentation" class="active"><a href="#tab-773" aria-controls="tab-773" role="tab" data-toggle="tab">GoLang</a></li></ul><div class="tab-content"><div role="tabpanel" class="tab-pane active" id="tab-773"></div></div></div></p>
+<div class="markdown-tabs">
+<ul class="nav nav-tabs" role="tablist">
+<li role="presentation">
+<a href="#tab-1-go" aria-controls="tab-1-go" role="tab" data-toggle="tab">GoLang</a>
+</li>
+<li role="presentation">
+<a href="#tab-1-cpp" aria-controls="tab-1-cpp" role="tab" data-toggle="tab">C++</a>
+</li>
+</ul>
+
+<div class="tab-content">
+<div role="tabpanel" class="tab-pane" id="tab-1-go">
+<pre><code class="lang-go"><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> <span class="hljs-string">&quot;fmt&quot;</span>
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> {
+	ips := []<span class="hljs-keyword">int</span>{<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>}
+	lb := NewLB(ips)
+	<span class="hljs-keyword">for</span> i := <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i++ {
+		fmt.Printf(<span class="hljs-string">&quot;%v\n&quot;</span>, lb.Next())
+	}
+}
+
+<span class="hljs-keyword">type</span> LB <span class="hljs-keyword">struct</span> {
+	ips   []<span class="hljs-keyword">int</span>
+	count <span class="hljs-keyword">int</span>
+	size  <span class="hljs-keyword">int</span>
+}
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">NewLB</span><span class="hljs-params">(ips []<span class="hljs-keyword">int</span>)</span> *<span class="hljs-title">LB</span></span> {
+	<span class="hljs-keyword">return</span> &amp;LB{
+		ips:   ips,
+		count: <span class="hljs-number">0</span>,
+		size:  <span class="hljs-built_in">len</span>(ips),
+	}
+}
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(lb *LB)</span> <span class="hljs-title">Next</span><span class="hljs-params">()</span> <span class="hljs-title">int</span></span> {
+	lb.count += <span class="hljs-number">1</span>
+	lb.count %= lb.size
+	<span class="hljs-keyword">return</span> lb.ips[lb.count]
+}
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(lb *LB)</span> <span class="hljs-title">Next1</span><span class="hljs-params">()</span> <span class="hljs-title">int</span></span> {
+	lb.count += <span class="hljs-number">1</span>
+	<span class="hljs-keyword">if</span> lb.count == lb.size {
+		lb.count = <span class="hljs-number">0</span>
+	}
+	<span class="hljs-keyword">return</span> lb.ips[lb.count]
+}</code></pre><div class="github-embed-caption"><a title="Show Full Source of lb.go" href="https://github.com/kleon1024/crack-coding/blob/7768a763a957498d6db5ab3cc422f99fffe6752e/golang/concurrency/lb.go" target="_blank">lb.go</a></div>
+</div>
+<div role="tabpanel" class="tab-pane" id="tab-1-cpp">
+<pre><code class="lang-go"><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> (
+	<span class="hljs-string">&quot;fmt&quot;</span>
+	<span class="hljs-string">&quot;sync&quot;</span>
+)
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> {
+	ips := []<span class="hljs-keyword">int</span>{<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>}
+	lb := NewLB(ips)
+	wg := &amp;sync.WaitGroup{}
+	<span class="hljs-keyword">for</span> j := <span class="hljs-number">0</span>; j &lt; <span class="hljs-number">3</span>; j++ {
+		wg.Add(<span class="hljs-number">1</span>)
+		<span class="hljs-keyword">go</span> <span class="hljs-function"><span class="hljs-keyword">func</span><span class="hljs-params">()</span></span> {
+			<span class="hljs-keyword">for</span> i := <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i++ {
+				fmt.Printf(<span class="hljs-string">&quot;%v\n&quot;</span>, lb.Next())
+			}
+			wg.Done()
+		}()
+	}
+	wg.Wait()
+}
+
+<span class="hljs-keyword">type</span> LB <span class="hljs-keyword">struct</span> {
+	ips   []<span class="hljs-keyword">int</span>
+	count <span class="hljs-keyword">int</span>
+	size  <span class="hljs-keyword">int</span>
+	m     *sync.Mutex
+}
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">NewLB</span><span class="hljs-params">(ips []<span class="hljs-keyword">int</span>)</span> *<span class="hljs-title">LB</span></span> {
+	<span class="hljs-keyword">return</span> &amp;LB{
+		ips:   ips,
+		count: <span class="hljs-number">0</span>,
+		size:  <span class="hljs-built_in">len</span>(ips),
+		m:     &amp;sync.Mutex{},
+	}
+}
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(lb *LB)</span> <span class="hljs-title">Next</span><span class="hljs-params">()</span> <span class="hljs-title">int</span></span> {
+	lb.m.Lock()
+	<span class="hljs-keyword">defer</span> lb.m.Unlock()
+
+	lb.count += <span class="hljs-number">1</span>
+	<span class="hljs-keyword">if</span> lb.count == lb.size {
+		lb.count = <span class="hljs-number">0</span>
+	}
+	<span class="hljs-keyword">return</span> lb.ips[lb.count]
+}</code></pre><div class="github-embed-caption"><a title="Show Full Source of lb-con.go" href="https://github.com/kleon1024/crack-coding/blob/7e36a6ecbb6863d2749097935f518348e8db26b2/golang/concurrency/lb-con.go" target="_blank">lb-con.go</a></div>
+</div>
+</div>
+</div>
+
 <h1 id="concurrency-version">Concurrency Version</h1>
 <p>We could use a mutex lock to protect the counter.</p>
 <p><pre><code class="lang-go"><span class="hljs-keyword">package</span> main
@@ -494,7 +599,7 @@ Input A means selecting from the group A. Input B means select from the group B.
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Load Balancer","level":"1.11.1","depth":2,"previous":{"title":"Concurrency","level":"1.11","depth":1,"path":"concurrency/concurrency.md","ref":"concurrency/concurrency.md","articles":[{"title":"Load Balancer","level":"1.11.1","depth":2,"path":"concurrency/load-balancer.md","ref":"concurrency/load-balancer.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","back-to-top-button","chapter-fold","tabs2","github-embed","graphviz@git+https://github.com/kleon1024/gitbook-plugin-graphviz.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"search-pro":{},"github-embed":{"showLink":true,"reindent":false},"fontsettings":{"theme":"white","family":"sans","size":2},"tabs2":{},"highlight":{},"back-to-top-button":{},"graphviz":{"format":"svg","engine":"dot"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Crack Coding Companion","gitbook":"*"},"file":{"path":"concurrency/load-balancer.md","mtime":"2022-08-27T10:48:09.153Z","type":"markdown"},"gitbook":{"version":"3.7.5","time":"2022-08-27T10:49:41.020Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Load Balancer","level":"1.11.1","depth":2,"previous":{"title":"Concurrency","level":"1.11","depth":1,"path":"concurrency/concurrency.md","ref":"concurrency/concurrency.md","articles":[{"title":"Load Balancer","level":"1.11.1","depth":2,"path":"concurrency/load-balancer.md","ref":"concurrency/load-balancer.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","back-to-top-button","chapter-fold","tabs2","github-embed","graphviz@git+https://github.com/kleon1024/gitbook-plugin-graphviz.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"search-pro":{},"github-embed":{"showLink":true,"reindent":false},"fontsettings":{"theme":"white","family":"sans","size":2},"tabs2":{},"highlight":{},"back-to-top-button":{},"graphviz":{"format":"svg","engine":"dot"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Crack Coding Companion","gitbook":"*"},"file":{"path":"concurrency/load-balancer.md","mtime":"2022-08-28T08:48:16.301Z","type":"markdown"},"gitbook":{"version":"3.7.5","time":"2022-08-28T08:48:43.080Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
