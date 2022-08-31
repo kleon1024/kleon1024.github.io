@@ -3,7 +3,7 @@
 <html lang="" >
     <head>
         <meta charset="UTF-8">
-        <title>Array · Crack Coding Companion</title>
+        <title>Rotate · Crack Coding Companion</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 3.7.5">
@@ -76,10 +76,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="maximum.html" />
+    <link rel="next" href="../stack/stack.html" />
     
     
-    <link rel="prev" href="../" />
+    <link rel="prev" href="maximum.html" />
     
 
     </head>
@@ -121,7 +121,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2" data-path="array.html">
+        <li class="chapter " data-level="1.2" data-path="array.html">
             
                 <a href="array.html">
             
@@ -148,7 +148,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.2" data-path="rotate.html">
+        <li class="chapter active" data-level="1.2.2" data-path="rotate.html">
             
                 <a href="rotate.html">
             
@@ -409,7 +409,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Array</a>
+        <a href=".." >Rotate</a>
     </h1>
 </div>
 
@@ -424,26 +424,56 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="array">Array</h1>
-<p>An array is a piece of data continously spreaded which commonly used to save data with preallocated space or known size.</p>
-<p>A dynamic array, also called vector, slice, handled the expansion of the array with pre-defined threshold.</p>
-<h2 id="sort">Sort</h2>
-<h3 id="bubble-sort">Bubble Sort</h3>
-<p>The basic idea of bubble sort is:</p>
-<ol>
-<li>Start from the first two element, compare and swap them until all elements are compared.</li>
-<li>Repeat 1 but each time the start position adds one.</li>
-</ol>
-<h3 id="quick-sort">Quick Sort</h3>
-<p>The basic idea of quick sort is:</p>
-<ol>
-<li>Select the first or the last element of to-be-sorted array as a pivot. </li>
-<li>Compare and swap the rest elements until the elements reside on the left of the pivot are less than the pivot and the elements reside on the right of the pivot are greater than the pivot.</li>
-<li>sort the left and right subarray reside on both side of the pivot.</li>
-</ol>
-<h2 id="reverse">Reverse</h2>
-<h3 id="double-pointer">Double Pointer</h3>
-<h2 id="binary-search">Binary Search</h2>
+                                <h1 id="rotate">Rotate</h1>
+<h2 id="lc48-rotate-image">LC48. Rotate Image</h2>
+<p>🟡<a href="https://leetcode.com/problems/rotate-image/" target="_blank">lc48</a></p>
+<p>A common method to solve the image rotation problem.</p>
+<pre><code class="lang-go"><span class="hljs-comment">/*
+ * clockwise rotate
+ * first reverse up to down, then swap the symmetry 
+ * 1 2 3     7 8 9     7 4 1
+ * 4 5 6  =&gt; 4 5 6  =&gt; 8 5 2
+ * 7 8 9     1 2 3     9 6 3
+*/</span>
+
+<span class="hljs-comment">/*
+ * anticlockwise rotate
+ * first reverse left to right, then swap the symmetry
+ * 1 2 3     3 2 1     3 6 9
+ * 4 5 6  =&gt; 6 5 4  =&gt; 2 5 8
+ * 7 8 9     9 8 7     1 4 7
+*/</span>
+</code></pre>
+<p><div class="markdown-tabs"><ul class="nav nav-tabs" role="tablist"><li role="presentation" class="active"><a href="#tab-355" aria-controls="tab-355" role="tab" data-toggle="tab">Go</a></li><li role="presentation" class><a href="#tab-356" aria-controls="tab-356" role="tab" data-toggle="tab">Java</a></li><li role="presentation" class><a href="#tab-357" aria-controls="tab-357" role="tab" data-toggle="tab">Rust</a></li></ul><div class="tab-content"><div role="tabpanel" class="tab-pane active" id="tab-355"><pre><code class="lang-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">rotate</span><span class="hljs-params">(matrix [][]<span class="hljs-keyword">int</span>)</span></span> {
+    <span class="hljs-keyword">for</span> i, j := <span class="hljs-number">0</span>, <span class="hljs-built_in">len</span>(matrix)<span class="hljs-number">-1</span>; i &lt; j; i, j = i+<span class="hljs-number">1</span>, j<span class="hljs-number">-1</span> {
+        matrix[i], matrix[j] = matrix[j], matrix[i]
+    }
+    <span class="hljs-keyword">for</span> i := <span class="hljs-number">0</span>; i &lt; <span class="hljs-built_in">len</span>(matrix); i++ {
+        <span class="hljs-keyword">for</span> j := i + <span class="hljs-number">1</span>; j &lt; <span class="hljs-built_in">len</span>(matrix[i]); j++ {
+            matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
+        }
+    }
+}</code></pre>
+</div><div role="tabpanel" class="tab-pane " id="tab-356"><pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">rotate</span><span class="hljs-params">(vector&lt;vector&lt;<span class="hljs-keyword">int</span>&gt; &gt; &amp;matrix)</span> </span>{
+    reverse(matrix.begin(), matrix.end());
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; matrix.size(); ++i) {
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = i + <span class="hljs-number">1</span>; j &lt; matrix[i].size(); ++j)
+            swap(matrix[i][j], matrix[j][i]);
+    }
+}</code></pre>
+</div><div role="tabpanel" class="tab-pane " id="tab-357"><pre><code class="lang-rust"><span class="hljs-keyword">impl</span> Solution {
+    <span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">rotate</span></span>(matrix: &amp;<span class="hljs-keyword">mut</span> <span class="hljs-built_in">Vec</span>&lt;<span class="hljs-built_in">Vec</span>&lt;<span class="hljs-built_in">i32</span>&gt;&gt;) {
+        matrix.reverse();
+        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-number">0</span>..matrix.len() {
+            <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> i+<span class="hljs-number">1</span> .. matrix[i].len() {
+                <span class="hljs-keyword">let</span> tmp = matrix[i][j];
+                matrix[i][j] = matrix[j][i];
+                matrix[j][i] = tmp;
+            }
+        }
+    }
+}</code></pre>
+</div></div></div></p>
 
                                 
                                 </section>
@@ -471,12 +501,12 @@
 
             
                 
-                <a href="../" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                <a href="maximum.html" class="navigation navigation-prev " aria-label="Previous page: Find Maximum">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="maximum.html" class="navigation navigation-next " aria-label="Next page: Find Maximum">
+                <a href="../stack/stack.html" class="navigation navigation-next " aria-label="Next page: Stack">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -487,7 +517,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Array","level":"1.2","depth":1,"next":{"title":"Find Maximum","level":"1.2.1","depth":2,"path":"array/maximum.md","ref":"array/maximum.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"articles":[{"title":"Find Maximum","level":"1.2.1","depth":2,"path":"array/maximum.md","ref":"array/maximum.md","articles":[]},{"title":"Rotate","level":"1.2.2","depth":2,"path":"array/rotate.md","ref":"array/rotate.md","articles":[]}],"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","back-to-top-button","chapter-fold","tabs2","github-embed","graphviz@git+https://github.com/kleon1024/gitbook-plugin-graphviz.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"search-pro":{},"github-embed":{"showLink":true,"reindent":false},"fontsettings":{"theme":"white","family":"sans","size":2},"tabs2":{},"highlight":{},"back-to-top-button":{},"graphviz":{"format":"svg","engine":"dot"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Crack Coding Companion","gitbook":"*"},"file":{"path":"array/array.md","mtime":"2022-08-31T02:16:44.444Z","type":"markdown"},"gitbook":{"version":"3.7.5","time":"2022-08-31T02:17:12.687Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Rotate","level":"1.2.2","depth":2,"next":{"title":"Stack","level":"1.3","depth":1,"path":"stack/stack.md","ref":"stack/stack.md","articles":[]},"previous":{"title":"Find Maximum","level":"1.2.1","depth":2,"path":"array/maximum.md","ref":"array/maximum.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","back-to-top-button","chapter-fold","tabs2","github-embed","graphviz@git+https://github.com/kleon1024/gitbook-plugin-graphviz.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"search-pro":{},"github-embed":{"showLink":true,"reindent":false},"fontsettings":{"theme":"white","family":"sans","size":2},"tabs2":{},"highlight":{},"back-to-top-button":{},"graphviz":{"format":"svg","engine":"dot"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Crack Coding Companion","gitbook":"*"},"file":{"path":"array/rotate.md","mtime":"2022-08-31T02:16:44.444Z","type":"markdown"},"gitbook":{"version":"3.7.5","time":"2022-08-31T02:17:12.687Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

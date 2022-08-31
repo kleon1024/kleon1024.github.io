@@ -148,6 +148,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.2.2" data-path="../array/rotate.html">
+            
+                <a href="../array/rotate.html">
+            
+                    
+                    Rotate
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -432,7 +445,7 @@
 </li>
 <li>return res in the end</li>
 </ol>
-<p><div class="markdown-tabs"><ul class="nav nav-tabs" role="tablist"><li role="presentation" class="active"><a href="#tab-913" aria-controls="tab-913" role="tab" data-toggle="tab">Go</a></li><li role="presentation" class><a href="#tab-914" aria-controls="tab-914" role="tab" data-toggle="tab">Java</a></li></ul><div class="tab-content"><div role="tabpanel" class="tab-pane active" id="tab-913"><pre><code class="lang-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">maxNonOverlapping</span><span class="hljs-params">(nums []<span class="hljs-keyword">int</span>, target <span class="hljs-keyword">int</span>)</span> <span class="hljs-title">int</span></span> {
+<p><div class="markdown-tabs"><ul class="nav nav-tabs" role="tablist"><li role="presentation" class="active"><a href="#tab-615" aria-controls="tab-615" role="tab" data-toggle="tab">Go</a></li><li role="presentation" class><a href="#tab-616" aria-controls="tab-616" role="tab" data-toggle="tab">Java</a></li></ul><div class="tab-content"><div role="tabpanel" class="tab-pane active" id="tab-615"><pre><code class="lang-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">maxNonOverlapping</span><span class="hljs-params">(nums []<span class="hljs-keyword">int</span>, target <span class="hljs-keyword">int</span>)</span> <span class="hljs-title">int</span></span> {
     m := <span class="hljs-keyword">map</span>[<span class="hljs-keyword">int</span>]<span class="hljs-keyword">int</span>{}
     prefixSum, availableIdx, res := <span class="hljs-number">0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">0</span>
     m[<span class="hljs-number">0</span>] = <span class="hljs-number">-1</span>
@@ -450,7 +463,7 @@
 
     <span class="hljs-keyword">return</span> res
 }</code></pre>
-</div><div role="tabpanel" class="tab-pane " id="tab-914"><pre><code class="lang-go">class Solution {
+</div><div role="tabpanel" class="tab-pane " id="tab-616"><pre><code class="lang-go">class Solution {
     public <span class="hljs-keyword">int</span> maxNonOverlapping(<span class="hljs-keyword">int</span>[] nums, <span class="hljs-keyword">int</span> target) {
         Map&lt;Integer, Integer&gt; <span class="hljs-keyword">map</span>= <span class="hljs-built_in">new</span> HashMap&lt;&gt;();
         <span class="hljs-keyword">int</span> prefixSum=<span class="hljs-number">0</span>, availableIdx=<span class="hljs-number">-1</span>, res=<span class="hljs-number">0</span>;
@@ -511,7 +524,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Sum","level":"1.7.1","depth":2,"next":{"title":"Bloom Filter","level":"1.7.2","depth":2,"path":"hash-table/bloom-filter.md","ref":"hash-table/bloom-filter.md","articles":[]},"previous":{"title":"Hash Table","level":"1.7","depth":1,"path":"hash-table/hash-table.md","ref":"hash-table/hash-table.md","articles":[{"title":"Sum","level":"1.7.1","depth":2,"path":"hash-table/sum.md","ref":"hash-table/sum.md","articles":[]},{"title":"Bloom Filter","level":"1.7.2","depth":2,"path":"hash-table/bloom-filter.md","ref":"hash-table/bloom-filter.md","articles":[]},{"title":"Cache","level":"1.7.3","depth":2,"path":"hash-table/cache.md","ref":"hash-table/cache.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","back-to-top-button","chapter-fold","tabs2","github-embed","graphviz@git+https://github.com/kleon1024/gitbook-plugin-graphviz.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"search-pro":{},"github-embed":{"showLink":true,"reindent":false},"fontsettings":{"theme":"white","family":"sans","size":2},"tabs2":{},"highlight":{},"back-to-top-button":{},"graphviz":{"format":"svg","engine":"dot"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Crack Coding Companion","gitbook":"*"},"file":{"path":"hash-table/sum.md","mtime":"2022-08-28T10:14:01.499Z","type":"markdown"},"gitbook":{"version":"3.7.5","time":"2022-08-28T10:14:28.824Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Sum","level":"1.7.1","depth":2,"next":{"title":"Bloom Filter","level":"1.7.2","depth":2,"path":"hash-table/bloom-filter.md","ref":"hash-table/bloom-filter.md","articles":[]},"previous":{"title":"Hash Table","level":"1.7","depth":1,"path":"hash-table/hash-table.md","ref":"hash-table/hash-table.md","articles":[{"title":"Sum","level":"1.7.1","depth":2,"path":"hash-table/sum.md","ref":"hash-table/sum.md","articles":[]},{"title":"Bloom Filter","level":"1.7.2","depth":2,"path":"hash-table/bloom-filter.md","ref":"hash-table/bloom-filter.md","articles":[]},{"title":"Cache","level":"1.7.3","depth":2,"path":"hash-table/cache.md","ref":"hash-table/cache.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","back-to-top-button","chapter-fold","tabs2","github-embed","graphviz@git+https://github.com/kleon1024/gitbook-plugin-graphviz.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"search-pro":{},"github-embed":{"showLink":true,"reindent":false},"fontsettings":{"theme":"white","family":"sans","size":2},"tabs2":{},"highlight":{},"back-to-top-button":{},"graphviz":{"format":"svg","engine":"dot"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Crack Coding Companion","gitbook":"*"},"file":{"path":"hash-table/sum.md","mtime":"2022-08-31T02:16:44.444Z","type":"markdown"},"gitbook":{"version":"3.7.5","time":"2022-08-31T02:17:12.687Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
