@@ -3,7 +3,7 @@
 <html lang="" >
     <head>
         <meta charset="UTF-8">
-        <title>Bloom Filter · Crack Coding Companion</title>
+        <title>Numbers · Crack Coding Companion</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 3.7.5">
@@ -76,10 +76,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="cache.html" />
+    <link rel="next" href="../tree/tree.html" />
     
     
-    <link rel="prev" href="sum.html" />
+    <link rel="prev" href="reverse-list.html" />
     
 
     </head>
@@ -192,9 +192,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5" data-path="../linked-list/linked-list.html">
+        <li class="chapter " data-level="1.5" data-path="linked-list.html">
             
-                <a href="../linked-list/linked-list.html">
+                <a href="linked-list.html">
             
                     
                     Linked List
@@ -206,9 +206,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.1" data-path="../linked-list/merge-lists.html">
+        <li class="chapter " data-level="1.5.1" data-path="merge-lists.html">
             
-                <a href="../linked-list/merge-lists.html">
+                <a href="merge-lists.html">
             
                     
                     Merge Lists
@@ -219,9 +219,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.2" data-path="../linked-list/reverse-list.html">
+        <li class="chapter " data-level="1.5.2" data-path="reverse-list.html">
             
-                <a href="../linked-list/reverse-list.html">
+                <a href="reverse-list.html">
             
                     
                     Reverse List
@@ -232,9 +232,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.3" data-path="../linked-list/numbers.html">
+        <li class="chapter active" data-level="1.5.3" data-path="numbers.html">
             
-                <a href="../linked-list/numbers.html">
+                <a href="numbers.html">
             
                     
                     Numbers
@@ -263,9 +263,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7" data-path="hash-table.html">
+        <li class="chapter " data-level="1.7" data-path="../hash-table/hash-table.html">
             
-                <a href="hash-table.html">
+                <a href="../hash-table/hash-table.html">
             
                     
                     Hash Table
@@ -277,9 +277,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.7.1" data-path="sum.html">
+        <li class="chapter " data-level="1.7.1" data-path="../hash-table/sum.html">
             
-                <a href="sum.html">
+                <a href="../hash-table/sum.html">
             
                     
                     Sum
@@ -290,9 +290,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.7.2" data-path="bloom-filter.html">
+        <li class="chapter " data-level="1.7.2" data-path="../hash-table/bloom-filter.html">
             
-                <a href="bloom-filter.html">
+                <a href="../hash-table/bloom-filter.html">
             
                     
                     Bloom Filter
@@ -303,9 +303,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7.3" data-path="cache.html">
+        <li class="chapter " data-level="1.7.3" data-path="../hash-table/cache.html">
             
-                <a href="cache.html">
+                <a href="../hash-table/cache.html">
             
                     
                     Cache
@@ -422,7 +422,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Bloom Filter</a>
+        <a href=".." >Numbers</a>
     </h1>
 </div>
 
@@ -437,7 +437,78 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="bloom-filter">Bloom Filter</h1>
+                                <h1 id="numbers">Numbers</h1>
+<h2 id="2-add-two-numbers">2. Add Two Numbers</h2>
+<p>Basic decimal addition.</p>
+<p><div class="markdown-tabs"><ul class="nav nav-tabs" role="tablist"><li role="presentation" class="active"><a href="#tab-955" aria-controls="tab-955" role="tab" data-toggle="tab">Go</a></li><li role="presentation" class><a href="#tab-956" aria-controls="tab-956" role="tab" data-toggle="tab">Rust</a></li></ul><div class="tab-content"><div role="tabpanel" class="tab-pane active" id="tab-955"><pre><code class="lang-go"><span class="hljs-comment">/**
+ * Definition for singly-linked list.
+ * type ListNode struct {
+ *     Val int
+ *     Next *ListNode
+ * }
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">addTwoNumbers</span><span class="hljs-params">(l1 *ListNode, l2 *ListNode)</span> *<span class="hljs-title">ListNode</span></span> {
+    head := &amp;ListNode{}
+    current := head
+    carry := <span class="hljs-number">0</span>
+    <span class="hljs-keyword">for</span> carry &gt; <span class="hljs-number">0</span> || l1 != <span class="hljs-literal">nil</span> || l2 != <span class="hljs-literal">nil</span> {
+        <span class="hljs-keyword">if</span> l1 != <span class="hljs-literal">nil</span> {
+            carry += l1.Val
+            l1 = l1.Next
+        }
+        <span class="hljs-keyword">if</span> l2 != <span class="hljs-literal">nil</span> {
+            carry += l2.Val
+            l2 = l2.Next
+        }
+        current.Next = &amp;ListNode{
+            Val: carry % <span class="hljs-number">10</span>,
+        }
+        carry /= <span class="hljs-number">10</span>
+        current = current.Next
+    }
+    <span class="hljs-keyword">return</span> head.Next
+}</code></pre>
+</div><div role="tabpanel" class="tab-pane " id="tab-956"><pre><code class="lang-rust"><span class="hljs-comment">// Definition for singly-linked list.</span>
+<span class="hljs-comment">// #[derive(PartialEq, Eq, Clone, Debug)]</span>
+<span class="hljs-comment">// pub struct ListNode {</span>
+<span class="hljs-comment">//   pub val: i32,</span>
+<span class="hljs-comment">//   pub next: Option&lt;Box&lt;ListNode&gt;&gt;</span>
+<span class="hljs-comment">// }</span>
+<span class="hljs-comment">// </span>
+<span class="hljs-comment">// impl ListNode {</span>
+<span class="hljs-comment">//   #[inline]</span>
+<span class="hljs-comment">//   fn new(val: i32) -&gt; Self {</span>
+<span class="hljs-comment">//     ListNode {</span>
+<span class="hljs-comment">//       next: None,</span>
+<span class="hljs-comment">//       val</span>
+<span class="hljs-comment">//     }</span>
+<span class="hljs-comment">//   }</span>
+<span class="hljs-comment">// }</span>
+<span class="hljs-keyword">impl</span> Solution {
+    <span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">add_two_numbers</span></span>(l1: <span class="hljs-built_in">Option</span>&lt;<span class="hljs-built_in">Box</span>&lt;ListNode&gt;&gt;, l2: <span class="hljs-built_in">Option</span>&lt;<span class="hljs-built_in">Box</span>&lt;ListNode&gt;&gt;) -&gt; <span class="hljs-built_in">Option</span>&lt;<span class="hljs-built_in">Box</span>&lt;ListNode&gt;&gt; {
+        <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> l1 = l1.clone();
+        <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> l2 = l2.clone();
+        <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> head = <span class="hljs-built_in">Box</span>::new(ListNode::new(<span class="hljs-number">0</span>));
+        <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> carry = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> current = &amp;<span class="hljs-keyword">mut</span> head;
+
+        <span class="hljs-keyword">while</span> carry &gt; <span class="hljs-number">0</span> || l1.is_some() || l2.is_some() {
+            <span class="hljs-keyword">if</span> <span class="hljs-keyword">let</span> <span class="hljs-literal">Some</span>(node) = l1 {
+                carry += node.val;
+                l1 = node.next;
+            }
+            <span class="hljs-keyword">if</span> <span class="hljs-keyword">let</span> <span class="hljs-literal">Some</span>(node) = l2 {
+                carry += node.val;
+                l2 = node.next;
+            }
+            current.next = <span class="hljs-literal">Some</span>(<span class="hljs-built_in">Box</span>::new(ListNode::new(carry % <span class="hljs-number">10</span>)));
+            carry /= <span class="hljs-number">10</span>;
+            current = current.next.as_mut().unwrap();
+        }
+        <span class="hljs-keyword">return</span> head.next;
+    }
+}</code></pre>
+</div></div></div></p>
 
                                 
                                 </section>
@@ -465,12 +536,12 @@
 
             
                 
-                <a href="sum.html" class="navigation navigation-prev " aria-label="Previous page: Sum">
+                <a href="reverse-list.html" class="navigation navigation-prev " aria-label="Previous page: Reverse List">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="cache.html" class="navigation navigation-next " aria-label="Next page: Cache">
+                <a href="../tree/tree.html" class="navigation navigation-next " aria-label="Next page: Tree">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -481,7 +552,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Bloom Filter","level":"1.7.2","depth":2,"next":{"title":"Cache","level":"1.7.3","depth":2,"path":"hash-table/cache.md","ref":"hash-table/cache.md","articles":[]},"previous":{"title":"Sum","level":"1.7.1","depth":2,"path":"hash-table/sum.md","ref":"hash-table/sum.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","back-to-top-button","chapter-fold","tabs2","github-embed","graphviz@git+https://github.com/kleon1024/gitbook-plugin-graphviz.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"search-pro":{},"github-embed":{"showLink":true,"reindent":false},"fontsettings":{"theme":"white","family":"sans","size":2},"tabs2":{},"highlight":{},"back-to-top-button":{},"graphviz":{"format":"svg","engine":"dot"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Crack Coding Companion","gitbook":"*"},"file":{"path":"hash-table/bloom-filter.md","mtime":"2022-09-02T06:58:56.476Z","type":"markdown"},"gitbook":{"version":"3.7.5","time":"2022-09-02T06:59:23.905Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Numbers","level":"1.5.3","depth":2,"next":{"title":"Tree","level":"1.6","depth":1,"path":"tree/tree.md","ref":"tree/tree.md","articles":[]},"previous":{"title":"Reverse List","level":"1.5.2","depth":2,"path":"linked-list/reverse-list.md","ref":"linked-list/reverse-list.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","back-to-top-button","chapter-fold","tabs2","github-embed","graphviz@git+https://github.com/kleon1024/gitbook-plugin-graphviz.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"search-pro":{},"github-embed":{"showLink":true,"reindent":false},"fontsettings":{"theme":"white","family":"sans","size":2},"tabs2":{},"highlight":{},"back-to-top-button":{},"graphviz":{"format":"svg","engine":"dot"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Crack Coding Companion","gitbook":"*"},"file":{"path":"linked-list/numbers.md","mtime":"2022-09-02T06:58:56.476Z","type":"markdown"},"gitbook":{"version":"3.7.5","time":"2022-09-02T06:59:23.905Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

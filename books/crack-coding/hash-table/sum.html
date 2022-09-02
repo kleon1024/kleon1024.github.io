@@ -232,6 +232,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.5.3" data-path="../linked-list/numbers.html">
+            
+                <a href="../linked-list/numbers.html">
+            
+                    
+                    Numbers
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -425,6 +438,72 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="sum">Sum</h1>
+<h2 id="1-two-sum">1. Two Sum</h2>
+<p>🟢<a href="https://leetcode.com/problems/two-sum/" target="_blank">lc1</a></p>
+<p>The basic idea is using a hash map to store the {v, i}. If (target - v) is in the map, if means the we find the results with current index and the previous index.</p>
+<p><div class="markdown-tabs"><ul class="nav nav-tabs" role="tablist"><li role="presentation" class="active"><a href="#tab-160" aria-controls="tab-160" role="tab" data-toggle="tab">Go</a></li><li role="presentation" class><a href="#tab-161" aria-controls="tab-161" role="tab" data-toggle="tab">Rust</a></li></ul><div class="tab-content"><div role="tabpanel" class="tab-pane active" id="tab-160"><pre><code class="lang-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">twoSum</span><span class="hljs-params">(nums []<span class="hljs-keyword">int</span>, target <span class="hljs-keyword">int</span>)</span> []<span class="hljs-title">int</span></span> {
+    m := <span class="hljs-keyword">map</span>[<span class="hljs-keyword">int</span>]<span class="hljs-keyword">int</span>{}
+    <span class="hljs-keyword">for</span> i, n := <span class="hljs-keyword">range</span> nums {
+        <span class="hljs-keyword">if</span> v, ok := m[target - n]; ok {
+            <span class="hljs-keyword">return</span> []<span class="hljs-keyword">int</span>{v, i}
+        }
+        m[n] = i
+    }
+    <span class="hljs-keyword">return</span> []<span class="hljs-keyword">int</span>{}
+}</code></pre>
+</div><div role="tabpanel" class="tab-pane " id="tab-161"><pre><code class="lang-rust"><span class="hljs-keyword">use</span> std::collections::HashMap;
+
+<span class="hljs-keyword">impl</span> Solution {
+    <span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">two_sum</span></span>(nums: <span class="hljs-built_in">Vec</span>&lt;<span class="hljs-built_in">i32</span>&gt;, target: <span class="hljs-built_in">i32</span>) -&gt; <span class="hljs-built_in">Vec</span>&lt;<span class="hljs-built_in">i32</span>&gt; {
+        <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> m: HashMap&lt;<span class="hljs-built_in">i32</span>, <span class="hljs-built_in">i32</span>&gt; = HashMap::new();
+        <span class="hljs-keyword">for</span> (i, v) <span class="hljs-keyword">in</span> nums.iter().enumerate() {
+            <span class="hljs-keyword">match</span> m.get(&amp;(target - v)) {
+                <span class="hljs-literal">Some</span>(i2) =&gt; <span class="hljs-keyword">return</span> <span class="hljs-built_in">vec!</span>[i <span class="hljs-keyword">as</span> <span class="hljs-built_in">i32</span>, *i2],
+                <span class="hljs-literal">None</span> =&gt; m.insert(*v, i <span class="hljs-keyword">as</span> <span class="hljs-built_in">i32</span>),
+            };
+        }
+        <span class="hljs-built_in">vec!</span>[]
+    }
+}</code></pre>
+</div></div></div></p>
+<h2 id="167-two-sum-ii---input-array-is-sorted">167. Two Sum II - Input Array Is Sorted</h2>
+<p>🟡<a href="https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/" target="_blank">lc167</a></p>
+<p>We can use the solution from Two Sum, or we can just use two pointers to get close to the target.</p>
+<p><div class="markdown-tabs"><ul class="nav nav-tabs" role="tablist"><li role="presentation" class="active"><a href="#tab-326" aria-controls="tab-326" role="tab" data-toggle="tab">Go</a></li><li role="presentation" class><a href="#tab-327" aria-controls="tab-327" role="tab" data-toggle="tab">Rust</a></li></ul><div class="tab-content"><div role="tabpanel" class="tab-pane active" id="tab-326"><pre><code class="lang-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">twoSum</span><span class="hljs-params">(numbers []<span class="hljs-keyword">int</span>, target <span class="hljs-keyword">int</span>)</span> []<span class="hljs-title">int</span></span> {
+    l, r := <span class="hljs-number">0</span>, <span class="hljs-built_in">len</span>(numbers) - <span class="hljs-number">1</span>
+
+    <span class="hljs-keyword">for</span> l &lt; r {
+        s := numbers[l] + numbers[r]
+        <span class="hljs-keyword">if</span> s == target {
+            <span class="hljs-keyword">break</span>;
+        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> s &lt; target {
+            l++
+        } <span class="hljs-keyword">else</span> {
+            r--
+        }
+    }
+    <span class="hljs-keyword">return</span> []<span class="hljs-keyword">int</span>{l+<span class="hljs-number">1</span>, r+<span class="hljs-number">1</span>}
+}</code></pre>
+</div><div role="tabpanel" class="tab-pane " id="tab-327"><pre><code class="lang-rust"><span class="hljs-keyword">impl</span> Solution {
+    <span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">two_sum</span></span>(numbers: <span class="hljs-built_in">Vec</span>&lt;<span class="hljs-built_in">i32</span>&gt;, target: <span class="hljs-built_in">i32</span>) -&gt; <span class="hljs-built_in">Vec</span>&lt;<span class="hljs-built_in">i32</span>&gt; {
+        <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> left = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> right = numbers.len() - <span class="hljs-number">1</span>;
+
+        <span class="hljs-keyword">while</span> left &lt; right {
+            <span class="hljs-keyword">let</span> sum = numbers[left] + numbers[right];
+
+            <span class="hljs-keyword">if</span> sum == target {
+                <span class="hljs-keyword">break</span>;
+            } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> sum &lt; target {
+                left+=<span class="hljs-number">1</span>;
+            } <span class="hljs-keyword">else</span> {
+                right-=<span class="hljs-number">1</span>;
+            }
+        }
+        <span class="hljs-built_in">vec!</span>[left <span class="hljs-keyword">as</span> <span class="hljs-built_in">i32</span> + <span class="hljs-number">1</span>, right <span class="hljs-keyword">as</span> <span class="hljs-built_in">i32</span> + <span class="hljs-number">1</span>]
+    }
+}</code></pre>
+</div></div></div></p>
 <h2 id="lc1546-maximum-number-of-non-overlapping-subarrays-with-sum-equals-target">LC1546 Maximum Number of Non-Overlapping Subarrays With Sum Equals Target</h2>
 <p>🟡<a href="https://leetcode.com/problems/maximum-number-of-non-overlapping-subarrays-with-sum-equals-target/" target="_blank">lc1546</a></p>
 <p>The basic idea is using a map to store the prefix sum and the target = prefixSum[0...i] - prefixSum[0...j]</p>
@@ -445,7 +524,7 @@
 </li>
 <li>return res in the end</li>
 </ol>
-<p><div class="markdown-tabs"><ul class="nav nav-tabs" role="tablist"><li role="presentation" class="active"><a href="#tab-615" aria-controls="tab-615" role="tab" data-toggle="tab">Go</a></li><li role="presentation" class><a href="#tab-616" aria-controls="tab-616" role="tab" data-toggle="tab">Java</a></li></ul><div class="tab-content"><div role="tabpanel" class="tab-pane active" id="tab-615"><pre><code class="lang-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">maxNonOverlapping</span><span class="hljs-params">(nums []<span class="hljs-keyword">int</span>, target <span class="hljs-keyword">int</span>)</span> <span class="hljs-title">int</span></span> {
+<p><div class="markdown-tabs"><ul class="nav nav-tabs" role="tablist"><li role="presentation" class="active"><a href="#tab-941" aria-controls="tab-941" role="tab" data-toggle="tab">Go</a></li><li role="presentation" class><a href="#tab-942" aria-controls="tab-942" role="tab" data-toggle="tab">Java</a></li></ul><div class="tab-content"><div role="tabpanel" class="tab-pane active" id="tab-941"><pre><code class="lang-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">maxNonOverlapping</span><span class="hljs-params">(nums []<span class="hljs-keyword">int</span>, target <span class="hljs-keyword">int</span>)</span> <span class="hljs-title">int</span></span> {
     m := <span class="hljs-keyword">map</span>[<span class="hljs-keyword">int</span>]<span class="hljs-keyword">int</span>{}
     prefixSum, availableIdx, res := <span class="hljs-number">0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">0</span>
     m[<span class="hljs-number">0</span>] = <span class="hljs-number">-1</span>
@@ -463,7 +542,7 @@
 
     <span class="hljs-keyword">return</span> res
 }</code></pre>
-</div><div role="tabpanel" class="tab-pane " id="tab-616"><pre><code class="lang-go">class Solution {
+</div><div role="tabpanel" class="tab-pane " id="tab-942"><pre><code class="lang-go">class Solution {
     public <span class="hljs-keyword">int</span> maxNonOverlapping(<span class="hljs-keyword">int</span>[] nums, <span class="hljs-keyword">int</span> target) {
         Map&lt;Integer, Integer&gt; <span class="hljs-keyword">map</span>= <span class="hljs-built_in">new</span> HashMap&lt;&gt;();
         <span class="hljs-keyword">int</span> prefixSum=<span class="hljs-number">0</span>, availableIdx=<span class="hljs-number">-1</span>, res=<span class="hljs-number">0</span>;
@@ -524,7 +603,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Sum","level":"1.7.1","depth":2,"next":{"title":"Bloom Filter","level":"1.7.2","depth":2,"path":"hash-table/bloom-filter.md","ref":"hash-table/bloom-filter.md","articles":[]},"previous":{"title":"Hash Table","level":"1.7","depth":1,"path":"hash-table/hash-table.md","ref":"hash-table/hash-table.md","articles":[{"title":"Sum","level":"1.7.1","depth":2,"path":"hash-table/sum.md","ref":"hash-table/sum.md","articles":[]},{"title":"Bloom Filter","level":"1.7.2","depth":2,"path":"hash-table/bloom-filter.md","ref":"hash-table/bloom-filter.md","articles":[]},{"title":"Cache","level":"1.7.3","depth":2,"path":"hash-table/cache.md","ref":"hash-table/cache.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","back-to-top-button","chapter-fold","tabs2","github-embed","graphviz@git+https://github.com/kleon1024/gitbook-plugin-graphviz.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"search-pro":{},"github-embed":{"showLink":true,"reindent":false},"fontsettings":{"theme":"white","family":"sans","size":2},"tabs2":{},"highlight":{},"back-to-top-button":{},"graphviz":{"format":"svg","engine":"dot"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Crack Coding Companion","gitbook":"*"},"file":{"path":"hash-table/sum.md","mtime":"2022-08-31T02:16:44.444Z","type":"markdown"},"gitbook":{"version":"3.7.5","time":"2022-08-31T02:17:12.687Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Sum","level":"1.7.1","depth":2,"next":{"title":"Bloom Filter","level":"1.7.2","depth":2,"path":"hash-table/bloom-filter.md","ref":"hash-table/bloom-filter.md","articles":[]},"previous":{"title":"Hash Table","level":"1.7","depth":1,"path":"hash-table/hash-table.md","ref":"hash-table/hash-table.md","articles":[{"title":"Sum","level":"1.7.1","depth":2,"path":"hash-table/sum.md","ref":"hash-table/sum.md","articles":[]},{"title":"Bloom Filter","level":"1.7.2","depth":2,"path":"hash-table/bloom-filter.md","ref":"hash-table/bloom-filter.md","articles":[]},{"title":"Cache","level":"1.7.3","depth":2,"path":"hash-table/cache.md","ref":"hash-table/cache.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","back-to-top-button","chapter-fold","tabs2","github-embed","graphviz@git+https://github.com/kleon1024/gitbook-plugin-graphviz.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"search-pro":{},"github-embed":{"showLink":true,"reindent":false},"fontsettings":{"theme":"white","family":"sans","size":2},"tabs2":{},"highlight":{},"back-to-top-button":{},"graphviz":{"format":"svg","engine":"dot"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Crack Coding Companion","gitbook":"*"},"file":{"path":"hash-table/sum.md","mtime":"2022-09-02T06:58:56.476Z","type":"markdown"},"gitbook":{"version":"3.7.5","time":"2022-09-02T06:59:23.905Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
