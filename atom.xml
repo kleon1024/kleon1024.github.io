@@ -160,41 +160,6 @@
   
   <entry>
     <title>Database - MySQL</title>
-    <link href="https://blog.kleon.space/backend/db/mysql/"/>
-    <id>https://blog.kleon.space/backend/db/mysql/</id>
-    <published>2022-06-06T10:54:44.000Z</published>
-    <updated>2022-06-06T10:54:49.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;div class=&quot;toc&quot;&gt;
-&lt;!-- toc --&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#grammar&quot;&gt;Grammar&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#architecture&quot;&gt;Architecture&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="backend" scheme="https://blog.kleon.space/categories/backend/"/>
-    
-    
-    <category term="backend" scheme="https://blog.kleon.space/tags/backend/"/>
-    
-    <category term="database" scheme="https://blog.kleon.space/tags/database/"/>
-    
-    <category term="mysql" scheme="https://blog.kleon.space/tags/mysql/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Database - MySQL</title>
     <link href="https://blog.kleon.space/backend/db/postgres/"/>
     <id>https://blog.kleon.space/backend/db/postgres/</id>
     <published>2022-06-06T10:54:44.000Z</published>
@@ -527,6 +492,41 @@
     <category term="backend" scheme="https://blog.kleon.space/tags/backend/"/>
     
     <category term="os" scheme="https://blog.kleon.space/tags/os/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Database - MySQL</title>
+    <link href="https://blog.kleon.space/backend/db/mysql/"/>
+    <id>https://blog.kleon.space/backend/db/mysql/</id>
+    <published>2022-06-06T10:54:44.000Z</published>
+    <updated>2022-06-06T10:54:49.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;div class=&quot;toc&quot;&gt;
+&lt;!-- toc --&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#grammar&quot;&gt;Grammar&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#architecture&quot;&gt;Architecture&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="backend" scheme="https://blog.kleon.space/categories/backend/"/>
+    
+    
+    <category term="backend" scheme="https://blog.kleon.space/tags/backend/"/>
+    
+    <category term="database" scheme="https://blog.kleon.space/tags/database/"/>
+    
+    <category term="mysql" scheme="https://blog.kleon.space/tags/mysql/"/>
     
   </entry>
   
