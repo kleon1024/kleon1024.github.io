@@ -287,6 +287,39 @@
   </entry>
   
   <entry>
+    <title>Language - Outline</title>
+    <link href="https://blog.kleon.space/backend/lang/lang/"/>
+    <id>https://blog.kleon.space/backend/lang/lang/</id>
+    <published>2022-06-06T10:54:44.000Z</published>
+    <updated>2022-06-06T10:54:49.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;Golang&lt;/li&gt;
+&lt;li&gt;Python&lt;/li&gt;
+&lt;li&gt;C++&lt;/li&gt;
+&lt;li&gt;Rust&lt;/li&gt;
+&lt;/ul&gt;
+</summary>
+        
+      
+    
+    
+    
+    <category term="backend" scheme="https://blog.kleon.space/categories/backend/"/>
+    
+    
+    <category term="backend" scheme="https://blog.kleon.space/tags/backend/"/>
+    
+    <category term="language" scheme="https://blog.kleon.space/tags/language/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Language - Go</title>
     <link href="https://blog.kleon.space/backend/lang/go/"/>
     <id>https://blog.kleon.space/backend/lang/go/</id>
@@ -319,39 +352,6 @@
     <category term="language" scheme="https://blog.kleon.space/tags/language/"/>
     
     <category term="go" scheme="https://blog.kleon.space/tags/go/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Language - Outline</title>
-    <link href="https://blog.kleon.space/backend/lang/lang/"/>
-    <id>https://blog.kleon.space/backend/lang/lang/</id>
-    <published>2022-06-06T10:54:44.000Z</published>
-    <updated>2022-06-06T10:54:49.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;ul&gt;
-&lt;li&gt;Golang&lt;/li&gt;
-&lt;li&gt;Python&lt;/li&gt;
-&lt;li&gt;C++&lt;/li&gt;
-&lt;li&gt;Rust&lt;/li&gt;
-&lt;/ul&gt;
-</summary>
-        
-      
-    
-    
-    
-    <category term="backend" scheme="https://blog.kleon.space/categories/backend/"/>
-    
-    
-    <category term="backend" scheme="https://blog.kleon.space/tags/backend/"/>
-    
-    <category term="language" scheme="https://blog.kleon.space/tags/language/"/>
     
   </entry>
   
