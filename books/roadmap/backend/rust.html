@@ -1,0 +1,875 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>Rust · Roadmap</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 3.7.5">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tabs2/tabs.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-github-embed/github-embed.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../chip/chip.html" />
+    
+    
+    <link rel="prev" href="backend.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../frontend/frontend.html">
+            
+                <a href="../frontend/frontend.html">
+            
+                    
+                    Frontend
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../frontend/flutter.html">
+            
+                <a href="../frontend/flutter.html">
+            
+                    
+                    Flutter
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="backend.html">
+            
+                <a href="backend.html">
+            
+                    
+                    Backend
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.3.1" data-path="rust.html">
+            
+                <a href="rust.html">
+            
+                    
+                    Rust
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../chip/chip.html">
+            
+                <a href="../chip/chip.html">
+            
+                    
+                    Chip Design
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Rust</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="rust">Rust</h1>
+<p>We assume that you have the knowledge of pointers and memory management, generics programming and basic data structures.</p>
+<p><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: G Pages: 1 -->
+<svg style="max-width:944pt;max-height:1233pt" preserveaspectratio="xMinYMin meet" viewbox="0.00 0.00 944.00 1232.70" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 1228.7033)">
+<title>G</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-1228.7033 940,-1228.7033 940,4 -4,4"/>
+<!-- s1 -->
+<!-- start -->
+<!-- s1&#45;&gt;start -->
+<!-- s2 -->
+<!-- e1 -->
+<!-- end -->
+<!-- e1&#45;&gt;end -->
+<!-- e2 -->
+<!-- start&#45;&gt;s2 -->
+<!-- end&#45;&gt;e2 -->
+<!-- mn8 -->
+<g id="node43" class="node">
+<title>mn8</title>
+<polygon fill="#fff68f" stroke="#000000" stroke-width="3" points="576,-180.8927 360,-180.8927 360,-144.8927 576,-144.8927 576,-180.8927"/>
+<text text-anchor="middle" x="468" y="-158.6927" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="14.00" fill="#000000">Advanced Features</text>
+</g>
+<!-- end&#45;&gt;mn8 -->
+<g id="edge47" class="edge">
+<title>end-&gt;mn8</title>
+<path fill="none" stroke="#4682b4" stroke-width="3" stroke-dasharray="5,2" d="M468,-65.0614C468,-83.1305 468,-95.726 468,-144.7936"/>
+</g>
+<!-- mn0 -->
+<g id="node7" class="node">
+<title>mn0</title>
+<polygon fill="#fff68f" stroke="#000000" stroke-width="3" points="540,-1137.8927 396,-1137.8927 396,-1101.8927 540,-1101.8927 540,-1137.8927"/>
+<text text-anchor="middle" x="468" y="-1115.6927" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="14.00" fill="#000000">Hello World!</text>
+</g>
+<!-- mn0&#45;&gt;start -->
+<g id="edge46" class="edge">
+<title>mn0-&gt;start</title>
+<path fill="none" stroke="#4682b4" stroke-width="3" stroke-dasharray="5,2" d="M468,-1138.1825C468,-1148.5464 468,-1154.7408 468,-1159.7442"/>
+</g>
+<!-- sn1 -->
+<g id="node9" class="node">
+<title>sn1</title>
+<polygon fill="#ffffe0" stroke="#000000" stroke-width="3" points="864,-1137.8927 720,-1137.8927 720,-1101.8927 864,-1101.8927 864,-1137.8927"/>
+<text text-anchor="middle" x="792" y="-1115.6927" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="14.00" fill="#000000">Cargo</text>
+</g>
+<!-- mn0&#45;&gt;sn1 -->
+<g id="edge2" class="edge">
+<title>mn0:e-&gt;sn1:w</title>
+<path fill="none" stroke="#4682b4" stroke-width="3" stroke-dasharray="5,2" d="M540,-1119.8927C640.9474,-1154.1878 640.9474,-1154.1878 720,-1119.8927"/>
+</g>
+<!-- sn0 -->
+<g id="node8" class="node">
+<title>sn0</title>
+<polygon fill="#ffffe0" stroke="#000000" stroke-width="3" points="216,-1137.8927 72,-1137.8927 72,-1101.8927 216,-1101.8927 216,-1137.8927"/>
+<text text-anchor="middle" x="144" y="-1115.6927" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="14.00" fill="#000000">Installation</text>
+</g>
+<!-- sn0&#45;&gt;mn0 -->
+<g id="edge1" class="edge">
+<title>sn0:e-&gt;mn0:w</title>
+<path fill="none" stroke="#4682b4" stroke-width="3" stroke-dasharray="5,2" d="M216,-1119.8927C295.0526,-1154.1878 295.0526,-1154.1878 396,-1119.8927"/>
+</g>
+<!-- mn1 -->
+<g id="node10" class="node">
+<title>mn1</title>
+<polygon fill="#fff68f" stroke="#000000" stroke-width="3" points="540,-1021.8927 396,-1021.8927 396,-985.8927 540,-985.8927 540,-1021.8927"/>
+<text text-anchor="middle" x="468" y="-999.6927" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="14.00" fill="#000000">Common Concepts</text>
+</g>
+<!-- mn1&#45;&gt;mn0 -->
+<g id="edge3" class="edge">
+<title>mn1-&gt;mn0</title>
+<path fill="none" stroke="#4682b4" stroke-width="3" d="M468,-1021.8972C468,-1071.1953 468,-1083.7209 468,-1101.892"/>
+</g>
+<!-- sn5 -->
+<g id="node14" class="node">
+<title>sn5</title>
+<polygon fill="#ffffe0" stroke="#000000" stroke-width="3" points="936,-1079.8927 648,-1079.8927 648,-1043.8927 936,-1043.8927 936,-1079.8927"/>
+<text text-anchor="middle" x="792" y="-1057.6927" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="14.00" fill="#000000">Control Flow</text>
+</g>
+<!-- mn1&#45;&gt;sn5 -->
+<g id="edge7" class="edge">
+<title>mn1:e-&gt;sn5:w</title>
+<path fill="none" stroke="#4682b4" stroke-width="3" stroke-dasharray="5,2" d="M540,-1003.8927C601.0368,-1056.379 601.0368,-1056.379 648,-1061.8927"/>
+</g>
+<!-- sn6 -->
+<g id="node15" class="node">
+<title>sn6</title>
+<polygon fill="#ffffe0" stroke="#000000" stroke-width="3" points="936,-1021.8927 648,-1021.8927 648,-985.8927 936,-985.8927 936,-1021.8927"/>
+<text text-anchor="middle" x="792" y="-999.6927" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="14.00" fill="#000000">Structs</text>
+</g>
+<!-- mn1&#45;&gt;sn6 -->
+<g id="edge8" class="edge">
+<title>mn1:e-&gt;sn6:w</title>
+<path fill="none" stroke="#4682b4" stroke-width="3" stroke-dasharray="5,2" d="M540,-1003.8927C600.6174,-1024.4541 600.6174,-1024.4541 648,-1003.8927"/>
+</g>
+<!-- sn7 -->
+<g id="node16" class="node">
+<title>sn7</title>
+<polygon fill="#ffffe0" stroke="#000000" stroke-width="3" points="936,-963.8927 648,-963.8927 648,-927.8927 936,-927.8927 936,-963.8927"/>
+<text text-anchor="middle" x="792" y="-941.6927" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="14.00" fill="#000000">Enums</text>
+</g>
+<!-- mn1&#45;&gt;sn7 -->
+<g id="edge9" class="edge">
+<title>mn1:e-&gt;sn7:w</title>
+<path fill="none" stroke="#4682b4" stroke-width="3" stroke-dasharray="5,2" d="M540,-1003.8927C602.0488,-998.0517 602.0488,-998.0517 648,-945.8927"/>
+</g>
+<!-- sn2 -->
+<g id="node11" class="node">
+<title>sn2</title>
+<polygon fill="#ffffe0" stroke="#000000" stroke-width="3" points="288,-1079.8927 0,-1079.8927 0,-1043.8927 288,-1043.8927 288,-1079.8927"/>
+<text text-anchor="middle" x="144" y="-1057.6927" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="14.00" fill="#000000">Variables and Mutability</text>
+</g>
+<!-- sn2&#45;&gt;mn1 -->
+<g id="edge4" class="edge">
+<title>sn2:e-&gt;mn1:w</title>
+<path fill="none" stroke="#4682b4" stroke-width="3" stroke-dasharray="5,2" d="M288,-1061.8927C334.9632,-1056.379 334.9632,-1056.379 396,-1003.8927"/>
+</g>
+<!-- sn3 -->
+<g id="node12" class="node">
+<title>sn3</title>
+<polygon fill="#ffffe0" stroke="#000000" stroke-width="3" points="288,-1021.8927 0,-1021.8927 0,-985.8927 288,-985.8927 288,-1021.8927"/>
+<text text-anchor="middle" x="144" y="-999.6927" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="14.00" fill="#000000">Data Types</text>
+</g>
+<!-- sn3&#45;&gt;mn1 -->
+<g id="edge5" class="edge">
+<title>sn3:e-&gt;mn1:w</title>
+<path fill="none" stroke="#4682b4" stroke-width="3" stroke-dasharray="5,2" d="M288,-1003.8927C335.3826,-1024.4541 335.3826,-1024.4541 396,-1003.8927"/>
+</g>
+<!-- sn4 -->
+<g id="node13" class="node">
+<title>sn4</title>
+<polygon fill="#ffffe0" stroke="#000000" stroke-width="3" points="288,-963.8927 0,-963.8927 0,-927.8927 288,-927.8927 288,-963.8927"/>
+<text text-anchor="middle" x="144" y="-941.6927" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="14.00" fill="#000000">Functions</text>
+</g>
+<!-- sn4&#45;&gt;mn1 -->
+<g id="edge6" class="edge">
+<title>sn4:e-&gt;mn1:w</title>
+<path fill="none" stroke="#4682b4" stroke-width="3" stroke-dasharray="5,2" d="M288,-945.8927C333.9512,-998.0517 333.9512,-998.0517 396,-1003.8927"/>
+</g>
+<!-- mn2 -->
+<g id="node17" class="node">
+<title>mn2</title>
+<polygon fill="#fff68f" stroke="#000000" stroke-width="3" points="540,-876.8927 396,-876.8927 396,-840.8927 540,-840.8927 540,-876.8927"/>
+<text text-anchor="middle" x="468" y="-854.6927" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="14.00" fill="#000000">Ownership</text>
+</g>
+<!-- mn2&#45;&gt;mn1 -->
+<g id="edge10" class="edge">
+<title>mn2-&gt;mn1</title>
+<path fill="none" stroke="#4682b4" stroke-width="3" d="M468,-877.0315C468,-946.2102 468,-959.8737 468,-985.6633"/>
+</g>
+<!-- sn9 -->
+<g id="node19" class="node">
+<title>sn9</title>
+<polygon fill="#ffffe0" stroke="#000000" stroke-width="3" points="936,-905.8927 648,-905.8927 648,-869.8927 936,-869.8927 936,-905.8927"/>
+<text text-anchor="middle" x="792" y="-883.6927" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="14.00" fill="#000000">References and Borrowing</text>
+</g>
+<!-- mn2&#45;&gt;sn9 -->
+<g id="edge12" class="edge">
+<title>mn2:e-&gt;sn9:w</title>
+<path fill="none" stroke="#4682b4" stroke-width="3" stroke-dasharray="5,2" d="M540,-858.8927C603.722,-893.5343 603.722,-893.5343 648,-887.8927"/>
+</g>
+<!-- sn10 -->
+<g id="node20" class="node">
+<title>sn10</title>
+<polygon fill="#ffffe0" stroke="#000000" stroke-width="3" points="936,-847.8927 648,-847.8927 648,-811.8927 936,-811.8927 936,-847.8927"/>
+<text text-anchor="middle" x="792" y="-825.6927" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="14.00" fill="#000000">Slice</text>
+</g>
+<!-- mn2&#45;&gt;sn10 -->
+<g id="edge13" class="edge">
+<title>mn2:e-&gt;sn10:w</title>
+<path fill="none" stroke="#4682b4" stroke-width="3" stroke-dasharray="5,2" d="M540,-858.8927C604.6725,-864.0472 604.6725,-864.0472 648,-829.8927"/>
+</g>
+<!-- sn8 -->
+<g id="node18" class="node">
+<title>sn8</title>
+<polygon fill="#ffffe0" stroke="#000000" stroke-width="3" points="288,-876.8927 0,-876.8927 0,-840.8927 288,-840.8927 288,-876.8927"/>
+<text text-anchor="middle" x="144" y="-854.6927" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="14.00" fill="#000000">Memory Allocation</text>
+</g>
+<!-- sn8&#45;&gt;mn2 -->
+<g id="edge11" class="edge">
+<title>sn8:e-&gt;mn2:w</title>
+<path fill="none" stroke="#4682b4" stroke-width="3" stroke-dasharray="5,2" d="M288,-858.8927C332.1689,-878.1258 332.1689,-878.1258 396,-858.8927"/>
+</g>
+<!-- mn3 -->
+<g id="node21" class="node">
+<title>mn3</title>
+<polygon fill="#fff68f" stroke="#000000" stroke-width="3" points="504,-775.8927 432,-775.8927 432,-739.8927 504,-739.8927 504,-775.8927"/>
+<text text-anchor="middle" x="468" y="-753.6927" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="14.00" fill="#000000">Generic</text>
+</g>
+<!-- mn3&#45;&gt;mn2 -->
+<g id="edge14" class="edge">
+<title>mn3-&gt;mn2</title>
+<path fill="none" stroke="#4682b4" stroke-width="3" d="M468,-775.9962C468,-814.8173 468,-826.5176 468,-840.8696"/>
+</g>
+<!-- sn12 -->
+<g id="node23" class="node">
+<title>sn12</title>
+<polygon fill="#ffffe0" stroke="#000000" stroke-width="3" points="900,-789.8927 684,-789.8927 684,-753.8927 900,-753.8927 900,-789.8927"/>
+<text text-anchor="middle" x="792" y="-767.6927" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="14.00" fill="#000000">Traits</text>
+</g>
+<!-- mn3&#45;&gt;sn12 -->
+<g id="edge16" class="edge">
+<title>mn3:e-&gt;sn12:w</title>
+<path fill="none" stroke="#4682b4" stroke-width="3" stroke-dasharray="5,2" d="M504,-757.8927C616.9957,-792.7323 616.9957,-792.7323 684,-771.8927"/>
+</g>
+<!-- sn13 -->
+<g id="node24" class="node">
+<title>sn13</title>
+<polygon fill="#ffffe0" stroke="#000000" stroke-width="3" points="900,-731.8927 684,-731.8927 684,-695.8927 900,-695.8927 900,-731.8927"/>
+<text text-anchor="middle" x="792" y="-709.6927" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="14.00" fill="#000000">Lifetime</text>
+</g>
+<!-- mn3&#45;&gt;sn13 -->
+<g id="edge17" class="edge">
+<title>mn3:e-&gt;sn13:w</title>
+<path fill="none" stroke="#4682b4" stroke-width="3" stroke-dasharray="5,2" d="M504,-757.8927C620.4623,-761.8386 620.4623,-761.8386 684,-713.8927"/>
+</g>
+<!-- sn11 -->
+<g id="node22" class="node">
+<title>sn11</title>
+<polygon fill="#ffffe0" stroke="#000000" stroke-width="3" points="252,-775.8927 36,-775.8927 36,-739.8927 252,-739.8927 252,-775.8927"/>
+<text text-anchor="middle" x="144" y="-753.6927" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="14.00" fill="#000000">Generic Data Types</text>
+</g>
+<!-- sn11&#45;&gt;mn3 -->
+<g id="edge15" class="edge">
+<title>sn11:e-&gt;mn3:w</title>
+<path fill="none" stroke="#4682b4" stroke-width="3" stroke-dasharray="5,2" d="M252,-757.8927C318.4332,-785.1068 318.4332,-785.1068 432,-757.8927"/>
+</g>
+<!-- mn4 -->
+<g id="node25" class="node">
+<title>mn4</title>
+<polygon fill="#fff68f" stroke="#000000" stroke-width="3" points="504,-644.8927 432,-644.8927 432,-608.8927 504,-608.8927 504,-644.8927"/>
+<text text-anchor="middle" x="468" y="-622.6927" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="14.00" fill="#000000">Project</text>
+</g>
+<!-- mn4&#45;&gt;mn3 -->
+<g id="edge18" class="edge">
+<title>mn4-&gt;mn3</title>
+<path fill="none" stroke="#4682b4" stroke-width="3" d="M468,-644.9212C468,-704.3601 468,-717.6327 468,-739.5875"/>
+</g>
+<!-- sn16 -->
+<g id="node28" class="node">
+<title>sn16</title>
+<polygon fill="#ffffe0" stroke="#000000" stroke-width="3" points="900,-673.8927 684,-673.8927 684,-637.8927 900,-637.8927 900,-673.8927"/>
+<text text-anchor="middle" x="792" y="-651.6927" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="14.00" fill="#000000">Testing</text>
+</g>
+<!-- mn4&#45;&gt;sn16 -->
+<g id="edge21" class="edge">
+<title>mn4:e-&gt;sn16:w</title>
+<path fill="none" stroke="#4682b4" stroke-width="3" stroke-dasharray="5,2" d="M504,-626.8927C629.5326,-649.5825 629.5326,-649.5825 684,-655.8927"/>
+</g>
+<!-- sn17 -->
+<g id="node29" class="node">
+<title>sn17</title>
+<polygon fill="#ffffe0" stroke="#000000" stroke-width="3" points="900,-615.8927 684,-615.8927 684,-579.8927 900,-579.8927 900,-615.8927"/>
+<text text-anchor="middle" x="792" y="-593.6927" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="14.00" fill="#000000">Error</text>
+</g>
+<!-- mn4&#45;&gt;sn17 -->
+<g id="edge22" class="edge">
+<title>mn4:e-&gt;sn17:w</title>
+<path fill="none" stroke="#4682b4" stroke-width="3" stroke-dasharray="5,2" d="M504,-626.8927C630.4642,-612.4046 630.4642,-612.4046 684,-597.8927"/>
+</g>
+<!-- sn14 -->
+<g id="node26" class="node">
+<title>sn14</title>
+<polygon fill="#ffffe0" stroke="#000000" stroke-width="3" points="252,-688.8927 36,-688.8927 36,-652.8927 252,-652.8927 252,-688.8927"/>
+<text text-anchor="middle" x="144" y="-666.6927" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="14.00" fill="#000000">Package and Crates</text>
+</g>
+<!-- sn14&#45;&gt;mn4 -->
+<g id="edge19" class="edge">
+<title>sn14:e-&gt;mn4:w</title>
+<path fill="none" stroke="#4682b4" stroke-width="3" stroke-dasharray="5,2" d="M252,-670.8927C306.4066,-659.2151 306.4066,-659.2151 432,-626.8927"/>
+</g>
+<!-- sn15 -->
+<g id="node27" class="node">
+<title>sn15</title>
+<polygon fill="#ffffe0" stroke="#000000" stroke-width="3" points="252,-630.8927 36,-630.8927 36,-594.8927 252,-594.8927 252,-630.8927"/>
+<text text-anchor="middle" x="144" y="-608.6927" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="14.00" fill="#000000">Modules</text>
+</g>
+<!-- sn15&#45;&gt;mn4 -->
+<g id="edge20" class="edge">
+<title>sn15:e-&gt;mn4:w</title>
+<path fill="none" stroke="#4682b4" stroke-width="3" stroke-dasharray="5,2" d="M252,-612.8927C305.9558,-622.05 305.9558,-622.05 432,-626.8927"/>
+</g>
+<!-- mn5 -->
+<g id="node30" class="node">
+<title>mn5</title>
+<polygon fill="#fff68f" stroke="#000000" stroke-width="3" points="576,-557.8927 360,-557.8927 360,-521.8927 576,-521.8927 576,-557.8927"/>
+<text text-anchor="middle" x="468" y="-535.6927" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="14.00" fill="#000000">Functional Language</text>
+</g>
+<!-- mn5&#45;&gt;mn4 -->
+<g id="edge23" class="edge">
+<title>mn5-&gt;mn4</title>
+<path fill="none" stroke="#4682b4" stroke-width="3" d="M468,-558.0851C468,-569.0507 468,-579.6739 468,-608.7329"/>
+</g>
+<!-- sn19 -->
+<g id="node32" class="node">
+<title>sn19</title>
+<polygon fill="#ffffe0" stroke="#000000" stroke-width="3" points="864,-557.8927 720,-557.8927 720,-521.8927 864,-521.8927 864,-557.8927"/>
+<text text-anchor="middle" x="792" y="-535.6927" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="14.00" fill="#000000">Iterators</text>
+</g>
+<!-- mn5&#45;&gt;sn19 -->
+<g id="edge25" class="edge">
+<title>mn5:e-&gt;sn19:w</title>
+<path fill="none" stroke="#4682b4" stroke-width="3" stroke-dasharray="5,2" d="M576,-539.8927C674.7145,-529.1327 674.7145,-529.1327 720,-539.8927"/>
+</g>
+<!-- sn18 -->
+<g id="node31" class="node">
+<title>sn18</title>
+<polygon fill="#ffffe0" stroke="#000000" stroke-width="3" points="216,-557.8927 72,-557.8927 72,-521.8927 216,-521.8927 216,-557.8927"/>
+<text text-anchor="middle" x="144" y="-535.6927" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="14.00" fill="#000000">Closures</text>
+</g>
+<!-- sn18&#45;&gt;mn5 -->
+<g id="edge24" class="edge">
+<title>sn18:e-&gt;mn5:w</title>
+<path fill="none" stroke="#4682b4" stroke-width="3" stroke-dasharray="5,2" d="M216,-539.8927C261.2855,-529.1327 261.2855,-529.1327 360,-539.8927"/>
+</g>
+<!-- mn6 -->
+<g id="node33" class="node">
+<title>mn6</title>
+<polygon fill="#fff68f" stroke="#000000" stroke-width="3" points="540,-470.8927 396,-470.8927 396,-434.8927 540,-434.8927 540,-470.8927"/>
+<text text-anchor="middle" x="468" y="-448.6927" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="14.00" fill="#000000">Smart Pointers</text>
+</g>
+<!-- mn6&#45;&gt;mn5 -->
+<g id="edge26" class="edge">
+<title>mn6-&gt;mn5</title>
+<path fill="none" stroke="#4682b4" stroke-width="3" d="M468,-471.0851C468,-482.0507 468,-492.6739 468,-521.7329"/>
+</g>
+<!-- sn22 -->
+<g id="node36" class="node">
+<title>sn22</title>
+<polygon fill="#ffffe0" stroke="#000000" stroke-width="3" points="864,-499.8927 720,-499.8927 720,-463.8927 864,-463.8927 864,-499.8927"/>
+<text text-anchor="middle" x="792" y="-477.6927" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="14.00" fill="#000000">RefCell&lt;T&gt;</text>
+</g>
+<!-- mn6&#45;&gt;sn22 -->
+<g id="edge29" class="edge">
+<title>mn6:e-&gt;sn22:w</title>
+<path fill="none" stroke="#4682b4" stroke-width="3" stroke-dasharray="5,2" d="M540,-452.8927C657.1737,-443.0775 657.1737,-443.0775 720,-481.8927"/>
+</g>
+<!-- sn23 -->
+<g id="node37" class="node">
+<title>sn23</title>
+<polygon fill="#ffffe0" stroke="#000000" stroke-width="3" points="864,-441.8927 720,-441.8927 720,-405.8927 864,-405.8927 864,-441.8927"/>
+<text text-anchor="middle" x="792" y="-419.6927" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="14.00" fill="#000000">Arc&lt;T&gt;</text>
+</g>
+<!-- mn6&#45;&gt;sn23 -->
+<g id="edge30" class="edge">
+<title>mn6:e-&gt;sn23:w</title>
+<path fill="none" stroke="#4682b4" stroke-width="3" stroke-dasharray="5,2" d="M540,-452.8927C654.8505,-411.7077 654.8505,-411.7077 720,-423.8927"/>
+</g>
+<!-- sn20 -->
+<g id="node34" class="node">
+<title>sn20</title>
+<polygon fill="#ffffe0" stroke="#000000" stroke-width="3" points="216,-488.8927 72,-488.8927 72,-452.8927 216,-452.8927 216,-488.8927"/>
+<text text-anchor="middle" x="144" y="-466.6927" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="14.00" fill="#000000">Box&lt;T&gt;</text>
+</g>
+<!-- sn20&#45;&gt;mn6 -->
+<g id="edge27" class="edge">
+<title>sn20:e-&gt;mn6:w</title>
+<path fill="none" stroke="#4682b4" stroke-width="3" stroke-dasharray="5,2" d="M216,-470.8927C279.4903,-437.2716 279.4903,-437.2716 396,-452.8927"/>
+</g>
+<!-- sn21 -->
+<g id="node35" class="node">
+<title>sn21</title>
+<polygon fill="#ffffe0" stroke="#000000" stroke-width="3" points="216,-430.8927 72,-430.8927 72,-394.8927 216,-394.8927 216,-430.8927"/>
+<text text-anchor="middle" x="144" y="-408.6927" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="14.00" fill="#000000">Rc&lt;T&gt;</text>
+</g>
+<!-- sn21&#45;&gt;mn6 -->
+<g id="edge28" class="edge">
+<title>sn21:e-&gt;mn6:w</title>
+<path fill="none" stroke="#4682b4" stroke-width="3" stroke-dasharray="5,2" d="M216,-412.8927C281.2888,-405.5184 281.2888,-405.5184 396,-452.8927"/>
+</g>
+<!-- mn7 -->
+<g id="node38" class="node">
+<title>mn7</title>
+<polygon fill="#fff68f" stroke="#000000" stroke-width="3" points="540,-340.8927 396,-340.8927 396,-304.8927 540,-304.8927 540,-340.8927"/>
+<text text-anchor="middle" x="468" y="-318.6927" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="14.00" fill="#000000">Concurrency</text>
+</g>
+<!-- mn7&#45;&gt;mn6 -->
+<g id="edge31" class="edge">
+<title>mn7-&gt;mn6</title>
+<path fill="none" stroke="#4682b4" stroke-width="3" d="M468,-340.8927C468,-362.727 468,-375.8052 468,-434.5804"/>
+</g>
+<!-- sn26 -->
+<g id="node41" class="node">
+<title>sn26</title>
+<polygon fill="#ffffe0" stroke="#000000" stroke-width="3" points="864,-354.8927 720,-354.8927 720,-318.8927 864,-318.8927 864,-354.8927"/>
+<text text-anchor="middle" x="792" y="-332.6927" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="14.00" fill="#000000">Shared State</text>
+</g>
+<!-- mn7&#45;&gt;sn26 -->
+<g id="edge34" class="edge">
+<title>mn7:e-&gt;sn26:w</title>
+<path fill="none" stroke="#4682b4" stroke-width="3" stroke-dasharray="5,2" d="M540,-322.8927C647.9647,-298.57 647.9647,-298.57 720,-336.8927"/>
+</g>
+<!-- sn27 -->
+<g id="node42" class="node">
+<title>sn27</title>
+<polygon fill="#ffffe0" stroke="#000000" stroke-width="3" points="864,-296.8927 720,-296.8927 720,-260.8927 864,-260.8927 864,-296.8927"/>
+<text text-anchor="middle" x="792" y="-274.6927" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="14.00" fill="#000000">Sync &amp; Send</text>
+</g>
+<!-- mn7&#45;&gt;sn27 -->
+<g id="edge35" class="edge">
+<title>mn7:e-&gt;sn27:w</title>
+<path fill="none" stroke="#4682b4" stroke-width="3" stroke-dasharray="5,2" d="M540,-322.8927C647.1011,-268.0143 647.1011,-268.0143 720,-278.8927"/>
+</g>
+<!-- sn24 -->
+<g id="node39" class="node">
+<title>sn24</title>
+<polygon fill="#ffffe0" stroke="#000000" stroke-width="3" points="216,-351.8927 72,-351.8927 72,-315.8927 216,-315.8927 216,-351.8927"/>
+<text text-anchor="middle" x="144" y="-329.6927" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="14.00" fill="#000000">Threads</text>
+</g>
+<!-- sn24&#45;&gt;mn7 -->
+<g id="edge32" class="edge">
+<title>sn24:e-&gt;mn7:w</title>
+<path fill="none" stroke="#4682b4" stroke-width="3" stroke-dasharray="5,2" d="M216,-333.8927C288.1275,-297.0652 288.1275,-297.0652 396,-322.8927"/>
+</g>
+<!-- sn25 -->
+<g id="node40" class="node">
+<title>sn25</title>
+<polygon fill="#ffffe0" stroke="#000000" stroke-width="3" points="216,-293.8927 72,-293.8927 72,-257.8927 216,-257.8927 216,-293.8927"/>
+<text text-anchor="middle" x="144" y="-271.6927" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="14.00" fill="#000000">Message Passing</text>
+</g>
+<!-- sn25&#45;&gt;mn7 -->
+<g id="edge33" class="edge">
+<title>sn25:e-&gt;mn7:w</title>
+<path fill="none" stroke="#4682b4" stroke-width="3" stroke-dasharray="5,2" d="M216,-275.8927C288.8959,-266.3502 288.8959,-266.3502 396,-322.8927"/>
+</g>
+<!-- mn8&#45;&gt;mn7 -->
+<g id="edge36" class="edge">
+<title>mn8-&gt;mn7</title>
+<path fill="none" stroke="#4682b4" stroke-width="3" d="M468,-181.1802C468,-211.1039 468,-225.1608 468,-304.8601"/>
+</g>
+<!-- sn30 -->
+<g id="node46" class="node">
+<title>sn30</title>
+<polygon fill="#ffffe0" stroke="#000000" stroke-width="3" points="900,-238.8927 684,-238.8927 684,-202.8927 900,-202.8927 900,-238.8927"/>
+<text text-anchor="middle" x="792" y="-216.6927" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="14.00" fill="#000000">Types</text>
+</g>
+<!-- mn8&#45;&gt;sn30 -->
+<g id="edge39" class="edge">
+<title>mn8:e-&gt;sn30:w</title>
+<path fill="none" stroke="#4682b4" stroke-width="3" stroke-dasharray="5,2" d="M576,-162.8927C638.8149,-169.0144 638.8149,-169.0144 684,-220.8927"/>
+</g>
+<!-- sn31 -->
+<g id="node47" class="node">
+<title>sn31</title>
+<polygon fill="#ffffe0" stroke="#000000" stroke-width="3" points="900,-180.8927 684,-180.8927 684,-144.8927 900,-144.8927 900,-180.8927"/>
+<text text-anchor="middle" x="792" y="-158.6927" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="14.00" fill="#000000">Functions and Closures</text>
+</g>
+<!-- mn8&#45;&gt;sn31 -->
+<g id="edge40" class="edge">
+<title>mn8:e-&gt;sn31:w</title>
+<path fill="none" stroke="#4682b4" stroke-width="3" stroke-dasharray="5,2" d="M576,-162.8927C637.3235,-142.5722 637.3235,-142.5722 684,-162.8927"/>
+</g>
+<!-- sn32 -->
+<g id="node48" class="node">
+<title>sn32</title>
+<polygon fill="#ffffe0" stroke="#000000" stroke-width="3" points="900,-122.8927 684,-122.8927 684,-86.8927 900,-86.8927 900,-122.8927"/>
+<text text-anchor="middle" x="792" y="-100.6927" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="14.00" fill="#000000">Macros</text>
+</g>
+<!-- mn8&#45;&gt;sn32 -->
+<g id="edge41" class="edge">
+<title>mn8:e-&gt;sn32:w</title>
+<path fill="none" stroke="#4682b4" stroke-width="3" stroke-dasharray="5,2" d="M576,-162.8927C637.8629,-110.67 637.8629,-110.67 684,-104.8927"/>
+</g>
+<!-- sn28 -->
+<g id="node44" class="node">
+<title>sn28</title>
+<polygon fill="#ffffe0" stroke="#000000" stroke-width="3" points="252,-209.8927 36,-209.8927 36,-173.8927 252,-173.8927 252,-209.8927"/>
+<text text-anchor="middle" x="144" y="-187.6927" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="14.00" fill="#000000">Unsafe</text>
+</g>
+<!-- sn28&#45;&gt;mn8 -->
+<g id="edge37" class="edge">
+<title>sn28:e-&gt;mn8:w</title>
+<path fill="none" stroke="#4682b4" stroke-width="3" stroke-dasharray="5,2" d="M252,-191.8927C298.194,-156.4341 298.194,-156.4341 360,-162.8927"/>
+</g>
+<!-- sn29 -->
+<g id="node45" class="node">
+<title>sn29</title>
+<polygon fill="#ffffe0" stroke="#000000" stroke-width="3" points="252,-151.8927 36,-151.8927 36,-115.8927 252,-115.8927 252,-151.8927"/>
+<text text-anchor="middle" x="144" y="-129.6927" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="14.00" fill="#000000">Traits</text>
+</g>
+<!-- sn29&#45;&gt;mn8 -->
+<g id="edge38" class="edge">
+<title>sn29:e-&gt;mn8:w</title>
+<path fill="none" stroke="#4682b4" stroke-width="3" stroke-dasharray="5,2" d="M252,-133.8927C298.6273,-127.2777 298.6273,-127.2777 360,-162.8927"/>
+</g>
+</g>
+</svg>
+</p>
+<hr>
+<p><img src="https://img.shields.io/badge/-BOOK-blue" alt="Book"> <a href="https://doc.rust-lang.org/book/title-page.html" target="_blank">The Rust Programming Language</a><br><img src="https://img.shields.io/badge/-BOOK-blue" alt="Book"> <a href="https://rust-unofficial.github.io/too-many-lists/index.html" target="_blank">Learning Rust With Entirely Too Many Lists</a><br><img src="https://img.shields.io/badge/-BOOK-blue" alt="Book"> <a href="https://doc.rust-lang.org/nomicon/intro.html" target="_blank">The Rustconomicon - The Dark Arts of Unsafe Rust</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="backend.html" class="navigation navigation-prev " aria-label="Previous page: Backend">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../chip/chip.html" class="navigation navigation-next " aria-label="Next page: Chip Design">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Rust","level":"1.3.1","depth":2,"next":{"title":"Chip Design","level":"1.4","depth":1,"path":"chip/chip.md","ref":"chip/chip.md","articles":[]},"previous":{"title":"Backend","level":"1.3","depth":1,"path":"backend/backend.md","ref":"backend/backend.md","articles":[{"title":"Rust","level":"1.3.1","depth":2,"path":"backend/rust.md","ref":"backend/rust.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","back-to-top-button","chapter-fold","tabs2","github-embed","code","graphviz@git+https://github.com/kleon1024/gitbook-plugin-graphviz.git"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"search-pro":{},"code":{"copyButtons":true},"github-embed":{"showLink":true,"reindent":false},"fontsettings":{"theme":"white","family":"sans","size":2},"tabs2":{},"highlight":{},"back-to-top-button":{},"graphviz":{"format":"svg","engine":"dot"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Roadmap","gitbook":"*"},"file":{"path":"backend/rust.md","mtime":"2022-09-05T10:34:12.199Z","type":"markdown"},"gitbook":{"version":"3.7.5","time":"2022-09-05T10:34:37.671Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-tabs2/tabs.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
