@@ -6,7 +6,7 @@
   <link href="https://blog.kleon.space/atom.xml" rel="self"/>
   
   <link href="https://blog.kleon.space/"/>
-  <updated>2022-07-05T09:00:00.000Z</updated>
+  <updated>2022-09-06T01:17:00.000Z</updated>
   <id>https://blog.kleon.space/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>🚀新书上架</title>
+    <link href="https://blog.kleon.space/books/"/>
+    <id>https://blog.kleon.space/books/</id>
+    <published>2022-09-06T01:17:00.000Z</published>
+    <updated>2022-09-06T01:17:00.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://img.shields.io/badge/BOOK-blue&quot; alt=&quot;Book&quot;&gt;&lt;a href=&quot;/books/crack-coding/&quot;&gt;&lt;strong&gt;Cracking the Coding</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Backend</title>
@@ -543,34 +564,6 @@
         
         
     <summary type="html">&lt;p&gt;&lt;a href=&quot;https://medium.com/double-pointer/system-design-interview-autocomplete-type-ahead-system-for-a-search-box-1ac968f9f121&quot;&gt;System</summary>
-        
-      
-    
-    
-    
-    <category term="interview" scheme="https://blog.kleon.space/categories/interview/"/>
-    
-    
-    <category term="interview" scheme="https://blog.kleon.space/tags/interview/"/>
-    
-    <category term="system" scheme="https://blog.kleon.space/tags/system/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>System - Chat App</title>
-    <link href="https://blog.kleon.space/interview/system/chat_app/"/>
-    <id>https://blog.kleon.space/interview/system/chat_app/</id>
-    <published>2022-05-30T17:12:28.000Z</published>
-    <updated>2022-05-30T17:12:32.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://bytebytego.com/courses/system-design-interview/design-a-chat-system&quot;&gt;Design A Chat System&lt;/a&gt;&lt;/p&gt;
-&lt;div</summary>
         
       
     
