@@ -5,6 +5,7 @@
     "gitbook-plugin-code": "^0.1.0",
     "gitbook-plugin-github-embed": "^1.3.1",
     "gitbook-plugin-graphviz": "git+https://github.com/kleon1024/gitbook-plugin-graphviz.git",
+    "gitbook-plugin-pageview-count": "^1.0.1",
     "gitbook-plugin-search-pro": "^2.0.2",
     "gitbook-plugin-tabs2": "^0.1.3",
     "graphviz": "git+https://github.com/kleon1024/gitbook-plugin-graphviz.git",
