@@ -17,9 +17,9 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Mini Products</title>
-    <link href="https://blog.kleon.space/product/mini-product/"/>
-    <id>https://blog.kleon.space/product/mini-product/</id>
+    <title>Indie Products</title>
+    <link href="https://blog.kleon.space/product/indie-product/"/>
+    <id>https://blog.kleon.space/product/indie-product/</id>
     <published>2022-09-10T13:55:06.000Z</published>
     <updated>2022-09-10T13:55:06.000Z</updated>
     
@@ -28,11 +28,7 @@
       
         
         
-    <summary type="html">&lt;p&gt;Productivity tools are good starting points:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Text-To-Speech&lt;/li&gt;
-&lt;li&gt;Speech-To-Text(Subtitle, Podcast)&lt;/li&gt;
-&lt;li&gt;Plugin for</summary>
+    <summary type="html">&lt;p&gt;Indie product is products developed by small teams or individuals. Indie products usually only provide the core functions for domain</summary>
         
       
     
